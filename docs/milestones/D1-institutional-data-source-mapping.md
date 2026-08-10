@@ -38,6 +38,8 @@ D1 may start when:
 
 Substantive research (source review, evidence assessment, problem analysis, public-signal discovery) is performed externally. The repository agent (Claude Code / Codex) is responsible for repository engineering, structured-record integration, validation, AIQT execution, and Git hygiene — not for independently deciding which problems matter or what should be built. See `docs/discovery/research-handoff-protocol.md`.
 
+From `WU-D1-03` onward, external research across the remaining domain Work Units may run in parallel, while canonical integration and AIQT execution state remain serialized. See `docs/discovery/d1-parallel-research-operating-model.md` for the approved parallel-research operating model (WIP limits, provisional IDs, handoff states, synthesis/sensemaking review). A domain WU's AIQT status still moves out of `ready` only when its first approved handoff enters integration — external research alone does not change AIQT state.
+
 ## Research principles
 
 D1 must preserve the following rules:

@@ -31,7 +31,7 @@ Suggested first pass:
 16. Geography & Territory
 17. Digital Access & Services
 
-The sequence may change based on evidence availability.
+The sequence may change based on evidence availability. From `WU-D1-03` onward, external research on up to 3 domains may run in parallel rather than strictly one after another; canonical integration stays serialized. See `docs/discovery/d1-parallel-research-operating-model.md`.
 
 ## For each domain, collect
 

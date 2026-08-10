@@ -25,6 +25,10 @@ AIQT / Git
 
 **The repository agent is responsible for faithful integration and technical validation, not reinterpretation of the research.**
 
+## Handoff states
+
+A handoff is either `DRAFT` (under external research/review) or `APPROVED FOR INTEGRATION` (the project owner has explicitly recorded approval). Only an `APPROVED FOR INTEGRATION` handoff enters the repository agent's integration queue; a handoff must not carry stale "pending approval" wording once approval has actually occurred. From `WU-D1-03` onward, multiple domains may be researched in parallel ahead of integration — see `docs/discovery/d1-parallel-research-operating-model.md` for the full queueing/WIP model. Canonical integration itself stays serialized regardless of how many tracks are researched in parallel.
+
 The repository agent must not independently decide which civic problems are important, whether a source proves a claim, how competing evidence should be interpreted, whether a problem is digitally tractable, which solution should be built, which project should be selected, or whether the Évora Open API should be implemented. Those are research/analysis judgments made before the handoff, or governance decisions made explicitly by the programme — not something inferred while integrating records.
 
 ## What a handoff may contain
