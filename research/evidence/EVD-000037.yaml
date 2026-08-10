@@ -1,0 +1,30 @@
+evidence_id: EVD-000037
+type: institutional
+source:
+  source_id: SRC-0002
+  publisher: "Município de Évora / Rede Social"
+  title: "Plano de Desenvolvimento Social de Évora 2024-2027"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2024/01/PDS-Evora_FINAL_VF.pdf"
+  published_at: 2024-01
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0028"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "workers"
+  - "employers"
+  - "training/education providers"
+domain:
+  - "EMP"
+  - "EDU"
+  - "ECO"
+observation:
+  summary: "Local institutional planning identifies a mismatch between workforce qualifications and employer needs, and explicitly calls for competence mapping, training adaptation and stronger education-employer articulation; the 2025 action plan treats this as a current workstream, not merely a diagnosis."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-04-A-E01. Confidence: HIGH institutionally. SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage, so this is not independent corroboration."

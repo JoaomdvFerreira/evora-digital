@@ -1,0 +1,29 @@
+evidence_id: EVD-000040
+type: institutional
+source:
+  source_id: SRC-0028
+  publisher: "Município de Évora / Rede Social"
+  title: "Plano de Ação do PDS 2025"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/03/PA-PDS-2025-final.pdf"
+  published_at: 2025-03
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0010"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "students"
+  - "job seekers"
+  - "vulnerable groups seeking employment"
+domain:
+  - "EMP"
+  - "EDU"
+observation:
+  summary: "Current initiatives include employability/training measures, university labour-market integration work, employer engagement, entrepreneurship support and job-related programmes."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-04-A-E04. Interpretation: a future digital product cannot start from the assumption that no matching/support mechanisms exist."

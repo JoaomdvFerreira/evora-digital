@@ -16,8 +16,8 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0007 | CIMAC / regional spatial-data infrastructure | Open Data | Intermunicipal normalized geospatial data |
 | SRC-0008 | dados.gov.pt | Open Data | National public-data discovery/catalogue |
 | SRC-0009 | PORDATA Municípios | Both | Municipal indicators and statistical context |
-| SRC-0010 | Universidade de Évora | Both | Students, research, talent, services and potential data consumers |
-| SRC-0011 | NERE | Stakeholders | Business and regional economic perspective |
+| SRC-0010 | Universidade de Évora, Plano de Atividades 2025 | Both | Students, research, talent, services and potential data consumers |
+| SRC-0011 | NERE | Stakeholders | Business and regional economic perspective; detailed business-needs evidence still needs targeted research |
 | SRC-0012 | Juntas de Freguesia do concelho | Problem Intelligence | Hyperlocal issues and formal local signals |
 | SRC-0013 | Évora 2027 | Both | Culture/events ecosystem and public programming |
 | SRC-0014 | Social-sector / Rede Social organisations | Problem Intelligence | Social support, care, coordination |
@@ -38,10 +38,17 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0029 | PUE Sector Report: Habitação e Mercado Imobiliário | Problem Intelligence | Housing stock/market diagnosis; student-residence capacity; freshness caution (Census 2021-era base) |
 | SRC-0030 | Plano Concelhio dos Cuidadores Informais de Évora | Problem Intelligence | Informal-caregiver information/support needs; 2025 local study |
 | SRC-0031 | CLASE / Rede Social | Stakeholders | Interinstitutional social-support network (~120 institutions) |
+| SRC-0032 | UÉ admission results 2025 | Problem Intelligence | 2025 first-phase admission fill rate; attraction vs. retention distinction |
+| SRC-0033 | Município de Évora — Desenvolvimento Económico | Problem Intelligence | Business growth/investment-attraction strategy since 2013 |
+| SRC-0034 | Áreas de Acolhimento Empresarial / Parque de Indústria Aeronáutica de Évora | Problem Intelligence | Established business/innovation locations and aerospace infrastructure |
 
 ## Verified in WU-D1-03 (Batch A)
 
 `SRC-0002` was enriched with housing/social/health domains and findings (`HOU`, `HEA` added to scope). `SRC-0028`–`SRC-0031` were added as new canonical sources. See `docs/milestones/D1-WU03-progress.md` for the integration summary.
+
+## Verified in WU-D1-04 (Batch A)
+
+`SRC-0002` and `SRC-0028` were further enriched with economy/employment/education domains and findings (`EMP`, `ECO`, `EDU` added to `SRC-0002`; `EMP` added to `SRC-0028`). `SRC-0010` and `SRC-0011` (previously seed-only rows) were canonicalized, and `SRC-0032`–`SRC-0034` were added as new canonical sources. See `docs/milestones/D1-WU04-progress.md` for the integration summary.
 
 ## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 

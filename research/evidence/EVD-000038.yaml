@@ -1,0 +1,24 @@
+evidence_id: EVD-000038
+type: institutional
+source:
+  source_id: SRC-0032
+  publisher: "Universidade de Évora"
+  title: "UÉ admission results 2025"
+  source_reference: "https://www.uevora.pt/ue-media/noticias?item=44115"
+  published_at: 2025
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "prospective and admitted university students"
+domain:
+  - "EDU"
+observation:
+  summary: "UÉ filled 1,193 of 1,371 first-phase national-access places in 2025 (87%), reporting relatively strong attraction during a national decline; the new Aerospace Engineering course filled all first-phase places."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-04-A-E02. Interpretation: student attraction and student retention must not be treated as the same problem."

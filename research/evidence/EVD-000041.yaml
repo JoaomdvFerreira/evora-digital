@@ -1,0 +1,28 @@
+evidence_id: EVD-000041
+type: institutional
+source:
+  source_id: SRC-0033
+  publisher: "Município de Évora"
+  title: "Município de Évora - Desenvolvimento Económico"
+  source_reference: "https://www.cm-evora.pt/municipe/areas-de-acao/desenvolvimento-economico/"
+  published_at: null
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0034"
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "businesses"
+  - "investors"
+domain:
+  - "ECO"
+  - "EMP"
+observation:
+  summary: "The Municipality reports significant growth in installed companies since 2013, with a strategy emphasizing investment attraction, industrial/technology parks, incubation and sector-specialised enterprise-support infrastructure, including aerospace."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-04-A-E05. Boundary: infrastructure existence does not prove SMEs or workers can easily discover or navigate support opportunities."

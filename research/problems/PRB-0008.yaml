@@ -1,0 +1,29 @@
+problem_id: PRB-0008
+title: "Workforce skills and employer needs are not fully aligned"
+domain:
+  - "EMP"
+  - "EDU"
+  - "ECO"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "workers and job seekers"
+  - "employers"
+  - "training/education providers"
+problem_statement: "Local institutional planning identifies a mismatch between workforce qualifications and employer needs and treats competence mapping, training adaptation and stronger education-employer articulation as a current, active workstream rather than a resolved concern, despite substantial existing economic/business-support infrastructure and education-to-employment initiatives."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Possible components include visibility of skills demand, training adaptation, employer/education feedback loops, and inclusive employment for vulnerable groups (per WU-D1-04 Batch A interpretation, not yet validated). Do not assume a job-board solution."
+  - "Existing infrastructure (industrial/technology parks, incubation, aerospace-sector facilities, employability/training measures, UÉ labour-market integration work) means this is not an 'absence of institutional response' problem; infrastructure existence does not prove SMEs or workers can easily discover or navigate support opportunities. Batch B must determine current employer-reported shortages and SME navigation experience."
+  - "Repeated claims across SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage and are not independent corroboration; UÉ's own planning (SRC-0010) provides a second, distinct institutional line on education-to-employment work."
+evidence:
+  - "EVD-000037"
+  - "EVD-000040"
+  - "EVD-000041"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

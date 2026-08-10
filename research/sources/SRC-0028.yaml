@@ -6,6 +6,7 @@ scope:
   domains:
     - "HOU"
     - "SOC"
+    - "EMP"
 source_type: document
 access:
   public: true
@@ -25,4 +26,4 @@ canonical_source: true
 canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/03/PA-PDS-2025-final.pdf"
 api_candidate:
   potential: unknown
-notes: "WU-D1-03 Batch A (provisional D1-03-A-S02). Records current interventions: housing rehabilitation under the Local Housing Strategy, controlled-cost housing targets, supported-rental rehabilitation, temporary/shared accommodation responses for vulnerable populations, and explicit student-housing needs assessment/funding application work."
+notes: "WU-D1-03 Batch A (provisional D1-03-A-S02). Records current interventions: housing rehabilitation under the Local Housing Strategy, controlled-cost housing targets, supported-rental rehabilitation, temporary/shared accommodation responses for vulnerable populations, and explicit student-housing needs assessment/funding application work. WU-D1-04 Batch A update (provisional D1-04-A-S02): also records current employment/skills actions - mapping competences required by the labour market, developing training based on identified needs, improving articulation between education/training institutions and employers, and employment-inclusion measures for vulnerable groups. Skills matching is an explicit current institutional workstream, not merely an inferred concern."
