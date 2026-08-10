@@ -32,10 +32,28 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0023 | LVpDÉ parking/traffic sensor infrastructure | Open Data | 75 parking + 10 vehicle-count sensors deployed; current status/public feed unresolved |
 | SRC-0024 | Current PMUSE implementation / pedestrian-cycling works | Problem Intelligence | Active 2025 works adding ~6 km pedestrian/cycling routes |
 | SRC-0025 | Rossio de S. Brás 2026 requalification programme | Problem Intelligence | Active multi-phase 2026 requalification of the Rossio/Station area |
+| SRC-0026 | 4th Revision of the Évora Urbanisation Plan — Experimental Mobility Actions 2026 | Problem Intelligence | Current (2026) participatory pedestrian/soft-mobility route testing |
+| SRC-0027 | Municipality Service Ownership / Mobility Contacts | Stakeholders | DAM/DORU ownership and contact paths for mobility/urban-planning questions |
 
-## Verified in WU-D1-02 (Batch A + Batch B)
+## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 
-`SRC-0002`, `SRC-0003`, `SRC-0006`, `SRC-0007`, `SRC-0016`, `SRC-0017`, `SRC-0018`, `SRC-0019` now have canonical structured records under `research/sources/`, verified against the institutional documents cited in WU-D1-02 Research Batch A; `SRC-0006`, `SRC-0007`, `SRC-0016`, `SRC-0019` were further enriched, and `SRC-0020`–`SRC-0025` were added, in Batch B. See `docs/milestones/D1-WU02-progress.md` for the integration summary and `docs/discovery/d1-recording-protocol.md` for the record format. This table remains a human-readable catalogue; detailed fields (licensing, freshness, authority, API candidacy) live only in the structured `SRC-*` records to avoid duplication.
+`SRC-0002`, `SRC-0003`, `SRC-0006`, `SRC-0007`, `SRC-0016`, `SRC-0017`, `SRC-0018`, `SRC-0019` now have canonical structured records under `research/sources/`, verified against the institutional documents cited in WU-D1-02 Research Batch A; `SRC-0006`, `SRC-0007`, `SRC-0016`, `SRC-0019` were further enriched, and `SRC-0020`–`SRC-0025` were added, in Batch B; `SRC-0018`, `SRC-0019`, `SRC-0007`, `SRC-0021` were enriched with current (2025/2026) operational figures and ownership contacts, and `SRC-0026`–`SRC-0027` were added, in Batch C. See `docs/milestones/D1-WU02-progress.md` for the integration summary and `docs/discovery/d1-recording-protocol.md` for the record format. This table remains a human-readable catalogue; detailed fields (licensing, freshness, authority, API candidacy) live only in the structured `SRC-*` records to avoid duplication.
+
+## Institutional stakeholder / data-owner map (WU-D1-02 Batch C)
+
+For later targeted validation or data clarification, not automatic outreach. See `SRC-0027`, `SRC-0007`, `SRC-0019`, `SRC-0021`, and `EVD-000030`.
+
+| Area | Primary owner/operator | Why relevant | Contact path |
+|---|---|---|---|
+| Urban bus operation / TREVO | E-BUS, S.A. / TREVO | routes, realtime, operational data, passenger info | `geral@trevo.com.pt`, 266 106 923 |
+| Municipal urban transport authority | Município de Évora / DAM | concession oversight, urban mobility, parking | `cme.dam@cm-evora.pt`, +351 266 777 154 |
+| Urban planning / PUE / requalification | Município de Évora / DORU | pedestrian network, physical interventions, PUE | `cme.doru@cm-evora.pt`, +351 266 777 027 |
+| TPAC / flexible intermunicipal transport / GTFS | ATAC / CIMAC | GTFS, network planning, schedules, regional coverage | `a.transportes@cimac.pt` |
+| Regional GIS / WMS / WFS / WebGIS | GEOCIMAC / CIMAC | service catalogue, metadata, reuse/freshness | `geral@cimac.pt`, +351 266 749 420 |
+| Accessibility-plan underlying data | Municipality — exact custodian to confirm | R.A.M.P.A. dataset/obstacle inventory | route through DAM/DORU initially |
+| Parking sensor data | Municipality — exact current custodian to confirm | LVpDÉ sensor status/API/history | route through DAM initially |
+
+Rule: do not contact an owner merely to replace every `UNKNOWN` with a value. Contact should be justified by a later research or experiment need.
 
 ## D1 enrichment fields
 

@@ -1,6 +1,6 @@
 # WU-D1-02 Progress — Mobility, Territory, Urban Infrastructure & Accessibility
 
-**Status:** IN PROGRESS
+**Status:** IN PROGRESS — records integrated, AIQT status `needs_review` pending project-owner resolution outside AIQT
 **Milestone:** D1 — Institutional & Data Source Mapping
 **Date:** 2026-08-10
 
@@ -95,9 +95,32 @@ Batch B:
 - `docs/data/source-registry.md` (added `SRC-0020`–`SRC-0025` rows)
 - `docs/milestones/D1-WU02-progress.md` (this file)
 
+## Batch C integration
+
+The externally reviewed and approved **WU-D1-02 Research Batch C** (final institutional consolidation; no public social listening) closed the six open questions carried from Batch B by classifying them as D2/D5 lived-experience questions or later targeted owner clarifications, and confirmed no new top-level institutional problem class.
+
+- Sources enriched: **4** — `SRC-0018`, `SRC-0019` (current 2025 operational/coverage figures), `SRC-0007`, `SRC-0021` (ownership/contact notes)
+- Sources added: **2** — `SRC-0026` (4th PUE revision experimental mobility actions 2026), `SRC-0027` (municipality service ownership / mobility contacts)
+- Evidence records added: **8** — `EVD-000023`…`EVD-000030`
+- Problem records updated (context only, no new `PRB-*`): **5** — `PRB-0001`…`PRB-0005`, each gained a "Batch C update:" `possible_root_causes` entry transcribing the approved refinement, and `PRB-0001`/`PRB-0003`/`PRB-0005` gained new `evidence` references (`EVD-000023`, `EVD-000024`, `EVD-000027`, `EVD-000028` on `PRB-0001`; `EVD-000029`, `EVD-000030` on `PRB-0003`; `EVD-000025` on `PRB-0005`); `PRB-0001`'s and `PRB-0003`'s `problem_statement` were updated to the approved final institutional wording. No `status`, `evidence_status`, `validation_status`, `digital_tractability`, or `existing_solutions` value was changed.
+- Hypothesis records created: **0**
+- `docs/data/source-registry.md` gained the institutional stakeholder/data-owner map (DAM, DORU, E-BUS/TREVO, ATAC/CIMAC, GEOCIMAC/CIMAC) and rows for `SRC-0026`–`SRC-0027`.
+
+### Validator result
+
+```text
+Batch C: Validated 51 record(s): OK.
+```
+
+### Institutional saturation
+
+Batch C revealed no new top-level institutional problem class; it refined the five existing clusters (`PRB-0001`–`PRB-0005`) and improved current-state confidence. Major current institutional sources (2026 municipal transport-authority report, 2025 ATAC/CIMAC report, active PUE 2026 experimental-actions phase) are represented. Unresolved questions (lived frequency/schedule pain, contemporary pedestrian/accessibility barriers, current cycle-network usability, GTFS/TREVO developer reuse terms, exact GIS layer catalogue/licensing, R.A.M.P.A. structured data, current parking sensor/API status) are intentionally carried forward to D2/D5 or later targeted owner clarification rather than triggering further institutional browsing. See `docs/milestones/D1-WU02-closure.md` for the closure decision.
+
 ## WU-D1-02 status
 
-**IN PROGRESS.** This progress record now covers Batch A and Batch B. WU-D1-02 is not closed. Per Batch B's own recommendation, the next research step should be a final institutional consolidation (Batch C) rather than indefinite endpoint-chasing; if that review produces no new top-level institutional problem class, WU-D1-02 should then be ready for institutional closure, leaving lived-experience validation to D2/D5.
+**IN PROGRESS (blocked on AIQT `needs_review` resolution).** This progress record covers Batch A, Batch B, and Batch C. All Batch C records are integrated and validated, and institutional saturation supports closing WU-D1-02. However, the AIQT work unit `WU002` was placed into `needs_review` by the Batch B checkpoint (`C002`, 2026-08-10 19:56), and `aiqt review` / `aiqt start` both report this resolution as `agentCanFix: false` — "Resolve needs_review work units outside AIQT, then continue." This is consistent with the Batch C handoff itself being marked "DRAFT — pending project-owner approval." The repository agent cannot promote `needs_review` → `done` through any available AIQT command (`checkpoint amend` only updates the effective validation/acceptance result of an existing checkpoint and left `workUnitStatusAfter: needs_review` unchanged since the values were already `passed`/`passed`; `checkpoint --from-file` requires an `in_progress` work unit, and `next` refuses to reselect a `needs_review` unit).
+
+**Once the project owner resolves `WU002`'s `needs_review` state outside AIQT (or explicitly authorizes the repository agent to do so), re-run the AIQT checkpoint to `done` and create `docs/milestones/D1-WU02-closure.md`.** Until then, WU-D1-02 remains open and D1 remains open; `WU-D1-03` has not been started.
 
 ## Confirmation
 

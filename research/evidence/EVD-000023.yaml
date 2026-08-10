@@ -1,0 +1,24 @@
+evidence_id: EVD-000023
+type: institutional
+source:
+  source_id: SRC-0018
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+  published_at: 2026-07
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora urban network"
+population:
+  - "urban transport passengers"
+domain:
+  - "MOB"
+observation:
+  summary: "The municipal urban transport network carried 876,148 passengers in 2025, an increase of 90,522 over 2024, while remaining 1.9% below pre-pandemic ridership."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Urban public transport is a materially used service with recovering demand. Discovery should focus on quality and residual access gaps rather than assuming lack of adoption."

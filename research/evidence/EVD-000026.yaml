@@ -1,0 +1,24 @@
+evidence_id: EVD-000026
+type: institutional
+source:
+  source_id: SRC-0018
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+  published_at: 2026-07
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora urban network"
+population:
+  - "TREVO passengers"
+domain:
+  - "MOB"
+observation:
+  summary: "The 2026 municipal authority report states that E-BUS did not inform the Municipality of satisfaction-survey results it may have conducted for 2025."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D1 cannot infer overall passenger satisfaction from complaints or operational indicators alone. This is an explicit evidence gap for D2/D5, not a reason to create another technology product."

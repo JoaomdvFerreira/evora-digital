@@ -7,16 +7,21 @@ geography:
   area: "Município de Évora"
 affected_populations:
   - "residents who depend on public transport"
-problem_statement: "Residents who depend on public transport do not have equally practical access to mobility across all parts of the municipality and all time periods because service coverage, schedules and route alignment vary significantly by place and time."
+problem_statement: "Public transport coverage in Évora is broad in aggregate, but institutional evidence indicates that practical service varies by time period, journey type and low-demand location, with schedule/frequency alignment remaining a documented concern."
 current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Likely primarily service design/capacity rather than information alone (per WU-D1-02 Batch A interpretation, not yet validated) - do not assume software is the solution."
   - "Batch B update: current intermunicipal evidence shows substantial territorial coverage and use of flexible transport to cover some low-demand locations, so lack of coverage should not be generalized to all of Évora. The problem should continue to distinguish urban TREVO time-of-day/service-pattern issues, intermunicipal/rural network adequacy, and schedule alignment/frequency as separate sub-issues rather than one assumed root cause."
+  - "Batch C update: current urban ridership is materially recovering (876,148 passengers in 2025, up 90,522 over 2024, still 1.9% below pre-pandemic) with practically full daytime coverage but reduced night/weekend/holiday response, taxi-based flexible transport for named low-demand locations, and 94% intermunicipal TPAC/TPF coverage excluding the urban network. Do not interpret as general lack of geographic network coverage or as a confirmed digital problem. Next validation (D2/D5) should focus on evenings/weekends, low-demand areas, commuting/school journeys, and schedule alignment."
 evidence:
   - "EVD-000001"
   - "EVD-000002"
   - "EVD-000011"
+  - "EVD-000023"
+  - "EVD-000024"
+  - "EVD-000027"
+  - "EVD-000028"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

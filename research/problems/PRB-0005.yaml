@@ -17,11 +17,13 @@ reported_consequences: []
 possible_root_causes:
   - "Separate physical/operational causes from possible information gaps before proposing digital intervention (per WU-D1-02 Batch A interpretation, not yet validated)."
   - "Batch B update: existing digital/technical interventions already include Évora Mobilidade parking payment, Via Verde Estacionar, parking and traffic-count sensors under LVpDÉ, a monitoring/management platform, and ongoing physical redesign around Rossio; a lack of parking technology is not the current evidence-backed problem. Remaining questions should focus on occupancy/data visibility, current sensor operational status, public reuse of parking data, parking-system legibility, enforcement/illegal parking, and the relationship between parking supply and pedestrian/traffic outcomes."
+  - "Batch C update: flagged for likely split during D3 between a current traffic/congestion component and a parking component. Current evidence (EVD-000025) shows road congestion is materially affecting urban bus punctuality in 2025, corroborating the traffic component. The parking component is not lack-of-technology; residual parking questions remain illegal/abusive parking, occupancy visibility, legibility, resident/user workflows, current sensor status, and pedestrian-space conflict."
 evidence:
   - "EVD-000003"
   - "EVD-000007"
   - "EVD-000008"
   - "EVD-000012"
+  - "EVD-000025"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

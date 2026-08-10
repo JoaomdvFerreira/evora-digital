@@ -15,6 +15,7 @@ reported_consequences: []
 possible_root_causes:
   - "Batch B update: TPAC GTFS exists as structured backend data. The sub-gap here is not raw data availability but public information completeness at stops/digital channels, plus an unresolved public GTFS reuse endpoint and licence."
   - "Batch B update: TREVO provides real-time passenger information, but third-party machine-readable access remains unresolved. This problem contains at least two distinct sub-gaps - passenger information quality/completeness, and developer/data interoperability and reuse - which should not be assumed to require the same solution."
+  - "Batch C update: flagged for likely split during D3 Problem Map consolidation into a passenger-information-quality sub-gap (TPAC/ATAC reports incomplete/outdated information at some stops/digital channels, while the Municipality describes TREVO's website as providing complete urban timetable/route/passenger information - a nuance requiring reconciliation) and a developer-interoperability/reuse sub-gap (TPAC GTFS exists; TREVO has structured real-time capability; public developer endpoints, licences, reuse conditions and stable data contracts remain unknown). No new canonical PRB-* record is created in Batch C; this remains a corroborated cluster requiring D3 normalization."
 evidence:
   - "EVD-000010"
   - "EVD-000011"

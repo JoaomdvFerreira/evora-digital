@@ -10,16 +10,19 @@ geography:
 affected_populations:
   - "people with reduced mobility"
   - "other vulnerable pedestrian groups"
-problem_statement: "Discontinuities and architectural/urban barriers in pedestrian routes reduce comfortable and independent movement, especially for people with reduced mobility and other vulnerable pedestrian groups."
+problem_statement: "Évora has documented pedestrian/accessibility barriers and an established accessibility-planning programme, while current physical works and 2026 experimental-route testing mean that exact residual barriers must be validated against contemporary lived conditions."
 current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Primarily physical infrastructure; a digital intervention could only address secondary information/coordination problems unless evidence later establishes otherwise (per WU-D1-02 Batch A interpretation, not yet validated)."
   - "Batch B update: the R.A.M.P.A.-Évora accessibility plan was completed in 2022 for priority axes and its monitoring/extension is explicitly ongoing; major Rossio/Station works continue to change local conditions in 2026; a reusable public accessibility/obstacle dataset has not yet been located. Any digital opportunity depends on current/fresh accessibility data and a credible maintenance mechanism."
+  - "Batch C update: the Municipality launched Experimental Actions in June 2026 as part of the 4th PUE revision, inviting the public to physically test pedestrian/soft-mobility routes and contribute perceptions and proposals on inclusion, accessibility and sustainability. Institutional owners for remaining data/operational questions are identifiable (DAM, DORU). Next validation is D2/current observation plus later stakeholder validation, especially for people with reduced mobility."
 evidence:
   - "EVD-000004"
   - "EVD-000006"
   - "EVD-000009"
+  - "EVD-000029"
+  - "EVD-000030"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

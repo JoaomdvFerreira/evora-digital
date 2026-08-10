@@ -1,0 +1,26 @@
+evidence_id: EVD-000028
+type: institutional
+source:
+  source_id: SRC-0019
+  publisher: "Autoridade de Transportes do Alentejo Central / CIMAC"
+  title: "Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central"
+  source_reference: "https://www.cimac.pt/?listas_ficheiros=relatorio-avaliacao-anual-do-contrato-do-servico-publico-de-transporte-de-passageiros-do-alentejo-central"
+  published_at: 2026-03
+  retrieved_at: 2026-08-10
+geography:
+  level: intermunicipal
+  area: "Alentejo Central"
+population:
+  - "students"
+  - "young people"
+domain:
+  - "MOB"
+  - "EDU"
+observation:
+  summary: "Of 844,173 ATAC passengers in 2025, 63.29% were recorded in the student/youth segment."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Boundary: this is regional ATAC evidence and must not be interpreted as the demographic split of TREVO urban Évora passengers. Potential later relevance: student/public-transport experience is a justified D2/D5 population slice."

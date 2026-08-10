@@ -1,0 +1,26 @@
+evidence_id: EVD-000025
+type: institutional
+source:
+  source_id: SRC-0018
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+  published_at: 2026-07
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora urban network"
+population:
+  - "TREVO passengers"
+  - "general road users"
+domain:
+  - "MOB"
+  - "URB"
+observation:
+  summary: "Urban service regularity was 99.5% in 2025, but IP-5 minute punctuality was 84.4%. The Municipality describes recurring delays caused by slow traffic on principal access routes to the Historic Centre and the Industrial Park circular during peak periods."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "This provides current evidence that at least part of public-transport reliability is a road-system problem, not an information-system problem."

@@ -14,6 +14,7 @@ reported_consequences: []
 possible_root_causes:
   - "Core problem is infrastructure, not route-planning software (per WU-D1-02 Batch A interpretation, not yet validated)."
   - "Batch B update: significant pedestrian/cycling infrastructure has been added or progressed since the original diagnosis (approximately 6 km associated with Rossio/PITE works; the Évora-Reguengos Ecopista also adds a major regional active-mobility corridor). D2/current-state validation should determine whether the remaining pain is still network discontinuity, destination connectivity, safety, wayfinding, maintenance, another issue, or some combination, rather than assuming the original diagnosis is still current."
+  - "Batch C update: the institutional record supports historical network discontinuity, but significant active-mobility interventions have occurred or are underway; this should not be upgraded to a fully corroborated current-state problem. Next validation (D2/current observation) should test connectivity, safety, maintenance, destination usefulness and wayfinding rather than assume the older diagnosis is unchanged."
 evidence:
   - "EVD-000005"
   - "EVD-000012"

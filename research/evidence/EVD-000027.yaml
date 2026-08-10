@@ -1,0 +1,24 @@
+evidence_id: EVD-000027
+type: institutional
+source:
+  source_id: SRC-0019
+  publisher: "Autoridade de Transportes do Alentejo Central / CIMAC"
+  title: "Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central"
+  source_reference: "https://www.cimac.pt/?listas_ficheiros=relatorio-avaliacao-anual-do-contrato-do-servico-publico-de-transporte-de-passageiros-do-alentejo-central"
+  published_at: 2026-03
+  retrieved_at: 2026-08-10
+geography:
+  level: intermunicipal
+  area: "Município de Évora (TPAC/TPF coverage figure)"
+population:
+  - "population served by TPAC/TPF"
+domain:
+  - "MOB"
+observation:
+  summary: "ATAC reports that TPAC/TPF services cover 94% of Évora municipality's population in both school and non-school periods. The calculation explicitly excludes Évora's separate urban transport service."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "This weakens a broad 'Évora lacks public transport coverage' claim while leaving frequency, schedule alignment, low-demand journeys and lived practicality open for validation."

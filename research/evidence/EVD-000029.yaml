@@ -1,0 +1,26 @@
+evidence_id: EVD-000029
+type: institutional
+source:
+  source_id: SRC-0026
+  publisher: "Município de Évora"
+  title: "4th Revision of the Évora Urbanisation Plan - Experimental Mobility Actions 2026"
+  source_reference: "https://www.cm-evora.pt/plano-de-urbanizacao-em-revisao/"
+  published_at: 2026-06
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "residents and interested entities participating in the PUE process"
+domain:
+  - "MOB"
+  - "ACC"
+  - "URB"
+observation:
+  summary: "As part of the 4th PUE revision, the Municipality launched Experimental Actions in June 2026 and invited the public to select and physically test pedestrian/soft-mobility routes to contribute perceptions and proposals regarding inclusion, accessibility and sustainability."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Strength applies to the activity itself; participant outputs require separate assessment. Current pedestrian/accessibility conditions are explicitly being treated as something requiring contemporary lived testing. D1 should therefore stop attempting to settle residual accessibility conditions solely through documentary research."

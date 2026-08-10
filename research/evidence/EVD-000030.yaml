@@ -1,0 +1,32 @@
+evidence_id: EVD-000030
+type: institutional
+source:
+  source_id: SRC-0027
+  publisher: "Município de Évora"
+  title: "Municipality Service Ownership / Mobility Contacts"
+  source_reference: "https://www.cm-evora.pt/servicos/servicos-municipais/"
+  published_at: null
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0007"
+  - "SRC-0019"
+  - "SRC-0021"
+geography:
+  level: municipality
+  area: "city / municipality / intermunicipal"
+population:
+  - "not applicable - governance/data-owner evidence"
+domain:
+  - "MOB"
+  - "GEO"
+  - "ACC"
+  - "DIG"
+  - "URB"
+observation:
+  summary: "The remaining unresolved institutional/data questions have identifiable owners: DAM for municipal mobility/parking/environment operations; DORU for urban planning/requalification/PUE; E-BUS/TREVO for urban transport operation and passenger-facing operational data; ATAC/CIMAC for intermunicipal transport/TPAC/GTFS; GEOCIMAC/CIMAC for regional GIS and map/data services."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Future direct clarification can be targeted and evidence-driven. D1 does not need to contact every owner merely to eliminate UNKNOWN fields."
