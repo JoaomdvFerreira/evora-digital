@@ -1,0 +1,33 @@
+{
+  "version": "0.8.0",
+  "project": {
+    "id": "PROJECT-001",
+    "name": "evora-digital",
+    "objective": "Discovery and evidence-based civic problem intelligence for Évora, with an open civic data infrastructure track; no product implementation authorized yet",
+    "targetUsers": [
+      "residents, students, workers, businesses, public bodies, and visitors in Évora"
+    ],
+    "preferredAgent": "claude-code",
+    "existingRepositoryPath": null,
+    "createdAt": "2026-08-10T18:53:20.122Z",
+    "updatedAt": "2026-08-10T18:53:20.122Z"
+  },
+  "context": {
+    "constraints": [],
+    "nonGoals": [],
+    "technologyPreferences": [],
+    "businessRules": [],
+    "architectureNotes": []
+  },
+  "requirements": [],
+  "decisions": [],
+  "risks": [],
+  "assumptions": [],
+  "openQuestions": [],
+  "quality": {
+    "acceptanceCriteriaRequired": true,
+    "validationRequiredBeforeDone": true,
+    "preferredValidationCommands": []
+  },
+  "integrations": {}
+}

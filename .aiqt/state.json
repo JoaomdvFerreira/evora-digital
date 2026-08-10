@@ -1,0 +1,15 @@
+{
+  "version": "0.8.0",
+  "projectStatus": "draft",
+  "currentMilestoneId": null,
+  "currentWorkUnitId": null,
+  "workGraph": {
+    "milestones": [],
+    "workUnits": [],
+    "dependencies": []
+  },
+  "checkpoints": [],
+  "lastAgentPacket": null,
+  "nextRecommendedCommand": "aiqt update",
+  "lastUpdatedAt": "2026-08-10T18:53:20.122Z"
+}
