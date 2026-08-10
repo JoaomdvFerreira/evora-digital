@@ -1,0 +1,29 @@
+source_id: SRC-0002
+publisher: "Município de Évora / Rede Social"
+name: "Plano de Desenvolvimento Social de Évora 2024-2027"
+scope:
+  geography: municipality
+  domains:
+    - "MOB"
+    - "ACC"
+    - "SOC"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2024-01
+  last_checked: 2026-08-10
+  status: UNKNOWN
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2024/01/PDS-Evora_FINAL_VF.pdf"
+api_candidate:
+  potential: unknown
+notes: "Institutional diagnosis and action plan for mobility/accessibility, including public-transport effectiveness, rural/urban connectivity, accessibility barriers, and planned interventions. Reuse/licence UNKNOWN unless explicitly established by later integration."

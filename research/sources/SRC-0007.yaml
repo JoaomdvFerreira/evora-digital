@@ -1,0 +1,28 @@
+source_id: SRC-0007
+publisher: CIMAC
+name: "CIMAC / GEOCIMAC / IDE-CIMAC"
+scope:
+  geography: intermunicipal
+  domains:
+    - "GEO"
+    - "URB"
+source_type: gis
+access:
+  public: true
+  machine_readable: true
+  method: "WMS/WFS services (per CIMAC description)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2020
+  last_checked: 2026-08-10
+  status: STALE
+canonical_source: true
+canonical_reference: "https://www.cimac.pt/cimac/info-a-tratar/unidade-de-ambiente-e-desenvolvimento/cartografia-e-sistemas-de-informacao-geografica/"
+api_candidate:
+  potential: "confirmed - IDE-CIMAC publishes geographic information through WMS and WFS services per CIMAC's own description"
+notes: "CIMAC maintains a normalized geographic information database for Alentejo Central. Freshness caution: the descriptive CIMAC page is dated 2020 and notes older cartography-update dates for some layers; dataset-level freshness must be checked individually before reuse."

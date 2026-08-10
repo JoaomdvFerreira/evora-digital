@@ -1,0 +1,30 @@
+source_id: SRC-0017
+publisher: "Município de Évora"
+name: "PUE Sector Report: Mobilidade"
+scope:
+  geography: municipality
+  domains:
+    - "MOB"
+    - "ACC"
+    - "URB"
+    - "GEO"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2025-02
+  last_checked: 2026-08-10
+  status: UNKNOWN
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/02/Relatorio-6_Mobilidade.pdf"
+api_candidate:
+  potential: unknown
+notes: "Operational diagnosis synthesizing PMUSE findings for the PUE, with explicit mode-by-mode insufficiencies for pedestrian, cycling, public transport, road circulation, parking and logistics. Freshness note: the 2026 PUE process states previously produced sector reports are being reused; findings should still be distinguished from newly measured 2026 conditions."

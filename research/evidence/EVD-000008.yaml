@@ -1,0 +1,27 @@
+evidence_id: EVD-000008
+type: institutional
+source:
+  source_id: SRC-0017
+  publisher: "Município de Évora"
+  title: "PUE Sector Report: Mobilidade"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/02/Relatorio-6_Mobilidade.pdf"
+  published_at: 2025-02
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "city / Historic Centre"
+population:
+  - "residents"
+  - "drivers"
+  - "pedestrians"
+domain:
+  - "MOB"
+  - "URB"
+observation:
+  summary: "The PUE mobility diagnosis identifies parking pressure in parts of the city, abusive/illegal parking and a lack of coherent parking-policy logic. It specifically argues that the geography of supply, access conditions and tariffs should be immediately understandable to users."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Important boundary: this does not establish that a new parking application is needed. Existing municipal parking systems must be assessed later under Existing Solutions & Gap Analysis."

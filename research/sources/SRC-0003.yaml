@@ -1,0 +1,30 @@
+source_id: SRC-0003
+publisher: "Município de Évora"
+name: "Plano de Urbanização de Évora - 4th revision material (2026 preventive public-participation report)"
+scope:
+  geography: municipality
+  domains:
+    - "GEO"
+    - "MOB"
+    - "URB"
+    - "ACC"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-06
+  last_checked: 2026-08-10
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/06/Relatorio-PP-PUE_MAIO_026-V2-1.pdf"
+api_candidate:
+  potential: unknown
+notes: "2026 preventive public-participation report. Confirms mobility, dedicated public transport, Metrobus feasibility, cycling-network programming, urban growth/intermodality, and local circulation/parking as current formal planning concerns."

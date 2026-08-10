@@ -22,6 +22,14 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0013 | Évora 2027 | Both | Culture/events ecosystem and public programming |
 | SRC-0014 | Social-sector / Rede Social organisations | Problem Intelligence | Social support, care, coordination |
 | SRC-0015 | Local and regional transport operators/planning sources | Both | Mobility services, schedules, routes, gaps |
+| SRC-0016 | Plano de Mobilidade Urbana Sustentável de Évora — Volume II (final plan) | Problem Intelligence | Strategic mobility plan: pedestrian/accessibility, parking, PT, cycling, intermodality |
+| SRC-0017 | PUE Sector Report: Mobilidade | Problem Intelligence | Operational mobility diagnosis feeding the 2026 PUE |
+| SRC-0018 | Relatório Anual de Atividade da Autoridade de Transportes — Município de Évora 2026 | Problem Intelligence | Current urban bus network operational evidence |
+| SRC-0019 | Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central | Both | Intermunicipal (TPAC) operational evidence; confirms GTFS conversion in 2025 |
+
+## Verified in WU-D1-02 (Batch A)
+
+`SRC-0002`, `SRC-0003`, `SRC-0006`, `SRC-0007`, `SRC-0016`, `SRC-0017`, `SRC-0018`, `SRC-0019` now have canonical structured records under `research/sources/`, verified against the institutional documents cited in WU-D1-02 Research Batch A. See `docs/milestones/D1-WU02-progress.md` for the integration summary and `docs/discovery/d1-recording-protocol.md` for the record format. This table remains a human-readable catalogue; detailed fields (licensing, freshness, authority, API candidacy) live only in the structured `SRC-*` records to avoid duplication.
 
 ## D1 enrichment fields
 

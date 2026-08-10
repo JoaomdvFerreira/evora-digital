@@ -1,0 +1,23 @@
+problem_id: PRB-0004
+title: "The cycling network does not yet form a coherent practical network for everyday journeys"
+domain:
+  - "MOB"
+  - "URB"
+geography:
+  level: city
+  area: "Évora city"
+affected_populations:
+  - "current and potential cyclists"
+problem_statement: "Cycling routes are described as limited, discontinuous and insufficiently connected to important destinations, reducing their usefulness for routine journeys."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Core problem is infrastructure, not route-planning software (per WU-D1-02 Batch A interpretation, not yet validated)."
+evidence:
+  - "EVD-000005"
+  - "EVD-000012"
+evidence_status: discovered
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

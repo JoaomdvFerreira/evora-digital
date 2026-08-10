@@ -1,0 +1,30 @@
+source_id: SRC-0016
+publisher: "Município de Évora"
+name: "Plano de Mobilidade Urbana Sustentável de Évora - Volume II (final plan)"
+scope:
+  geography: municipality
+  domains:
+    - "MOB"
+    - "ACC"
+    - "URB"
+    - "GEO"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2025-09
+  last_checked: 2026-08-10
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.II_.pdf"
+api_candidate:
+  potential: unknown
+notes: "Strategic municipal mobility plan (final strategy and proposals). Includes pedestrian/accessibility policy, parking, public transport, cycling, intermodality, smart parking proposals, and the requirement to revisit the municipal accessibility plan. The plan includes proposals; proposed measures must not be recorded as if already implemented."

@@ -1,0 +1,25 @@
+evidence_id: EVD-000002
+type: institutional
+source:
+  source_id: SRC-0018
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+  published_at: 2026-07
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "city / municipality"
+population:
+  - "urban public-transport users"
+  - "residents of lower-demand settlements"
+domain:
+  - "MOB"
+observation:
+  summary: "The 2026 municipal transport-authority report states that the urban network covers practically all urban Évora during daytime but reduces service at night, weekends and holidays. Since 2023, several low-demand locations have been moved from fixed-route service into taxi-based flexible public transport. The urban network comprises 11 regular urban lines plus two Linha Azul routes."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: ""

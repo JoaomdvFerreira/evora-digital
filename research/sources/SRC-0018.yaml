@@ -1,0 +1,28 @@
+source_id: SRC-0018
+publisher: "Município de Évora"
+name: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+scope:
+  geography: municipality
+  domains:
+    - "MOB"
+    - "ACC"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-07
+  last_checked: 2026-08-10
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+api_candidate:
+  potential: unknown
+notes: "Current operational evidence for Évora's urban bus network: service coverage, Linha Azul, flexible transport, punctuality, complaints and public information."

@@ -1,0 +1,26 @@
+evidence_id: EVD-000010
+type: institutional
+source:
+  source_id: SRC-0019
+  publisher: "Autoridade de Transportes do Alentejo Central / CIMAC"
+  title: "Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central"
+  source_reference: "https://www.cimac.pt/?listas_ficheiros=relatorio-avaliacao-anual-do-contrato-do-servico-publico-de-transporte-de-passageiros-do-alentejo-central"
+  published_at: 2026-03
+  retrieved_at: 2026-08-10
+geography:
+  level: intermunicipal
+  area: "Alentejo Central"
+population:
+  - "public-transport users"
+  - "potential third-party data consumers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "CIMAC reports that TPAC network data was converted to GTFS and made available through Google Maps in 2025. The same report states that static information at stops remains incomplete in some locations and identifies public information as a significant operational nonconformity affecting autonomous system use."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Open-data relevance: a machine-readable transport dataset demonstrably exists. Open question: no official public GTFS download/API endpoint was identified in this research batch; availability and reuse conditions require direct verification with CIMAC/ATAC."

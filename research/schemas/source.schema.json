@@ -3,6 +3,9 @@
   "directory": "sources",
   "idField": "source_id",
   "sourceModel": "docs/models/data-source-model.md",
+  "optionalFields": [
+    "canonical_reference"
+  ],
   "requiredFields": [
     "source_id",
     "publisher",

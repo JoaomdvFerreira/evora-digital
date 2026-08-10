@@ -23,7 +23,8 @@
     "personal_data.retained"
   ],
   "optionalReferenceFields": [
-    "source.source_id"
+    "source.source_id",
+    "additional_sources"
   ],
   "enums": {
     "type": ["institutional", "statistical", "formal-public", "social", "press", "stakeholder", "observation"],
@@ -34,6 +35,13 @@
   "references": [
     {
       "field": "source.source_id",
+      "targetPrefix": "SRC-",
+      "targetDirectory": "sources",
+      "required": false
+    },
+    {
+      "field": "additional_sources",
+      "isList": true,
       "targetPrefix": "SRC-",
       "targetDirectory": "sources",
       "required": false

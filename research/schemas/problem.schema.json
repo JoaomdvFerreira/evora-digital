@@ -3,6 +3,7 @@
   "directory": "problems",
   "idField": "problem_id",
   "sourceModel": "docs/models/problem-model.md",
+  "notes": "domain accepts either a single string or a list of domain codes; docs/models/problem-model.md shows a single string, but multi-domain problems (see WU-D1-02) are recorded as a list, consistent with the existing evidence.domain list convention. No enum is enforced on domain values.",
   "requiredFields": [
     "problem_id",
     "title",

@@ -1,0 +1,25 @@
+evidence_id: EVD-000011
+type: institutional
+source:
+  source_id: SRC-0019
+  publisher: "Autoridade de Transportes do Alentejo Central / CIMAC"
+  title: "Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central"
+  source_reference: "https://www.cimac.pt/?listas_ficheiros=relatorio-avaliacao-anual-do-contrato-do-servico-publico-de-transporte-de-passageiros-do-alentejo-central"
+  published_at: 2026-03
+  retrieved_at: 2026-08-10
+geography:
+  level: intermunicipal
+  area: "Alentejo Central"
+population:
+  - "TPAC users"
+domain:
+  - "MOB"
+  - "ACC"
+observation:
+  summary: "The 2023-2025 communication dataset records 92 communications concerning schedules, 52 vehicle conditions, 24 delays, 8 stops, and smaller numbers for passes, ticketing, overcrowding and route changes. The report states that 43% of communications were schedule-related and that many concerned requests to create or synchronize schedules rather than service non-compliance. Its 2025 satisfaction assessment concludes that the in-vehicle experience is stronger than the experience of waiting and accessing information."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Boundary: this is intermunicipal evidence and should not be silently attributed to the urban TREVO network."

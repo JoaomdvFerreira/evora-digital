@@ -1,0 +1,25 @@
+evidence_id: EVD-000003
+type: institutional
+source:
+  source_id: SRC-0018
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2026"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/07/Relatorio-anual-de-Autoridade-de-Transportes-CME-2026.pdf"
+  published_at: 2026-07
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "urban bus users"
+domain:
+  - "MOB"
+  - "URB"
+observation:
+  summary: "For the reporting period, service regularity was 99.5% while the IP-5min punctuality index was 84.4%. The municipal report attributes recurring delays to slow traffic on principal arteries, especially access to the Historic Centre and the circular route serving the Industrial Park during morning and evening peaks."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: ""

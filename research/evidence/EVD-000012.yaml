@@ -1,0 +1,26 @@
+evidence_id: EVD-000012
+type: formal-public
+source:
+  source_id: SRC-0003
+  publisher: "Município de Évora"
+  title: "Plano de Urbanização de Évora - 4th revision material (2026 preventive public-participation report)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2026/06/Relatorio-PP-PUE_MAIO_026-V2-1.pdf"
+  published_at: 2026-06
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "city and surrounding urban structure"
+population:
+  - "formal participants in the 2026 PUE process"
+domain:
+  - "MOB"
+  - "GEO"
+  - "URB"
+observation:
+  summary: "The 2026 PUE preventive-participation report records formal submissions concerning dedicated public transport, Metrobus feasibility/phasing, cycling-network programming, intermodal spaces, railway integration, low-emission zones, and local circulation/parking around a school."
+evidence_nature: claim
+strength: primary-non-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Strength nuance: primary-non-authoritative for the claim content, while the fact that the participation occurred is itself an authoritative record. Boundary: this is evidence of current public concern/questions, not proof that the proposals are technically correct or representative of residents generally."

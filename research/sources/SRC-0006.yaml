@@ -1,0 +1,28 @@
+source_id: SRC-0006
+publisher: "Município de Évora"
+name: "Portal Geográfico do Município de Évora"
+scope:
+  geography: municipality
+  domains:
+    - "GEO"
+    - "URB"
+source_type: web
+access:
+  public: true
+  machine_readable: unknown
+  method: "public web portal"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2025-12-30
+  last_checked: 2026-08-10
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/servicos/servicos-online/portal-geografico-do-municipio-de-evora/"
+api_candidate:
+  potential: "unknown - public WMS/WFS/API endpoints not confirmed in this batch"
+notes: "Current municipal geographic portal, updated 2025-12-30, with thematic maps/data for land use, infrastructure and environment, analysis/navigation tools, location-plan generation, and PDM framing reports. Machine-readable/API status UNKNOWN from the public description reviewed in this batch."

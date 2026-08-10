@@ -1,0 +1,29 @@
+evidence_id: EVD-000009
+type: institutional
+source:
+  source_id: SRC-0016
+  publisher: "Município de Évora"
+  title: "Plano de Mobilidade Urbana Sustentável de Évora - Volume II (final plan)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.II_.pdf"
+  published_at: 2025-09
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0002"
+geography:
+  level: city
+  area: "city / Historic Centre and other centralities"
+population:
+  - "people with reduced mobility"
+  - "the wider pedestrian population"
+domain:
+  - "ACC"
+  - "MOB"
+  - "URB"
+observation:
+  summary: "The PMUSE says the 2022 local accessibility plan should be revisited to monitor implementation and expand analysis to other centralities. The 2024-2027 Social Development Plan calls for an updated obstacle survey, public-space interventions for access to public buildings, improved Terminal Rodoviário-Praça do Giraldo access, and pedestrian/public-transport measures around schools."
+evidence_nature: recommendation
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Important boundary: these are planned/required actions, not evidence that every action remains unimplemented."

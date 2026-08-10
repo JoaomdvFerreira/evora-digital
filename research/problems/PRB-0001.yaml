@@ -1,0 +1,23 @@
+problem_id: PRB-0001
+title: "Public transport does not provide equally practical mobility across times and territories"
+domain:
+  - "MOB"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "residents who depend on public transport"
+problem_statement: "Residents who depend on public transport do not have equally practical access to mobility across all parts of the municipality and all time periods because service coverage, schedules and route alignment vary significantly by place and time."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Likely primarily service design/capacity rather than information alone (per WU-D1-02 Batch A interpretation, not yet validated) - do not assume software is the solution."
+evidence:
+  - "EVD-000001"
+  - "EVD-000002"
+  - "EVD-000011"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

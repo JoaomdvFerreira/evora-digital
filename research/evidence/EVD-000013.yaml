@@ -1,0 +1,30 @@
+evidence_id: EVD-000013
+type: institutional
+source:
+  source_id: SRC-0006
+  publisher: "Município de Évora"
+  title: "Portal Geográfico do Município de Évora"
+  source_reference: "https://www.cm-evora.pt/servicos/servicos-online/portal-geografico-do-municipio-de-evora/"
+  published_at: 2025-12-30
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0007"
+geography:
+  level: intermunicipal
+  area: "municipality / Alentejo Central"
+population:
+  - "citizens"
+  - "planners"
+  - "potential developers/data consumers"
+domain:
+  - "GEO"
+  - "URB"
+  - "DIG"
+observation:
+  summary: "The municipal geographic portal provides thematic territorial information and citizen-facing planning tools. CIMAC separately maintains a normalized regional geographic-information infrastructure and explicitly publishes geographic information through WMS and WFS."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Open-data relevance: this strongly supports federation/interoperability as the default hypothesis rather than recreating a new central geographic datastore. Freshness caution: individual CIMAC layers need dataset-level freshness checks; the descriptive page itself includes historical layer dates."

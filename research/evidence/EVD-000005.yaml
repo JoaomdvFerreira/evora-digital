@@ -1,0 +1,25 @@
+evidence_id: EVD-000005
+type: institutional
+source:
+  source_id: SRC-0017
+  publisher: "Município de Évora"
+  title: "PUE Sector Report: Mobilidade"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/02/Relatorio-6_Mobilidade.pdf"
+  published_at: 2025-02
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "current and potential cyclists"
+domain:
+  - "MOB"
+  - "URB"
+observation:
+  summary: "The PUE mobility report records cycling at approximately 0.5% of resident trips in its underlying diagnosis and describes the cycle network as limited in extent, spatially discontinuous and not connected to many important facilities, services and residential areas. Reported cyclist concerns include lack of dedicated infrastructure, vehicle speed, pavement condition and driver behaviour."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Freshness caution: the numeric modal-share value originates in the underlying mobility diagnosis and should not be treated as a 2026 measurement."

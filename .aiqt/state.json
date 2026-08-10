@@ -2,14 +2,14 @@
   "version": "0.8.0",
   "projectStatus": "in_progress",
   "currentMilestoneId": "M001",
-  "currentWorkUnitId": null,
+  "currentWorkUnitId": "WU002",
   "workGraph": {
     "milestones": [
       {
         "id": "M001",
         "title": "D1 — Institutional & Data Source Mapping",
         "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
-        "status": "ready",
+        "status": "in_progress",
         "workUnitIds": [
           "WU001",
           "WU002",
@@ -77,12 +77,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "in_progress",
         "dependencies": [
           "DEP-001"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:18:45.721Z"
+        "updatedAt": "2026-08-10T19:37:56.560Z"
       },
       {
         "id": "WU003",
@@ -372,17 +372,17 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-10T19:18:45.721Z",
-      "nextRecommendation": "aiqt next"
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-10T19:18:45.721Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-001",
-    "workUnitId": "WU001",
+    "id": "PKT-002",
+    "workUnitId": "WU002",
     "milestoneId": "M001",
-    "createdAt": "2026-08-10T19:18:25.428Z",
+    "createdAt": "2026-08-10T19:37:56.560Z",
     "format": "markdown",
-    "contentHash": "sha256:694843f825484baeedad7801c0c118e45992c7cce488118f119ab12f9e9aaaeb",
+    "contentHash": "sha256:2745b539cf066a1d7d6dd25cae15378213d41129943048f9fdb67f2ce25e9e23",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -400,8 +400,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-10T19:18:45.721Z",
+  "nextRecommendedCommand": "aiqt checkpoint",
+  "lastUpdatedAt": "2026-08-10T19:37:56.560Z",
   "checkpointEvidenceAdvisories": [
     {
       "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",

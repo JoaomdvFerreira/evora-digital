@@ -1,0 +1,28 @@
+problem_id: PRB-0005
+title: "Motor traffic and parking pressure conflict with pedestrian quality, safety and legibility in key urban areas"
+domain:
+  - "MOB"
+  - "URB"
+  - "ACC"
+geography:
+  level: city
+  area: "city / Historic Centre"
+affected_populations:
+  - "residents"
+  - "drivers"
+  - "pedestrians"
+problem_statement: "In key parts of Évora, traffic volume, vehicle speed, parking pressure and illegal parking create congestion, safety conflicts and reduced pedestrian-space quality, while the parking system itself has been described as insufficiently legible."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Separate physical/operational causes from possible information gaps before proposing digital intervention (per WU-D1-02 Batch A interpretation, not yet validated)."
+evidence:
+  - "EVD-000003"
+  - "EVD-000007"
+  - "EVD-000008"
+  - "EVD-000012"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

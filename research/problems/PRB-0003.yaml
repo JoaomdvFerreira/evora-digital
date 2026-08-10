@@ -1,0 +1,26 @@
+problem_id: PRB-0003
+title: "Pedestrian and accessibility barriers reduce independent movement through parts of Évora"
+domain:
+  - "ACC"
+  - "MOB"
+  - "URB"
+geography:
+  level: city
+  area: "Évora city"
+affected_populations:
+  - "people with reduced mobility"
+  - "other vulnerable pedestrian groups"
+problem_statement: "Discontinuities and architectural/urban barriers in pedestrian routes reduce comfortable and independent movement, especially for people with reduced mobility and other vulnerable pedestrian groups."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Primarily physical infrastructure; a digital intervention could only address secondary information/coordination problems unless evidence later establishes otherwise (per WU-D1-02 Batch A interpretation, not yet validated)."
+evidence:
+  - "EVD-000004"
+  - "EVD-000006"
+  - "EVD-000009"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

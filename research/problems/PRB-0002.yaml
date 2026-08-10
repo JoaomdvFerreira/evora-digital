@@ -1,0 +1,23 @@
+problem_id: PRB-0002
+title: "Public-transport information is not consistently available in a complete, reusable and user-friendly form"
+domain:
+  - "MOB"
+  - "DIG"
+geography:
+  level: intermunicipal
+  area: "Alentejo Central; urban Évora to be investigated separately"
+affected_populations:
+  - "public-transport users"
+  - "potential third-party data consumers"
+problem_statement: "Public-transport users can face incomplete information outside vehicles/stops, while machine-readable transport data exists but its public reuse interface and licensing are not yet clear."
+current_journey: null
+reported_consequences: []
+possible_root_causes: []
+evidence:
+  - "EVD-000010"
+  - "EVD-000011"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

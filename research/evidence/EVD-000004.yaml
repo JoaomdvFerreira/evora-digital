@@ -1,0 +1,32 @@
+evidence_id: EVD-000004
+type: institutional
+source:
+  source_id: SRC-0017
+  publisher: "Município de Évora"
+  title: "PUE Sector Report: Mobilidade"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/02/Relatorio-6_Mobilidade.pdf"
+  published_at: 2025-02
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0002"
+geography:
+  level: city
+  area: "city, especially outside and within access to the Historic Centre"
+population:
+  - "pedestrians"
+  - "people with disabilities"
+  - "older people"
+  - "children"
+  - "people using pushchairs"
+domain:
+  - "MOB"
+  - "ACC"
+  - "URB"
+observation:
+  summary: "The PUE mobility diagnosis identifies discontinuity, undersized pedestrian infrastructure and numerous architectural/urban barriers across the city. The Social Development Plan separately makes updating the obstacle inventory and improving access to public buildings an explicit 2024-2027 action."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Independently corroborated by two separate municipal planning documents (SRC-0017 and SRC-0002)."
