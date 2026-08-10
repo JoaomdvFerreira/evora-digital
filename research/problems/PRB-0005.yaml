@@ -16,6 +16,7 @@ current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Separate physical/operational causes from possible information gaps before proposing digital intervention (per WU-D1-02 Batch A interpretation, not yet validated)."
+  - "Batch B update: existing digital/technical interventions already include Évora Mobilidade parking payment, Via Verde Estacionar, parking and traffic-count sensors under LVpDÉ, a monitoring/management platform, and ongoing physical redesign around Rossio; a lack of parking technology is not the current evidence-backed problem. Remaining questions should focus on occupancy/data visibility, current sensor operational status, public reuse of parking data, parking-system legibility, enforcement/illegal parking, and the relationship between parking supply and pedestrian/traffic outcomes."
 evidence:
   - "EVD-000003"
   - "EVD-000007"

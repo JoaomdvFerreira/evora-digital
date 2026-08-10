@@ -1,0 +1,25 @@
+evidence_id: EVD-000021
+type: institutional
+source:
+  source_id: SRC-0022
+  publisher: "Município de Évora"
+  title: "Évora Mobilidade / paid-parking service"
+  source_reference: "https://www.cm-evora.pt/municipe/aplicacoes-do-municipio/estacionamento-tarifado/"
+  published_at: null
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Historic Centre / tariffed parking areas"
+population:
+  - "drivers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "The Municipality currently directs users to the Évora Mobilidade mobile application for payment of tariffed parking and also supports Via Verde Estacionar."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Implication: 'build a parking-payment app' should be considered an existing-solution duplicate, not a candidate intervention."

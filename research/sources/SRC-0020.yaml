@@ -1,0 +1,28 @@
+source_id: SRC-0020
+publisher: "TPAC / TAC - Transportes do Alentejo Central"
+name: "TPAC public journey-information website"
+scope:
+  geography: intermunicipal
+  domains:
+    - "MOB"
+    - "DIG"
+source_type: web
+access:
+  public: true
+  machine_readable: unknown
+  method: "public web application"
+authority: verified-third-party
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: null
+  last_checked: 2026-08-10
+  status: UNKNOWN
+canonical_source: true
+canonical_reference: "https://www.tpac.pt/"
+api_candidate:
+  potential: "unknown - GTFS download and machine-readable developer interface not located in bounded public search"
+notes: "Public web application exposing route/journey and schedule information to passengers. Machine-readable developer interface UNKNOWN; GTFS download not located in bounded public search; licence/reuse UNKNOWN. Authority classified per existing repository rules as verified-third-party (operator source, not the regional transport authority itself)."

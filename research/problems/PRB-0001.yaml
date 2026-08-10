@@ -12,6 +12,7 @@ current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Likely primarily service design/capacity rather than information alone (per WU-D1-02 Batch A interpretation, not yet validated) - do not assume software is the solution."
+  - "Batch B update: current intermunicipal evidence shows substantial territorial coverage and use of flexible transport to cover some low-demand locations, so lack of coverage should not be generalized to all of Évora. The problem should continue to distinguish urban TREVO time-of-day/service-pattern issues, intermunicipal/rural network adequacy, and schedule alignment/frequency as separate sub-issues rather than one assumed root cause."
 evidence:
   - "EVD-000001"
   - "EVD-000002"

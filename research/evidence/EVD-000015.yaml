@@ -1,0 +1,26 @@
+evidence_id: EVD-000015
+type: institutional
+source:
+  source_id: SRC-0019
+  publisher: "Autoridade de Transportes do Alentejo Central / CIMAC"
+  title: "Avaliação Anual do Contrato de Serviço Público de Transporte de Passageiros do Alentejo Central"
+  source_reference: "https://www.cimac.pt/?listas_ficheiros=relatorio-avaliacao-anual-do-contrato-do-servico-publico-de-transporte-de-passageiros-do-alentejo-central"
+  published_at: 2026-03
+  retrieved_at: 2026-08-10
+geography:
+  level: intermunicipal
+  area: "Alentejo Central"
+population:
+  - "TPAC passengers"
+domain:
+  - "MOB"
+  - "DIG"
+  - "ACC"
+observation:
+  summary: "The 2026 ATAC contract-evaluation report identifies significant public-information nonconformities during 2025, including absent or outdated maps, schedules and line identification at multiple stops/terminals, and reports that digital information had incomplete/outdated content. The report also finds the waiting/information experience weaker than the in-vehicle experience."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Interpretation: standardized backend data and satisfactory passenger information are different problems."

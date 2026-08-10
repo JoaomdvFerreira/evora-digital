@@ -1,0 +1,28 @@
+source_id: SRC-0021
+publisher: "TREVO - urban public transport in Évora"
+name: "TREVO public transport website"
+scope:
+  geography: city
+  domains:
+    - "MOB"
+    - "DIG"
+source_type: web
+access:
+  public: true
+  machine_readable: unknown
+  method: "public JavaScript web application"
+authority: verified-third-party
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: null
+  last_checked: 2026-08-10
+  status: UNKNOWN
+canonical_source: true
+canonical_reference: "https://www.trevo.com.pt/"
+api_candidate:
+  potential: "unknown - real-time passenger service strongly implies structured operational data exists internally, but this does not establish that third-party reuse is permitted or supported; no public GTFS/GTFS-Realtime endpoint located in bounded public search"
+notes: "Network and schedules page: https://www.trevo.com.pt/network-and-schedules. The public site advertises journey-planning information, notifications and real-time updates for routes. Machine-readable developer interface UNKNOWN; licence/reuse UNKNOWN."

@@ -1,0 +1,28 @@
+evidence_id: EVD-000018
+type: institutional
+source:
+  source_id: SRC-0016
+  publisher: "Município de Évora"
+  title: "Plano de Mobilidade Urbana Sustentável de Évora - Volume II (final plan)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.II_.pdf"
+  published_at: 2025-09
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora city (Historic Centre plus major access/exit axes)"
+population:
+  - "people with reduced mobility"
+  - "pedestrians"
+  - "potential accessibility-data consumers"
+domain:
+  - "ACC"
+  - "GEO"
+  - "MOB"
+observation:
+  summary: "PMUSE states that the Local Accessibility Promotion Plan R.A.M.P.A.-Évora was prepared in 2022, covering the Historic Centre and important city access/exit axes, and recommends revisiting it to monitor implementation and extend the analysed area. A bounded public-source review did not locate an official downloadable structured/geospatial obstacle/accessibility dataset associated with the plan."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Boundary: dataset existence, owner, internal format and reuse rights remain UNKNOWN."

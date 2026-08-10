@@ -1,0 +1,26 @@
+evidence_id: EVD-000016
+type: institutional
+source:
+  source_id: SRC-0021
+  publisher: "TREVO - urban public transport in Évora"
+  title: "TREVO public transport website"
+  source_reference: "https://www.trevo.com.pt/"
+  published_at: null
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "TREVO passengers"
+  - "potential data consumers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "TREVO's current public web application advertises network/schedule information, notifications and real-time route updates. A bounded search of the operator's public material did not locate a documented public GTFS, GTFS-Realtime or developer API endpoint."
+evidence_nature: fact
+strength: primary-non-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Boundary: do not infer that a feed does not exist internally or that third-party access is impossible."

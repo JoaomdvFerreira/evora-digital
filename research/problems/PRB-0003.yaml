@@ -15,6 +15,7 @@ current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Primarily physical infrastructure; a digital intervention could only address secondary information/coordination problems unless evidence later establishes otherwise (per WU-D1-02 Batch A interpretation, not yet validated)."
+  - "Batch B update: the R.A.M.P.A.-Évora accessibility plan was completed in 2022 for priority axes and its monitoring/extension is explicitly ongoing; major Rossio/Station works continue to change local conditions in 2026; a reusable public accessibility/obstacle dataset has not yet been located. Any digital opportunity depends on current/fresh accessibility data and a credible maintenance mechanism."
 evidence:
   - "EVD-000004"
   - "EVD-000006"

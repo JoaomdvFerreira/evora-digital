@@ -1,8 +1,8 @@
 {
   "version": "0.8.0",
-  "projectStatus": "in_progress",
+  "projectStatus": "review",
   "currentMilestoneId": "M001",
-  "currentWorkUnitId": "WU002",
+  "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
       {
@@ -77,12 +77,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "in_progress",
+        "status": "needs_review",
         "dependencies": [
           "DEP-001"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:37:56.560Z"
+        "updatedAt": "2026-08-10T19:56:19.260Z"
       },
       {
         "id": "WU003",
@@ -374,6 +374,75 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt next",
       "createdAt": "2026-08-10T19:18:45.721Z"
+    },
+    {
+      "id": "C002",
+      "workUnitId": "WU002",
+      "packetId": "PKT-002",
+      "summary": "Integrated externally reviewed WU-D1-02 Research Batch B: enriched 4 existing sources, added 6 new sources, added 9 evidence records, and applied approved contextual refinements to the 5 existing problem records. WU-D1-02 remains open pending a final institutional consolidation batch (Batch C).",
+      "completed": [
+        "Enriched SRC-0006, SRC-0007, SRC-0016, SRC-0019 with Batch B findings.",
+        "Added SRC-0020..SRC-0025 (TPAC website, TREVO website, Évora Mobilidade parking, LVpDÉ sensors, current PMUSE works, Rossio 2026 requalification).",
+        "Added EVD-000014..EVD-000022.",
+        "Applied approved contextual refinements to PRB-0001..PRB-0005 possible_root_causes (no status/tractability changes; no new PRB or HYP records).",
+        "Updated docs/data/source-registry.md and docs/milestones/D1-WU02-progress.md."
+      ],
+      "notCompleted": [
+        "Batch C (final institutional consolidation) not started."
+      ],
+      "filesChanged": [
+        "research/sources/SRC-0006.yaml",
+        "research/sources/SRC-0007.yaml",
+        "research/sources/SRC-0016.yaml",
+        "research/sources/SRC-0019.yaml",
+        "research/sources/SRC-0020.yaml",
+        "research/sources/SRC-0021.yaml",
+        "research/sources/SRC-0022.yaml",
+        "research/sources/SRC-0023.yaml",
+        "research/sources/SRC-0024.yaml",
+        "research/sources/SRC-0025.yaml",
+        "research/evidence/EVD-000014.yaml",
+        "research/evidence/EVD-000015.yaml",
+        "research/evidence/EVD-000016.yaml",
+        "research/evidence/EVD-000017.yaml",
+        "research/evidence/EVD-000018.yaml",
+        "research/evidence/EVD-000019.yaml",
+        "research/evidence/EVD-000020.yaml",
+        "research/evidence/EVD-000021.yaml",
+        "research/evidence/EVD-000022.yaml",
+        "research/problems/PRB-0001.yaml",
+        "research/problems/PRB-0002.yaml",
+        "research/problems/PRB-0003.yaml",
+        "research/problems/PRB-0004.yaml",
+        "research/problems/PRB-0005.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D1-WU02-progress.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 41 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All new/updated records validate; references resolve; IDs remain unique.",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 41 record(s): OK."
+        },
+        {
+          "criterion": "No hypotheses created; no new problem record created.",
+          "result": "passed",
+          "evidence": "research/hypotheses/ contains no HYP-* files; research/problems/ still contains exactly PRB-0001..PRB-0005."
+        }
+      ],
+      "finalWorkUnitStatus": "needs_review",
+      "createdAt": "2026-08-10T19:56:19.260Z",
+      "nextRecommendation": "aiqt checkpoint amend --checkpoint C002"
     }
   ],
   "lastAgentPacket": {
@@ -400,8 +469,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt checkpoint",
-  "lastUpdatedAt": "2026-08-10T19:37:56.560Z",
+  "nextRecommendedCommand": "aiqt checkpoint amend --checkpoint C002",
+  "lastUpdatedAt": "2026-08-10T19:56:19.260Z",
   "checkpointEvidenceAdvisories": [
     {
       "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
@@ -430,6 +499,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-10T19:18:45.721Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C002",
+      "current": {
+        "observationId": "sha256:dd4b07ef7273d1a877a7258f7f5db4279fc8fed2ebe8e13ee2d76943dfe7be68",
+        "checkpointId": "C002",
+        "workUnitId": "WU002",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-10T19:56:19.260Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-10T19:56:19.260Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:dd4b07ef7273d1a877a7258f7f5db4279fc8fed2ebe8e13ee2d76943dfe7be68",
+          "checkpointId": "C002",
+          "workUnitId": "WU002",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-10T19:56:19.260Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-10T19:56:19.260Z"
         }
       ]
     }

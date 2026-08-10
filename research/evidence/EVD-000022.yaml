@@ -1,0 +1,27 @@
+evidence_id: EVD-000022
+type: institutional
+source:
+  source_id: SRC-0023
+  publisher: "Município de Évora"
+  title: "LVpDE (Laboratório Vivo para a Descarbonização de Évora) parking/traffic sensor infrastructure"
+  source_reference: "https://www.cm-evora.pt/laboratorio-vivo-para-a-descarbonizacao-de-evora-lvpde-parceiros-apresentam-atividades-e-planeiam-futuro/"
+  published_at: 2023-05
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "strategic city locations / Historic Centre project context"
+population:
+  - "municipal mobility management"
+  - "potential data consumers"
+domain:
+  - "MOB"
+  - "URB"
+  - "DIG"
+observation:
+  summary: "The municipal LVpDE programme reported installation of 75 parking sensors and 10 vehicle-count sensors, together with a digital support platform for monitoring and managing the resulting mobility/parking information."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Current-state caveat: this evidence establishes deployment under the project but does not establish that every sensor/platform component is still operational in 2026. Public-data caveat: no official public live-occupancy API/feed was located in this bounded review."

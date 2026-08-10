@@ -1,0 +1,29 @@
+evidence_id: EVD-000020
+type: institutional
+source:
+  source_id: SRC-0025
+  publisher: "Município de Évora"
+  title: "Rossio de S. Brás 2026 requalification programme"
+  source_reference: "https://www.cm-evora.pt/em-reuniao-publica-de-camara-de-5-de-fevereiro-de-2026-camara-de-evora-aprova-projeto-da-1a-fase-da-requalificacao-do-rossio-de-s-bras-um-investimento-de-41-milhoes-de-euros-assegurado-pelo-prr/"
+  published_at: 2026-05
+  retrieved_at: 2026-08-10
+geography:
+  level: city
+  area: "Rossio de S. Brás / Station interface"
+population:
+  - "pedestrians"
+  - "drivers"
+  - "people with reduced mobility"
+  - "visitors/residents"
+domain:
+  - "ACC"
+  - "MOB"
+  - "URB"
+observation:
+  summary: "The Municipality approved new Rossio requalification phases in February and May 2026, including pedestrian and vehicle access, safer accessibility, parking/multiuse functions and continuation of the Station/Rossio soft-mobility interface, with further road reprofiling described as a later phase."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Interpretation: this location should not be assessed solely from pre-project or early-project documents; D2/current observation is needed after works evolve."

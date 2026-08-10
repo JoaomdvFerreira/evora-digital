@@ -1,0 +1,30 @@
+evidence_id: EVD-000019
+type: institutional
+source:
+  source_id: SRC-0024
+  publisher: "Município de Évora"
+  title: "Current PMUSE implementation / pedestrian-cycling works"
+  source_reference: "https://www.cm-evora.pt/pt/municipe/areas-de-acao/ambiente/conheca-alguns-dos-planos-e-projetos-do-municipio-na-area-ambiental/"
+  published_at: 2025-02-21
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0025"
+geography:
+  level: city
+  area: "city / southern urban area"
+population:
+  - "pedestrians"
+  - "cyclists"
+  - "people with reduced mobility"
+domain:
+  - "MOB"
+  - "ACC"
+  - "URB"
+observation:
+  summary: "In February 2025 the Municipality reported active PMUSE works at the Rossio interface and Variante/PITE expected to add about 6 km of pedestrian/cycling routes in the southern city. In 2026 the Rossio area entered further multi-phase requalification, explicitly continuing the earlier Station/Rossio soft-mobility interface."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Interpretation: older institutional findings about network discontinuity remain useful historical/problem evidence, but must not be treated as proof that the exact physical network is unchanged in 2026."

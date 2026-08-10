@@ -1,0 +1,32 @@
+evidence_id: EVD-000017
+type: institutional
+source:
+  source_id: SRC-0006
+  publisher: "Município de Évora"
+  title: "Portal Geográfico do Município de Évora"
+  source_reference: "https://www.cm-evora.pt/servicos/servicos-online/portal-geografico-do-municipio-de-evora/"
+  published_at: 2025-12-30
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0007"
+geography:
+  level: intermunicipal
+  area: "municipality / Alentejo Central"
+population:
+  - "citizens"
+  - "municipal services"
+  - "researchers"
+  - "businesses"
+  - "developers"
+domain:
+  - "GEO"
+  - "DIG"
+  - "URB"
+observation:
+  summary: "The Municipality currently publishes interactive geographic services using the geo.cimac.pt ecosystem, while CIMAC's 2026 GEOCIMAC activity explicitly includes ArcGIS Enterprise/Portal, map services, WebGIS applications and continued creation/maintenance/update of intermunicipal geographic information. CIMAC also frames accessibility and reuse of territorial information by citizens, academia and businesses as a project objective."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Interpretation: a future Évora Digital geographic layer should default to service discovery/federation and developer experience rather than building a replacement GIS."

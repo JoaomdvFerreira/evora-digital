@@ -12,7 +12,9 @@ affected_populations:
 problem_statement: "Public-transport users can face incomplete information outside vehicles/stops, while machine-readable transport data exists but its public reuse interface and licensing are not yet clear."
 current_journey: null
 reported_consequences: []
-possible_root_causes: []
+possible_root_causes:
+  - "Batch B update: TPAC GTFS exists as structured backend data. The sub-gap here is not raw data availability but public information completeness at stops/digital channels, plus an unresolved public GTFS reuse endpoint and licence."
+  - "Batch B update: TREVO provides real-time passenger information, but third-party machine-readable access remains unresolved. This problem contains at least two distinct sub-gaps - passenger information quality/completeness, and developer/data interoperability and reuse - which should not be assumed to require the same solution."
 evidence:
   - "EVD-000010"
   - "EVD-000011"
