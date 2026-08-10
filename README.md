@@ -1,6 +1,6 @@
 # Évora Digital
 
-**Status:** Discovery Programme — D0 Discovery Foundation  
+**Status:** Discovery Programme — D0 closed, D1 next  
 **Baseline:** v0.1  
 **Date:** 2026-08-10
 
@@ -68,9 +68,9 @@ Software is optional. A valid research outcome may be:
 ## Current phase
 
 ```text
-D0  Discovery Foundation       ACTIVE
-D1  Institutional & Data Source Mapping
-D2  Public Signal Discovery
+D0  Discovery Foundation                    CLOSED
+D1  Institutional & Data Source Mapping     NEXT
+D2  Public Signal Discovery                 PLANNED
 D3  Problem Map v1
 D4  Existing Solutions & Gap Analysis
 D5  Stakeholder Validation
@@ -79,6 +79,8 @@ D7  Candidate Experiments
 D8  Project Selection
 D9  Outcome Review
 ```
+
+See `docs/milestones/D0-closure.md` for the D0 closure record.
 
 No civic product has been selected for implementation.
 
@@ -97,4 +99,10 @@ research/
 ```
 
 See `docs/discovery/roadmap.md` for the programme roadmap and
-`docs/milestones/D0-discovery-foundation.md` for the active milestone.
+`docs/milestones/D0-discovery-foundation.md` for the closed D0 milestone record.
+
+## Licensing
+
+Évora Digital is intended to be public and open-source, with different licences for
+software, original documentation/research, and third-party data. See `LICENSES.md`
+for the full policy and `LICENSE` for the Apache-2.0 text covering original software.
