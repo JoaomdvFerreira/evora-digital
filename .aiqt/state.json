@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "review",
+  "projectStatus": "in_progress",
   "currentMilestoneId": "M001",
   "currentWorkUnitId": null,
   "workGraph": {
@@ -9,7 +9,7 @@
         "id": "M001",
         "title": "D1 — Institutional & Data Source Mapping",
         "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
-        "status": "in_progress",
+        "status": "ready",
         "workUnitIds": [
           "WU001",
           "WU002",
@@ -77,12 +77,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "needs_review",
+        "status": "done",
         "dependencies": [
           "DEP-001"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:56:19.260Z"
+        "updatedAt": "2026-08-10T20:52:57.626Z"
       },
       {
         "id": "WU003",
@@ -441,8 +441,8 @@
         }
       ],
       "finalWorkUnitStatus": "needs_review",
-      "createdAt": "2026-08-10T19:56:19.260Z",
-      "nextRecommendation": "aiqt checkpoint amend --checkpoint C002"
+      "nextRecommendation": "aiqt checkpoint amend --checkpoint C002",
+      "createdAt": "2026-08-10T19:56:19.260Z"
     }
   ],
   "lastAgentPacket": {
@@ -469,8 +469,30 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt checkpoint amend --checkpoint C002",
-  "lastUpdatedAt": "2026-08-10T19:56:19.260Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-10T20:52:57.626Z",
+  "checkpointAmendments": [
+    {
+      "amendmentId": "AMEND-001",
+      "checkpointId": "C002",
+      "workUnitId": "WU002",
+      "acceptanceCriteriaResult": "partial",
+      "validationResult": "partial",
+      "reason": "temp",
+      "amendedAt": "2026-08-10T20:52:48.464Z",
+      "sourceCommand": "aiqt checkpoint amend"
+    },
+    {
+      "amendmentId": "AMEND-002",
+      "checkpointId": "C002",
+      "workUnitId": "WU002",
+      "acceptanceCriteriaResult": "passed",
+      "validationResult": "passed",
+      "reason": "Project owner explicitly approved WU-D1-02 Research Batch C and the institutional-saturation conclusion; human review resolved, all validation/acceptance results pass.",
+      "amendedAt": "2026-08-10T20:52:57.626Z",
+      "sourceCommand": "aiqt checkpoint amend"
+    }
+  ],
   "checkpointEvidenceAdvisories": [
     {
       "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
@@ -506,16 +528,16 @@
       "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
       "checkpointId": "C002",
       "current": {
-        "observationId": "sha256:dd4b07ef7273d1a877a7258f7f5db4279fc8fed2ebe8e13ee2d76943dfe7be68",
+        "observationId": "sha256:016c02b4170b6b4fb547d118596aa07d0edbcea81f2bf247619164189db740fa",
         "checkpointId": "C002",
         "workUnitId": "WU002",
-        "trigger": "checkpoint",
+        "trigger": "amendment",
         "evaluationStatus": "not_configured",
         "overallResult": null,
-        "asOf": "2026-08-10T19:56:19.260Z",
+        "asOf": "2026-08-10T20:52:57.626Z",
         "issueKeys": [],
         "summary": "No active evidence gate policy is configured.",
-        "recordedAt": "2026-08-10T19:56:19.260Z"
+        "recordedAt": "2026-08-10T20:52:57.626Z"
       },
       "history": [
         {
@@ -529,6 +551,30 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-10T19:56:19.260Z"
+        },
+        {
+          "observationId": "sha256:fcf25fcfa2409fbfd37476a4c0f5f91f4f6b84f99e2a0947a955e656bfe5a75a",
+          "checkpointId": "C002",
+          "workUnitId": "WU002",
+          "trigger": "amendment",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-10T20:52:48.464Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-10T20:52:48.464Z"
+        },
+        {
+          "observationId": "sha256:016c02b4170b6b4fb547d118596aa07d0edbcea81f2bf247619164189db740fa",
+          "checkpointId": "C002",
+          "workUnitId": "WU002",
+          "trigger": "amendment",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-10T20:52:57.626Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-10T20:52:57.626Z"
         }
       ]
     }

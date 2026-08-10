@@ -1,6 +1,6 @@
 # WU-D1-02 Progress — Mobility, Territory, Urban Infrastructure & Accessibility
 
-**Status:** IN PROGRESS — records integrated, AIQT status `needs_review` pending project-owner resolution outside AIQT
+**Status:** DONE — superseded by `docs/milestones/D1-WU02-closure.md`
 **Milestone:** D1 — Institutional & Data Source Mapping
 **Date:** 2026-08-10
 
@@ -118,9 +118,7 @@ Batch C revealed no new top-level institutional problem class; it refined the fi
 
 ## WU-D1-02 status
 
-**IN PROGRESS (blocked on AIQT `needs_review` resolution).** This progress record covers Batch A, Batch B, and Batch C. All Batch C records are integrated and validated, and institutional saturation supports closing WU-D1-02. However, the AIQT work unit `WU002` was placed into `needs_review` by the Batch B checkpoint (`C002`, 2026-08-10 19:56), and `aiqt review` / `aiqt start` both report this resolution as `agentCanFix: false` — "Resolve needs_review work units outside AIQT, then continue." This is consistent with the Batch C handoff itself being marked "DRAFT — pending project-owner approval." The repository agent cannot promote `needs_review` → `done` through any available AIQT command (`checkpoint amend` only updates the effective validation/acceptance result of an existing checkpoint and left `workUnitStatusAfter: needs_review` unchanged since the values were already `passed`/`passed`; `checkpoint --from-file` requires an `in_progress` work unit, and `next` refuses to reselect a `needs_review` unit).
-
-**Once the project owner resolves `WU002`'s `needs_review` state outside AIQT (or explicitly authorizes the repository agent to do so), re-run the AIQT checkpoint to `done` and create `docs/milestones/D1-WU02-closure.md`.** Until then, WU-D1-02 remains open and D1 remains open; `WU-D1-03` has not been started.
+**DONE.** This progress record covers Batch A, Batch B, and Batch C. All Batch C records were integrated and validated, and institutional saturation supported closing WU-D1-02. The AIQT work unit `WU002` had been placed into `needs_review` by the Batch B checkpoint (`C002`, 2026-08-10 19:56) pending project-owner sign-off (`agentCanFix: false`, "Resolve needs_review work units outside AIQT"). The project owner subsequently gave explicit in-conversation approval of Research Batch C and the institutional-saturation conclusion; this was recorded via `aiqt checkpoint amend --checkpoint C002 --validation passed --acceptance passed --reason "..."`, which transitioned `WU002` from `needs_review` to `done` (`AMEND-002`). See `docs/milestones/D1-WU02-closure.md` for the formal closure record.
 
 ## Confirmation
 
