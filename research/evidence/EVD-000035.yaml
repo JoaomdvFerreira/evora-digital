@@ -1,0 +1,26 @@
+evidence_id: EVD-000035
+type: institutional
+source:
+  source_id: SRC-0002
+  publisher: "Município de Évora / Rede Social"
+  title: "Plano de Desenvolvimento Social de Évora 2024-2027"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2024/01/PDS-Evora_FINAL_VF.pdf"
+  published_at: 2024-01
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "people needing mental-health support"
+  - "informal caregivers"
+domain:
+  - "HEA"
+  - "SOC"
+observation:
+  summary: "Local actors identify insufficient mental-health response capacity and insufficient primary-care capacity, with the document linking mental-health pressure to informal-caregiver burden and social isolation."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E05. Freshness caution: the PDS remains current for 2024-2027, but some underlying health measurements are older; Batch B requires a current-state challenge before treating this as an unchanged 2026 diagnosis."

@@ -1,0 +1,27 @@
+evidence_id: EVD-000032
+type: institutional
+source:
+  source_id: SRC-0028
+  publisher: "Município de Évora / Rede Social"
+  title: "Plano de Ação do PDS 2025"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/03/PA-PDS-2025-final.pdf"
+  published_at: 2025-03
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents affected by housing shortage"
+  - "vulnerable populations needing temporary accommodation"
+  - "students"
+domain:
+  - "HOU"
+  - "SOC"
+observation:
+  summary: "The 2025 social-action plan includes housing rehabilitation under the Local Housing Strategy, controlled-cost housing targets, supported-rental rehabilitation, temporary/shared accommodation responses for vulnerable populations, and explicit student-housing needs assessment/funding application work."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E02. The evidence-backed problem is not 'the Municipality is doing nothing'; Batch B must determine implementation progress and residual unmet need."

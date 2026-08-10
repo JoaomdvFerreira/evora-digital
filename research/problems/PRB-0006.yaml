@@ -1,0 +1,28 @@
+problem_id: PRB-0006
+title: "Adequate and affordable housing is difficult to access for some population groups"
+domain:
+  - "HOU"
+  - "SOC"
+  - "EDU"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "residents seeking adequate/affordable housing"
+  - "students"
+problem_statement: "Institutional planning documents identify high purchase/rental values, insufficient affordable/social/controlled-cost housing supply, housing degradation, and a distinct student-accommodation shortage, while acknowledging that housing rehabilitation, controlled-cost construction, supported-rental rehabilitation and student-housing actions are already underway."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Primary root cause is largely physical/economic supply and affordability; software leverage may be secondary (per WU-D1-03 Batch A interpretation, not yet validated)."
+  - "Student accommodation is preserved here as a documented sub-pressure within the housing cluster rather than a separate canonical problem, per the approved Round A cross-domain synthesis; it has strong overlap with WU-D1-04 talent/student attraction and retention and may be referenced there without duplicating this record."
+  - "Existing housing interventions (Local Housing Strategy rehabilitation, controlled-cost targets, supported-rental rehabilitation, temporary/shared accommodation, student-housing needs assessment) mean this is not an 'absence of institutional response' problem; Batch B must determine 2026 implementation status and residual unmet need."
+evidence:
+  - "EVD-000031"
+  - "EVD-000032"
+  - "EVD-000033"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

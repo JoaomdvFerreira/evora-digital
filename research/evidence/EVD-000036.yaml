@@ -1,0 +1,25 @@
+evidence_id: EVD-000036
+type: institutional
+source:
+  source_id: SRC-0031
+  publisher: "Município de Évora"
+  title: "CLASE / Rede Social"
+  source_reference: "https://www.cm-evora.pt/municipe/areas-de-acao/acao-social/rede-social-clase/clase/"
+  published_at: null
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents seeking social support"
+  - "social/institutional actors"
+domain:
+  - "SOC"
+observation:
+  summary: "The CLASE network includes a large number of organisations (roughly 120 participating institutions listed by the Municipality) and thematic coordination structures."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E06. A later digital opportunity, if any, is more likely to concern navigation, coordination, referral, eligibility or information quality than simply publishing a list of organisations."

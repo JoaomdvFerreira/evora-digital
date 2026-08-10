@@ -1,0 +1,27 @@
+source_id: SRC-0031
+publisher: "Município de Évora"
+name: "CLASE / Rede Social"
+scope:
+  geography: municipality
+  domains:
+    - "SOC"
+source_type: web
+access:
+  public: true
+  machine_readable: unknown
+  method: "public web page"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: null
+  last_checked: 2026-08-10
+  status: UNKNOWN
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/municipe/areas-de-acao/acao-social/rede-social-clase/clase/"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-03 Batch A (provisional D1-03-A-S05). Évora has a large interinstitutional social-support network, with roughly 120 participating institutions listed by the Municipality. Interpretation: the social-support problem should not be assumed to be 'no organisations exist'; coordination, capacity, discoverability and eligibility/navigation need separate investigation."

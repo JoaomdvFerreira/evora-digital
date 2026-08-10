@@ -1,0 +1,28 @@
+evidence_id: EVD-000033
+type: institutional
+source:
+  source_id: SRC-0029
+  publisher: "Município de Évora"
+  title: "PUE Sector Report: Habitação e Mercado Imobiliário"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/02/Relatorio-10_Habitacao-e-mercado-imobiliario.pdf"
+  published_at: 2025-02
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0002"
+  - "SRC-0028"
+geography:
+  level: municipality
+  area: "Évora city, especially Historic Centre"
+population:
+  - "students"
+domain:
+  - "HOU"
+  - "EDU"
+observation:
+  summary: "Student accommodation shortage appears repeatedly across social/housing planning, and the PUE housing report identifies public residence capacity as insufficient relative to displaced and international student demand, alongside more than 200 local-accommodation units concentrated in the Historic Centre."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E03. Boundary: do not infer exact 2026 shortage magnitude yet. Repeated institutional claims across SRC-0002/SRC-0028/SRC-0029 are not automatically independent corroboration, since SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage."

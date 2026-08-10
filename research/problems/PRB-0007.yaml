@@ -1,0 +1,26 @@
+problem_id: PRB-0007
+title: "Informal caregivers face fragmented information and support navigation needs"
+domain:
+  - "SOC"
+  - "HEA"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "informal caregivers"
+  - "cared-for people"
+problem_statement: "Informal caregivers in Évora have documented information needs spanning health, mobility, support structures and financial/social support, and a substantial share of cared-for people receive no formal support service, despite Évora having a dense interinstitutional social-support network (CLASE / Rede Social)."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "Évora already has a dense social-support institutional network (roughly 120 CLASE-listed institutions), so the problem should not be assumed to be 'no organisations exist'; coordination, capacity, discoverability and eligibility/navigation need separate investigation (per WU-D1-03 Batch A interpretation, not yet validated)."
+  - "Existing services and user journeys must be mapped before any solution hypothesis, per the approved Round A cross-domain synthesis; this is not converted into a generic cross-domain 'information fragmentation' problem shared with other domains."
+  - "Mental-health support capacity is a related but distinct institutional concern (see EVD-000035, freshness caution pending) and is intentionally not merged into this problem; it remains open investigation rather than a canonical problem until current evidence is sufficient under the recording-protocol rules for problem creation."
+evidence:
+  - "EVD-000034"
+  - "EVD-000036"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: not_assessed
+existing_solutions: not_assessed
+status: OPEN

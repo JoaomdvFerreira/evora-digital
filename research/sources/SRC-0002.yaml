@@ -7,6 +7,8 @@ scope:
     - "MOB"
     - "ACC"
     - "SOC"
+    - "HOU"
+    - "HEA"
 source_type: document
 access:
   public: true
@@ -26,4 +28,4 @@ canonical_source: true
 canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2024/01/PDS-Evora_FINAL_VF.pdf"
 api_candidate:
   potential: unknown
-notes: "Institutional diagnosis and action plan for mobility/accessibility, including public-transport effectiveness, rural/urban connectivity, accessibility barriers, and planned interventions. Reuse/licence UNKNOWN unless explicitly established by later integration."
+notes: "Institutional diagnosis and action plan for mobility/accessibility, including public-transport effectiveness, rural/urban connectivity, accessibility barriers, and planned interventions. Reuse/licence UNKNOWN unless explicitly established by later integration. WU-D1-03 Batch A update (provisional D1-03-A-S01): also the primary source for housing/social/health institutional diagnosis - housing degradation, high purchase/rental values, insufficient social/controlled-cost/affordable housing, rural housing needs, difficulty accessing supported residential/social responses, and student-accommodation shortage; local actors identify insufficient mental-health response capacity and insufficient primary-care capacity, linked to informal-caregiver burden and social isolation. Some underlying measurements are older and require freshness checks (see EVD-000035)."

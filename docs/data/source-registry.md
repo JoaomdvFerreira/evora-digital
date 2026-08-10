@@ -34,6 +34,14 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0025 | Rossio de S. Brás 2026 requalification programme | Problem Intelligence | Active multi-phase 2026 requalification of the Rossio/Station area |
 | SRC-0026 | 4th Revision of the Évora Urbanisation Plan — Experimental Mobility Actions 2026 | Problem Intelligence | Current (2026) participatory pedestrian/soft-mobility route testing |
 | SRC-0027 | Municipality Service Ownership / Mobility Contacts | Stakeholders | DAM/DORU ownership and contact paths for mobility/urban-planning questions |
+| SRC-0028 | Plano de Ação do PDS 2025 | Problem Intelligence | Current housing/social-support interventions (rehabilitation, controlled-cost, student housing) |
+| SRC-0029 | PUE Sector Report: Habitação e Mercado Imobiliário | Problem Intelligence | Housing stock/market diagnosis; student-residence capacity; freshness caution (Census 2021-era base) |
+| SRC-0030 | Plano Concelhio dos Cuidadores Informais de Évora | Problem Intelligence | Informal-caregiver information/support needs; 2025 local study |
+| SRC-0031 | CLASE / Rede Social | Stakeholders | Interinstitutional social-support network (~120 institutions) |
+
+## Verified in WU-D1-03 (Batch A)
+
+`SRC-0002` was enriched with housing/social/health domains and findings (`HOU`, `HEA` added to scope). `SRC-0028`–`SRC-0031` were added as new canonical sources. See `docs/milestones/D1-WU03-progress.md` for the integration summary.
 
 ## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 

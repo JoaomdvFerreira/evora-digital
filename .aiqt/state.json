@@ -2,14 +2,14 @@
   "version": "0.8.0",
   "projectStatus": "in_progress",
   "currentMilestoneId": "M001",
-  "currentWorkUnitId": null,
+  "currentWorkUnitId": "WU003",
   "workGraph": {
     "milestones": [
       {
         "id": "M001",
         "title": "D1 — Institutional & Data Source Mapping",
         "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
-        "status": "ready",
+        "status": "in_progress",
         "workUnitIds": [
           "WU001",
           "WU002",
@@ -105,12 +105,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "in_progress",
         "dependencies": [
           "DEP-002"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:18:45.721Z"
+        "updatedAt": "2026-08-10T21:13:26.139Z"
       },
       {
         "id": "WU004",
@@ -446,12 +446,12 @@
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-002",
-    "workUnitId": "WU002",
+    "id": "PKT-003",
+    "workUnitId": "WU003",
     "milestoneId": "M001",
-    "createdAt": "2026-08-10T19:37:56.560Z",
+    "createdAt": "2026-08-10T21:13:26.139Z",
     "format": "markdown",
-    "contentHash": "sha256:2745b539cf066a1d7d6dd25cae15378213d41129943048f9fdb67f2ce25e9e23",
+    "contentHash": "sha256:9356d86d19f6f044896da404b6c4df0a0b0ac8df9662d8ca7d200b90a2bf5149",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -469,8 +469,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-10T20:52:57.626Z",
+  "nextRecommendedCommand": "aiqt checkpoint",
+  "lastUpdatedAt": "2026-08-10T21:13:26.139Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",

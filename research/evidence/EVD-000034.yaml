@@ -1,0 +1,26 @@
+evidence_id: EVD-000034
+type: institutional
+source:
+  source_id: SRC-0030
+  publisher: "Município de Évora"
+  title: "Plano Concelhio dos Cuidadores Informais de Évora"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/Plano-Concelhio-Cuidadores-Informais_v4_Junho_2025-002_RELATORIO.pdf"
+  published_at: 2025-06
+  retrieved_at: 2026-08-10
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+  - "cared-for people"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "The 2025 caregiver plan identifies information needs spanning health, mobility, support structures and financial/social support; the underlying study (68 caregivers, 89 cared-for people interviewed) reports that 35% of respondents' cared-for person used no formal support service."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E04. One of the clearest information/coordination problems found in Round A."

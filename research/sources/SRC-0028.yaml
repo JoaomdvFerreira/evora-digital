@@ -1,0 +1,28 @@
+source_id: SRC-0028
+publisher: "Município de Évora / Rede Social"
+name: "Plano de Ação do PDS 2025"
+scope:
+  geography: municipality
+  domains:
+    - "HOU"
+    - "SOC"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2025-03
+  last_checked: 2026-08-10
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/03/PA-PDS-2025-final.pdf"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-03 Batch A (provisional D1-03-A-S02). Records current interventions: housing rehabilitation under the Local Housing Strategy, controlled-cost housing targets, supported-rental rehabilitation, temporary/shared accommodation responses for vulnerable populations, and explicit student-housing needs assessment/funding application work."

@@ -1,0 +1,27 @@
+evidence_id: EVD-000031
+type: institutional
+source:
+  source_id: SRC-0002
+  publisher: "Município de Évora / Rede Social"
+  title: "Plano de Desenvolvimento Social de Évora 2024-2027"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2024/01/PDS-Evora_FINAL_VF.pdf"
+  published_at: 2024-01
+  retrieved_at: 2026-08-10
+additional_sources:
+  - "SRC-0029"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents seeking adequate/affordable housing"
+domain:
+  - "HOU"
+  - "SOC"
+observation:
+  summary: "Local planning documents identify high purchase/rental values, insufficient affordable/social/controlled-cost supply, housing degradation and student accommodation shortage as barriers to population fixation and access to adequate housing."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-A-E01. Housing affordability and supply are institutionally linked to population fixation."
