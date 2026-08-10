@@ -1,0 +1,100 @@
+# Évora Digital
+
+**Status:** Discovery Programme — D0 Discovery Foundation  
+**Baseline:** v0.1  
+**Date:** 2026-08-10
+
+## Mission
+
+Évora Digital identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
+
+## Priorities
+
+1. Value for Évora
+2. Evidence
+3. Sustainability
+4. Open-source and reuse
+5. Engineering quality
+6. AIQT dogfood
+
+If priorities conflict, the higher priority takes precedence.
+
+## What Évora Digital is
+
+Évora Digital is a civic-tech discovery and delivery programme with two complementary tracks:
+
+### Civic Problem Intelligence
+
+Build structured, traceable knowledge about problems, affected populations, current journeys, root causes, existing interventions, and digitally tractable opportunities.
+
+### Open Civic Data Infrastructure
+
+Discover, catalogue, normalize, and make useful civic data easier to reuse, while preserving provenance, licensing, authority, and freshness.
+
+The Open Civic Data track does **not** imply that a centralized API must be built. Catalogue-only, federation, normalization, API, or no infrastructure are all valid outcomes of discovery.
+
+## Core operating model
+
+```text
+Evidence
+  ↓
+Problem
+  ↓
+Current Journey
+  ↓
+Root Cause
+  ↓
+Existing Solutions
+  ↓
+Gap
+  ↓
+Digital Tractability
+  ↓
+Experiment
+  ↓
+Project
+  ↓
+Outcome Review
+```
+
+Software is optional. A valid research outcome may be:
+
+- no digital intervention recommended;
+- existing solution should be improved instead;
+- problem is primarily operational, physical, political, or economic;
+- insufficient evidence;
+- more research required.
+
+## Current phase
+
+```text
+D0  Discovery Foundation       ACTIVE
+D1  Institutional & Data Source Mapping
+D2  Public Signal Discovery
+D3  Problem Map v1
+D4  Existing Solutions & Gap Analysis
+D5  Stakeholder Validation
+D6  Digital Tractability Assessment
+D7  Candidate Experiments
+D8  Project Selection
+D9  Outcome Review
+```
+
+No civic product has been selected for implementation.
+
+The Évora Open API remains an **infrastructure hypothesis**, not an approved product.
+
+## Repository structure
+
+```text
+docs/
+  discovery/
+  models/
+  data/
+  milestones/
+  decisions/
+research/
+```
+
+See `docs/discovery/roadmap.md` for the programme roadmap and
+`docs/milestones/D0-discovery-foundation.md` for the active milestone.
