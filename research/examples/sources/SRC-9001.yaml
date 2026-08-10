@@ -1,0 +1,38 @@
+# FIXTURE — synthetic record used only to validate the SRC schema and validator.
+# Not real research. Do not treat as a verified source about Évora.
+
+source_id: SRC-9001
+
+publisher: "Fixture Publisher"
+name: "Fixture Source for Validator Testing"
+
+scope:
+  geography: municipality
+  domains: [example]
+
+source_type: document
+
+access:
+  public: true
+  machine_readable: false
+  method: "manual review"
+
+authority: unknown
+
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+
+freshness:
+  update_frequency: unknown
+  last_source_update: null
+  last_checked: "2026-08-10"
+  status: UNKNOWN
+
+canonical_source: true
+
+api_candidate:
+  potential: unknown
+
+notes: "Synthetic fixture only — created during WU-D1-01 to prove schema/validator behavior."

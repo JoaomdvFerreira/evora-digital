@@ -10,12 +10,23 @@
     "preferredAgent": "claude-code",
     "existingRepositoryPath": null,
     "createdAt": "2026-08-10T18:53:20.122Z",
-    "updatedAt": "2026-08-10T18:53:20.122Z"
+    "updatedAt": "2026-08-10T19:18:00.626Z"
   },
   "context": {
-    "constraints": [],
-    "nonGoals": [],
-    "technologyPreferences": [],
+    "constraints": [
+      "Documentation/research-first repository: no application framework, database, or cloud infrastructure during D1.",
+      "Substantive Évora research is performed externally and integrated via reviewed handoffs (docs/discovery/research-handoff-protocol.md).",
+      "Research records use the YAML schemas in research/schemas/ and are validated with tools/validate-research.js (zero third-party dependencies)."
+    ],
+    "nonGoals": [
+      "No civic product selection during D1.",
+      "No Évora Open API implementation during D1.",
+      "No cloud, frontend, or database technology selection during D1."
+    ],
+    "technologyPreferences": [
+      "Node.js (already available) for the research-record validator.",
+      "YAML for structured research records."
+    ],
     "businessRules": [],
     "architectureNotes": []
   },

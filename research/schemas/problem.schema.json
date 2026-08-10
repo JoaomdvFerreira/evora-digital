@@ -1,0 +1,37 @@
+{
+  "prefix": "PRB-",
+  "directory": "problems",
+  "idField": "problem_id",
+  "sourceModel": "docs/models/problem-model.md",
+  "requiredFields": [
+    "problem_id",
+    "title",
+    "domain",
+    "geography",
+    "geography.level",
+    "affected_populations",
+    "problem_statement",
+    "evidence",
+    "evidence_status",
+    "validation_status",
+    "digital_tractability",
+    "existing_solutions",
+    "status"
+  ],
+  "enums": {
+    "evidence_status": ["discovered", "corroborated"],
+    "validation_status": ["unvalidated", "partially_validated", "validated"],
+    "digital_tractability": ["not_assessed", "low", "medium", "high"],
+    "existing_solutions": ["not_assessed", "assessed"],
+    "status": ["OPEN", "REJECTED", "DUPLICATE", "NON_DIGITAL", "ALREADY_SOLVED", "INSUFFICIENT_EVIDENCE"]
+  },
+  "references": [
+    {
+      "field": "evidence",
+      "isList": true,
+      "targetPrefix": "EVD-",
+      "targetDirectory": "evidence",
+      "required": false
+    }
+  ]
+}

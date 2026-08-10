@@ -1,30 +1,24 @@
 # Research Workspace
 
-This directory is reserved for structured Discovery records and research working material.
+This directory holds structured Discovery records and research working material.
 
 Do not treat narrative Markdown documents as the long-term database of research evidence.
 
-## Expected evolution
-
-At small scale, records may initially be maintained manually.
-
-As D1/D2 grow, prefer machine-readable structured records such as:
+## Layout
 
 ```text
 research/
-  evidence/
-    EVD-000001.yaml
-  problems/
-    PRB-0001.yaml
-  hypotheses/
-    HYP-0001.yaml
-  sources/
-    SRC-0001.yaml
+  sources/       canonical SRC-* records
+  evidence/      canonical EVD-* records
+  problems/      canonical PRB-* records
+  hypotheses/    canonical HYP-* records
+  examples/      synthetic fixtures only — never canonical research
+  schemas/       lightweight schema/contract definitions used by the validator
 ```
 
-The exact storage format is intentionally **not fixed during D0**.
+The storage format, schemas, and validator (`tools/validate-research.js`) were established during WU-D1-01. See `docs/discovery/d1-recording-protocol.md` for the full recording protocol and `docs/discovery/research-handoff-protocol.md` for how externally performed research is integrated here.
 
-A migration should occur when record volume or validation needs justify it.
+As of WU-D1-01, `research/sources/`, `research/evidence/`, `research/problems/`, and `research/hypotheses/` contain no records yet — only `research/examples/` contains synthetic fixtures used to prove the schemas and validator work. Canonical records are added once the first reviewed research handoff is integrated.
 
 ## Separation of planes
 

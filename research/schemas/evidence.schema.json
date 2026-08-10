@@ -1,0 +1,42 @@
+{
+  "prefix": "EVD-",
+  "directory": "evidence",
+  "idField": "evidence_id",
+  "sourceModel": "docs/models/evidence-model.md",
+  "requiredFields": [
+    "evidence_id",
+    "type",
+    "source",
+    "source.publisher",
+    "source.title",
+    "source.retrieved_at",
+    "geography",
+    "geography.level",
+    "population",
+    "domain",
+    "observation",
+    "observation.summary",
+    "evidence_nature",
+    "strength",
+    "personal_data",
+    "personal_data.present",
+    "personal_data.retained"
+  ],
+  "optionalReferenceFields": [
+    "source.source_id"
+  ],
+  "enums": {
+    "type": ["institutional", "statistical", "formal-public", "social", "press", "stakeholder", "observation"],
+    "geography.level": ["city", "parish", "municipality", "intermunicipal", "regional"],
+    "evidence_nature": ["fact", "reported-experience", "opinion", "claim", "measurement", "recommendation"],
+    "strength": ["primary-authoritative", "primary-non-authoritative", "secondary", "anecdotal"]
+  },
+  "references": [
+    {
+      "field": "source.source_id",
+      "targetPrefix": "SRC-",
+      "targetDirectory": "sources",
+      "required": false
+    }
+  ]
+}

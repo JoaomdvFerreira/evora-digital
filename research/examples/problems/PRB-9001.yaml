@@ -1,0 +1,34 @@
+# FIXTURE — synthetic record used only to validate the PRB schema and validator.
+# Not real research. Do not treat as a real problem identified in Évora.
+
+problem_id: PRB-9001
+
+title: "Fixture Problem for Validator Testing"
+
+domain: example
+
+geography:
+  level: municipality
+  area: "Fixture area"
+
+affected_populations: [example-population]
+
+problem_statement: "Synthetic problem statement used only to validate schema and validator behavior."
+
+current_journey: null
+
+reported_consequences: []
+
+possible_root_causes: []
+
+evidence: [EVD-900001]
+
+evidence_status: discovered
+
+validation_status: unvalidated
+
+digital_tractability: not_assessed
+
+existing_solutions: not_assessed
+
+status: OPEN

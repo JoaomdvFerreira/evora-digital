@@ -1,0 +1,30 @@
+{
+  "prefix": "SRC-",
+  "directory": "sources",
+  "idField": "source_id",
+  "sourceModel": "docs/models/data-source-model.md",
+  "requiredFields": [
+    "source_id",
+    "publisher",
+    "name",
+    "scope",
+    "scope.geography",
+    "scope.domains",
+    "source_type",
+    "access",
+    "access.public",
+    "access.machine_readable",
+    "authority",
+    "licensing",
+    "licensing.status",
+    "freshness",
+    "freshness.last_checked",
+    "freshness.status"
+  ],
+  "enums": {
+    "source_type": ["api", "dataset", "gis", "web", "document", "database", "feed", "unknown"],
+    "authority": ["authoritative", "verified-third-party", "community", "derived", "estimated", "unknown"],
+    "licensing.status": ["known", "unknown", "restricted"],
+    "freshness.status": ["CURRENT", "STALE", "UNKNOWN", "UNAVAILABLE"]
+  }
+}

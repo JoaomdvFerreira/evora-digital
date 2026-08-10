@@ -1,15 +1,437 @@
 {
   "version": "0.8.0",
-  "projectStatus": "draft",
-  "currentMilestoneId": null,
+  "projectStatus": "in_progress",
+  "currentMilestoneId": "M001",
   "currentWorkUnitId": null,
   "workGraph": {
-    "milestones": [],
-    "workUnits": [],
-    "dependencies": []
+    "milestones": [
+      {
+        "id": "M001",
+        "title": "D1 — Institutional & Data Source Mapping",
+        "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
+        "status": "ready",
+        "workUnitIds": [
+          "WU001",
+          "WU002",
+          "WU003",
+          "WU004",
+          "WU005",
+          "WU006",
+          "WU007"
+        ]
+      }
+    ],
+    "workUnits": [
+      {
+        "id": "WU001",
+        "milestoneId": "M001",
+        "title": "WU-D1-01 — Research Repository Infrastructure",
+        "objective": "Establish the repository-level structured research record workflow: storage layout, schemas, lightweight validator, synthetic fixtures, and the research handoff protocol. No substantive Évora research.",
+        "scope": [
+          "Create research/{sources,evidence,problems,hypotheses,examples,schemas} layout",
+          "Create research/schemas/*.schema.json faithful to docs/models/*.md",
+          "Create tools/validate-research.js (zero-dependency validator)",
+          "Create synthetic fixtures under research/examples/",
+          "Create docs/discovery/d1-recording-protocol.md",
+          "Create docs/discovery/research-handoff-protocol.md"
+        ],
+        "outOfScope": [
+          "Do not perform substantive research about Évora",
+          "Do not create real SRC-*/EVD-*/PRB-*/HYP-* records",
+          "Do not select a civic product or authorize Évora Open API implementation"
+        ],
+        "acceptanceCriteria": [
+          "node tools/validate-research.js exits 0 against research/ (no canonical records yet)",
+          "node tools/validate-research.js --dir research/examples exits 0 against fixtures",
+          "docs/discovery/research-handoff-protocol.md defines the external-research handoff contract"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js",
+          "node tools/validate-research.js --dir research/examples"
+        ],
+        "status": "done",
+        "dependencies": [],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU002",
+        "milestoneId": "M001",
+        "title": "WU-D1-02 — Mobility, Territory, Urban Infrastructure & Accessibility",
+        "objective": "Integrate reviewed research handoffs covering Mobility & Transport, Geography & Territory, Urban Infrastructure, and Accessibility into structured records.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-*/PRB-* handoffs for MOB, GEO, URB, ACC",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not select a civic product"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-001"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU003",
+        "milestoneId": "M001",
+        "title": "WU-D1-03 — Housing, Social Support, Health & Wellbeing",
+        "objective": "Integrate reviewed research handoffs covering Housing, Social Support, and Health & Wellbeing into structured records, with particular care for privacy on health data.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-*/PRB-* handoffs for HOU, SOC, HEA",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not retain unnecessary personal or health data"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-002"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU004",
+        "milestoneId": "M001",
+        "title": "WU-D1-04 — Economy, Employment, Talent & Education",
+        "objective": "Integrate reviewed research handoffs covering Economy & Business, Employment & Talent, and Education into structured records.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-*/PRB-* handoffs for ECO, EMP, EDU",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not infer private-sector pain solely from public-sector strategy documents"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-003"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU005",
+        "milestoneId": "M001",
+        "title": "WU-D1-05 — Culture, Tourism, Sports & Public Life",
+        "objective": "Integrate reviewed research handoffs covering Culture & Events, Tourism, and Sports & Leisure into structured records.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-*/PRB-* handoffs for CUL, TOU, SPO",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not assume an events API is needed"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-004"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU006",
+        "milestoneId": "M001",
+        "title": "WU-D1-06 — Environment, Climate, Public & Digital Services",
+        "objective": "Integrate reviewed research handoffs covering Environment & Waste, Climate & Energy, Public Services, and Digital Access & Services into structured records.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-*/PRB-* handoffs for ENV, CLI, PUB, DIG",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not propose replacement systems where a service already exists"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-005"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:45.721Z"
+      },
+      {
+        "id": "WU007",
+        "milestoneId": "M001",
+        "title": "WU-D1-07 — Consolidation & D1 Closure",
+        "objective": "Consolidate D1 records, verify the D1 exit gate, and produce the D1 closure record without creating a solution backlog.",
+        "scope": [
+          "Deduplicate problem clusters and verify evidence/source linkage",
+          "Review domain coverage and record contradictions/gaps",
+          "Consolidate stakeholder and dataset/data-service catalogues",
+          "Evaluate the D1 exit gate and produce closure record"
+        ],
+        "outOfScope": [
+          "Do not select a civic product",
+          "Do not authorize Évora Open API implementation"
+        ],
+        "acceptanceCriteria": [
+          "D1 exit gate criteria evaluated in docs/milestones/D1-institutional-data-source-mapping.md",
+          "node tools/validate-research.js passes against the full canonical record set"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-006",
+          "DEP-007",
+          "DEP-008",
+          "DEP-009",
+          "DEP-010"
+        ],
+        "createdAt": "2026-08-10T19:18:10.901Z",
+        "updatedAt": "2026-08-10T19:18:10.901Z"
+      }
+    ],
+    "dependencies": [
+      {
+        "id": "DEP-001",
+        "fromId": "WU001",
+        "toId": "WU002",
+        "type": "blocks",
+        "reason": "Domain research integration requires the record schemas and validator."
+      },
+      {
+        "id": "DEP-002",
+        "fromId": "WU001",
+        "toId": "WU003",
+        "type": "blocks",
+        "reason": "Domain research integration requires the record schemas and validator."
+      },
+      {
+        "id": "DEP-003",
+        "fromId": "WU001",
+        "toId": "WU004",
+        "type": "blocks",
+        "reason": "Domain research integration requires the record schemas and validator."
+      },
+      {
+        "id": "DEP-004",
+        "fromId": "WU001",
+        "toId": "WU005",
+        "type": "blocks",
+        "reason": "Domain research integration requires the record schemas and validator."
+      },
+      {
+        "id": "DEP-005",
+        "fromId": "WU001",
+        "toId": "WU006",
+        "type": "blocks",
+        "reason": "Domain research integration requires the record schemas and validator."
+      },
+      {
+        "id": "DEP-006",
+        "fromId": "WU002",
+        "toId": "WU007",
+        "type": "blocks",
+        "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-007",
+        "fromId": "WU003",
+        "toId": "WU007",
+        "type": "blocks",
+        "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-008",
+        "fromId": "WU004",
+        "toId": "WU007",
+        "type": "blocks",
+        "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-009",
+        "fromId": "WU005",
+        "toId": "WU007",
+        "type": "blocks",
+        "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-010",
+        "fromId": "WU006",
+        "toId": "WU007",
+        "type": "blocks",
+        "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      }
+    ]
   },
-  "checkpoints": [],
-  "lastAgentPacket": null,
-  "nextRecommendedCommand": "aiqt update",
-  "lastUpdatedAt": "2026-08-10T18:53:20.122Z"
+  "checkpoints": [
+    {
+      "id": "C001",
+      "workUnitId": "WU001",
+      "packetId": "PKT-001",
+      "summary": "Established the D1 research repository infrastructure: storage layout, faithful schemas, zero-dependency validator, synthetic fixtures, and the recording/handoff protocols. No substantive Évora research was performed.",
+      "completed": [
+        "Created research/{sources,evidence,problems,hypotheses,examples,schemas} layout with .gitkeep placeholders for empty canonical directories.",
+        "Created research/schemas/{source,evidence,problem,hypothesis}.schema.json faithful to docs/models/*.md, with one documented clarification (EVD source.source_id).",
+        "Created tools/validate-research.js, a zero-dependency Node validator (custom minimal YAML parser; duplicate-ID, malformed-YAML, missing-field, invalid-enum, prefix-mismatch, and broken-reference checks).",
+        "Created synthetic fixtures under research/examples/{sources,evidence,problems,hypotheses}, clearly marked as non-canonical.",
+        "Created docs/discovery/d1-recording-protocol.md and docs/discovery/research-handoff-protocol.md.",
+        "Created docs/milestones/D1-institutional-data-source-mapping.md and updated research/README.md."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/schemas/source.schema.json",
+        "research/schemas/evidence.schema.json",
+        "research/schemas/problem.schema.json",
+        "research/schemas/hypothesis.schema.json",
+        "tools/validate-research.js",
+        "research/examples/sources/SRC-9001.yaml",
+        "research/examples/evidence/EVD-900001.yaml",
+        "research/examples/problems/PRB-9001.yaml",
+        "research/examples/hypotheses/HYP-9001.yaml",
+        "research/sources/.gitkeep",
+        "research/evidence/.gitkeep",
+        "research/problems/.gitkeep",
+        "research/hypotheses/.gitkeep",
+        "docs/discovery/d1-recording-protocol.md",
+        "docs/discovery/research-handoff-protocol.md",
+        "docs/milestones/D1-institutional-data-source-mapping.md",
+        "research/README.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 0 record(s): OK (no canonical records yet)."
+        },
+        {
+          "command": "node tools/validate-research.js --dir research/examples",
+          "result": "passed",
+          "summary": "Validated 4 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "node tools/validate-research.js exits 0 against research/ (no canonical records yet)",
+          "result": "passed",
+          "evidence": "Validated 0 record(s): OK."
+        },
+        {
+          "criterion": "node tools/validate-research.js --dir research/examples exits 0 against fixtures",
+          "result": "passed",
+          "evidence": "Validated 4 record(s): OK."
+        },
+        {
+          "criterion": "docs/discovery/research-handoff-protocol.md defines the external-research handoff contract",
+          "result": "passed",
+          "evidence": "docs/discovery/research-handoff-protocol.md created with handoff contents, integration steps, and out-of-scope boundaries."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-10T19:18:45.721Z",
+      "nextRecommendation": "aiqt next"
+    }
+  ],
+  "lastAgentPacket": {
+    "id": "PKT-001",
+    "workUnitId": "WU001",
+    "milestoneId": "M001",
+    "createdAt": "2026-08-10T19:18:25.428Z",
+    "format": "markdown",
+    "contentHash": "sha256:694843f825484baeedad7801c0c118e45992c7cce488118f119ab12f9e9aaaeb",
+    "sourceCommand": "aiqt next",
+    "renderedSections": [
+      "scope",
+      "context",
+      "constraints",
+      "acceptance",
+      "validation",
+      "sourceControlExpectations"
+    ],
+    "guidanceFlags": {
+      "includesDesignGuidance": false,
+      "includesWorkingDirectoryDiscipline": false,
+      "includesComponentSystemGuidance": false,
+      "includesRecoveryGuidance": false,
+      "includesSourceControlGuidance": true
+    }
+  },
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-10T19:18:45.721Z",
+  "checkpointEvidenceAdvisories": [
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C001",
+      "current": {
+        "observationId": "sha256:15d1ba1f11b5d2f289a025b43ecfeb3d8e7f6f0b54412353f4df0f7eb95051ad",
+        "checkpointId": "C001",
+        "workUnitId": "WU001",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-10T19:18:45.721Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-10T19:18:45.721Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:15d1ba1f11b5d2f289a025b43ecfeb3d8e7f6f0b54412353f4df0f7eb95051ad",
+          "checkpointId": "C001",
+          "workUnitId": "WU001",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-10T19:18:45.721Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-10T19:18:45.721Z"
+        }
+      ]
+    }
+  ]
 }
