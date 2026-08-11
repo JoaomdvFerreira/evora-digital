@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "review",
+  "projectStatus": "in_progress",
   "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
@@ -45,6 +45,17 @@
           "WU016",
           "WU017",
           "WU018"
+        ]
+      },
+      {
+        "id": "M004",
+        "title": "D4 — Existing Solutions, Comparative Evidence & Residual Gap Analysis",
+        "objective": "Test the two D3-routed residual opportunity areas (PRB-0005 parking/data legibility, PRB-0009 waste service/data) against current local solutions and bounded comparative evidence, then decide whether a material residual gap remains before D5 stakeholder challenge/validation. D4 does not select a product, vendor, architecture or project.",
+        "status": "ready",
+        "workUnitIds": [
+          "WU019",
+          "WU020",
+          "WU021"
         ]
       }
     ],
@@ -627,6 +638,131 @@
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
         "updatedAt": "2026-08-11T15:38:02.869Z"
+      },
+      {
+        "id": "WU019",
+        "milestoneId": "M004",
+        "title": "WU-D4-01 — PRB-0005 Parking/Data Residual Gap Review",
+        "objective": "Reconcile the current Évora parking information/payment/sensor/platform solution baseline against PRB-0005 and determine whether a materially important residual gap in occupancy, status, performance or parking-legibility information remains, using bounded comparative evidence only where it can change the residual-gap decision.",
+        "scope": [
+          "Reconcile the current Évora parking information/payment/sensor/platform solution baseline",
+          "Identify the exact residual data/legibility question",
+          "Integrate bounded comparative evidence only where it can change the residual-gap decision",
+          "Record transferability/context constraints",
+          "Classify the residual gap as SUPPORTED | PARTIAL | NOT_SUPPORTED | UNKNOWN",
+          "Produce falsifiable D5 questions"
+        ],
+        "outOfScope": [
+          "Do not design a generic parking app",
+          "Do not shortlist vendors",
+          "Do not design architecture",
+          "Do not assume a public API/live occupancy feed is valuable merely because it is technically possible",
+          "Do not redefine the problem as missing technology"
+        ],
+        "acceptanceCriteria": [
+          "Local-solution baseline for PRB-0005 is reconciled and current enough for decision use",
+          "Residual gap for PRB-0005 has one explicit SUPPORTED/PARTIAL/NOT_SUPPORTED/UNKNOWN status with recorded rationale",
+          "At least one falsifiable D5 question is produced for PRB-0005",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/roadmap.md",
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [],
+        "createdAt": "2026-08-11T16:09:24.758Z",
+        "updatedAt": "2026-08-11T16:09:24.758Z"
+      },
+      {
+        "id": "WU020",
+        "milestoneId": "M004",
+        "title": "WU-D4-02 — PRB-0009 Waste Service/Data Residual Gap Review",
+        "objective": "Reconcile existing municipal reporting/service-information/current operating mechanisms against PRB-0009 and determine whether narrow status/routing/follow-up/operational-data mechanisms show credible outcome value elsewhere and a comparable residual gap is actually present in Évora, preserving the distinction between operational/capacity causes and digital/information/coordination opportunities.",
+        "scope": [
+          "Reconcile existing municipal reporting/service-information/current operating mechanisms",
+          "Evaluate only the narrow residual mechanisms: service-status transparency, responsibility routing, request acknowledgement/status/closure, bulky/green-waste journey clarity, machine-readable operational/performance data",
+          "Integrate bounded comparative evidence",
+          "Preserve the distinction between operational/capacity causes and digital/information/coordination opportunities",
+          "Classify the residual gap as SUPPORTED | PARTIAL | NOT_SUPPORTED | UNKNOWN",
+          "Produce falsifiable D5 questions"
+        ],
+        "outOfScope": [
+          "Do not design a generic waste/reporting app",
+          "Do not reinterpret operational causes as digital causes",
+          "Do not assume dashboard/API availability changes collection reliability"
+        ],
+        "acceptanceCriteria": [
+          "Local-solution/mechanism baseline for PRB-0009 is reconciled and current enough for decision use",
+          "Residual gap for PRB-0009 has one explicit SUPPORTED/PARTIAL/NOT_SUPPORTED/UNKNOWN status with recorded rationale",
+          "At least one falsifiable D5 question is produced for PRB-0009",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/roadmap.md",
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-025"
+        ],
+        "createdAt": "2026-08-11T16:09:24.758Z",
+        "updatedAt": "2026-08-11T16:09:24.758Z"
+      },
+      {
+        "id": "WU021",
+        "milestoneId": "M004",
+        "title": "WU-D4-03 — Cross-Gap Synthesis & D4 Closure",
+        "objective": "Synthesize the PRB-0005 and PRB-0009 residual-gap tracks without merging their mechanisms, consolidate local-solution and transferability findings, identify which residual gaps survive into D5, produce an explicit D5 handoff, evaluate the D4 exit gate, and close M004.",
+        "scope": [
+          "Synthesize the two D4 tracks without merging their mechanisms",
+          "Consolidate local-solution and transferability findings",
+          "Identify which residual gaps survive into D5",
+          "Identify any NOT_SUPPORTED / WATCH outcomes",
+          "Create an explicit D5 handoff",
+          "Evaluate D4 exit gates",
+          "Close M004"
+        ],
+        "outOfScope": [
+          "Do not select a project",
+          "Do not require a HYP-*",
+          "Do not perform D5 execution",
+          "Do not perform D6 tractability/evaluability work"
+        ],
+        "acceptanceCriteria": [
+          "Both PRB-0005 and PRB-0009 residual-gap findings are synthesized with a clear D5-handoff",
+          "D4 exit gate evaluated and recorded",
+          "node tools/validate-research.js passes",
+          "Working tree clean before closure commit"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/roadmap.md",
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-026"
+        ],
+        "createdAt": "2026-08-11T16:09:24.758Z",
+        "updatedAt": "2026-08-11T16:09:24.758Z"
       }
     ],
     "dependencies": [
@@ -797,6 +933,20 @@
         "toId": "WU018",
         "type": "blocks",
         "reason": "Selective deepening is justified only by critical unknowns/gates named during WU-D3-04's triage of every remaining problem."
+      },
+      {
+        "id": "DEP-025",
+        "fromId": "WU019",
+        "toId": "WU020",
+        "type": "blocks",
+        "reason": "D4 tracks are sequenced linearly, not parallel; PRB-0009 review starts only after the PRB-0005 review completes."
+      },
+      {
+        "id": "DEP-026",
+        "fromId": "WU020",
+        "toId": "WU021",
+        "type": "blocks",
+        "reason": "Cross-gap synthesis and D4 closure require both residual-gap tracks to be complete."
       }
     ]
   },
@@ -2160,8 +2310,8 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T15:38:02.869Z",
-      "nextRecommendation": "aiqt review --mode release"
+      "nextRecommendation": "aiqt review --mode release",
+      "createdAt": "2026-08-11T15:38:02.869Z"
     }
   ],
   "lastAgentPacket": {
@@ -2188,8 +2338,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt review --mode release",
-  "lastUpdatedAt": "2026-08-11T15:38:02.869Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-11T16:09:24.758Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
