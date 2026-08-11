@@ -126,7 +126,9 @@ D4 does not select a product, choose a vendor, design architecture, require a `H
 
 ### D5 — Stakeholder Challenge & Validation
 
-**Execution strategy:** canonicalized 2026-08-11 in `docs/discovery/research-methodology.md` §13 (unit of work, sufficiency/stopping, engagement grouping, challenge discipline, future `M005` shape); validation-status semantics in `docs/models/problem-model.md`; evidence-capture rules in `docs/models/evidence-model.md`; privacy/consent rules in `docs/discovery/research-ethics.md` §11. `M005` is not created by this canonicalization.
+**Execution strategy:** canonicalized 2026-08-11 in `docs/discovery/research-methodology.md` §13 (unit of work, sufficiency/stopping, engagement grouping, challenge discipline, future `M005` shape); validation-status semantics in `docs/models/problem-model.md`; evidence-capture rules in `docs/models/evidence-model.md`; privacy/consent rules in `docs/discovery/research-ethics.md` §11.
+
+**Milestone:** `M005` — planned 2026-08-11, three Work Units (operator/institutional challenge → affected-journey challenge → validation decisions/closure). See `docs/milestones/D5-stakeholder-challenge-validation.md`.
 
 **Objective:** Challenge the evidence-backed problem assessment with affected people, operators, institutions and other relevant stakeholders.
 
