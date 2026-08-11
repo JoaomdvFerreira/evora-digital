@@ -1,0 +1,37 @@
+evidence_id: EVD-000106
+type: statistical
+source:
+  source_id: SRC-0093
+  publisher: "Scientific Reports (Springer Nature)"
+  title: "Providing curb availability information to delivery drivers reduces cruising for parking"
+  source_reference: "Scientific Reports, 2022"
+  published_at: 2022
+  retrieved_at: 2026-08-11
+geography:
+  level: city
+  area: "Seattle, WA — Belltown (10-block commercial/passenger loading study area)"
+population:
+  - "delivery drivers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "A controlled real-world experiment (274 in-ground curb sensors feeding real-time availability into the OpenPark system; 11 drivers, 33 routes, 495 mock deliveries; with vs without availability information) found that showing curb availability information reduced cruising-for-parking time by 27.9% and cruising distance by 12.4%."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Comparator/mechanism evidence, not Évora-specific. Strongest available evidence that availability information alone can reduce search behaviour where curb-availability uncertainty is causal. Transferability to PRB-0005 is limited: commercial delivery vans (not general passenger parking), a dense 10-block instrumented Seattle curb/loading context, drivers instructed not to double-park, and no demonstrated proportional reduction in total vehicle distance/emissions. Use as mechanism evidence only, not proof of an equivalent Évora effect (WU-D4-01 Model A)."
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  lineage_id: "MOB-2022-SEATTLE-OPENPARK-SCIREPORTS-STUDY"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

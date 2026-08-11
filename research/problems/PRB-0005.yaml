@@ -21,12 +21,16 @@ possible_root_causes:
   - "D2-A Round A update: a strong public-signal blind spot emerged around road-surface maintenance/degradation (a 2026 public petition with 1,394 signatures, an approximately €1.5M municipal repair response, and later reporting alleging persistence at a specific N114 location — EVD-000082, EVD-000083, EVD-000084). This has not been absorbed into PRB-0005 pending cross-track synthesis: its apparent root cause is physical/maintenance-oriented, distinct from PRB-0005's traffic/parking-vs-pedestrian-quality framing, though it may overlap through public-realm/safety effects. Carried as NEW-CANDIDATE evidence, unlinked to this PRB, until the project owner decides whether it is a PRB-0005 extension, a distinct problem, or requires targeted D2 follow-up. No PRB-0005 evidence added; no status/tractability change."
   - "D2-A Targeted Follow-up update: project-owner decision recorded — KEEP road-surface maintenance/service reliability AS NEW-CANDIDATE (EVD-000082, EVD-000083, EVD-000084). It is intentionally NOT absorbed into PRB-0005 and no new PRB was created. Reason: current evidence points to a distinct physical maintenance/service-reliability mechanism (potholes, degraded pavement, maintenance response, road-condition safety) rather than PRB-0005's traffic/parking-vs-pedestrian/public-space framing. The candidate is carried forward to D2 cross-signal synthesis (WU-D2-06) for later canonical disposition. PRB-0005's own framing is preserved unchanged and not materially broadened by this follow-up; next evidence route is journey/location validation."
   - "WU-D3-03 update (docs/milestones/D3-WU03-structure-review.md): the road-surface-maintenance NEW-CANDIDATE (EVD-000082, EVD-000083, EVD-000084) was PROMOTED to a new canonical problem, PRB-0010, and remains distinct from PRB-0005 — none of EVD-000082/EVD-000083/EVD-000084 were added to PRB-0005.evidence. PRB-0005's traffic/parking/public-space framing is preserved unchanged by this promotion."
+  - "WU-D4-01 update (docs/milestones/D4-WU01-PRB0005-progress.md): D4 residual-gap review integrated Via Verde Estacionar's 'Parking Buddy' predictive availability feature (EVD-000105, EXISTING-SOLUTION, coverage/accuracy for specific Évora zones unverified) and bounded comparative mechanism evidence (Seattle OpenPark EVD-000106; SFpark EVD-000107). D4 residual-gap status: PARTIAL — a credible availability-information mechanism exists in the comparative evidence, but Évora already has substantial parking-information/payment/sensor infrastructure and may already have predictive availability functionality; current evidence does not establish that missing/inadequate occupancy information is a material cause of PRB-0005 outcomes. No status/tractability/structure change; validation_status remains unvalidated."
 evidence:
   - "EVD-000003"
   - "EVD-000007"
   - "EVD-000008"
   - "EVD-000012"
   - "EVD-000025"
+  - "EVD-000105"
+  - "EVD-000106"
+  - "EVD-000107"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

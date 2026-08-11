@@ -1,0 +1,36 @@
+source_id: SRC-0093
+publisher: "Scientific Reports (Springer Nature)"
+name: "Providing curb availability information to delivery drivers reduces cruising for parking (2022)"
+
+scope:
+  geography: municipality
+  domains:
+    - "MOB"
+    - "DIG"
+
+source_type: document
+
+access:
+  public: true
+  machine_readable: unknown
+  method: "peer-reviewed journal article"
+
+authority: verified-third-party
+
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+
+freshness:
+  update_frequency: unknown
+  last_source_update: 2022
+  last_checked: 2026-08-11
+  status: CURRENT
+
+canonical_source: true
+
+api_candidate:
+  potential: "not applicable - academic study, not a reusable data source"
+
+notes: "Peer-reviewed controlled real-world experiment in a 10-block Belltown, Seattle commercial/passenger loading study area (274 in-ground curb sensors feeding real-time availability into the OpenPark system; 11 drivers, 33 routes, 495 mock deliveries). Used in WU-D4-01 as comparative mechanism evidence for PRB-0005, not as Évora-specific evidence — see EVD-000106."

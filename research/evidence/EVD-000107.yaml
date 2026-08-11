@@ -1,0 +1,38 @@
+evidence_id: EVD-000107
+type: institutional
+source:
+  source_id: SRC-0094
+  publisher: "San Francisco Municipal Transportation Agency (SFMTA)"
+  title: "SFpark Pilot Program Evaluation"
+  source_reference: "SFMTA official pilot evaluation"
+  published_at: 2014
+  retrieved_at: 2026-08-11
+geography:
+  level: city
+  area: "San Francisco, CA — SFpark pilot areas vs control areas"
+population:
+  - "drivers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "SFMTA's official SFpark pilot evaluation reported search time down 43% in pilot areas versus 13% in control areas, blocks 'too full' 16% less often in pilot areas (versus +51% in controls), and parking-search vehicle-miles/greenhouse-gas emissions down 30% in pilot areas versus 6% in controls."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Comparator/mechanism evidence, not Évora-specific. The pilot bundled occupancy sensing, real-time availability information, demand-responsive pricing, and meter/payment changes, so the reported outcomes cannot be attributed to information/data publication alone. Do not cite as evidence that exposing occupancy data by itself would produce similar results in Évora; if PRB-0005's underlying issue is scarcity/high occupancy, information alone may only redistribute search behaviour (WU-D4-01 Model B)."
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+    - "OPERATIONAL"
+  lineage_id: "MOB-2014-SFPARK-SFMTA-PILOT-EVALUATION"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

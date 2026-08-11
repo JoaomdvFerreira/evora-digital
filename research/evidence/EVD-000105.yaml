@@ -1,0 +1,37 @@
+evidence_id: EVD-000105
+type: institutional
+source:
+  source_id: SRC-0092
+  publisher: "Via Verde Estacionar"
+  title: "Via Verde Estacionar — Parking Buddy predictive parking-availability feature"
+  source_reference: "https://www.viaverde.pt (Via Verde Estacionar product pages)"
+  published_at: null
+  retrieved_at: 2026-08-11
+geography:
+  level: city
+  area: "Évora (Via Verde Estacionar street-parking service area; per-zone Parking Buddy coverage not independently verified)"
+population:
+  - "drivers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "Via Verde Estacionar's Parking Buddy feature provides map-based destination search with a green/yellow/red probability-of-finding-parking indication, updated approximately every 30 minutes, predicted from Via Verde's historical parking data plus external factors such as weather and sporting/cultural events, with forecasts up to 48 hours ahead. Via Verde Estacionar's service pages list Évora among the municipalities where its street-parking payment service is currently available."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "This is the provider's own product description, not independent verification. Coverage, accuracy, and actual adoption of the Parking Buddy prediction layer for the specific Évora zones relevant to PRB-0005 are NOT established by this public-page review — do not claim verified Évora Parking Buddy coverage/accuracy. Carried forward as D5-P5-02 (docs/milestones/D4-WU01-PRB0005-progress.md)."
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "INFORMATION"
+  lineage_id: "MOB-2026-08-VIAVERDE-PARKINGBUDDY-PRODUCT-PAGE"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"
