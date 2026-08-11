@@ -22,7 +22,7 @@ strength: primary-non-authoritative
 personal_data:
   present: false
   retained: false
-notes: "D2-A Targeted Follow-up (A-FU-SIG-01). CONFIRMS + REFINES PRB-0003 with a current/recent lived-participation basis. Should not be treated as evidence that all barriers are resolved — it documents an active participatory process, not a completed correction."
+notes: "D2-A Targeted Follow-up (A-FU-SIG-01). CONFIRMS + REFINES PRB-0003 with a current/recent lived-participation basis. Should not be treated as evidence that all barriers are resolved — it documents an active participatory process, not a completed correction. WU018 (WU-D3-05) update: lineage_id retrofitted to record this record's Acesso Universal 1.3 programme lineage, shared with EVD-000086 and the new EVD-000104 (December 2025 completed-inventory result) — no other field changed; independence accounting for PRB-0003 now correctly treats these three as one evidentiary thread rather than three."
 
 analysis:
   related_problems:
@@ -32,6 +32,7 @@ analysis:
     - "REFINES"
   friction_types:
     - "PHYSICAL"
+  lineage_id: "ACC-2025-APCE-ACESSO-UNIVERSAL-1.3"
   representativeness: "LIMITED"
   verification: "REPORTED"
   temporal_relevance: "CURRENT"
