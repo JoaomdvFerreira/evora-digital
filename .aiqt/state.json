@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "review",
+  "projectStatus": "in_progress",
   "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
@@ -56,6 +56,17 @@
           "WU019",
           "WU020",
           "WU021"
+        ]
+      },
+      {
+        "id": "M005",
+        "title": "D5 — Stakeholder Challenge & Validation",
+        "objective": "Challenge the current D3/D4 problem diagnoses with the minimum credible direct operator, institutional, affected-journey and observational evidence needed to resolve decision-critical unknowns, refine or falsify problem framings, and update formal validation status only where the canonical validation contract is actually satisfied. D5 does not attempt to maximize the number of validated PRBs.",
+        "status": "ready",
+        "workUnitIds": [
+          "WU022",
+          "WU023",
+          "WU024"
         ]
       }
     ],
@@ -763,6 +774,136 @@
         ],
         "createdAt": "2026-08-11T16:09:24.758Z",
         "updatedAt": "2026-08-11T18:14:31.290Z"
+      },
+      {
+        "id": "WU022",
+        "milestoneId": "M005",
+        "title": "WU-D5-01 — Operator / Institutional Challenge",
+        "objective": "Resolve decision questions that are best answered through direct operator/institutional evidence, process artefacts or administrative/service data, using only the questions that remain unresolved after D4 and are genuinely answerable by operators/institutions across PRB-0001, PRB-0002, PRB-0003, PRB-0004, PRB-0005 (operator-side D5-P5-02/03/05/06), PRB-0006, PRB-0007, PRB-0008, and PRB-0009 (conditional, low-cost operator access only, core stays WATCH).",
+        "scope": [
+          "Select the exact operator/institutional validation questions to pursue per problem, tracing each to a named critical unknown, blocked gate, or D4 falsification question",
+          "Define the contact/artefact/data route for each selected question",
+          "Establish the privacy/handling plan before any contact (docs/discovery/research-ethics.md §11)",
+          "Integrate direct evidence only after actual responses/data are received (stakeholder/observation EVD, shared analysis.lineage_id per engagement)",
+          "Explicitly carry unresolved questions to WU023 or later",
+          "Do not default-engage PRB-0009 beyond its named D5-P9-01/02/03/04/06 questions or PRB-0010 at all"
+        ],
+        "outOfScope": [
+          "No open-ended stakeholder outreach",
+          "No generic 'tell us about the problem' interviews",
+          "No solution ideation",
+          "No new HYP-*",
+          "No D6 work",
+          "No forced validation-status changes",
+          "Do not assume Via Verde/Parking Buddy coverage from public marketing pages alone"
+        ],
+        "acceptanceCriteria": [
+          "Exact operator/institutional validation questions are selected and documented per problem, each traced to a named critical unknown/gate/falsification question",
+          "A privacy/handling plan exists before any contact",
+          "Any integrated EVD uses shared analysis.lineage_id per engagement and follows docs/models/evidence-model.md D5 engagement rules",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/research-methodology.md",
+          "docs/discovery/research-ethics.md",
+          "docs/models/evidence-model.md",
+          "docs/models/problem-model.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [],
+        "createdAt": "2026-08-11T18:56:45.186Z",
+        "updatedAt": "2026-08-11T18:56:45.186Z"
+      },
+      {
+        "id": "WU023",
+        "milestoneId": "M005",
+        "title": "WU-D5-02 — Affected-Journey Challenge",
+        "objective": "Challenge only the lived/current-journey questions still unresolved after WU022's operator/institutional evidence, across PRB-0001, PRB-0002, PRB-0003, PRB-0004, PRB-0005 (D5-P5-01/04 only if still necessary), PRB-0006, PRB-0007, PRB-0008 (only if a decision-relevant user-side question remains), and PRB-0009 (D5-P9-05 only if still material).",
+        "scope": [
+          "Do not recruit participants for questions already resolved sufficiently in WU022",
+          "Every engagement traces to an explicit validation question and includes a negative-case/counterexample prompt",
+          "Collect only the minimum data required; no recording by default; preserve participant anonymity/minimization",
+          "Stop each question when decision sufficiency or diminishing informational return is reached",
+          "Record stakeholder/observation EVD where appropriate, with shared analysis.lineage_id per engagement and no fake public SRC-*",
+          "Record explicit contradictions/refinements and a stopping/saturation note for each active validation question"
+        ],
+        "outOfScope": [
+          "No pre-committed participant counts or one campaign per PRB",
+          "No default broad recruitment for PRB-0009 or any engagement for PRB-0010",
+          "Do not ask participants what parking app they want, or otherwise solicit solution ideation",
+          "Do not use this WU to re-prove the structural housing shortage for PRB-0006"
+        ],
+        "acceptanceCriteria": [
+          "Only questions still unresolved after WU022 are pursued, with the reason recorded",
+          "Every engagement guide includes a negative-case prompt",
+          "Any integrated EVD follows docs/models/evidence-model.md D5 engagement rules and docs/discovery/research-ethics.md §11",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/research-methodology.md",
+          "docs/discovery/research-ethics.md",
+          "docs/models/evidence-model.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-027"
+        ],
+        "createdAt": "2026-08-11T18:56:45.186Z",
+        "updatedAt": "2026-08-11T18:56:45.186Z"
+      },
+      {
+        "id": "WU024",
+        "milestoneId": "M005",
+        "title": "WU-D5-03 — Validation Decisions & D5 Closure",
+        "objective": "Synthesize D5 direct evidence from WU022/WU023 and make formal problem-validation decisions using the canonical 7-point validation contract, for every PRB actually challenged, then produce the D6 handoff and close M005.",
+        "scope": [
+          "For each PRB actually challenged, record: questions challenged; evidence roles reached; counterexamples sought; material findings; contradictions/refinements; remaining HIGH-impact unknowns; validation_status before/after; PRB status change if any; ASM gate/triage changes if any; next route",
+          "Apply only validation_status/PRB.status transitions supported by actual evidence and the current schema/contracts; no transition is mandatory",
+          "Create the final D5 validation matrix, contradiction/refinement log, and unresolved-unknowns list",
+          "Create the explicit D6 handoff",
+          "Evaluate the D5 exit gate and close M005"
+        ],
+        "outOfScope": [
+          "Do not use participant count, stakeholder agreement, lack of contradiction, or public-signal volume as sufficient criteria for validated",
+          "Do not start D6 execution",
+          "Do not force every challenged PRB to a validation-status change"
+        ],
+        "acceptanceCriteria": [
+          "Every PRB actually challenged in D5 has a recorded decision using the canonical validation contract",
+          "No PRB was forced to validated without satisfying all 7 conditions",
+          "An explicit D6 handoff exists",
+          "D5 exit gate evaluated and recorded; M004-style closure document produced",
+          "node tools/validate-research.js passes",
+          "Working tree clean before closure commit"
+        ],
+        "agentContextRefs": [
+          "docs/models/problem-model.md",
+          "docs/discovery/research-methodology.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-028"
+        ],
+        "createdAt": "2026-08-11T18:56:45.186Z",
+        "updatedAt": "2026-08-11T18:56:45.186Z"
       }
     ],
     "dependencies": [
@@ -947,6 +1088,20 @@
         "toId": "WU021",
         "type": "blocks",
         "reason": "Cross-gap synthesis and D4 closure require both residual-gap tracks to be complete."
+      },
+      {
+        "id": "DEP-027",
+        "fromId": "WU022",
+        "toId": "WU023",
+        "type": "blocks",
+        "reason": "Affected-journey recruitment should only pursue questions still unresolved after operator/institutional evidence is gathered, to avoid unnecessary participant contact."
+      },
+      {
+        "id": "DEP-028",
+        "fromId": "WU023",
+        "toId": "WU024",
+        "type": "blocks",
+        "reason": "Formal validation decisions and D5 closure require both operator/institutional and affected-journey evidence to be gathered first."
       }
     ]
   },
@@ -2556,8 +2711,8 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T18:14:31.290Z",
-      "nextRecommendation": "aiqt review --mode release"
+      "nextRecommendation": "aiqt review --mode release",
+      "createdAt": "2026-08-11T18:14:31.290Z"
     }
   ],
   "lastAgentPacket": {
@@ -2584,8 +2739,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt review --mode release",
-  "lastUpdatedAt": "2026-08-11T18:14:31.290Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-11T18:56:45.186Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
