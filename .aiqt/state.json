@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "in_progress",
+  "projectStatus": "done",
   "currentMilestoneId": "M001",
   "currentWorkUnitId": null,
   "workGraph": {
@@ -9,7 +9,7 @@
         "id": "M001",
         "title": "D1 — Institutional & Data Source Mapping",
         "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
-        "status": "ready",
+        "status": "done",
         "workUnitIds": [
           "WU001",
           "WU002",
@@ -220,7 +220,7 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "done",
         "dependencies": [
           "DEP-006",
           "DEP-007",
@@ -229,7 +229,7 @@
           "DEP-010"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:18:10.901Z"
+        "updatedAt": "2026-08-11T13:15:00.000Z"
       }
     ],
     "dependencies": [
@@ -680,13 +680,64 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt next",
       "createdAt": "2026-08-11T11:45:00.000Z"
+    },
+    {
+      "id": "C007",
+      "workUnitId": "WU007",
+      "packetId": "PKT-007",
+      "summary": "Formally selected WU007 in AIQT and consolidated D1: reconciled the pre-consolidation draft and the Graphify evaluation spike outcome against live repository state (no new external research handoff), verified all 9 PRB-* records are deduplicated with resolving evidence/source references, performed a targeted evidence-rationalisation pass (no exact/near duplicates found, no destructive edits made), consolidated the final D1 problem map, negative findings, cross-domain relationships, D2/D5 question handoff and Open Data Foundation candidate list into docs/milestones/D1-WU07-progress.md and D1-WU07-closure.md, recorded the Graphify ADOPT WITH CONSTRAINTS decision and policy in docs/discovery/research-methodology.md (no tooling implemented), evaluated and checked off all 15 D1 exit-gate criteria in docs/milestones/D1-institutional-data-source-mapping.md, and closed WU007. No new SRC-*/EVD-*/PRB-*/HYP-* records created; the existing-service-navigation-coordination pattern was preserved as narrative only, not collapsed into a generic cross-domain PRB.",
+      "completed": [
+        "Selected WU007 in AIQT via formal selection (ready/planned -> in_progress).",
+        "Read all 9 PRB-*.yaml records, all WU-D1-02..06 progress/closure docs, the D1 operating-model/handoff/recording-protocol/methodology docs, and the schemas.",
+        "Verified no duplicate/near-duplicate PRB-* exists; verified no exact-duplicate EVD-* summary exists via targeted grep across all 78 evidence records.",
+        "Confirmed cross-domain SRC-0002 reuse (11 EVD-* citations across 3 domains) is represented without source duplication.",
+        "Reviewed docs/data/source-registry.md; found 8 pre-D1 seed rows with no canonical SRC-* file, confirmed as a pre-existing (not newly introduced) gap, left unchanged.",
+        "Created docs/milestones/D1-WU07-progress.md and D1-WU07-closure.md with the consolidated D1 problem map, negative findings, cross-domain relationships (hypothesised/supported status preserved exactly), D2/D5 handoff, and Open Data Foundation handoff.",
+        "Added Graphify ADOPT WITH CONSTRAINTS decision and full policy as docs/discovery/research-methodology.md section 10.",
+        "Checked off and individually justified all 15 D1 exit-gate criteria in docs/milestones/D1-institutional-data-source-mapping.md.",
+        "Closed WU007 done; transitioned milestone M001 (D1) ready -> done, since all of M001.workUnitIds (WU001-WU007) are now done and WU007 is the milestone's terminal work unit per the dependency graph."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/milestones/D1-WU07-progress.md",
+        "docs/milestones/D1-WU07-closure.md",
+        "docs/milestones/D1-institutional-data-source-mapping.md",
+        "docs/discovery/research-methodology.md",
+        ".aiqt/state.json",
+        ".aiqt/runlog.jsonl"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 143 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "D1 exit gate criteria evaluated in docs/milestones/D1-institutional-data-source-mapping.md",
+          "result": "passed",
+          "evidence": "All 15 D1 exit-gate checklist items checked and individually justified in docs/milestones/D1-institutional-data-source-mapping.md."
+        },
+        {
+          "criterion": "node tools/validate-research.js passes against the full canonical record set",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 143 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "D1 is closed; D2 Public Signal Discovery is the next milestone (not started in this session).",
+      "createdAt": "2026-08-11T13:15:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-006",
-    "workUnitId": "WU006",
+    "id": "PKT-007",
+    "workUnitId": "WU007",
     "milestoneId": "M001",
-    "createdAt": "2026-08-11T11:45:00.000Z",
+    "createdAt": "2026-08-11T12:30:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -706,8 +757,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T11:45:00.000Z",
+  "nextRecommendedCommand": "D1 is closed; D2 Public Signal Discovery is the next milestone (not started in this session).",
+  "lastUpdatedAt": "2026-08-11T13:15:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -932,6 +983,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T11:45:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C007",
+      "current": {
+        "observationId": "sha256:c007e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C007",
+        "workUnitId": "WU007",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T13:15:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T13:15:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c007e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C007",
+          "workUnitId": "WU007",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T13:15:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T13:15:00.000Z"
         }
       ]
     }

@@ -159,22 +159,22 @@ This does not mean exhaustive knowledge of Évora.
 
 D1 may close when:
 
-- [ ] WU-D1-01 established a durable structured-record workflow;
-- [ ] all planned domain WUs are completed or explicitly descoped with rationale;
-- [ ] evidence records retain source provenance;
-- [ ] high-priority sources have authority/licensing/freshness fields assessed where possible;
-- [ ] institutional problem clusters are deduplicated;
-- [ ] existing interventions are recorded for material problem clusters;
-- [ ] stakeholder inventory exists;
-- [ ] candidate dataset/data-service catalogue exists;
-- [ ] known evidence gaps and contradictions are explicit;
-- [ ] D2 can use the same evidence contracts without redesign;
-- [ ] D3 has sufficient input to begin Problem Map v1;
-- [ ] no product has been selected;
-- [ ] no Open API implementation has been authorized;
-- [ ] AIQT state and repository state are valid;
-- [ ] working tree is clean;
-- [ ] D1 closure record exists.
+- [x] WU-D1-01 established a durable structured-record workflow — `research/{sources,evidence,problems,hypotheses,schemas}`, `tools/validate-research.js`, `docs/discovery/d1-recording-protocol.md`.
+- [x] all planned domain WUs are completed or explicitly descoped with rationale — `WU-D1-02`..`WU-D1-06` all `done`; WU-D1-05 (0 PRBs) and part of WU-D1-06 (4 of 5 candidate problems not canonicalized) are explicitly descoped with rationale in their own closure docs, not silently dropped.
+- [x] evidence records retain source provenance — every `EVD-*` record's `source.source_id`/`source_reference` resolves; verified by `tools/validate-research.js`.
+- [x] high-priority sources have authority/licensing/freshness fields assessed where possible — assessed per source; unresolved licensing/reuse rights are recorded as `UNKNOWN` rather than guessed (e.g. TPAC GTFS, TREVO API, GEOCIMAC per-layer licensing, PMAAC WebSIG reuse — see the Open Data Foundation handoff in `docs/milestones/D1-WU07-closure.md`).
+- [x] institutional problem clusters are deduplicated — verified in `docs/milestones/D1-WU07-progress.md`; all 9 `PRB-*` records target distinct domain slices; no duplicate/near-duplicate found.
+- [x] existing interventions are recorded for material problem clusters — every `PRB-*`'s `possible_root_causes`/linked `EVD-*` records existing interventions (e.g. TPAC/TREVO/parking systems for Mobility, housing-programme delivery for `PRB-0006`, caregiver services for `PRB-0007`, employment-matching infrastructure for `PRB-0008`, Gesamb/occurrence platform for `PRB-0009`).
+- [x] stakeholder inventory exists — institutional ownership map recorded per domain (`docs/data/source-registry.md` and each WU's progress doc, e.g. DAM/DORU/E-BUS/TREVO/ATAC/CIMAC/GEOCIMAC for Mobility; Município/Gesamb/parish councils for Environment).
+- [x] candidate dataset/data-service catalogue exists — consolidated in `docs/milestones/D1-WU07-closure.md`'s Open Data Foundation handoff, aggregating all domain-level candidates.
+- [x] known evidence gaps and contradictions are explicit — preserved per domain (e.g. WU-D1-05's 5 contradictions/tensions, WU-D1-02's TREVO satisfaction-survey reporting gap) and consolidated in `docs/milestones/D1-WU07-closure.md`.
+- [x] D2 can use the same evidence contracts without redesign — no schema change was made during D1; `research/schemas/*.schema.json` is unchanged since WU-D1-01 except the one documented `EVD.source.source_id` clarification.
+- [x] D3 has sufficient input to begin Problem Map v1 — 9 structured `PRB-*` records with linked evidence, cross-domain relationships, and explicit D3-split flags (`PRB-0002`, `PRB-0005`) exist.
+- [x] no product has been selected — confirmed in every WU closure's Confirmation section, including this one.
+- [x] no Open API implementation has been authorized — confirmed in every WU closure's Confirmation section, including this one.
+- [x] AIQT state and repository state are valid — `WU001`–`WU007` all `done`, `M001` transitions to `done` in this WU's closure; validator passes.
+- [x] working tree is clean — verified before commit (see `docs/milestones/D1-WU07-closure.md`).
+- [x] D1 closure record exists — `docs/milestones/D1-WU07-closure.md`.
 
 ## Explicitly out of scope
 

@@ -193,3 +193,26 @@ Research should produce structured records rather than only narrative reports:
 - `SRC-*` sources.
 
 Narrative documents summarize these records but do not replace them.
+
+## 10. Derived retrieval tooling (Graphify) — policy
+
+An external evaluation spike (executed against a read-only repository snapshot, never touching repository files or AIQT state) assessed Graphify, a derived graph-based retrieval tool, as an aid for navigating the growing `research/` corpus. Decision: **ADOPT WITH CONSTRAINTS**, recorded here as durable project policy following WU-D1-07's D1 consolidation.
+
+Findings that informed the decision:
+
+- `graphify explain <known-canonical-ID>` reliably reconstructed the YAML's explicit `SRC-*` → `EVD-*` → `PRB-*` relationships, correctly distinguishing YAML-explicit (EXTRACTED) edges from text-derived (AMBIGUOUS/INFERRED) ones, and materially reduced file-opening for "what cites X" questions.
+- The free-text `graphify query` command was unreliable — it missed or mis-targeted roughly half of a gold-set test, sometimes performing worse than plain text search, especially for finding records by decision-status (e.g. DEFER/WEAKEN) rather than by structural reference.
+- Indexing narrative documents (`docs/discovery/`, `docs/milestones/`) alongside canonical records degraded canonical-record recall rather than improving it, and added graph noise.
+- Incremental updates were substantially faster than full rebuilds and preserved unrelated nodes correctly, but one test produced a duplicate/ambiguous node for a short ID — short canonical IDs are not always guaranteed unique inside a Graphify-built graph, and node IDs are not fully deterministic across separate rebuilds.
+
+Policy, effective immediately:
+
+- Canonical YAML under `research/` remains the sole source of truth. Graphify's index is optional, derived, and disposable — it is never committed to the repository.
+- Graphify indexes canonical `research/` records only (`sources/`, `evidence/`, `problems/`, `hypotheses/`). It must never index narrative discovery/milestone documents under `docs/`.
+- Prefer `graphify explain <known-ID>` over free-text `query`. Treat `query` results as exploratory and non-authoritative.
+- Every AMBIGUOUS/INFERRED relationship surfaced by Graphify requires canonical YAML verification before it is cited as fact.
+- Graphify must never create, promote, or modify evidence, problem, or hypothesis records. It is a read-only retrieval aid.
+- Avoid frequent full semantic rebuilds due to their token/context cost; prefer incremental updates where available.
+- Graphify is not required for `tools/validate-research.js` or for repository correctness, and must not become a hard dependency of either.
+
+No Graphify tooling, configuration, or custom deterministic index has been implemented in this repository. Further retrieval-tooling improvements (e.g. addressing free-text query reliability or ID-determinism) are noted as future work, not undertaken as part of D1 closure.
