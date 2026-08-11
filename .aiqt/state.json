@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
   "projectStatus": "in_progress",
-  "currentMilestoneId": null,
+  "currentMilestoneId": "M004",
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -675,10 +675,10 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [],
         "createdAt": "2026-08-11T16:09:24.758Z",
-        "updatedAt": "2026-08-11T16:09:24.758Z"
+        "updatedAt": "2026-08-11T16:26:38.502Z"
       },
       {
         "id": "WU020",
@@ -714,12 +714,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-025"
         ],
         "createdAt": "2026-08-11T16:09:24.758Z",
-        "updatedAt": "2026-08-11T16:09:24.758Z"
+        "updatedAt": "2026-08-11T16:26:38.502Z"
       },
       {
         "id": "WU021",
@@ -2312,15 +2312,97 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt review --mode release",
       "createdAt": "2026-08-11T15:38:02.869Z"
+    },
+    {
+      "id": "C020",
+      "workUnitId": "WU019",
+      "packetId": "PKT-020",
+      "summary": "Integrated the approved WU019/WU-D4-01 external research handoff for PRB-0005: reconciled the local Évora parking solution baseline (reusing existing SRC-0022/SRC-0023/EVD-000021 without duplication), added one new existing-solution finding (Via Verde Parking Buddy) and two bounded comparator evidence records (Seattle OpenPark, SFpark), updated ASM-0005 with the PARTIAL residual-gap decision, D5 falsification questions, and D6 evaluation-readiness carry, and produced the WU-D4-01 progress document.",
+      "completed": [
+        "Reviewed corpus for existing Via Verde/parking-sensor coverage before creating any new record (deduplication check).",
+        "Created SRC-0092 (Via Verde Estacionar Parking Buddy), SRC-0093 (Seattle OpenPark study), SRC-0094 (SFpark pilot evaluation).",
+        "Created EVD-000105 (EXISTING-SOLUTION, Parking Buddy, coverage/accuracy for Évora zones explicitly not claimed as verified), EVD-000106 (REFINES, Seattle OpenPark), EVD-000107 (REFINES, SFpark).",
+        "Linked EVD-000105/106/107 into PRB-0005.evidence and added a WU-D4-01 possible_root_causes summary entry; PRB-0005.validation_status and status unchanged.",
+        "Updated ASM-0005: phase D3 -> D4, critical_unknowns refined to three D5-targeted unknowns (U1-U3), next_action names D4 saturation and routes to D5/D6, notes appended with full WU-D4-01 rationale; existing_solution_understanding remains SUFFICIENT, remaining_gap/decision_gates.remaining_gap_supported/digital_causality remain PARTIAL, structure_action remains KEEP, triage remains DEEPEN.",
+        "Recorded the D4 residual-gap decision as PARTIAL per the approved handoff (not independently changed; no hard canonical contradiction found).",
+        "Created docs/milestones/D4-WU01-PRB0005-progress.md documenting local baseline, comparator summary and transferability limits, the PARTIAL decision, the six D5 falsification questions, D6 evaluation-readiness carry, omitted comparators (Vienna, Lisbon/EMEL) with rationale, and the D4 saturation finding."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0092.yaml",
+        "research/sources/SRC-0093.yaml",
+        "research/sources/SRC-0094.yaml",
+        "research/evidence/EVD-000105.yaml",
+        "research/evidence/EVD-000106.yaml",
+        "research/evidence/EVD-000107.yaml",
+        "research/problems/PRB-0005.yaml",
+        "research/assessments/ASM-0005.yaml",
+        "docs/milestones/D4-WU01-PRB0005-progress.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 212 record(s): OK."
+        },
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "22/22 passed, 0 failed."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0005",
+          "result": "passed",
+          "summary": "linked_evd=8, evd_with_analysis=8/8, current_asm=ASM-0005, triage=DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "Corpus: 85 SRC, 107 EVD, 10 PRB, 0 HYP, 10 ASM (212 total canonical records); all other PRB triage/linked_evd counts unchanged."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "21 gap(s) found, unchanged gap classes; ASM-0005 now reports 3 critical unknowns (was 2), reflecting the D5-targeted refinement, not a new gap type."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Local-solution baseline for PRB-0005 is reconciled and current enough for decision use",
+          "result": "passed",
+          "evidence": "docs/milestones/D4-WU01-PRB0005-progress.md §2; existing SRC-0022/SRC-0023/EVD-000021 reused, Via Verde Parking Buddy added as EVD-000105."
+        },
+        {
+          "criterion": "Residual gap for PRB-0005 has one explicit SUPPORTED/PARTIAL/NOT_SUPPORTED/UNKNOWN status with recorded rationale",
+          "result": "passed",
+          "evidence": "docs/milestones/D4-WU01-PRB0005-progress.md §4 records PARTIAL with explicit why-not-SUPPORTED / why-not-NOT_SUPPORTED rationale; ASM-0005 updated to match."
+        },
+        {
+          "criterion": "At least one falsifiable D5 question is produced for PRB-0005",
+          "result": "passed",
+          "evidence": "docs/milestones/D4-WU01-PRB0005-progress.md §6 records six falsification questions (D5-P5-01..06)."
+        },
+        {
+          "criterion": "node tools/validate-research.js passes",
+          "result": "passed",
+          "evidence": "Validated 212 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T16:26:38.502Z",
+      "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-019",
-    "workUnitId": "WU018",
-    "milestoneId": "M003",
-    "createdAt": "2026-08-11T15:23:59.836Z",
+    "id": "PKT-020",
+    "workUnitId": "WU019",
+    "milestoneId": "M004",
+    "createdAt": "2026-08-11T16:25:44.887Z",
     "format": "markdown",
-    "contentHash": "sha256:20c6d891af00977a3abbbcc4f9827255d57286edad5bdc6d59c2ccfe025817ee",
+    "contentHash": "sha256:42916975b5081ccbec498543a5088c7accdd5bd1bc481ae7feaed86ae71d20e5",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -2339,7 +2421,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T16:09:24.758Z",
+  "lastUpdatedAt": "2026-08-11T16:26:38.502Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2954,6 +3036,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T15:38:02.869Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C020",
+      "current": {
+        "observationId": "sha256:d9db0d4128bf89da19832c47628d70114c682c3e193ffd78b80aa338981fe7d9",
+        "checkpointId": "C020",
+        "workUnitId": "WU019",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T16:26:38.502Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T16:26:38.502Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:d9db0d4128bf89da19832c47628d70114c682c3e193ffd78b80aa338981fe7d9",
+          "checkpointId": "C020",
+          "workUnitId": "WU019",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T16:26:38.502Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T16:26:38.502Z"
         }
       ]
     }
