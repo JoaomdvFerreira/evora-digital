@@ -1,0 +1,26 @@
+evidence_id: EVD-000099
+type: press
+source:
+  source_id: SRC-0085
+  publisher: "Tribuna do Alentejo"
+  title: "News report: high housing costs displace students from Évora"
+  source_reference: "https://tribunaalentejo.pt/artigos/habitacao-cara-afasta-estudantes-de-evora/"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "students"
+  - "residents seeking adequate/affordable housing"
+domain:
+  - "HOU"
+  - "EDU"
+observation:
+  summary: "Current press reporting describes rooms in Évora reaching around €500/month and T2 accommodation around €1,000/month, with demand reported as exceeding available supply; reporting states that roughly 70% of University of Évora students are displaced and depend on rental accommodation."
+evidence_nature: claim
+strength: secondary
+personal_data:
+  present: false
+  retained: false
+notes: "D2-C Round A (H-01). CONFIRMS + CURRENT-STATE-UPDATE PRB-0006. Press-mediated figures (rental prices, displacement percentage) are preserved as reported, not verified against a primary dataset; treated as current affordability/student-exposure evidence, not proof of a digital/process gap. Representativeness of the underlying reporting methodology is not established."

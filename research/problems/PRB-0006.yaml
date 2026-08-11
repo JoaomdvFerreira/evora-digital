@@ -17,12 +17,17 @@ possible_root_causes:
   - "Primary root cause is largely physical/economic supply and affordability; software leverage may be secondary (per WU-D1-03 Batch A interpretation, not yet validated)."
   - "Student accommodation is preserved here as a documented sub-pressure within the housing cluster rather than a separate canonical problem, per the approved Round A cross-domain synthesis; it has strong overlap with WU-D1-04 talent/student attraction and retention and may be referenced there without duplicating this record. WU-D1-03 Batch B confirms student accommodation capacity is improving but still constrained (see EVD-000043) and keeps it as a subproblem, not a separate canonical problem."
   - "Existing housing interventions (Local Housing Strategy rehabilitation, controlled-cost targets, supported-rental rehabilitation, temporary/shared accommodation, student-housing needs assessment) mean this is not an 'absence of institutional response' problem; Batch B confirms these interventions are large, funded and actively being delivered (EUR67.1M/459 homes plus concrete January 2026 deliveries), and that this active supply-side response does not by itself resolve unmet housing need (see EVD-000042). Digital intervention has low leverage over the dominant physical/economic cause."
+  - "D2-C Round A (WU-D2-05) strengthens current affordability/student-exposure evidence with press-reported figures (rooms around EUR500/month, T2 around EUR1,000/month, roughly 70% of UÉ students displaced into rental accommodation - EVD-000099); these are press-mediated figures, preserved as reported and not verified against a primary dataset, and are treated as current-state evidence, not proof of a digital/process gap. A May 2026 completion of the Residência Universitária Manuel Álvares renovation (EVD-000100) marks a specific recovery point in the 2025/2026 residence-capacity disruption already recorded in EVD-000043, but does not establish that the broader student-housing pressure is resolved."
+  - "D2-C Round A explicitly leaves the applicant-facing housing/UÉ-residence information and transaction journey UNPROVEN: it was not established that applicants cannot discover the correct programme, that eligibility is commonly misunderstood, that document submission is materially duplicated, that application/status tracking is materially deficient, that UÉ residence applications are confusing, or that a single digital housing navigator would materially change outcomes. The existence of multiple programmes/information surfaces is not itself evidence of navigation failure; these remain open D3/D5 questions, not a validated subproblem."
+  - "D2-C Round A also notes a programme-delivery bureaucracy boundary: reviewed housing material describing bureaucracy around national/European programme delivery is institutional delivery/process context, not applicant-facing transaction friction, unless direct applicant evidence says otherwise."
 evidence:
   - "EVD-000031"
   - "EVD-000032"
   - "EVD-000033"
   - "EVD-000042"
   - "EVD-000043"
+  - "EVD-000099"
+  - "EVD-000100"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

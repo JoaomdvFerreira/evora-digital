@@ -1,0 +1,26 @@
+evidence_id: EVD-000101
+type: observation
+source:
+  source_id: SRC-0087
+  publisher: "Indeed"
+  title: "Indeed job listings — aeronautical/aerospace roles, Évora"
+  source_reference: "https://pt.indeed.com/q-aeron%C3%A1utica-l-%C3%89vora-ofertas.html"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "job seekers"
+  - "employers"
+domain:
+  - "EMP"
+  - "ECO"
+observation:
+  summary: "A snapshot of Indeed listings for aeronautical/aerospace-sector roles in Évora shows specialised, often senior-level requirements spanning aeronautical engineering, EWIS, configuration management, airworthiness/quality, composites/materials manufacturing, and avionics/aircraft design."
+evidence_nature: measurement
+strength: primary-non-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-D Round A (E-01). Concrete specialised-demand signal alongside the broader IEFP snapshot (EVD-000049); does not establish actual shortage, vacancy duration, failed recruitment, wage mismatch, or inability to source these skills locally — a listing snapshot measures advertised demand only."

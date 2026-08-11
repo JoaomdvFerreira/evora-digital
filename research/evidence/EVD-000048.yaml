@@ -11,6 +11,7 @@ additional_sources:
   - "SRC-0041"
   - "SRC-0039"
   - "SRC-0042"
+  - "SRC-0088"
 geography:
   level: municipality
   area: "Município de Évora"
@@ -23,10 +24,10 @@ domain:
   - "EDU"
   - "ECO"
 observation:
-  summary: "Existing employment-matching infrastructure is substantial: UÉ employment fairs (third edition scheduled October 2026), university career/employability initiatives (Magma Talks and related activity), IEFP job listings, and NERE/IEFP training mechanisms are all currently active."
+  summary: "Existing employment-matching infrastructure is substantial: UÉ employment fairs (third edition scheduled October 2026), university career/employability initiatives (Magma Talks and related activity), a dedicated UÉ Employment Portal (emprego.uevora.pt) where students/alumni publish CVs, receive matching notifications and apply while employers publish vacancies and search profiles, IEFP job listings, and NERE/IEFP training mechanisms are all currently active."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
   present: false
   retained: false
-notes: "Provisional ID: D1-04-B-E02. Interpretation: a generic job board or employment portal would duplicate existing infrastructure unless a specific user-journey failure is demonstrated. Reinforces EVD-000040's boundary that a future digital product cannot start from the assumption that no matching/support mechanisms exist."
+notes: "Provisional ID: D1-04-B-E02. Interpretation: a generic job board or employment portal would duplicate existing infrastructure unless a specific user-journey failure is demonstrated. Reinforces EVD-000040's boundary that a future digital product cannot start from the assumption that no matching/support mechanisms exist. D2-D Round A (E-03) enrichment: added SRC-0088 (UÉ Employment Portal, emprego.uevora.pt) as a specific, currently operating candidate-employer matching platform, distinct from SRC-0041 (Magma Talks, no canonical URL); strengthens rather than replaces the existing conclusion that a generic local job board would duplicate existing infrastructure."
