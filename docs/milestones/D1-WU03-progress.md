@@ -1,8 +1,10 @@
 # WU-D1-03 Progress — Housing, Social Support, Health & Wellbeing
 
-**Status:** IN PROGRESS
+**Status:** DONE (institutional saturation reached in Batch B)
 **Milestone:** D1 — Institutional & Data Source Mapping
-**Date:** 2026-08-10
+**Date:** 2026-08-10 (Batch A), 2026-08-11 (Batch B)
+
+See `docs/milestones/D1-WU03-closure.md` for the final WU closure record.
 
 ## Batch A integration
 
@@ -90,10 +92,89 @@ Validated 63 record(s): OK.
 - `docs/data/source-registry.md` (added `SRC-0028`–`SRC-0031` rows and a WU-D1-03 verification note)
 - `docs/milestones/D1-WU03-progress.md` (this file)
 
-## Confirmation
+## Confirmation (Batch A)
 
 - Additional substantive research performed during integration: **NO**
 - New `HYP-*` created: **NO**
 - Speculative causal relationships encoded as fact: **NO**
 - WU-D1-04/WU-D1-05 records integrated: **NO**
 - WU-D1-03 marked `done`: **NO** — remains `in_progress`, Batch B required
+
+## Batch B integration
+
+The externally reviewed and project-owner-approved **WU-D1-03 Research Batch B** (`WU-D1-03-research-batch-B-approved-for-integration.md`, approved 2026-08-10; current-state challenge / existing-solution follow-up) was integrated into structured repository records, per `docs/discovery/research-handoff-protocol.md`.
+
+- Sources enriched: **2** — `SRC-0030` (Plano Concelhio dos Cuidadores Informais de Évora; gained the 2026-2027 implementation update and current caregiver-population figure), `SRC-0031` (CLASE / Rede Social; gained the January 2026 communication note)
+- Sources added: **4** — `SRC-0035` (Plano Local de Habitação de Évora — EUR67.1M agreement), `SRC-0036` (12 supported-rent homes delivered, January 2026), `SRC-0037` (UÉ student accommodation), `SRC-0038` (ULSAC mental-health/community-care responses)
+- Evidence records added: **5** — `EVD-000042`…`EVD-000046`
+- Problem records refined: **2** — `PRB-0006` (added `EVD-000042`/`EVD-000043`, refined `possible_root_causes` with the current-state challenge result), `PRB-0007` (added `EVD-000044`/`EVD-000045`, refined `possible_root_causes` recording the strengthened, HIGH-confidence current-state evidence)
+- Problem records created: **0**
+- Hypothesis records created: **0**
+
+### Current-State Challenge result
+
+- **Housing (`PRB-0006`):** survives challenge. The active, funded housing programme (EUR67.1M/459 homes, concrete January 2026 deliveries) is acknowledged, but does not by itself demonstrate unmet need is resolved. Retained as the canonical structural problem cluster; digital tractability still `not_assessed`, likely low over the dominant physical/economic root cause.
+- **Student accommodation:** survives as a narrower, unresolved capacity issue. Capacity is improving (525 → ~630 nominal beds) but remains constrained by temporary closures and explicit institutional redirection of students elsewhere. Retained as a housing subproblem/dependency inside `PRB-0006`, **not** promoted to a separate canonical problem.
+- **Informal caregiver navigation (`PRB-0007`):** survives and strengthens. Institutions themselves now explicitly plan to systematise responses, simplify procedures, and publish a caregiver manual — direct institutional self-recognition of the information/navigation friction. Institutional confidence HIGH, current-state confidence HIGH.
+- **Mental-health capacity:** not sufficiently current/specific to promote. ULSAC operates active psychiatry and community mental-health responses, weakening a broad "capacity shortage" claim. Kept as evidence/validation question only (`EVD-000046`), referenced from `PRB-0007`'s `possible_root_causes`; **no `PRB-*` created**.
+
+### Candidate problem decisions
+
+| Candidate | Decision | Canonical record |
+|---|---|---|
+| Housing access/affordability/supply | RETAIN as canonical structural problem cluster | `PRB-0006` (refined, not duplicated) |
+| Informal caregiver information/support navigation | STRENGTHEN | `PRB-0007` (refined, not duplicated) |
+| Student accommodation | Retain as housing subproblem/dependency | Evidence only (`EVD-000043`) within `PRB-0006` |
+| Mental-health capacity | Do NOT create as canonical problem | Evidence only (`EVD-000046`) within `PRB-0007` context |
+
+### Provisional → canonical mapping (Batch B)
+
+#### Sources
+
+| Provisional | Canonical |
+|---|---|
+| D1-03-B-S01 | `SRC-0035` |
+| D1-03-B-S02 | `SRC-0036` |
+| D1-03-B-S03 | `SRC-0037` |
+| D1-03-B-S04 | `SRC-0030` (enriched) / `SRC-0031` (enriched) / `SRC-0038` (ULSAC named-programme portion) |
+| D1-03-B-S05 | `SRC-0038` |
+
+#### Evidence
+
+| Provisional | Canonical |
+|---|---|
+| D1-03-B-E01 | `EVD-000042` |
+| D1-03-B-E02 | `EVD-000043` |
+| D1-03-B-E03 | `EVD-000044` |
+| D1-03-B-E04 | `EVD-000045` |
+| D1-03-B-E05 | `EVD-000046` |
+
+### Next research questions (carried forward, unresolved — no `HYP-*` created)
+
+1. What do caregivers currently do step-by-step when seeking recognition, respite, financial support, training or health/social support?
+2. Which information is duplicated or inconsistent between Município, ULSAC, Segurança Social and IPSS?
+3. Is the planned caregiver manual already available or still under development?
+4. Are housing eligibility/application processes themselves a documented friction, or is supply overwhelmingly dominant?
+5. Can student-housing unmet demand be quantified from UÉ application/placement data?
+
+### Validator result (after Batch B)
+
+```text
+node tools/validate-research.js
+Validated 83 record(s): OK.
+```
+
+(63 records after Batch A + 20 records from WU-D1-04 Batch A [3 `SRC-*` + 2 canonicalized seed `SRC-*` + 5 `EVD-*` + 1 `PRB-*`, i.e. 63 + 11 = 74 after WU-D1-04] + 4 new `SRC-*` + 5 new `EVD-*` in this batch = 83.)
+
+### Institutional saturation assessment
+
+Per `docs/discovery/d1-parallel-research-operating-model.md` ("Institutional saturation vs. problem validation") and `docs/discovery/research-methodology.md` §7 ("Saturation / sufficient coverage"): Batch B checked high-priority current-state institutional sources across all three candidate problem areas, considered materially different evidence classes (funded programme agreements, delivery announcements, university self-reporting, health-authority self-reporting), surfaced known major current interventions, and produced **no new top-level problem class** — it only refined the two existing `PRB-*` records and confirmed the decision not to create separate problems for student accommodation or mental-health capacity. Unresolved gaps are explicitly recorded as next research questions above. **WU-D1-03 institutional discovery is sufficient to close.** This does not constitute full problem validation (`validation_status` remains `unvalidated` on both problems) — validation is D2/D5 and later work.
+
+### Confirmation (Batch B)
+
+- Additional substantive research performed during integration: **NO**
+- New `PRB-*` created: **NO**
+- New `HYP-*` created: **NO**
+- Speculative causal relationships encoded as fact: **NO**
+- WU-D1-04/WU-D1-05 records touched: **NO**
+- WU-D1-03 marked `done`: **YES** — see `docs/milestones/D1-WU03-closure.md`

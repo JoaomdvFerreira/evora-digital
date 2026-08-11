@@ -2,14 +2,14 @@
   "version": "0.8.0",
   "projectStatus": "in_progress",
   "currentMilestoneId": "M001",
-  "currentWorkUnitId": "WU003",
+  "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
       {
         "id": "M001",
         "title": "D1 — Institutional & Data Source Mapping",
         "objective": "Build the first systematic institutional evidence base for Évora and expand the civic data-source catalogue without searching for software ideas.",
-        "status": "in_progress",
+        "status": "ready",
         "workUnitIds": [
           "WU001",
           "WU002",
@@ -105,12 +105,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "in_progress",
+        "status": "done",
         "dependencies": [
           "DEP-002"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T21:13:26.139Z"
+        "updatedAt": "2026-08-11T09:30:00.000Z"
       },
       {
         "id": "WU004",
@@ -443,6 +443,58 @@
       "finalWorkUnitStatus": "needs_review",
       "nextRecommendation": "aiqt checkpoint amend --checkpoint C002",
       "createdAt": "2026-08-10T19:56:19.260Z"
+    },
+    {
+      "id": "C003",
+      "workUnitId": "WU003",
+      "packetId": "PKT-003",
+      "summary": "Integrated externally reviewed, project-owner-approved WU-D1-03 Research Batch B: enriched 2 existing sources, added 4 new sources, added 5 evidence records, and refined the 2 existing problem records (PRB-0006, PRB-0007) with current-state challenge evidence. No new PRB-*/HYP-* created. Institutional saturation reached: no new top-level problem class produced.",
+      "completed": [
+        "Enriched SRC-0030, SRC-0031 with the 2026-2027 caregiver-plan implementation update.",
+        "Added SRC-0035..SRC-0038 (housing programme agreement, supported-rent delivery, UE student accommodation, ULSAC responses).",
+        "Added EVD-000042..EVD-000046.",
+        "Refined PRB-0006 and PRB-0007 possible_root_causes/evidence with the Batch B current-state challenge result; no status/tractability changes beyond evidence linkage.",
+        "Updated docs/data/source-registry.md and docs/milestones/D1-WU03-progress.md; created docs/milestones/D1-WU03-closure.md."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0030.yaml",
+        "research/sources/SRC-0031.yaml",
+        "research/sources/SRC-0035.yaml",
+        "research/sources/SRC-0036.yaml",
+        "research/sources/SRC-0037.yaml",
+        "research/sources/SRC-0038.yaml",
+        "research/evidence/EVD-000042.yaml",
+        "research/evidence/EVD-000043.yaml",
+        "research/evidence/EVD-000044.yaml",
+        "research/evidence/EVD-000045.yaml",
+        "research/evidence/EVD-000046.yaml",
+        "research/problems/PRB-0006.yaml",
+        "research/problems/PRB-0007.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D1-WU03-progress.md",
+        "docs/milestones/D1-WU03-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 83 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 83 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T09:30:00.000Z"
     }
   ],
   "lastAgentPacket": {
@@ -469,8 +521,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt checkpoint",
-  "lastUpdatedAt": "2026-08-10T21:13:26.139Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-11T09:30:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -575,6 +627,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-10T20:52:57.626Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C003",
+      "current": {
+        "observationId": "sha256:00e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C003",
+        "workUnitId": "WU003",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T09:30:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T09:30:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:00e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C003",
+          "workUnitId": "WU003",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T09:30:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T09:30:00.000Z"
         }
       ]
     }

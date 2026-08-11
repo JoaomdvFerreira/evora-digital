@@ -1,0 +1,27 @@
+source_id: SRC-0036
+publisher: "Município de Évora"
+name: "12 supported-rent homes delivered, January 2026 (Malagueira)"
+scope:
+  geography: municipality
+  domains:
+    - "HOU"
+source_type: web
+access:
+  public: true
+  machine_readable: unknown
+  method: "public web page"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-01
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/camara-de-evora-entregou-mais-12-casas-em-regime-de-arrendamento-apoiado/"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-03 Batch B (provisional D1-03-B-S02). Confirms delivery, in January 2026, of 12 fully rehabilitated homes in Malagueira under the supported-rental regime, to families. Concrete current-state evidence of active delivery pace under the Local Housing Strategy/Plano Local de Habitação (see SRC-0035)."

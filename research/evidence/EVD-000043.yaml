@@ -1,0 +1,25 @@
+evidence_id: EVD-000043
+type: institutional
+source:
+  source_id: SRC-0037
+  publisher: "Universidade de Évora / SASUÉ"
+  title: "UÉ student accommodation (Alojamento)"
+  source_reference: "https://www.uevora.pt/estudar/estudantes-ue/Alojamento"
+  published_at: null
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "students"
+domain:
+  - "HOU"
+  - "EDU"
+observation:
+  summary: "Student accommodation capacity is improving (525 nominal capacity across seven residences, plus 105 PRR-funded beds expected, reaching approximately 630) but remains constrained: three residences were closed for renovation during 2025/2026 (temporary capacity disruption), and UÉ explicitly redirects students toward private/alternative accommodation due to limited places. Student housing remains a supported subproblem within the housing cluster; exact unmet demand in 2026 is not quantified by the reviewed public sources."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-B-E02. Candidate problem decision: student accommodation retained as a housing subproblem/dependency within PRB-0006, not promoted to a separate canonical problem."

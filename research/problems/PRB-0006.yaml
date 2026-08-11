@@ -15,12 +15,14 @@ current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Primary root cause is largely physical/economic supply and affordability; software leverage may be secondary (per WU-D1-03 Batch A interpretation, not yet validated)."
-  - "Student accommodation is preserved here as a documented sub-pressure within the housing cluster rather than a separate canonical problem, per the approved Round A cross-domain synthesis; it has strong overlap with WU-D1-04 talent/student attraction and retention and may be referenced there without duplicating this record."
-  - "Existing housing interventions (Local Housing Strategy rehabilitation, controlled-cost targets, supported-rental rehabilitation, temporary/shared accommodation, student-housing needs assessment) mean this is not an 'absence of institutional response' problem; Batch B must determine 2026 implementation status and residual unmet need."
+  - "Student accommodation is preserved here as a documented sub-pressure within the housing cluster rather than a separate canonical problem, per the approved Round A cross-domain synthesis; it has strong overlap with WU-D1-04 talent/student attraction and retention and may be referenced there without duplicating this record. WU-D1-03 Batch B confirms student accommodation capacity is improving but still constrained (see EVD-000043) and keeps it as a subproblem, not a separate canonical problem."
+  - "Existing housing interventions (Local Housing Strategy rehabilitation, controlled-cost targets, supported-rental rehabilitation, temporary/shared accommodation, student-housing needs assessment) mean this is not an 'absence of institutional response' problem; Batch B confirms these interventions are large, funded and actively being delivered (EUR67.1M/459 homes plus concrete January 2026 deliveries), and that this active supply-side response does not by itself resolve unmet housing need (see EVD-000042). Digital intervention has low leverage over the dominant physical/economic cause."
 evidence:
   - "EVD-000031"
   - "EVD-000032"
   - "EVD-000033"
+  - "EVD-000042"
+  - "EVD-000043"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

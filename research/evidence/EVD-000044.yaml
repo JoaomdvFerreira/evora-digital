@@ -1,0 +1,27 @@
+evidence_id: EVD-000044
+type: institutional
+source:
+  source_id: SRC-0030
+  publisher: "Município de Évora"
+  title: "Plano Concelhio dos Cuidadores Informais de Évora 2026-2027 (implementation update)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/Plano-Concelhio-Cuidadores-Informais_v4_Junho_2025-002_RELATORIO.pdf"
+  published_at: 2026-01
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0031"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "The caregiver information/navigation problem is explicitly recognised by the institutions themselves: the Municipality reported 262 people with official informal-caregiver status as of January 2026 (communicated via CLASE), and the 2026-2027 programme plans to systematise existing responses, simplify procedures, produce a caregiver manual, publish it digitally, and provide reminders/updates. This materially strengthens the Round A candidate problem that caregivers face information/support-navigation friction."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-B-E03. Candidate problem decision: STRENGTHEN PRB-0007 (refine, do not duplicate). Institutional confidence HIGH, current-state confidence HIGH."

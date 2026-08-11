@@ -15,10 +15,13 @@ reported_consequences: []
 possible_root_causes:
   - "Évora already has a dense social-support institutional network (roughly 120 CLASE-listed institutions), so the problem should not be assumed to be 'no organisations exist'; coordination, capacity, discoverability and eligibility/navigation need separate investigation (per WU-D1-03 Batch A interpretation, not yet validated)."
   - "Existing services and user journeys must be mapped before any solution hypothesis, per the approved Round A cross-domain synthesis; this is not converted into a generic cross-domain 'information fragmentation' problem shared with other domains."
-  - "Mental-health support capacity is a related but distinct institutional concern (see EVD-000035, freshness caution pending) and is intentionally not merged into this problem; it remains open investigation rather than a canonical problem until current evidence is sufficient under the recording-protocol rules for problem creation."
+  - "Mental-health support capacity is a related but distinct institutional concern (see EVD-000035, freshness caution pending) and is intentionally not merged into this problem; it remains open investigation rather than a canonical problem until current evidence is sufficient under the recording-protocol rules for problem creation. WU-D1-03 Batch B (EVD-000046) further weakens a broad mental-health-capacity claim, since ULSAC operates active psychiatry and community mental-health responses; this confirms the decision to keep mental-health capacity as evidence/validation-only rather than a canonical problem."
+  - "WU-D1-03 Batch B strengthens this problem with current-state evidence: the Municipality reports 262 people with official informal-caregiver status (January 2026) and is actively implementing a 2026-2027 caregiver plan (manual, systematisation of responses, simplified procedures, digital publication) that explicitly targets the information/navigation friction this problem describes (see EVD-000044). ULSAC and local partners already operate caregiver-oriented services (UCC, Cantinho do Cuidador, VIVAMENTE), confirming the remaining gap is navigation/coordination/awareness rather than absence of service (see EVD-000045). Institutional confidence: HIGH. Current-state confidence: HIGH."
 evidence:
   - "EVD-000034"
   - "EVD-000036"
+  - "EVD-000044"
+  - "EVD-000045"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

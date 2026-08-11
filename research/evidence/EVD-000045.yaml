@@ -1,0 +1,28 @@
+evidence_id: EVD-000045
+type: institutional
+source:
+  source_id: SRC-0038
+  publisher: "ULSAC (Unidade Local de Saúde do Alentejo Central)"
+  title: "ULSAC caregiver/community/dementia responses (UCC, Cantinho do Cuidador, VIVAMENTE)"
+  source_reference: "https://www.ulsac.min-saude.pt/2025/10/20/unidade-de-cuidados-na-comunidade-ucc-evora/"
+  published_at: 2025-10
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0030"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+  - "cared-for people"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "Existing caregiver support already operates: ULSAC and local partners run caregiver/community/dementia-oriented initiatives (Unidade de Cuidados na Comunidade, Cantinho do Cuidador, VIVAMENTE). The remaining problem is therefore not 'no service exists' for caregivers; it should focus on navigation, awareness, eligibility, coordination and handoffs, and completeness of information, not on duplicating a service that already exists."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-B-E04. Reinforces PRB-0007's existing possible_root_causes note that this is a navigation/coordination problem, not an absence-of-service problem."

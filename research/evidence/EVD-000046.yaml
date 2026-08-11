@@ -1,0 +1,26 @@
+evidence_id: EVD-000046
+type: institutional
+source:
+  source_id: SRC-0038
+  publisher: "ULSAC (Unidade Local de Saúde do Alentejo Central)"
+  title: "ULSAC mental-health and community-care responses"
+  source_reference: "https://www.ulsac.min-saude.pt/2025/01/16/ecsm-ia/"
+  published_at: 2025-01
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0002"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "people needing mental-health support"
+domain:
+  - "HEA"
+observation:
+  summary: "Current evidence weakens a broad claim of unaddressed mental-health capacity: ULSAC operates active psychiatry, community-care and community mental-health initiatives (ECSM-IA, Unidade de Cuidados na Comunidade, Psiquiatria e Saude Mental). The older institutional concern recorded in EVD-000035 remains valid as historical evidence, but Round B does NOT support promoting 'mental-health capacity shortage' as a current canonical problem without utilisation, waiting-time or service-capacity evidence."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-B-E05. Candidate problem decision: mental-health capacity is NOT created as a canonical problem; retained as evidence/validation question only, referenced from PRB-0007's possible_root_causes."

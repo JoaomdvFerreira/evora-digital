@@ -1,0 +1,27 @@
+evidence_id: EVD-000042
+type: institutional
+source:
+  source_id: SRC-0035
+  publisher: "Município de Évora"
+  title: "Plano Local de Habitação de Évora — 67.1M€ agreement"
+  source_reference: "https://www.cm-evora.pt/plano-local-de-habitacao-de-evora/"
+  published_at: 2026
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0036"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents seeking adequate/affordable housing"
+  - "vulnerable populations needing temporary accommodation"
+domain:
+  - "HOU"
+observation:
+  summary: "Housing intervention is large and active (EUR67.1M funding for 459 homes, 40 affordable-rent homes in Bairro do Moinho, 122 new homes in Bairro do Escurinho, a transitional accommodation centre for at least 24 people, an intended ~500 families benefited, plus 12 supported-rent homes already delivered in Malagueira in January 2026), but this does not by itself demonstrate unmet housing need is resolved. The Round A housing problem remains structurally credible; future problem wording must recognise this active supply-side intervention. Digital intervention is assessed as having low leverage over the dominant cause, which is physical/economic supply."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-03-B-E01. Current-state challenge result for PRB-0006: housing structural problem survives challenge because major interventions are acknowledged but do not close the gap; retained as canonical structural problem cluster, not duplicated."
