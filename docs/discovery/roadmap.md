@@ -126,6 +126,8 @@ D4 does not select a product, choose a vendor, design architecture, require a `H
 
 ### D5 — Stakeholder Challenge & Validation
 
+**Execution strategy:** canonicalized 2026-08-11 in `docs/discovery/research-methodology.md` §13 (unit of work, sufficiency/stopping, engagement grouping, challenge discipline, future `M005` shape); validation-status semantics in `docs/models/problem-model.md`; evidence-capture rules in `docs/models/evidence-model.md`; privacy/consent rules in `docs/discovery/research-ethics.md` §11. `M005` is not created by this canonicalization.
+
 **Objective:** Challenge the evidence-backed problem assessment with affected people, operators, institutions and other relevant stakeholders.
 
 D5 is not necessarily the first stakeholder contact — D3 formative research (`docs/discovery/research-methodology.md` §2.3) may already have occurred where needed to understand the current journey. D5 performs the stronger challenge/validation function.

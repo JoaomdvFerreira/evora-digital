@@ -1,7 +1,7 @@
 # Research Ethics and Public-Signal Rules
 
-**Version:** 0.1  
-**Status:** Baseline draft
+**Version:** 0.2  
+**Status:** Baseline draft; §11 added for D5 direct-engagement privacy/consent 2026-08-11
 
 ## 1. Principle
 
@@ -117,3 +117,19 @@ Where practical, published Évora Digital research should explain:
 If the programme later publishes research outputs containing incorrectly retained personal information or materially inaccurate attribution, there must be a practical correction/removal mechanism.
 
 A detailed operational procedure should be defined before publication of a large public evidence corpus.
+
+## 11. D5 direct-engagement privacy and consent
+
+Canonicalized as part of the D5 Execution Strategy (`docs/discovery/research-methodology.md` §D5) for direct stakeholder/operator/journey engagement, extending the public-signal rules above (§1–§10) to first-party contact.
+
+**Public-repository rule:** canonicalize the civic finding, not the participant identity.
+
+Do not commit to the public repository by default: participant names; emails/phone numbers; recordings; raw transcripts; recruitment lists; private correspondence; unnecessary health/care-recipient details; unnecessary employer/personnel details. Use role/category labels instead (per §5's minimisation pattern).
+
+Raw notes, if necessary for research/audit, stay outside the public repository, access-restricted, retained only as long as necessary, and deleted/anonymized when no longer needed. Define handling and retention **before** the first D5 contact, not afterward.
+
+Do not record audio/video by default. If genuinely necessary, obtain explicit consent, explain purpose/use/retention, keep the recording outside the repository, and extract only the necessary canonical evidence into structured `EVD-*` records.
+
+Before any direct engagement, explain at minimum: the civic-research purpose; that participation is voluntary; that the project is challenging an existing diagnosis, not conducting a popularity poll; that publication will be minimized/anonymized; how notes/recordings are handled; and the correction/removal route (§10).
+
+For accessibility and caregiver work specifically, ask about functional journey/service friction rather than diagnosis unless diagnosis is genuinely necessary to the decision question; do not infer sensitive attributes (§6) or retain incidental sensitive details even when a participant volunteers them.

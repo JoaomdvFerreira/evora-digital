@@ -1,7 +1,7 @@
 # Research Methodology
 
-**Version:** 0.3  
-**Status:** Baseline draft; §2.3–2.4 reconciled for D3/D5 2026-08-11; §11–12 added for D4–D9 programme reconciliation 2026-08-11
+**Version:** 0.4  
+**Status:** Baseline draft; §2.3–2.4 reconciled for D3/D5 2026-08-11; §11–12 added for D4–D9 programme reconciliation 2026-08-11; §13 (D5 Execution Strategy) added 2026-08-11
 
 ## 1. Purpose
 
@@ -262,3 +262,58 @@ Reassess a problem's `ASM-*` when:
 - a `WATCH` trigger fires.
 
 High-volatility `PRB-*` may justify scheduled current-state checks; stable `PRB-*` should not be continuously researched. This rule applies across D4–D9, mirroring the proportionality principle already established in §2.4.
+
+## 13. D5 Execution Strategy — Stakeholder Challenge & Validation
+
+Canonicalized 2026-08-11, following `M004`/D4 closure. See `docs/discovery/roadmap.md` §D5 for the roadmap-level objective; this section canonicalizes D5's operating contract. Validation-status semantics live in `docs/models/problem-model.md`; evidence-capture rules live in `docs/models/evidence-model.md`; privacy/consent rules live in `docs/discovery/research-ethics.md` §11.
+
+### 13.1 Purpose
+
+D5 challenges the current evidence-backed problem diagnoses with the smallest credible set of direct stakeholder, operator, journey and primary-data interactions. It is not a generic interview campaign, a requirement to speak to every stakeholder class, a popularity poll, a solution-ideation workshop, or a requirement that every `PRB-*` becomes `validated`.
+
+Core question: *what is the smallest credible direct challenge that could confirm, refine, contradict or falsify the decision-relevant parts of the current problem diagnosis?* A contradiction, refinement, access limitation, or failed validation attempt is a legitimate D5 result.
+
+### 13.2 Unit of work: Validation Question
+
+Every engagement must trace to one or more explicit `ASM.critical_unknowns`, blocked/partial decision gates, D4 falsification questions, a `WATCH` trigger, or a current-journey/root-cause/remaining-gap uncertainty. For each question, milestone/progress documentation should capture: question id; related `PRB-*`; decision/gate affected; claim being challenged; who can answer/challenge it; minimum credible method; evidence that would support; evidence that would contradict/refine; stopping rule. No new canonical record type is created for this unless implementation later proves one necessary.
+
+### 13.3 Minimum credible challenge — evidence roles, not quotas
+
+Use only the roles needed for the specific decision question:
+
+- **Affected-journey evidence** — direct experience of the assessed journey/failure; best for lived friction, workarounds, consequence, materiality, accessibility/usability and negative cases.
+- **Operator/process evidence** — direct knowledge of the service/process/data; best for workflow, routing, service rules, operational failure modes, data availability and current-solution coverage. May come from a meeting, an authoritative written response, a process artefact, or administrative/service data — a meeting is not required if stronger direct evidence answers the question.
+- **Counterexample/negative case** — actively seek evidence that the problem does not occur, occurs differently, is already solved, is caused by something else, or matters only in a narrower context.
+- **Direct observation** — used when the journey/failure can be credibly observed without collecting unnecessary personal data (e.g. an accessibility location audit, a stop-level information audit, a cycling-journey observation).
+
+Do not interview people merely because D5 is called stakeholder validation.
+
+### 13.4 Sufficiency and stopping
+
+D5 success is never defined as *N interviews*. Stop a question when: additional engagement is unlikely to change the relevant gate/status/route; a contradiction requires reframing before more validation is useful; an existing solution is shown to close the gap sufficiently; non-digital dominance makes further digital-gap work decision-irrelevant; the necessary access cannot be obtained proportionately (preserve the unknown rather than forcing access); or new engagements repeat the same material finding without resolving another decision-relevant uncertainty. Do not continue recruitment for symmetry across `PRB-*`.
+
+### 13.5 Engagement grouping
+
+Organise around respondent knowledge, not one campaign per `PRB-*`. A single interaction may address multiple problems only when the respondent genuinely has direct knowledge of each question — e.g. a mobility/transport/parking cluster spanning `PRB-0001`/`PRB-0002`/`PRB-0004`/`PRB-0005` where the same operator or passenger has relevant knowledge of more than one. `PRB-0009` engagement, if run at all, is scoped only to its narrow `D5-P9-*` falsification questions (`docs/milestones/D4-WU02-PRB0009-progress.md`) — its core mechanism stays `WATCH`, and a resident campaign is not created for it merely because D5 exists. `PRB-0010` remains `WATCH-TRIGGER` with no active D5 engagement by default.
+
+### 13.6 Challenge discipline
+
+Every engagement guide must include at least one explicit negative-case prompt, e.g.: *when does this problem not happen? What currently works well? Who does not experience this difficulty? What would make our current diagnosis wrong? Is there an existing process/tool we missed? Is the consequence smaller than our evidence suggests?* Do not lead participants toward agreement. Do not show a proposed solution before the problem challenge is complete, unless the D5 question explicitly concerns an existing solution.
+
+### 13.7 D5 decision record
+
+For every `PRB-*` actually challenged in D5, synthesis must record: the problem; questions challenged; stakeholder/evidence roles reached; counterexamples sought; material findings; contradictions/refinements; remaining high-impact unknowns; `validation_status` before and after; `PRB.status` change, if any; `ASM` gate/triage changes, if any; and the next route. No status change is mandatory.
+
+### 13.8 Pre-contact gate
+
+Before first participant/operator contact, have in hand: the exact decision question(s); the respondent role required; a negative-case prompt; the minimal data to collect; the privacy/consent notice (`docs/discovery/research-ethics.md` §11); the recording decision; the raw-note handling decision; the canonical-evidence plan; and the stopping rule. Do not begin open-ended recruitment without these.
+
+### 13.9 Recommended future `M005` shape — planning guidance only
+
+Not created by this canonicalization. Recommended later structure, for the project owner to plan separately:
+
+1. **Operator / Institutional Challenge** — only decision-compatible questions answerable via operators/institutions/data.
+2. **Affected-Journey Challenge** — only user/lived-journey questions still needed after operator evidence.
+3. **Validation Decisions & D5 Closure** — integrate evidence, apply the validation contract (`docs/models/problem-model.md`), update `ASM`/`PRB` only where justified, create the D6 handoff, and close D5.
+
+External contacts/data requests may run in parallel outside AIQT while canonical repository integration remains serialized.

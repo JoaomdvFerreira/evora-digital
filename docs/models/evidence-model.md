@@ -101,3 +101,35 @@ The same statement is not sufficient evidence for:
 ## Evidence is append-only conceptually
 
 Corrections should preserve the fact that an earlier observation existed where practical, while marking it corrected, superseded, or invalidated rather than silently rewriting research history.
+
+## D5 engagement evidence capture
+
+Canonicalized as part of the D5 Execution Strategy (`docs/discovery/research-methodology.md` §D5). The existing `type: stakeholder` and `type: observation` values already cover D5 engagement evidence — no new engagement schema or record type is introduced.
+
+### Engagement lineage
+
+One engagement (interview, operator meeting, written response) may yield multiple atomic `EVD-*` records. All records from the same underlying interaction must share one explicit `analysis.lineage_id`, e.g. `D5-ENG-001`, so multiple findings from one conversation are never counted as independent corroboration.
+
+### Private direct engagement source
+
+For a private primary engagement, `EVD.source.source_id` may be omitted when no public `SRC-*` exists. Use a sanitized descriptor instead of a fake public URL, for example:
+
+```yaml
+type: stakeholder
+source:
+  publisher: "Évora Digital"
+  title: "D5 stakeholder engagement — transport passenger"
+  source_reference: "D5-ENG-001 — private research note, not public"
+  published_at: null
+  retrieved_at: "2026-..."
+```
+
+Never create a fake public URL for a private engagement. Do not add a `SRC-*` merely for symmetry when the existing Data Source Model cannot cleanly represent a private engagement. If a stakeholder supplies a real document/dataset/process artefact, canonicalize that artefact separately using the normal source rules (`docs/models/data-source-model.md`).
+
+### Evidence semantics for direct engagement
+
+Direct lived experience normally maps to `evidence_nature: reported-experience`, `strength: primary-non-authoritative`, `analysis.representativeness: LIMITED`, `analysis.verification: REPORTED`, unless the specific evidence justifies another value. An accountable operator may be `primary-authoritative` only for operational facts they actually own — operator authority does not make resident-prevalence claims authoritative.
+
+### Observation
+
+`type: observation` remains bounded to project-observed journey/location/system state: record date, location/context, limitations, and what was not tested. One observation does not imply city-wide prevalence.
