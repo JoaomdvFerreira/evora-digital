@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
-  "projectStatus": "in_progress",
-  "currentMilestoneId": "M002",
+  "projectStatus": "review",
+  "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -24,7 +24,7 @@
         "id": "M002",
         "title": "D2 — Public Signal Discovery",
         "objective": "Test whether the nine institutionally identified PRB-* problems from D1 are visible in current public/lived signals, and enrich the D1 problem map with journey/context/contradiction evidence without measuring prevalence or selecting solutions.",
-        "status": "ready",
+        "status": "done",
         "workUnitIds": [
           "WU008",
           "WU009",
@@ -420,7 +420,7 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-017",
           "DEP-018",
@@ -428,7 +428,7 @@
           "DEP-020"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T12:39:27.958Z"
+        "updatedAt": "2026-08-11T12:48:37.324Z"
       }
     ],
     "dependencies": [
@@ -1315,17 +1315,86 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T12:39:27.958Z",
-      "nextRecommendation": "aiqt next"
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T12:39:27.958Z"
+    },
+    {
+      "id": "C014",
+      "workUnitId": "WU013",
+      "packetId": "PKT-014",
+      "summary": "Consolidated and closed D2 Public Signal Discovery: cross-track synthesis across D2-A/B/C/D/E, OPEN-DISCOVERY/blind-spot review with the road-surface-maintenance NEW-CANDIDATE disposition retained for D3 review, consolidated contradiction/current-state log, consolidated D3/D5 stakeholder questions, and full D2 exit-gate verification.",
+      "completed": [
+        "Verified pre-WU baseline (193 canonical records; WU009-WU012 done; WU013 ready; clean tree) via aiqt status --json and node tools/validate-research.js",
+        "Performed cross-track synthesis for PRB-0001..PRB-0009 without new external research",
+        "Consolidated contradiction/current-state log covering transport information, accessibility, road maintenance, caregiver support, urban hygiene, housing, and employment",
+        "Performed D2 OPEN-DISCOVERY / BLIND-SPOT FINDINGS review; confirmed road-surface-maintenance NEW-CANDIDATE (EVD-000082/EVD-000083/EVD-000084) is retained, unlinked from PRB-0005, not promoted to a new PRB",
+        "Consolidated D3/D5 stakeholder/evidence questions across all tracks",
+        "Audited all nine PRB-* validation_status values: all remain unvalidated",
+        "Evaluated and checked off every D2 exit-gate checkbox in docs/milestones/D2-public-signal-discovery.md against repository evidence",
+        "Performed proportionate source-registry.md heading/status cleanup (removed stale D1-seed framing)",
+        "Created docs/milestones/D2-WU06-closure.md as the D2 closure record",
+        "Marked D2-public-signal-discovery.md status ACTIVE -> CLOSED"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/data/source-registry.md",
+        "docs/milestones/D2-public-signal-discovery.md",
+        "docs/milestones/D2-WU06-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 193 record(s): OK."
+        },
+        {
+          "command": "aiqt status --json",
+          "result": "passed",
+          "summary": "Repository/AIQT state valid before and after WU013."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "No PRB-* validation_status upgraded to validated from public-signal evidence alone",
+          "result": "passed",
+          "evidence": "grep validation_status across all research/problems/PRB-*.yaml shows all nine remain unvalidated."
+        },
+        {
+          "criterion": "No unauthorized PRB-*/HYP-* created during D2 closure",
+          "result": "passed",
+          "evidence": "research/problems/ still contains exactly PRB-0001..PRB-0009; research/hypotheses/ still contains 0 records."
+        },
+        {
+          "criterion": "Road-surface maintenance NEW-CANDIDATE retained, not absorbed into PRB-0005, not discarded",
+          "result": "passed",
+          "evidence": "PRB-0005.evidence list contains only EVD-000003/007/008/012/025 (no road-maintenance EVD); EVD-000082/083/084 remain NEW-CANDIDATE-labelled and preserved."
+        },
+        {
+          "criterion": "Housing and Employment (PRB-0006/PRB-0008) remain analytically separate",
+          "result": "passed",
+          "evidence": "docs/milestones/D2-WU06-closure.md sections 1.4/1.5 keep findings, saturation decisions, and evidence separate; no merge performed."
+        },
+        {
+          "criterion": "Final canonical record counts match D2 entry baseline plus D2 integration work",
+          "result": "passed",
+          "evidence": "56+25=81 SRC, 78+25=103 EVD, 9 PRB, 0 HYP = 193 total, matching validator output."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T12:48:37.324Z",
+      "nextRecommendation": "aiqt review --mode release"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-013",
-    "workUnitId": "WU012",
+    "id": "PKT-014",
+    "workUnitId": "WU013",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T12:39:03.894Z",
+    "createdAt": "2026-08-11T12:45:22.451Z",
     "format": "markdown",
-    "contentHash": "sha256:c60dae86af722c92a153f27b5e7be27ff372ebe3d2b3f240369698bc8c45b440",
+    "contentHash": "sha256:7a1ccb5f8b5ce7eb50b2a923071c6b0c17e0a2f7c1d322159f04a326d2a38694",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1343,8 +1412,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T12:39:27.958Z",
+  "nextRecommendedCommand": "aiqt review --mode release",
+  "lastUpdatedAt": "2026-08-11T12:48:37.324Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1779,6 +1848,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T12:39:27.958Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C014",
+      "current": {
+        "observationId": "sha256:3736d7c83e4b88b89e07ed47da19dcc1519fae6e7edc17c337a92532202f770a",
+        "checkpointId": "C014",
+        "workUnitId": "WU013",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T12:48:37.324Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T12:48:37.324Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:3736d7c83e4b88b89e07ed47da19dcc1519fae6e7edc17c337a92532202f770a",
+          "checkpointId": "C014",
+          "workUnitId": "WU013",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T12:48:37.324Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T12:48:37.324Z"
         }
       ]
     }
