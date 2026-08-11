@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
-  "projectStatus": "in_progress",
-  "currentMilestoneId": "M004",
+  "projectStatus": "review",
+  "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -51,7 +51,7 @@
         "id": "M004",
         "title": "D4 — Existing Solutions, Comparative Evidence & Residual Gap Analysis",
         "objective": "Test the two D3-routed residual opportunity areas (PRB-0005 parking/data legibility, PRB-0009 waste service/data) against current local solutions and bounded comparative evidence, then decide whether a material residual gap remains before D5 stakeholder challenge/validation. D4 does not select a product, vendor, architecture or project.",
-        "status": "ready",
+        "status": "done",
         "workUnitIds": [
           "WU019",
           "WU020",
@@ -757,12 +757,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-026"
         ],
         "createdAt": "2026-08-11T16:09:24.758Z",
-        "updatedAt": "2026-08-11T16:37:10.396Z"
+        "updatedAt": "2026-08-11T18:14:31.290Z"
       }
     ],
     "dependencies": [
@@ -2477,17 +2477,96 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T16:37:10.396Z",
-      "nextRecommendation": "aiqt next"
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T16:37:10.396Z"
+    },
+    {
+      "id": "C022",
+      "workUnitId": "WU021",
+      "packetId": "PKT-022",
+      "summary": "Synthesized the two D4 tracks (PRB-0005 parking, PRB-0009 waste), both closing PARTIAL, evaluated all D4 exit-gate items against the actual WU019/WU020 record, and produced the explicit D4-to-D5 handoff consolidating pre-existing D3 D5-CARRY items with the WU019/WU020 falsification questions. Closed M004/D4.",
+      "completed": [
+        "Verified pre-WU021 baseline: WU019 done, WU020 done via C021, WU021 ready, 89 SRC/111 EVD/10 PRB/0 HYP/10 ASM=220, all PRBs unvalidated.",
+        "Created docs/milestones/D4-WU03-closure.md with scope/rationale, both final PRB conclusions (PARTIAL/PARTIAL), cross-gap synthesis, final D4 result table, D5 handoff summary, D6 evaluation-readiness carry, proof of no HYP/project selection, record-count delta across D4, full exit-gate evaluation, saturation, and final AIQT state.",
+        "Created docs/milestones/D4-to-D5-handoff.md consolidating the pre-existing D3 D5-CARRY items for PRB-0001/0002/0003/0004/0006/0007/0008, the six D5-P5-* questions from WU019, and the six D5-P9-* questions from WU020; PRB-0010 remains WATCH-TRIGGER; no M005/D5 work unit created.",
+        "Updated docs/milestones/D4-existing-solutions-residual-gap-analysis.md: Status PLANNED -> CLOSED, all 10 exit-gate checkboxes evaluated [x] with evidence citations.",
+        "Confirmed zero research YAML changes in this work unit (git status showed only docs/.aiqt changed)."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/milestones/D4-WU03-closure.md",
+        "docs/milestones/D4-to-D5-handoff.md",
+        "docs/milestones/D4-existing-solutions-residual-gap-analysis.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "22/22 passed, 0 failed."
+        },
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 220 record(s): OK."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0005",
+          "result": "passed",
+          "summary": "linked_evd=8, evd_with_analysis=8/8, triage=DEEPEN, unchanged."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0009",
+          "result": "passed",
+          "summary": "linked_evd=15, evd_with_analysis=15/15, triage=WATCH, unchanged."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "Corpus: 89 SRC, 111 EVD, 10 PRB, 0 HYP, 10 ASM (220 total canonical records); all PRB triage/linked_evd unchanged from pre-WU021 state."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "21 gap(s) found, unchanged gap classes; no new gap type introduced."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Both PRB-0005 and PRB-0009 residual-gap findings are synthesized with a clear D5-handoff",
+          "result": "passed",
+          "evidence": "docs/milestones/D4-WU03-closure.md §4-6; docs/milestones/D4-to-D5-handoff.md."
+        },
+        {
+          "criterion": "D4 exit gate evaluated and recorded",
+          "result": "passed",
+          "evidence": "docs/milestones/D4-existing-solutions-residual-gap-analysis.md exit gate section, 10/10 items [x]; docs/milestones/D4-WU03-closure.md §10."
+        },
+        {
+          "criterion": "node tools/validate-research.js passes",
+          "result": "passed",
+          "evidence": "Validated 220 record(s): OK."
+        },
+        {
+          "criterion": "Working tree clean before closure commit",
+          "result": "passed",
+          "evidence": "git status --short showed only this WU's own docs plus .aiqt state files before this checkpoint."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T18:14:31.290Z",
+      "nextRecommendation": "aiqt review --mode release"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-021",
-    "workUnitId": "WU020",
+    "id": "PKT-022",
+    "workUnitId": "WU021",
     "milestoneId": "M004",
-    "createdAt": "2026-08-11T16:36:42.032Z",
+    "createdAt": "2026-08-11T18:12:13.318Z",
     "format": "markdown",
-    "contentHash": "sha256:3941dfbcc670bb5a1f38d4501fae5a59c00f4d461045047cf3a5ceb18447f45c",
+    "contentHash": "sha256:d829a8781e5b5d65cbd31834e5176f7bb51bff5b1072179e1540efd44aa310db",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -2505,8 +2584,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T16:37:10.396Z",
+  "nextRecommendedCommand": "aiqt review --mode release",
+  "lastUpdatedAt": "2026-08-11T18:14:31.290Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -3181,6 +3260,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T16:37:10.396Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C022",
+      "current": {
+        "observationId": "sha256:4f9b0bf9432b98be49339aaebf64dc2e065f3e6235148dbcf871074bee7b9bdd",
+        "checkpointId": "C022",
+        "workUnitId": "WU021",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T18:14:31.290Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T18:14:31.290Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:4f9b0bf9432b98be49339aaebf64dc2e065f3e6235148dbcf871074bee7b9bdd",
+          "checkpointId": "C022",
+          "workUnitId": "WU021",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T18:14:31.290Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T18:14:31.290Z"
         }
       ]
     }
