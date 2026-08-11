@@ -16,12 +16,22 @@ possible_root_causes:
   - "The dominant root cause is substantially operational/capacity-related, not informational or digital: ageing/broken collection fleet, insufficient reserve vehicle capacity, staffing/logistics, collection-route/service organisation, and cross-entity responsibility arrangements (Município, Gesamb, parish councils). Digital tractability over this dominant root cause is assessed as low/mixed - a digital product should not be assumed to resolve fleet age, staffing capacity or logistics."
   - "The problem must be framed as service reliability/quality, not as 'lack of waste information' or 'need for a waste-reporting app'. A digital occurrence-reporting channel and Gesamb information infrastructure (schedules, ecocentre locations, service-quality reporting) already exist (see EVD-000067, EVD-000074, EVD-000075), so a generic reporting or information app would duplicate existing capability."
   - "A narrower, currently unvalidated information/coordination subproblem may exist within the hygiene service journey - specifically around real-time service-status transparency, bulky-waste request routing, cross-entity ownership clarity (Município/Gesamb/parish councils), and citizen visibility into resolution timelines. No public dataset for resolution time, backlog or routing quality was located in this bounded institutional review (see EVD-000075), so this subproblem is not validated and should not be treated as a solution hypothesis. This is the most promising future digital-opportunity angle but requires D2/D5 user-journey or technical/open-data assessment, not further D1 institutional research."
+  - "D2-E Round A (WU-D2-04) strengthens the problem with direct lived public signals alongside the existing institutional diagnosis: a multi-day non-collection report (EVD-000093) and a geographically specific accumulation report in Canaviais (EVD-000094). Both are self-selected public-post signals with UNKNOWN representativeness and are not treated as prevalence evidence."
+  - "D2-E Round A corrects the current-state picture across February-to-August 2026: the February 2026 near-collapse (EVD-000071/EVD-000072) is important but must not be read as the assumed August operating state. A May 2026 normalisation step (EVD-000095) shows the procured vehicles entering service ahead of the July fleet reinforcement to 19 vehicles (SRC-0055, already canonical). A bounded post-July open-web check did not surface a comparably strong new signal of city-wide ordinary-collection collapse - this is a search/saturation result, not evidence that collection is now reliable, that PRB-0009 is solved, or that missed collections no longer occur. Current post-intervention reliability remains insufficiently measured and requires operational data / D5 validation, not a public-signal conclusion."
+  - "D2-E Round A adds two narrow, unvalidated leads without expanding them into new problems: (1) urban parish councils publicly clarifying their hygiene competencies after the July-August responsibility decentralisation (EVD-000096) is institutional coordination-complexity evidence, not proof that residents are commonly confused about responsibility; (2) the existing bulky/green-waste request journey (EVD-000097, EXISTING-SOLUTION) and a single August 2026 green-waste dumping enforcement case (EVD-000098) are transaction-friction leads about discoverability/predictability and the conditional-service boundary, not evidence of widespread confusion. Both remain carried to D5, not established here."
+  - "Core digital_tractability remains low: the dominant causal mechanism stays operational/capacity/service-organisation related. D2-E Round A does not create a software hypothesis for the core problem; validation_status remains unvalidated, since public-signal strength alone cannot validate PRB-0009."
 evidence:
   - "EVD-000065"
   - "EVD-000066"
   - "EVD-000071"
   - "EVD-000072"
   - "EVD-000073"
+  - "EVD-000093"
+  - "EVD-000094"
+  - "EVD-000095"
+  - "EVD-000096"
+  - "EVD-000097"
+  - "EVD-000098"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: low

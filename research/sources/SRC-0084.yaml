@@ -1,0 +1,28 @@
+source_id: SRC-0084
+publisher: "Diana FM"
+name: "News report (corroborating): Município acts against green-waste dumping near a school"
+scope:
+  geography: municipality
+  domains:
+    - "ENV"
+    - "PUB"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "online news article"
+authority: verified-third-party
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-08
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.dianafm.com/evora-municipio-trava-abandono-de-residuos-junto-a-escola-e-abre-contraordenacao/"
+api_candidate:
+  potential: "none"
+notes: "D2-E Round A (E-08, corroborating). Same underlying enforcement event as SRC-0083 (O Digital); treated as one evidence event/lineage via EVD-000098.additional_sources, not an independent second problem signal."

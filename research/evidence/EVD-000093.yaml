@@ -1,0 +1,25 @@
+evidence_id: EVD-000093
+type: social
+source:
+  source_id: SRC-0078
+  publisher: "Public Facebook group (Évora community group)"
+  title: "Facebook group post — multi-day non-collection of waste"
+  source_reference: "https://www.facebook.com/groups/253148126144341/posts/1475627717229703/"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+observation:
+  summary: "A public Facebook group post reports multi-day non-collection of household waste at a residential location in Évora, describing accumulated waste over several days without collection."
+evidence_nature: reported-experience
+strength: anecdotal
+personal_data:
+  present: false
+  retained: false
+notes: "D2-E Round A (E-01). CONFIRMS PRB-0009 with a direct lived/service signal alongside the existing institutional operational diagnosis (EVD-000065/EVD-000066/EVD-000071/EVD-000072). Representativeness UNKNOWN; one self-selected public-post signal, not corroborated frequency/prevalence."

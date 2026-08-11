@@ -1,0 +1,27 @@
+evidence_id: EVD-000098
+type: press
+source:
+  source_id: SRC-0083
+  publisher: "O Digital"
+  title: "News report: Évora green-waste dumping enforcement action (contraordenação)"
+  source_reference: "https://odigital.sapo.pt/residuos-verdes-evora-contraordenacao/"
+  published_at: 2026-08
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0084"
+geography:
+  level: municipality
+  area: "Évora — near a school"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+observation:
+  summary: "In August 2026 the Município opened an enforcement action (contraordenação) against improper green/garden-waste dumping near a school, reported by two outlets covering the same underlying event."
+evidence_nature: claim
+strength: secondary
+personal_data:
+  present: false
+  retained: false
+notes: "D2-E Round A (E-08). TRANSACTION-FRICTION-LEAD; CURRENT-STATE-UPDATE. One enforcement case does not establish widespread resident confusion about the green-waste journey (see EVD-000097); preserved as a D5 journey question ('what happens when municipal green-waste collection cannot be provided'), not a new PRB. One evidence event/lineage integrated once despite two publications reporting it (SRC-0083 primary, SRC-0084 corroborating, same event)."

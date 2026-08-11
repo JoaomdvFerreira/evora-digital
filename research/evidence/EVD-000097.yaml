@@ -1,0 +1,25 @@
+evidence_id: EVD-000097
+type: institutional
+source:
+  source_id: SRC-0082
+  publisher: "Município de Évora"
+  title: "Municipal bulky-waste (monstros domésticos) online service page"
+  source_reference: "https://www.cm-evora.pt/servicos/servicos-online/montros-domesticos/"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+observation:
+  summary: "A dedicated bulky/green-waste (monstros domésticos) service journey already exists: residents can self-deliver to the Ecocentre or request home collection if eligible, via a municipal online service page."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-E Round A (E-07). EXISTING-SOLUTION; TRANSACTION-FRICTION-LEAD. The bulky/green-waste service exists; the remaining open question is discoverability, completion and predictability of the request journey, not absence of a service — carried to D5 as a narrow lead, not established as a validated problem here."
