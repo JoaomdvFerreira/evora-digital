@@ -1,0 +1,25 @@
+evidence_id: EVD-000090
+type: institutional
+source:
+  source_id: SRC-0030
+  publisher: "Município de Évora"
+  title: "Plano Concelhio dos Cuidadores Informais de Évora — reported caregiver needs"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/Plano-Concelhio-Cuidadores-Informais_v4_Junho_2025-002_RELATORIO.pdf"
+  published_at: 2025-06
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "Within the 133-caregiver questionnaire, reported needs prioritised support in care (approx. 40.8%), respite (approx. 40.0%), financial support (approx. 36.8%) and psychological support (approx. 31.2%) above several navigation-adjacent needs; when asked about the single most important need, respite and care support were most prominent."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-B Round A (D2-B-SIG-02). REFINES PRB-0007; LOW-DIGITAL-LEVERAGE for the highest-ranked needs. Establishes that PRB-0007 must not be reduced to 'information is hard to find' — capacity, respite, direct support and financial/psychological needs are reported as more consequential than pure navigation friction and are not converted into a digital-navigation problem. Same SRC-0030 lineage as EVD-000089; not an independent corroborating source."

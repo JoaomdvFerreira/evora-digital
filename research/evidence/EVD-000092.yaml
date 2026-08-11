@@ -1,0 +1,27 @@
+evidence_id: EVD-000092
+type: institutional
+source:
+  source_id: SRC-0030
+  publisher: "Município de Évora"
+  title: "Plano Concelhio dos Cuidadores Informais de Évora — caregiver-proposed information access"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/Plano-Concelhio-Cuidadores-Informais_v4_Junho_2025-002_RELATORIO.pdf"
+  published_at: 2025-06
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0031"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "Caregivers themselves proposed centralised, simplified, multi-channel access to information — physical, virtual and telephone access; a simplified/centralised manual or flowchart; and mobile reminders for deadlines and news. The municipal plan already includes 2026-2027 actions to systematise/simplify procedures and publish caregiver information digitally, matching the institutional response recorded in EVD-000044."
+evidence_nature: recommendation
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-B Round A (D2-B-SIG-04). CONFIRMS PRB-0007; INFORMATION-FRICTION, COORDINATION-FRICTION, EXISTING-SOLUTION-PLANNED. The navigation need is caregiver-originated, but a response is already being designed/implemented per EVD-000044 — D2 therefore frames the open question as whether the current implementation removes the friction, not as grounds for a new standalone portal/app hypothesis (docs/discovery/d2-execution-protocol.md D2-B boundary). No HYP-* created. Same SRC-0030 lineage as EVD-000089..EVD-000091; not an independent corroborating source."

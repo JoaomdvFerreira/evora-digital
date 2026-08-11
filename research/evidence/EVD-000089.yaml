@@ -1,0 +1,25 @@
+evidence_id: EVD-000089
+type: institutional
+source:
+  source_id: SRC-0030
+  publisher: "Município de Évora"
+  title: "Plano Concelhio dos Cuidadores Informais de Évora — 133-caregiver questionnaire"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/Plano-Concelhio-Cuidadores-Informais_v4_Junho_2025-002_RELATORIO.pdf"
+  published_at: 2025-06
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "informal caregivers"
+domain:
+  - "SOC"
+  - "HEA"
+observation:
+  summary: "The Plano Concelhio de Cuidadores Informais reports a dedicated questionnaire administered to 133 informal caregivers residing in Évora during plan preparation (through 2025), recruited through organisations/projects supporting caregivers with anonymous/confidential participation; the sample was geographically concentrated in particular urban areas rather than municipality-wide."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-B Round A (D2-B-SIG-01). Distinct evidence component within the same SRC-0030 lineage as EVD-000034 (68-caregiver/89-cared-for study) and EVD-000044 (262-caregiver formal-status count / 2026-2027 plan implementation); not an independent corroborating source, per the caregiver-plan one-lineage caution (docs/discovery/d2-execution-protocol.md D2-B bias boundary). Representativeness: LIMITED / not population-representative — recruitment via caregiver-support organisations and a geographically concentrated sample. Used as the sampling basis for EVD-000090..EVD-000092."
