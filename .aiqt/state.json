@@ -581,12 +581,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-023"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T14:27:57.060Z"
+        "updatedAt": "2026-08-11T15:05:22.115Z"
       },
       {
         "id": "WU018",
@@ -621,12 +621,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-024"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:12:07.877Z"
+        "updatedAt": "2026-08-11T15:05:22.115Z"
       }
     ],
     "dependencies": [
@@ -1926,17 +1926,158 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T14:27:57.060Z",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T14:27:57.060Z"
+    },
+    {
+      "id": "C018",
+      "workUnitId": "WU017",
+      "packetId": "PKT-018",
+      "summary": "Created ASM-Lite assessments for the seven remaining canonical active problems (PRB-0001, PRB-0003, PRB-0004, PRB-0005, PRB-0006, PRB-0008, PRB-0010) per the approved WU017 project-owner handoff, backfilled material EVD.analysis metadata for their linked evidence, and produced a ten-problem rollout/routing review for WU018.",
+      "completed": [
+        "Created research/assessments/ASM-0001.yaml, ASM-0003.yaml, ASM-0004.yaml, ASM-0005.yaml, ASM-0006.yaml, ASM-0008.yaml, ASM-0010.yaml, integrating the owner-approved structure_action/triage/gates/critical_unknowns/next_action for each with zero deviations",
+        "Backfilled analysis blocks (contribution, lineage_id where evident, related_problems only where canonically supported) on 41 material linked EVD records across the seven problems; left EVD-000030 deliberately unannotated as non-material (documented in ASM-0003.notes)",
+        "Documented the PRB-0005 traffic/parking/pedestrian-space split consideration and rejection per handoff §6 in ASM-0005.notes",
+        "Created docs/milestones/D3-WU04-assessment-rollout.md covering all ten canonical PRBs (3 pilot + 7 new), triage distribution, and WU018 routing classification (D3-WU05-FEASIBLE / D4-CARRY / D5-CARRY / WATCH-TRIGGER)",
+        "Ran full validation suite: test-analytical-foundation.js, validate-research.js, analyze-research.js --all/--gaps, and per-problem analyzer calls for all seven new assessments",
+        "Confirmed no new SRC/EVD/PRB/HYP records were created, no PRB validation_status changed, and no restructuring beyond the owner-approved KEEP baseline"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/assessments/ASM-0001.yaml",
+        "research/assessments/ASM-0003.yaml",
+        "research/assessments/ASM-0004.yaml",
+        "research/assessments/ASM-0005.yaml",
+        "research/assessments/ASM-0006.yaml",
+        "research/assessments/ASM-0008.yaml",
+        "research/assessments/ASM-0010.yaml",
+        "docs/milestones/D3-WU04-assessment-rollout.md",
+        "research/evidence/EVD-000001.yaml",
+        "research/evidence/EVD-000002.yaml",
+        "research/evidence/EVD-000003.yaml",
+        "research/evidence/EVD-000004.yaml",
+        "research/evidence/EVD-000005.yaml",
+        "research/evidence/EVD-000006.yaml",
+        "research/evidence/EVD-000007.yaml",
+        "research/evidence/EVD-000008.yaml",
+        "research/evidence/EVD-000009.yaml",
+        "research/evidence/EVD-000012.yaml",
+        "research/evidence/EVD-000023.yaml",
+        "research/evidence/EVD-000024.yaml",
+        "research/evidence/EVD-000025.yaml",
+        "research/evidence/EVD-000027.yaml",
+        "research/evidence/EVD-000028.yaml",
+        "research/evidence/EVD-000029.yaml",
+        "research/evidence/EVD-000031.yaml",
+        "research/evidence/EVD-000032.yaml",
+        "research/evidence/EVD-000033.yaml",
+        "research/evidence/EVD-000037.yaml",
+        "research/evidence/EVD-000040.yaml",
+        "research/evidence/EVD-000041.yaml",
+        "research/evidence/EVD-000042.yaml",
+        "research/evidence/EVD-000043.yaml",
+        "research/evidence/EVD-000047.yaml",
+        "research/evidence/EVD-000048.yaml",
+        "research/evidence/EVD-000049.yaml",
+        "research/evidence/EVD-000079.yaml",
+        "research/evidence/EVD-000081.yaml",
+        "research/evidence/EVD-000082.yaml",
+        "research/evidence/EVD-000083.yaml",
+        "research/evidence/EVD-000084.yaml",
+        "research/evidence/EVD-000085.yaml",
+        "research/evidence/EVD-000086.yaml",
+        "research/evidence/EVD-000087.yaml",
+        "research/evidence/EVD-000088.yaml",
+        "research/evidence/EVD-000099.yaml",
+        "research/evidence/EVD-000100.yaml",
+        "research/evidence/EVD-000101.yaml",
+        "research/evidence/EVD-000102.yaml",
+        "research/evidence/EVD-000103.yaml"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "22/22 tests passed."
+        },
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 204 record(s): OK."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "10 PRB rows, all with current ASM and correct triage."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "21 gaps found, all expected/intentional (NOT_ASSESSED gates matching pilot pattern; 1 deliberately-unannotated EVD in PRB-0003)."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0001",
+          "result": "passed",
+          "summary": "9/9 EVD analysed; ASM-0001 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0003",
+          "result": "passed",
+          "summary": "9/10 EVD analysed; ASM-0003 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0004",
+          "result": "passed",
+          "summary": "2/2 EVD analysed; ASM-0004 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0005",
+          "result": "passed",
+          "summary": "5/5 EVD analysed; ASM-0005 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0006",
+          "result": "passed",
+          "summary": "7/7 EVD analysed; ASM-0006 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0008",
+          "result": "passed",
+          "summary": "9/9 EVD analysed; ASM-0008 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0010",
+          "result": "passed",
+          "summary": "3/3 EVD analysed; ASM-0010 CURRENT; triage WATCH."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Every remaining canonical active PRB-* has an ASM-Lite with an explicit triage",
+          "result": "passed",
+          "evidence": "ASM-0001/0003/0004/0005/0006/0008/0010 created, each with a populated triage field matching the owner handoff."
+        },
+        {
+          "criterion": "node tools/validate-research.js passes",
+          "result": "passed",
+          "evidence": "Validated 204 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T15:05:22.115Z",
       "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-017",
-    "workUnitId": "WU016",
+    "id": "PKT-018",
+    "workUnitId": "WU017",
     "milestoneId": "M003",
-    "createdAt": "2026-08-11T14:17:38.817Z",
+    "createdAt": "2026-08-11T14:52:19.873Z",
     "format": "markdown",
-    "contentHash": "sha256:5d601a92cbb9a78f470ff01f2c4bec389ac449db1105f1edada60eb2c6b13b2f",
+    "contentHash": "sha256:f19a1f49ba9f2dabdc2b4d410e3f87b2fcc82caefd671f1ec302b5e4a42d7dca",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1955,7 +2096,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T14:27:57.060Z",
+  "lastUpdatedAt": "2026-08-11T15:05:22.115Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2510,6 +2651,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T14:27:57.060Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C018",
+      "current": {
+        "observationId": "sha256:38e6e8cbd62cd9d2d4351ac1c8734584de601ff27ff14a8c75c00a9f695e2c4e",
+        "checkpointId": "C018",
+        "workUnitId": "WU017",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T15:05:22.115Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T15:05:22.115Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:38e6e8cbd62cd9d2d4351ac1c8734584de601ff27ff14a8c75c00a9f695e2c4e",
+          "checkpointId": "C018",
+          "workUnitId": "WU017",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T15:05:22.115Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T15:05:22.115Z"
         }
       ]
     }
