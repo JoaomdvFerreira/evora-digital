@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "review",
+  "projectStatus": "in_progress",
   "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
@@ -32,6 +32,19 @@
           "WU011",
           "WU012",
           "WU013"
+        ]
+      },
+      {
+        "id": "M003",
+        "title": "D3 — Problem Map v1 & Decision Baseline",
+        "objective": "Transform the D1/D2 evidence corpus into a proportionate, auditable decision baseline for every canonical active PRB-*, without prematurely selecting solutions or a civic product. See docs/milestones/D3-problem-map-decision-baseline.md and docs/discovery/d3-execution-protocol.md.",
+        "status": "ready",
+        "workUnitIds": [
+          "WU014",
+          "WU015",
+          "WU016",
+          "WU017",
+          "WU018"
         ]
       }
     ],
@@ -429,6 +442,191 @@
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
         "updatedAt": "2026-08-11T12:48:37.324Z"
+      },
+      {
+        "id": "WU014",
+        "milestoneId": "M003",
+        "title": "WU-D3-01 — Analytical Foundation",
+        "objective": "Implement the documentation-canonicalized D3 design as repository contracts and tooling: the ASM-* Problem Assessment schema, the optional EVD.analysis metadata contract, validate-research.js support for both, and a minimal deterministic analyzer. No PRB-* interpretation and no ASM-* content in this WU.",
+        "scope": [
+          "Create the ASM-* schema (research/schemas or equivalent) per docs/discovery/d3-execution-protocol.md §5",
+          "Add the optional EVD.analysis extension per docs/discovery/d3-execution-protocol.md §4",
+          "Extend tools/validate-research.js to validate ASM-* records and the optional EVD.analysis block",
+          "Implement a minimal deterministic analyzer: counts, known lineage counts, metadata completeness, state distributions only"
+        ],
+        "outOfScope": [
+          "Do not create any ASM-* record content",
+          "Do not modify any PRB-*/EVD-*/SRC-* interpretation",
+          "Do not add semantic inference, automatic causality, automatic triage, or numeric scoring to the analyzer"
+        ],
+        "acceptanceCriteria": [
+          "node tools/validate-research.js passes with the new optional contracts present but unused",
+          "Deterministic analyzer runs and reports only allowed outputs (counts/lineage counts/metadata completeness/state distributions)",
+          "No PRB-*/EVD-*/SRC-* canonical content changed"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/d3-execution-protocol.md",
+          "docs/milestones/D3-problem-map-decision-baseline.md"
+        ],
+        "suggestedFiles": [
+          "research/schemas/",
+          "tools/validate-research.js"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [],
+        "createdAt": "2026-08-11T13:12:07.877Z",
+        "updatedAt": "2026-08-11T13:12:07.877Z"
+      },
+      {
+        "id": "WU015",
+        "milestoneId": "M003",
+        "title": "WU-D3-02 — Three-Problem Pilot & Framework Gate",
+        "objective": "Stress-test the ASM-Lite framework on PRB-0002, PRB-0007, and PRB-0009 only, ending with an explicit ADOPT/MODIFY/REJECT framework-gate decision. Do not touch any other PRB-* before this gate resolves.",
+        "scope": [
+          "Lazy EVD.analysis metadata backfill for PRB-0002/PRB-0007/PRB-0009 evidence only, where it materially supports the pilot assessment",
+          "Create exactly three ASM-* records: one each for PRB-0002, PRB-0007, PRB-0009",
+          "Run the deterministic analyzer against the pilot records",
+          "Record an explicit ADOPT | MODIFY | REJECT framework-gate decision"
+        ],
+        "outOfScope": [
+          "Do not create ASM-* records for any PRB-* other than PRB-0002/PRB-0007/PRB-0009",
+          "Do not resolve the road-maintenance NEW-CANDIDATE or PRB-0002 split/keep decision in this WU (owned by WU-D3-03)"
+        ],
+        "acceptanceCriteria": [
+          "Exactly three ASM-* records exist (PRB-0002, PRB-0007, PRB-0009)",
+          "An explicit ADOPT/MODIFY/REJECT decision is recorded",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "research/assessments/",
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-021"
+        ],
+        "createdAt": "2026-08-11T13:12:07.877Z",
+        "updatedAt": "2026-08-11T13:12:07.877Z"
+      },
+      {
+        "id": "WU016",
+        "milestoneId": "M003",
+        "title": "WU-D3-03 — Problem Taxonomy & Blind-Spot Decisions",
+        "objective": "Resolve the structural questions carried from D2, once, after the WU-D3-02 framework gate is ADOPT or an approved MODIFY: the road-maintenance NEW-CANDIDATE disposition, the PRB-0002 split/keep decision, and any other structural change only where evidence demands it.",
+        "scope": [
+          "Decide and record the road-maintenance NEW-CANDIDATE disposition (promote / merge / archive)",
+          "Decide and record the PRB-0002 split-vs-keep decision",
+          "Adjust canonical IDs/links carefully if structure changes"
+        ],
+        "outOfScope": [
+          "Do not restructure any other PRB-* without material evidence of a distinct journey/failure mechanism/consequence/operator-solution space",
+          "Do not start before the WU-D3-02 framework gate resolves"
+        ],
+        "acceptanceCriteria": [
+          "Road-maintenance candidate has an explicit owner disposition",
+          "PRB-0002 split/keep decision is explicit and recorded",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "research/problems/",
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-022"
+        ],
+        "createdAt": "2026-08-11T13:12:07.877Z",
+        "updatedAt": "2026-08-11T13:12:07.877Z"
+      },
+      {
+        "id": "WU017",
+        "milestoneId": "M003",
+        "title": "WU-D3-04 — Remaining Problem Assessments & Triage",
+        "objective": "Extend ASM-Lite to every remaining canonical active PRB-* not covered by the pilot, with named critical unknowns and a STOP/WATCH/DEEPEN/PROCEED triage per problem.",
+        "scope": [
+          "Create one ASM-Lite per remaining active PRB-*",
+          "Lazy EVD.analysis metadata only where decision-relevant",
+          "Name critical unknowns and assign a STOP/WATCH/DEEPEN/PROCEED triage per problem",
+          "Identify targeted research methods only when a gate justifies them"
+        ],
+        "outOfScope": [
+          "Do not perform the targeted research itself (reserved for WU-D3-05 where justified)",
+          "Do not restructure the problem taxonomy (owned by WU-D3-03)"
+        ],
+        "acceptanceCriteria": [
+          "Every remaining canonical active PRB-* has an ASM-Lite with an explicit triage",
+          "node tools/validate-research.js passes"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/d3-execution-protocol.md"
+        ],
+        "suggestedFiles": [
+          "research/assessments/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-023"
+        ],
+        "createdAt": "2026-08-11T13:12:07.877Z",
+        "updatedAt": "2026-08-11T13:12:07.877Z"
+      },
+      {
+        "id": "WU018",
+        "milestoneId": "M003",
+        "title": "WU-D3-05 — Selective Deepening & D3 Closure",
+        "objective": "Perform only decision-changing targeted research/integration justified by WU-D3-04's gates, finalize the Problem Map v1 and D3 decision baseline, hand off to D4/D5, and close D3.",
+        "scope": [
+          "Integrate only targeted research/evidence justified by a named WU-D3-04 critical unknown",
+          "Improve initial current-journey/consequence baseline where feasible",
+          "Preserve unresolved D5 questions where primary/stakeholder evidence is still required",
+          "Produce the final Problem Map v1 and D3 decision baseline",
+          "Write the explicit D4/D5 handoff and D3 closure record"
+        ],
+        "outOfScope": [
+          "Do not perform research not justified by a WU-D3-04 gate",
+          "Do not create a solution HYP-* merely to close D3",
+          "Do not select a civic product"
+        ],
+        "acceptanceCriteria": [
+          "Every DEEPEN-justified action from WU-D3-04 is either resolved or explicitly carried to D4/D5",
+          "D3 closure record exists and all exit-gate checkboxes are evaluated",
+          "node tools/validate-research.js passes",
+          "Working tree clean before closure commit"
+        ],
+        "agentContextRefs": [
+          "docs/discovery/d3-execution-protocol.md",
+          "docs/milestones/D3-problem-map-decision-baseline.md"
+        ],
+        "suggestedFiles": [
+          "docs/milestones/"
+        ],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-024"
+        ],
+        "createdAt": "2026-08-11T13:12:07.877Z",
+        "updatedAt": "2026-08-11T13:12:07.877Z"
       }
     ],
     "dependencies": [
@@ -571,6 +769,34 @@
         "toId": "WU013",
         "type": "blocks",
         "reason": "Consolidation requires Housing + Employment integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-021",
+        "fromId": "WU014",
+        "toId": "WU015",
+        "type": "blocks",
+        "reason": "The ASM-* schema, EVD.analysis contract, validator support, and analyzer must exist before any pilot ASM-* record can be created."
+      },
+      {
+        "id": "DEP-022",
+        "fromId": "WU015",
+        "toId": "WU016",
+        "type": "blocks",
+        "reason": "Structural decisions are only made once the three-problem pilot's framework gate resolves ADOPT or an approved MODIFY."
+      },
+      {
+        "id": "DEP-023",
+        "fromId": "WU016",
+        "toId": "WU017",
+        "type": "blocks",
+        "reason": "Remaining-problem assessments should proceed against a settled taxonomy (road-maintenance and PRB-0002 dispositions resolved) rather than being redone after a later structural change."
+      },
+      {
+        "id": "DEP-024",
+        "fromId": "WU017",
+        "toId": "WU018",
+        "type": "blocks",
+        "reason": "Selective deepening is justified only by critical unknowns/gates named during WU-D3-04's triage of every remaining problem."
       }
     ]
   },
@@ -1384,8 +1610,8 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T12:48:37.324Z",
-      "nextRecommendation": "aiqt review --mode release"
+      "nextRecommendation": "aiqt review --mode release",
+      "createdAt": "2026-08-11T12:48:37.324Z"
     }
   ],
   "lastAgentPacket": {
@@ -1412,8 +1638,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt review --mode release",
-  "lastUpdatedAt": "2026-08-11T12:48:37.324Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-11T13:12:07.877Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
