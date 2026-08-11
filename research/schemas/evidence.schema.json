@@ -30,8 +30,15 @@
     "type": ["institutional", "statistical", "formal-public", "social", "press", "stakeholder", "observation"],
     "geography.level": ["city", "parish", "municipality", "intermunicipal", "regional"],
     "evidence_nature": ["fact", "reported-experience", "opinion", "claim", "measurement", "recommendation"],
-    "strength": ["primary-authoritative", "primary-non-authoritative", "secondary", "anecdotal"]
+    "strength": ["primary-authoritative", "primary-non-authoritative", "secondary", "anecdotal"],
+    "analysis.contribution": ["CONFIRMS", "REFINES", "CONTRADICTS", "CURRENT-STATE-UPDATE", "EXISTING-SOLUTION", "NEW-CANDIDATE"],
+    "analysis.friction_types": ["INFORMATION", "COORDINATION", "TRANSACTION", "OPERATIONAL", "PHYSICAL", "REGULATORY", "OTHER"],
+    "analysis.public_signal_class": ["PS1", "PS2", "PS3", "PS4", "PS5", "PS6"],
+    "analysis.representativeness": ["UNKNOWN", "LIMITED", "DESIGNED_REPRESENTATIVE", "NOT_APPLICABLE"],
+    "analysis.verification": ["REPORTED", "CORROBORATED", "VERIFIED", "UNKNOWN", "NOT_APPLICABLE"],
+    "analysis.temporal_relevance": ["CURRENT", "HISTORICAL", "SUPERSEDED", "UNKNOWN"]
   },
+  "notes": "analysis is an optional v1.1 (D3) metadata block (docs/discovery/d3-execution-protocol.md §4); every analysis.* field remains optional even when the analysis block itself is present. Deliberately excluded from analysis: per-EVD independence (relational — use analysis.lineage_id + ASM-level evidence_confidence.independence), directness (assessed per-problem in ASM instead), and COVERAGE-GAP / LOW-DIGITAL-LEVERAGE as contribution values (these are research/assessment findings, not atomic evidence).",
   "references": [
     {
       "field": "source.source_id",
@@ -44,6 +51,13 @@
       "isList": true,
       "targetPrefix": "SRC-",
       "targetDirectory": "sources",
+      "required": false
+    },
+    {
+      "field": "analysis.related_problems",
+      "isList": true,
+      "targetPrefix": "PRB-",
+      "targetDirectory": "problems",
       "required": false
     }
   ]

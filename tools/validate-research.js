@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 /**
- * Minimal, zero-dependency validator for research/{sources,evidence,problems,hypotheses}
- * records. Parses a small YAML subset (nested maps, scalars, block/inline lists of
- * scalars) sufficient for the schemas in research/schemas/*.schema.json.
+ * Minimal, zero-dependency validator for research/{sources,evidence,problems,hypotheses,
+ * assessments} records. Parses a small YAML subset (nested maps, scalars, block/inline
+ * lists of scalars) sufficient for the schemas in research/schemas/*.schema.json.
  *
  * Usage: node tools/validate-research.js [--dir <researchRoot>]
  * Exit code 0 = all records valid, 1 = at least one problem found.
+ *
+ * Core parsing/validation functions are exported for reuse by tools/analyze-research.js
+ * and by tests; see module.exports at the bottom of this file.
  */
 
 const fs = require("fs");
@@ -167,20 +170,59 @@ function collectRecordFiles(dir) {
     .map((f) => path.join(dir, f));
 }
 
-function main() {
-  const args = process.argv.slice(2);
-  const dirFlagIdx = args.indexOf("--dir");
-  const researchRoot =
-    dirFlagIdx !== -1 && args[dirFlagIdx + 1]
-      ? path.resolve(args[dirFlagIdx + 1])
-      : path.resolve(__dirname, "..", "research");
+/**
+ * Validates the ASM-* "critical_unknowns" keyed-map shape (dynamic keys, e.g. U1, U2,
+ * ...), which the generic dotted-path requiredFields/enums mechanism cannot express
+ * because the key names are not fixed. Structural shape only — no semantic
+ * interpretation of question content.
+ */
+const CRITICAL_UNKNOWN_IMPACT_ENUM = ["HIGH", "MEDIUM", "LOW"];
 
-  const schemaRoot = path.resolve(__dirname, "..", "research");
+function validateCriticalUnknowns(rel, record, errors) {
+  const cu = record.critical_unknowns;
+  if (cu === undefined || cu === null) return;
+  if (typeof cu !== "object" || Array.isArray(cu)) {
+    errors.push(`[${rel}] field "critical_unknowns" must be a keyed map (e.g. U1, U2, ...)`);
+    return;
+  }
+  for (const [key, entry] of Object.entries(cu)) {
+    const label = `critical_unknowns.${key}`;
+    if (entry === null || typeof entry !== "object" || Array.isArray(entry)) {
+      errors.push(`[${rel}] field "${label}" must be a map with question/decision_impact/target_phase`);
+      continue;
+    }
+    if (typeof entry.question !== "string" || entry.question.trim() === "") {
+      errors.push(`[${rel}] field "${label}.question" is required and must be a non-empty string`);
+    }
+    if (!CRITICAL_UNKNOWN_IMPACT_ENUM.includes(entry.decision_impact)) {
+      errors.push(
+        `[${rel}] field "${label}.decision_impact" has invalid value "${entry.decision_impact}" (expected one of: ${CRITICAL_UNKNOWN_IMPACT_ENUM.join(", ")})`
+      );
+    }
+    if (typeof entry.target_phase !== "string" || entry.target_phase.trim() === "") {
+      errors.push(`[${rel}] field "${label}.target_phase" is required and must be a non-empty string`);
+    }
+    if (entry.best_next_evidence !== undefined && entry.best_next_evidence !== null) {
+      if (!Array.isArray(entry.best_next_evidence)) {
+        errors.push(`[${rel}] field "${label}.best_next_evidence" must be a list when present`);
+      } else if (entry.best_next_evidence.some((v) => typeof v !== "string")) {
+        errors.push(`[${rel}] field "${label}.best_next_evidence" must be a list of strings`);
+      }
+    }
+  }
+}
+
+/**
+ * Loads and validates every schema-declared record type under researchRoot.
+ * Returns { errors, totalRecords, parsedByDir } where parsedByDir maps
+ * schema.prefix -> { schema, parsed: [{ file, record }] }.
+ */
+function validateResearchTree(researchRoot) {
+  const schemaRoot = researchRoot;
   const schemas = loadSchemas(schemaRoot);
   const errors = [];
   const seenIds = new Map(); // id -> file
   const recordsByPrefix = new Map(); // prefix -> Set(ids)
-
   const parsedByDir = new Map();
 
   for (const schema of schemas) {
@@ -230,11 +272,19 @@ function main() {
 
       for (const [field, allowed] of Object.entries(schema.enums || {})) {
         const val = getPath(record, field);
-        if (val !== undefined && val !== null && !allowed.includes(val)) {
-          errors.push(
-            `[${rel}] field "${field}" has invalid value "${val}" (expected one of: ${allowed.join(", ")})`
-          );
+        if (val === undefined || val === null) continue;
+        const values = Array.isArray(val) ? val : [val];
+        for (const v of values) {
+          if (!allowed.includes(v)) {
+            errors.push(
+              `[${rel}] field "${field}" has invalid value "${v}" (expected one of: ${allowed.join(", ")})`
+            );
+          }
         }
+      }
+
+      if (schema.prefix === "ASM-") {
+        validateCriticalUnknowns(rel, record, errors);
       }
 
       parsed.push({ file: rel, record });
@@ -274,6 +324,19 @@ function main() {
     0
   );
 
+  return { errors, totalRecords, parsedByDir };
+}
+
+function main() {
+  const args = process.argv.slice(2);
+  const dirFlagIdx = args.indexOf("--dir");
+  const researchRoot =
+    dirFlagIdx !== -1 && args[dirFlagIdx + 1]
+      ? path.resolve(args[dirFlagIdx + 1])
+      : path.resolve(__dirname, "..", "research");
+
+  const { errors, totalRecords } = validateResearchTree(researchRoot);
+
   if (errors.length > 0) {
     console.error(`Validated ${totalRecords} record(s): ${errors.length} problem(s) found.\n`);
     for (const e of errors) console.error(" - " + e);
@@ -284,4 +347,14 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  parseYaml,
+  getPath,
+  loadSchemas,
+  collectRecordFiles,
+  validateResearchTree,
+};
