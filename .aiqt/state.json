@@ -355,12 +355,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-013"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T14:30:00.000Z"
+        "updatedAt": "2026-08-11T12:17:42.341Z"
       },
       {
         "id": "WU012",
@@ -387,14 +387,14 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-014",
           "DEP-015",
           "DEP-016"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T14:00:00.000Z"
+        "updatedAt": "2026-08-11T12:17:42.341Z"
       },
       {
         "id": "WU013",
@@ -1212,17 +1212,69 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T11:58:56.593Z",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T11:58:56.593Z"
+    },
+    {
+      "id": "C012",
+      "workUnitId": "WU011",
+      "packetId": "PKT-012",
+      "summary": "Integrated the externally reviewed, project-owner-approved D2-E Urban Hygiene Round A + post-July reconciliation research handoff (committed as aaa3113): 7 new SRC-* (SRC-0078..0084), 6 new EVD-* (EVD-000093..098), refined PRB-0009 possible_root_causes/evidence linkage. Reused SRC-0055/SRC-0061/SRC-0062 rather than duplicating the already-canonical 19-vehicle and one-vehicle observations. Recorded the bounded post-July negative finding as a saturation/current-state limitation, not proof of resolved reliability. No PRB-*/HYP-* created; PRB-0009 remains unvalidated with low core digital tractability.",
+      "completed": [
+        "Mapped D2-E-01/02/04/06/07/08 to new canonical SRC-0078..SRC-0084 and EVD-000093..EVD-000098.",
+        "Reused SRC-0055 (19-vehicle July state) and SRC-0061/SRC-0062/EVD-000071/EVD-000072 (February one-vehicle collapse) without duplication, per the handoff's explicit dedup instructions.",
+        "Integrated the August green-waste enforcement event once (EVD-000098) despite two publications (SRC-0083 primary, SRC-0084 corroborating additional source).",
+        "Refined PRB-0009 with lived public signals, a February-to-August fleet-recovery current-state progression, and narrow unvalidated leads (parish-responsibility clarification, bulky/green-waste transaction friction), while preserving digital_tractability: low and validation_status: unvalidated.",
+        "Created docs/milestones/D2-WU04-closure.md documenting the signal->canonical mapping, dedup decisions, current-state treatment, and D5 question carry-forward.",
+        "Committed research content as aaa3113 (research: integrate D2 urban hygiene public signals) and pushed to main."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0078.yaml",
+        "research/sources/SRC-0079.yaml",
+        "research/sources/SRC-0080.yaml",
+        "research/sources/SRC-0081.yaml",
+        "research/sources/SRC-0082.yaml",
+        "research/sources/SRC-0083.yaml",
+        "research/sources/SRC-0084.yaml",
+        "research/evidence/EVD-000093.yaml",
+        "research/evidence/EVD-000094.yaml",
+        "research/evidence/EVD-000095.yaml",
+        "research/evidence/EVD-000096.yaml",
+        "research/evidence/EVD-000097.yaml",
+        "research/evidence/EVD-000098.yaml",
+        "research/problems/PRB-0009.yaml",
+        "docs/milestones/D2-WU04-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 182 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 182 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T12:17:42.341Z",
       "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-011",
-    "workUnitId": "WU010",
+    "id": "PKT-012",
+    "workUnitId": "WU011",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T11:58:33.226Z",
+    "createdAt": "2026-08-11T12:17:19.533Z",
     "format": "markdown",
-    "contentHash": "sha256:49448876b23502441082955f6c3d83f37fc399a81daa21b99eca5d7cd86e7d3d",
+    "contentHash": "sha256:be53a45504a5248016e122130a3b0aca961b3cce2e9e314aff309b0aa0598ee1",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1241,7 +1293,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T11:58:56.593Z",
+  "lastUpdatedAt": "2026-08-11T12:17:42.341Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1616,6 +1668,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T11:58:56.593Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C012",
+      "current": {
+        "observationId": "sha256:cd6e1727819293c72dbdc52272ffecad6105eb6c7dfc5a1196341b97217affe2",
+        "checkpointId": "C012",
+        "workUnitId": "WU011",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T12:17:42.341Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T12:17:42.341Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:cd6e1727819293c72dbdc52272ffecad6105eb6c7dfc5a1196341b97217affe2",
+          "checkpointId": "C012",
+          "workUnitId": "WU011",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T12:17:42.341Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T12:17:42.341Z"
         }
       ]
     }
