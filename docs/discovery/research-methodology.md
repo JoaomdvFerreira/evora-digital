@@ -1,7 +1,7 @@
 # Research Methodology
 
-**Version:** 0.1  
-**Status:** Baseline draft
+**Version:** 0.2  
+**Status:** Baseline draft; §2.3–2.4 reconciled for D3/D5 2026-08-11
 
 ## 1. Purpose
 
@@ -65,17 +65,38 @@ Useful linguistic patterns include:
 
 Search should avoid prompts that presuppose a technology solution, such as “apps Évora” or “smart city ideas”.
 
-### 2.3 Stakeholder validation
+### 2.3 Stakeholder and user research — two distinct activities
 
-Stakeholder validation occurs after meaningful hypotheses exist.
+Earlier drafts of this methodology implied that stakeholder contact occurs only after meaningful (solution) hypotheses exist. As of D3 canonicalization, this is corrected: **not all stakeholder/user contact is D5, and D5 does not require a solution `HYP-*` to exist.** Two distinct activities are recognized, at two different phases:
 
-Prefer:
+**D3 — formative research** (understanding, not testing a solution):
+
+- purpose: understand what happens today — map the current journey, identify failure points, workarounds, and consequences, and test candidate causal explanations for a problem;
+- may happen before any `HYP-*` exists, and before a problem is fully validated;
+- used only when a specific D3 decision gate (journey understanding, root-cause understanding, or remaining-gap) cannot be resolved credibly from documentary/public-signal evidence alone — not by default for every problem.
+
+**D5 — formal challenge/validation** (testing the diagnosis, not generic ideation):
+
+- purpose: formally challenge the evidence-backed problem diagnosis/assessment produced by D3 — actively seek counterexamples and negative cases, and assess whether the remaining gap is material;
+- updates a problem's formal `validation_status`;
+- occurs after a problem assessment exists, but still does not require a solution `HYP-*` — D5 validates the *problem*, not a proposed *solution*.
+
+For both activities, prefer:
 
 > We repeatedly found problem X in context Y. Does this reflect your experience? What happens today?
 
-Avoid:
+Avoid, in either activity:
 
 > What app would you like us to build?
+
+### 2.4 Proportionality and method escalation
+
+Heavier research/analytical methods (formative user/stakeholder research, systems mapping, an evidence-gap matrix, comparative "what works" research) are conditional, not default:
+
+- use a heavier method only when it can resolve a specific, named decision gate or critical unknown that lighter/documentary evidence cannot resolve;
+- escalate one step at a time — do not jump to comparative/"what works" research (primarily a D4 activity, reserved for surviving opportunities) while a more basic gate (e.g. journey understanding) is still unresolved;
+- an unresolved gate or unknown is recorded as `UNKNOWN` and routed (`WATCH`/`DEEPEN`), not silently treated as a fact or skipped;
+- absence of a heavier method is not a research failure — a problem may legitimately close a phase as `STOP` or `WATCH` without further primary research if the existing evidence already supports that call.
 
 ## 3. Evidence convergence
 

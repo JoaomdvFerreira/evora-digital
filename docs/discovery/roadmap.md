@@ -1,7 +1,7 @@
 # Évora Digital Discovery Roadmap
 
-**Version:** 0.1  
-**Status:** Baseline draft
+**Version:** 0.2  
+**Status:** Baseline draft; D3 direction canonicalized 2026-08-11 (`docs/discovery/d3-execution-protocol.md`)
 
 ## Purpose
 
@@ -66,17 +66,23 @@ Potential source classes include:
 
 Social listening is discovery, not polling.
 
-### D3 — Problem Map v1
+### D3 — Problem Map v1 & Decision Baseline
 
-**Objective:** Consolidate and deduplicate evidence into a city problem map without prematurely proposing products.
+**Objective:** Transform the D1/D2 evidence corpus into a proportionate, auditable decision baseline — consolidating and deduplicating evidence into a city problem map — without prematurely selecting solutions or proposing products.
+
+D3 applies **Progressive Assurance**: every canonical active `PRB-*` receives a lightweight Problem Assessment (`ASM-Lite`), and heavier analytical or research methods are used only when a specific decision gate or critical unknown requires them, never by default. A structural taxonomy review (problem splits/merges, `NEW-CANDIDATE` disposition) happens once, after a small pilot validates the assessment framework — not before, and not repeatedly per problem.
 
 **Primary outputs:**
 
-- problem taxonomy;
-- evidence-backed problem records;
-- affected populations;
-- initial current journeys;
-- confidence/status classification.
+- an optional, lazily-populated `EVD.analysis` metadata extension (no retroactive rewrite of the full corpus);
+- one `ASM-*` Problem Assessment per canonical active `PRB-*`, recording evidence confidence, civic importance, journey/causal/existing-solution understanding, remaining gap, digital-leverage judgement, and explicit decision gates;
+- an explicit disposition for every open structural question carried from D2 (road-maintenance `NEW-CANDIDATE`, `PRB-0002` split/keep, and any other merge/split only where evidence demands it);
+- a `STOP` / `WATCH` / `DEEPEN` / `PROCEED` triage for every active problem, with named critical unknowns and next-evidence methods for anything routed to `DEEPEN`;
+- a deterministic, non-semantic analyzer over canonical records (counts, lineage counts, metadata completeness, state distributions) — never automatic causality, prevalence, or numeric problem scores;
+- initial current-journey state per problem (`SUFFICIENT` / `PARTIAL` / `INSUFFICIENT` / `UNKNOWN`);
+- an explicit D4/D5 handoff.
+
+D3 may legitimately close with individual problems routed to `STOP`, `WATCH`, or D5 rather than every problem advancing — the number of new records produced is not a success metric. No solution `HYP-*` is required merely to close D3.
 
 ### D4 — Existing Solutions & Gap Analysis
 
