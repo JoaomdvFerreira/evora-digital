@@ -1,8 +1,8 @@
 {
   "version": "0.8.0",
   "projectStatus": "in_progress",
-  "currentMilestoneId": null,
-  "currentWorkUnitId": null,
+  "currentMilestoneId": "M005",
+  "currentWorkUnitId": "WU022",
   "workGraph": {
     "milestones": [
       {
@@ -62,7 +62,7 @@
         "id": "M005",
         "title": "D5 — Stakeholder Challenge & Validation",
         "objective": "Challenge the current D3/D4 problem diagnoses with the minimum credible direct operator, institutional, affected-journey and observational evidence needed to resolve decision-critical unknowns, refine or falsify problem framings, and update formal validation status only where the canonical validation contract is actually satisfied. D5 does not attempt to maximize the number of validated PRBs.",
-        "status": "ready",
+        "status": "in_progress",
         "workUnitIds": [
           "WU022",
           "WU023",
@@ -815,10 +815,10 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "in_progress",
         "dependencies": [],
         "createdAt": "2026-08-11T18:56:45.186Z",
-        "updatedAt": "2026-08-11T18:56:45.186Z"
+        "updatedAt": "2026-08-11T19:08:50.031Z"
       },
       {
         "id": "WU023",
@@ -2716,12 +2716,12 @@
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-022",
-    "workUnitId": "WU021",
-    "milestoneId": "M004",
-    "createdAt": "2026-08-11T18:12:13.318Z",
+    "id": "PKT-023",
+    "workUnitId": "WU022",
+    "milestoneId": "M005",
+    "createdAt": "2026-08-11T19:08:50.031Z",
     "format": "markdown",
-    "contentHash": "sha256:d829a8781e5b5d65cbd31834e5176f7bb51bff5b1072179e1540efd44aa310db",
+    "contentHash": "sha256:5fe7dda9b0901b390d0b62bd54c72dae288fa1f610b4d91784455be2531b4825",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -2739,8 +2739,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T18:56:45.186Z",
+  "nextRecommendedCommand": "aiqt checkpoint",
+  "lastUpdatedAt": "2026-08-11T19:08:50.031Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
