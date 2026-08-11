@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "projectStatus": "active",
+  "projectStatus": "in_progress",
   "currentMilestoneId": "M002",
   "currentWorkUnitId": null,
   "workGraph": {
@@ -327,12 +327,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-012"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T14:30:00.000Z"
+        "updatedAt": "2026-08-11T11:58:56.593Z"
       },
       {
         "id": "WU011",
@@ -1111,7 +1111,7 @@
           "evidence": "docs/milestones/D2-WU02-progress.md PRB coverage matrix; PRB-0004.possible_root_causes records the explicit coverage gap."
         }
       ],
-      "finalWorkUnitStatus": "in_progress",
+      "finalWorkUnitStatus": "needs_review",
       "nextRecommendation": "Targeted PRB-0001..0005 follow-up and the project-owner's road-maintenance disposition decision, per docs/milestones/D2-WU02-progress.md; WU009 remains open pending Round A saturation.",
       "createdAt": "2026-08-11T15:00:00.000Z"
     },
@@ -1171,15 +1171,58 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "WU-D2-03 and WU-D2-04 continue independently; WU-D2-05 remains planned pending Round A cross-track synthesis; WU-D2-06 will resolve the road-maintenance NEW-CANDIDATE disposition.",
       "createdAt": "2026-08-11T15:30:00.000Z"
+    },
+    {
+      "id": "C011",
+      "workUnitId": "WU010",
+      "packetId": "PKT-011",
+      "summary": "Integrated the externally reviewed, project-owner-approved D2-B Informal Caregiver Support Journey Round A research handoff (already committed as fdf157e prior to this AIQT state-integrity repair): reused SRC-0030/SRC-0031/SRC-0038 (no new SRC-*), added EVD-000089..EVD-000092, and refined PRB-0007 possible_root_causes/evidence linkage. No PRB-*/HYP-* created; PRB-0007 remains unvalidated. This checkpoint records the already-completed work; no research content was re-run or duplicated.",
+      "completed": [
+        "Mapped D2-B-SIG-01..04 to new canonical EVD-000089..EVD-000092, all sourced to existing SRC-0030 and explicitly recorded as one lineage with EVD-000034/EVD-000044 (not independent corroboration).",
+        "Reused existing EVD-000044/SRC-0031 (262-caregiver count) and EVD-000045/SRC-0038 (Cantinho do Cuidador/UCC/VIVAMENTE) for D2-B-SIG-05..07 rather than duplicating evidence for already-represented existence/current-state claims.",
+        "Refined PRB-0007: strengthened bureaucracy/rights-navigation friction and caregiver-originated multi-channel information demand; constrained scope so respite/care/financial/psychological needs are not converted into a digital-navigation problem.",
+        "Created docs/milestones/D2-WU03-closure.md documenting the provisional->canonical mapping, source-lineage/sample limitations, saturation assessment, and D5 question carry-forward.",
+        "Committed research content as fdf157e (research: integrate D2 caregiver public signals) and pushed to main."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/evidence/EVD-000089.yaml",
+        "research/evidence/EVD-000090.yaml",
+        "research/evidence/EVD-000091.yaml",
+        "research/evidence/EVD-000092.yaml",
+        "research/problems/PRB-0007.yaml",
+        "research/sources/SRC-0030.yaml",
+        "docs/milestones/D2-WU03-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 169 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 169 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T11:58:56.593Z",
+      "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-010",
-    "workUnitId": "WU009",
+    "id": "PKT-011",
+    "workUnitId": "WU010",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T15:30:00.000Z",
+    "createdAt": "2026-08-11T11:58:33.226Z",
     "format": "markdown",
-    "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
+    "contentHash": "sha256:49448876b23502441082955f6c3d83f37fc399a81daa21b99eca5d7cd86e7d3d",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1197,8 +1240,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "WU-D2-02 is done. WU-D2-03 and WU-D2-04 continue independently; WU-D2-05 remains planned pending Round A cross-track synthesis; WU-D2-06 will resolve the road-maintenance NEW-CANDIDATE disposition.",
-  "lastUpdatedAt": "2026-08-11T15:30:00.000Z",
+  "nextRecommendedCommand": "aiqt next",
+  "lastUpdatedAt": "2026-08-11T11:58:56.593Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1543,6 +1586,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T15:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C011",
+      "current": {
+        "observationId": "sha256:a46c4e803755cc2023b56e427e1f6c1886110f96df708c6d4cb597f17fe5fea0",
+        "checkpointId": "C011",
+        "workUnitId": "WU010",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T11:58:56.593Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T11:58:56.593Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:a46c4e803755cc2023b56e427e1f6c1886110f96df708c6d4cb597f17fe5fea0",
+          "checkpointId": "C011",
+          "workUnitId": "WU010",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T11:58:56.593Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T11:58:56.593Z"
         }
       ]
     }
