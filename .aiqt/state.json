@@ -387,14 +387,14 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-014",
           "DEP-015",
           "DEP-016"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T12:17:42.341Z"
+        "updatedAt": "2026-08-11T12:39:27.958Z"
       },
       {
         "id": "WU013",
@@ -420,7 +420,7 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-017",
           "DEP-018",
@@ -428,7 +428,7 @@
           "DEP-020"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T14:00:00.000Z"
+        "updatedAt": "2026-08-11T12:39:27.958Z"
       }
     ],
     "dependencies": [
@@ -1264,17 +1264,68 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T12:17:42.341Z",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T12:17:42.341Z"
+    },
+    {
+      "id": "C013",
+      "workUnitId": "WU012",
+      "packetId": "PKT-013",
+      "summary": "Integrated the externally reviewed, project-owner-approved final reconciled D2-C Housing (PRB-0006) + D2-D Employment/Skills (PRB-0008) research handoff (committed as cbd3385): 6 new SRC-* (SRC-0085..0090), 5 new EVD-* (EVD-000099..103), and an in-place enrichment of EVD-000048. Housing and Employment tracks kept analytically separate throughout: separate signal mapping, separate PRB deltas, separate saturation decisions. Neither PRB-0006 nor PRB-0008 was merged, validated, or converted into a navigator/job-board hypothesis; no new PRB-*/HYP-* created.",
+      "completed": [
+        "Housing: mapped H-01/H-03 to new SRC-0085/EVD-000099 and SRC-0086/EVD-000100; reused SRC-0035/SRC-0036/SRC-0037 and EVD-000042/EVD-000043 without duplication for H-02/H-04/H-05; recorded H-06 (applicant-journey UNPROVEN) and H-07 (bureaucracy boundary) as PRB-0006 analytical notes only.",
+        "Employment: mapped E-01/E-05/E-06 to new SRC-0087/EVD-000101, SRC-0089/EVD-000102, SRC-0090/EVD-000103; mapped E-03 (UE Employment Portal) to new SRC-0088 enriching existing EVD-000048 in place rather than creating a redundant EVD; reused SRC-0039/EVD-000049, SRC-0040, EVD-000047, EVD-000048 without duplication for E-04; omitted E-02 and E-07 as low marginal value per the handoff's own priority guidance.",
+        "Refined PRB-0006 (current affordability/student-exposure evidence, residence-renovation recovery point, applicant-journey UNPROVEN boundary) and PRB-0008 (specialised aerospace demand, enriched matching-infrastructure conclusion, PlaQuaR + TE Connectivity alignment mechanisms, explicit UNKNOWN/UNPROVEN shortage/retention causes) while preserving validation_status: unvalidated on both.",
+        "Created docs/milestones/D2-WU05-closure.md documenting both tracks' signal->canonical mapping, dedup/enrichment decisions, PRB deltas, and separate saturation decisions.",
+        "Committed research content as cbd3385 (research: integrate D2 housing and employment signals) and pushed to main."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0085.yaml",
+        "research/sources/SRC-0086.yaml",
+        "research/sources/SRC-0087.yaml",
+        "research/sources/SRC-0088.yaml",
+        "research/sources/SRC-0089.yaml",
+        "research/sources/SRC-0090.yaml",
+        "research/evidence/EVD-000099.yaml",
+        "research/evidence/EVD-000100.yaml",
+        "research/evidence/EVD-000101.yaml",
+        "research/evidence/EVD-000102.yaml",
+        "research/evidence/EVD-000103.yaml",
+        "research/evidence/EVD-000048.yaml",
+        "research/problems/PRB-0006.yaml",
+        "research/problems/PRB-0008.yaml",
+        "docs/milestones/D2-WU05-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 193 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 193 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T12:39:27.958Z",
       "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-012",
-    "workUnitId": "WU011",
+    "id": "PKT-013",
+    "workUnitId": "WU012",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T12:17:19.533Z",
+    "createdAt": "2026-08-11T12:39:03.894Z",
     "format": "markdown",
-    "contentHash": "sha256:be53a45504a5248016e122130a3b0aca961b3cce2e9e314aff309b0aa0598ee1",
+    "contentHash": "sha256:c60dae86af722c92a153f27b5e7be27ff372ebe3d2b3f240369698bc8c45b440",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1293,7 +1344,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T12:17:42.341Z",
+  "lastUpdatedAt": "2026-08-11T12:39:27.958Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1698,6 +1749,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T12:17:42.341Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C013",
+      "current": {
+        "observationId": "sha256:540eec9a9c9d1fa5f02586a35aa24d76983333b9d997bd67dfeca84a652be868",
+        "checkpointId": "C013",
+        "workUnitId": "WU012",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T12:39:27.958Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T12:39:27.958Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:540eec9a9c9d1fa5f02586a35aa24d76983333b9d997bd67dfeca84a652be868",
+          "checkpointId": "C013",
+          "workUnitId": "WU012",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T12:39:27.958Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T12:39:27.958Z"
         }
       ]
     }
