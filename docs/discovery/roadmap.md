@@ -1,13 +1,28 @@
 # Évora Digital Discovery Roadmap
 
-**Version:** 0.2  
-**Status:** Baseline draft; D3 direction canonicalized 2026-08-11 (`docs/discovery/d3-execution-protocol.md`)
+**Version:** 0.3  
+**Status:** Baseline draft; D3 direction canonicalized 2026-08-11 (`docs/discovery/d3-execution-protocol.md`); D4–D9 reconciled to the same Progressive Assurance model 2026-08-11
 
 ## Purpose
 
 The Discovery Roadmap moves Évora Digital from a broad intention to create civic value to a small set of evidence-backed, digitally tractable opportunities.
 
 It deliberately separates discovery from product delivery.
+
+## Programme-wide Progressive Assurance rule
+
+D3 introduced the Progressive Assurance model — evidence → problem assessment → decision gate → critical unknown → cheapest credible next evidence → `STOP` / `WATCH` / `DEEPEN` / `PROCEED`. This rule is canonical across D3–D9, not only D3:
+
+> Analytical methods are optional tools, not mandatory ceremony. A method should only be used when it can materially reduce a decision-relevant uncertainty, test a causal assumption, or improve the reliability of a consequential decision. The burden of analysis should increase with the cost, irreversibility, uncertainty and civic consequence of the decision.
+
+Consequences for every later phase:
+
+- not every `PRB-*` passes through every method or phase;
+- not every `PRB-*` requires D4 comparative research;
+- not every `PRB-*` requires a solution `HYP-*`;
+- stakeholder work can occur before solution hypotheses exist;
+- `WATCH` / `STOP` / `NON_DIGITAL` / `NO_INTERVENTION` outcomes are legitimate, first-class programme results;
+- record count, interview count, and method count are never success metrics.
 
 ## Milestones
 
@@ -84,97 +99,129 @@ D3 applies **Progressive Assurance**: every canonical active `PRB-*` receives a 
 
 D3 may legitimately close with individual problems routed to `STOP`, `WATCH`, or D5 rather than every problem advancing — the number of new records produced is not a success metric. No solution `HYP-*` is required merely to close D3.
 
-### D4 — Existing Solutions & Gap Analysis
+### D4 — Existing Solutions, Comparative Evidence & Residual Gap Analysis
 
-**Objective:** Determine what already exists and why a problem remains.
+**Objective:** Determine whether a material residual gap remains after accounting for what already operates locally, and whether comparative evidence shows a mechanism that could credibly improve the relevant outcome in Évora.
 
-Each candidate problem should answer:
+D4 is selective — only `PRB-*`/narrow leads routed from an `ASM-*` enter D4, and only when comparative evidence can plausibly change the decision.
 
-1. What exists?
-2. Who operates it?
-3. Who uses it?
-4. What does it solve?
-5. What does it not solve?
-6. Is the remaining gap informational, coordination-related, transactional, operational, physical, regulatory, or another type?
+Core questions:
 
-Valid outcomes include `ALREADY_SOLVED`, `NON_DIGITAL`, and `DO_NOT_BUILD`.
+1. What is already operating locally?
+2. What is planned but not yet operating?
+3. What user/data journey is already covered?
+4. What residual gap is actually supported?
+5. What comparable intervention mechanism exists elsewhere?
+6. What outcome evidence exists?
+7. What transferability/context constraints matter?
+8. What still requires D5 challenge/validation?
 
-### D5 — Stakeholder Validation
+Residual-gap decision status (documentation/assessment level, not a product score): `SUPPORTED`, `PARTIAL`, `NOT_SUPPORTED`, `UNKNOWN`.
 
-**Objective:** Test priority problem hypotheses with relevant people and organisations.
+Comparative-evidence rules — prefer authoritative/operator sources, implementation/outcome evidence, mechanism-focused comparisons, and settings with meaningful contextual similarity; avoid feature shopping, vendor marketing, generic "smart city" inspiration, and comprehensive literature reviews where one bounded review is sufficient. Research stops when additional comparators stop changing the residual-gap decision.
 
-Validation may include residents, students, businesses, public bodies, associations, IPSS, university stakeholders, parish councils, and domain-specific actors.
+D4 does not select a product, choose a vendor, design architecture, require a `HYP-*`, or assume that an API/dashboard/app has value merely because it can be built.
 
-The goal is hypothesis testing, not generic ideation.
+### D5 — Stakeholder Challenge & Validation
 
-### D6 — Digital Tractability Assessment
+**Objective:** Challenge the evidence-backed problem assessment with affected people, operators, institutions and other relevant stakeholders.
 
-**Objective:** Determine where software can plausibly alter outcomes.
+D5 is not necessarily the first stakeholder contact — D3 formative research (`docs/discovery/research-methodology.md` §2.3) may already have occurred where needed to understand the current journey. D5 performs the stronger challenge/validation function.
 
-Assessment considers:
+Each D5 activity should originate from an explicit critical unknown, blocked decision gate, current-journey uncertainty, remaining-gap uncertainty, causal uncertainty, or contradiction/counterevidence need.
 
-- evidence strength;
-- reach;
-- frequency;
-- severity;
-- current journey;
-- root cause;
-- existing solutions;
-- digital leverage;
-- data availability;
-- privacy/regulatory risk;
-- operational dependency;
-- maintainability;
-- measurable outcome.
+Core questions:
 
-### D7 — Candidate Experiments
+- Does the described problem happen as the evidence suggests?
+- What negative cases/counterexamples exist?
+- Which affected journeys differ from the current framing?
+- Are root causes correctly characterized?
+- Does the proposed remaining gap matter?
+- What existing workaround/solution did the project miss?
+- Which groups experience materially different outcomes?
+- What would falsify the current diagnosis?
 
-**Objective:** Define small, cheap tests before building products.
+D5 may update formal `PRB.validation_status` only when the project's validation contract is actually satisfied. Public-signal volume alone is never sufficient.
 
-Experiments should validate mechanisms, not just interfaces.
+D5 does not become a generic interview round, interview every stakeholder category for every `PRB-*`, assume stakeholder agreement equals causal proof, or require a solution `HYP-*` before engagement.
 
-Examples:
+### D6 — Digital Tractability & Evaluability
 
-- can users locate the correct service within a defined time?
-- can multiple event sources be normalized reliably?
-- can accessibility data remain sufficiently current?
-- can a public dataset be reused without manual intervention?
+**Objective:** Determine both (1) whether a digital/data/coordination intervention can causally affect the remaining problem, and (2) whether its effect can be credibly evaluated. Digital tractability without evaluability is insufficient for consequential intervention.
 
-### D8 — Project Selection
+**Causal addressability** — what mechanism would the intervention change? Is the dominant cause actually digital/information/coordination/transaction-related, or is an important non-digital cause dominant?
 
-**Objective:** Select the first real civic product only after sufficient evidence.
+**Reach and operator** — who can act on the intervention? Who owns/operates it? Is there an ongoing operational model?
 
-A Project Charter must include:
+**Data / Evaluation readiness** — whether the programme has or can credibly obtain: baseline/history; sufficient temporal history; suitable granularity; stable identifiers; coverage and known exclusions; measurement lag; outcome variables; intervention/exposure identifiers where needed; repeatable collection; outcome-measurement capability. This is a transversal Open Data Foundation concern (see below) — a dataset is not "ready" merely because it is open/reusable; it may be technically reusable but unusable for outcome evaluation due to weak history, granularity, identifiers, exclusions or lag.
 
-- problem;
-- evidence;
-- affected population;
-- root cause;
-- current journey;
-- existing alternatives;
-- proposed intervention;
-- expected outcome;
-- success metrics;
-- risks;
-- dependencies;
-- maintenance model;
-- open-source strategy;
-- AIQT execution plan.
+**Privacy/regulation** — personal-data requirements; lawful basis/governance; accessibility; safety; sector-specific constraints.
 
-### D9 — Outcome Review
+**Maintenance** — operator; service ownership; data maintenance; cost; expected lifecycle.
 
-**Objective:** Evaluate real-world impact after deployment.
+**Evaluability** — what outcome should move? By how much would movement be meaningful? Over what time horizon? What alternative explanations matter? What comparison/baseline is credible?
 
-Possible decisions:
+D6 should make explicit whether the opportunity is digitally addressable, operationally supportable, measurable/evaluable, or unsuitable for intervention in the current form. Do not reduce this to a single numeric score.
 
-- continue;
-- expand;
-- change direction;
-- transfer ownership;
-- maintain;
-- archive.
+### D7 — Test & Learn / Mechanism Experiments
 
-Deployment alone is not success.
+**Objective:** Test the riskiest causal assumptions before committing to a full intervention. D7 is not "build an MVP for every opportunity."
+
+Required flow:
+
+```text
+validated-enough problem
+   ↓
+remaining gap
+   ↓
+proposed causal mechanism
+   ↓
+riskiest assumption
+   ↓
+smallest credible test
+   ↓
+GO / ADAPT / STOP
+```
+
+Where proportionate, record: mechanism; target population/context; critical assumption; expected observable change; baseline; decision threshold; timeframe; exclusions/limitations; unintended effects to watch; and the `GO`/`ADAPT`/`STOP` decision rule. Pre-registration should be proportional to consequence/irreversibility.
+
+`HYP-*` becomes appropriate only when there is a concrete causal intervention hypothesis worth testing — do not create solution hypotheses merely because D7 exists.
+
+D7 does not require production software, require a broad MVP, optimize engagement metrics unrelated to civic outcomes, or continue testing when the mechanism is already contradicted.
+
+### D8 — Intervention Portfolio & First Project Selection
+
+**Objective:** Decide the appropriate intervention disposition for surviving problems/opportunities, then select the first implementation where justified. Do not force every validated problem into software.
+
+Allowed intervention dispositions:
+
+- `BUILD` — a new digital public good is justified;
+- `IMPROVE` — an existing local solution should be improved rather than duplicated;
+- `FEDERATE` — interoperability/federation across existing systems provides more value than a new standalone system;
+- `OPEN_DATA` — the primary intervention is data publication/quality/interoperability;
+- `NON_DIGITAL` — the appropriate intervention is primarily policy, operations, physical infrastructure, service capacity, training or another non-digital mechanism;
+- `ALREADY_SOLVED` — a sufficiently effective solution already exists; project creation would duplicate it;
+- `WATCH` — no intervention now; monitor named triggers;
+- `NO_INTERVENTION` — no credible intervention is justified for Évora Digital in the current framing.
+
+Only after dispositions exist should D8 choose the first implementation candidate. Use MCDA or another explicit trade-off method only if multiple real alternatives remain, trade-offs are material, and informal comparison is no longer sufficient — do not introduce weighted scoring merely for formality.
+
+D8 may legitimately conclude the portfolio contains one build candidate, several improve/open-data/non-digital/watch outcomes, or no build candidate yet. That is a valid programme result.
+
+### D9 — Outcome, Process & Value Review
+
+**Objective:** Evaluate whether the intervention produced civic value, how the mechanism behaved, what it cost to operate, and whether it should continue, change, scale, transfer or stop.
+
+Review dimensions:
+
+- **Outcome** — did the intended civic outcome move? For whom? By how much? Over what timeframe?
+- **Mechanism/contribution** — did the proposed causal mechanism behave as expected? What alternative explanations remain? What evidence supports contribution rather than simple temporal correlation?
+- **Process** — adoption; operational reliability; data quality; workflow impact; support burden; accessibility; stakeholder/user experience.
+- **Equity** — who benefited; who did not; exclusions; unintended distributional effects.
+- **Unintended effects** — displacement; new coordination burden; gaming; administrative complexity; negative externalities.
+- **Cost/value** — implementation effort; recurring maintenance; operator burden; data cost; marginal civic value.
+
+Possible dispositions: `CONTINUE`, `IMPROVE`, `SCALE`, `TRANSFER/REUSE`, `PAUSE`, `ARCHIVE/STOP`. Do not keep a project alive merely because software has already been built.
 
 ---
 
@@ -202,3 +249,13 @@ Possible outcomes after D6:
 - no additional infrastructure.
 
 The Évora Open API remains a hypothesis until this assessment is complete.
+
+### Evaluation Data Readiness
+
+Data-source assessment covers two separate questions, not one (see `docs/models/data-source-model.md`):
+
+**Reuse readiness** — provenance; licence; freshness; stable identifiers; schema/interoperability; access mechanism; authority.
+
+**Evaluation readiness** — baseline/history; time depth; granularity; coverage; exclusions; stable identifiers across time; measurement lag; outcome variables; intervention/exposure observability; comparability over time.
+
+A dataset is not "ready" merely because it is open/reusable — it may be `reuse_ready: yes` while `evaluation_ready: no`. This distinction is a D6 input (see above) and must stay explicit in methodology/roadmap documentation; it does not introduce a new schema on its own.

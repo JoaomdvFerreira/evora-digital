@@ -1,7 +1,7 @@
 # Research Methodology
 
-**Version:** 0.2  
-**Status:** Baseline draft; §2.3–2.4 reconciled for D3/D5 2026-08-11
+**Version:** 0.3  
+**Status:** Baseline draft; §2.3–2.4 reconciled for D3/D5 2026-08-11; §11–12 added for D4–D9 programme reconciliation 2026-08-11
 
 ## 1. Purpose
 
@@ -237,3 +237,28 @@ Policy, effective immediately:
 - Graphify is not required for `tools/validate-research.js` or for repository correctness, and must not become a hard dependency of either.
 
 No Graphify tooling, configuration, or custom deterministic index has been implemented in this repository. Further retrieval-tooling improvements (e.g. addressing free-text query reliability or ID-determinism) are noted as future work, not undertaken as part of D1 closure.
+
+## 11. AI-assisted research provenance
+
+Canonicalized as part of the D4–D9 programme reconciliation (`docs/discovery/roadmap.md`), this is a proportionate disclosure rule, not a new record-level requirement:
+
+- AI-assisted research must remain source-grounded — every material claim traces to a `SRC-*`/`EVD-*`, never to model output alone;
+- AI output is not itself a source;
+- material externally researched conclusions must retain their actual source provenance (the original publisher/operator/document), not an AI-assistance label in its place;
+- significant AI-assisted research batches may record the research protocol/assistance at batch or methodology level (e.g. a handoff or progress document), where that is useful for audit;
+- do not add an AI-provenance field to every atomic `SRC-*`/`EVD-*` record unless a concrete governance decision later requires it — this is deliberately not a new schema obligation.
+
+## 12. Living assessments
+
+`ASM-*` reassessment is event-driven or volatility-driven, not continuous. Do not create a standing obligation to re-research every problem on a schedule.
+
+Reassess a problem's `ASM-*` when:
+
+- important new evidence appears;
+- an operating solution changes;
+- the problem's current state materially changes;
+- a critical unknown is resolved;
+- a D4/D5/D6 result changes a decision gate;
+- a `WATCH` trigger fires.
+
+High-volatility `PRB-*` may justify scheduled current-state checks; stable `PRB-*` should not be continuously researched. This rule applies across D4–D9, mirroring the proportionality principle already established in §2.4.
