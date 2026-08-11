@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
-  "projectStatus": "in_progress",
-  "currentMilestoneId": "M003",
+  "projectStatus": "review",
+  "currentMilestoneId": null,
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -38,7 +38,7 @@
         "id": "M003",
         "title": "D3 — Problem Map v1 & Decision Baseline",
         "objective": "Transform the D1/D2 evidence corpus into a proportionate, auditable decision baseline for every canonical active PRB-*, without prematurely selecting solutions or a civic product. See docs/milestones/D3-problem-map-decision-baseline.md and docs/discovery/d3-execution-protocol.md.",
-        "status": "ready",
+        "status": "done",
         "workUnitIds": [
           "WU014",
           "WU015",
@@ -621,12 +621,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-024"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T15:05:22.115Z"
+        "updatedAt": "2026-08-11T15:38:02.869Z"
       }
     ],
     "dependencies": [
@@ -2067,17 +2067,110 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T15:05:22.115Z",
-      "nextRecommendation": "aiqt next"
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T15:05:22.115Z"
+    },
+    {
+      "id": "C019",
+      "workUnitId": "WU018",
+      "packetId": "PKT-019",
+      "summary": "Integrated the approved WU018 targeted-deepening handoff for PRB-0003/PRB-0004/PRB-0005 (bounded desk-based current-state checks only), updated the corresponding ASM assessments, evaluated the full D3 exit gate against actual repository state, and closed D3 with an explicit D4/D5 handoff and final Problem Map v1 routing table for all ten PRBs.",
+      "completed": [
+        "PRB-0003: exact-dedup confirmed the December 2025 Acesso Universal 1.3 completed joint-inventory finding was not already canonical against SRC-0073/SRC-0074/EVD-000085/EVD-000086; created SRC-0091 and EVD-000104 (CONFIRMS/CURRENT-STATE-UPDATE/EXISTING-SOLUTION), linked into PRB-0003.evidence, retrofitted a shared lineage_id onto EVD-000085/086/104 for honest independence accounting; updated ASM-0003 (independence HIGH->MEDIUM; triage/digital_leverage/journey_understanding/remaining_gap/structure_action unchanged per handoff)",
+        "PRB-0004: confirmed no new EVD created (ciclovia.pt inventory and 'no dataset found' deliberately not canonicalized); updated ASM-0004 (remaining_gap and remaining_gap_supported UNKNOWN->PARTIAL reflecting the bounded audit's narrow specificity gain; journey_understood/digital_causality/civic_importance/triage unchanged per explicit instruction)",
+        "PRB-0005: confirmed no new EVD created (existing linked EVD already cover payment/sensor/PUE content); updated ASM-0005 (existing_solution_understanding PARTIAL->SUFFICIENT; digital_causality NOT_ASSESSED->PARTIAL as an explicit plausible-but-unproven interpretation, deliberately not PASS; structure_action/triage unchanged)",
+        "Created docs/milestones/D3-WU05-closure.md: full ten-PRB final Problem Map v1 routing table, explicit D4 handoff (PRB-0005 narrow occupancy/legibility solution-gap analysis + PRB-0009 narrow leads), explicit D5 handoff (one line per PRB-0001/0002/0003/0004/0005/0006/0007/0008), saturation statement for PRB-0003/0004/0005, final canonical counts, targeted deterministic checks, and full D3 exit-gate evaluation",
+        "Updated docs/milestones/D3-problem-map-decision-baseline.md: all 14 exit-gate checkboxes marked satisfied with evidence references; Status changed PLANNED -> CLOSED",
+        "Verified (as reviewer) the final exit-gate item the integration agent correctly deferred: aiqt status --json shows valid in_progress state with no blocking issues, and git status --short before the closure commit shows only this WU's own deliverable files changed — updated both closure documents to reflect D3 is now formally CLOSED (14/14 exit-gate items satisfied)",
+        "Ran full validation suite: test-analytical-foundation.js, validate-research.js, analyze-research.js --all/--gaps, and --problem PRB-0003/PRB-0004/PRB-0005 — all pass, all gaps expected/intentional"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/milestones/D3-WU05-closure.md",
+        "docs/milestones/D3-problem-map-decision-baseline.md",
+        "research/assessments/ASM-0003.yaml",
+        "research/assessments/ASM-0004.yaml",
+        "research/assessments/ASM-0005.yaml",
+        "research/evidence/EVD-000085.yaml",
+        "research/evidence/EVD-000086.yaml",
+        "research/evidence/EVD-000104.yaml",
+        "research/problems/PRB-0003.yaml",
+        "research/sources/SRC-0091.yaml"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "22/22 tests passed."
+        },
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 206 record(s): OK."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "10 PRB rows, all with current ASM and correct triage (8 DEEPEN, 2 WATCH)."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "21 gaps found, all expected/intentional (matches pilot/WU017 gap profile plus 1 deliberately-unannotated PRB-0003 EVD)."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0003",
+          "result": "passed",
+          "summary": "11/11 linked EVD, 10/11 with analysis; ASM-0003 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0004",
+          "result": "passed",
+          "summary": "2/2 EVD analysed; ASM-0004 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0005",
+          "result": "passed",
+          "summary": "5/5 EVD analysed; ASM-0005 CURRENT; triage DEEPEN."
+        },
+        {
+          "command": "aiqt status --json",
+          "result": "passed",
+          "summary": "projectStatus in_progress, currentWorkUnitId WU018, no blocking issues, nextRecommendedCommand aiqt checkpoint."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Only decision-changing D3 deepening for PRB-0003/0004/0005 is integrated, faithfully, without new discovery",
+          "result": "passed",
+          "evidence": "Exactly one new SRC/EVD pair created (PRB-0003, dedup-justified); PRB-0004/0005 received zero new canonical records per explicit handoff instruction; all ASM deltas traced field-by-field in D3-WU05-closure.md §1-3."
+        },
+        {
+          "criterion": "Final Problem Map v1 / D3 decision baseline, D4/D5 handoff, and D3 exit-gate evaluation exist and D3 closes",
+          "result": "passed",
+          "evidence": "docs/milestones/D3-WU05-closure.md §4-6, §10; docs/milestones/D3-problem-map-decision-baseline.md exit gate 14/14 checked, Status: CLOSED."
+        },
+        {
+          "criterion": "node tools/validate-research.js passes",
+          "result": "passed",
+          "evidence": "Validated 206 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T15:38:02.869Z",
+      "nextRecommendation": "aiqt review --mode release"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-018",
-    "workUnitId": "WU017",
+    "id": "PKT-019",
+    "workUnitId": "WU018",
     "milestoneId": "M003",
-    "createdAt": "2026-08-11T14:52:19.873Z",
+    "createdAt": "2026-08-11T15:23:59.836Z",
     "format": "markdown",
-    "contentHash": "sha256:f19a1f49ba9f2dabdc2b4d410e3f87b2fcc82caefd671f1ec302b5e4a42d7dca",
+    "contentHash": "sha256:20c6d891af00977a3abbbcc4f9827255d57286edad5bdc6d59c2ccfe025817ee",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -2095,8 +2188,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T15:05:22.115Z",
+  "nextRecommendedCommand": "aiqt review --mode release",
+  "lastUpdatedAt": "2026-08-11T15:38:02.869Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2681,6 +2774,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T15:05:22.115Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C019",
+      "current": {
+        "observationId": "sha256:898edf1672124ac6f69685d130d318d9144fec61e08747e822d473c421e1e06a",
+        "checkpointId": "C019",
+        "workUnitId": "WU018",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T15:38:02.869Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T15:38:02.869Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:898edf1672124ac6f69685d130d318d9144fec61e08747e822d473c421e1e06a",
+          "checkpointId": "C019",
+          "workUnitId": "WU018",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T15:38:02.869Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T15:38:02.869Z"
         }
       ]
     }
