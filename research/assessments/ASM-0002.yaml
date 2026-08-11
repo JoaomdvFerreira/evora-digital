@@ -31,14 +31,14 @@ existing_solution_understanding: SUFFICIENT
 remaining_gap: PARTIAL
 digital_leverage: not_assessed
 
-structure_action: SPLIT_CANDIDATE
+structure_action: KEEP
 
 decision_gates:
   problem_real: PASS
-  civic_importance: UNKNOWN
+  civic_importance: PARTIAL
   journey_understood: FAIL
-  root_cause_understood: UNKNOWN
-  remaining_gap_supported: UNKNOWN
+  root_cause_understood: PARTIAL
+  remaining_gap_supported: PARTIAL
   digital_causality: NOT_ASSESSED
   operability: NOT_ASSESSED
   testability: NOT_ASSESSED
@@ -51,13 +51,6 @@ critical_unknowns:
     best_next_evidence:
       - "current passenger journey mapping/observation"
       - "TREVO/TPAC operator interview"
-  U2:
-    question: "Is developer/data interoperability a genuinely distinct operator/developer-facing problem from passenger information quality, materially enough to justify a structural split?"
-    decision_impact: HIGH
-    target_phase: D3
-    best_next_evidence:
-      - "direct verification with CIMAC/ATAC and TREVO of GTFS/API availability and licensing"
-      - "developer/data-reuse stakeholder interview"
   U3:
     question: "Which specific stops/channels have incomplete static information, and how material is this to typical journeys?"
     decision_impact: MEDIUM
@@ -67,6 +60,6 @@ critical_unknowns:
 
 triage: DEEPEN
 
-next_action: "Verify GTFS/developer-endpoint availability directly with CIMAC/ATAC/TREVO, and map at least one concrete passenger journey with a current information failure, before WU-D3-03 decides the PRB-0002 split."
+next_action: "Map at least one concrete passenger journey with a current information failure, and audit which stops/channels have incomplete static information, to resolve journey_understood before this problem can PROCEED."
 
-notes: "Evidence base: 4/4 linked EVD annotated. Independence: EVD-000010/EVD-000011 share one lineage (same CIMAC Avaliação Anual report, SRC-0019) via analysis.lineage_id; EVD-000016 (TREVO site direct observation) and EVD-000080 (Portal da Queixa complaints) are distinct, unshared sources — 3 effective evidentiary threads across 4 records, not 4 independent ones. structure_action=SPLIT_CANDIDATE reflects the PRB's own Batch B/C history repeatedly flagging a passenger-information-quality sub-gap (EVD-000011, EVD-000080) versus a developer/data-interoperability sub-gap (EVD-000010, EVD-000016) as materially distinct failure mechanisms; this ASM proposes the split candidate but does not execute it — WU-D3-03 owns that decision. contradiction_status is interpreted here as 'degree of contradiction detected in the evidence base' (LOW = little/no contradiction), not 'confidence that no contradiction exists' — flagged in the pilot review as an ambiguous field semantic worth clarifying. No PRB-0002.validation_status change."
+notes: "Evidence base: 4/4 linked EVD annotated. Independence: EVD-000010/EVD-000011 share one lineage (same CIMAC Avaliação Anual report, SRC-0019) via analysis.lineage_id; EVD-000016 (TREVO site direct observation) and EVD-000080 (Portal da Queixa complaints) are distinct, unshared sources — 3 effective evidentiary threads across 4 records, not 4 independent ones. WU-D3-03 owner decision (docs/milestones/D3-WU03-structure-review.md): PRB-0002 KEEP, narrowed to passenger-facing information quality/completeness/reliability/usability; structure_action updated SPLIT_CANDIDATE -> KEEP accordingly. The former U2 critical unknown (whether developer/data interoperability justifies a structural split) is resolved by that owner decision and removed from this ASM's active critical-unknown path; the underlying GTFS/API/licensing/reuse question is preserved as an Open Data Foundation/data-reuse lead in the structure review, not as a PRB-0002 blocker. decision_gates.civic_importance/root_cause_understood/remaining_gap_supported updated UNKNOWN -> PARTIAL per the WU015 pilot-review MODIFY resolution (meaningful-but-incomplete evidence existed for these gates; PARTIAL was not available when this ASM was first drafted). contradiction_status is 'degree of contradiction detected in the evidence base' (LOW = little/no contradiction), not 'confidence that no contradiction exists' (docs/discovery/d3-execution-protocol.md §5.1a). No PRB-0002.validation_status change."

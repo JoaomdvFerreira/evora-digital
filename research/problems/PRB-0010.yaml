@@ -1,0 +1,25 @@
+problem_id: PRB-0010
+title: "Road-surface degradation and maintenance reliability affect safety and mobility across Évora"
+domain:
+  - "URB"
+  - "MOB"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "residents"
+  - "drivers"
+problem_statement: "Road-surface degradation and road-maintenance reliability are a current municipality-level civic problem. A January 2026 petition reported widespread potholes/degraded pavement and safety/vehicle-damage impacts; the Municipality subsequently acknowledged a material maintenance/requalification need and a roughly €1.5M repair response; a later location-specific public signal alleged continued persistence at the N114 entrance to Évora. The later social signal is unverified and the available evidence must not be read as a municipality-wide prevalence estimate."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "WU-D3-03 promotion (docs/milestones/D3-WU03-structure-review.md): promoted from the D2 road-surface-maintenance NEW-CANDIDATE (retained unlinked through D2 closure and the WU-D3-02 pilot) to this canonical PRB, per project-owner decision. The preserved evidence supports a distinct failure mechanism — physical road-surface degradation/potholes, maintenance/requalification service reliability, road-condition safety/vehicle-damage/mobility effects, and municipal acknowledgement and repair response — materially different from PRB-0005's traffic/parking-pressure-versus-pedestrian/public-space mechanism. Digital leverage over the core physical mechanism is expected to be low, but low digital leverage is not a reason to deny the existence of a civic problem. current_journey is deliberately left null; no user journey was manufactured for this promotion. No ASM-0010 created in WU-D3-03 — this problem becomes eligible for assessment in WU-D3-04."
+evidence:
+  - "EVD-000082"
+  - "EVD-000083"
+  - "EVD-000084"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: low
+existing_solutions: assessed
+status: OPEN

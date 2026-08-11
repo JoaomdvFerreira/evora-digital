@@ -35,10 +35,10 @@ structure_action: KEEP
 
 decision_gates:
   problem_real: PASS
-  civic_importance: UNKNOWN
+  civic_importance: PARTIAL
   journey_understood: FAIL
-  root_cause_understood: UNKNOWN
-  remaining_gap_supported: UNKNOWN
+  root_cause_understood: PARTIAL
+  remaining_gap_supported: PARTIAL
   digital_causality: NOT_ASSESSED
   operability: NOT_ASSESSED
   testability: NOT_ASSESSED
@@ -70,4 +70,4 @@ triage: DEEPEN
 
 next_action: "Commission formative caregiver-journey research (D3) focused on the actual support-seeking path, plus a 2026-27 plan implementation-status check, before treating navigation friction as sufficiently understood for D5 validation."
 
-notes: "Evidence base: 8/8 linked EVD annotated. Lineage stress test (primary pilot purpose for PRB-0007): 6 of 8 EVD (EVD-000034, EVD-000044, EVD-000089, EVD-000090, EVD-000091, EVD-000092) share exactly one lineage_id (SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS — all draw from the same Plano Concelhio dos Cuidadores Informais document/study, source_id SRC-0030); only EVD-000036 (CLASE network listing, SRC-0031) and EVD-000045 (ULSAC service description, SRC-0038) are genuinely independent of that lineage. evidence_confidence.independence is therefore LOW despite 8 linked records — 3 effective evidentiary threads, not 8. This directly demonstrates why raw EVD count must not be read as corroboration strength. remaining_gap=PARTIAL deliberately keeps 'we understand what exists' (existing_solution_understanding=SUFFICIENT) separate from 'we know whether it works' (unresolved, per EVD-000044/EVD-000045's institutional description of planned-not-yet-verified simplification actions). No PRB-0007.validation_status change; navigation friction is not elevated above the larger, better-ranked care/respite/financial/psychological needs recorded in EVD-000090 (LOW-DIGITAL-LEVERAGE, kept out of the analysis.contribution enum per the D3 v1.1 exclusion list, but preserved verbatim in EVD-000090's own notes)."
+notes: "Evidence base: 8/8 linked EVD annotated. Lineage stress test (primary pilot purpose for PRB-0007): 6 of 8 EVD (EVD-000034, EVD-000044, EVD-000089, EVD-000090, EVD-000091, EVD-000092) share exactly one lineage_id (SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS — all draw from the same Plano Concelhio dos Cuidadores Informais document/study, source_id SRC-0030); only EVD-000036 (CLASE network listing, SRC-0031) and EVD-000045 (ULSAC service description, SRC-0038) are genuinely independent of that lineage. evidence_confidence.independence is therefore LOW despite 8 linked records — 3 effective evidentiary threads, not 8. This directly demonstrates why raw EVD count must not be read as corroboration strength. remaining_gap=PARTIAL deliberately keeps 'we understand what exists' (existing_solution_understanding=SUFFICIENT) separate from 'we know whether it works' (unresolved, per EVD-000044/EVD-000045's institutional description of a planned-not-yet-verified response — EVD-000092.analysis.contribution corrected CONFIRMS+EXISTING-SOLUTION -> CONFIRMS+PLANNED-SOLUTION in WU-D3-03 to reflect exactly this distinction). decision_gates.civic_importance/root_cause_understood/remaining_gap_supported updated UNKNOWN -> PARTIAL in WU-D3-03 per the WU015 pilot-review MODIFY resolution (meaningful-but-incomplete evidence existed for these gates; PARTIAL was not available when this ASM was first drafted). No PRB-0007.validation_status change; navigation friction is not elevated above the larger, better-ranked care/respite/financial/psychological needs recorded in EVD-000090 (kept out of the analysis.contribution enum per the D3 v1.1 exclusion list, but preserved verbatim in EVD-000090's own notes)."

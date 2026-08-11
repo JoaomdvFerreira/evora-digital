@@ -1,5 +1,5 @@
 problem_id: PRB-0002
-title: "Public-transport information is not consistently available in a complete, reusable and user-friendly form"
+title: "Public-transport passenger information is not consistently complete, reliable and usable across the journey"
 domain:
   - "MOB"
   - "DIG"
@@ -8,8 +8,7 @@ geography:
   area: "Alentejo Central; urban Évora to be investigated separately"
 affected_populations:
   - "public-transport users"
-  - "potential third-party data consumers"
-problem_statement: "Public-transport users can face incomplete information outside vehicles/stops, while machine-readable transport data exists but its public reuse interface and licensing are not yet clear."
+problem_statement: "Public-transport passengers can face incomplete, inconsistent or unreliable information across the journey — at stops, in digital channels, and at the point of a service failure — even though current passenger-facing information surfaces (TREVO, TPAC) exist."
 current_journey: null
 reported_consequences: []
 possible_root_causes:
@@ -17,6 +16,7 @@ possible_root_causes:
   - "Batch B update: TREVO provides real-time passenger information, but third-party machine-readable access remains unresolved. This problem contains at least two distinct sub-gaps - passenger information quality/completeness, and developer/data interoperability and reuse - which should not be assumed to require the same solution."
   - "Batch C update: flagged for likely split during D3 Problem Map consolidation into a passenger-information-quality sub-gap (TPAC/ATAC reports incomplete/outdated information at some stops/digital channels, while the Municipality describes TREVO's website as providing complete urban timetable/route/passenger information - a nuance requiring reconciliation) and a developer-interoperability/reuse sub-gap (TPAC GTFS exists; TREVO has structured real-time capability; public developer endpoints, licences, reuse conditions and stable data contracts remain unknown). No new canonical PRB-* record is created in Batch C; this remains a corroborated cluster requiring D3 normalization."
   - "D2-A Round A update: current TREVO public surfaces (EVD-000016) already provide trip-planning/live-update passenger information; D2 must not frame this problem as 'transport information does not exist'. The TREVO complaint surface (EVD-000080, secondary relevance) shows some passengers still experience incomplete/unreliable real-time information at the point of failure. The remaining question is whether information is reliable, usable, consistent and interoperable across the actual traveller journey, not whether an information channel exists at all. No PRB-0002 status/tractability change."
+  - "WU-D3-03 owner decision (docs/milestones/D3-WU03-structure-review.md): KEEP PRB-0002 as one problem, explicitly NARROWED to passenger-facing information quality/completeness/reliability/usability. Reason: current evidence supports two technically distinct topics (passenger information vs. developer/data interoperability), but does not yet demonstrate that unclear public GTFS/API/licensing/reuse conditions independently create a material civic problem with an affected journey/consequence of their own — the project is problem-first, and an unresolved technical/open-data gap is not automatically a civic PRB. 'potential third-party data consumers' removed from affected_populations accordingly. The developer/data-interoperability question (public GTFS/GTFS-Realtime/API endpoint availability, licensing, reuse conditions, stable developer contracts) is preserved as an Open Data Foundation/data-reuse lead in the structure review, not as a standalone PRB, and may later be verified as an infrastructure/data gap, connected to another civic problem, or dropped. ASM-0002.structure_action updated SPLIT_CANDIDATE -> KEEP accordingly; no second transport-data PRB created. Evidence links unchanged — EVD-000010/EVD-000016 remain linked because both also carry direct passenger-information-quality relevance (stop-level information completeness; existence/limits of the current TREVO passenger surface), not solely developer/interoperability relevance."
 evidence:
   - "EVD-000010"
   - "EVD-000011"
