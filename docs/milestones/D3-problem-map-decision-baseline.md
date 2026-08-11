@@ -1,8 +1,9 @@
 # D3 — Problem Map v1 & Decision Baseline
 
-**Status:** PLANNED
+**Status:** CLOSED
 **Baseline:** v0.1
 **Prepared:** 2026-08-11
+**Closed:** 2026-08-11 (`docs/milestones/D3-WU05-closure.md`)
 
 ## Objective
 
@@ -86,21 +87,23 @@ Suggested effort: Sonnet Medium.
 
 D3 may close when:
 
-- [ ] `WU-D3-01` analytical contracts/tooling (`ASM-*` schema, `EVD.analysis` extension, validator support, deterministic analyzer) exist and validate.
-- [ ] `WU-D3-02`'s three-problem pilot completed with an explicit `ADOPT`/`MODIFY`/`REJECT` framework-gate decision.
-- [ ] every canonical active `PRB-*` has an `ASM-Lite`.
-- [ ] the road-maintenance `NEW-CANDIDATE` has an owner disposition (promoted / merged / archived), recorded per `docs/discovery/d3-execution-protocol.md` §10.
-- [ ] structural split/merge decisions (including `PRB-0002`) are recorded, with canonical IDs/links adjusted if structure changed.
-- [ ] every active `PRB-*` has a `STOP`/`WATCH`/`DEEPEN`/`PROCEED` triage.
-- [ ] every `DEEPEN` result names a decision-critical unknown and a next evidence method.
-- [ ] initial current-journey state is explicit (`SUFFICIENT`/`PARTIAL`/`INSUFFICIENT`/`UNKNOWN`) for every active problem.
-- [ ] no unknown was silently converted into an assumed fact.
-- [ ] no solution `HYP-*` was required merely to close D3.
-- [ ] `node tools/validate-research.js` and the deterministic analyzer both pass.
-- [ ] AIQT state and repository state are valid; working tree is clean before closure commit.
-- [ ] an explicit D4/D5 handoff and a D3 closure record exist.
+- [x] `WU-D3-01` analytical contracts/tooling (`ASM-*` schema, `EVD.analysis` extension, validator support, deterministic analyzer) exist and validate. (`docs/milestones/D3-WU05-closure.md` §10, §9)
+- [x] `WU-D3-02`'s three-problem pilot completed with an explicit `ADOPT`/`MODIFY`/`REJECT` framework-gate decision. (`docs/milestones/D3-WU02-pilot-review.md`; resolved `docs/milestones/D3-WU03-structure-review.md` §1)
+- [x] every canonical active `PRB-*` has an `ASM-Lite`. (`docs/milestones/D3-WU05-closure.md` §9 — 10/10)
+- [x] the road-maintenance `NEW-CANDIDATE` has an owner disposition (promoted / merged / archived), recorded per `docs/discovery/d3-execution-protocol.md` §10. (promoted to `PRB-0010`, `docs/milestones/D3-WU03-structure-review.md` §3)
+- [x] structural split/merge decisions (including `PRB-0002`) are recorded, with canonical IDs/links adjusted if structure changed. (`docs/milestones/D3-WU03-structure-review.md` §2)
+- [x] every active `PRB-*` has a `STOP`/`WATCH`/`DEEPEN`/`PROCEED` triage. (`docs/milestones/D3-WU05-closure.md` §4 — 8 DEEPEN, 2 WATCH, 0 STOP, 0 PROCEED)
+- [x] every `DEEPEN` result names a decision-critical unknown and a next evidence method. (`docs/milestones/D3-WU05-closure.md` §10)
+- [x] initial current-journey state is explicit (`SUFFICIENT`/`PARTIAL`/`INSUFFICIENT`/`UNKNOWN`) for every active problem. (`docs/milestones/D3-WU05-closure.md` §10 — all ten `journey_understanding` values explicit, none `NOT_ASSESSED`)
+- [x] no unknown was silently converted into an assumed fact. (verified by construction across `docs/milestones/D3-WU05-closure.md` §1–§3; every field change carries an explicit justification, `UNKNOWN`/`INSUFFICIENT` preserved where genuinely unresolved)
+- [x] no solution `HYP-*` was required merely to close D3. (`ls research/hypotheses` → 0)
+- [x] `node tools/validate-research.js` and the deterministic analyzer both pass. (`docs/milestones/D3-WU05-closure.md` §9 — `Validated 206 record(s): OK.`; `test-analytical-foundation.js` 22/22)
+- [x] AIQT state and repository state are valid; working tree is clean before closure commit. Verified by the reviewer post-integration: `aiqt status --json` reports `projectStatus: in_progress`, `currentWorkUnitId: WU018`, no blocking issues, `nextRecommendedCommand: aiqt checkpoint`; `git status --short` immediately before the closure commit shows only this WU's own deliverable files changed (no stray/unrelated modifications).
+- [x] an explicit D4/D5 handoff and a D3 closure record exist. (`docs/milestones/D3-WU05-closure.md` §5, §6, and the document itself)
 
 D3 may legitimately close with individual problems routed to `STOP`, `WATCH`, or D5 — not every problem needs to reach `PROCEED`. The count of new records produced is not a success metric.
+
+**Exit-gate result (2026-08-11, WU-D3-05/WU018):** 14 of 14 items satisfied and verified. **D3 is CLOSED.** See `docs/milestones/D3-WU05-closure.md` §10 for the full per-item evaluation.
 
 ## Explicitly out of scope
 
