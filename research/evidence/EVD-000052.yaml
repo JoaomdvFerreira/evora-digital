@@ -1,0 +1,28 @@
+evidence_id: EVD-000052
+type: institutional
+source:
+  source_id: SRC-0043
+  publisher: "Município de Évora"
+  title: "Plano Estratégico para a Cultura de Évora 2022-2030 (PECE)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/06/PECE_VF.pdf"
+  published_at: 2022
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0044"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "cultural sector actors"
+  - "residents"
+  - "visitors"
+domain:
+  - "CUL"
+observation:
+  summary: "Évora has a large and strategically important cultural ecosystem. Municipal cultural strategy and Évora 2027 show substantial existing cultural production, institutional investment, and regional/international programming, especially ahead of the 2027 European Capital of Culture year."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-05-A-E01. Interpretation: 'lack of cultural activity' is not supported as the default problem hypothesis for this domain."

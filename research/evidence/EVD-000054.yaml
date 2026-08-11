@@ -1,0 +1,26 @@
+evidence_id: EVD-000054
+type: institutional
+source:
+  source_id: SRC-0043
+  publisher: "Município de Évora"
+  title: "Plano Estratégico para a Cultura de Évora 2022-2030 (PECE)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/06/PECE_VF.pdf"
+  published_at: 2022
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "cultural and creative-ecosystem actors"
+  - "municipal cultural staff"
+domain:
+  - "CUL"
+  - "PUB"
+observation:
+  summary: "Coordination and information sharing between the Municipality and cultural/associative actors is a recognised institutional need. The strategy describes a need to improve instruments that clarify and streamline relations between the Municipality and the cultural/creative-ecosystem, with greater transparency and shared information, including a 'Portal do Associativismo' concept."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-05-A-E03. Interpretation: potential coordination/transaction-cost issue, but implementation status must be checked before treating as a current gap. RESOLVED by Batch B: EVD-000060 (SRC-0050) confirms a dedicated associativism platform already exists and is materially implemented, so this should NOT be recorded as an unimplemented digital gap."

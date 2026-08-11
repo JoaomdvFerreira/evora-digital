@@ -161,12 +161,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-004"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:18:45.721Z"
+        "updatedAt": "2026-08-11T11:00:00.000Z"
       },
       {
         "id": "WU006",
@@ -547,13 +547,73 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt next",
       "createdAt": "2026-08-11T10:15:00.000Z"
+    },
+    {
+      "id": "C005",
+      "workUnitId": "WU005",
+      "packetId": "PKT-005",
+      "summary": "Formally selected WU005 in AIQT and integrated externally reviewed, project-owner-approved WU-D1-05 Research Batch A (institutional first-pass) and Batch B (narrow current-state challenge) together in a single combined execution, since this WU had no prior canonical integration. Added 8 new sources, added 11 evidence records. No new PRB-*/HYP-* created: cultural event discovery/fragmentation is deferred, cultural/associative administrative friction is downgraded to a validation question, accessibility remains a policy/evidence area, and no sports digital problem was found. Institutional saturation reached via a 'resolved by current-state check' pattern; Batch B's own closing note recommends D2/D5 over further D1 institutional research on this track.",
+      "completed": [
+        "Selected WU005 in AIQT via aiqt next.",
+        "Added SRC-0043..SRC-0050 (PECE cultural strategy, Évora 2027 programming, 'A Nossa Vez' participation call, municipal visitor/tourism info, municipal sports/associativismo, Municipal Agenda, Guia da Semana, Plataforma Évora Associativismo); SRC-0043 and SRC-0047 each merge a Batch A source with its same-URL Batch B finding, avoiding duplication.",
+        "Checked SRC-0002 for Culture/Tourism/Sports overlap; confirmed out of scope (PECE is a distinct dedicated cultural-strategy document), so left unmodified.",
+        "Added EVD-000052..EVD-000062.",
+        "Created zero PRB-* records, per the approved conservative defer/downgrade/no-problem decisions; preserved negative findings and Batch A's five contradictions/tensions as discoverable EVD-* notes and progress-doc content.",
+        "Created zero HYP-* records.",
+        "Updated docs/data/source-registry.md and created docs/milestones/D1-WU05-progress.md and docs/milestones/D1-WU05-closure.md."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0043.yaml",
+        "research/sources/SRC-0044.yaml",
+        "research/sources/SRC-0045.yaml",
+        "research/sources/SRC-0046.yaml",
+        "research/sources/SRC-0047.yaml",
+        "research/sources/SRC-0048.yaml",
+        "research/sources/SRC-0049.yaml",
+        "research/sources/SRC-0050.yaml",
+        "research/evidence/EVD-000052.yaml",
+        "research/evidence/EVD-000053.yaml",
+        "research/evidence/EVD-000054.yaml",
+        "research/evidence/EVD-000055.yaml",
+        "research/evidence/EVD-000056.yaml",
+        "research/evidence/EVD-000057.yaml",
+        "research/evidence/EVD-000058.yaml",
+        "research/evidence/EVD-000059.yaml",
+        "research/evidence/EVD-000060.yaml",
+        "research/evidence/EVD-000061.yaml",
+        "research/evidence/EVD-000062.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D1-WU05-progress.md",
+        "docs/milestones/D1-WU05-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 111 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 111 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T11:00:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-004",
-    "workUnitId": "WU004",
+    "id": "PKT-005",
+    "workUnitId": "WU005",
     "milestoneId": "M001",
-    "createdAt": "2026-08-11T10:15:00.000Z",
+    "createdAt": "2026-08-11T11:00:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -574,7 +634,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T10:15:00.000Z",
+  "lastUpdatedAt": "2026-08-11T11:00:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -739,6 +799,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T10:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C005",
+      "current": {
+        "observationId": "sha256:c005e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C005",
+        "workUnitId": "WU005",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T11:00:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T11:00:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c005e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C005",
+          "workUnitId": "WU005",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T11:00:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T11:00:00.000Z"
         }
       ]
     }

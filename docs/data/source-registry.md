@@ -49,6 +49,14 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0040 | UÉ Feira do Emprego 2026 | Problem Intelligence | Current student/alumni-employer matching event (3rd edition, Oct 2026) |
 | SRC-0041 | UÉ employability initiatives (Magma Talks and related activities) | Problem Intelligence | Current student/graduate career-development support |
 | SRC-0042 | NERE / IEFP training activity 2026 — InovaSocial | Problem Intelligence | Current (Feb 2026) NERE/IEFP training and business-support collaboration |
+| SRC-0043 | Plano Estratégico para a Cultura de Évora 2022-2030 (PECE) | Problem Intelligence | Cultural strategy: ecosystem growth, accessibility/inclusion, coordination mechanisms |
+| SRC-0044 | Évora 2027 — programação, participação e território | Problem Intelligence | Current national/international cultural programming ahead of 2027 |
+| SRC-0045 | "A Nossa Vez" — regulamento da chamada de participação comunitária | Problem Intelligence | Active 2026 community/association co-creation mechanism |
+| SRC-0046 | Município de Évora — informação ao visitante / turismo | Problem Intelligence | Mature existing municipal visitor-information surface |
+| SRC-0047 | Município de Évora — desporto, complexo desportivo e associativismo desportivo | Problem Intelligence | Existing sports facilities/association channels; no evidenced digital problem |
+| SRC-0048 | Agenda do Município de Évora (current) | Problem Intelligence | Structured event-submission workflow, including accessibility fields |
+| SRC-0049 | Guia da Semana | Problem Intelligence | Weekly cultural-guide distribution surface |
+| SRC-0050 | Plataforma Évora Associativismo | Problem Intelligence | Operational associativism platform, resolves PECE portal-implementation question |
 
 ## Verified in WU-D1-03 (Batch A + Batch B)
 
@@ -57,6 +65,10 @@ This registry identifies initial high-priority source families. D1 must verify a
 ## Verified in WU-D1-04 (Batch A + Batch B)
 
 `SRC-0002` and `SRC-0028` were further enriched with economy/employment/education domains and findings (`EMP`, `ECO`, `EDU` added to `SRC-0002`; `EMP` added to `SRC-0028`). `SRC-0010` and `SRC-0011` (previously seed-only rows) were canonicalized, and `SRC-0032`–`SRC-0034` were added as new canonical sources in Batch A. In Batch B, `SRC-0002` and `SRC-0028` were further enriched with current-state (2025/2026) skills-alignment evidence, and `SRC-0039`–`SRC-0042` were added as new canonical sources. See `docs/milestones/D1-WU04-progress.md` for the integration summary and `docs/milestones/D1-WU04-closure.md` for the WU closure record.
+
+## Verified in WU-D1-05 (Batch A + Batch B, combined single integration)
+
+Batch A (institutional first-pass) and Batch B (narrow current-state challenge) were integrated together in one execution, since this WU had no prior canonical integration. `SRC-0043`–`SRC-0047` were added in Batch A (`SRC-0043` merges Batch B's `D1-05-B-S04`, the same PECE document; `SRC-0047` merges Batch B's `D1-05-B-S05`, the same municipal sports pages — no duplicate sources were created for these). `SRC-0048`–`SRC-0050` were added as new canonical sources in Batch B. `SRC-0002` was checked for Culture/Tourism/Sports overlap and found not to cover this scope (it is the general PDS, not the dedicated cultural strategy), so it was left unmodified. Zero new `PRB-*` and zero new `HYP-*` were created: cultural event-discovery/fragmentation is deferred, cultural/associative administrative friction is downgraded to a validation question, accessibility remains a policy/evidence area, and no sports digital problem was found. See `docs/milestones/D1-WU05-progress.md` for the integration summary and `docs/milestones/D1-WU05-closure.md` for the WU closure record.
 
 ## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 

@@ -1,0 +1,30 @@
+evidence_id: EVD-000055
+type: institutional
+source:
+  source_id: SRC-0044
+  publisher: "Évora 2027"
+  title: "Évora 2027 — programação, participação e território"
+  source_reference: "https://www.evora2027.com/participacao-e-territorio"
+  published_at: 2026
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0045"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "schools and students"
+  - "community and resident associations"
+  - "cultural and sports associations"
+  - "multicultural communities"
+domain:
+  - "CUL"
+  - "SOC"
+observation:
+  summary: "Community participation mechanisms are actively being expanded in 2026. Évora 2027 has active mechanisms involving schools, associations, communities and cross-sector co-creation, including the 'A Nossa Vez' community-participation call explicitly encouraging youth, multicultural communities, and cultural/sports/resident associations and social centres to co-create."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-05-A-E04. Interpretation: any civic-participation product hypothesis must account for these existing mechanisms rather than duplicate them."

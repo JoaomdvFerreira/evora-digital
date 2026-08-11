@@ -1,0 +1,30 @@
+source_id: SRC-0043
+publisher: "Município de Évora"
+name: "Plano Estratégico para a Cultura de Évora 2022-2030 (PECE)"
+scope:
+  geography: municipality
+  domains:
+    - "CUL"
+    - "TOU"
+    - "PUB"
+    - "ACC"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2022
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/06/PECE_VF.pdf"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-05 Batch A (provisional D1-05-A-S01), merged with Batch B's D1-05-B-S04 (same document/URL, accessibility-mapping actions — not a separate source). Distinct document from SRC-0002 (PDS 2024-2027); PECE is Évora's dedicated cultural strategy, not the general social-development plan. Key findings: cultural-ecosystem growth/cooperation/capacity; diversified and inclusive cultural offer; accessibility and participation as explicit policy concerns, including a call for accessibility mapping of cultural facilities and accessible cultural content; monitoring and communication; tourist-cultural offer structuring; a need for shared-information/coordination mechanisms between the Municipality and cultural/creative-ecosystem actors, including a 'Portal do Associativismo' concept. Implementation status of the coordination/portal proposal is checked in Batch B (see SRC-0050, EVD-000060)."

@@ -1,0 +1,29 @@
+source_id: SRC-0045
+publisher: "Évora 2027"
+name: "\"A Nossa Vez\" — regulamento da chamada de participação comunitária"
+scope:
+  geography: municipality
+  domains:
+    - "CUL"
+    - "SOC"
+    - "PUB"
+source_type: document
+access:
+  public: true
+  machine_readable: unknown
+  method: "PDF document (public download)"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-01
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.evora2027.com/fileadmin/E27_A_NOSSA_VEZ_REGULAMENTO_PT_ATUALIZADO_26.01.2026.pdf"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-05 Batch A (provisional D1-05-A-S03). Regulamento updated 26 January 2026. Key finding: the current programme design explicitly encourages community/association co-creation, including youth, multicultural communities, and cultural/sports/resident associations and social centres. Reinforces SRC-0044: participation mechanisms in this domain are current and actively being expanded, not absent."
