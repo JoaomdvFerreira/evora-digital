@@ -1,8 +1,9 @@
 # D4 — Existing Solutions, Comparative Evidence & Residual Gap Analysis
 
-**Status:** PLANNED
+**Status:** CLOSED
 **Milestone:** `M004`
 **Prepared:** 2026-08-11
+**Closed:** 2026-08-11 (`docs/milestones/D4-WU03-closure.md`)
 
 ## Objective
 
@@ -79,16 +80,18 @@ Suggested effort: Sonnet Medium.
 
 D4 may close when:
 
-- [ ] both selected local-solution baselines (`PRB-0005`, `PRB-0009`) are sufficiently current for decision use;
-- [ ] duplicate/existing solutions are explicitly accounted for;
-- [ ] comparative research is bounded and mechanism-focused (`docs/discovery/roadmap.md` §D4 comparative-evidence rules);
-- [ ] transferability/context constraints are documented;
-- [ ] each narrow residual gap has one explicit status (`SUPPORTED` / `PARTIAL` / `NOT_SUPPORTED` / `UNKNOWN`);
-- [ ] each surviving gap has a falsifiable D5 question;
-- [ ] no unselected `PRB-*` has been expanded into D4 without owner approval;
-- [ ] no `HYP-*` / product / vendor choice is required;
-- [ ] `node tools/validate-research.js` passes and AIQT state is valid;
-- [ ] an explicit D5 handoff exists.
+- [x] both selected local-solution baselines (`PRB-0005`, `PRB-0009`) are sufficiently current for decision use. (`docs/milestones/D4-WU03-closure.md` §10)
+- [x] duplicate/existing solutions are explicitly accounted for. (`docs/milestones/D4-WU01-PRB0005-progress.md` §2, `docs/milestones/D4-WU02-PRB0009-progress.md` §2)
+- [x] comparative research is bounded and mechanism-focused (`docs/discovery/roadmap.md` §D4 comparative-evidence rules). (2 comparators for `PRB-0005`, 4 for `PRB-0009`; several reviewed but not canonicalized)
+- [x] transferability/context constraints are documented. (§3.4 of each `WU-D4-0x` progress document)
+- [x] each narrow residual gap has one explicit status (`SUPPORTED` / `PARTIAL` / `NOT_SUPPORTED` / `UNKNOWN`). (both `PARTIAL` — `docs/milestones/D4-WU03-closure.md` §2–§3)
+- [x] each surviving gap has a falsifiable D5 question. (`D5-P5-01..06`, `D5-P9-01..06`)
+- [x] no unselected `PRB-*` has been expanded into D4 without owner approval. (verified — only `PRB-0005`/`PRB-0009` and their `ASM-*` touched)
+- [x] no `HYP-*` / product / vendor choice is required. (`ls research/hypotheses` → 0)
+- [x] `node tools/validate-research.js` passes and AIQT state is valid. (`Validated 220 record(s): OK.`)
+- [x] an explicit D5 handoff exists. (`docs/milestones/D4-to-D5-handoff.md`)
+
+**Exit-gate result (2026-08-11, WU-D4-03/WU021):** 10 of 10 items satisfied and verified. **D4 is CLOSED.** See `docs/milestones/D4-WU03-closure.md` for the full evaluation.
 
 ## `PRB-0005` boundary
 
