@@ -23,3 +23,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-B-E02. Candidate problem decision: student accommodation retained as a housing subproblem/dependency within PRB-0006, not promoted to a separate canonical problem."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "REFINES"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

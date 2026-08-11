@@ -23,3 +23,16 @@ personal_data:
   present: false
   retained: false
 notes: "D2-A Round A (D2-A-SIG-01). CONFIRMS + REFINES PRB-0001 toward availability/frequency/capacity/practical-journey-time constraints for a specific campus/industrial-zone journey. Reported experience only; not matched to operational/timetable data. One protest/event lineage; syndicated coverage is not independent corroboration. Representativeness UNKNOWN."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+  contribution:
+    - "CONFIRMS"
+    - "REFINES"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "MOB-2026-03-JN-COLEGIO-PEDRO-FONSECA-PROTEST"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

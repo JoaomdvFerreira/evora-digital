@@ -26,3 +26,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-04-A-E05. Boundary: infrastructure existence does not prove SMEs or workers can easily discover or navigate support opportunities."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "UNKNOWN"

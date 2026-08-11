@@ -24,3 +24,15 @@ personal_data:
   present: false
   retained: false
 notes: "Strength nuance: primary-non-authoritative for the claim content, while the fact that the participation occurred is itself an authoritative record. Boundary: this is evidence of current public concern/questions, not proof that the proposals are technically correct or representative of residents generally."
+
+analysis:
+  related_problems:
+    - "PRB-0004"
+    - "PRB-0005"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

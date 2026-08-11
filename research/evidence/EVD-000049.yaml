@@ -24,3 +24,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-04-B-E03. Interpretation: the specific skills mismatch remains under-characterised; a listing snapshot measures advertised demand, not labour shortage or mismatch (see SRC-0039 boundary note)."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

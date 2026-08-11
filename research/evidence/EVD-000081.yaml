@@ -25,3 +25,16 @@ personal_data:
   present: false
   retained: false
 notes: "D2-A Round A (D2-A-SIG-04). CONFIRMS PRB-0003 with a concrete factual barrier; CURRENT-STATE-UPDATE required — because the corrective project is current/recent, the post-project condition must be checked before treating the described barrier as present-day reality. This is factual corroboration, not an independent lived public signal."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "CONFIRMS"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "PHYSICAL"
+  lineage_id: "ACC-2025-2026-PRR-EB1-AZARUJA-PROJECT"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

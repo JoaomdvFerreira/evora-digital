@@ -24,3 +24,13 @@ personal_data:
   present: false
   retained: false
 notes: "Boundary: this is regional ATAC evidence and must not be interpreted as the demographic split of TREVO urban Évora passengers. Potential later relevance: student/public-transport experience is a justified D2/D5 population slice."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+  contribution:
+    - "REFINES"
+  lineage_id: "MOB-2026-03-CIMAC-TPAC-ANNUAL-EVALUATION"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

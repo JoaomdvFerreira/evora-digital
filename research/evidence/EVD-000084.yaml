@@ -22,4 +22,16 @@ strength: anecdotal
 personal_data:
   present: false
   retained: false
-notes: "D2-A Round A (D2-A-SIG-07). REFINES the EVD-000082/EVD-000083 road-maintenance NEW-CANDIDATE with a persistence/location lead; CURRENT-STATE-UPDATE. Unverified reported claim; not converted into an operational fact without direct verification. Representativeness UNKNOWN. No account identity retained."
+notes: "D2-A Round A (D2-A-SIG-07). REFINES the EVD-000082/EVD-000083 road-maintenance NEW-CANDIDATE with a persistence/location lead; CURRENT-STATE-UPDATE. Unverified reported claim; not converted into an operational fact without direct verification. Representativeness UNKNOWN. No account identity retained. WU-D3-03: promoted to canonical PRB-0010; this record now supports PRB-0010 directly."
+
+analysis:
+  related_problems:
+    - "PRB-0010"
+  contribution:
+    - "REFINES"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

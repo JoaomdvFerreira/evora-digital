@@ -30,3 +30,15 @@ personal_data:
   present: false
   retained: false
 notes: "Independently corroborated by two separate municipal planning documents (SRC-0017 and SRC-0002)."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+  lineage_id: "MOB-2025-02-PUE-MOBILIDADE-SECTOR-REPORT"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

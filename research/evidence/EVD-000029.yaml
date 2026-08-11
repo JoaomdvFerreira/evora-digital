@@ -24,3 +24,14 @@ personal_data:
   present: false
   retained: false
 notes: "Strength applies to the activity itself; participant outputs require separate assessment. Current pedestrian/accessibility conditions are explicitly being treated as something requiring contemporary lived testing. D1 should therefore stop attempting to settle residual accessibility conditions solely through documentary research."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

@@ -27,3 +27,14 @@ personal_data:
   present: false
   retained: false
 notes: "Important boundary: these are planned/required actions, not evidence that every action remains unimplemented."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

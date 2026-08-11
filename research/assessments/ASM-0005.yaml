@@ -1,0 +1,66 @@
+assessment_id: ASM-0005
+
+problem: PRB-0005
+
+as_of: "2026-08-11"
+
+phase: D3
+
+assessment_status: CURRENT
+
+evidence_confidence:
+  overall: MEDIUM
+  independence: MEDIUM
+  coherence: HIGH
+  adequacy: MEDIUM
+  relevance: HIGH
+  currentness: HIGH
+  contradiction_status: LOW
+  stakeholder_validation: PENDING
+
+civic_importance:
+  reach: HIGH
+  frequency: HIGH
+  severity: MEDIUM
+  persistence: HIGH
+  equity: UNKNOWN
+
+journey_understanding: PARTIAL
+causal_understanding: PARTIAL
+existing_solution_understanding: PARTIAL
+remaining_gap: PARTIAL
+digital_leverage: not_assessed
+
+structure_action: KEEP
+
+decision_gates:
+  problem_real: PASS
+  civic_importance: PARTIAL
+  journey_understood: PARTIAL
+  root_cause_understood: PARTIAL
+  remaining_gap_supported: PARTIAL
+  digital_causality: NOT_ASSESSED
+  operability: NOT_ASSESSED
+  testability: PARTIAL
+
+critical_unknowns:
+  U1:
+    question: "At which locations/times do traffic, parking/enforcement and pedestrian-space conflicts materially impair journeys today?"
+    decision_impact: HIGH
+    target_phase: D3
+    best_next_evidence:
+      - "bounded location/journey observation"
+      - "current traffic/parking data"
+  U2:
+    question: "Are current parking occupancy/sensor status, legibility or public data visibility material contributors, or merely secondary to physical/enforcement conditions?"
+    decision_impact: MEDIUM
+    target_phase: D3
+    best_next_evidence:
+      - "current sensor/occupancy/data-interface verification"
+      - "user journey only where needed"
+
+triage: DEEPEN
+
+next_action: "Targeted location + operational-data assessment. No new parking app hypothesis."
+
+notes: "Evidence base: 5/5 linked EVD annotated (per WU017 project-owner handoff). Independence: three effective evidentiary threads across five records. EVD-000003 and EVD-000025 are two separate atomic EVD records that report the same underlying fact (99.5% service regularity, 84.4% IP-5min punctuality, delays attributed to congestion on Historic Centre/Industrial Park access routes) from the same primary source (SRC-0018, the 2026 municipal transport-authority annual report) and are treated as one evidentiary thread, not two, under lineage_id MOB-2026-07-CME-TRANSPORT-AUTHORITY-ANNUAL-REPORT (the same lineage_id already used for PRB-0001's EVD-000002/EVD-000023/EVD-000024, since it is literally the same source document). EVD-000007 and EVD-000008 similarly share SRC-0018's PUE-mobility counterpart, SRC-0017 (PUE Sector Report: Mobilidade), under lineage_id MOB-2025-02-PUE-MOBILIDADE-SECTOR-REPORT (also shared with PRB-0003's EVD-000004/EVD-000006, since again it is the same underlying document). EVD-000012 (SRC-0003, 2026 PUE participation report) is the third, genuinely independent thread; it is canonically linked to both PRB-0004 and PRB-0005 in the corpus, so its analysis.related_problems lists both, not a new speculative link. Structure decision: per handoff §6, the traffic/congestion, parking-pressure/illegal-parking, and pedestrian-space-conflict sub-mechanisms documented across EVD-000003/EVD-000007/EVD-000008/EVD-000025 remain analytically distinguishable (EVD-000007/EVD-000003/EVD-000025 speak mainly to traffic/congestion; EVD-000008 speaks mainly to parking/legibility), but the current evidence base does not establish sufficiently distinct affected journeys or consequences for each sub-mechanism to justify another canonical split during this D3 baseline — the road-surface/maintenance mechanism has already been correctly separated as PRB-0010, and no further split is authorized here; structure_action remains KEEP. civic_importance: reach and frequency are HIGH because traffic/parking/pedestrian conflict is described as affecting a broad daily-use population (residents, drivers, pedestrians) across 'key urban areas'; persistence is HIGH given the multi-year documentation trail; severity is MEDIUM because accident/safety concerns are recorded but not extensively quantified; equity is UNKNOWN because no record differentiates impact by population group. This integrates the WU017 project-owner baseline in full; no deviation from the handoff's structure_action/triage/gate values. No PRB-0005 structure_action or validation_status change."

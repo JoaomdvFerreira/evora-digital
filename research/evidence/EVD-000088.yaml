@@ -26,3 +26,14 @@ personal_data:
   present: false
   retained: false
 notes: "D2-A Targeted Follow-up (A-FU-SIG-04). POSSIBLE-CURRENT-STATE LEAD; FRESHNESS-UNKNOWN. Useful as a route/accessibility-audit lead, not canonicalised as a current fact — freshness of the underlying assessment is unclear on both surfaces."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "UNKNOWN"

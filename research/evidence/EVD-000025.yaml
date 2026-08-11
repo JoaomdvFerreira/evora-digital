@@ -24,3 +24,15 @@ personal_data:
   present: false
   retained: false
 notes: "This provides current evidence that at least part of public-transport reliability is a road-system problem, not an information-system problem."
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "MOB-2026-07-CME-TRANSPORT-AUTHORITY-ANNUAL-REPORT"
+  representativeness: "DESIGNED_REPRESENTATIVE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

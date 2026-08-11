@@ -23,4 +23,16 @@ strength: primary-non-authoritative
 personal_data:
   present: false
   retained: false
-notes: "D2-A Targeted Follow-up (A-FU-SIG-03). CURRENT-STATE-UPDATE; EXISTING-SOLUTION. Does not resolve street/pedestrian accessibility directly; reinforces that present-day residual barriers must be tested rather than assuming older accessibility descriptions remain an unchanged baseline."
+notes: "D2-A Targeted Follow-up (A-FU-SIG-03). CURRENT-STATE-UPDATE; PLANNED-SOLUTION (corrected from an earlier EXISTING-SOLUTION framing — the accessibility plan is described as being developed during 2026, not yet delivered or operating). Does not resolve street/pedestrian accessibility directly; reinforces that present-day residual barriers must be tested rather than assuming older accessibility descriptions remain an unchanged baseline."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "CURRENT-STATE-UPDATE"
+    - "PLANNED-SOLUTION"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

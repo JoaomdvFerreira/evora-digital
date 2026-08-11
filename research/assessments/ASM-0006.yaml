@@ -1,0 +1,59 @@
+assessment_id: ASM-0006
+
+problem: PRB-0006
+
+as_of: "2026-08-11"
+
+phase: D3
+
+assessment_status: CURRENT
+
+evidence_confidence:
+  overall: HIGH
+  independence: MEDIUM
+  coherence: HIGH
+  adequacy: HIGH
+  relevance: HIGH
+  currentness: HIGH
+  contradiction_status: LOW
+  stakeholder_validation: PENDING
+
+civic_importance:
+  reach: HIGH
+  frequency: HIGH
+  severity: HIGH
+  persistence: HIGH
+  equity: HIGH
+
+journey_understanding: INSUFFICIENT
+causal_understanding: SUFFICIENT
+existing_solution_understanding: SUFFICIENT
+remaining_gap: PARTIAL
+digital_leverage: low
+
+structure_action: KEEP
+
+decision_gates:
+  problem_real: PASS
+  civic_importance: PASS
+  journey_understood: FAIL
+  root_cause_understood: PASS
+  remaining_gap_supported: PARTIAL
+  digital_causality: FAIL
+  operability: NOT_ASSESSED
+  testability: PARTIAL
+
+critical_unknowns:
+  U1:
+    question: "Is there a material current applicant or residence-placement journey failure in discovery, eligibility, application, status or routing?"
+    decision_impact: HIGH
+    target_phase: D3
+    best_next_evidence:
+      - "bounded formative applicant/student journey"
+      - "administrative process/placement data"
+
+triage: DEEPEN
+
+next_action: "One targeted process/journey check. If that check does not expose a material addressable gap, the expected later posture should move toward WATCH/STOP for Évora Digital intervention, without denying the civic importance of housing."
+
+notes: "Evidence base: 7/7 linked EVD annotated (per WU017 project-owner handoff). Independence: five effective evidentiary threads across seven records. EVD-000031 (SRC-0002, PDS 2024-2027) and EVD-000032 (SRC-0028, Plano de Ação do PDS 2025) are formally distinct source_ids, but EVD-000033's own notes explicitly flag that SRC-0002 and SRC-0028 'share the same PDS/Rede Social institutional lineage' and are 'not automatically independent corroboration' — EVD-000033 (SRC-0029, PUE Habitação sector report, additional_sources SRC-0002/SRC-0028) sits at the centre of that same institutional family. These three are treated as one effective evidentiary thread for independence purposes even though only EVD-000031/EVD-000032/EVD-000033 do not share a single matching primary source_id (so no shared lineage_id was assigned per the schema's 'lineage_id only on matching primary source_id' rule) — this is exactly the same-institutional-voice caution the pilots demonstrate must not be silently ignored just because source_ids differ. EVD-000042 (SRC-0035, Plano Local de Habitação 67.1M€), EVD-000043 (SRC-0037, UÉ student accommodation) and EVD-000099 (SRC-0085, Tribuna do Alentejo press) are each genuinely independent threads. EVD-000100 (SRC-0086, UÉ residence renovation completion, additional_sources SRC-0037) is topically a follow-on to EVD-000043 but sits on a distinct primary source_id, so it is not merged into EVD-000043's thread, only noted as a related current-state update. EXISTING-SOLUTION signals matter here: EVD-000032 and EVD-000042 both describe large, funded, actively-delivering housing interventions (annotated EXISTING-SOLUTION), which is why existing_solution_understanding is SUFFICIENT — but EVD-000042's own notes state this active supply-side response 'does not by itself resolve unmet housing need,' which is why remaining_gap stays PARTIAL rather than SUFFICIENT. journey_understanding is INSUFFICIENT because no record in this set establishes whether applicants can discover the correct programme, whether eligibility is misunderstood, or whether application/status tracking is deficient — this is the explicit U1 gap. civic_importance is HIGH across all five dimensions: reach and frequency are HIGH because housing affordability is a structural, municipality-wide, persistent cost pressure documented across every planning cycle reviewed; severity is HIGH given displacement effects (roughly 70% of UÉ students reportedly displaced into rental accommodation, EVD-000099); persistence is HIGH given the multi-year documented trail; equity is HIGH because the burden falls disproportionately on lower-income residents and students, a population explicitly named across the evidence set. This integrates the WU017 project-owner baseline in full; no deviation from the handoff's structure_action/triage/gate values. No PRB-0006 structure_action or validation_status change."

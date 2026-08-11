@@ -22,3 +22,15 @@ personal_data:
   present: false
   retained: false
 notes: "Important boundary: this establishes institutional concern; it does not measure current prevalence or user satisfaction."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "SOC-2024-01-PDS-EVORA"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

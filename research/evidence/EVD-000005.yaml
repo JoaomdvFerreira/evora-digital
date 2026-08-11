@@ -23,3 +23,15 @@ personal_data:
   present: false
   retained: false
 notes: "Freshness caution: the numeric modal-share value originates in the underlying mobility diagnosis and should not be treated as a 2026 measurement."
+
+analysis:
+  related_problems:
+    - "PRB-0004"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+  lineage_id: "MOB-2025-02-PUE-MOBILIDADE-SECTOR-REPORT"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

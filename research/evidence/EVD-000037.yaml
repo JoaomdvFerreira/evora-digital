@@ -28,3 +28,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-04-A-E01. Confidence: HIGH institutionally. SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage, so this is not independent corroboration."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OTHER"
+  lineage_id: "SOC-2024-01-PDS-EVORA"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

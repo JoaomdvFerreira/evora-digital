@@ -26,3 +26,15 @@ personal_data:
   present: false
   retained: false
 notes: ""
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+  lineage_id: "MOB-2025-02-PUE-MOBILIDADE-SECTOR-REPORT"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

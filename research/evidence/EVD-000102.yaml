@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-D Round A (E-05). EXISTING-SOLUTION; REFINES PRB-0008. Important current-state correction: a skills-alignment mechanism is already being developed institutionally; Évora Digital should not propose a duplicate. PlaQuaR's effective coverage/outcomes are not established by this source and remain a D5/data question."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "EXISTING-SOLUTION"
+    - "REFINES"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "UNKNOWN"

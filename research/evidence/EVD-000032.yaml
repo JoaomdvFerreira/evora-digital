@@ -25,3 +25,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-A-E02. The evidence-backed problem is not 'the Municipality is doing nothing'; Batch B must determine implementation progress and residual unmet need."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

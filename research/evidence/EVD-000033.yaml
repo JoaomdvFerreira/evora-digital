@@ -26,3 +26,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-A-E03. Boundary: do not infer exact 2026 shortage magnitude yet. Repeated institutional claims across SRC-0002/SRC-0028/SRC-0029 are not automatically independent corroboration, since SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

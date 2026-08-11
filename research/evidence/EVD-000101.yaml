@@ -24,3 +24,14 @@ personal_data:
   present: false
   retained: false
 notes: "D2-D Round A (E-01). Concrete specialised-demand signal alongside the broader IEFP snapshot (EVD-000049); does not establish actual shortage, vacancy duration, failed recruitment, wage mismatch, or inability to source these skills locally — a listing snapshot measures advertised demand only."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  representativeness: "LIMITED"
+  verification: "UNKNOWN"
+  temporal_relevance: "CURRENT"

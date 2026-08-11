@@ -25,4 +25,16 @@ strength: secondary
 personal_data:
   present: false
   retained: false
-notes: "D2-A Round A (D2-A-SIG-06). CONFIRMS EVD-000082/SRC-0069 blind-spot finding; CURRENT-STATE-UPDATE; LOW-DIGITAL-LEVERAGE. Independent of the petition as an institutional/operational response, although triggered in the same public debate. Materially strengthens the road-maintenance NEW-CANDIDATE while weakening any framing of it as primarily an information/software problem. Not promoted to a PRB."
+notes: "D2-A Round A (D2-A-SIG-06). CONFIRMS EVD-000082/SRC-0069 blind-spot finding; CURRENT-STATE-UPDATE; LOW-DIGITAL-LEVERAGE. Independent of the petition as an institutional/operational response, although triggered in the same public debate. Materially strengthens the road-maintenance NEW-CANDIDATE while weakening any framing of it as primarily an information/software problem. Not promoted to a PRB. WU-D3-03: promoted to canonical PRB-0010; this record now supports PRB-0010 directly."
+
+analysis:
+  related_problems:
+    - "PRB-0010"
+  contribution:
+    - "CONFIRMS"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

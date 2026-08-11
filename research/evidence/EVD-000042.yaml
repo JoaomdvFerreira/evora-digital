@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-B-E01. Current-state challenge result for PRB-0006: housing structural problem survives challenge because major interventions are acknowledged but do not close the gap; retained as canonical structural problem cluster, not duplicated."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "CURRENT-STATE-UPDATE"
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

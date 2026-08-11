@@ -23,4 +23,15 @@ strength: secondary
 personal_data:
   present: false
   retained: false
-notes: "D2-A Round A (D2-A-SIG-05). NEW-CANDIDATE; LOW-DIGITAL-LEVERAGE. Strongest Round A blind-spot finding: road-surface maintenance/service reliability is not cleanly represented by PRB-0001..PRB-0005; may overlap PRB-0005 through public-realm/safety effects, but its causal mechanism is maintenance/infrastructure condition, not traffic/parking modal conflict. Not promoted to a PRB; carried into cross-track synthesis for a project-owner decision. Signatory count is not representative of prevalence."
+notes: "D2-A Round A (D2-A-SIG-05). NEW-CANDIDATE; LOW-DIGITAL-LEVERAGE. Strongest Round A blind-spot finding: road-surface maintenance/service reliability is not cleanly represented by PRB-0001..PRB-0005; may overlap PRB-0005 through public-realm/safety effects, but its causal mechanism is maintenance/infrastructure condition, not traffic/parking modal conflict. Not promoted to a PRB; carried into cross-track synthesis for a project-owner decision. Signatory count is not representative of prevalence. WU-D3-03: promoted to canonical PRB-0010 (docs/milestones/D3-WU03-structure-review.md); this record now supports PRB-0010 directly, superseding the earlier NEW-CANDIDATE/no-PRB status of this note."
+
+analysis:
+  related_problems:
+    - "PRB-0010"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "HISTORICAL"

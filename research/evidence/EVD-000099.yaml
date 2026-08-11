@@ -24,3 +24,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-C Round A (H-01). CONFIRMS + CURRENT-STATE-UPDATE PRB-0006. Press-mediated figures (rental prices, displacement percentage) are preserved as reported, not verified against a primary dataset; treated as current affordability/student-exposure evidence, not proof of a digital/process gap. Representativeness of the underlying reporting methodology is not established."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "CONFIRMS"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

@@ -25,3 +25,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-A-E01. Housing affordability and supply are institutionally linked to population fixation."
+
+analysis:
+  related_problems:
+    - "PRB-0006"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"

@@ -23,3 +23,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-A Targeted Follow-up (A-FU-SIG-02). CURRENT-STATE-UPDATE; EXISTING-SOLUTION. Some accessibility problems are already inside an active assessment/improvement process — this must be distinguished from unresolved barriers, not merged with them."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "CURRENT-STATE-UPDATE"
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "PHYSICAL"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

@@ -1,0 +1,59 @@
+assessment_id: ASM-0004
+
+problem: PRB-0004
+
+as_of: "2026-08-11"
+
+phase: D3
+
+assessment_status: CURRENT
+
+evidence_confidence:
+  overall: LOW
+  independence: LOW
+  coherence: MEDIUM
+  adequacy: LOW
+  relevance: MEDIUM
+  currentness: LOW
+  contradiction_status: UNKNOWN
+  stakeholder_validation: PENDING
+
+civic_importance:
+  reach: UNKNOWN
+  frequency: UNKNOWN
+  severity: UNKNOWN
+  persistence: UNKNOWN
+  equity: UNKNOWN
+
+journey_understanding: INSUFFICIENT
+causal_understanding: PARTIAL
+existing_solution_understanding: PARTIAL
+remaining_gap: UNKNOWN
+digital_leverage: low
+
+structure_action: KEEP
+
+decision_gates:
+  problem_real: PARTIAL
+  civic_importance: UNKNOWN
+  journey_understood: FAIL
+  root_cause_understood: PARTIAL
+  remaining_gap_supported: UNKNOWN
+  digital_causality: FAIL
+  operability: NOT_ASSESSED
+  testability: PARTIAL
+
+critical_unknowns:
+  U1:
+    question: "Which everyday origin-destination journeys are currently broken by discontinuity, safety, maintenance or destination-connectivity gaps?"
+    decision_impact: HIGH
+    target_phase: D3
+    best_next_evidence:
+      - "deterministic network analysis / direct observation"
+      - "targeted cyclist validation where needed"
+
+triage: DEEPEN
+
+next_action: "One bounded network/observation assessment. Do not collect more generic cycling mentions."
+
+notes: "Evidence base: 2/2 linked EVD annotated (per WU017 project-owner handoff) — PRB-0004's canonical linked set is unusually thin, and this thinness is itself the finding this ASM must record honestly rather than paper over. Independence: EVD-000005 (SRC-0017, PUE Mobilidade sector report, Feb 2025) and EVD-000012 (SRC-0003, 2026 PUE 4th-revision preventive-participation report) are on distinct source_ids, so they are not lineage-linked; independence is nonetheless assessed LOW rather than HIGH because both are institutional-voice records of the same type (municipal planning process) and neither is a lived cyclist signal — PRB-0004's own evidence_status is 'discovered', not 'corroborated', and D2-A explicitly recorded two separate rounds (Round A and a Targeted Follow-up) in which broad open-web search failed to surface any sufficiently strong, recent, Évora-specific lived signal, a documented method-limit rather than evidence of absence. EVD-000005's 0.5% cycling modal-share figure is flagged in its own notes as originating in the underlying diagnosis and not a 2026 measurement, which is why currentness is LOW. EVD-000012 is annotated REFINES because it shows current public concern about cycling-network programming (via the 2026 PUE participation process) without establishing which specific journeys are broken; it is also linked to PRB-0005 in the corpus (parking/circulation content in the same participation report) and its analysis.related_problems now lists both PRB-0004 and PRB-0005 to reflect that pre-existing canonical dual-linkage, not a new speculative cross-domain link. civic_importance is left UNKNOWN across all five dimensions and journey_understanding INSUFFICIENT / remaining_gap UNKNOWN because the corpus genuinely does not support a firmer value on any of them without inventing precision the evidence does not have. This integrates the WU017 project-owner baseline in full; no deviation from the handoff's structure_action/triage/gate values. No PRB-0004 structure_action or validation_status change."

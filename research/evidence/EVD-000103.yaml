@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-D Round A (E-06). EXISTING-SOLUTION; REFINES PRB-0008. Shows at least one concrete bilateral employer-training feedback mechanism exists; does not establish that such mechanisms are systematic or sufficient across Évora's wider economy/SME base — carried forward as a D5/data question."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "EXISTING-SOLUTION"
+    - "REFINES"
+  friction_types:
+    - "OTHER"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "UNKNOWN"

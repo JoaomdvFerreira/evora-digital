@@ -28,3 +28,16 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-04-B-E01. Current-State Challenge result: the skills/employer-needs problem survives. Same PDS/Rede Social institutional lineage as EVD-000037; not independent corroboration on its own, but current-dated (2026 reporting) rather than only the 2024/2025 planning documents."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "CONFIRMS"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "OTHER"
+  lineage_id: "SOC-2024-01-PDS-EVORA"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "CURRENT"

@@ -25,3 +25,17 @@ personal_data:
   present: false
   retained: false
 notes: "Important boundary: this does not establish that a new parking application is needed. Existing municipal parking systems must be assessed later under Existing Solutions & Gap Analysis."
+
+analysis:
+  related_problems:
+    - "PRB-0005"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+    - "REGULATORY"
+    - "INFORMATION"
+  lineage_id: "MOB-2025-02-PUE-MOBILIDADE-SECTOR-REPORT"
+  representativeness: "UNKNOWN"
+  verification: "UNKNOWN"
+  temporal_relevance: "HISTORICAL"
