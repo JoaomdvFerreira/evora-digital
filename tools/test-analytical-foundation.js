@@ -266,6 +266,42 @@ analysis:
   }
 });
 
+test("EVD analysis.contribution accepts PLANNED-SOLUTION distinctly from EXISTING-SOLUTION", () => {
+  const root = makeFixtureRoot();
+  try {
+    write(root, "problems", "PRB-9001.yaml", MINIMAL_PRB);
+    const evd = minimalEvd({
+      analysis: `
+analysis:
+  contribution: [CONFIRMS, PLANNED-SOLUTION]
+`,
+    });
+    write(root, "evidence", "EVD-900101.yaml", evd);
+    const { errors } = validateResearchTree(root);
+    assert.deepStrictEqual(errors, []);
+  } finally {
+    cleanup(root);
+  }
+});
+
+test("invalid PLANNED-SOLUTION spelling/value is rejected", () => {
+  const root = makeFixtureRoot();
+  try {
+    write(root, "problems", "PRB-9001.yaml", MINIMAL_PRB);
+    const bad = minimalEvd({
+      analysis: `
+analysis:
+  contribution: [PLANNED_SOLUTION]
+`,
+    });
+    write(root, "evidence", "EVD-900101.yaml", bad);
+    const { errors } = validateResearchTree(root);
+    assert.ok(errorsContain(errors, 'field "analysis.contribution"'), errors.join("\n"));
+  } finally {
+    cleanup(root);
+  }
+});
+
 // ---- ASM tests ---------------------------------------------------------------
 
 test("valid minimal ASM-Lite passes", () => {
@@ -303,6 +339,20 @@ test("ASM with an invalid decision-gate enum is rejected", () => {
     write(root, "assessments", "ASM-9001.yaml", asm);
     const { errors } = validateResearchTree(root);
     assert.ok(errorsContain(errors, 'field "decision_gates.problem_real"'), errors.join("\n"));
+  } finally {
+    cleanup(root);
+  }
+});
+
+test("ASM decision_gates accepts PARTIAL alongside PASS/FAIL/UNKNOWN/NOT_ASSESSED", () => {
+  const root = makeFixtureRoot();
+  try {
+    write(root, "problems", "PRB-9001.yaml", MINIMAL_PRB);
+    write(root, "evidence", "EVD-900101.yaml", minimalEvd());
+    const asm = minimalAsm().replace("problem_real: PASS", "problem_real: PARTIAL");
+    write(root, "assessments", "ASM-9001.yaml", asm);
+    const { errors } = validateResearchTree(root);
+    assert.deepStrictEqual(errors, []);
   } finally {
     cleanup(root);
   }

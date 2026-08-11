@@ -28,7 +28,7 @@ evidence_confidence:
   adequacy: HIGH | MEDIUM | LOW | UNKNOWN | NOT_ASSESSED
   relevance: HIGH | MEDIUM | LOW | UNKNOWN | NOT_ASSESSED
   currentness: HIGH | MEDIUM | LOW | UNKNOWN | NOT_ASSESSED
-  contradiction_status: HIGH | MEDIUM | LOW | UNKNOWN | NOT_ASSESSED
+  contradiction_status: HIGH | MEDIUM | LOW | UNKNOWN | NOT_ASSESSED  # degree of contradiction PRESENT, not confidence in the call
   stakeholder_validation: PENDING | PARTIAL | CHALLENGED | VALIDATED | NOT_APPLICABLE
 
 civic_importance:
@@ -46,15 +46,15 @@ digital_leverage: not_assessed | low | medium | high
 
 structure_action: KEEP | SPLIT_CANDIDATE | MERGE_CANDIDATE
 
-decision_gates:
-  problem_real: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  civic_importance: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  journey_understood: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  root_cause_understood: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  remaining_gap_supported: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  digital_causality: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  operability: PASS | FAIL | UNKNOWN | NOT_ASSESSED
-  testability: PASS | FAIL | UNKNOWN | NOT_ASSESSED
+decision_gates:  # each: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  problem_real: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  civic_importance: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  journey_understood: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  root_cause_understood: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  remaining_gap_supported: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  digital_causality: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  operability: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
+  testability: PASS | PARTIAL | FAIL | UNKNOWN | NOT_ASSESSED
 
 critical_unknowns:
   U1:
@@ -75,6 +75,10 @@ notes: ""
 `digital_leverage` reuses `PRB.digital_tractability`'s established enum (`not_assessed | low | medium | high`) rather than introducing a second, competing tractability scale.
 
 `critical_unknowns` is a dynamically-keyed map (`U1`, `U2`, ...), not a fixed-field object, because the number of unknowns varies per problem. A problem with no unresolved decision-critical unknowns (e.g. a clean `STOP`) may omit it or leave it empty.
+
+Every `decision_gates.*` field distinguishes `PARTIAL` from `UNKNOWN` (added `WU-D3-03`): `PARTIAL` means meaningful evidence exists but falls short of passing the gate; `UNKNOWN` means there is nothing to characterize the gate with at all. `contradiction_status` measures the degree of contradiction present in the evidence base (`LOW` = coherent, `HIGH` = substantial unresolved contradiction), not the assessor's confidence in that call.
+
+`triage` describes Évora Digital's project posture toward a problem, never a judgement of the problem's civic worth — a low-leverage, high-importance problem is the paradigm case `STOP`/`WATCH` exist for, not a contradiction to avoid. See `docs/discovery/d3-execution-protocol.md` §5.2 for the full triage definitions.
 
 `triage` and every `decision_gates.*`/`structure_action` value is a human/project-owner analytical judgement. No tooling may assign or infer these values automatically — see `docs/discovery/d3-execution-protocol.md` §6 for the deterministic-analyzer constraints this implies.
 

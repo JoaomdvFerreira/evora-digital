@@ -31,7 +31,7 @@ analysis:
     - "PRB-0007"
   contribution:
     - "CONFIRMS"
-    - "EXISTING-SOLUTION"
+    - "PLANNED-SOLUTION"
   friction_types:
     - "INFORMATION"
     - "COORDINATION"

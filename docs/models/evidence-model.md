@@ -56,7 +56,7 @@ analysis:
   related_problems: []
   contribution: []
     # CONFIRMS | REFINES | CONTRADICTS | CURRENT-STATE-UPDATE |
-    # EXISTING-SOLUTION | NEW-CANDIDATE
+    # EXISTING-SOLUTION | PLANNED-SOLUTION | NEW-CANDIDATE
   friction_types: []
     # INFORMATION | COORDINATION | TRANSACTION | OPERATIONAL |
     # PHYSICAL | REGULATORY | OTHER
@@ -77,6 +77,10 @@ Deliberately **not** part of `analysis`:
 - **`directness`** — relative to a specific problem, and ambiguous once one record relates to multiple `PRB-*` via `related_problems`. Assessed per-problem in `ASM-*` instead.
 - **`COVERAGE-GAP`** as a `contribution` value — "no strong signal found" / method-saturation findings are research/assessment findings, not atomic positive evidence about one record. Record them in an `ASM-*`, a progress/closure document, or a decision-gap report.
 - **`LOW-DIGITAL-LEVERAGE`** as a `contribution` value — digital leverage is a synthesis/tractability judgement belonging to `ASM-*.digital_leverage`, not an atomic evidence record.
+
+`CONTRADICTS` (clarified `WU-D3-03`) means the record contradicts a material proposition, framing, causal claim, or current-state assumption relevant to the linked `PRB-*` — it does not automatically mean the whole problem is false. If the contradiction is narrower than the whole problem, the contradicted proposition must be identifiable from the record's own `observation`/`notes` or from the linked `ASM-*`; if a record relates to multiple problems and the contradiction applies differently to each, do not tag `CONTRADICTS` on the record at all — record it at `ASM-*`/problem level instead. See `docs/discovery/d3-execution-protocol.md` §4.1a.
+
+`EXISTING-SOLUTION` (an operating/delivered solution or service already exists) is distinct from `PLANNED-SOLUTION` (added `WU-D3-03`: a formally planned/committed/in-delivery response that is not yet established as operating and available to the affected journey). Neither implies effectiveness — whether a solution actually closes the gap is an `ASM-*.remaining_gap` question. See `docs/discovery/d3-execution-protocol.md` §4.1b.
 
 See `docs/models/assessment-model.md` for the `ASM-*` Problem Assessment this metadata feeds.
 
