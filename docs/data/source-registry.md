@@ -79,6 +79,11 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0070 | Rádio Campanário report: municipal €1.5M road-repair programme | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
 | SRC-0071 | O Alentejo report: road-condition protest and collective-action debate | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
 | SRC-0072 | Public social post: reported N114 pothole persistence | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
+| SRC-0073 | Acesso Universal 1.3 — participatory accessibility programme (APCE) | Problem Intelligence | D2-A targeted follow-up evidence for PRB-0003 (affected-user participation) |
+| SRC-0074 | APCE Facebook post — continuing accessibility verification | Problem Intelligence | D2-A targeted follow-up evidence for PRB-0003 (existing-solution/current-state) |
+| SRC-0075 | Évora_27 Facebook post — 2026 accessibility plan with Acesso Cultura | Problem Intelligence | D2-A targeted follow-up evidence for PRB-0003 (existing-solution/current-state) |
+| SRC-0076 | Visit Portugal — Évora destination page (accessibility-relevant) | Problem Intelligence | D2-A targeted follow-up evidence for PRB-0003 (freshness-unknown lead) |
+| SRC-0077 | Tur4all — Évora Histórica accessible-tourism page | Problem Intelligence | D2-A targeted follow-up evidence for PRB-0003 (freshness-unknown lead) |
 
 ## Verified in WU-D1-03 (Batch A + Batch B)
 

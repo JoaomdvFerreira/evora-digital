@@ -1,6 +1,6 @@
 # WU-D2-02 Progress — Mobility / Accessibility / Public Realm Signals
 
-**Status:** ACTIVE — Round A batch integrated; targeted follow-up recommended before closure
+**Status:** DONE — superseded by `docs/milestones/D2-WU02-closure.md`
 **Milestone:** D2 — Public Signal Discovery
 **Date:** 2026-08-11
 
@@ -61,17 +61,42 @@ Per the approved decisions, road-surface maintenance/service reliability is **no
 2. Do not freeze historical accessibility barriers as current — the EB1 Azaruja barrier is under/recently through corrective investment (`PRB-0003`).
 3. Do not interpret road-condition complaints as an app/reporting gap — available evidence points to physical maintenance/service reliability, not information absence.
 
-## Saturation assessment
+## Round A saturation (superseded)
 
-Per `docs/discovery/d2-execution-protocol.md` §15 saturation indicators: **track-level Round A saturation is NOT YET reached**, consistent with the handoff's own §7 assessment. At least two source classes were checked (PS1, PS3, PS4, PS6), contradictory/current-state evidence was actively sought and found (existing TREVO information surface; EB1 Azaruja corrective works), and the explicit `PRB-0004` coverage gap is documented rather than treated as absence of a problem. However, further broad searching is not equally valuable across all five PRBs — the recommended next route is **targeted follow-up**, not a repeated broad scan:
+Per `docs/discovery/d2-execution-protocol.md` §15 saturation indicators, Round A integration alone found **track-level Round A saturation NOT YET reached**, consistent with the handoff's own §7 assessment. The recommended next route was **targeted follow-up**, not a repeated broad scan — see the Targeted Follow-up integration below, which resolves this.
 
-- `PRB-0001`: sufficient Round A signal to proceed to targeted journey/stakeholder questions.
-- `PRB-0002`: target the actual user information journey (reliability/usability/interoperability), not existence of tools.
-- `PRB-0003`: targeted lived/accessibility validation or direct observation.
-- `PRB-0004`: prefer D5/direct observation/network analysis over further broad web search.
-- `PRB-0005`: targeted scope clarification, especially the boundary against the road-maintenance blind spot.
+## Targeted follow-up integration
 
-`WU-D2-02` therefore remains open (not closed) pending this targeted follow-up and the project-owner's road-maintenance disposition decision from the cross-track synthesis (§13 of `D2-round-A-cross-track-synthesis.md`).
+The externally reviewed and project-owner-approved **D2-A Targeted Follow-up — Accessibility, Cycling and PRB-0005 Scope** (`D2-A-targeted-follow-up-accessibility-cycling-scope.md`) was integrated as a bounded delta on top of the Round A batch above. No existing Round A material was repeated or re-integrated, and no new external research was performed by the repository agent.
+
+- Sources added: **5** — `SRC-0073` (APCE Acesso Universal 1.3), `SRC-0074` (APCE Facebook post, continuing verification), `SRC-0075` (Évora_27 Facebook post, 2026 accessibility plan), `SRC-0076` (Visit Portugal destination page), `SRC-0077` (Tur4all accessible-tourism page)
+- Evidence records added: **4** — `EVD-000085` (APCE participatory programme), `EVD-000086` (APCE continuing verification), `EVD-000087` (Évora_27 accessibility plan), `EVD-000088` (accessible-tourism barrier leads, `SRC-0076` + `SRC-0077` as `additional_sources`)
+- Problem records updated: **3** — `PRB-0003` (new evidence + root-cause note distinguishing affected-user participation / institutional work already under way / actual unresolved present-day barriers), `PRB-0004` (methodological-saturation root-cause note only, no new evidence — per the handoff's explicit instruction not to manufacture evidence solely to satisfy coverage), `PRB-0005` (root-cause note recording the project-owner's road-maintenance disposition decision; framing preserved unchanged, not broadened)
+- Problem/hypothesis records created: **0**
+
+### PRB-0003 delta
+
+New evidence distinguishes three classes that must not be collapsed: (1) affected-user/stakeholder participation (`EVD-000085`, APCE's Acesso Universal 1.3 — people with disabilities actively identifying/improving barriers); (2) institutional accessibility work already under way (`EVD-000086` continuing municipal-facility verification; `EVD-000087` Évora_27's 2026 accessibility plan) — `EXISTING-SOLUTION`/`CURRENT-STATE-UPDATE`, not unresolved barriers; (3) actual unresolved present-day physical barriers (`EVD-000088`, accessible-tourism surfaces) — `FRESHNESS-UNKNOWN`, a lead for a location-level audit, not a canonical current fact. Barriers already under active correction are explicitly not treated as automatically current. Broad open-web research on `PRB-0003` is now sufficiently advanced for D2; next route is affected-user validation and a location-level current-barrier audit.
+
+### PRB-0004 delta
+
+The targeted search (BikÉvora events, cycling promotion, municipal policy, associations/events, international advocacy activity) again produced no sufficiently strong, recent, Évora-specific lived signal on everyday origin-destination journeys blocked by network discontinuity. Broad open-web public-signal discovery is now **methodologically saturated** for this PRB. Per explicit instruction, the sparse public signal is **not** interpreted as absence or weakening of `PRB-0004`, and no `EVD-*` was manufactured to satisfy coverage. Next evidence routes: direct observation, network analysis, cyclist/stakeholder validation in D5 (potentially an OpenStreetMap/municipal-network comparison).
+
+### PRB-0005 delta
+
+No new evidence and no broadening of the canonical framing. The root-cause notes now record the project-owner's explicit decision: road-surface maintenance/service reliability is **kept as `NEW-CANDIDATE`** (`EVD-000082`, `EVD-000083`, `EVD-000084`, unchanged), not absorbed into `PRB-0005` and not promoted to a new `PRB-*`, because its evidence points to a distinct physical maintenance/service-reliability mechanism rather than `PRB-0005`'s traffic/parking-vs-pedestrian/public-space framing. The candidate is carried forward to `WU-D2-06` cross-signal synthesis for later canonical disposition.
+
+## Final saturation assessment
+
+| PRB | Broad D2 research | Next evidence route |
+|---|---|---|
+| `PRB-0001` | Sufficiently developed for D2 handoff | Targeted journey/stakeholder validation (D5) |
+| `PRB-0002` | Sufficient — remaining question is reliability/usability/interoperability, not information absence | D5 / real user-journey testing |
+| `PRB-0003` | Sufficiently advanced for D2 | Location/affected-user validation (D5), current-barrier audit |
+| `PRB-0004` | Saturated as a broad-web method | Direct observation / network analysis / D5 |
+| `PRB-0005` | Sufficient to preserve current framing and keep the road-maintenance candidate separate | Journey/location validation; road-maintenance disposition at `WU-D2-06` synthesis |
+
+`WU-D2-02`'s existing acceptance criteria — all integrated records pass `node tools/validate-research.js`, and the `PRB-0001`–`PRB-0005` coverage attempt is recorded — are both satisfied. Outstanding D5/direct-observation work is future-phase work, not a reason to keep this work unit open, per the approved instruction. `WU-D2-02` is therefore closed; see `docs/milestones/D2-WU02-closure.md`.
 
 ## Candidate D5 questions carried forward
 
@@ -87,30 +112,31 @@ Per `docs/discovery/d2-execution-protocol.md` §15 saturation indicators: **trac
 
 ```text
 node tools/validate-research.js
-Validated 156 record(s): OK.
+Validated 165 record(s): OK.
 ```
 
-143 (D1 baseline) + 7 new `SRC-*` + 6 new `EVD-*` = 156. No `PRB-*`/`HYP-*` record count change (still 9 `PRB-*`, 0 `HYP-*`); five `PRB-*` records were updated in place, not replaced.
+143 (D1 baseline) + 7 Round A `SRC-*` + 6 Round A `EVD-*` + 5 follow-up `SRC-*` + 4 follow-up `EVD-*` = 165. No `PRB-*`/`HYP-*` record count change (still 9 `PRB-*`, 0 `HYP-*`); five `PRB-*` records were updated in place, not replaced.
 
 ## Files added/changed
 
 ```text
-research/sources/SRC-0066.yaml .. SRC-0072.yaml   (added)
-research/evidence/EVD-000079.yaml .. EVD-000084.yaml (added)
-research/problems/PRB-0001.yaml .. PRB-0005.yaml   (updated: possible_root_causes, evidence)
-docs/data/source-registry.md                       (updated: 7 new rows)
-docs/milestones/D2-WU02-progress.md                 (this file)
+research/sources/SRC-0066.yaml .. SRC-0077.yaml     (added, across Round A + targeted follow-up)
+research/evidence/EVD-000079.yaml .. EVD-000088.yaml (added, across Round A + targeted follow-up)
+research/problems/PRB-0001.yaml .. PRB-0005.yaml    (updated: possible_root_causes, evidence)
+docs/data/source-registry.md                        (updated: 12 new rows)
+docs/milestones/D2-WU02-progress.md                  (this file)
+docs/milestones/D2-WU02-closure.md                   (closure record)
 ```
 
 ## Confirmation
 
 - Product, hypothesis, or Évora Open API implementation authorized: **NO**
 - New `PRB-*`/`HYP-*` created: **NO**
-- Road-surface maintenance promoted to a `PRB-*`: **NO** — retained as unlinked `NEW-CANDIDATE` evidence
+- Road-surface maintenance promoted to a `PRB-*`: **NO** — project-owner decision recorded as KEEP AS NEW-CANDIDATE, unlinked to any `PRB-*`
 - Any `PRB-*` marked `validated`: **NO**
-- New external research performed by the repository agent: **NO** — integration only, of the already-reviewed and approved handoff
-- `WU-D2-02` closed: **NO** — Round A saturation not yet reached; targeted follow-up recommended
+- New external research performed by the repository agent: **NO** — integration only, of the already-reviewed and approved Round A handoff and targeted follow-up
+- `WU-D2-02` closed: **YES** — see `docs/milestones/D2-WU02-closure.md`
 
 ## Next
 
-Targeted follow-up per PRB as listed above, and the project-owner's road-maintenance disposition decision, before `WU-D2-02` can be considered for closure. `WU-D2-03` and `WU-D2-04` remain independently `ready` and unaffected by this integration.
+`WU-D2-02` is closed. The road-maintenance `NEW-CANDIDATE` is carried forward to `WU-D2-06` cross-signal synthesis. `WU-D2-03` and `WU-D2-04` remain independently `ready`/in progress on their own tracks and are unaffected by this integration.

@@ -1,0 +1,28 @@
+source_id: SRC-0075
+publisher: "Évora 2027 — Capital Europeia da Cultura"
+name: "Évora_27 Facebook post — accessibility plan development with Acesso Cultura"
+scope:
+  geography: city
+  domains:
+    - "ACC"
+    - "CUL"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "public organisational Facebook post"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-05
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.facebook.com/Evora2027.CapitalEuropeiadaCultura/posts/1933931730887871/"
+api_candidate:
+  potential: "none"
+notes: "D2-A Targeted Follow-up (A-FU-SIG-03). Évora_27 reported developing an accessibility plan with Acesso Cultura. Does not resolve street/pedestrian accessibility directly; reinforces the need to test present-day residual barriers rather than treating older accessibility descriptions as a timeless baseline."

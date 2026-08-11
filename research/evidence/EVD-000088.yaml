@@ -1,0 +1,28 @@
+evidence_id: EVD-000088
+type: institutional
+source:
+  source_id: SRC-0076
+  publisher: "Turismo de Portugal — Visit Portugal"
+  title: "Visit Portugal — Évora destination page (accessibility-relevant description)"
+  source_reference: "https://www.visitportugal.com/pt-pt/destinos/alentejo/329141"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0077"
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "people with disabilities"
+  - "visitors and residents"
+domain:
+  - "ACC"
+  - "TOU"
+observation:
+  summary: "Current public accessible-tourism surfaces (Visit Portugal; Tur4all) describe accessibility barriers such as steps, uneven/access-limited monuments, scarce tactile paving and limited fully adapted transport, without a visible last-verified date for either surface."
+evidence_nature: claim
+strength: secondary
+personal_data:
+  present: false
+  retained: false
+notes: "D2-A Targeted Follow-up (A-FU-SIG-04). POSSIBLE-CURRENT-STATE LEAD; FRESHNESS-UNKNOWN. Useful as a route/accessibility-audit lead, not canonicalised as a current fact — freshness of the underlying assessment is unclear on both surfaces."

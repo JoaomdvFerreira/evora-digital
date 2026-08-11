@@ -2,7 +2,7 @@
   "version": "0.8.0",
   "projectStatus": "active",
   "currentMilestoneId": "M002",
-  "currentWorkUnitId": "WU009",
+  "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
       {
@@ -299,12 +299,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "in_progress",
+        "status": "done",
         "dependencies": [
           "DEP-011"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T15:00:00.000Z"
+        "updatedAt": "2026-08-11T15:30:00.000Z"
       },
       {
         "id": "WU010",
@@ -1114,13 +1114,70 @@
       "finalWorkUnitStatus": "in_progress",
       "nextRecommendation": "Targeted PRB-0001..0005 follow-up and the project-owner's road-maintenance disposition decision, per docs/milestones/D2-WU02-progress.md; WU009 remains open pending Round A saturation.",
       "createdAt": "2026-08-11T15:00:00.000Z"
+    },
+    {
+      "id": "C010",
+      "workUnitId": "WU009",
+      "packetId": "PKT-010",
+      "summary": "Integrated the externally reviewed, project-owner-approved D2-A Targeted Follow-up (Accessibility, Cycling and PRB-0005 Scope) as a bounded delta on top of the already-integrated Round A batch: added 5 SRC-*, 4 EVD-*, refined PRB-0003/PRB-0004/PRB-0005. Recorded the project-owner's KEEP AS NEW-CANDIDATE decision for road-surface maintenance (not absorbed into PRB-0005, no new PRB created). All five PRB-0001..PRB-0005 saturation assessments now conclude broad D2 research is sufficiently advanced or methodologically saturated; existing WU009 acceptance criteria are satisfied, so WU009 closes done.",
+      "completed": [
+        "Mapped A-FU-SIG-01..04 to new canonical SRC-0073..SRC-0077 and EVD-000085..EVD-000088.",
+        "Recorded A-FU-SIG-05 (cycling method-saturation conclusion) as a PRB-0004 root-cause note only; no EVD-* manufactured for a methodology-only conclusion, per explicit instruction.",
+        "Refined PRB-0003 distinguishing affected-user participation, institutional work already under way, and unresolved-barrier leads with unknown freshness.",
+        "Recorded the project-owner's KEEP AS NEW-CANDIDATE decision for road-surface maintenance in PRB-0005.possible_root_causes; no PRB-0005 broadening; no new PRB-*.",
+        "Added 5 rows to docs/data/source-registry.md; updated docs/milestones/D2-WU02-progress.md with the follow-up integration, final saturation table, and updated validator/confirmation sections; created docs/milestones/D2-WU02-closure.md.",
+        "Closed WU009 (in_progress -> done): both existing acceptance criteria satisfied; outstanding D5/direct-observation work treated as future-phase, not a reason to keep the WU open."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0073.yaml",
+        "research/sources/SRC-0074.yaml",
+        "research/sources/SRC-0075.yaml",
+        "research/sources/SRC-0076.yaml",
+        "research/sources/SRC-0077.yaml",
+        "research/evidence/EVD-000085.yaml",
+        "research/evidence/EVD-000086.yaml",
+        "research/evidence/EVD-000087.yaml",
+        "research/evidence/EVD-000088.yaml",
+        "research/problems/PRB-0003.yaml",
+        "research/problems/PRB-0004.yaml",
+        "research/problems/PRB-0005.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D2-WU02-progress.md",
+        "docs/milestones/D2-WU02-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 165 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 165 record(s): OK."
+        },
+        {
+          "criterion": "Coverage attempt for PRB-0001..PRB-0005 is recorded, including PRBs with no signal found",
+          "result": "passed",
+          "evidence": "docs/milestones/D2-WU02-closure.md final coverage matrix; PRB-0004/PRB-0005 root-cause notes record the methodological-saturation and blind-spot boundaries explicitly."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "WU-D2-03 and WU-D2-04 continue independently; WU-D2-05 remains planned pending Round A cross-track synthesis; WU-D2-06 will resolve the road-maintenance NEW-CANDIDATE disposition.",
+      "createdAt": "2026-08-11T15:30:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-009",
+    "id": "PKT-010",
     "workUnitId": "WU009",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T15:00:00.000Z",
+    "createdAt": "2026-08-11T15:30:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -1140,8 +1197,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "WU-D2-02 remains in_progress pending targeted PRB-0001..0005 follow-up and the project-owner's road-maintenance disposition decision; WU-D2-03 and WU-D2-04 remain ready for their own Round A handoffs.",
-  "lastUpdatedAt": "2026-08-11T15:00:00.000Z",
+  "nextRecommendedCommand": "WU-D2-02 is done. WU-D2-03 and WU-D2-04 continue independently; WU-D2-05 remains planned pending Round A cross-track synthesis; WU-D2-06 will resolve the road-maintenance NEW-CANDIDATE disposition.",
+  "lastUpdatedAt": "2026-08-11T15:30:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1456,6 +1513,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T15:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C010",
+      "current": {
+        "observationId": "sha256:c010e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C010",
+        "workUnitId": "WU009",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T15:30:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T15:30:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c010e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C010",
+          "workUnitId": "WU009",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T15:30:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T15:30:00.000Z"
         }
       ]
     }
