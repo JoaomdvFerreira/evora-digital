@@ -23,3 +23,17 @@ personal_data:
   present: false
   retained: false
 notes: "D2-A Round A (D2-A-SIG-02). CONFIRMS + REFINES PRB-0001 (secondary relevance to PRB-0002 on information/interoperability). Self-selected complaint platform; representativeness UNKNOWN. Distinct complaints are separate incident lineages sharing one platform, not system-wide rate evidence. No usernames retained."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+    - "PRB-0002"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+    - "INFORMATION"
+  public_signal_class: "PS3"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "HISTORICAL"

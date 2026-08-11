@@ -23,3 +23,18 @@ personal_data:
   present: false
   retained: false
 notes: "Boundary: this is intermunicipal evidence and should not be silently attributed to the urban TREVO network."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+    - "PRB-0002"
+  contribution:
+    - "CONFIRMS"
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+    - "OPERATIONAL"
+  lineage_id: "MOB-2026-03-CIMAC-TPAC-ANNUAL-EVALUATION"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

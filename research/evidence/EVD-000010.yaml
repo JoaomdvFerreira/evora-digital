@@ -24,3 +24,16 @@ personal_data:
   present: false
   retained: false
 notes: "Open-data relevance: a machine-readable transport dataset demonstrably exists. Open question: no official public GTFS download/API endpoint was identified in this research batch; availability and reuse conditions require direct verification with CIMAC/ATAC."
+
+analysis:
+  related_problems:
+    - "PRB-0002"
+  contribution:
+    - "CONFIRMS"
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "INFORMATION"
+  lineage_id: "MOB-2026-03-CIMAC-TPAC-ANNUAL-EVALUATION"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

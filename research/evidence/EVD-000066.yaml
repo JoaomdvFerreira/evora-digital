@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-06-A-E04. Interpretation: this is precisely the type of civic problem that must not automatically become a digital-product hypothesis."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "ENV-2026-07-MUNICIPAL-STRUCTURAL-RESPONSE"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

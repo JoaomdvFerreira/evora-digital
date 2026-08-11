@@ -23,3 +23,16 @@ personal_data:
   present: false
   retained: false
 notes: "D2-E Round A (E-02). CONFIRMS + REFINES PRB-0009 toward a geographically specific instance (Canaviais) rather than a purely city-wide claim. Representativeness UNKNOWN; one self-selected public-post signal lineage, distinct from EVD-000093 (different location/date)."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CONFIRMS"
+    - "REFINES"
+  friction_types:
+    - "OPERATIONAL"
+  public_signal_class: "PS2"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "UNKNOWN"

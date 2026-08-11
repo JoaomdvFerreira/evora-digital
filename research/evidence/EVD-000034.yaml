@@ -24,3 +24,16 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-A-E04. One of the clearest information/coordination problems found in Round A."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "INFORMATION"
+    - "COORDINATION"
+  lineage_id: "SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

@@ -23,3 +23,13 @@ personal_data:
   present: false
   retained: false
 notes: "D2-B Round A (D2-B-SIG-02). REFINES PRB-0007; LOW-DIGITAL-LEVERAGE for the highest-ranked needs. Establishes that PRB-0007 must not be reduced to 'information is hard to find' — capacity, respite, direct support and financial/psychological needs are reported as more consequential than pure navigation friction and are not converted into a digital-navigation problem. Same SRC-0030 lineage as EVD-000089; not an independent corroborating source."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "REFINES"
+  lineage_id: "SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

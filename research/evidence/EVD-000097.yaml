@@ -23,3 +23,14 @@ personal_data:
   present: false
   retained: false
 notes: "D2-E Round A (E-07). EXISTING-SOLUTION; TRANSACTION-FRICTION-LEAD. The bulky/green-waste service exists; the remaining open question is discoverability, completion and predictability of the request journey, not absence of a service — carried to D5 as a narrow lead, not established as a validated problem here."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "TRANSACTION"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

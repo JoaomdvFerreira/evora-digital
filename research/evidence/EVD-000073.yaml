@@ -23,3 +23,17 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-06-B-E03. Interpretation: a narrower future question exists around service status, routing, ownership and transparency, but current evidence does not yet establish a user-facing digital failure."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "REFINES"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "COORDINATION"
+    - "TRANSACTION"
+  lineage_id: "ENV-2026-07-MUNICIPAL-STRUCTURAL-RESPONSE"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

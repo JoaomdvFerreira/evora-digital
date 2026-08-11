@@ -26,3 +26,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-06-B-E02. Interpretation: a digital intervention should not be assumed to solve the dominant cause."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "ENV-2026-02-RSU-DISRUPTION-COMMUNICADO"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "HISTORICAL"

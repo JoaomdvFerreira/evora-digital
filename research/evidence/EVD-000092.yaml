@@ -25,3 +25,17 @@ personal_data:
   present: false
   retained: false
 notes: "D2-B Round A (D2-B-SIG-04). CONFIRMS PRB-0007; INFORMATION-FRICTION, COORDINATION-FRICTION, EXISTING-SOLUTION-PLANNED. The navigation need is caregiver-originated, but a response is already being designed/implemented per EVD-000044 — D2 therefore frames the open question as whether the current implementation removes the friction, not as grounds for a new standalone portal/app hypothesis (docs/discovery/d2-execution-protocol.md D2-B boundary). No HYP-* created. Same SRC-0030 lineage as EVD-000089..EVD-000091; not an independent corroborating source."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "CONFIRMS"
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "INFORMATION"
+    - "COORDINATION"
+  lineage_id: "SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-E Round A (E-08). TRANSACTION-FRICTION-LEAD; CURRENT-STATE-UPDATE. One enforcement case does not establish widespread resident confusion about the green-waste journey (see EVD-000097); preserved as a D5 journey question ('what happens when municipal green-waste collection cannot be provided'), not a new PRB. One evidence event/lineage integrated once despite two publications reporting it (SRC-0083 primary, SRC-0084 corroborating, same event)."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "TRANSACTION"
+  public_signal_class: "PS1"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

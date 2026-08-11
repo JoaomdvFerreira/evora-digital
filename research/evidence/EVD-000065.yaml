@@ -25,3 +25,14 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-06-A-E03. Interpretation: the problem is current and strong enough to map canonically if repository criteria are satisfied."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

@@ -24,3 +24,14 @@ personal_data:
   present: false
   retained: false
 notes: "Boundary: do not infer that a feed does not exist internally or that third-party access is impossible."
+
+analysis:
+  related_problems:
+    - "PRB-0002"
+  contribution:
+    - "EXISTING-SOLUTION"
+  friction_types:
+    - "INFORMATION"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

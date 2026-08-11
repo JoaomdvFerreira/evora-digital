@@ -23,3 +23,12 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-A-E06. A later digital opportunity, if any, is more likely to concern navigation, coordination, referral, eligibility or information quality than simply publishing a list of organisations."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "EXISTING-SOLUTION"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

@@ -23,3 +23,16 @@ personal_data:
   present: false
   retained: false
 notes: "D2-B Round A (D2-B-SIG-03). CONFIRMS PRB-0007; INFORMATION-FRICTION, TRANSACTION-FRICTION. One of the clearest direct caregiver-voiced confirmations of the D1 navigation framing found in D2 — a separable information/transaction-cost component rather than merely general caregiver burden. Same SRC-0030 lineage as EVD-000089/EVD-000090; not an independent corroborating source."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "INFORMATION"
+    - "TRANSACTION"
+  lineage_id: "SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

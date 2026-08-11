@@ -25,3 +25,15 @@ personal_data:
   present: false
   retained: false
 notes: "Provisional ID: D1-03-B-E03. Candidate problem decision: STRENGTHEN PRB-0007 (refine, do not duplicate). Institutional confidence HIGH, current-state confidence HIGH."
+
+analysis:
+  related_problems:
+    - "PRB-0007"
+  contribution:
+    - "CONFIRMS"
+    - "CURRENT-STATE-UPDATE"
+    - "EXISTING-SOLUTION"
+  lineage_id: "SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

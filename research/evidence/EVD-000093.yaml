@@ -23,3 +23,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-E Round A (E-01). CONFIRMS PRB-0009 with a direct lived/service signal alongside the existing institutional operational diagnosis (EVD-000065/EVD-000066/EVD-000071/EVD-000072). Representativeness UNKNOWN; one self-selected public-post signal, not corroborated frequency/prevalence."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  public_signal_class: "PS2"
+  representativeness: "UNKNOWN"
+  verification: "REPORTED"
+  temporal_relevance: "UNKNOWN"

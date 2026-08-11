@@ -26,3 +26,15 @@ personal_data:
   present: false
   retained: false
 notes: "D2-E Round A (E-06). Institutional responsibility-boundary/coordination-complexity signal, not proof that residents are commonly confused about who is responsible; user-facing routing confusion remains unvalidated and is carried to D5 as a narrow lead, not established here."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "COORDINATION"
+  public_signal_class: "PS1"
+  representativeness: "NOT_APPLICABLE"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"
