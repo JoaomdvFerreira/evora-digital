@@ -101,6 +101,8 @@ D3 may legitimately close with individual problems routed to `STOP`, `WATCH`, or
 
 ### D4 — Existing Solutions, Comparative Evidence & Residual Gap Analysis
 
+**Milestone:** `M004` — planned 2026-08-11, scoped to `PRB-0005` and `PRB-0009` only. See `docs/milestones/D4-existing-solutions-residual-gap-analysis.md`.
+
 **Objective:** Determine whether a material residual gap remains after accounting for what already operates locally, and whether comparative evidence shows a mechanism that could credibly improve the relevant outcome in Évora.
 
 D4 is selective — only `PRB-*`/narrow leads routed from an `ASM-*` enter D4, and only when comparative evidence can plausibly change the decision.
