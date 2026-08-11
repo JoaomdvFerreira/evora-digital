@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
-  "projectStatus": "done",
-  "currentMilestoneId": "M001",
+  "projectStatus": "active",
+  "currentMilestoneId": "M002",
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -18,6 +18,20 @@
           "WU005",
           "WU006",
           "WU007"
+        ]
+      },
+      {
+        "id": "M002",
+        "title": "D2 — Public Signal Discovery",
+        "objective": "Test whether the nine institutionally identified PRB-* problems from D1 are visible in current public/lived signals, and enrich the D1 problem map with journey/context/contradiction evidence without measuring prevalence or selecting solutions.",
+        "status": "ready",
+        "workUnitIds": [
+          "WU008",
+          "WU009",
+          "WU010",
+          "WU011",
+          "WU012",
+          "WU013"
         ]
       }
     ],
@@ -230,6 +244,191 @@
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
         "updatedAt": "2026-08-11T13:15:00.000Z"
+      },
+      {
+        "id": "WU008",
+        "milestoneId": "M002",
+        "title": "WU-D2-01 — Public Signal Method & Source Protocol",
+        "objective": "Integrate the approved D2 Public Signal Discovery Strategy into canonical documentation and establish the D2 milestone/work-unit structure. No substantive Évora research.",
+        "scope": [
+          "Extend docs/discovery/d2-execution-protocol.md with the approved evidence boundary, problem-validation boundary, journey tracks, source classes, source-independence rule, classification labels, blind-spot control, escalation rule, and priority/parallel-round model",
+          "Create docs/milestones/D2-public-signal-discovery.md",
+          "Create the D2 AIQT milestone and work units"
+        ],
+        "outOfScope": [
+          "Do not perform substantive research about Évora",
+          "Do not create real SRC-*/EVD-*/PRB-*/HYP-* records",
+          "Do not select a civic product or authorize Évora Open API implementation"
+        ],
+        "acceptanceCriteria": [
+          "docs/discovery/d2-execution-protocol.md v0.2 carries the approved strategy's methodological boundaries",
+          "docs/milestones/D2-public-signal-discovery.md defines WU-D2-01..06 and the D2 exit gate",
+          "node tools/validate-research.js still passes against the unchanged canonical record set"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "done",
+        "dependencies": [],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:30:00.000Z"
+      },
+      {
+        "id": "WU009",
+        "milestoneId": "M002",
+        "title": "WU-D2-02 — Mobility / Accessibility / Public Realm Signals",
+        "objective": "Integrate reviewed public-signal research handoffs for track D2-A (PRB-0001..PRB-0005): public transport, pedestrian/accessibility barriers, cycling-network coherence, and traffic/parking interaction with public-space quality.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-* public-signal handoffs attempting coverage of PRB-0001 through PRB-0005",
+          "Record where no useful public signal is found for a given PRB",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not infer prevalence from signal volume",
+          "Do not upgrade PRB-* validation_status from public-signal evidence alone"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js",
+          "Coverage attempt for PRB-0001..PRB-0005 is recorded, including PRBs with no signal found"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-011"
+        ],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:30:00.000Z"
+      },
+      {
+        "id": "WU010",
+        "milestoneId": "M002",
+        "title": "WU-D2-03 — Informal Caregiver Support Journey Signals",
+        "objective": "Integrate reviewed public-signal research handoffs for track D2-B (PRB-0007): caregiver information/support navigation and redirection between Município/ULSAC/Segurança Social/IPSS.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-* public-signal handoffs for the caregiver journey",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not interpret sparse public evidence as evidence that PRB-0007 is weak or absent"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-012"
+        ],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:30:00.000Z"
+      },
+      {
+        "id": "WU011",
+        "milestoneId": "M002",
+        "title": "WU-D2-04 — Urban Hygiene / Public-Service Signals",
+        "objective": "Integrate reviewed public-signal research handoffs for track D2-E (PRB-0009): waste-collection reliability, responsibility confusion, and reporting/follow-up friction.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-* public-signal handoffs for the urban-hygiene/public-service journey",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not create a new occurrence-reporting problem merely because people complain about outcomes"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "ready",
+        "dependencies": [
+          "DEP-013"
+        ],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:30:00.000Z"
+      },
+      {
+        "id": "WU012",
+        "milestoneId": "M002",
+        "title": "WU-D2-05 — Housing + Employment Targeted Signals",
+        "objective": "Integrate reviewed public-signal research handoffs for tracks D2-C (PRB-0006, housing process friction) and D2-D (PRB-0008, employer/skills alignment), kept analytically separate despite sharing this work unit.",
+        "scope": [
+          "Integrate reviewed SRC-*/EVD-* public-signal handoffs for the housing process journey (D2-C) and the employer/skills journey (D2-D)",
+          "Record findings and saturation decisions separately per track",
+          "Validate and commit resulting records"
+        ],
+        "outOfScope": [
+          "Do not perform the underlying research locally",
+          "Do not collect generic housing-affordability signals in place of the separable process-friction journey",
+          "Do not infer generic job-board demand from ordinary job-search frustration",
+          "Do not merge D2-C and D2-D findings/saturation decisions"
+        ],
+        "acceptanceCriteria": [
+          "All integrated records pass node tools/validate-research.js",
+          "D2-C and D2-D findings/saturation decisions are recorded separately"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-014",
+          "DEP-015",
+          "DEP-016"
+        ],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:00:00.000Z"
+      },
+      {
+        "id": "WU013",
+        "milestoneId": "M002",
+        "title": "WU-D2-06 — Cross-Signal Consolidation & D2 Closure",
+        "objective": "Consolidate D2 records, perform cross-track synthesis and blind-spot review, verify the D2 exit gate, and produce the D2 closure record without creating a solution backlog.",
+        "scope": [
+          "Cross-track synthesis including D2 OPEN-DISCOVERY / BLIND-SPOT FINDINGS review",
+          "Consolidate contradiction/current-state log and stakeholder-validation questions for D5",
+          "Verify no PRB-* was upgraded to validated from public-signal evidence alone",
+          "Evaluate the D2 exit gate and produce closure record"
+        ],
+        "outOfScope": [
+          "Do not select a civic product",
+          "Do not authorize Évora Open API implementation"
+        ],
+        "acceptanceCriteria": [
+          "D2 exit gate criteria evaluated in docs/milestones/D2-public-signal-discovery.md",
+          "node tools/validate-research.js passes against the full canonical record set"
+        ],
+        "agentContextRefs": [],
+        "suggestedFiles": [],
+        "validationCommands": [
+          "node tools/validate-research.js"
+        ],
+        "status": "planned",
+        "dependencies": [
+          "DEP-017",
+          "DEP-018",
+          "DEP-019",
+          "DEP-020"
+        ],
+        "createdAt": "2026-08-11T14:00:00.000Z",
+        "updatedAt": "2026-08-11T14:00:00.000Z"
       }
     ],
     "dependencies": [
@@ -302,6 +501,76 @@
         "toId": "WU007",
         "type": "blocks",
         "reason": "Consolidation requires domain integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-011",
+        "fromId": "WU008",
+        "toId": "WU009",
+        "type": "blocks",
+        "reason": "D2 research integration requires the approved D2 method/source protocol."
+      },
+      {
+        "id": "DEP-012",
+        "fromId": "WU008",
+        "toId": "WU010",
+        "type": "blocks",
+        "reason": "D2 research integration requires the approved D2 method/source protocol."
+      },
+      {
+        "id": "DEP-013",
+        "fromId": "WU008",
+        "toId": "WU011",
+        "type": "blocks",
+        "reason": "D2 research integration requires the approved D2 method/source protocol."
+      },
+      {
+        "id": "DEP-014",
+        "fromId": "WU009",
+        "toId": "WU012",
+        "type": "blocks",
+        "reason": "Approved strategy Priority 2 sequencing: Housing/Employment starts only after Round A mobility track is reviewed."
+      },
+      {
+        "id": "DEP-015",
+        "fromId": "WU010",
+        "toId": "WU012",
+        "type": "blocks",
+        "reason": "Approved strategy Priority 2 sequencing: Housing/Employment starts only after Round A caregiver track is reviewed."
+      },
+      {
+        "id": "DEP-016",
+        "fromId": "WU011",
+        "toId": "WU012",
+        "type": "blocks",
+        "reason": "Approved strategy Priority 2 sequencing: Housing/Employment starts only after Round A urban-hygiene track is reviewed."
+      },
+      {
+        "id": "DEP-017",
+        "fromId": "WU009",
+        "toId": "WU013",
+        "type": "blocks",
+        "reason": "Consolidation requires Round A integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-018",
+        "fromId": "WU010",
+        "toId": "WU013",
+        "type": "blocks",
+        "reason": "Consolidation requires Round A integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-019",
+        "fromId": "WU011",
+        "toId": "WU013",
+        "type": "blocks",
+        "reason": "Consolidation requires Round A integration to be complete or explicitly descoped."
+      },
+      {
+        "id": "DEP-020",
+        "fromId": "WU012",
+        "toId": "WU013",
+        "type": "blocks",
+        "reason": "Consolidation requires Housing + Employment integration to be complete or explicitly descoped."
       }
     ]
   },
@@ -731,13 +1000,62 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "D1 is closed; D2 Public Signal Discovery is the next milestone (not started in this session).",
       "createdAt": "2026-08-11T13:15:00.000Z"
+    },
+    {
+      "id": "C008",
+      "workUnitId": "WU008",
+      "packetId": "PKT-008",
+      "summary": "Canonicalised D2 Public Signal Discovery: integrated the project-owner-approved D2 strategy into docs/discovery/d2-execution-protocol.md (v0.1 -> v0.2), created docs/milestones/D2-public-signal-discovery.md, and created the D2 AIQT milestone (M002) and work units (WU008-WU013) with dependencies. No substantive Évora research was performed; no SRC-*/EVD-*/PRB-*/HYP-* record was created or modified.",
+      "completed": [
+        "Extended docs/discovery/d2-execution-protocol.md with the evidence boundary, problem-validation boundary, journey tracks (D2-A..E), source classes (PS1-PS6), source-independence rule, factual-claim verification rule, signal classification labels, blind-spot/open-discovery control, escalation-of-new-problem-candidate rule, saturation indicators, and priority/parallel-round model from the approved strategy.",
+        "Created docs/milestones/D2-public-signal-discovery.md defining WU-D2-01..06, the D2 entry/exit gates, and explicit out-of-scope boundaries.",
+        "Created AIQT milestone M002 and work units WU008-WU013 with dependencies DEP-011..DEP-020, preserving Round A (WU-D2-02..04) as ready and Priority 2 Housing+Employment (WU-D2-05) and consolidation (WU-D2-06) as planned pending Round A review.",
+        "Closed WU008 (WU-D2-01) as done within this setup task, since its deliverable is exactly the method/protocol integration performed here."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/discovery/d2-execution-protocol.md",
+        "docs/milestones/D2-public-signal-discovery.md",
+        ".aiqt/state.json",
+        ".aiqt/runlog.jsonl"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 143 record(s): OK (unchanged from D1 baseline)."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "docs/discovery/d2-execution-protocol.md v0.2 carries the approved strategy's methodological boundaries",
+          "result": "passed",
+          "evidence": "docs/discovery/d2-execution-protocol.md, Version 0.2, sections 1-17."
+        },
+        {
+          "criterion": "docs/milestones/D2-public-signal-discovery.md defines WU-D2-01..06 and the D2 exit gate",
+          "result": "passed",
+          "evidence": "docs/milestones/D2-public-signal-discovery.md, Work Units and D2 exit gate sections."
+        },
+        {
+          "criterion": "node tools/validate-research.js still passes against the unchanged canonical record set",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 143 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "WU-D2-02, WU-D2-03 and WU-D2-04 (Round A) are ready for the first approved external research handoff; WU-D2-05 remains planned pending Round A cross-track synthesis.",
+      "createdAt": "2026-08-11T14:30:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-007",
-    "workUnitId": "WU007",
-    "milestoneId": "M001",
-    "createdAt": "2026-08-11T12:30:00.000Z",
+    "id": "PKT-008",
+    "workUnitId": "WU008",
+    "milestoneId": "M002",
+    "createdAt": "2026-08-11T14:00:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -757,8 +1075,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "D1 is closed; D2 Public Signal Discovery is the next milestone (not started in this session).",
-  "lastUpdatedAt": "2026-08-11T13:15:00.000Z",
+  "nextRecommendedCommand": "WU-D2-02, WU-D2-03 and WU-D2-04 (Round A) are ready for the first approved external research handoff; WU-D2-05 remains planned pending Round A cross-track synthesis.",
+  "lastUpdatedAt": "2026-08-11T14:30:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1013,6 +1331,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T13:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C008",
+      "current": {
+        "observationId": "sha256:c008e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C008",
+        "workUnitId": "WU008",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T14:30:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T14:30:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c008e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C008",
+          "workUnitId": "WU008",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T14:30:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T14:30:00.000Z"
         }
       ]
     }

@@ -1,8 +1,8 @@
 # Évora Digital
 
-**Status:** Discovery Programme — D0 closed, D1 next  
+**Status:** Discovery Programme — D1 closed, D2 active  
 **Baseline:** v0.1  
-**Date:** 2026-08-10
+**Date:** 2026-08-11
 
 ## Mission
 
@@ -69,8 +69,8 @@ Software is optional. A valid research outcome may be:
 
 ```text
 D0  Discovery Foundation                    CLOSED
-D1  Institutional & Data Source Mapping     NEXT
-D2  Public Signal Discovery                 PLANNED
+D1  Institutional & Data Source Mapping     CLOSED
+D2  Public Signal Discovery                 ACTIVE
 D3  Problem Map v1
 D4  Existing Solutions & Gap Analysis
 D5  Stakeholder Validation
@@ -80,7 +80,7 @@ D8  Project Selection
 D9  Outcome Review
 ```
 
-See `docs/milestones/D0-closure.md` for the D0 closure record.
+See `docs/milestones/D0-closure.md` for the D0 closure record and `docs/milestones/D1-WU07-closure.md` for the D1 closure record. `docs/milestones/D2-public-signal-discovery.md` is the active D2 milestone.
 
 No civic product has been selected for implementation.
 
