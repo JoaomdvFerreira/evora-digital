@@ -1,0 +1,26 @@
+evidence_id: EVD-000049
+type: institutional
+source:
+  source_id: SRC-0039
+  publisher: "IEFP"
+  title: "IEFP Online — ofertas de emprego, serviço de Évora"
+  source_reference: "https://iefponline.iefp.pt/"
+  published_at: null
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "job seekers"
+  - "employers"
+domain:
+  - "EMP"
+  - "ECO"
+observation:
+  summary: "Public job listings cannot identify the actual skills shortage by themselves: the IEFP Évora snapshot contains 102 listings across multiple occupations and repeated role types, but no duration-to-fill, unsuccessful-recruitment, wage-constraint or employer-reported-shortage data."
+evidence_nature: measurement
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-04-B-E03. Interpretation: the specific skills mismatch remains under-characterised; a listing snapshot measures advertised demand, not labour shortage or mismatch (see SRC-0039 boundary note)."

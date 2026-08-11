@@ -45,14 +45,18 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0036 | 12 supported-rent homes delivered, January 2026 (Malagueira) | Problem Intelligence | Concrete current-state delivery evidence for the housing programme |
 | SRC-0037 | UÉ student accommodation (Alojamento) | Problem Intelligence | Current student-residence capacity, PRR expansion, temporary closures |
 | SRC-0038 | ULSAC mental-health and community-care responses | Problem Intelligence | Current psychiatry/community-care/caregiver-oriented institutional responses |
+| SRC-0039 | IEFP Online — ofertas de emprego, serviço de Évora | Problem Intelligence | Current job-listing snapshot; advertised demand, not shortage/mismatch |
+| SRC-0040 | UÉ Feira do Emprego 2026 | Problem Intelligence | Current student/alumni-employer matching event (3rd edition, Oct 2026) |
+| SRC-0041 | UÉ employability initiatives (Magma Talks and related activities) | Problem Intelligence | Current student/graduate career-development support |
+| SRC-0042 | NERE / IEFP training activity 2026 — InovaSocial | Problem Intelligence | Current (Feb 2026) NERE/IEFP training and business-support collaboration |
 
 ## Verified in WU-D1-03 (Batch A + Batch B)
 
 `SRC-0002` was enriched with housing/social/health domains and findings (`HOU`, `HEA` added to scope). `SRC-0028`–`SRC-0031` were added as new canonical sources in Batch A. In Batch B, `SRC-0030` and `SRC-0031` were further enriched with the 2026-2027 caregiver-plan implementation update, and `SRC-0035`–`SRC-0038` were added as new canonical sources. See `docs/milestones/D1-WU03-progress.md` for the integration summary and `docs/milestones/D1-WU03-closure.md` for the WU closure record.
 
-## Verified in WU-D1-04 (Batch A)
+## Verified in WU-D1-04 (Batch A + Batch B)
 
-`SRC-0002` and `SRC-0028` were further enriched with economy/employment/education domains and findings (`EMP`, `ECO`, `EDU` added to `SRC-0002`; `EMP` added to `SRC-0028`). `SRC-0010` and `SRC-0011` (previously seed-only rows) were canonicalized, and `SRC-0032`–`SRC-0034` were added as new canonical sources. See `docs/milestones/D1-WU04-progress.md` for the integration summary.
+`SRC-0002` and `SRC-0028` were further enriched with economy/employment/education domains and findings (`EMP`, `ECO`, `EDU` added to `SRC-0002`; `EMP` added to `SRC-0028`). `SRC-0010` and `SRC-0011` (previously seed-only rows) were canonicalized, and `SRC-0032`–`SRC-0034` were added as new canonical sources in Batch A. In Batch B, `SRC-0002` and `SRC-0028` were further enriched with current-state (2025/2026) skills-alignment evidence, and `SRC-0039`–`SRC-0042` were added as new canonical sources. See `docs/milestones/D1-WU04-progress.md` for the integration summary and `docs/milestones/D1-WU04-closure.md` for the WU closure record.
 
 ## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 

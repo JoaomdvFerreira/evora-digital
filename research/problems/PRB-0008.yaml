@@ -16,12 +16,16 @@ current_journey: null
 reported_consequences: []
 possible_root_causes:
   - "Possible components include visibility of skills demand, training adaptation, employer/education feedback loops, and inclusive employment for vulnerable groups (per WU-D1-04 Batch A interpretation, not yet validated). Do not assume a job-board solution."
-  - "Existing infrastructure (industrial/technology parks, incubation, aerospace-sector facilities, employability/training measures, UÉ labour-market integration work) means this is not an 'absence of institutional response' problem; infrastructure existence does not prove SMEs or workers can easily discover or navigate support opportunities. Batch B must determine current employer-reported shortages and SME navigation experience."
+  - "Existing infrastructure (industrial/technology parks, incubation, aerospace-sector facilities, employability/training measures, UÉ labour-market integration work) means this is not an 'absence of institutional response' problem; infrastructure existence does not prove SMEs or workers can easily discover or navigate support opportunities. WU-D1-04 Batch B confirms existing employment-matching infrastructure is substantial (UÉ employment fairs, university career initiatives, IEFP listings, NERE/IEFP training mechanisms) - see EVD-000048 - so a generic job board or employment portal would duplicate existing infrastructure unless a specific user-journey failure is demonstrated."
   - "Repeated claims across SRC-0002 and SRC-0028 share the same PDS/Rede Social institutional lineage and are not independent corroboration; UÉ's own planning (SRC-0010) provides a second, distinct institutional line on education-to-employment work."
+  - "WU-D1-04 Batch B Current-State Challenge result: the skills/employer-needs alignment problem survives (EVD-000047) - it is a current 2025/2026 institutional workstream, not merely historic strategy. However, public job listings alone cannot identify the actual skills shortage: the IEFP Évora snapshot (102 listings, EVD-000049) has no duration-to-fill, unsuccessful-recruitment, wage-constraint or employer-reported-shortage data, so the specific mismatch remains under-characterised. Graduate/talent retention (EVD-000050) and business-support fragmentation (EVD-000051) remain related but unresolved and unpromoted discovery questions - not merged into this problem and not created as separate PRB-* records."
 evidence:
   - "EVD-000037"
   - "EVD-000040"
   - "EVD-000041"
+  - "EVD-000047"
+  - "EVD-000048"
+  - "EVD-000049"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed
