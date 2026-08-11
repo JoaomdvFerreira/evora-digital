@@ -1,0 +1,38 @@
+evidence_id: EVD-000110
+type: institutional
+source:
+  source_id: SRC-0097
+  publisher: "North Norfolk District Council"
+  title: "North Norfolk District Council — proactive collection-disruption status listing"
+  source_reference: "North Norfolk District Council public web page (collection disruption status)"
+  published_at: null
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "North Norfolk, United Kingdom"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+  - "DIG"
+observation:
+  summary: "North Norfolk District Council publishes a list of locations not collected on a given round, so residents in an already-known affected area are not required to submit an individual report — one instance of a broader pattern of proactive delayed/missed-collection status communication also seen at other UK councils (e.g. West Lancashire, West Lothian), selected as the single canonicalized example of this mechanism."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Comparator/mechanism evidence, not Évora-specific. Establishes an operating pattern only — proactive service-status communication can plausibly reduce uncertainty and prevent duplicate reports for already-known disruptions, but no measured outcome (e.g. reduced complaint volume or improved satisfaction) is claimed or established by this review (WU-D4-02 Mechanism A)."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  lineage_id: "ENV-2026-08-NORTHNORFOLK-DISRUPTION-STATUS"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"

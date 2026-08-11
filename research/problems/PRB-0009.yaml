@@ -20,6 +20,7 @@ possible_root_causes:
   - "D2-E Round A corrects the current-state picture across February-to-August 2026: the February 2026 near-collapse (EVD-000071/EVD-000072) is important but must not be read as the assumed August operating state. A May 2026 normalisation step (EVD-000095) shows the procured vehicles entering service ahead of the July fleet reinforcement to 19 vehicles (SRC-0055, already canonical). A bounded post-July open-web check did not surface a comparably strong new signal of city-wide ordinary-collection collapse - this is a search/saturation result, not evidence that collection is now reliable, that PRB-0009 is solved, or that missed collections no longer occur. Current post-intervention reliability remains insufficiently measured and requires operational data / D5 validation, not a public-signal conclusion."
   - "D2-E Round A adds two narrow, unvalidated leads without expanding them into new problems: (1) urban parish councils publicly clarifying their hygiene competencies after the July-August responsibility decentralisation (EVD-000096) is institutional coordination-complexity evidence, not proof that residents are commonly confused about responsibility; (2) the existing bulky/green-waste request journey (EVD-000097, EXISTING-SOLUTION) and a single August 2026 green-waste dumping enforcement case (EVD-000098) are transaction-friction leads about discoverability/predictability and the conditional-service boundary, not evidence of widespread confusion. Both remain carried to D5, not established here."
   - "Core digital_tractability remains low: the dominant causal mechanism stays operational/capacity/service-organisation related. D2-E Round A does not create a software hypothesis for the core problem; validation_status remains unvalidated, since public-signal strength alone cannot validate PRB-0009."
+  - "WU-D4-02 update (docs/milestones/D4-WU02-PRB0009-progress.md): D4 residual-gap review confirmed the generic occurrence-reporting/status gap is NOT SUPPORTED (occurrence platform, Gesamb waste information, and the bulky/green-waste journey already exist and are already canonically recorded). Bounded comparative evidence was integrated for four distinct mechanisms: resident collection-state visibility (Havant, EVD-000108), request/operational-system integration (Oxford, EVD-000109), proactive known-delay/missed-route communication (North Norfolk, EVD-000110, selected as the single example of a pattern also seen at other UK councils), and performance/evaluation-readiness publication (Lisbon, EVD-000111). D4 residual-gap status: PARTIAL — a narrower residual gap may remain around proactive collection status, operational integration, special-waste request lifecycle and performance/evaluation data, but D4 does not establish that these gaps materially cause or resolve Évora's collection-reliability problem. No status/tractability/structure change; validation_status remains unvalidated."
 evidence:
   - "EVD-000065"
   - "EVD-000066"
@@ -32,6 +33,10 @@ evidence:
   - "EVD-000096"
   - "EVD-000097"
   - "EVD-000098"
+  - "EVD-000108"
+  - "EVD-000109"
+  - "EVD-000110"
+  - "EVD-000111"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: low

@@ -1,0 +1,39 @@
+evidence_id: EVD-000109
+type: institutional
+source:
+  source_id: SRC-0096
+  publisher: "Oxford City Council"
+  title: "Oxford City Council — missed-collection report validated against live crew reporting system"
+  source_reference: "Oxford City Council public web page (missed-collection reporting)"
+  published_at: null
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Oxford, United Kingdom"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+  - "DIG"
+observation:
+  summary: "Oxford City Council states that resident missed-bin reports are checked against a live reporting system fitted in collection vehicles, distinguishing a genuine missed collection from an issue already recorded by the crew, or another reason for non-collection — resident-facing reporting is integrated with operational collection data rather than forming a separate unverified complaint queue."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Comparator/mechanism evidence, not Évora-specific. Describes an operating pattern (request/operations integration), not measured outcome effect. If Évora's occurrence platform is not connected to collection-operation data, the relevant residual gap may be integration/routing rather than another front-end reporting tool — this must be verified with the municipal operator (D5-P9-02), not assumed (WU-D4-02 Mechanism B)."
+
+analysis:
+  related_problems:
+    - "PRB-0009"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "COORDINATION"
+    - "OPERATIONAL"
+  lineage_id: "ENV-2026-08-OXFORD-MISSED-COLLECTION-VALIDATION"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"
