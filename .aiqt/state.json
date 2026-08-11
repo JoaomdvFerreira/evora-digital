@@ -1,7 +1,7 @@
 {
   "version": "0.8.0",
   "projectStatus": "in_progress",
-  "currentMilestoneId": null,
+  "currentMilestoneId": "M003",
   "currentWorkUnitId": null,
   "workGraph": {
     "milestones": [
@@ -475,10 +475,10 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:12:07.877Z"
+        "updatedAt": "2026-08-11T13:44:04.506Z"
       },
       {
         "id": "WU015",
@@ -510,12 +510,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-021"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:12:07.877Z"
+        "updatedAt": "2026-08-11T13:44:04.506Z"
       },
       {
         "id": "WU016",
@@ -1612,15 +1612,104 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt review --mode release",
       "createdAt": "2026-08-11T12:48:37.324Z"
+    },
+    {
+      "id": "C015",
+      "workUnitId": "WU014",
+      "packetId": "PKT-015",
+      "summary": "Implemented the D3 Analytical Foundation (contracts and tooling only): optional EVD.analysis metadata, the ASM-* Problem Assessment schema, validator support for both, and a deterministic non-semantic analyzer. No PRB interpretation, no ASM records, and no pilot work performed.",
+      "completed": [
+        "Verified pre-WU baseline (193 canonical records: 81 SRC/103 EVD/9 PRB/0 HYP, all PRBs unvalidated, road-maintenance NEW-CANDIDATE unchanged) via targeted checks and aiqt status --json",
+        "Extended research/schemas/evidence.schema.json with the optional v1.1 analysis block: contribution, friction_types, public_signal_class, representativeness, verification, temporal_relevance enums, and an analysis.related_problems -> PRB-* reference",
+        "Created research/schemas/assessment.schema.json (ASM-* Problem Assessment contract) and the research/assessments/ directory (empty, valid)",
+        "Created docs/models/assessment-model.md (ASM-Lite draft schema, mirroring the existing evidence/problem/hypothesis model docs) and extended docs/models/evidence-model.md with the analysis block",
+        "Refactored tools/validate-research.js to export its parser/validation core (validateResearchTree, parseYaml, getPath, etc.) for reuse, while preserving identical CLI behavior; added generic list-valued enum checking and a dedicated critical_unknowns keyed-map shape validator for ASM-*",
+        "Implemented tools/analyze-research.js: deterministic --all/--problem/--gaps reporting (counts, lineage counts, metadata completeness, state distributions only; no semantic inference, no ranking, no automatic triage)",
+        "Added tools/test-analytical-foundation.js: 19 focused tests against generated temporary fixtures (never the canonical corpus) covering valid/invalid EVD.analysis, valid/invalid ASM shape/references/enums/critical_unknowns, empty ASM corpus, and analyzer lineage/coverage/gap/no-inference behavior",
+        "Updated research/README.md to document the assessments/ directory and the new analyzer/test tools",
+        "Verified zero canonical research/*.yaml records changed; counts remain 81 SRC/103 EVD/9 PRB/0 HYP/0 ASM = 193"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/models/assessment-model.md",
+        "docs/models/evidence-model.md",
+        "research/README.md",
+        "research/assessments/.gitkeep",
+        "research/schemas/assessment.schema.json",
+        "research/schemas/evidence.schema.json",
+        "tools/analyze-research.js",
+        "tools/test-analytical-foundation.js",
+        "tools/validate-research.js"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 193 record(s): OK."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "Reports 81 SRC/103 EVD/9 PRB/0 HYP/0 ASM and a per-PRB line for all nine PRBs, each with 0 ASM/0 analysis coverage as expected pre-pilot."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "Reports 18 explicit gaps (9x active-PRB-no-ASM, 9x linked-EVD-missing-analysis) and nothing else, matching the current pre-backfill corpus state."
+        },
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "19/19 focused tests passed."
+        },
+        {
+          "command": "aiqt status --json",
+          "result": "passed",
+          "summary": "M003/WU014 state valid throughout."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Validator accepts an empty research/assessments/ directory",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js reports 193 records (0 ASM) with the assessments/ directory present but empty; a dedicated fixture test also asserts totalRecords stays correct with zero ASM files."
+        },
+        {
+          "criterion": "No ASM-0002/0007/0009 or any other ASM record created in WU014",
+          "result": "passed",
+          "evidence": "ls research/assessments shows 0 files (only .gitkeep)."
+        },
+        {
+          "criterion": "No canonical PRB/EVD/SRC/HYP content changed",
+          "result": "passed",
+          "evidence": "git diff --stat -- research/ shows only research/README.md and research/schemas/evidence.schema.json changed; no research/{sources,evidence,problems,hypotheses}/*.yaml file is in the diff."
+        },
+        {
+          "criterion": "Analyzer performs no semantic inference from notes/prose and no automatic triage/scoring",
+          "result": "passed",
+          "evidence": "Dedicated fixture test constructs an EVD whose notes prose mentions CONFIRMS/OPERATIONAL but has no analysis block, and asserts contributionDistribution/frictionTypeDistribution stay empty; analyzer source contains no notes-parsing or scoring logic."
+        },
+        {
+          "criterion": "existing_solution_understanding used, not existing_solution_coverage",
+          "result": "passed",
+          "evidence": "research/schemas/assessment.schema.json and docs/models/assessment-model.md both use existing_solution_understanding."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T13:44:04.506Z",
+      "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-014",
-    "workUnitId": "WU013",
-    "milestoneId": "M002",
-    "createdAt": "2026-08-11T12:45:22.451Z",
+    "id": "PKT-015",
+    "workUnitId": "WU014",
+    "milestoneId": "M003",
+    "createdAt": "2026-08-11T13:43:01.202Z",
     "format": "markdown",
-    "contentHash": "sha256:7a1ccb5f8b5ce7eb50b2a923071c6b0c17e0a2f7c1d322159f04a326d2a38694",
+    "contentHash": "sha256:ee434a0fbca48786ce95f46c0c4dbaaaae6d480d9b79e2a27c4701e641607d4b",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1639,7 +1728,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T13:12:07.877Z",
+  "lastUpdatedAt": "2026-08-11T13:44:04.506Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2104,6 +2193,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T12:48:37.324Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C015",
+      "current": {
+        "observationId": "sha256:9cde166ff5fad4b525e9fa7e6c898daeeed16026f54ca1d6c52b54d61ebc278a",
+        "checkpointId": "C015",
+        "workUnitId": "WU014",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T13:44:04.506Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T13:44:04.506Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:9cde166ff5fad4b525e9fa7e6c898daeeed16026f54ca1d6c52b54d61ebc278a",
+          "checkpointId": "C015",
+          "workUnitId": "WU014",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T13:44:04.506Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T13:44:04.506Z"
         }
       ]
     }
