@@ -72,6 +72,13 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0063 | Gesamb Relatório da Qualidade do Serviço Prestado ao Utilizador 2025 | Open Data | Formal regulatory service-quality report; container-washing/complaints data |
 | SRC-0064 | Gesamb reception / ecocentre information | Problem Intelligence | Reception infrastructure; Gesamb/municipality responsibility split |
 | SRC-0065 | Municipal Proteção Civil alert channel | Both | Public alert surface; no machine-readable local feed/API established |
+| SRC-0066 | JN report: University of Évora students protest transport/conditions | Problem Intelligence | D2-A public-signal evidence for PRB-0001 (March 2026 protest) |
+| SRC-0067 | Portal da Queixa — TREVO public complaint surface | Problem Intelligence | D2-A public-signal evidence for PRB-0001/PRB-0002 |
+| SRC-0068 | PRR project record: EB1 Azaruja accessibility correction | Problem Intelligence | D2-A public-signal evidence for PRB-0003 |
+| SRC-0069 | Public petition: urgent road-surface requalification | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
+| SRC-0070 | Rádio Campanário report: municipal €1.5M road-repair programme | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
+| SRC-0071 | O Alentejo report: road-condition protest and collective-action debate | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
+| SRC-0072 | Public social post: reported N114 pothole persistence | Problem Intelligence | D2-A blind-spot NEW-CANDIDATE (road-surface maintenance) |
 
 ## Verified in WU-D1-03 (Batch A + Batch B)
 

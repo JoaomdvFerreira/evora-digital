@@ -1,0 +1,28 @@
+source_id: SRC-0066
+publisher: "Jornal de Notícias"
+name: "JN report: University of Évora students protest transport/conditions"
+scope:
+  geography: city
+  domains:
+    - "MOB"
+    - "EDU"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "public news article"
+authority: verified-third-party
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-03-19
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.jn.pt/pais/artigo/alunos-da-universidade-de-evora-protestam-contra-falta-de-condicoes-e-transportes/18063945"
+api_candidate:
+  potential: "none"
+notes: "D2-A Round A (D2-A-SIG-01). Reports a student protest at Colégio Pedro da Fonseca demanding additional transport schedules, citing a petition and student accounts of full buses/limited usable journeys. One protest/news-cycle lineage; syndicated coverage of the same event is not independent corroboration."

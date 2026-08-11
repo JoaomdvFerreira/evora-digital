@@ -2,7 +2,7 @@
   "version": "0.8.0",
   "projectStatus": "active",
   "currentMilestoneId": "M002",
-  "currentWorkUnitId": null,
+  "currentWorkUnitId": "WU009",
   "workGraph": {
     "milestones": [
       {
@@ -299,12 +299,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "in_progress",
         "dependencies": [
           "DEP-011"
         ],
         "createdAt": "2026-08-11T14:00:00.000Z",
-        "updatedAt": "2026-08-11T14:30:00.000Z"
+        "updatedAt": "2026-08-11T15:00:00.000Z"
       },
       {
         "id": "WU010",
@@ -1049,13 +1049,78 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "WU-D2-02, WU-D2-03 and WU-D2-04 (Round A) are ready for the first approved external research handoff; WU-D2-05 remains planned pending Round A cross-track synthesis.",
       "createdAt": "2026-08-11T14:30:00.000Z"
+    },
+    {
+      "id": "C009",
+      "workUnitId": "WU009",
+      "packetId": "PKT-009",
+      "summary": "Integrated the externally reviewed, project-owner-approved D2-A Mobility/Accessibility/Public Realm Round A research handoff: added 7 SRC-*, 6 EVD-*, and refined PRB-0001..PRB-0005 possible_root_causes/evidence linkage. Road-surface maintenance carried as unlinked NEW-CANDIDATE evidence only, per approved decisions. No PRB-*/HYP-* created; no PRB-* validated. Round A saturation for this track is NOT YET reached (per the handoff's own assessment); WU009 remains in_progress pending targeted follow-up and the project-owner's road-maintenance disposition decision.",
+      "completed": [
+        "Mapped D2-A-SIG-01..02, 04..07 to new canonical SRC-0066..SRC-0072 and EVD-000079..EVD-000084.",
+        "Reused existing SRC-0021/EVD-000016 (TREVO website, D1 WU-D1-02 Batch B) for D2-A-SIG-03 rather than duplicating a source record.",
+        "Recorded D2-A-SIG-08 (cycling coverage gap) as a PRB-0004 root-cause note only; no source/evidence record created for an absence-of-signal finding.",
+        "Refined PRB-0001 (strengthen), PRB-0002 (constrain/refocus, existing-solution), PRB-0003 (factual confirmation + lived-signal coverage gap), PRB-0004 (coverage-gap note), PRB-0005 (scope-boundary note, road-maintenance blind spot not absorbed).",
+        "Added 7 rows to docs/data/source-registry.md; created docs/milestones/D2-WU02-progress.md documenting the PRB coverage matrix, contradiction/current-state findings, saturation assessment, and D5 question carry-forward."
+      ],
+      "notCompleted": [
+        "Targeted PRB-0001..0005 follow-up (recommended by both the handoff and the cross-track synthesis) not started.",
+        "Project-owner decision on the road-maintenance NEW-CANDIDATE disposition not yet made.",
+        "WU009 not closed: track-level Round A saturation not yet reached."
+      ],
+      "filesChanged": [
+        "research/sources/SRC-0066.yaml",
+        "research/sources/SRC-0067.yaml",
+        "research/sources/SRC-0068.yaml",
+        "research/sources/SRC-0069.yaml",
+        "research/sources/SRC-0070.yaml",
+        "research/sources/SRC-0071.yaml",
+        "research/sources/SRC-0072.yaml",
+        "research/evidence/EVD-000079.yaml",
+        "research/evidence/EVD-000080.yaml",
+        "research/evidence/EVD-000081.yaml",
+        "research/evidence/EVD-000082.yaml",
+        "research/evidence/EVD-000083.yaml",
+        "research/evidence/EVD-000084.yaml",
+        "research/problems/PRB-0001.yaml",
+        "research/problems/PRB-0002.yaml",
+        "research/problems/PRB-0003.yaml",
+        "research/problems/PRB-0004.yaml",
+        "research/problems/PRB-0005.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D2-WU02-progress.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 156 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 156 record(s): OK."
+        },
+        {
+          "criterion": "Coverage attempt for PRB-0001..PRB-0005 is recorded, including PRBs with no signal found",
+          "result": "passed",
+          "evidence": "docs/milestones/D2-WU02-progress.md PRB coverage matrix; PRB-0004.possible_root_causes records the explicit coverage gap."
+        }
+      ],
+      "finalWorkUnitStatus": "in_progress",
+      "nextRecommendation": "Targeted PRB-0001..0005 follow-up and the project-owner's road-maintenance disposition decision, per docs/milestones/D2-WU02-progress.md; WU009 remains open pending Round A saturation.",
+      "createdAt": "2026-08-11T15:00:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-008",
-    "workUnitId": "WU008",
+    "id": "PKT-009",
+    "workUnitId": "WU009",
     "milestoneId": "M002",
-    "createdAt": "2026-08-11T14:00:00.000Z",
+    "createdAt": "2026-08-11T15:00:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -1075,8 +1140,8 @@
       "includesSourceControlGuidance": true
     }
   },
-  "nextRecommendedCommand": "WU-D2-02, WU-D2-03 and WU-D2-04 (Round A) are ready for the first approved external research handoff; WU-D2-05 remains planned pending Round A cross-track synthesis.",
-  "lastUpdatedAt": "2026-08-11T14:30:00.000Z",
+  "nextRecommendedCommand": "WU-D2-02 remains in_progress pending targeted PRB-0001..0005 follow-up and the project-owner's road-maintenance disposition decision; WU-D2-03 and WU-D2-04 remain ready for their own Round A handoffs.",
+  "lastUpdatedAt": "2026-08-11T15:00:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -1361,6 +1426,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C009",
+      "current": {
+        "observationId": "sha256:c009e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C009",
+        "workUnitId": "WU009",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T15:00:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T15:00:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c009e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C009",
+          "workUnitId": "WU009",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T15:00:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T15:00:00.000Z"
         }
       ]
     }

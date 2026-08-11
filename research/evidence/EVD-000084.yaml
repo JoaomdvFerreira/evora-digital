@@ -1,0 +1,25 @@
+evidence_id: EVD-000084
+type: social
+source:
+  source_id: SRC-0072
+  publisher: "Public Instagram account (identity not retained)"
+  title: "Public social post: reported N114 pothole persistence at entrance to Évora"
+  source_reference: "https://www.instagram.com/reel/DbSgZnkCXUj/"
+  published_at: 2026-07
+  retrieved_at: 2026-08-11
+geography:
+  level: city
+  area: "N114, entrance to Évora city"
+population:
+  - "drivers"
+domain:
+  - "URB"
+  - "MOB"
+observation:
+  summary: "A public social post claimed that a pothole at the entrance to Évora on the N114 had persisted for roughly eight months despite earlier institutional acknowledgement, citing insufficient signalling and repeated evasive manoeuvres by drivers."
+evidence_nature: reported-experience
+strength: anecdotal
+personal_data:
+  present: false
+  retained: false
+notes: "D2-A Round A (D2-A-SIG-07). REFINES the EVD-000082/EVD-000083 road-maintenance NEW-CANDIDATE with a persistence/location lead; CURRENT-STATE-UPDATE. Unverified reported claim; not converted into an operational fact without direct verification. Representativeness UNKNOWN. No account identity retained."

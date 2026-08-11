@@ -17,12 +17,14 @@ possible_root_causes:
   - "Primarily physical infrastructure; a digital intervention could only address secondary information/coordination problems unless evidence later establishes otherwise (per WU-D1-02 Batch A interpretation, not yet validated)."
   - "Batch B update: the R.A.M.P.A.-Évora accessibility plan was completed in 2022 for priority axes and its monitoring/extension is explicitly ongoing; major Rossio/Station works continue to change local conditions in 2026; a reusable public accessibility/obstacle dataset has not yet been located. Any digital opportunity depends on current/fresh accessibility data and a credible maintenance mechanism."
   - "Batch C update: the Municipality launched Experimental Actions in June 2026 as part of the 4th PUE revision, inviting the public to physically test pedestrian/soft-mobility routes and contribute perceptions and proposals on inclusion, accessibility and sustainability. Institutional owners for remaining data/operational questions are identifiable (DAM, DORU). Next validation is D2/current observation plus later stakeholder validation, especially for people with reduced mobility."
+  - "D2-A Round A update: a public PRR project record (EVD-000081) documents a concrete pre-intervention accessibility barrier at EB1 Azaruja (narrow pavement, five steps at the main pedestrian entrance, non-compliant vehicle-gate access), confirming that PRB-0003 has had concrete local manifestations. This is factual corroboration, not an independent lived public signal, and the corrective project is current/recent (2025-2026), so the post-project condition must be re-checked before treating the described barrier as present-day reality. Round A did not find an equally strong independent lived public signal for accessibility more broadly; this remains a coverage gap on lived experience alongside the factual confirmation. No PRB-0003 status/tractability change."
 evidence:
   - "EVD-000004"
   - "EVD-000006"
   - "EVD-000009"
   - "EVD-000029"
   - "EVD-000030"
+  - "EVD-000081"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

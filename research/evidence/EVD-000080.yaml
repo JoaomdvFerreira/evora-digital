@@ -1,0 +1,25 @@
+evidence_id: EVD-000080
+type: social
+source:
+  source_id: SRC-0067
+  publisher: "Portal da Queixa"
+  title: "Portal da Queixa — TREVO public complaint surface"
+  source_reference: "https://portaldaqueixa.com/brands/trevo/complaints"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: city
+  area: "Évora city (urban TREVO network)"
+population:
+  - "TREVO passengers"
+domain:
+  - "MOB"
+  - "DIG"
+observation:
+  summary: "Current TREVO complaint listing shows repeated operational/service-reliability incidents: an October 2025 Linha Azul Norte complaint at Escola Gabriel Pereira mentioning an already-delayed bus; an August 2025 complaint about a driver stopping service for a personal matter; and a February 2025 report that a Linha Azul bus did not stop after being signalled."
+evidence_nature: reported-experience
+strength: anecdotal
+personal_data:
+  present: false
+  retained: false
+notes: "D2-A Round A (D2-A-SIG-02). CONFIRMS + REFINES PRB-0001 (secondary relevance to PRB-0002 on information/interoperability). Self-selected complaint platform; representativeness UNKNOWN. Distinct complaints are separate incident lineages sharing one platform, not system-wide rate evidence. No usernames retained."

@@ -1,0 +1,27 @@
+evidence_id: EVD-000081
+type: institutional
+source:
+  source_id: SRC-0068
+  publisher: "República Portuguesa — PRR Transparência"
+  title: "PRR project record: EB1 Azaruja accessibility correction"
+  source_reference: "https://transparencia.gov.pt/pt/fundos-europeus/prr/beneficiarios-projetos/projeto/08/C03-i02/2024.P13691/"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+geography:
+  level: parish
+  area: "Azaruja (freguesia)"
+population:
+  - "people with reduced mobility"
+  - "schoolchildren and school staff at EB1 Azaruja"
+domain:
+  - "ACC"
+  - "MOB"
+  - "URB"
+observation:
+  summary: "The public PRR project record documents concrete pre-intervention accessibility barriers at EB1 Azaruja: a narrow pavement, five steps at the main pedestrian entrance, use of a vehicle gate on a secondary street without pavement, and building access that did not comply with accessibility requirements. The project was designed to correct these barriers during 2025-2026."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D2-A Round A (D2-A-SIG-04). CONFIRMS PRB-0003 with a concrete factual barrier; CURRENT-STATE-UPDATE required — because the corrective project is current/recent, the post-project condition must be checked before treating the described barrier as present-day reality. This is factual corroboration, not an independent lived public signal."

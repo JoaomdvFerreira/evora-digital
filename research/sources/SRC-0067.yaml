@@ -1,0 +1,28 @@
+source_id: SRC-0067
+publisher: "Portal da Queixa"
+name: "Portal da Queixa — TREVO public complaint surface"
+scope:
+  geography: city
+  domains:
+    - "MOB"
+    - "DIG"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "public self-selected complaint/review platform"
+authority: community
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: unknown
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://portaldaqueixa.com/brands/trevo/complaints"
+api_candidate:
+  potential: "none"
+notes: "D2-A Round A (D2-A-SIG-02). Public complaint surface listing individual TREVO service incidents (Oct 2025 delayed Linha Azul Norte bus at Escola Gabriel Pereira; Aug 2025 driver stopping service for a personal matter; Feb 2025 Linha Azul bus not stopping after being signalled). Self-selected platform; representativeness UNKNOWN. Distinct complaints are separate incident lineages sharing one platform."

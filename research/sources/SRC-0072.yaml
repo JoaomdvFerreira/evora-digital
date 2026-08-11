@@ -1,0 +1,28 @@
+source_id: SRC-0072
+publisher: "Public Instagram account (identity not retained)"
+name: "Public social post: reported N114 pothole persistence at entrance to Évora"
+scope:
+  geography: city
+  domains:
+    - "URB"
+    - "MOB"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "public Instagram Reel"
+authority: community
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026-07
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://www.instagram.com/reel/DbSgZnkCXUj/"
+api_candidate:
+  potential: "none"
+notes: "D2-A Round A (D2-A-SIG-07). Public social post claiming a pothole at the N114 entrance to Évora persisted roughly eight months despite earlier institutional acknowledgement (SRC-0070/SRC-0071), citing insufficient signalling and evasive driving manoeuvres. Unverified reported claim, not converted into an operational fact. No account identity retained per docs/discovery/research-ethics.md §3-5."

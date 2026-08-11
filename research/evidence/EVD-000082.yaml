@@ -1,0 +1,26 @@
+evidence_id: EVD-000082
+type: formal-public
+source:
+  source_id: SRC-0069
+  publisher: "Petição Pública"
+  title: "Public petition: urgent road-surface requalification in Município de Évora"
+  source_reference: "https://peticaopublica.com/?pi=PT129561"
+  published_at: 2026-01-28
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+  - "drivers"
+domain:
+  - "URB"
+  - "MOB"
+observation:
+  summary: "A public petition (created 2026-01-28, 1,394 signatures at research time) calls for urgent requalification of roads in the municipality, citing widespread potholes/degraded pavement, safety concerns, vehicle damage, and mobility/quality-of-life effects."
+evidence_nature: claim
+strength: secondary
+personal_data:
+  present: false
+  retained: false
+notes: "D2-A Round A (D2-A-SIG-05). NEW-CANDIDATE; LOW-DIGITAL-LEVERAGE. Strongest Round A blind-spot finding: road-surface maintenance/service reliability is not cleanly represented by PRB-0001..PRB-0005; may overlap PRB-0005 through public-realm/safety effects, but its causal mechanism is maintenance/infrastructure condition, not traffic/parking modal conflict. Not promoted to a PRB; carried into cross-track synthesis for a project-owner decision. Signatory count is not representative of prevalence."
