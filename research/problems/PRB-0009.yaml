@@ -1,0 +1,29 @@
+problem_id: PRB-0009
+title: "Urban hygiene / waste-collection service reliability and quality"
+domain:
+  - "ENV"
+  - "PUB"
+geography:
+  level: municipality
+  area: "Município de Évora"
+affected_populations:
+  - "residents"
+  - "urban parish councils"
+problem_statement: "Urban solid-waste collection and urban-hygiene service reliability is a current, institutionally acknowledged civic problem: the Municipality documented a February 2026 collection-service disruption caused by ageing-fleet breakdowns, and in July-August 2026 the Mayor and Municipality publicly identified urban hygiene as one of the most urgent municipal-management challenges, undertaking substantial structural restructuring of fleet, staffing, collection models, responsibility allocation and monitoring, while explicitly acknowledging that difficulties remain in some areas."
+current_journey: null
+reported_consequences: []
+possible_root_causes:
+  - "The dominant root cause is substantially operational/capacity-related, not informational or digital: ageing/broken collection fleet, insufficient reserve vehicle capacity, staffing/logistics, collection-route/service organisation, and cross-entity responsibility arrangements (Município, Gesamb, parish councils). Digital tractability over this dominant root cause is assessed as low/mixed - a digital product should not be assumed to resolve fleet age, staffing capacity or logistics."
+  - "The problem must be framed as service reliability/quality, not as 'lack of waste information' or 'need for a waste-reporting app'. A digital occurrence-reporting channel and Gesamb information infrastructure (schedules, ecocentre locations, service-quality reporting) already exist (see EVD-000067, EVD-000074, EVD-000075), so a generic reporting or information app would duplicate existing capability."
+  - "A narrower, currently unvalidated information/coordination subproblem may exist within the hygiene service journey - specifically around real-time service-status transparency, bulky-waste request routing, cross-entity ownership clarity (Município/Gesamb/parish councils), and citizen visibility into resolution timelines. No public dataset for resolution time, backlog or routing quality was located in this bounded institutional review (see EVD-000075), so this subproblem is not validated and should not be treated as a solution hypothesis. This is the most promising future digital-opportunity angle but requires D2/D5 user-journey or technical/open-data assessment, not further D1 institutional research."
+evidence:
+  - "EVD-000065"
+  - "EVD-000066"
+  - "EVD-000071"
+  - "EVD-000072"
+  - "EVD-000073"
+evidence_status: corroborated
+validation_status: unvalidated
+digital_tractability: low
+existing_solutions: assessed
+status: OPEN

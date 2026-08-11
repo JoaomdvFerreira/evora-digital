@@ -189,12 +189,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-005"
         ],
         "createdAt": "2026-08-10T19:18:10.901Z",
-        "updatedAt": "2026-08-10T19:18:45.721Z"
+        "updatedAt": "2026-08-11T11:45:00.000Z"
       },
       {
         "id": "WU007",
@@ -607,13 +607,86 @@
       "finalWorkUnitStatus": "done",
       "nextRecommendation": "aiqt next",
       "createdAt": "2026-08-11T11:00:00.000Z"
+    },
+    {
+      "id": "C006",
+      "workUnitId": "WU006",
+      "packetId": "PKT-006",
+      "summary": "Formally selected WU006 in AIQT and integrated externally reviewed, project-owner-approved WU-D1-06 Research Batch A (institutional/problem-first discovery) and Batch B (narrow current-state challenge) together in a single combined execution, since this WU had no prior canonical integration. Added 15 new sources (six same-URL Batch A/Batch B pairs merged into single records), added 16 evidence records. Created exactly one new PRB-* (PRB-0009, urban hygiene / waste-collection service reliability and quality), framed as service reliability, not information/app absence, with digital_tractability low over the dominant operational root cause. No climate, digital-service-fragmentation, occurrence-reporting, or recycling PRB-* created, per the approved conservative decisions. Institutional saturation reached: the promoted problem was strengthened (not merely re-confirmed) by current operational evidence, and remaining questions require D2/D5 or technical/open-data assessment.",
+      "completed": [
+        "Selected WU006 in AIQT via aiqt next.",
+        "Added SRC-0051..SRC-0065 (PMAAC, municipal climate-risk communication, urban-hygiene structural response, urban-hygiene priority statement, fleet reinforcement, Gesamb 2025 results, occurrence-management platform, municipality app, ePaper Phase 2, Balcão Online, RSU disruption/normalisation communications, Gesamb Quality of Service Report 2025, Gesamb ecocentre info, Proteção Civil alerts); SRC-0053, SRC-0055, SRC-0057, SRC-0058, SRC-0059, SRC-0060 each merge a Batch A source with its same-URL Batch B finding, avoiding duplication.",
+        "Checked SRC-0002 for Environment/Climate/Waste/Digital-Services overlap; confirmed out of scope, so left unmodified.",
+        "Added EVD-000063..EVD-000078.",
+        "Created PRB-0009 (urban hygiene / waste-collection service reliability and quality), the sole new problem record, linked to EVD-000065, EVD-000066, EVD-000071, EVD-000072, EVD-000073.",
+        "Created zero HYP-* records.",
+        "Updated docs/data/source-registry.md and created docs/milestones/D1-WU06-progress.md and docs/milestones/D1-WU06-closure.md."
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "research/sources/SRC-0051.yaml",
+        "research/sources/SRC-0052.yaml",
+        "research/sources/SRC-0053.yaml",
+        "research/sources/SRC-0054.yaml",
+        "research/sources/SRC-0055.yaml",
+        "research/sources/SRC-0056.yaml",
+        "research/sources/SRC-0057.yaml",
+        "research/sources/SRC-0058.yaml",
+        "research/sources/SRC-0059.yaml",
+        "research/sources/SRC-0060.yaml",
+        "research/sources/SRC-0061.yaml",
+        "research/sources/SRC-0062.yaml",
+        "research/sources/SRC-0063.yaml",
+        "research/sources/SRC-0064.yaml",
+        "research/sources/SRC-0065.yaml",
+        "research/evidence/EVD-000063.yaml",
+        "research/evidence/EVD-000064.yaml",
+        "research/evidence/EVD-000065.yaml",
+        "research/evidence/EVD-000066.yaml",
+        "research/evidence/EVD-000067.yaml",
+        "research/evidence/EVD-000068.yaml",
+        "research/evidence/EVD-000069.yaml",
+        "research/evidence/EVD-000070.yaml",
+        "research/evidence/EVD-000071.yaml",
+        "research/evidence/EVD-000072.yaml",
+        "research/evidence/EVD-000073.yaml",
+        "research/evidence/EVD-000074.yaml",
+        "research/evidence/EVD-000075.yaml",
+        "research/evidence/EVD-000076.yaml",
+        "research/evidence/EVD-000077.yaml",
+        "research/evidence/EVD-000078.yaml",
+        "research/problems/PRB-0009.yaml",
+        "docs/data/source-registry.md",
+        "docs/milestones/D1-WU06-progress.md",
+        "docs/milestones/D1-WU06-closure.md"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 143 record(s): OK."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "All integrated records pass node tools/validate-research.js",
+          "result": "passed",
+          "evidence": "node tools/validate-research.js: Validated 143 record(s): OK."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T11:45:00.000Z"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-005",
-    "workUnitId": "WU005",
+    "id": "PKT-006",
+    "workUnitId": "WU006",
     "milestoneId": "M001",
-    "createdAt": "2026-08-11T11:00:00.000Z",
+    "createdAt": "2026-08-11T11:45:00.000Z",
     "format": "markdown",
     "contentHash": "sha256:0000000000000000000000000000000000000000000000000000000000000",
     "sourceCommand": "aiqt next",
@@ -634,7 +707,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T11:00:00.000Z",
+  "lastUpdatedAt": "2026-08-11T11:45:00.000Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -829,6 +902,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T11:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C006",
+      "current": {
+        "observationId": "sha256:c006e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+        "checkpointId": "C006",
+        "workUnitId": "WU006",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T11:45:00.000Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T11:45:00.000Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:c006e3b543205aaab3f8e565b23b9ee75622ac062d26ce18a2be64c2abf5d172ef",
+          "checkpointId": "C006",
+          "workUnitId": "WU006",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T11:45:00.000Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T11:45:00.000Z"
         }
       ]
     }

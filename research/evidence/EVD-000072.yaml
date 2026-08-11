@@ -1,0 +1,28 @@
+evidence_id: EVD-000072
+type: institutional
+source:
+  source_id: SRC-0061
+  publisher: "Município de Évora"
+  title: "Comunicado - recolha de resíduos sólidos urbanos (disruption, February 2026)"
+  source_reference: "https://www.cm-evora.pt/comunicado-recolha-de-residuos-solidos-urbanos/"
+  published_at: 2026-02
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0062"
+  - "SRC-0055"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+observation:
+  summary: "Root cause is substantially operational, not digital: the strongest documented causal evidence is an ageing/broken collection fleet, insufficient reserve capacity, staffing/operational capacity, route/service organisation, and logistics/collection arrangements."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-B-E02. Interpretation: a digital intervention should not be assumed to solve the dominant cause."

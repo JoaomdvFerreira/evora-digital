@@ -57,6 +57,21 @@ This registry identifies initial high-priority source families. D1 must verify a
 | SRC-0048 | Agenda do Município de Évora (current) | Problem Intelligence | Structured event-submission workflow, including accessibility fields |
 | SRC-0049 | Guia da Semana | Problem Intelligence | Weekly cultural-guide distribution surface |
 | SRC-0050 | Plataforma Évora Associativismo | Problem Intelligence | Operational associativism platform, resolves PECE portal-implementation question |
+| SRC-0051 | Plano Municipal de Adaptação às Alterações Climáticas de Évora (PMAAC) | Both | Current operational climate-adaptation plan; WebSIG spatial synthesis |
+| SRC-0052 | Municipal climate-risk communication | Problem Intelligence | Three principal projected climate risks: heat, drought, intense-rain flooding |
+| SRC-0053 | Municipal urban-hygiene structural response (Jul-Aug 2026) | Problem Intelligence | Urgent civic problem; fleet/staffing/collection-model restructuring |
+| SRC-0054 | Public meeting record (9 July) — urban-hygiene priority statement | Problem Intelligence | Mayor identifies access quality and urban hygiene as most urgent problems |
+| SRC-0055 | Municipal waste-collection fleet reinforcement (Jul 2026) | Problem Intelligence | Fleet reinforced to 19 vehicles for reserve/substitution capacity |
+| SRC-0056 | Gesamb 2025 results / 2026 strategic priorities | Open Data | Selective multimaterial collection growth; recycling tonnage |
+| SRC-0057 | Municipal occurrence-management platform | Both | Existing web/mobile occurrence reporting; no public performance dataset located |
+| SRC-0058 | Municipality mobile app | Both | Alerts, feedback/reporting, tourism info; current in 2026 |
+| SRC-0059 | ePaper Atendimento Online (Phase 2) / information-system strategy | Problem Intelligence | Online urban-planning requests; municipal IS strategic plan awarded |
+| SRC-0060 | Balcão Online | Problem Intelligence | Digital forms coexisting with physical Balcão Único |
+| SRC-0061 | Comunicado — recolha de RSU (disruption, Feb 2026) | Problem Intelligence | Documented collection-service disruption; ageing-fleet cause |
+| SRC-0062 | Comunicado — recolha de RSU, atualização (Feb 2026) | Problem Intelligence | Service normalisation update; fleet-condition cause confirmed |
+| SRC-0063 | Gesamb Relatório da Qualidade do Serviço Prestado ao Utilizador 2025 | Open Data | Formal regulatory service-quality report; container-washing/complaints data |
+| SRC-0064 | Gesamb reception / ecocentre information | Problem Intelligence | Reception infrastructure; Gesamb/municipality responsibility split |
+| SRC-0065 | Municipal Proteção Civil alert channel | Both | Public alert surface; no machine-readable local feed/API established |
 
 ## Verified in WU-D1-03 (Batch A + Batch B)
 
@@ -69,6 +84,10 @@ This registry identifies initial high-priority source families. D1 must verify a
 ## Verified in WU-D1-05 (Batch A + Batch B, combined single integration)
 
 Batch A (institutional first-pass) and Batch B (narrow current-state challenge) were integrated together in one execution, since this WU had no prior canonical integration. `SRC-0043`–`SRC-0047` were added in Batch A (`SRC-0043` merges Batch B's `D1-05-B-S04`, the same PECE document; `SRC-0047` merges Batch B's `D1-05-B-S05`, the same municipal sports pages — no duplicate sources were created for these). `SRC-0048`–`SRC-0050` were added as new canonical sources in Batch B. `SRC-0002` was checked for Culture/Tourism/Sports overlap and found not to cover this scope (it is the general PDS, not the dedicated cultural strategy), so it was left unmodified. Zero new `PRB-*` and zero new `HYP-*` were created: cultural event-discovery/fragmentation is deferred, cultural/associative administrative friction is downgraded to a validation question, accessibility remains a policy/evidence area, and no sports digital problem was found. See `docs/milestones/D1-WU05-progress.md` for the integration summary and `docs/milestones/D1-WU05-closure.md` for the WU closure record.
+
+## Verified in WU-D1-06 (Batch A + Batch B, combined single integration)
+
+Batch A (institutional/problem-first discovery) and Batch B (narrow current-state challenge) were integrated together in one execution, since this WU had no prior canonical integration. `SRC-0051`–`SRC-0065` were added: six same-URL Batch A/Batch B pairs were merged into single records rather than duplicated — `SRC-0053` (urban-hygiene structural response, A-S03/B-S03), `SRC-0055` (fleet reinforcement to 19 vehicles, A-S05/B-S04 — the identical event reported in both batches), `SRC-0057` (occurrence-management platform, A-S07/B-S07), `SRC-0058` (municipality mobile app, A-S08/B-S08), `SRC-0059` (ePaper Phase 2, A-S09/B-S10, with a second URL added from Batch B), `SRC-0060` (Balcão Online, A-S10/B-S09). `SRC-0002` was checked for Environment/Climate/Waste/Digital-Services overlap and found not to cover this scope, so it was left unmodified. Exactly one new `PRB-*` (`PRB-0009`, urban hygiene / waste-collection service reliability and quality) was created; zero new `HYP-*` were created. See `docs/milestones/D1-WU06-progress.md` for the integration summary and `docs/milestones/D1-WU06-closure.md` for the WU closure record.
 
 ## Verified in WU-D1-02 (Batch A + Batch B + Batch C)
 

@@ -1,0 +1,27 @@
+source_id: SRC-0056
+publisher: "Gesamb"
+name: "Gesamb 2025 results and 2026 strategic priorities"
+scope:
+  geography: intermunicipal
+  domains:
+    - "ENV"
+source_type: web
+access:
+  public: true
+  machine_readable: false
+  method: "Gesamb news page"
+authority: authoritative
+licensing:
+  status: unknown
+  licence: null
+  attribution: null
+freshness:
+  update_frequency: unknown
+  last_source_update: 2026
+  last_checked: 2026-08-11
+  status: CURRENT
+canonical_source: true
+canonical_reference: "https://gesamb.pt/gesamb-apresenta-resultados-de-2025-e-define-prioridades-estrategicas-para-2026/"
+api_candidate:
+  potential: unknown
+notes: "WU-D1-06 Batch A (provisional D1-06-A-S06). Selective multimaterial collection increased 4.3% in 2025; more than 8,000 tonnes sent to recycling; several material streams showed growth. Distinct from SRC-0057 (Gesamb 2025 Quality of Service Report), which is a separate, more granular regulatory document."

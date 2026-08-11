@@ -1,0 +1,26 @@
+evidence_id: EVD-000069
+type: institutional
+source:
+  source_id: SRC-0059
+  publisher: "Município de Évora"
+  title: "ePaper Atendimento Online (Phase 2) and municipal information-system strategy"
+  source_reference: "https://www.cm-evora.pt/municipio-de-evora-apresenta-nova-fase-da-plataforma-epaper-dedicada-ao-atendimento-online/"
+  published_at: 2026-05
+  retrieved_at: 2026-08-11
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "DIG"
+  - "PUB"
+  - "URB"
+observation:
+  summary: "Administrative digital transformation is actively continuing in 2026: a new ePaper phase enables online submission of all urban-planning requests, explicitly part of a broader municipal process reorganisation, including a planned strategic redesign of the municipality's information system."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-A-E07. Interpretation: the correct discovery question is user journey, fragmentation and accessibility across services, not absence of digital services."

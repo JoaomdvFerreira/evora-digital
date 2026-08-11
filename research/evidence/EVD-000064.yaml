@@ -1,0 +1,29 @@
+evidence_id: EVD-000064
+type: institutional
+source:
+  source_id: SRC-0052
+  publisher: "Município de Évora"
+  title: "Municipal climate-risk communication"
+  source_reference: "https://www.cm-evora.pt/municipio-de-evora-sensibiliza-mais-novos-para-a-problematica-das-alteracoes-climaticas/"
+  published_at: 2025
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0051"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+  - "vulnerable populations"
+domain:
+  - "CLI"
+  - "MOB"
+  - "HEA"
+observation:
+  summary: "Heat and water stress have direct everyday consequences: municipal climate work connects projected heat to difficulty walking/cycling and decreasing precipitation to water-management pressure."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-A-E02. Interpretation: legitimate cross-domain links to mobility/health/public space/water exist, but software leverage over root causes is likely limited unless a specific information/coordination gap is found."

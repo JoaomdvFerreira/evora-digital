@@ -1,0 +1,27 @@
+evidence_id: EVD-000070
+type: institutional
+source:
+  source_id: SRC-0051
+  publisher: "Município de Évora"
+  title: "Plano Municipal de Adaptação às Alterações Climáticas de Évora (PMAAC)"
+  source_reference: "https://www.cm-evora.pt/plano-municipal-de-adaptacao-as-alteracoes-climaticas-de-evora/"
+  published_at: 2024
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0056"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "CLI"
+observation:
+  summary: "Environmental/waste systems already contain potentially reusable public-data infrastructure: PMAAC has a WebSIG, and Gesamb publishes quantitative waste-performance information."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-A-E08. Interpretation: candidates for the Open Data Foundation/source catalogue; public technical interfaces, licensing, machine-readability and update cadence still need verification. See docs/milestones/D1-WU06-progress.md Open-data observations section for the full six-item list."

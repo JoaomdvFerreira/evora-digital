@@ -1,0 +1,26 @@
+evidence_id: EVD-000074
+type: institutional
+source:
+  source_id: SRC-0063
+  publisher: "Gesamb"
+  title: "Relatório da Qualidade do Serviço Prestado ao Utilizador 2025"
+  source_reference: "https://gesamb.pt/wp-content/uploads/2026/03/26.03.12.RelatorioQualidadeServicoPrestadoUtilizador.pdf"
+  published_at: 2026-03
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0064"
+geography:
+  level: intermunicipal
+  area: "Gesamb service area (including Município de Évora)"
+population:
+  - "residents"
+domain:
+  - "ENV"
+observation:
+  summary: "Waste-service information infrastructure already exists: Gesamb publishes schedules, locations, reception information, service-quality reporting and complaint channels."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-B-E04. Interpretation: do not create a generic 'citizens cannot find waste information' problem without user evidence."

@@ -1,0 +1,27 @@
+evidence_id: EVD-000065
+type: institutional
+source:
+  source_id: SRC-0054
+  publisher: "Município de Évora"
+  title: "Public meeting record (9 July) - urban-hygiene priority statement"
+  source_reference: "https://www.cm-evora.pt/em-reuniao-publica-de-9-de-julho-requalificacao-e-renaturalizacao-do-rossio-de-s-bras-obteve-financiamento-a-100-e-as-verbas-nao-poderiam-ser-aplicadas-noutro-projeto-ou-intervencao-camararia/"
+  published_at: 2026-07
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0053"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "ENV"
+  - "PUB"
+observation:
+  summary: "Urban hygiene is a high-confidence current civic problem: in July 2026 the Municipality itself describes urban hygiene as a major management challenge and urgent problem while undertaking substantial restructuring of staff, collection models, fleet, responsibilities and monitoring."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-A-E03. Interpretation: the problem is current and strong enough to map canonically if repository criteria are satisfied."

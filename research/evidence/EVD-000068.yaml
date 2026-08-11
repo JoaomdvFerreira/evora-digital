@@ -1,0 +1,29 @@
+evidence_id: EVD-000068
+type: institutional
+source:
+  source_id: SRC-0058
+  publisher: "Município de Évora"
+  title: "Municipality mobile app"
+  source_reference: "https://www.cm-evora.pt/municipe/aplicacoes-do-municipio/app-do-municipio/"
+  published_at: unknown
+  retrieved_at: 2026-08-11
+additional_sources:
+  - "SRC-0059"
+  - "SRC-0060"
+  - "SRC-0057"
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "residents"
+domain:
+  - "DIG"
+  - "PUB"
+observation:
+  summary: "Municipal digital-service infrastructure is broader/more current than a simple 'digitalisation gap' framing suggests: Balcão Online, dedicated water services, ePaper for urban-planning, a geographic portal, a mobile app, an occurrence platform and other specialised online channels all coexist."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "Provisional ID: D1-06-A-E06. Interpretation: do not create a canonical 'municipal services are not digital' problem from institutional evidence."
