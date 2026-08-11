@@ -546,12 +546,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-022"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T14:07:04.261Z"
+        "updatedAt": "2026-08-11T14:27:57.060Z"
       },
       {
         "id": "WU017",
@@ -581,12 +581,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-023"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:12:07.877Z"
+        "updatedAt": "2026-08-11T14:27:57.060Z"
       },
       {
         "id": "WU018",
@@ -1817,17 +1817,126 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T14:07:04.261Z",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T14:07:04.261Z"
+    },
+    {
+      "id": "C017",
+      "workUnitId": "WU016",
+      "packetId": "PKT-017",
+      "summary": "Resolved the WU-D3-02 pilot's MODIFY framework gate (CONTRADICTS scope, PLANNED-SOLUTION, contradiction_status valence, PARTIAL decision-gate state, clarified STOP/WATCH/DEEPEN/PROCEED triage semantics) and executed the project-owner WU-D3-03 taxonomy decisions: promoted the road-surface-maintenance NEW-CANDIDATE to PRB-0010 (distinct from PRB-0005), and kept PRB-0002 as one problem narrowed to passenger-facing information quality with the developer/data-interoperability question preserved as an Open Data Foundation lead rather than a second PRB.",
+      "completed": [
+        "Verified pre-WU baseline (81 SRC/103 EVD/9 PRB/0 HYP/3 ASM = 196, WU015 done, all PRBs unvalidated) via targeted checks and aiqt status --json",
+        "Added PLANNED-SOLUTION to research/schemas/evidence.schema.json's analysis.contribution enum, distinct from EXISTING-SOLUTION",
+        "Added PARTIAL to every decision_gates.* enum in research/schemas/assessment.schema.json",
+        "Updated docs/discovery/d3-execution-protocol.md (v0.1->v0.2), docs/models/assessment-model.md, and docs/models/evidence-model.md with all five clarified semantics: CONTRADICTS scope (whole-problem vs narrower proposition), PLANNED-SOLUTION vs EXISTING-SOLUTION, contradiction_status as degree-of-contradiction-present not confidence, PARTIAL gate definition, and STOP/WATCH/DEEPEN/PROCEED as project posture not civic-importance judgement",
+        "Corrected EVD-000092.analysis.contribution from [CONFIRMS, EXISTING-SOLUTION] to [CONFIRMS, PLANNED-SOLUTION] -- a metadata fix, not new evidence; EVD-000092's observation/notes untouched",
+        "Applied exactly the seven named mechanical PARTIAL gate corrections across ASM-0002/ASM-0007/ASM-0009 (civic_importance/root_cause_understood/remaining_gap_supported where the pilot review flagged mixed-not-absent evidence); left every other gate/field in all three ASMs untouched",
+        "Applied the PRB-0002 owner decision to ASM-0002: structure_action SPLIT_CANDIDATE -> KEEP, removed the developer-interoperability structural-split critical unknown (former U2), rewrote next_action to prioritize the remaining passenger-journey/stop-information unknowns",
+        "Added 3 focused tests to tools/test-analytical-foundation.js for PLANNED-SOLUTION (valid + invalid spelling) and PARTIAL gate validity (22/22 total passing)",
+        "Confirmed no analyzer code changes were needed: tools/analyze-research.js's existing --gaps logic already excludes PARTIAL from its UNKNOWN/NOT_ASSESSED gap check without modification",
+        "Normalized PRB-0002 (research/problems/PRB-0002.yaml): title/problem_statement narrowed to passenger-facing information; 'potential third-party data consumers' removed from affected_populations; evidence links (EVD-000010/011/016/080) left unchanged since all four retain direct passenger-information relevance; one possible_root_causes entry appended recording the decision, preserving all prior history verbatim",
+        "Created research/problems/PRB-0010.yaml (road-surface maintenance) from EVD-000082/083/084 using the handoff's exact title/problem-statement/status-field values (digital_tractability: low, existing_solutions: assessed, validation_status: unvalidated, status: OPEN); current_journey left null; no ASM-0010 created",
+        "Appended one possible_root_causes entry to PRB-0005 confirming the PRB-0010 promotion and non-absorption, without touching PRB-0005.evidence (still exactly the original 5 IDs) or its traffic/parking/public-space framing",
+        "Verified via analyzer (--problem PRB-0002/PRB-0010, --all, --gaps) that PRB-0010 resolves correctly, shows 0/3 EVD analysed and no ASM (both expected, no backfill/ASM performed for it in this WU), and that PARTIAL gates are correctly excluded from --gaps output",
+        "Wrote docs/milestones/D3-WU03-structure-review.md recording the full MODIFY resolution, the PRB-0002/PRB-0010 decisions with exact before/after field diffs, PRB-0005 non-absorption proof, resulting problem-map counts, and WU017 handoff implications; preserved docs/milestones/D3-WU02-pilot-review.md unchanged as historical record"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/discovery/d3-execution-protocol.md",
+        "docs/models/assessment-model.md",
+        "docs/models/evidence-model.md",
+        "docs/milestones/D3-WU03-structure-review.md",
+        "research/schemas/assessment.schema.json",
+        "research/schemas/evidence.schema.json",
+        "research/evidence/EVD-000092.yaml",
+        "research/problems/PRB-0002.yaml",
+        "research/problems/PRB-0005.yaml",
+        "research/problems/PRB-0010.yaml",
+        "research/assessments/ASM-0002.yaml",
+        "research/assessments/ASM-0007.yaml",
+        "research/assessments/ASM-0009.yaml",
+        "tools/test-analytical-foundation.js"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "22/22 passed (19 pre-existing + 3 new PLANNED-SOLUTION/PARTIAL tests)."
+        },
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 197 record(s): OK. (196 + PRB-0010)"
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0002 / PRB-0007 / PRB-0009 / PRB-0010",
+          "result": "passed",
+          "summary": "PRB-0002 shows the corrected ASM-0002 (KEEP, 2 critical unknowns, DEEPEN); PRB-0007/PRB-0009 show the PARTIAL-gate-corrected ASMs; PRB-0010 resolves with 3 linked EVD, 0/3 analysed, no ASM -- all expected for a freshly promoted, not-yet-assessed problem."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "10 PRB rows; PRB-0010 correctly listed with current_asm=no, triage=—."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "20 gaps: 7x active-PRB-no-ASM (incl. PRB-0010), 7x linked-EVD-missing-analysis (incl. PRB-0010's 3/3), plus each pilot ASM's remaining NOT_ASSESSED-gate/critical-unknown counts. PARTIAL gates correctly excluded from the unresolved-gate count with zero analyzer code changes."
+        },
+        {
+          "command": "aiqt status --json",
+          "result": "passed",
+          "summary": "M003/WU016 state valid throughout."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Exactly PRB-0010 created, no other new PRB",
+          "result": "passed",
+          "evidence": "ls research/problems shows PRB-0001..PRB-0010, 10 files."
+        },
+        {
+          "criterion": "PRB-0005 did not absorb the road-maintenance evidence",
+          "result": "passed",
+          "evidence": "sed -n '/^evidence:/,/^evidence_status/p' research/problems/PRB-0005.yaml still shows only EVD-000003/007/008/012/025."
+        },
+        {
+          "criterion": "No ASM-0010 created in this WU",
+          "result": "passed",
+          "evidence": "ls research/assessments shows exactly ASM-0002/ASM-0007/ASM-0009 (plus .gitkeep)."
+        },
+        {
+          "criterion": "PRB-0002 kept as one problem, no second transport-data PRB",
+          "result": "passed",
+          "evidence": "research/problems/ contains no PRB for developer/data interoperability; that question is documented only as an Open Data Foundation lead in docs/milestones/D3-WU03-structure-review.md §2.1."
+        },
+        {
+          "criterion": "No PRB-*.validation_status changed",
+          "result": "passed",
+          "evidence": "grep validation_status across all ten research/problems/PRB-*.yaml shows all unvalidated."
+        },
+        {
+          "criterion": "Pilot ASMs not substantively re-derived, only the named fields changed",
+          "result": "passed",
+          "evidence": "git diff shows only decision_gates.{civic_importance,root_cause_understood,remaining_gap_supported} changed in ASM-0007/ASM-0009 (plus notes); ASM-0002 additionally has structure_action and the U2 critical-unknown removal, both explicitly authorized by the PRB-0002 owner decision."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T14:27:57.060Z",
       "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-016",
-    "workUnitId": "WU015",
+    "id": "PKT-017",
+    "workUnitId": "WU016",
     "milestoneId": "M003",
-    "createdAt": "2026-08-11T13:53:55.161Z",
+    "createdAt": "2026-08-11T14:17:38.817Z",
     "format": "markdown",
-    "contentHash": "sha256:d984f29c1940b2f301cdffdaeca916927fbc4a64ee47a9b4af733ec970801b0c",
+    "contentHash": "sha256:5d601a92cbb9a78f470ff01f2c4bec389ac449db1105f1edada60eb2c6b13b2f",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1846,7 +1955,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T14:07:04.261Z",
+  "lastUpdatedAt": "2026-08-11T14:27:57.060Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2371,6 +2480,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T14:07:04.261Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C017",
+      "current": {
+        "observationId": "sha256:dcb6c5e6d7ef36478ad48ffed04176805dfc85b8b4afd743ef34c561071f3d0a",
+        "checkpointId": "C017",
+        "workUnitId": "WU016",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T14:27:57.060Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T14:27:57.060Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:dcb6c5e6d7ef36478ad48ffed04176805dfc85b8b4afd743ef34c561071f3d0a",
+          "checkpointId": "C017",
+          "workUnitId": "WU016",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T14:27:57.060Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T14:27:57.060Z"
         }
       ]
     }
