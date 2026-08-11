@@ -510,12 +510,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "ready",
+        "status": "done",
         "dependencies": [
           "DEP-021"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:44:04.506Z"
+        "updatedAt": "2026-08-11T14:07:04.261Z"
       },
       {
         "id": "WU016",
@@ -546,12 +546,12 @@
         "validationCommands": [
           "node tools/validate-research.js"
         ],
-        "status": "planned",
+        "status": "ready",
         "dependencies": [
           "DEP-022"
         ],
         "createdAt": "2026-08-11T13:12:07.877Z",
-        "updatedAt": "2026-08-11T13:12:07.877Z"
+        "updatedAt": "2026-08-11T14:07:04.261Z"
       },
       {
         "id": "WU017",
@@ -1699,17 +1699,135 @@
         }
       ],
       "finalWorkUnitStatus": "done",
-      "createdAt": "2026-08-11T13:44:04.506Z",
+      "nextRecommendation": "aiqt next",
+      "createdAt": "2026-08-11T13:44:04.506Z"
+    },
+    {
+      "id": "C016",
+      "workUnitId": "WU015",
+      "packetId": "PKT-016",
+      "summary": "Ran the D3 three-problem pilot (PRB-0002/PRB-0007/PRB-0009): created ASM-0002/ASM-0007/ASM-0009, lazily backfilled EVD.analysis on all 23 linked evidence records across the three pilots, and produced docs/milestones/D3-WU02-pilot-review.md concluding FRAMEWORK DECISION: MODIFY with five named field-semantic clarifications.",
+      "completed": [
+        "Verified pre-WU baseline (81 SRC/103 EVD/9 PRB/0 HYP/0 ASM, 193 records, WU014 done, all PRBs unvalidated) via targeted checks and aiqt status --json",
+        "Read PRB-0002, PRB-0007, PRB-0009 and every one of their linked EVD records in full before annotating anything",
+        "Backfilled EVD.analysis on all 4 PRB-0002-linked EVD, all 8 PRB-0007-linked EVD, and all 11 PRB-0009-linked EVD (23 total), grounding every contribution/friction_types/lineage_id/representativeness/verification/temporal_relevance value in what each record's own source/notes actually supports -- nothing inferred from prose alone",
+        "Lineage stress test on PRB-0007: assigned one shared lineage_id to the 6 of 8 EVD that trace to the same underlying SRC-0030 document (Plano Concelhio dos Cuidadores Informais), leaving 2 genuinely independent EVD unlineaged -- reduces naive 8-EVD corroboration count to 3 effective evidentiary threads",
+        "Current-state/triage-semantics stress test on PRB-0009: marked the February 2026 communicado EVD (EVD-000071/072) temporal_relevance=HISTORICAL (not the assumed baseline) per PRB-0009's own preserved current-state correction, and used triage=WATCH instead of STOP specifically to avoid the 'STOP reads as problem does not matter' ambiguity flagged in the handoff -- recorded as an unresolved framework-semantic finding rather than silently patched",
+        "Created research/assessments/ASM-0002.yaml (structure_action: SPLIT_CANDIDATE, triage: DEEPEN), ASM-0007.yaml (evidence_confidence.independence: LOW reflecting the lineage finding, triage: DEEPEN), ASM-0009.yaml (civic_importance: PASS + digital_causality: FAIL side by side, triage: WATCH) -- exactly these three, no others",
+        "Ran node tools/analyze-research.js --problem for all three pilots, --all, and --gaps against the real corpus; all three ASMs picked up correctly with accurate gate/triage/critical-unknown reporting; no ASM/analysis-block gaps reported for the three pilot problems while the other six PRBs correctly continue showing their pre-pilot gaps",
+        "Re-ran the full WU014 test suite (node tools/test-analytical-foundation.js) clean against the new pilot data -- no tooling defects found",
+        "Wrote docs/milestones/D3-WU02-pilot-review.md: per-problem results, cross-pilot findings, five named framework-semantic issues, and exactly one FRAMEWORK DECISION: MODIFY with five precisely specified required clarifications for docs/discovery/d3-execution-protocol.md/docs/models/assessment-model.md before WU-D3-04 rollout",
+        "Verified zero new SRC/EVD/PRB/HYP records, zero PRB.validation_status changes (all nine still unvalidated), and that only the 23 intended EVD files plus 3 new ASM files plus the review doc changed in git status"
+      ],
+      "notCompleted": [],
+      "filesChanged": [
+        "docs/milestones/D3-WU02-pilot-review.md",
+        "research/assessments/ASM-0002.yaml",
+        "research/assessments/ASM-0007.yaml",
+        "research/assessments/ASM-0009.yaml",
+        "research/evidence/EVD-000010.yaml",
+        "research/evidence/EVD-000011.yaml",
+        "research/evidence/EVD-000016.yaml",
+        "research/evidence/EVD-000034.yaml",
+        "research/evidence/EVD-000036.yaml",
+        "research/evidence/EVD-000044.yaml",
+        "research/evidence/EVD-000045.yaml",
+        "research/evidence/EVD-000065.yaml",
+        "research/evidence/EVD-000066.yaml",
+        "research/evidence/EVD-000071.yaml",
+        "research/evidence/EVD-000072.yaml",
+        "research/evidence/EVD-000073.yaml",
+        "research/evidence/EVD-000080.yaml",
+        "research/evidence/EVD-000089.yaml",
+        "research/evidence/EVD-000090.yaml",
+        "research/evidence/EVD-000091.yaml",
+        "research/evidence/EVD-000092.yaml",
+        "research/evidence/EVD-000093.yaml",
+        "research/evidence/EVD-000094.yaml",
+        "research/evidence/EVD-000095.yaml",
+        "research/evidence/EVD-000096.yaml",
+        "research/evidence/EVD-000097.yaml",
+        "research/evidence/EVD-000098.yaml"
+      ],
+      "issues": [],
+      "validationResult": "passed",
+      "acceptanceCriteriaResult": "passed",
+      "validationCommands": [
+        {
+          "command": "node tools/test-analytical-foundation.js",
+          "result": "passed",
+          "summary": "19/19 passed."
+        },
+        {
+          "command": "node tools/validate-research.js",
+          "result": "passed",
+          "summary": "Validated 196 record(s): OK. (193 + 3 new ASM)"
+        },
+        {
+          "command": "node tools/analyze-research.js --problem PRB-0002 / --problem PRB-0007 / --problem PRB-0009",
+          "result": "passed",
+          "summary": "Each report shows the correct linked-EVD/analysis-coverage counts, lineage counts, distributions, and the corresponding CURRENT ASM with its gates/triage/critical-unknown count/next_action."
+        },
+        {
+          "command": "node tools/analyze-research.js --all",
+          "result": "passed",
+          "summary": "Shows current_asm=ASM-0002/ASM-0007/ASM-0009 with triage=DEEPEN/DEEPEN/WATCH for the three pilots and current_asm=no/triage=— for the other six PRBs."
+        },
+        {
+          "command": "node tools/analyze-research.js --gaps",
+          "result": "passed",
+          "summary": "No ASM/analysis-missing gaps reported for PRB-0002/0007/0009; unchanged gaps still reported for the other six PRBs; each ASM's own recorded gate/critical-unknown counts surfaced, no DEEPEN-without-next_action gap for ASM-0002/ASM-0007 since both have concrete next_action text."
+        },
+        {
+          "command": "aiqt status --json",
+          "result": "passed",
+          "summary": "M003/WU015 state valid throughout."
+        }
+      ],
+      "acceptanceCriteria": [
+        {
+          "criterion": "Exactly ASM-0002/ASM-0007/ASM-0009 created, no other ASM",
+          "result": "passed",
+          "evidence": "ls research/assessments shows exactly these three files (plus .gitkeep)."
+        },
+        {
+          "criterion": "No PRB-*.validation_status changed",
+          "result": "passed",
+          "evidence": "grep validation_status across all research/problems/PRB-*.yaml shows all nine still unvalidated, identical to pre-WU baseline."
+        },
+        {
+          "criterion": "PRB-0002 not actually split in this WU",
+          "result": "passed",
+          "evidence": "research/problems/ still contains exactly PRB-0001..PRB-0009; ASM-0002.structure_action=SPLIT_CANDIDATE is recorded as a proposal only, with next_action explicitly deferring the decision to WU-D3-03."
+        },
+        {
+          "criterion": "Lazy backfill stayed bounded to the three pilot PRBs' linked evidence",
+          "result": "passed",
+          "evidence": "git diff --stat shows exactly the 23 EVD files matching PRB-0002.evidence + PRB-0007.evidence + PRB-0009.evidence (4+8+11); no EVD outside those three lists touched."
+        },
+        {
+          "criterion": "Known-lineage grouping represents the same underlying document/event, not merely the same publisher",
+          "result": "passed",
+          "evidence": "EVD-000065 was deliberately left unlineaged despite citing SRC-0053 (same as EVD-000066/EVD-000073) because its own primary source_id (SRC-0054) is a different document; documented explicitly in ASM-0009's notes."
+        },
+        {
+          "criterion": "Exactly one FRAMEWORK DECISION recorded",
+          "result": "passed",
+          "evidence": "docs/milestones/D3-WU02-pilot-review.md contains exactly one 'FRAMEWORK DECISION: MODIFY' heading, with five named required modifications, none of which silently redesign the schema in this WU."
+        }
+      ],
+      "finalWorkUnitStatus": "done",
+      "createdAt": "2026-08-11T14:07:04.261Z",
       "nextRecommendation": "aiqt next"
     }
   ],
   "lastAgentPacket": {
-    "id": "PKT-015",
-    "workUnitId": "WU014",
+    "id": "PKT-016",
+    "workUnitId": "WU015",
     "milestoneId": "M003",
-    "createdAt": "2026-08-11T13:43:01.202Z",
+    "createdAt": "2026-08-11T13:53:55.161Z",
     "format": "markdown",
-    "contentHash": "sha256:ee434a0fbca48786ce95f46c0c4dbaaaae6d480d9b79e2a27c4701e641607d4b",
+    "contentHash": "sha256:d984f29c1940b2f301cdffdaeca916927fbc4a64ee47a9b4af733ec970801b0c",
     "sourceCommand": "aiqt next",
     "renderedSections": [
       "scope",
@@ -1728,7 +1846,7 @@
     }
   },
   "nextRecommendedCommand": "aiqt next",
-  "lastUpdatedAt": "2026-08-11T13:44:04.506Z",
+  "lastUpdatedAt": "2026-08-11T14:07:04.261Z",
   "checkpointAmendments": [
     {
       "amendmentId": "AMEND-001",
@@ -2223,6 +2341,36 @@
           "issueKeys": [],
           "summary": "No active evidence gate policy is configured.",
           "recordedAt": "2026-08-11T13:44:04.506Z"
+        }
+      ]
+    },
+    {
+      "protocolVersion": "aiqt-checkpoint-evidence-advisory@1",
+      "checkpointId": "C016",
+      "current": {
+        "observationId": "sha256:65c65543f29b7da61a0923c5abe96e56676076e10b5156444d90dd513c3a4737",
+        "checkpointId": "C016",
+        "workUnitId": "WU015",
+        "trigger": "checkpoint",
+        "evaluationStatus": "not_configured",
+        "overallResult": null,
+        "asOf": "2026-08-11T14:07:04.261Z",
+        "issueKeys": [],
+        "summary": "No active evidence gate policy is configured.",
+        "recordedAt": "2026-08-11T14:07:04.261Z"
+      },
+      "history": [
+        {
+          "observationId": "sha256:65c65543f29b7da61a0923c5abe96e56676076e10b5156444d90dd513c3a4737",
+          "checkpointId": "C016",
+          "workUnitId": "WU015",
+          "trigger": "checkpoint",
+          "evaluationStatus": "not_configured",
+          "overallResult": null,
+          "asOf": "2026-08-11T14:07:04.261Z",
+          "issueKeys": [],
+          "summary": "No active evidence gate policy is configured.",
+          "recordedAt": "2026-08-11T14:07:04.261Z"
         }
       ]
     }
