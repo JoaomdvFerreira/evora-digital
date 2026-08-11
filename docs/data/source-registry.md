@@ -1,9 +1,9 @@
-# Initial Source Registry
+# Source Registry
 
-**Version:** 0.1  
-**Status:** Seed registry for D1
+**Version:** 0.2  
+**Status:** Human-readable catalogue, enriched through D1 and D2
 
-This registry identifies initial high-priority source families. D1 must verify access methods, dates, licensing, canonical ownership, and machine-readability before treating them as reusable datasets.
+This registry identifies high-priority source families and is progressively enriched as sources are verified and integrated (D1 institutional mapping, D2 public-signal discovery). It remains a human-readable catalogue; detailed provenance/licensing/freshness fields live only in the structured `SRC-*` records under `research/sources/` to avoid duplication.
 
 | ID | Source | Primary Track | Initial reason |
 |---|---|---|---|

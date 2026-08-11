@@ -1,8 +1,9 @@
 # D2 — Public Signal Discovery
 
-**Status:** ACTIVE
+**Status:** CLOSED
 **Baseline:** v0.1
 **Prepared:** 2026-08-11
+**Closed:** 2026-08-11 (`docs/milestones/D2-WU06-closure.md`)
 
 ## Objective
 
@@ -111,19 +112,21 @@ D2 should progressively produce repository-backed `SRC-*`/`EVD-*` records carryi
 
 D2 may close when:
 
-- [ ] `WU-D2-01` has established the extended protocol/methodology and the D2 milestone/work-unit structure.
-- [ ] Round A tracks (`WU-D2-02`, `WU-D2-03`, `WU-D2-04`) are completed or explicitly descoped with rationale, each having attempted the coverage/saturation gate in `docs/discovery/d2-execution-protocol.md` §15.
-- [ ] `WU-D2-02` has explicitly attempted coverage of `PRB-0001` through `PRB-0005`, recording any PRB with no useful signal found.
-- [ ] `WU-D2-03`'s outcome, if evidence is sparse, records the sparsity explicitly without downgrading `PRB-0007`.
-- [ ] `WU-D2-05` (Housing + Employment) is completed or explicitly descoped, with D2-C and D2-D findings/saturation decisions kept separate.
-- [ ] no `PRB-*.validation_status` was upgraded to `validated` on the strength of public-signal evidence alone.
-- [ ] no new canonical `PRB-*`/`HYP-*` was created without project-owner review; any new problem material is preserved as `NEW-CANDIDATE` evidence.
-- [ ] a contradiction/current-state log exists and is consolidated.
-- [ ] a `D2 OPEN-DISCOVERY / BLIND-SPOT FINDINGS` review has been performed at cross-track synthesis.
-- [ ] specific stakeholder-validation questions for D5 are recorded.
-- [ ] AIQT state and repository state are valid; `node tools/validate-research.js` passes.
-- [ ] working tree is clean before closure commit.
-- [ ] a D2 closure record exists.
+- [x] `WU-D2-01` has established the extended protocol/methodology and the D2 milestone/work-unit structure.
+- [x] Round A tracks (`WU-D2-02`, `WU-D2-03`, `WU-D2-04`) are completed or explicitly descoped with rationale, each having attempted the coverage/saturation gate in `docs/discovery/d2-execution-protocol.md` §15.
+- [x] `WU-D2-02` has explicitly attempted coverage of `PRB-0001` through `PRB-0005`, recording any PRB with no useful signal found.
+- [x] `WU-D2-03`'s outcome, if evidence is sparse, records the sparsity explicitly without downgrading `PRB-0007`.
+- [x] `WU-D2-05` (Housing + Employment) is completed or explicitly descoped, with D2-C and D2-D findings/saturation decisions kept separate.
+- [x] no `PRB-*.validation_status` was upgraded to `validated` on the strength of public-signal evidence alone.
+- [x] no new canonical `PRB-*`/`HYP-*` was created without project-owner review; any new problem material is preserved as `NEW-CANDIDATE` evidence.
+- [x] a contradiction/current-state log exists and is consolidated.
+- [x] a `D2 OPEN-DISCOVERY / BLIND-SPOT FINDINGS` review has been performed at cross-track synthesis.
+- [x] specific stakeholder-validation questions for D5 are recorded.
+- [x] AIQT state and repository state are valid; `node tools/validate-research.js` passes.
+- [x] working tree is clean before closure commit.
+- [x] a D2 closure record exists.
+
+**Exit decision:** MET. See `docs/milestones/D2-WU06-closure.md` for the full exit-gate evaluation, cross-track synthesis, contradiction/current-state log, blind-spot review, and D3/D5 question backlog.
 
 ## Explicitly out of scope
 
