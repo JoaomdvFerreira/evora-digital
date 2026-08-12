@@ -5,3 +5,5 @@ Thumbs.db
 .env.*
 node_modules/
 /prompts
+/apps/research-explorer/generated/
+/apps/research-explorer/spike/generated/
