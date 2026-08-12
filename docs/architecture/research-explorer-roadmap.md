@@ -17,11 +17,11 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | ↳ RE-02C — Overview, URL State & Accessibility | CLOSED |
 | RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
 | RE-04 — Graph Explorer | **CLOSED** |
-| RE-05 — Scale & Quality Gate | **NEXT** |
-| RE-06 — Local Explorer v1 | not started |
+| RE-05 — Scale & Quality Gate | **CLOSED** |
+| RE-06 — Local Explorer v1 | **NEXT** |
 | RE-07 — Optional Public Explorer | not started |
 
-Implementation facts as of RE-04 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`), loaded via dynamic import so Sigma's module (and `edges.json`) are never touched by Overview/Records/Problem. No backend, database, or authentication anywhere in the stack.
+Implementation facts as of RE-05 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`); as of RE-05, the whole `GraphExplorer` feature (not just Sigma inside `GraphCanvas`) is loaded via `React.lazy`, so Graphology, the Graph domain modules, and `edges.json` are never touched by Overview/Records/Problem. `apps/research-explorer/benchmark/` holds the disposable, gitignored RE-05 synthetic-scale benchmark harness (not part of the production app). No backend, database, or authentication anywhere in the stack.
 
 ---
 
@@ -109,15 +109,15 @@ This directly motivated RE-03's two additions below: a reading guide (addresses 
 - **Exit gate met:** graph view renders the real corpus's declared references correctly at current scale (220 nodes / 331 edges), starts from a focused record rather than the full corpus by default, remains supplementary (Records/Problem stay complete without it; no relationship's only representation is the canvas), and is dependency-scoped to `apps/research-explorer/` only; no canonical schema/data touched for presentation (colours/shapes live in `typeVisuals.ts`, not `research/**`); no semantic relationship inferred beyond the schema's own `references` (edges still read "referencia via `<field>`", never SUPPORTS/CONTRADICTS/CAUSES).
 - **Validation:** RE-01 (17) + full app suite (143, up from 101) automated tests; typecheck; production build; live Playwright walkthrough against the real 220-record corpus — Graph not loaded at Overview/Records/Problem startup (only `manifest.json`/`index.json` fetched), entering Graph loads `edges.json` on demand, focusing PRB-0005, 1-hop then 2-hop expansion reaching Evidence/Source nodes, refocusing on a Source node, inspecting a canonical reference path (`source.source_id`), filtering visible node types, navigating Graph → generic Record detail, and reloading a focused+depth Graph URL (`?view=graph&id=...&d=2`) successfully.
 
-## RE-05 — Scale & Quality Gate
+## RE-05 — Scale & Quality Gate — CLOSED
 
 - **Objective:** resolve the scalability envelope with measured evidence rather than assumption, per `research-explorer-benchmark-plan.md`.
 - **Dependencies:** RE-02 through RE-04 (a representative Records + Graph surface must exist to benchmark).
 - **Scope:** synthetic corpus profiles (~250/~2,500/~10,000 records) exercising the real adapter/UI/graph code paths; the specific measurements already named in the benchmark plan.
 - **Non-goals:** introducing a backend/database pre-emptively.
-- **Outputs:** a benchmark results report; if needed, client-side chunking/lazy-loading of `index.json`/`record-detail/*`.
-- **Exit gate:** the benchmark plan's decision gate is resolved (preserve static architecture, or add chunking) with documented measurements, not assumption.
-- **Validation:** the benchmark plan's own measurement list, run and reported.
+- **Outputs:** `apps/research-explorer/benchmark/{generate-corpus.js, run-adapter-benchmark.js}` (disposable synthetic-corpus generator + adapter-stage harness, gitignored fixtures/output) and `apps/research-explorer/src/__bench__/uiScale.bench.test.ts` (Records/Problem/Graph code-path harness, opt-in via `BENCH_SCALE`, never runs in the normal test suite); `docs/architecture/research-explorer-re05-results.md` (full evidence table, methodology, and the six architectural-question answers); one implemented optimisation — `Explorer.tsx`'s `GraphExplorer` import changed from static to `React.lazy`, closing an isolation gap the benchmark exposed (Graphology was in the initial bundle even though Sigma alone was already lazy-loaded; ~17 KB gzip moved out of the initial chunk, measured before/after).
+- **Exit gate met:** decision is **preserve the static client-side architecture unchanged into RE-06** — no cliff found at any tested scale (250/2,500/10,000) for the supported (neighbourhood-first) workflows; the one bundling gap found (Graphology not excluded from the initial chunk) was small, directly measured, fixed, and remeasured within this phase, per the development contract's optimisation discipline. Real 223-record/337-edge corpus regression-tested clean after the fix (adapter tests 17/17, app suite 143/143, typecheck, production build, live Playwright walkthrough).
+- **Validation:** the benchmark plan's own measurement list, run and reported in `research-explorer-re05-results.md`; RE-01 (17) + full app suite (143) automated tests; typecheck; production build; canonical `research/` validation; real-corpus (223/337/0-dangling) smoke; live Playwright network verification (dev server + production preview) that `edges.json`/Graphology/Sigma load only on Graph entry, never at Overview/Records/Problem startup.
 
 ## RE-06 — Local Explorer v1
 

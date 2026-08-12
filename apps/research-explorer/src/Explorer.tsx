@@ -1,10 +1,18 @@
+import { Suspense, lazy } from "react";
 import type { DataProvider } from "./dataProvider/types";
 import { useExplorerUrlState } from "./useExplorerUrlState";
 import { Overview } from "./overview/Overview";
 import { RecordsExplorer } from "./records/RecordsExplorer";
 import { ProblemView } from "./problem/ProblemView";
 import { ReadingGuide } from "./guide/ReadingGuide";
-import { GraphExplorer } from "./graph/GraphExplorer";
+
+// RE-05: lazily imported, not just GraphCanvas's Sigma module inside it —
+// GraphExplorer's own module graph (Graphology + buildGraphModel/neighbourhood/
+// layout/renderGraph/typeVisuals) was otherwise pulled into the initial bundle
+// by this static import alone, even though nothing in it ever runs before the
+// Graph view is opened. Measured: ~17 KB gzip moved out of the initial chunk
+// into its own lazy chunk by this change alone (see RE-05 closure report).
+const GraphExplorer = lazy(() => import("./graph/GraphExplorer").then((m) => ({ default: m.GraphExplorer })));
 
 interface ExplorerProps {
   dataProvider: DataProvider;
@@ -64,16 +72,24 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
       )}
 
       {url.state.view === "graph" && (
-        <GraphExplorer
-          dataProvider={dataProvider}
-          focusId={url.state.selectedId}
-          depth={url.state.graphDepth}
-          onFocusChange={url.setSelectedId}
-          onClearFocus={() => url.setSelectedId(null)}
-          onDepthChange={url.setGraphDepth}
-          onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
-          onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
-        />
+        <Suspense
+          fallback={
+            <p role="status" aria-live="polite">
+              A carregar o grafo…
+            </p>
+          }
+        >
+          <GraphExplorer
+            dataProvider={dataProvider}
+            focusId={url.state.selectedId}
+            depth={url.state.graphDepth}
+            onFocusChange={url.setSelectedId}
+            onClearFocus={() => url.setSelectedId(null)}
+            onDepthChange={url.setGraphDepth}
+            onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
+            onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
+          />
+        </Suspense>
       )}
     </>
   );

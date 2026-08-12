@@ -1,6 +1,6 @@
 # Research Explorer — Benchmark Plan (RE-05 preview, scoped now by RE-00)
 
-**Status:** plan only — measurements below are RE-00 spike-scale (real corpus, ~220 records); the ~250/~2,500/~10,000 synthetic-scale runs are RE-05 work, not executed by this spike.
+**Status:** executed. The ~250/~2,500/~10,000 synthetic-scale runs described below as RE-05 work have been run; results, the evidence table, and the six architectural-question answers are in `docs/architecture/research-explorer-re05-results.md`. This document is kept as the original plan/methodology reference — not restated in the results doc.
 
 ## What RE-00 already measured (real corpus, 220 records)
 
