@@ -1,4 +1,5 @@
 import { ALL_TYPES } from "./records/recordIndex";
+import { MIN_DEPTH, clampDepth, type GraphDepth } from "./graph/neighbourhood";
 
 /**
  * Pure URL <-> application-state mapping (RE-02C). Native URLSearchParams
@@ -14,14 +15,17 @@ import { ALL_TYPES } from "./records/recordIndex";
  * would, never a bypassed fetch. See StaticDataProvider.ts.
  */
 
-export type ExplorerView = "overview" | "records" | "problem";
+export type ExplorerView = "overview" | "records" | "problem" | "graph";
 export const DEFAULT_VIEW: ExplorerView = "records";
+export const DEFAULT_GRAPH_DEPTH: GraphDepth = MIN_DEPTH;
 
 export interface ExplorerUrlState {
   view: ExplorerView;
   selectedId: string | null;
   query: string;
   typeFilter: string;
+  /** RE-04: hops around the focused record shown in the Graph view (ADR-001 D7). Irrelevant to every other view. */
+  graphDepth: GraphDepth;
 }
 
 export const DEFAULT_URL_STATE: ExplorerUrlState = {
@@ -29,21 +33,24 @@ export const DEFAULT_URL_STATE: ExplorerUrlState = {
   selectedId: null,
   query: "",
   typeFilter: ALL_TYPES,
+  graphDepth: DEFAULT_GRAPH_DEPTH,
 };
 
 function isExplorerView(value: string | null): value is ExplorerView {
-  return value === "overview" || value === "records" || value === "problem";
+  return value === "overview" || value === "records" || value === "problem" || value === "graph";
 }
 
 export function parseUrlState(search: string): ExplorerUrlState {
   const params = new URLSearchParams(search);
   const view = params.get("view");
   const id = params.get("id");
+  const depthParam = Number(params.get("d"));
   return {
     view: isExplorerView(view) ? view : DEFAULT_VIEW,
     selectedId: id !== null && id.trim() !== "" ? id : null,
     query: params.get("q") ?? "",
     typeFilter: params.get("type") ?? ALL_TYPES,
+    graphDepth: Number.isFinite(depthParam) && depthParam > 0 ? clampDepth(depthParam) : DEFAULT_GRAPH_DEPTH,
   };
 }
 
@@ -54,6 +61,7 @@ export function serializeUrlState(state: ExplorerUrlState): string {
   if (state.selectedId) params.set("id", state.selectedId);
   if (state.query.trim() !== "") params.set("q", state.query);
   if (state.typeFilter !== ALL_TYPES) params.set("type", state.typeFilter);
+  if (state.graphDepth !== DEFAULT_GRAPH_DEPTH) params.set("d", String(state.graphDepth));
   const qs = params.toString();
   return qs ? `?${qs}` : "";
 }

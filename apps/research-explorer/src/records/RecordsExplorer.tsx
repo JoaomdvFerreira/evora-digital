@@ -20,6 +20,8 @@ interface RecordsExplorerProps {
   onTypeFilterChange: (typeFilter: string) => void;
   /** RE-03: switches to the specialised Problem view for a PRB-* record, keeping the same ID. */
   onViewAsProblem: (id: string) => void;
+  /** RE-04: switches to the Graph view, focused on the same record. */
+  onViewInGraph: (id: string) => void;
 }
 
 /**
@@ -38,6 +40,7 @@ export function RecordsExplorer({
   typeFilter,
   onTypeFilterChange,
   onViewAsProblem,
+  onViewInGraph,
 }: RecordsExplorerProps) {
   const indexState = useRecordIndex(dataProvider);
 
@@ -75,6 +78,7 @@ export function RecordsExplorer({
         selectedId={selectedId}
         onSelect={onSelect}
         onViewAsProblem={onViewAsProblem}
+        onViewInGraph={onViewInGraph}
       />
     </div>
   );

@@ -73,18 +73,19 @@ function fakeProvider(): DataProvider {
       const detail = DETAILS[id];
       return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
     },
+    getEdges: () => Promise.resolve([]),
   };
 }
 
 describe("ProblemView", () => {
   it("shows a prompt when no problem is selected", async () => {
-    render(<ProblemView dataProvider={fakeProvider()} problemId={null} onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId={null} onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     await screen.findByText("Nenhum Problema selecionado.");
   });
 
   it("shows a redirect message when the selected record is not a Problem", async () => {
     const onOpenGeneric = vi.fn();
-    render(<ProblemView dataProvider={fakeProvider()} problemId="EVD-0001" onOpenGeneric={onOpenGeneric} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId="EVD-0001" onOpenGeneric={onOpenGeneric} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
 
     const alert = await screen.findByRole("alert");
     expect(within(alert).getByText(/não pode ser aberto/)).toBeTruthy();
@@ -94,7 +95,7 @@ describe("ProblemView", () => {
   });
 
   it("surfaces identity, current state, assessment, evidence, sources, unknowns, and (absent) hypotheses for a real problem shape", async () => {
-    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
 
     await screen.findByRole("heading", { name: "Parking pressure" });
     expect(screen.getByText(/Traffic and parking conflict/)).toBeTruthy();
@@ -122,7 +123,7 @@ describe("ProblemView", () => {
     // non-SRC- target is correctly excluded from it rather than mislabelled
     // as a "source" — and its presence must not crash the projection or the
     // render.
-    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     const evidenceSection = await screen.findByLabelText("Evidência");
     await within(evidenceSection).findByText(/EVD-0001/);
     expect(within(evidenceSection).getByText(/SRC-0001/)).toBeTruthy();
@@ -132,7 +133,7 @@ describe("ProblemView", () => {
   it("clicking an evidence or source ID calls onOpenGeneric with that ID", async () => {
     const onOpenGeneric = vi.fn();
     const user = userEvent.setup();
-    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={onOpenGeneric} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={onOpenGeneric} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
 
     const sourceButton = await screen.findByRole("button", { name: /SRC-0001/ });
     await user.click(sourceButton);
@@ -140,7 +141,7 @@ describe("ProblemView", () => {
   });
 
   it("does not infer SUPPORTS/CONTRADICTS/CAUSES semantics anywhere in the rendered output", async () => {
-    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} />);
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     await screen.findByRole("heading", { name: "Parking pressure" });
     const body = document.body.textContent ?? "";
     expect(body).not.toMatch(/SUPPORTS|CONTRADICTS|CAUSES/);

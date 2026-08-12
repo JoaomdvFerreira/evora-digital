@@ -58,11 +58,13 @@ function RecordDetailContent({
   lookup,
   onSelect,
   onViewAsProblem,
+  onViewInGraph,
 }: {
   detail: RecordDetail;
   lookup: Map<string, RecordSummary>;
   onSelect: (id: string) => void;
   onViewAsProblem: (id: string) => void;
+  onViewInGraph: (id: string) => void;
 }) {
   return (
     <>
@@ -79,13 +81,18 @@ function RecordDetailContent({
             <code>{detail.file}</code>
           </dd>
         </dl>
-        {detail.type === "PRB-" && (
-          <p>
-            <button type="button" onClick={() => onViewAsProblem(detail.id)}>
-              Ver como Problema (contexto completo)
-            </button>
-          </p>
-        )}
+        <p>
+          {detail.type === "PRB-" && (
+            <>
+              <button type="button" onClick={() => onViewAsProblem(detail.id)}>
+                Ver como Problema (contexto completo)
+              </button>{" "}
+            </>
+          )}
+          <button type="button" onClick={() => onViewInGraph(detail.id)}>
+            Ver no Grafo
+          </button>
+        </p>
       </section>
 
       <section aria-label="Campos do registo">
@@ -108,13 +115,14 @@ interface RecordDetailPanelProps {
   selectedId: string | null;
   onSelect: (id: string) => void;
   onViewAsProblem: (id: string) => void;
+  onViewInGraph: (id: string) => void;
 }
 
 /**
  * A failure loading one record's detail is isolated here (useRecordDetail's
  * own state) and never affects the already-loaded Records table/index.
  */
-export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, onViewAsProblem }: RecordDetailPanelProps) {
+export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, onViewAsProblem, onViewInGraph }: RecordDetailPanelProps) {
   const state = useRecordDetail(dataProvider, selectedId);
   const contentRef = useRef<HTMLDivElement>(null);
   const readyId = state.status === "ready" ? state.detail.id : null;
@@ -151,7 +159,13 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, 
 
       {state.status === "ready" && (
         <div ref={contentRef} tabIndex={-1} aria-label={`Detalhe de ${state.detail.id}`}>
-          <RecordDetailContent detail={state.detail} lookup={lookup} onSelect={onSelect} onViewAsProblem={onViewAsProblem} />
+          <RecordDetailContent
+            detail={state.detail}
+            lookup={lookup}
+            onSelect={onSelect}
+            onViewAsProblem={onViewAsProblem}
+            onViewInGraph={onViewInGraph}
+          />
         </div>
       )}
     </section>

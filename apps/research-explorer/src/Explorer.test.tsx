@@ -72,6 +72,7 @@ function fakeProvider(overrides: Partial<DataProvider> = {}): DataProvider {
       const detail = DETAILS[id];
       return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
     },
+    getEdges: () => Promise.resolve([]),
     ...overrides,
   };
 }

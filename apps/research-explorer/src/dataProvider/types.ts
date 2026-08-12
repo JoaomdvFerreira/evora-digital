@@ -32,6 +32,21 @@ export interface RecordEdgeRef {
   from?: string;
 }
 
+/**
+ * One resolved reference from edges.json (docs/architecture/research-explorer-read-model-spec.md)
+ * — "record `from` references record `to` via schema field `field`", nothing
+ * more (ADR-001 D4). Consumed by the Graph view (RE-04) only; never loaded
+ * during application startup or by the Records/Problem views.
+ */
+export interface RecordEdge {
+  id: string;
+  from: string;
+  to: string;
+  field: string;
+  ordinal: number | null;
+  required: boolean;
+}
+
 export interface RecordDetail {
   id: string;
   type: string;
@@ -55,6 +70,13 @@ export interface DataProvider {
   getManifest(): Promise<ReadModelManifest>;
   listRecords(): Promise<RecordSummary[]>;
   getRecord(id: string): Promise<RecordDetail>;
+  /**
+   * Loads edges.json — the full corpus reference set. RE-04 only: no other
+   * view calls this. Implementations must not fetch it eagerly (see
+   * StaticDataProvider), so entering the Graph view is what triggers the
+   * request, not application startup.
+   */
+  getEdges(): Promise<RecordEdge[]>;
 }
 
 export type DataLoadErrorKind = "missing" | "malformed" | "incompatible" | "network" | "not_found" | "invalid_id";

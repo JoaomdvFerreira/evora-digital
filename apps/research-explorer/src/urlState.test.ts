@@ -13,6 +13,7 @@ describe("parseUrlState", () => {
       selectedId: "PRB-0005",
       query: "parking",
       typeFilter: "PRB-",
+      graphDepth: 1,
     });
   });
 
@@ -26,7 +27,24 @@ describe("parseUrlState", () => {
       selectedId: "PRB-0005",
       query: "",
       typeFilter: ALL_TYPES,
+      graphDepth: 1,
     });
+  });
+
+  it("recognizes the RE-04 'graph' view and a graph-depth param", () => {
+    expect(parseUrlState("?view=graph&id=PRB-0005&d=2")).toEqual({
+      view: "graph",
+      selectedId: "PRB-0005",
+      query: "",
+      typeFilter: ALL_TYPES,
+      graphDepth: 2,
+    });
+  });
+
+  it("clamps an out-of-range graph depth to the nearest valid value", () => {
+    expect(parseUrlState("?d=5").graphDepth).toBe(2);
+    expect(parseUrlState("?d=0").graphDepth).toBe(1);
+    expect(parseUrlState("?d=not-a-number").graphDepth).toBe(1);
   });
 
   it("treats an empty id param as no selection", () => {
@@ -52,12 +70,17 @@ describe("serializeUrlState", () => {
   });
 
   it("round-trips a full state", () => {
-    const state = { view: "overview" as const, selectedId: "EVD-000105", query: "via verde", typeFilter: "EVD-" };
+    const state = { view: "overview" as const, selectedId: "EVD-000105", query: "via verde", typeFilter: "EVD-", graphDepth: 2 as const };
     expect(parseUrlState(serializeUrlState(state))).toEqual(state);
   });
 
   it("omits typeFilter when it equals ALL_TYPES", () => {
     const qs = serializeUrlState({ ...DEFAULT_URL_STATE, typeFilter: ALL_TYPES });
     expect(qs).not.toContain("type=");
+  });
+
+  it("omits the depth param at the default depth, and includes it otherwise", () => {
+    expect(serializeUrlState({ ...DEFAULT_URL_STATE, graphDepth: 1 })).not.toContain("d=");
+    expect(serializeUrlState({ ...DEFAULT_URL_STATE, view: "graph", graphDepth: 2 })).toBe("?view=graph&d=2");
   });
 });

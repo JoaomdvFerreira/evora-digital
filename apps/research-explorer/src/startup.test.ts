@@ -18,6 +18,7 @@ function fakeProvider(overrides: Partial<DataProvider>): DataProvider {
     getManifest: () => Promise.reject(new Error("not implemented")),
     listRecords: () => Promise.resolve([] as RecordSummary[]),
     getRecord: () => Promise.reject(new Error("not implemented")) as Promise<RecordDetail>,
+    getEdges: () => Promise.resolve([]),
     ...overrides,
   };
 }

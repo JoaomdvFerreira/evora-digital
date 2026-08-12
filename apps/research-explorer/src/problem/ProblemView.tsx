@@ -36,9 +36,10 @@ interface ProblemContentProps {
   problemId: string;
   onOpenGeneric: (id: string) => void;
   onBackToRecords: () => void;
+  onViewInGraph: (id: string) => void;
 }
 
-function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBackToRecords }: ProblemContentProps) {
+function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBackToRecords, onViewInGraph }: ProblemContentProps) {
   const state = useProblemProjection(dataProvider, lookup, problemId);
 
   if (state.status === "idle") return null;
@@ -79,6 +80,9 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
       <p>
         <button type="button" onClick={onBackToRecords}>
           ← Voltar aos Registos
+        </button>{" "}
+        <button type="button" onClick={() => onViewInGraph(problem.id)}>
+          Ver no Grafo
         </button>
       </p>
 
@@ -201,6 +205,7 @@ interface ProblemViewProps {
   problemId: string | null;
   onOpenGeneric: (id: string) => void;
   onBackToRecords: () => void;
+  onViewInGraph: (id: string) => void;
 }
 
 /**
@@ -211,7 +216,7 @@ interface ProblemViewProps {
  * record type reached from here (assessment, evidence, source, hypothesis)
  * still opens through the same generic detail renderer via onOpenGeneric.
  */
-export function ProblemView({ dataProvider, problemId, onOpenGeneric, onBackToRecords }: ProblemViewProps) {
+export function ProblemView({ dataProvider, problemId, onOpenGeneric, onBackToRecords, onViewInGraph }: ProblemViewProps) {
   const indexState = useRecordIndex(dataProvider);
 
   if (indexState.status === "loading") {
@@ -262,6 +267,7 @@ export function ProblemView({ dataProvider, problemId, onOpenGeneric, onBackToRe
       problemId={problemId}
       onOpenGeneric={onOpenGeneric}
       onBackToRecords={onBackToRecords}
+      onViewInGraph={onViewInGraph}
     />
   );
 }

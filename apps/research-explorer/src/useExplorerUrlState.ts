@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { parseUrlState, serializeUrlState, type ExplorerUrlState, type ExplorerView } from "./urlState";
+import type { GraphDepth } from "./graph/neighbourhood";
 
 /**
  * Bridges ExplorerUrlState to the real address bar via native History API —
@@ -42,6 +43,10 @@ export function useExplorerUrlState() {
     setSelectedId: (selectedId: string | null) => push({ ...state, selectedId }),
     setQuery: (query: string) => replace({ ...state, query }),
     setTypeFilter: (typeFilter: string) => push({ ...state, typeFilter }),
+    // Expand/collapse-by-hop is a continuous-ish adjustment like typing a
+    // query, not a discrete "go somewhere new" navigation — replace keeps it
+    // out of the back/forward stack while still round-tripping on reload/share.
+    setGraphDepth: (graphDepth: GraphDepth) => replace({ ...state, graphDepth }),
     // One combined history entry for "open this ID in that view" (e.g. "Ver
     // como Problema" from the generic detail panel, or opening a related
     // EVD-/SRC- generically from the Problem view) — avoids two separate

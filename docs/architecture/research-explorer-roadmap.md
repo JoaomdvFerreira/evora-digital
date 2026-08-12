@@ -16,12 +16,12 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | ↳ RE-02B — Records Explorer & Generic Detail | CLOSED |
 | ↳ RE-02C — Overview, URL State & Accessibility | CLOSED |
 | RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
-| RE-04 — Graph Explorer | **NEXT** |
-| RE-05 — Scale & Quality Gate | not started |
+| RE-04 — Graph Explorer | **CLOSED** |
+| RE-05 — Scale & Quality Gate | **NEXT** |
 | RE-06 — Local Explorer v1 | not started |
 | RE-07 — Optional Public Explorer | not started |
 
-Implementation facts as of RE-03 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir`, TanStack Table v8 powering the Records view, a three-view `Explorer` shell (Overview/Registos/Problema) with native-URL-API state (no React Router), a data-driven reading guide, root `npm run explorer` / `npm run explorer:build` commands. No Graphology/Sigma.js yet (RE-04 scope). No backend, database, or authentication anywhere in the stack.
+Implementation facts as of RE-04 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`), loaded via dynamic import so Sigma's module (and `edges.json`) are never touched by Overview/Records/Problem. No backend, database, or authentication anywhere in the stack.
 
 ---
 
@@ -99,15 +99,15 @@ This directly motivated RE-03's two additions below: a reading guide (addresses 
 - **Exit gate met:** real PRB-0001 and PRB-0005 both traced end-to-end (assessment → evidence → sources → critical unknowns) in one coherent view without leaving generic-detail correctness behind for other record types; reading guide dynamically lists exactly the corpus's actual types with accurate descriptions; a non-PRB/invalid Problem-view selection degrades safely; a linked non-source future type does not break the projection; every relationship in Problem view still reads "referencia via `<field>`" / "referenciado via `<field>`" — no SUPPORTS/CONTRADICTS/CAUSES inferred anywhere.
 - **Validation:** RE-01 (17) + full app suite (101) automated tests; typecheck; production build; live Playwright walkthrough against the real 220-record corpus covering two distinct problems (PRB-0001, PRB-0005), the reading guide, "Ver como Problema," Problem→Records navigation, and browser back across the Problem/Records boundary. Zero new runtime dependencies.
 
-## RE-04 — Graph Explorer
+## RE-04 — Graph Explorer — CLOSED
 
 - **Objective:** visual relationship exploration.
 - **Dependencies:** RE-02 (all sub-phases closed); may proceed in parallel with or after RE-03.
 - **Scope:** Graphology + Sigma.js stable, node/edge rendering from the same generic read model, neighbourhood-mode expansion (per ADR-001 D7), search-to-node, filtering.
 - **Non-goals:** treating the graph as authoritative over the tabular/detail views; inferring edge semantics beyond what's canonically encoded.
-- **Outputs:** a Graph Explorer view; the first two new runtime dependencies since RE-02B (Graphology, Sigma.js).
-- **Exit gate:** graph view renders the real corpus's declared references correctly at current scale, remains supplementary (never the sole route to a fact), and is dependency-scoped to `apps/research-explorer/` only.
-- **Validation:** targeted tests; typecheck; production build; live verification against the real corpus.
+- **Outputs:** `DataProvider.getEdges()` (lazy `edges.json` load, StaticDataProvider only); `apps/research-explorer/src/graph/*` — `buildGraphModel.ts` (domain-only Graphology model), `typeVisuals.ts` (presentation-only colour encoding, generic fallback), `neighbourhood.ts`/`layout.ts` (pure hop/depth and deterministic-layout logic), `renderGraph.ts` (the Sigma-attribute translation boundary), `GraphCanvas.tsx` (the one Sigma-touching component, dynamically imported so its WebGL-touching module body never loads outside the Graph view), `GraphExplorer.tsx` (neighbourhood-first UI: search-to-focus, 1/2-hop expand/collapse, type filter, opt-in full-corpus view, reset/recenter, HTML node/edge lists mirroring the canvas), `useGraphData.ts`; `ReadingGuide.tsx` extended with a Graph section; "Ver no Grafo" entry points added to `RecordDetailPanel`/`ProblemView`; the first two new runtime dependencies since RE-02B (Graphology, Sigma.js — sigma renders as its own lazy-loaded chunk, ~24 kB gzipped).
+- **Exit gate met:** graph view renders the real corpus's declared references correctly at current scale (220 nodes / 331 edges), starts from a focused record rather than the full corpus by default, remains supplementary (Records/Problem stay complete without it; no relationship's only representation is the canvas), and is dependency-scoped to `apps/research-explorer/` only; no canonical schema/data touched for presentation (colours/shapes live in `typeVisuals.ts`, not `research/**`); no semantic relationship inferred beyond the schema's own `references` (edges still read "referencia via `<field>`", never SUPPORTS/CONTRADICTS/CAUSES).
+- **Validation:** RE-01 (17) + full app suite (143, up from 101) automated tests; typecheck; production build; live Playwright walkthrough against the real 220-record corpus — Graph not loaded at Overview/Records/Problem startup (only `manifest.json`/`index.json` fetched), entering Graph loads `edges.json` on demand, focusing PRB-0005, 1-hop then 2-hop expansion reaching Evidence/Source nodes, refocusing on a Source node, inspecting a canonical reference path (`source.source_id`), filtering visible node types, navigating Graph → generic Record detail, and reloading a focused+depth Graph URL (`?view=graph&id=...&d=2`) successfully.
 
 ## RE-05 — Scale & Quality Gate
 

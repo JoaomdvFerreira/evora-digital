@@ -75,6 +75,7 @@ function fakeProvider(): DataProvider {
       const detail = DETAILS[id];
       return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
     },
+    getEdges: () => Promise.resolve([]),
   };
 }
 
@@ -125,6 +126,7 @@ describe("loadProblemProjection", () => {
       getManifest: () => Promise.reject(new Error("not used")),
       listRecords: () => Promise.resolve(soloIndex),
       getRecord: () => Promise.resolve(soloDetail),
+      getEdges: () => Promise.resolve([]),
     };
 
     const projection = await loadProblemProjection(provider, buildRecordLookup(soloIndex), "PRB-9001");

@@ -4,6 +4,7 @@ import { Overview } from "./overview/Overview";
 import { RecordsExplorer } from "./records/RecordsExplorer";
 import { ProblemView } from "./problem/ProblemView";
 import { ReadingGuide } from "./guide/ReadingGuide";
+import { GraphExplorer } from "./graph/GraphExplorer";
 
 interface ExplorerProps {
   dataProvider: DataProvider;
@@ -29,6 +30,9 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
         <button type="button" aria-current={url.state.view === "records" ? "page" : undefined} onClick={() => url.setView("records")}>
           Registos
         </button>
+        <button type="button" aria-current={url.state.view === "graph" ? "page" : undefined} onClick={() => url.setView("graph")}>
+          Grafo
+        </button>
       </nav>
 
       <ReadingGuide schemaPrefixes={schemaPrefixes} />
@@ -45,6 +49,7 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
           typeFilter={url.state.typeFilter}
           onTypeFilterChange={url.setTypeFilter}
           onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
+          onViewInGraph={(id) => url.setViewAndSelection("graph", id)}
         />
       )}
 
@@ -54,6 +59,20 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
           problemId={url.state.selectedId}
           onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
           onBackToRecords={() => url.setView("records")}
+          onViewInGraph={(id) => url.setViewAndSelection("graph", id)}
+        />
+      )}
+
+      {url.state.view === "graph" && (
+        <GraphExplorer
+          dataProvider={dataProvider}
+          focusId={url.state.selectedId}
+          depth={url.state.graphDepth}
+          onFocusChange={url.setSelectedId}
+          onClearFocus={() => url.setSelectedId(null)}
+          onDepthChange={url.setGraphDepth}
+          onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
+          onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
         />
       )}
     </>

@@ -183,3 +183,51 @@ code {
   outline: 3px solid #1a5fb4;
   outline-offset: 1px;
 }
+
+.graph-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.graph-controls fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  border: 1px solid #ccc;
+}
+
+.graph-controls fieldset label {
+  white-space: nowrap;
+}
+
+.graph-canvas {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+
+.graph-legend {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.graph-legend-swatch {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  border-radius: 50%;
+  margin-right: 0.35em;
+}
+
+.graph-focus-panel {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  margin: 0.75rem 0;
+}

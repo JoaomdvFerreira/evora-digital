@@ -166,3 +166,46 @@ describe("StaticDataProvider.getRecord — record-ID safety", () => {
     await expect(provider.getRecord("PRB-0005")).rejects.toMatchObject({ kind: "malformed" });
   });
 });
+
+const VALID_EDGES = [
+  { id: "PRB-0005::evidence::0::EVD-0001", from: "PRB-0005", to: "EVD-0001", field: "evidence", ordinal: 0, required: false },
+];
+
+describe("StaticDataProvider.getEdges — RE-04 lazy loading", () => {
+  it("does not fetch edges.json as a side effect of getManifest() or listRecords()", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse(VALID_MANIFEST));
+    fetchMock.mockResolvedValueOnce(jsonResponse(VALID_INDEX));
+    const provider = new StaticDataProvider();
+    await provider.getManifest();
+    await provider.listRecords();
+    const urls = fetchMock.mock.calls.map((call) => String(call[0]));
+    expect(urls.some((u) => u.includes("edges.json"))).toBe(false);
+  });
+
+  it("loads edges.json only when getEdges() is explicitly called, and caches the result", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse(VALID_EDGES));
+    const provider = new StaticDataProvider();
+    const edges = await provider.getEdges();
+    expect(edges).toEqual(VALID_EDGES);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+
+    await provider.getEdges();
+    expect(fetchMock).toHaveBeenCalledTimes(1); // cached, no second fetch
+  });
+
+  it("rejects a malformed (non-array) edges.json", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse({ not: "an array" }));
+    const provider = new StaticDataProvider();
+    await expect(provider.getEdges()).rejects.toMatchObject({ kind: "malformed" });
+  });
+
+  it("does not cache a failed edges.json load — a subsequent call retries the network", async () => {
+    fetchMock.mockResolvedValueOnce(notFoundResponse());
+    const provider = new StaticDataProvider();
+    await expect(provider.getEdges()).rejects.toMatchObject({ kind: "missing" });
+
+    fetchMock.mockResolvedValueOnce(jsonResponse(VALID_EDGES));
+    const edges = await provider.getEdges();
+    expect(edges).toEqual(VALID_EDGES);
+  });
+});

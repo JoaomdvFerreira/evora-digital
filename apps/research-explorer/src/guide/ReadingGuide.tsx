@@ -57,6 +57,23 @@ export function ReadingGuide({ schemaPrefixes }: ReadingGuideProps) {
         que um apoia, contradiz ou causa o outro — esse significado só é apresentado quando estiver explicitamente codificado nos dados
         canónicos.
       </p>
+
+      <h3>Grafo</h3>
+      <p>
+        A vista de Grafo mostra o mesmo conjunto de referências, de forma visual e complementar — nunca a única forma de aceder a um
+        facto; os Registos e a vista de Problema continuam completos sem o Grafo. Por predefinição mostra apenas a vizinhança do registo
+        focado (1 ou 2 saltos), não o corpus inteiro.
+      </p>
+      <p>
+        As setas nas ligações indicam a direção da referência canónica (de quem referencia para quem é referenciado) — o mesmo sentido
+        de "Saídas"/"Entradas" descrito acima. A cor de um nó identifica o seu tipo de registo, mas nunca é o único indicador: cada nó
+        mostra sempre o seu identificador completo (com o prefixo do tipo) como rótulo, e a lista de nós e relações abaixo do grafo repete
+        a mesma informação em HTML normal, navegável pelo teclado.
+      </p>
+      <p>
+        Tal como no resto do Explorer, uma ligação no grafo <strong>não implica apoio, contradição ou causalidade</strong> — apenas que
+        um registo referencia outro através de um campo específico, visível ao inspecionar essa relação.
+      </p>
     </details>
   );
 }

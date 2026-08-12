@@ -1,4 +1,4 @@
-import { DataLoadError, type DataProvider, type ReadModelManifest, type RecordDetail, type RecordSummary } from "./types";
+import { DataLoadError, type DataProvider, type ReadModelManifest, type RecordDetail, type RecordEdge, type RecordSummary } from "./types";
 import { SUPPORTED_READ_MODEL_MAJOR, isReadModelVersionCompatible } from "./readModelCompatibility";
 
 const BUILD_DATA_COMMAND = "node apps/research-explorer/scripts/build-data.js (or run `npm run explorer`)";
@@ -108,6 +108,7 @@ function assertManifestShape(data: unknown): asserts data is ReadModelManifest {
 export class StaticDataProvider implements DataProvider {
   private manifestPromise: Promise<ReadModelManifest> | null = null;
   private indexPromise: Promise<RecordSummary[]> | null = null;
+  private edgesPromise: Promise<RecordEdge[]> | null = null;
 
   async getManifest(): Promise<ReadModelManifest> {
     if (!this.manifestPromise) {
@@ -169,5 +170,27 @@ export class StaticDataProvider implements DataProvider {
     }
 
     return fetchJson<RecordDetail>(`record-detail/${encodeURIComponent(id)}.json`, `record detail for "${id}"`);
+  }
+
+  /**
+   * Loads edges.json on first call and caches the result — never invoked by
+   * anything except the Graph view (RE-04), so a session that never opens
+   * Graph never fetches it (D7: neighbourhood mode over the full graph).
+   */
+  async getEdges(): Promise<RecordEdge[]> {
+    if (!this.edgesPromise) {
+      this.edgesPromise = fetchJson<unknown>("edges.json", "the Explorer edge set")
+        .then((data) => {
+          if (!Array.isArray(data)) {
+            throw new DataLoadError("edges.json is malformed: expected an array.", "malformed");
+          }
+          return data as RecordEdge[];
+        })
+        .catch((error: unknown) => {
+          this.edgesPromise = null;
+          throw error;
+        });
+    }
+    return this.edgesPromise;
   }
 }
