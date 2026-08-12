@@ -1,12 +1,12 @@
-# Évora Digital
+# Open Évora
 
-**Status:** Discovery Programme — D1 closed, D2 active  
+**Status:** Discovery Programme — D0–D4 closed, D5 (Stakeholder Validation) active  
 **Baseline:** v0.1  
-**Date:** 2026-08-11
+**Date:** 2026-08-12
 
 ## Mission
 
-Évora Digital identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
+Open Évora identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
 
 ## Priorities
 
@@ -19,9 +19,9 @@
 
 If priorities conflict, the higher priority takes precedence.
 
-## What Évora Digital is
+## What Open Évora is
 
-Évora Digital is a civic-tech discovery and delivery programme with two complementary tracks:
+Open Évora is a civic-tech discovery and delivery programme with two complementary tracks:
 
 ### Civic Problem Intelligence
 
@@ -70,17 +70,17 @@ Software is optional. A valid research outcome may be:
 ```text
 D0  Discovery Foundation                    CLOSED
 D1  Institutional & Data Source Mapping     CLOSED
-D2  Public Signal Discovery                 ACTIVE
-D3  Problem Map v1
-D4  Existing Solutions & Gap Analysis
-D5  Stakeholder Validation
+D2  Public Signal Discovery                 CLOSED
+D3  Problem Map v1                          CLOSED
+D4  Existing Solutions & Gap Analysis        CLOSED
+D5  Stakeholder Validation                  ACTIVE (M005, WU022 in progress)
 D6  Digital Tractability Assessment
 D7  Candidate Experiments
 D8  Project Selection
 D9  Outcome Review
 ```
 
-See `docs/milestones/D0-closure.md` for the D0 closure record and `docs/milestones/D1-WU07-closure.md` for the D1 closure record. `docs/milestones/D2-public-signal-discovery.md` is the active D2 milestone.
+See `docs/milestones/D0-closure.md` for the D0 closure record and `docs/milestones/D1-WU07-closure.md` for the D1 closure record. `docs/milestones/D5-stakeholder-challenge-validation.md` is the active D5 milestone (`M005`).
 
 No civic product has been selected for implementation.
 
@@ -103,6 +103,6 @@ See `docs/discovery/roadmap.md` for the programme roadmap and
 
 ## Licensing
 
-Évora Digital is intended to be public and open-source, with different licences for
+Open Évora is intended to be public and open-source, with different licences for
 software, original documentation/research, and third-party data. See `LICENSES.md`
 for the full policy and `LICENSE` for the Apache-2.0 text covering original software.

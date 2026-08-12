@@ -1,4 +1,4 @@
-# Évora Digital Charter
+# Open Évora Charter
 
 **Version:** 0.1  
 **Status:** Baseline draft  
@@ -6,11 +6,11 @@
 
 ## 1. Mission
 
-Évora Digital identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
+Open Évora identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
 
 ## 2. Programme objectives
 
-Évora Digital exists to:
+Open Évora exists to:
 
 1. build structured and verifiable knowledge about needs in Évora;
 2. identify problems where software has meaningful causal leverage;
@@ -53,7 +53,7 @@ Geographic scope is problem-dependent and may include:
 - intermunicipal area;
 - wider regional context.
 
-The label “Évora Digital” must not force a problem into an incorrect administrative boundary.
+The label “Open Évora” must not force a problem into an incorrect administrative boundary.
 
 ## 5. Two programme tracks
 
@@ -101,7 +101,7 @@ Discovery must not prematurely decide:
 - API technology;
 - microservice architecture;
 - authentication model;
-- branding;
+- product/visual branding (logo, domain, visual identity);
 - AI features.
 
 ## 7. Definition of value
@@ -127,7 +127,7 @@ No civic product should launch without a plausible maintenance model.
 
 Possible operators include:
 
-- Évora Digital community;
+- Open Évora community;
 - municipality;
 - university;
 - association;

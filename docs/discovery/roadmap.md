@@ -1,11 +1,11 @@
-# Évora Digital Discovery Roadmap
+# Open Évora Discovery Roadmap
 
 **Version:** 0.3  
 **Status:** Baseline draft; D3 direction canonicalized 2026-08-11 (`docs/discovery/d3-execution-protocol.md`); D4–D9 reconciled to the same Progressive Assurance model 2026-08-11
 
 ## Purpose
 
-The Discovery Roadmap moves Évora Digital from a broad intention to create civic value to a small set of evidence-backed, digitally tractable opportunities.
+The Discovery Roadmap moves Open Évora from a broad intention to create civic value to a small set of evidence-backed, digitally tractable opportunities.
 
 It deliberately separates discovery from product delivery.
 
@@ -208,7 +208,7 @@ Allowed intervention dispositions:
 - `NON_DIGITAL` — the appropriate intervention is primarily policy, operations, physical infrastructure, service capacity, training or another non-digital mechanism;
 - `ALREADY_SOLVED` — a sufficiently effective solution already exists; project creation would duplicate it;
 - `WATCH` — no intervention now; monitor named triggers;
-- `NO_INTERVENTION` — no credible intervention is justified for Évora Digital in the current framing.
+- `NO_INTERVENTION` — no credible intervention is justified for Open Évora in the current framing.
 
 Only after dispositions exist should D8 choose the first implementation candidate. Use MCDA or another explicit trade-off method only if multiple real alternatives remain, trade-offs are material, and informal comparison is no longer sufficient — do not introduce weighted scoring merely for formality.
 

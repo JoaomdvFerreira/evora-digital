@@ -147,4 +147,4 @@ Each source should progressively acquire:
 
 Presence in this registry means “investigate this source”.
 
-It does **not** mean that the source has been approved for republication through any future Évora Digital data service.
+It does **not** mean that the source has been approved for republication through any future Open Évora data service.

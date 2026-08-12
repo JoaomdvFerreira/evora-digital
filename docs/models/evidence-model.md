@@ -117,7 +117,7 @@ For a private primary engagement, `EVD.source.source_id` may be omitted when no 
 ```yaml
 type: stakeholder
 source:
-  publisher: "Évora Digital"
+  publisher: "Open Évora"
   title: "D5 stakeholder engagement — transport passenger"
   source_reference: "D5-ENG-001 — private research note, not public"
   published_at: null

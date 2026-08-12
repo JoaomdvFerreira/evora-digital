@@ -2,7 +2,7 @@
   "version": "0.8.0",
   "project": {
     "id": "PROJECT-001",
-    "name": "evora-digital",
+    "name": "open-evora",
     "objective": "Discovery and evidence-based civic problem intelligence for Évora, with an open civic data infrastructure track; no product implementation authorized yet",
     "targetUsers": [
       "residents, students, workers, businesses, public bodies, and visitors in Évora"

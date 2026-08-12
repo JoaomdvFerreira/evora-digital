@@ -163,11 +163,11 @@ Every `decision_gates.*` field takes one of `PASS` / `PARTIAL` / `FAIL` / `UNKNO
 
 ### 5.2 Decision routing
 
-`triage` describes **Évora Digital's project posture toward the problem, never a judgement of the underlying civic problem's worth.** A `STOP`/`WATCH` triage can and does coexist with high `civic_importance` — see `PRB-0009`/`ASM-0009` for the paradigm case (civic importance `PASS`, `digital_causality: FAIL`, triage `WATCH`).
+`triage` describes **Open Évora's project posture toward the problem, never a judgement of the underlying civic problem's worth.** A `STOP`/`WATCH` triage can and does coexist with high `civic_importance` — see `PRB-0009`/`ASM-0009` for the paradigm case (civic importance `PASS`, `digital_causality: FAIL`, triage `WATCH`).
 
 `triage` takes one of:
 
-- **`STOP`** — do not invest further Évora Digital discovery/intervention effort against the assessed problem in its current framing. Typical reasons: no meaningful digital/project leverage; the remaining gap is already addressed; evidence does not support further intervention; another actor/mechanism is clearly the appropriate route. This is a legitimate, closeable outcome, not a failure, and is never a statement that the civic problem does not matter.
+- **`STOP`** — do not invest further Open Évora discovery/intervention effort against the assessed problem in its current framing. Typical reasons: no meaningful digital/project leverage; the remaining gap is already addressed; evidence does not support further intervention; another actor/mechanism is clearly the appropriate route. This is a legitimate, closeable outcome, not a failure, and is never a statement that the civic problem does not matter.
 - **`WATCH`** — do not actively deepen or build now, but monitor a named trigger or current-state change, because the problem may change or a narrow actionable gap may emerge (e.g. `PRB-0009`-style operational conditions).
 - **`DEEPEN`** — a named decision gate is blocked by a critical unknown; collect only the targeted evidence needed to resolve it, via the cheapest credible next-evidence method (§7), not automatically the heaviest one.
 - **`PROCEED`** — sufficient understanding exists to hand the problem to D4 (existing-solutions/gap analysis) or D5 (formal validation). `PROCEED` is **not** authorization to build software.

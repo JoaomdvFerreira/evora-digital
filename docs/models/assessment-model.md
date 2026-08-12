@@ -78,7 +78,7 @@ notes: ""
 
 Every `decision_gates.*` field distinguishes `PARTIAL` from `UNKNOWN` (added `WU-D3-03`): `PARTIAL` means meaningful evidence exists but falls short of passing the gate; `UNKNOWN` means there is nothing to characterize the gate with at all. `contradiction_status` measures the degree of contradiction present in the evidence base (`LOW` = coherent, `HIGH` = substantial unresolved contradiction), not the assessor's confidence in that call.
 
-`triage` describes Évora Digital's project posture toward a problem, never a judgement of the problem's civic worth — a low-leverage, high-importance problem is the paradigm case `STOP`/`WATCH` exist for, not a contradiction to avoid. See `docs/discovery/d3-execution-protocol.md` §5.2 for the full triage definitions.
+`triage` describes Open Évora's project posture toward a problem, never a judgement of the problem's civic worth — a low-leverage, high-importance problem is the paradigm case `STOP`/`WATCH` exist for, not a contradiction to avoid. See `docs/discovery/d3-execution-protocol.md` §5.2 for the full triage definitions.
 
 `triage` and every `decision_gates.*`/`structure_action` value is a human/project-owner analytical judgement. No tooling may assign or infer these values automatically — see `docs/discovery/d3-execution-protocol.md` §6 for the deterministic-analyzer constraints this implies.
 

@@ -5,7 +5,7 @@
 
 ## 1. Principle
 
-Évora Digital researches problems, not people.
+Open Évora researches problems, not people.
 
 The programme should retain only the personal information necessary to understand and validate a civic problem.
 
@@ -103,7 +103,7 @@ Public data layer
 
 ## 9. Research transparency
 
-Where practical, published Évora Digital research should explain:
+Where practical, published Open Évora research should explain:
 
 - what source classes were used;
 - major known biases;
