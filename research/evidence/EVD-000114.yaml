@@ -1,0 +1,38 @@
+evidence_id: EVD-000114
+type: stakeholder
+source:
+  publisher: "Open Évora"
+  title: "D5 stakeholder engagement — accessibility programme actor (APCE)"
+  source_reference: "D5-ENG-OP-003 — private research note, not public"
+  published_at: null
+  retrieved_at: "2026-08-12"
+geography:
+  level: city
+  area: "Évora Historic Centre"
+population:
+  - "people with disabilities"
+domain:
+  - "ACC"
+  - "ECO"
+observation:
+  summary: "APCE reports a separate, ongoing accessibility-to-shops programme in Évora's Historic Centre, run initially with Associação Comercial and later continued with NERE, using seals that represent a shop's accessibility level as part of a continuous-improvement approach. APCE states the activity began as a project and continues as ongoing work, rather than being a completed one-off exercise. This is APCE's own account of NERE's involvement; it is not confirmation from NERE, whose own D5 outreach response (D5-OP-006) is still pending."
+evidence_nature: fact
+strength: primary-non-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "D5-OP-003 (WU022) response, received 2026-08-12. Distinct programme from Acesso Universal 1.3 (municipal public space / cultural facilities, lineage ACC-2025-APCE-ACESSO-UNIVERSAL-1.3, EVD-000085/086/104): this one targets private commercial premises (shops) in the Historic Centre and uses a graded-seal continuous-improvement mechanism rather than a location-by-location municipal inventory — a second, EXISTING-SOLUTION track for PRB-0003, not a duplicate of the municipal-facilities work. Shares analysis.lineage_id D5-ENG-OP-003 with EVD-000112 and EVD-000113 (same engagement). NERE triangulation note: this is the first corpus record connecting NERE to accessibility/PRB-0003 — all prior NERE-referencing records (EVD-000048, EVD-000051, EVD-000101/102, ASM-0008) concern PRB-0008 (employment/skills alignment) and are unrelated in domain. This finding is reported by APCE only and must not be read as NERE confirming or describing its own role; NERE's D5-OP-006 outreach (docs/milestones/D5-WU01-operator-challenge-progress.md) remains SENT/pending response. No coverage, uptake, or effectiveness data for the seal programme was provided — do not treat this as evidence that the seals measurably improve shop accessibility, only that the programme exists and is ongoing."
+
+analysis:
+  related_problems:
+    - "PRB-0003"
+  contribution:
+    - "EXISTING-SOLUTION"
+    - "CURRENT-STATE-UPDATE"
+  friction_types:
+    - "PHYSICAL"
+    - "INFORMATION"
+  lineage_id: "D5-ENG-OP-003"
+  representativeness: "LIMITED"
+  verification: "REPORTED"
+  temporal_relevance: "CURRENT"
