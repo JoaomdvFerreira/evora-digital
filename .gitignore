@@ -6,4 +6,6 @@ Thumbs.db
 node_modules/
 /prompts
 /apps/research-explorer/generated/
+/apps/research-explorer/.generated.tmp-*/
+/apps/research-explorer/.generated.backup-*/
 /apps/research-explorer/spike/generated/
