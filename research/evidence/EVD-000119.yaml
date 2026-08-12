@@ -1,0 +1,37 @@
+evidence_id: EVD-000119
+type: institutional
+source:
+  source_id: SRC-0103
+  publisher: "Município de Évora"
+  title: "Plano de Mobilidade Urbana Sustentável de Évora - Volume I (diagnosis)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.I.pdf"
+  published_at: 2025-09
+  retrieved_at: 2026-08-12
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "current and potential cyclists"
+domain:
+  - "MOB"
+  - "URB"
+observation:
+  summary: "PMUSE Volume I maps (Figura 85) a proposed cycling-network expansion, based on a 2017 municipal proposal, of approximately 18km of new exclusively-cycling axes plus 33km of 'Grande Rota do Montado' shared pedestrian-cycling route. The plan's own text flags that the eastern side of the city (including the connection to Escola 2,3 André de Resende) remains outside the proposal and would need further study."
+evidence_nature: claim
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02B1. Proposed, not built, infrastructure — must not be read as current network extent. The proposal itself dates to 2017 and is represented in cartography sourced to 2020; no evidence in this record establishes how much of it has since been delivered."
+
+analysis:
+  related_problems:
+    - "PRB-0004"
+  contribution:
+    - "PLANNED-SOLUTION"
+  friction_types:
+    - "PHYSICAL"
+  lineage_id: "MOB-2025-09-PMUSE-DIAGNOSIS-STRATEGY"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

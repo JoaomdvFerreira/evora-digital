@@ -1,0 +1,39 @@
+evidence_id: EVD-000118
+type: institutional
+source:
+  source_id: SRC-0103
+  publisher: "Município de Évora"
+  title: "Plano de Mobilidade Urbana Sustentável de Évora - Volume I (diagnosis)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.I.pdf"
+  published_at: 2025-09
+  retrieved_at: 2026-08-12
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "current and potential cyclists"
+domain:
+  - "MOB"
+  - "URB"
+  - "GEO"
+observation:
+  summary: "PMUSE Volume I contains official municipal cartography of the existing cycling network (Figura 73), distinguishing exclusively-cycling infrastructure (~8.5km across four segments, Figura 74) from shared pedestrian-cycling paths (~120km, mostly the recreational Percursos de Monfurado and Ecopista do Ramal de Mora), and a network-typology map (Figura 78). The accompanying text reiterates that the current network is reduced in extent and spatially discontinuous, not connecting to most relevant facilities/services/residential areas. All three figures are captioned 'Fonte: Câmara Municipal de Évora, 2020' despite the report's 2025-09 publication date."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02B1 (docs/discovery/rs-01-evidence-gap-review.md Gap 7). Establishes that official municipal cycling-network cartography publicly exists (a materially stronger finding than the prior bounded audit in ASM-0004, which located only the non-authoritative ciclovia.pt inventory). Does NOT establish that a current, machine-readable, publicly downloadable/reusable dataset exists — this is a plan-document figure, not a confirmed open-data layer, and its own source citation dates the underlying cartography to 2020. Reinforces, rather than newly establishes, EVD-000005's discontinuity finding (same underlying diagnosis, both institutional-planning voice)."
+
+analysis:
+  related_problems:
+    - "PRB-0004"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "PHYSICAL"
+    - "INFORMATION"
+  lineage_id: "MOB-2025-09-PMUSE-DIAGNOSIS-STRATEGY"
+  representativeness: "DESIGNED_REPRESENTATIVE"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

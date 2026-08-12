@@ -1,0 +1,36 @@
+evidence_id: EVD-000120
+type: institutional
+source:
+  source_id: SRC-0104
+  publisher: "Município de Évora"
+  title: "Regulamento Municipal de Cedência e Utilização de Cartografia Digital"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2020/07/regulamento-municipal-de-cedencia-e-utilizacao-de-cartografia-digital.pdf"
+  published_at: "2020-12"
+  retrieved_at: 2026-08-12
+geography:
+  level: municipality
+  area: "Município de Évora"
+population:
+  - "cartography/data requesters (professionals, institutions, general public)"
+domain:
+  - "GEO"
+  - "URB"
+observation:
+  summary: "The Municipality's digital-cartography transfer regulation states that information is supplied in the formats: dwg, shp, ecw and pdf. This confirms structured-geospatial (SHP) supply capability exists, through a formal case-by-case request (cedência) process, not as an open/self-service dataset or public API."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02B1 (docs/discovery/rs-01-evidence-gap-review.md Gap 7). General-purpose municipal cartography-supply capability, not specific to the cycling network — does not itself confirm that a current cycling-network SHP layer exists, is current, or has ever been requested/supplied. Complements SRC-0006/SRC-0007 (municipal/CIMAC geographic-portal and GIS infrastructure), which already establish municipal GIS capability at the infrastructure level; this record adds the specific, request-based format/licensing mechanism."
+
+analysis:
+  related_problems:
+    - "PRB-0004"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  representativeness: "NOT_APPLICABLE"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

@@ -1,0 +1,39 @@
+evidence_id: EVD-000123
+type: institutional
+source:
+  source_id: SRC-0103
+  publisher: "Município de Évora"
+  title: "Plano de Mobilidade Urbana Sustentável de Évora - Volume I (diagnosis)"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2025/09/PMUSE_V.I.pdf"
+  published_at: 2025-09
+  retrieved_at: 2026-08-12
+geography:
+  level: city
+  area: "Évora city"
+population:
+  - "public-transport users"
+  - "people with reduced mobility / sensory impairments"
+domain:
+  - "MOB"
+  - "DIG"
+  - "ACC"
+observation:
+  summary: "PMUSE Volume I documents heterogeneous physical bus-stop information: unsheltered stops carry only a single blue/white plate identifying the operator and line, while sheltered stops carry a panel showing lines/stops/timetables — but the plan itself states this panel lacks accessibility elements (e.g. braille, audio announcements) needed for universal accessibility."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02B1 (docs/discovery/rs-01-evidence-gap-review.md Gap 5). Refines PRB-0002's information-consistency question with a concrete, institutionally-documented physical-channel gap: static stop information is not uniform across the network, and where it exists it is not accessibility-complete. Does not itself establish which stops/lines are affected or how material this is to a real passenger journey — that remains D5/WU023 territory. Distinct fact from TREVO's own digital channels (EVD-000016); this is physical/on-street information, not the website/app."
+
+analysis:
+  related_problems:
+    - "PRB-0002"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  lineage_id: "MOB-2025-09-PMUSE-DIAGNOSIS-STRATEGY"
+  representativeness: "UNKNOWN"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"
