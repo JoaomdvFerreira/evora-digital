@@ -2,7 +2,7 @@ assessment_id: ASM-0007
 
 problem: PRB-0007
 
-as_of: "2026-08-11"
+as_of: "2026-08-12"
 
 phase: D3
 
@@ -10,7 +10,7 @@ assessment_status: CURRENT
 
 evidence_confidence:
   overall: MEDIUM
-  independence: LOW
+  independence: MEDIUM
   coherence: HIGH
   adequacy: MEDIUM
   relevance: HIGH
@@ -45,7 +45,7 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "When a person first becomes a caregiver, where do they actually start looking for help, and where does that path break down?"
+    question: "When a caregiver in Évora needs support for the first time, where do they begin, which entities/services do they navigate, where does friction occur, and where does the journey break down?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
@@ -68,6 +68,6 @@ critical_unknowns:
 
 triage: DEEPEN
 
-next_action: "Commission formative caregiver-journey research (D3) focused on the actual support-seeking path, plus a 2026-27 plan implementation-status check, before treating navigation friction as sufficiently understood for D5 validation."
+next_action: "Obtain direct formative evidence of the Évora first-time caregiver support-seeking journey (a future WU023 candidate if still needed after the open D5 institutional route), plus a 2026-27 plan implementation-status check, before treating navigation friction as sufficiently understood."
 
-notes: "Evidence base: 8/8 linked EVD annotated. Lineage stress test (primary pilot purpose for PRB-0007): 6 of 8 EVD (EVD-000034, EVD-000044, EVD-000089, EVD-000090, EVD-000091, EVD-000092) share exactly one lineage_id (SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS — all draw from the same Plano Concelhio dos Cuidadores Informais document/study, source_id SRC-0030); only EVD-000036 (CLASE network listing, SRC-0031) and EVD-000045 (ULSAC service description, SRC-0038) are genuinely independent of that lineage. evidence_confidence.independence is therefore LOW despite 8 linked records — 3 effective evidentiary threads, not 8. This directly demonstrates why raw EVD count must not be read as corroboration strength. remaining_gap=PARTIAL deliberately keeps 'we understand what exists' (existing_solution_understanding=SUFFICIENT) separate from 'we know whether it works' (unresolved, per EVD-000044/EVD-000045's institutional description of a planned-not-yet-verified response — EVD-000092.analysis.contribution corrected CONFIRMS+EXISTING-SOLUTION -> CONFIRMS+PLANNED-SOLUTION in WU-D3-03 to reflect exactly this distinction). decision_gates.civic_importance/root_cause_understood/remaining_gap_supported updated UNKNOWN -> PARTIAL in WU-D3-03 per the WU015 pilot-review MODIFY resolution (meaningful-but-incomplete evidence existed for these gates; PARTIAL was not available when this ASM was first drafted). No PRB-0007.validation_status change; navigation friction is not elevated above the larger, better-ranked care/respite/financial/psychological needs recorded in EVD-000090 (kept out of the analysis.contribution enum per the D3 v1.1 exclusion list, but preserved verbatim in EVD-000090's own notes)."
+notes: "RS-02B2 update: EVD-000124 adds one independent CAPP/ISCSP/Universidade de Lisboa lineage to the local Plan/CLASE/ULSAC evidence base. It directionally corroborates information/training, access, coordination, guidance/reference-professional and bureaucracy/information difficulties at broader Portuguese context, but the July 2021 400-person study is non-probability/convenience, includes only 27 Alentejo respondents, and is not Évora-specific. It therefore does not establish Évora prevalence, causal mechanisms, actual first-contact journeys, current local service performance or an appropriate digital response. independence is revised LOW → MEDIUM because the record is a genuinely independent fourth evidentiary thread; overall confidence remains MEDIUM, currentness HIGH, all civic-importance values, journey_understanding INSUFFICIENT, gates, remaining_gap, triage and validation status are deliberately unchanged. The strongest residual is an AFFECTED_JOURNEY question for future WU023, not work started by this integration. Evidence base: 9/9 linked EVD annotated. The prior local-lineage caution remains: EVD-000034, EVD-000044, EVD-000089, EVD-000090, EVD-000091 and EVD-000092 share SOC-2025-PLANO-CONCELHIO-CUIDADORES-INFORMAIS; EVD-000036, EVD-000045 and EVD-000124 are distinct threads. remaining_gap=PARTIAL deliberately separates knowing what exists from evidence that it works. Navigation friction is not elevated above care/respite/financial/psychological needs recorded in EVD-000090."

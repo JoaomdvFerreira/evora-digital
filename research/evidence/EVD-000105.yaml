@@ -6,7 +6,7 @@ source:
   title: "Via Verde Estacionar — Parking Buddy predictive parking-availability feature"
   source_reference: "https://www.viaverde.pt (Via Verde Estacionar product pages)"
   published_at: null
-  retrieved_at: 2026-08-11
+  retrieved_at: 2026-08-12
 geography:
   level: city
   area: "Évora (Via Verde Estacionar street-parking service area; per-zone Parking Buddy coverage not independently verified)"
@@ -22,7 +22,7 @@ strength: primary-authoritative
 personal_data:
   present: false
   retained: false
-notes: "This is the provider's own product description, not independent verification. Coverage, accuracy, and actual adoption of the Parking Buddy prediction layer for the specific Évora zones relevant to PRB-0005 are NOT established by this public-page review — do not claim verified Évora Parking Buddy coverage/accuracy. Carried forward as D5-P5-02 (docs/milestones/D4-WU01-PRB0005-progress.md)."
+notes: "RS-02B2 directly re-verified the current provider pages on 2026-08-12: Parking Buddy is a map/location-driven parking-probability capability, not merely a payment function; Via Verde Estacionar lists Évora for street-parking service. This remains the provider's own product description, not independent verification. Coverage, accuracy, and actual adoption of the Parking Buddy prediction layer for the specific Évora zones relevant to PRB-0005 are NOT established by this public-page review — do not claim verified Évora Parking Buddy coverage/accuracy. Municipal tariff-zone/payment information is already captured by SRC-0022/EVD-000021. Carried forward as D5-P5-02 (docs/milestones/D4-WU01-PRB0005-progress.md)."
 
 analysis:
   related_problems:

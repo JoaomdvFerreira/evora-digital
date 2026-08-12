@@ -25,7 +25,7 @@ licensing:
 freshness:
   update_frequency: unknown
   last_source_update: null
-  last_checked: 2026-08-11
+  last_checked: 2026-08-12
   status: UNKNOWN
 
 canonical_source: true
@@ -33,4 +33,4 @@ canonical_source: true
 api_candidate:
   potential: "unknown - proprietary consumer feature; no public data/API for the underlying prediction established by this review"
 
-notes: "Via Verde Estacionar's product pages describe a 'Parking Buddy' feature (map-based destination search, green/yellow/red probability of finding street/private parking, updates approximately every 30 minutes, prediction based on Via Verde historical parking data plus external factors such as weather and sporting/cultural events, forecasts up to 48 hours ahead) and list Évora among the municipalities where its street-parking payment service is available. This review did not independently verify Parking Buddy's coverage or accuracy for specific Évora zones — see EVD-000105."
+notes: "RS-02B2 re-verified directly 2026-08-12. Via Verde Estacionar's product pages describe a 'Parking Buddy' feature (map-based destination search, green/yellow/red probability of finding street/private parking, updates approximately every 30 minutes, prediction based on Via Verde historical parking data plus external factors such as weather and sporting/cultural events, forecasts up to 48 hours ahead) and list Évora among the municipalities where its street-parking payment service is available. This review did not independently verify Parking Buddy's coverage or accuracy for specific Évora zones — see EVD-000105."
