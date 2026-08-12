@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { DataProvider } from "./dataProvider/types";
 import { StaticDataProvider } from "./dataProvider/StaticDataProvider";
 import { loadExplorerStartupState, type ExplorerStartupState } from "./startup";
-import { RecordsExplorer } from "./records/RecordsExplorer";
+import { Explorer } from "./Explorer";
 
 const defaultProvider: DataProvider = new StaticDataProvider();
 
@@ -34,32 +34,37 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
   }, [dataProvider]);
 
   return (
-    <main>
-      <h1>Open Évora Research Explorer</h1>
+    <>
+      <a className="skip-link" href="#main-content">
+        Saltar para o conteúdo
+      </a>
+      <main id="main-content">
+        <h1>Open Évora Research Explorer</h1>
 
-      {state.status === "loading" && (
-        <p role="status" aria-live="polite">
-          A carregar modelo de leitura gerado…
-        </p>
-      )}
-
-      {state.status === "error" && (
-        <div role="alert">
-          <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o Explorer"}</h2>
-          <p>{state.error.message}</p>
-        </div>
-      )}
-
-      {state.status === "ready" && (
-        <>
-          <p className="manifest-summary">
-            Corpus: {state.manifest.totalRecords} registos · versão do modelo {state.manifest.readModelVersion} · gerado em{" "}
-            <time dateTime={state.manifest.generatedAt}>{state.manifest.generatedAt}</time>
+        {state.status === "loading" && (
+          <p role="status" aria-live="polite">
+            A carregar modelo de leitura gerado…
           </p>
-          <RecordsExplorer dataProvider={dataProvider} />
-        </>
-      )}
-    </main>
+        )}
+
+        {state.status === "error" && (
+          <div role="alert">
+            <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o Explorer"}</h2>
+            <p>{state.error.message}</p>
+          </div>
+        )}
+
+        {state.status === "ready" && (
+          <>
+            <p className="manifest-summary">
+              Corpus: {state.manifest.totalRecords} registos · versão do modelo {state.manifest.readModelVersion} · gerado em{" "}
+              <time dateTime={state.manifest.generatedAt}>{state.manifest.generatedAt}</time>
+            </p>
+            <Explorer dataProvider={dataProvider} />
+          </>
+        )}
+      </main>
+    </>
   );
 }
 

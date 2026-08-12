@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { DataProvider, RecordDetail, RecordEdgeRef, RecordSummary } from "../dataProvider/types";
 import { useRecordDetail } from "./useRecordDetail";
 import { RecordFieldTree } from "./RecordFieldTree";
@@ -102,6 +103,19 @@ interface RecordDetailPanelProps {
  */
 export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect }: RecordDetailPanelProps) {
   const state = useRecordDetail(dataProvider, selectedId);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const readyId = state.status === "ready" ? state.detail.id : null;
+
+  // Move focus onto the freshly-loaded detail content whenever the selected
+  // record actually changes (table-row click, relationship navigation, or a
+  // URL/back-forward-driven selection) — so keyboard/AT users land on the
+  // new content instead of it silently appearing off-screen from their
+  // current focus position.
+  useEffect(() => {
+    if (readyId !== null) {
+      contentRef.current?.focus();
+    }
+  }, [readyId]);
 
   return (
     <section aria-labelledby="detail-heading" className="record-detail-panel">
@@ -122,7 +136,11 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect }
         </div>
       )}
 
-      {state.status === "ready" && <RecordDetailContent detail={state.detail} lookup={lookup} onSelect={onSelect} />}
+      {state.status === "ready" && (
+        <div ref={contentRef} tabIndex={-1} aria-label={`Detalhe de ${state.detail.id}`}>
+          <RecordDetailContent detail={state.detail} lookup={lookup} onSelect={onSelect} />
+        </div>
+      )}
     </section>
   );
 }

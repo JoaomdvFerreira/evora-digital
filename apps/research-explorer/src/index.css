@@ -19,10 +19,60 @@ main {
   font-size: 0.9rem;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  color: #111;
+  padding: 0.5rem 1rem;
+  border: 2px solid #1a5fb4;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+nav[aria-label="Vistas do Explorer"] {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+nav[aria-label="Vistas do Explorer"] button {
+  background: none;
+  border: 1px solid transparent;
+  font: inherit;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
+  border-color: #111;
+  font-weight: bold;
+}
+
+/* Desktop-first split view; stacks on narrower laptop/tablet widths rather
+   than compressing both panes unreadably. */
 .records-explorer {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .records-explorer {
+    flex-direction: column;
+  }
+
+  .record-detail-panel {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .records-table {

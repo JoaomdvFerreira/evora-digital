@@ -2,17 +2,9 @@ import { describe, expect, it } from "vitest";
 import { initialRecordsControllerState, recordsControllerReducer } from "./recordsController";
 
 describe("recordsControllerReducer", () => {
-  it("resets pageIndex to 0 when the query changes while on a later page", () => {
+  it("RESET_PAGE resets pageIndex to 0 (caller dispatches this on query/type-filter change)", () => {
     const onPage2 = { ...initialRecordsControllerState, pagination: { pageIndex: 2, pageSize: 25 } };
-    const result = recordsControllerReducer(onPage2, { type: "SET_QUERY", query: "evora" });
-    expect(result.query).toBe("evora");
-    expect(result.pagination.pageIndex).toBe(0);
-  });
-
-  it("resets pageIndex to 0 when the type filter changes while on a later page", () => {
-    const onPage3 = { ...initialRecordsControllerState, pagination: { pageIndex: 3, pageSize: 25 } };
-    const result = recordsControllerReducer(onPage3, { type: "SET_TYPE_FILTER", typeFilter: "PRB-" });
-    expect(result.typeFilter).toBe("PRB-");
+    const result = recordsControllerReducer(onPage2, { type: "RESET_PAGE" });
     expect(result.pagination.pageIndex).toBe(0);
   });
 
@@ -26,6 +18,6 @@ describe("recordsControllerReducer", () => {
   it("SET_PAGE_INDEX updates only the page index", () => {
     const result = recordsControllerReducer(initialRecordsControllerState, { type: "SET_PAGE_INDEX", pageIndex: 5 });
     expect(result.pagination.pageIndex).toBe(5);
-    expect(result.query).toBe(initialRecordsControllerState.query);
+    expect(result.sorting).toEqual(initialRecordsControllerState.sorting);
   });
 });

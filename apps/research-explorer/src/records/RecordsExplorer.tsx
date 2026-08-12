@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { DataProvider } from "../dataProvider/types";
 import { useRecordIndex } from "./useRecordIndex";
 import { RecordsTable } from "./RecordsTable";
@@ -11,15 +10,33 @@ const ERROR_TITLES: Record<string, string> = {
   network: "Falha ao carregar os registos",
 };
 
+interface RecordsExplorerProps {
+  dataProvider: DataProvider;
+  selectedId: string | null;
+  onSelect: (id: string) => void;
+  query: string;
+  onQueryChange: (query: string) => void;
+  typeFilter: string;
+  onTypeFilterChange: (typeFilter: string) => void;
+}
+
 /**
- * The RE-02B primary workflow: Registos (search/select) -> lazy-loaded
- * generic detail -> relationships -> navigation to a related record — all
- * through the DataProvider boundary, split-view (table + persistent detail
- * panel), no modal.
+ * The RE-02B/RE-02C primary workflow: Registos (search/select, URL-synced)
+ * -> lazy-loaded generic detail -> relationships -> navigation to a related
+ * record — all through the DataProvider boundary, split-view (table +
+ * persistent detail panel), no modal. Selection/query/type-filter are
+ * controlled by the caller (useExplorerUrlState) so they are bookmarkable.
  */
-export function RecordsExplorer({ dataProvider }: { dataProvider: DataProvider }) {
+export function RecordsExplorer({
+  dataProvider,
+  selectedId,
+  onSelect,
+  query,
+  onQueryChange,
+  typeFilter,
+  onTypeFilterChange,
+}: RecordsExplorerProps) {
   const indexState = useRecordIndex(dataProvider);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   if (indexState.status === "loading") {
     return (
@@ -40,8 +57,16 @@ export function RecordsExplorer({ dataProvider }: { dataProvider: DataProvider }
 
   return (
     <div className="records-explorer">
-      <RecordsTable records={indexState.records} selectedId={selectedId} onSelect={setSelectedId} />
-      <RecordDetailPanel dataProvider={dataProvider} lookup={indexState.lookup} selectedId={selectedId} onSelect={setSelectedId} />
+      <RecordsTable
+        records={indexState.records}
+        selectedId={selectedId}
+        onSelect={onSelect}
+        query={query}
+        onQueryChange={onQueryChange}
+        typeFilter={typeFilter}
+        onTypeFilterChange={onTypeFilterChange}
+      />
+      <RecordDetailPanel dataProvider={dataProvider} lookup={indexState.lookup} selectedId={selectedId} onSelect={onSelect} />
     </div>
   );
 }

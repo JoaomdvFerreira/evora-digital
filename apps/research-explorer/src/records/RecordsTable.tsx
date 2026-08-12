@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from "react";
+import { useEffect, useMemo, useReducer } from "react";
 import { flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table";
 import type { RecordSummary } from "../dataProvider/types";
 import { recordColumns } from "./columns";
@@ -9,24 +9,48 @@ interface RecordsTableProps {
   records: RecordSummary[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  query: string;
+  onQueryChange: (query: string) => void;
+  typeFilter: string;
+  onTypeFilterChange: (typeFilter: string) => void;
 }
 
 /**
  * The generic Records table: universal ID/Type/Label/Ficheiro columns only —
  * no SRC-/EVD-/PRB-/ASM-/HYP- specific columns (see columns.ts) — search,
  * type filter, client-side sort/paginate via TanStack Table's own row
- * models. Owns only source state (query, typeFilter, sorting, pagination —
- * via recordsControllerReducer); filtered/sorted/paginated data is always
- * derived, never stored redundantly.
+ * models. `query`/`typeFilter` are controlled by the caller (URL-synced,
+ * RE-02C); sorting/pagination remain locally owned here (recordsController).
+ * Filtered/sorted/paginated data is always derived, never stored
+ * redundantly.
  */
-export function RecordsTable({ records, selectedId, onSelect }: RecordsTableProps) {
+export function RecordsTable({
+  records,
+  selectedId,
+  onSelect,
+  query,
+  onQueryChange,
+  typeFilter,
+  onTypeFilterChange,
+}: RecordsTableProps) {
   const [state, dispatch] = useReducer(recordsControllerReducer, initialRecordsControllerState);
 
   const types = useMemo(() => availableRecordTypes(records), [records]);
+  // A type filter value that no longer exists in the loaded data (e.g. a
+  // stale/invalid URL) degrades safely to "all", rather than filtering to an
+  // empty set or leaving a <select> with no matching option.
+  const effectiveTypeFilter = typeFilter === ALL_TYPES || types.includes(typeFilter) ? typeFilter : ALL_TYPES;
+
   const filtered = useMemo(
-    () => filterRecords(records, { query: state.query, typeFilter: state.typeFilter }),
-    [records, state.query, state.typeFilter]
+    () => filterRecords(records, { query, typeFilter: effectiveTypeFilter }),
+    [records, query, effectiveTypeFilter]
   );
+
+  // Query/type-filter changes alter set membership, so the current page
+  // position is no longer meaningful.
+  useEffect(() => {
+    dispatch({ type: "RESET_PAGE" });
+  }, [query, effectiveTypeFilter]);
 
   const table = useReactTable({
     data: filtered,
@@ -55,18 +79,14 @@ export function RecordsTable({ records, selectedId, onSelect }: RecordsTableProp
           <input
             id="records-search"
             type="search"
-            value={state.query}
-            onChange={(event) => dispatch({ type: "SET_QUERY", query: event.target.value })}
+            value={query}
+            onChange={(event) => onQueryChange(event.target.value)}
             placeholder="ID, tipo, rótulo…"
           />
         </div>
         <div>
           <label htmlFor="records-type-filter">Tipo</label>
-          <select
-            id="records-type-filter"
-            value={state.typeFilter}
-            onChange={(event) => dispatch({ type: "SET_TYPE_FILTER", typeFilter: event.target.value })}
-          >
+          <select id="records-type-filter" value={effectiveTypeFilter} onChange={(event) => onTypeFilterChange(event.target.value)}>
             <option value={ALL_TYPES}>Todos</option>
             {types.map((type) => (
               <option key={type} value={type}>
@@ -131,7 +151,7 @@ export function RecordsTable({ records, selectedId, onSelect }: RecordsTableProp
             <button type="button" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
               Anterior
             </button>
-            <span>
+            <span aria-live="polite">
               Página {table.getState().pagination.pageIndex + 1} de {Math.max(table.getPageCount(), 1)}
             </span>
             <button type="button" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
