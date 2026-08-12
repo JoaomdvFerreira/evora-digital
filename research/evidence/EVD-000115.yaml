@@ -1,0 +1,37 @@
+evidence_id: EVD-000115
+type: institutional
+source:
+  source_id: SRC-0099
+  publisher: "EURES / European Commission"
+  title: "EURES — Labour Market Information: Portugal"
+  source_reference: "https://eures.europa.eu/living-and-working/labour-market-information/labour-market-information-portugal_en"
+  published_at: unknown
+  retrieved_at: 2026-08-12
+geography:
+  level: regional
+  area: "Alentejo region"
+population:
+  - "employers"
+  - "job seekers"
+domain:
+  - "EMP"
+  - "ECO"
+observation:
+  summary: "EURES' Portugal labour-market information page names recruitment-need/shortage occupations for the Alentejo region: agronomists, software programmers, agricultural-machinery repairers/operators, seasonal agricultural workers (fruit harvesting), electromechanical/electrical maintenance technicians, chefs, meat cutters and construction workers, attributed to agriculture, tourism, renewable energy and processing-industry activity across the region."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02A (docs/discovery/rs-01-evidence-gap-review.md Gap 17). This is regional-level (Alentejo, ~35% of national territory, ~4.5% of national population) shortage-occupation evidence, materially stronger than the prior IEFP vacancy-snapshot evidence (EVD-000049, EVD-000101) because it is a named shortage list rather than an advertised-listing count. It does NOT establish that these occupations are hard-to-fill specifically within the Évora municipality — the page does not isolate municipality-level data, and Alentejo spans many municípios with materially different economies (e.g. coastal tourism, Baixo Alentejo agriculture) from Évora's own mix. Do not generalise these occupations onto Évora without municipality-specific corroboration."
+
+analysis:
+  related_problems:
+    - "PRB-0008"
+  contribution:
+    - "REFINES"
+  friction_types:
+    - "INFORMATION"
+  representativeness: "LIMITED"
+  verification: "VERIFIED"
+  temporal_relevance: "CURRENT"

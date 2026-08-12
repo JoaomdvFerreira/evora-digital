@@ -15,6 +15,7 @@ possible_root_causes:
   - "Batch B update: current intermunicipal evidence shows substantial territorial coverage and use of flexible transport to cover some low-demand locations, so lack of coverage should not be generalized to all of Évora. The problem should continue to distinguish urban TREVO time-of-day/service-pattern issues, intermunicipal/rural network adequacy, and schedule alignment/frequency as separate sub-issues rather than one assumed root cause."
   - "Batch C update: current urban ridership is materially recovering (876,148 passengers in 2025, up 90,522 over 2024, still 1.9% below pre-pandemic) with practically full daytime coverage but reduced night/weekend/holiday response, taxi-based flexible transport for named low-demand locations, and 94% intermunicipal TPAC/TPF coverage excluding the urban network. Do not interpret as general lack of geographic network coverage or as a confirmed digital problem. Next validation (D2/D5) should focus on evenings/weekends, low-demand areas, commuting/school journeys, and schedule alignment."
   - "D2-A Round A update: a March 2026 student protest at Colégio Pedro da Fonseca (EVD-000079) provides a concrete journey where frequency/capacity/practical travel time make public transport unusable for a specific campus/industrial-zone commute, materially strengthening and refining this problem toward availability/frequency/capacity/practical-journey-time constraints rather than a generic transport-availability claim. Current TREVO complaint-surface incidents (EVD-000080) add operational reliability failure modes (delayed/no-show buses, service interruption). No PRB-0001 status/tractability change; evidence remains reported experience, not verified operational fact. Representativeness UNKNOWN."
+  - "RS-02A update (2026-08-12): the 2022 and 2023 municipal transport-authority annual reports (EVD-000117) confirm, in wording identical to the current 2026 report, that reduced night/weekend/holiday response is a multi-year documented pattern, not a newly observed or transient one. This is historical persistence corroboration only, from the same institutional report series already canonicalized (SRC-0018) — it does not add current (2026) line/corridor-level severity detail. The unresolved question remains which specific lines/corridors/time periods experience the strongest reduction and by how much, which is why WU022's TREVO route (D5-OP-001) stays open rather than being closed on the strength of this desk finding."
 evidence:
   - "EVD-000001"
   - "EVD-000002"
@@ -25,6 +26,7 @@ evidence:
   - "EVD-000028"
   - "EVD-000079"
   - "EVD-000080"
+  - "EVD-000117"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed

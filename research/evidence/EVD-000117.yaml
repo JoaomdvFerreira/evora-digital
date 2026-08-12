@@ -1,0 +1,39 @@
+evidence_id: EVD-000117
+type: institutional
+source:
+  source_id: SRC-0102
+  publisher: "Município de Évora"
+  title: "Relatório Anual de Atividade da Autoridade de Transportes - Município de Évora 2023"
+  source_reference: "https://www.cm-evora.pt/wp-content/uploads/2023/06/Relatorio-anual-de-Autoridade-de-Transportes-CME-29-06-2023.pdf"
+  published_at: "2023-06"
+  retrieved_at: 2026-08-12
+additional_sources:
+  - "SRC-0101"
+geography:
+  level: municipality
+  area: "city / municipality"
+population:
+  - "urban public-transport users"
+  - "residents of lower-demand settlements"
+domain:
+  - "MOB"
+observation:
+  summary: "The 2022 and 2023 municipal transport-authority annual reports both state, in identical wording to the current 2026 report (EVD-000002/EVD-000024), that the urban network covers practically all urban Évora during daytime but reduces its response at night, on weekends and on holidays. This establishes the temporal service-gap pattern as a multi-year documented feature of the network (at least 2022-2026), not a newly observed or transient condition."
+evidence_nature: fact
+strength: primary-authoritative
+personal_data:
+  present: false
+  retained: false
+notes: "RS-02A (docs/discovery/rs-01-evidence-gap-review.md Gap 1). Directly verified by text extraction from both PDFs 2026-08-12 (SRC-0101, SRC-0102) — not merely relying on the RS-02A finding description. Historical corroboration only: this record supports the persistence dimension of PRB-0001's civic importance and the existence of the temporal gap across years, but does NOT establish current (2026) line/corridor-level severity — the 2022/2023 reports' per-line frequency tables are themselves period-specific and are not canonicalized here as current data. Same institutional voice/report series as EVD-000002/EVD-000023/EVD-000024/EVD-000027/EVD-000028 (lineage MOB-2026-07-CME-TRANSPORT-AUTHORITY-ANNUAL-REPORT, SRC-0018) — treat as the same institutional-source family for independence purposes, not a newly independent thread, even though source_id differs year-to-year per the schema's matching-primary-source_id lineage rule."
+
+analysis:
+  related_problems:
+    - "PRB-0001"
+  contribution:
+    - "CONFIRMS"
+  friction_types:
+    - "OPERATIONAL"
+  lineage_id: "MOB-2022-2023-CME-TRANSPORT-AUTHORITY-HISTORICAL-REPORTS"
+  representativeness: "DESIGNED_REPRESENTATIVE"
+  verification: "VERIFIED"
+  temporal_relevance: "HISTORICAL"

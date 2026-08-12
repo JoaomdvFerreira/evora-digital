@@ -22,6 +22,7 @@ possible_root_causes:
   - "D2-D Round A (WU-D2-05) adds a concrete specialised-demand signal: an Indeed snapshot of aerospace-sector listings in Évora (aeronautical engineering, EWIS, configuration management, airworthiness/quality, composites/materials manufacturing, avionics/aircraft design - EVD-000101), alongside the broader IEFP snapshot (EVD-000049); this does not establish actual shortage, vacancy duration, failed recruitment or wage mismatch, only advertised specialised demand."
   - "D2-D Round A enriches EVD-000048's existing-matching-infrastructure conclusion with the UÉ Employment Portal (emprego.uevora.pt, SRC-0088), a specific candidate-employer matching platform distinct from SRC-0041 (Magma Talks), further strengthening the rejection of a generic local job-board/employment-portal hypothesis."
   - "D2-D Round A REFINES the core problem with two skills-alignment/employer-feedback mechanisms already in place: PlaQuaR (EVD-000102), which explicitly aligns training supply with regional employer/institution needs, maps available training, and strengthens cooperation networks; and the UÉ / TE Connectivity annual action plan (EVD-000103), a concrete bilateral employer-training feedback loop. Neither establishes that such mechanisms are systematic or sufficient across Évora's wider economy/SME base, nor PlaQuaR's effective coverage/outcomes - the remaining diagnostic question is the effectiveness and coverage of skills-demand feedback/alignment, not absence of a job board or of alignment mechanisms. Housing-to-talent-retention causality is explicitly not inferred from this evidence."
+  - "RS-02A update (2026-08-12): EURES' Portugal labour-market page (EVD-000115) names a regional Alentejo shortage-occupation list (agronomists, software programmers, agricultural-machinery repairers/operators, seasonal agricultural workers, electromechanical/electrical maintenance technicians, chefs, meat cutters, construction workers) - materially stronger than the prior IEFP/Indeed vacancy-listing snapshots (EVD-000049, EVD-000101) because it names occupations as shortage-designated rather than merely advertised. This is Alentejo-region evidence, not Évora-municipality evidence, and must not be generalised onto Évora without local corroboration. IEFP's own Centros de Emprego bulletin (EVD-000116) confirms CTEF Évora's statistical catchment spans fourteen municípios, so IEFP employment-centre data cannot supply an Évora-specific shortage list either. Évora-specific occupational demand remains unresolved; WU022's NERE route (D5-OP-006) remains the appropriate institutional route for that residual question and stays open."
 evidence:
   - "EVD-000037"
   - "EVD-000040"
@@ -32,6 +33,8 @@ evidence:
   - "EVD-000101"
   - "EVD-000102"
   - "EVD-000103"
+  - "EVD-000115"
+  - "EVD-000116"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed
