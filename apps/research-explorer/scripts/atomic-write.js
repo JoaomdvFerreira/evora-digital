@@ -17,6 +17,34 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
+function sleepSync(ms) {
+  const view = new Int32Array(new SharedArrayBuffer(4));
+  Atomics.wait(view, 0, 0, ms);
+}
+
+/**
+ * `fs.renameSync` can transiently fail with EPERM/EBUSY on Windows if
+ * antivirus/indexing software briefly holds a handle inside the directory
+ * being renamed right after it was written — observed in practice against
+ * this repository's own generated output, not a hypothetical. Retries a
+ * handful of times with a short backoff before giving up; any other error
+ * code is rethrown immediately.
+ */
+function renameWithRetry(from, to, { attempts = 5, initialDelayMs = 25 } = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      fs.renameSync(from, to);
+      return;
+    } catch (e) {
+      lastError = e;
+      if (e.code !== "EPERM" && e.code !== "EBUSY") throw e;
+      sleepSync(initialDelayMs * (attempt + 1));
+    }
+  }
+  throw lastError;
+}
+
 function publishDirectoryAtomically(targetDir, populate) {
   const parent = path.dirname(targetDir);
   const base = path.basename(targetDir);
@@ -38,13 +66,13 @@ function publishDirectoryAtomically(targetDir, populate) {
   let backedUp = false;
   try {
     if (fs.existsSync(targetDir)) {
-      fs.renameSync(targetDir, backupDir);
+      renameWithRetry(targetDir, backupDir);
       backedUp = true;
     }
-    fs.renameSync(tmpDir, targetDir);
+    renameWithRetry(tmpDir, targetDir);
   } catch (e) {
     if (backedUp && !fs.existsSync(targetDir) && fs.existsSync(backupDir)) {
-      fs.renameSync(backupDir, targetDir);
+      renameWithRetry(backupDir, targetDir);
       backedUp = false;
     }
     fs.rmSync(tmpDir, { recursive: true, force: true });

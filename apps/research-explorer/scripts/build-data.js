@@ -157,7 +157,7 @@ function main() {
       );
       for (const e of result.errors) console.error(" - " + e);
     } else {
-      const label = result.stage === "build" ? "read-model construction" : "generated-data integrity check";
+      const label = result.stage === "build" ? "read-model construction" : "publishing the generated read model";
       console.error(
         `Research Explorer build aborted: ${label} failed. ` +
           "Any previously generated output is unchanged.\n"

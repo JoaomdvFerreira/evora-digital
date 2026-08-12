@@ -1,0 +1,29 @@
+{
+  "name": "research-explorer",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Read-only browser foundation for exploring the Open Évora canonical research corpus via the RE-01 generated read model.",
+  "scripts": {
+    "build-data": "node scripts/build-data.js",
+    "build-data:test": "node scripts/build-data.test.js",
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  }
+}

@@ -9,3 +9,4 @@ node_modules/
 /apps/research-explorer/.generated.tmp-*/
 /apps/research-explorer/.generated.backup-*/
 /apps/research-explorer/spike/generated/
+/apps/research-explorer/dist/
