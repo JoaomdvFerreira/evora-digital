@@ -15,13 +15,13 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | ↳ RE-02A — App Foundation & StaticDataProvider | CLOSED |
 | ↳ RE-02B — Records Explorer & Generic Detail | CLOSED |
 | ↳ RE-02C — Overview, URL State & Accessibility | CLOSED |
-| RE-03 — Problem Explorer & Trace Evidence | **NEXT** |
-| RE-04 — Graph Explorer | not started |
+| RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
+| RE-04 — Graph Explorer | **NEXT** |
 | RE-05 — Scale & Quality Gate | not started |
 | RE-06 — Local Explorer v1 | not started |
 | RE-07 — Optional Public Explorer | not started |
 
-Implementation facts as of RE-02 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir`, TanStack Table v8 powering the Records view, a two-view `Explorer` shell (Overview/Records) with native-URL-API state (no React Router), root `npm run explorer` / `npm run explorer:build` commands. No Graphology/Sigma.js yet (RE-04 scope). No backend, database, or authentication anywhere in the stack.
+Implementation facts as of RE-03 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir`, TanStack Table v8 powering the Records view, a three-view `Explorer` shell (Overview/Registos/Problema) with native-URL-API state (no React Router), a data-driven reading guide, root `npm run explorer` / `npm run explorer:build` commands. No Graphology/Sigma.js yet (RE-04 scope). No backend, database, or authentication anywhere in the stack.
 
 ---
 
@@ -79,15 +79,25 @@ Umbrella phase for the first usable browser application. Closed now that RE-02A,
 - **Exit gate met:** Overview renders real corpus summary data (220 records, correct per-type counts, generic distributions); selected record/query/type-filter are shareable via URL and survive reload; browser back/forward walks record-to-record navigation; an invalid URL-sourced record ID or type degrades safely through the existing `DataProvider` protections (no bypass); accessibility pass complete (skip link, semantic nav/table markup, focus-on-detail-change, non-colour selection state, responsive stacking) against the RE-02C checklist above.
 - **Validation:** RE-01 (17) + full app suite (80) automated tests; typecheck; production build; live Playwright walkthrough against the real 220-record corpus covering Overview, search/select, URL reload, relationship navigation, back/forward, and invalid-URL degradation. Zero new runtime dependencies (native URL/History APIs only).
 
-## RE-03 — Problem Explorer & Trace Evidence
+### RE-02 product-check outcome
 
-- **Objective:** the first specialised view — PRB-centred "why do we believe this problem exists, what evidence challenges it, what remains unknown," per the original Track B brief's "Trace Evidence" capability.
+The project owner used the real Explorer after RE-02 closure. Recorded here as the direct input to RE-03's scope — not a new process document.
+
+**Confirmed strengths:** the generic Records structure is functional; Problems can be found and explored; PRB → EVD → SRC relationship navigation works; provenance/navigation is useful.
+
+**Observed friction:** canonical prefixes (SRC/EVD/PRB/ASM/HYP) require prior project knowledge to interpret; "Entradas"/"Saídas" and technical reference paths (e.g. `analysis.related_problems[0]`) are correct but need contextual explanation; the generic record detail is useful for technical inspection but did not yet make the current state of a Problem easy to understand as a coherent whole.
+
+This directly motivated RE-03's two additions below: a reading guide (addresses the prefix/relationship-path friction) and a specialised Problem view (addresses the "coherent whole" gap) — both layered on the existing generic Explorer, per ADR-001's generic-vs-specialised split.
+
+## RE-03 — Problem Explorer & Trace Evidence — CLOSED
+
+- **Objective:** the first specialised view — PRB-centred "why do we believe this problem exists, what evidence challenges it, what remains unknown," per the original Track B brief's "Trace Evidence" capability; plus a reading guide addressing the RE-02 product-check's prefix/relationship-path friction.
 - **Dependencies:** RE-02 (all sub-phases closed).
-- **Scope:** a PRB-specific detail layout layered on top of the generic detail (per ADR-001's generic-vs-specialised split — specialised presentation is additive, never a precondition).
-- **Non-goals:** Graphology/Sigma.js, generalizing this treatment to other record types prematurely.
-- **Outputs:** a Problem Explorer view/component.
-- **Exit gate:** a real PRB's evidence chain, critical unknowns, and validation status are traceable in one view without leaving generic-detail correctness behind for other record types.
-- **Validation:** targeted tests for the new view; existing generic-detail/Records tests unaffected; live walkthrough against real PRB records.
+- **Scope:** `typeGlossary.ts` (presentation-only label/description glossary for the 5 current types, generic graceful fallback for any future type — `describeType()`); `ReadingGuide.tsx` (data-driven from `manifest.schemaPrefixes`, explains prefixes, Entradas/Saídas, reference-path notation, and the "reference ≠ support/causality" rule); `problemProjection.ts` (a pure, feature-layer loader over the existing `DataProvider` — problem + its assessments + evidence [both directions: `evidence` outgoing and `analysis.related_problems` incoming] + each evidence item's own sources + hypotheses, all fetched via the existing `getRecord()`, no new `DataProvider` methods); `ProblemView.tsx` (Estado atual / Avaliação / Evidência+Fontes / Incertezas e lacunas / Hipóteses, reusing `RecordFieldTree` for `critical_unknowns`/`remaining_gap` rather than a duplicate renderer); URL state extended with a third `view=problem` value plus a combined `setViewAndSelection` (native `URLSearchParams`/History, still no router); a "Ver como Problema" entry point on the generic detail panel for `PRB-*` records; inline `[Tipo] ID` labels and friendly type names in the type filter and relationship lists.
+- **Non-goals:** Graphology/Sigma.js, generalizing the Problem-specific treatment to other record types prematurely.
+- **Outputs:** `apps/research-explorer/src/{typeGlossary.ts, guide/ReadingGuide.tsx, problem/*}`; `RecordDetailPanel`/`RecordsTable`/`Explorer`/`urlState` updated; 101 total app tests (up from 80).
+- **Exit gate met:** real PRB-0001 and PRB-0005 both traced end-to-end (assessment → evidence → sources → critical unknowns) in one coherent view without leaving generic-detail correctness behind for other record types; reading guide dynamically lists exactly the corpus's actual types with accurate descriptions; a non-PRB/invalid Problem-view selection degrades safely; a linked non-source future type does not break the projection; every relationship in Problem view still reads "referencia via `<field>`" / "referenciado via `<field>`" — no SUPPORTS/CONTRADICTS/CAUSES inferred anywhere.
+- **Validation:** RE-01 (17) + full app suite (101) automated tests; typecheck; production build; live Playwright walkthrough against the real 220-record corpus covering two distinct problems (PRB-0001, PRB-0005), the reading guide, "Ver como Problema," Problem→Records navigation, and browser back across the Problem/Records boundary. Zero new runtime dependencies.
 
 ## RE-04 — Graph Explorer
 

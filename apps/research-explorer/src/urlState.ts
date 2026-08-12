@@ -14,7 +14,7 @@ import { ALL_TYPES } from "./records/recordIndex";
  * would, never a bypassed fetch. See StaticDataProvider.ts.
  */
 
-export type ExplorerView = "overview" | "records";
+export type ExplorerView = "overview" | "records" | "problem";
 export const DEFAULT_VIEW: ExplorerView = "records";
 
 export interface ExplorerUrlState {
@@ -32,7 +32,7 @@ export const DEFAULT_URL_STATE: ExplorerUrlState = {
 };
 
 function isExplorerView(value: string | null): value is ExplorerView {
-  return value === "overview" || value === "records";
+  return value === "overview" || value === "records" || value === "problem";
 }
 
 export function parseUrlState(search: string): ExplorerUrlState {

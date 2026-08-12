@@ -107,7 +107,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
     await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
 
     const detailPanel = (await screen.findByText("Detalhes")).closest("section")!;
-    await within(detailPanel).findByText(/Via Verde Parking Buddy \(EVD-000105\)/);
+    await within(detailPanel).findByText(/EVD-000105 — Via Verde Parking Buddy/);
     expect(within(detailPanel).getByText(/referencia via/)).toBeTruthy();
   });
 
@@ -121,7 +121,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
     await user.click(outgoingButton);
 
     detailPanel = await getDetailPanel();
-    await within(detailPanel).findByText(/Pressão de estacionamento \(PRB-0005\)/);
+    await within(detailPanel).findByText(/PRB-0005 — Pressão de estacionamento/);
     expect(within(detailPanel).getByText(/referenciado via/)).toBeTruthy();
   });
 
@@ -274,6 +274,75 @@ describe("Explorer — URL-addressable state", () => {
     expect((screen.getByLabelText("Tipo") as HTMLSelectElement).value).toBe("all");
     expect(screen.getByRole("button", { name: "PRB-0005" })).toBeTruthy();
     expect(screen.getByRole("button", { name: "EVD-000105" })).toBeTruthy();
+  });
+});
+
+describe("Explorer — Problem view (RE-03)", () => {
+  it("opens a problem directly via URL, without visiting Records first", async () => {
+    window.history.replaceState(null, "", "/?view=problem&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    const evidenceSection = screen.getByLabelText("Evidência");
+    expect(within(evidenceSection).getByText(/EVD-000105/)).toBeTruthy();
+  });
+
+  it("'Ver como Problema' from the generic detail panel switches to the Problem view for the same ID", async () => {
+    const user = userEvent.setup();
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await user.click(await screen.findByRole("button", { name: "PRB-0005" }));
+    const detailPanel = await getDetailPanel();
+    await user.click(await within(detailPanel).findByRole("button", { name: "Ver como Problema (contexto completo)" }));
+
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    expect(window.location.search).toContain("view=problem");
+    expect(window.location.search).toContain("id=PRB-0005");
+  });
+
+  it("navigating back to Records from the Problem view preserves search context", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?q=PRB-0005&view=problem&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await user.click(await screen.findByRole("button", { name: "← Voltar aos Registos" }));
+    await screen.findByRole("heading", { name: "Registos" });
+    expect((screen.getByLabelText("Pesquisar") as HTMLInputElement).value).toBe("PRB-0005");
+    expect(screen.getByRole("button", { name: /PRB-0005/ })).toBeTruthy();
+  });
+
+  it("a Problem-view URL survives reload (bookmark/share)", async () => {
+    window.history.replaceState(null, "", "/?view=problem&id=PRB-0005");
+    const { unmount } = render(<Explorer dataProvider={fakeProvider()} />);
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    unmount();
+
+    render(<Explorer dataProvider={fakeProvider()} />);
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+  });
+
+  it("clicking a linked Evidence in the Problem view opens it through the generic Records detail", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?view=problem&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    const evidenceSection = screen.getByLabelText("Evidência");
+    await user.click(within(evidenceSection).getByRole("button", { name: /EVD-000105/ }));
+
+    await screen.findByRole("heading", { name: "Registos" });
+    expect(window.location.search).toContain("id=EVD-000105");
+    expect(window.location.search).not.toContain("view=problem");
+  });
+
+  it("the reading guide explains type prefixes generically and is available across views", async () => {
+    render(<Explorer dataProvider={fakeProvider()} />);
+    const guide = screen.getByText("Como ler o Explorer").closest("details")!;
+    expect(within(guide).getAllByText(/Problema/).length).toBeGreaterThan(0);
+    expect(within(guide).getAllByText(/Fonte/).length).toBeGreaterThan(0);
+    expect(within(guide).getAllByText(/Avaliação/).length).toBeGreaterThan(0);
+    expect(within(guide).getByRole("heading", { name: "Entradas e Saídas" })).toBeTruthy();
+    expect(within(guide).getByText(/não significa, por si só/i)).toBeTruthy();
   });
 });
 

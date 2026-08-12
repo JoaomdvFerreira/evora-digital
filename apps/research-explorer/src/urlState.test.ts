@@ -20,6 +20,15 @@ describe("parseUrlState", () => {
     expect(parseUrlState("?view=not-a-real-view").view).toBe("records");
   });
 
+  it("recognizes the RE-03 'problem' view", () => {
+    expect(parseUrlState("?view=problem&id=PRB-0005")).toEqual({
+      view: "problem",
+      selectedId: "PRB-0005",
+      query: "",
+      typeFilter: ALL_TYPES,
+    });
+  });
+
   it("treats an empty id param as no selection", () => {
     expect(parseUrlState("?id=").selectedId).toBeNull();
   });

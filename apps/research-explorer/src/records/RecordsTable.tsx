@@ -4,6 +4,7 @@ import type { RecordSummary } from "../dataProvider/types";
 import { recordColumns } from "./columns";
 import { ALL_TYPES, availableRecordTypes, filterRecords } from "./recordIndex";
 import { initialRecordsControllerState, recordsControllerReducer } from "./recordsController";
+import { describeType } from "../typeGlossary";
 
 interface RecordsTableProps {
   records: RecordSummary[];
@@ -90,7 +91,7 @@ export function RecordsTable({
             <option value={ALL_TYPES}>Todos</option>
             {types.map((type) => (
               <option key={type} value={type}>
-                {type}
+                {type} — {describeType(type).label}
               </option>
             ))}
           </select>

@@ -60,7 +60,7 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
               Corpus: {state.manifest.totalRecords} registos · versão do modelo {state.manifest.readModelVersion} · gerado em{" "}
               <time dateTime={state.manifest.generatedAt}>{state.manifest.generatedAt}</time>
             </p>
-            <Explorer dataProvider={dataProvider} />
+            <Explorer dataProvider={dataProvider} schemaPrefixes={state.manifest.schemaPrefixes} />
           </>
         )}
       </main>

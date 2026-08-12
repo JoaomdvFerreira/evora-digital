@@ -42,5 +42,10 @@ export function useExplorerUrlState() {
     setSelectedId: (selectedId: string | null) => push({ ...state, selectedId }),
     setQuery: (query: string) => replace({ ...state, query }),
     setTypeFilter: (typeFilter: string) => push({ ...state, typeFilter }),
+    // One combined history entry for "open this ID in that view" (e.g. "Ver
+    // como Problema" from the generic detail panel, or opening a related
+    // EVD-/SRC- generically from the Problem view) — avoids two separate
+    // back-stack entries for what the user experiences as one navigation.
+    setViewAndSelection: (view: ExplorerView, selectedId: string) => push({ ...state, view, selectedId }),
   };
 }

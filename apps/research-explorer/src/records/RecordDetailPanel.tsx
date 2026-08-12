@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import type { DataProvider, RecordDetail, RecordEdgeRef, RecordSummary } from "../dataProvider/types";
 import { useRecordDetail } from "./useRecordDetail";
 import { RecordFieldTree } from "./RecordFieldTree";
+import { describeType, formatTypedId } from "../typeGlossary";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -37,7 +38,7 @@ function RelationshipList({ title, edges, lookup, direction, onSelect }: Relatio
             return (
               <li key={`${direction}-${edge.field}-${edge.ordinal}-${relatedId}-${index}`}>
                 <button type="button" onClick={() => onSelect(relatedId)}>
-                  {arrow} {related ? `${related.label} (${related.id})` : relatedId}
+                  {arrow} {related ? `${formatTypedId(related.type, related.id)} — ${related.label}` : relatedId}
                 </button>{" "}
                 <span>
                   — {relation} <code>{edge.field}</code>
@@ -56,10 +57,12 @@ function RecordDetailContent({
   detail,
   lookup,
   onSelect,
+  onViewAsProblem,
 }: {
   detail: RecordDetail;
   lookup: Map<string, RecordSummary>;
   onSelect: (id: string) => void;
+  onViewAsProblem: (id: string) => void;
 }) {
   return (
     <>
@@ -68,12 +71,21 @@ function RecordDetailContent({
           <dt>ID</dt>
           <dd>{detail.id}</dd>
           <dt>Tipo</dt>
-          <dd>{detail.type}</dd>
+          <dd>
+            <code>{detail.type}</code> — {describeType(detail.type).label}
+          </dd>
           <dt>Ficheiro</dt>
           <dd>
             <code>{detail.file}</code>
           </dd>
         </dl>
+        {detail.type === "PRB-" && (
+          <p>
+            <button type="button" onClick={() => onViewAsProblem(detail.id)}>
+              Ver como Problema (contexto completo)
+            </button>
+          </p>
+        )}
       </section>
 
       <section aria-label="Campos do registo">
@@ -95,13 +107,14 @@ interface RecordDetailPanelProps {
   lookup: Map<string, RecordSummary>;
   selectedId: string | null;
   onSelect: (id: string) => void;
+  onViewAsProblem: (id: string) => void;
 }
 
 /**
  * A failure loading one record's detail is isolated here (useRecordDetail's
  * own state) and never affects the already-loaded Records table/index.
  */
-export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect }: RecordDetailPanelProps) {
+export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, onViewAsProblem }: RecordDetailPanelProps) {
   const state = useRecordDetail(dataProvider, selectedId);
   const contentRef = useRef<HTMLDivElement>(null);
   const readyId = state.status === "ready" ? state.detail.id : null;
@@ -138,7 +151,7 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect }
 
       {state.status === "ready" && (
         <div ref={contentRef} tabIndex={-1} aria-label={`Detalhe de ${state.detail.id}`}>
-          <RecordDetailContent detail={state.detail} lookup={lookup} onSelect={onSelect} />
+          <RecordDetailContent detail={state.detail} lookup={lookup} onSelect={onSelect} onViewAsProblem={onViewAsProblem} />
         </div>
       )}
     </section>

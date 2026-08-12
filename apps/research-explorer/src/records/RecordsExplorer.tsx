@@ -18,6 +18,8 @@ interface RecordsExplorerProps {
   onQueryChange: (query: string) => void;
   typeFilter: string;
   onTypeFilterChange: (typeFilter: string) => void;
+  /** RE-03: switches to the specialised Problem view for a PRB-* record, keeping the same ID. */
+  onViewAsProblem: (id: string) => void;
 }
 
 /**
@@ -35,6 +37,7 @@ export function RecordsExplorer({
   onQueryChange,
   typeFilter,
   onTypeFilterChange,
+  onViewAsProblem,
 }: RecordsExplorerProps) {
   const indexState = useRecordIndex(dataProvider);
 
@@ -66,7 +69,13 @@ export function RecordsExplorer({
         typeFilter={typeFilter}
         onTypeFilterChange={onTypeFilterChange}
       />
-      <RecordDetailPanel dataProvider={dataProvider} lookup={indexState.lookup} selectedId={selectedId} onSelect={onSelect} />
+      <RecordDetailPanel
+        dataProvider={dataProvider}
+        lookup={indexState.lookup}
+        selectedId={selectedId}
+        onSelect={onSelect}
+        onViewAsProblem={onViewAsProblem}
+      />
     </div>
   );
 }

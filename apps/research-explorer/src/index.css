@@ -151,6 +151,29 @@ tr[aria-selected="true"] {
   font-style: italic;
 }
 
+.reading-guide {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.reading-guide summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reading-guide dl div {
+  margin-bottom: 0.5rem;
+}
+
+article[aria-labelledby="problem-heading"] section {
+  margin-bottom: 1.25rem;
+}
+
+article[aria-labelledby="problem-heading"] ul ul {
+  margin-top: 0.25rem;
+}
+
 code {
   background: #f2f2f2;
   padding: 0 0.2rem;

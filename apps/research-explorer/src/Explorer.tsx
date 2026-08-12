@@ -2,14 +2,22 @@ import type { DataProvider } from "./dataProvider/types";
 import { useExplorerUrlState } from "./useExplorerUrlState";
 import { Overview } from "./overview/Overview";
 import { RecordsExplorer } from "./records/RecordsExplorer";
+import { ProblemView } from "./problem/ProblemView";
+import { ReadingGuide } from "./guide/ReadingGuide";
+
+interface ExplorerProps {
+  dataProvider: DataProvider;
+  /** manifest.schemaPrefixes — passed down so the reading guide's type list is data-driven, not hardcoded. */
+  schemaPrefixes?: string[];
+}
 
 /**
- * Top-level view switcher (RE-02C). Owns URL-synced state (view, selected
- * record, search query, type filter) via useExplorerUrlState and passes it
- * down as controlled props — Overview/RecordsExplorer/RecordsTable/
- * RecordDetailPanel own no competing copy of this state.
+ * Top-level view switcher (RE-02C: Overview/Registos; RE-03 adds Problema).
+ * Owns URL-synced state (view, selected record, search query, type filter)
+ * via useExplorerUrlState and passes it down as controlled props —
+ * Overview/RecordsExplorer/ProblemView own no competing copy of this state.
  */
-export function Explorer({ dataProvider }: { dataProvider: DataProvider }) {
+export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
   const url = useExplorerUrlState();
 
   return (
@@ -23,6 +31,8 @@ export function Explorer({ dataProvider }: { dataProvider: DataProvider }) {
         </button>
       </nav>
 
+      <ReadingGuide schemaPrefixes={schemaPrefixes} />
+
       {url.state.view === "overview" && <Overview dataProvider={dataProvider} />}
 
       {url.state.view === "records" && (
@@ -34,6 +44,16 @@ export function Explorer({ dataProvider }: { dataProvider: DataProvider }) {
           onQueryChange={url.setQuery}
           typeFilter={url.state.typeFilter}
           onTypeFilterChange={url.setTypeFilter}
+          onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
+        />
+      )}
+
+      {url.state.view === "problem" && (
+        <ProblemView
+          dataProvider={dataProvider}
+          problemId={url.state.selectedId}
+          onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
+          onBackToRecords={() => url.setView("records")}
         />
       )}
     </>
