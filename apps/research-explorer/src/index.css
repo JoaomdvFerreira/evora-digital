@@ -1,0 +1,112 @@
+/* Utilitarian research-workbench styling only — no branding, no animation,
+   no dark mode, no decorative dashboard. Selection/sort/focus state is
+   always conveyed through text/markers/outlines, never colour alone. */
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 1rem;
+  color: #111;
+  background: #fff;
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.manifest-summary {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.records-explorer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.records-table {
+  flex: 2;
+  min-width: 0;
+}
+
+.record-detail-panel {
+  flex: 1;
+  min-width: 280px;
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+}
+
+.records-controls {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.records-controls label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+}
+
+th button {
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+td button {
+  background: none;
+  border: 1px solid transparent;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.1rem 0.3rem;
+}
+
+td button[aria-pressed="true"] {
+  border-color: #111;
+  font-weight: bold;
+}
+
+tr[aria-selected="true"] {
+  outline: 2px solid #111;
+  outline-offset: -2px;
+}
+
+.records-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.field-empty {
+  color: #777;
+  font-style: italic;
+}
+
+code {
+  background: #f2f2f2;
+  padding: 0 0.2rem;
+}
+
+:focus-visible {
+  outline: 3px solid #1a5fb4;
+  outline-offset: 1px;
+}

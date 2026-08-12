@@ -3,6 +3,7 @@ Thumbs.db
 *.log
 .env
 .env.*
+.playwright-mcp/
 node_modules/
 /prompts
 /apps/research-explorer/generated/

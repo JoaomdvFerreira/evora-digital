@@ -29,10 +29,23 @@ Publishing itself is atomic: the full read model is built into a fresh temporary
 
 `sourceCommit` (git `HEAD`) is included when available but never required — the build succeeds identically outside a git checkout or without git installed.
 
-## Tests
+## RE-01 tests
 
 ```
 node apps/research-explorer/scripts/build-data.test.js
 ```
 
 Zero-dependency (Node's built-in `assert`/`fs`/`os`/`path`), matching `tools/test-analytical-foundation.js`'s convention. Fixtures are generated into a fresh temp directory per test; nothing touches the real `research/` corpus.
+
+## Application (RE-02A+)
+
+One-time setup: `npm install` inside `apps/research-explorer/` (the app owns its own dependencies — React, TypeScript, Vite, TanStack Table, Vitest — kept isolated from the repository's zero-dependency root/`tools/` tree).
+
+From the repository root:
+
+- `npm run explorer` — generates the read model (RE-01), then starts the Vite dev server.
+- `npm run explorer:build` — generates the read model, typechecks, runs the app's tests, then builds the static production app. Runs TypeScript typecheck **exactly once** (`tsc --noEmit`) as its own pipeline step — the app's own `npm run build` script (`vite build`) deliberately does **not** re-run it. If you run `npm run build` standalone inside `apps/research-explorer/` (bypassing the root command), run `npm run typecheck` first — it is not folded into `build`.
+
+Both root commands are plain `npm --prefix` delegation — no npm workspaces, no monorepo tooling.
+
+Generated read-model data is served as static assets via Vite's `publicDir` (`vite.config.ts`), in both `npm run dev` and `npm run build` — never copied into a second, manually-maintained tree. The app never reads canonical `research/**/*.yaml`, and it targets a configurable `base` path (`VITE_BASE_PATH`, defaulting to `/`) so a future sub-path deployment needs no code change.

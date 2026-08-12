@@ -27,11 +27,15 @@ export default defineConfig({
     emptyOutDir: true,
   },
   test: {
-    // Business/runtime contracts only (StaticDataProvider, startup sequence,
-    // read-model compatibility) — no React component rendering is tested in
-    // RE-02A, so a plain Node environment is sufficient; no jsdom dependency
-    // is needed.
-    environment: "node",
-    include: ["src/**/*.test.ts"],
+    // RE-02B adds a small number of interaction-level tests (row selection ->
+    // lazy detail load, relationship navigation) that cannot be verified as
+    // pure functions — jsdom + @testing-library/react are the minimal,
+    // standard pairing for that, not "browser/E2E infrastructure" (no real
+    // browser, no Playwright/Cypress). Most tests here remain plain
+    // business/runtime-contract tests (StaticDataProvider, search/filter
+    // logic, the records reducer) that don't touch the DOM at all.
+    environment: "jsdom",
+    setupFiles: ["src/test-setup.ts"],
+    include: ["src/**/*.test.{ts,tsx}"],
   },
 });

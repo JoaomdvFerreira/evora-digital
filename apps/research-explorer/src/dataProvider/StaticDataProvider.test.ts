@@ -157,4 +157,12 @@ describe("StaticDataProvider.getRecord — record-ID safety", () => {
     const lastUrl = String(fetchMock.mock.calls[1][0]);
     expect(lastUrl.endsWith("record-detail/WID-0001.json")).toBe(true);
   });
+
+  it("rejects a malformed (invalid JSON) record-detail response with an actionable error", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse(VALID_INDEX)); // listRecords()
+    fetchMock.mockResolvedValueOnce(new Response("not valid json {{{", { status: 200 })); // record-detail
+
+    const provider = new StaticDataProvider();
+    await expect(provider.getRecord("PRB-0005")).rejects.toMatchObject({ kind: "malformed" });
+  });
 });
