@@ -99,6 +99,12 @@ describe("StaticDataProvider.getManifest", () => {
     await expect(provider.getManifest()).rejects.toMatchObject({ kind: "malformed" });
   });
 
+  it("reports a network error when fetch() itself rejects (e.g. offline), not just a bad response", async () => {
+    fetchMock.mockRejectedValueOnce(new TypeError("Failed to fetch"));
+    const provider = new StaticDataProvider();
+    await expect(provider.getManifest()).rejects.toMatchObject({ kind: "network" });
+  });
+
   it("does not cache a failed load — a subsequent call retries the network", async () => {
     fetchMock.mockResolvedValueOnce(notFoundResponse());
     const provider = new StaticDataProvider();

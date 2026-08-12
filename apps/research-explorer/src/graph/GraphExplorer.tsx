@@ -181,6 +181,11 @@ export function GraphExplorer({
             onChange={(event) => setSearchQuery(event.target.value)}
             placeholder="ID, tipo, rótulo…"
           />
+          {searchQuery.trim() !== "" && (
+            <p aria-live="polite">
+              {searchResults.length} {searchResults.length === 1 ? "resultado encontrado" : "resultados encontrados"}.
+            </p>
+          )}
           {searchResults.length > 0 && (
             <ul aria-label="Resultados da pesquisa">
               {searchResults.map((record) => (

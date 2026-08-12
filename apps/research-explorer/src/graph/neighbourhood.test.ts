@@ -51,6 +51,14 @@ describe("computeHopMap", () => {
   it("returns an empty map for a focus ID not present in the graph", () => {
     expect(computeHopMap(graph, "PRB-9999").size).toBe(0);
   });
+
+  it("does not loop or misassign hops when the focus node has a self-referencing edge", () => {
+    const selfLoopGraph = buildGraphModel(RECORDS, [...EDGES, { id: "PRB-0005::related::0::PRB-0005", from: "PRB-0005", to: "PRB-0005", field: "related", ordinal: 0, required: false }]);
+    const hopOf = computeHopMap(selfLoopGraph, "PRB-0005");
+    expect(hopOf.get("PRB-0005")).toBe(0);
+    expect(hopOf.get("EVD-0001")).toBe(1);
+    expect(hopOf.get("SRC-0001")).toBe(2);
+  });
 });
 
 describe("neighbourhoodView", () => {

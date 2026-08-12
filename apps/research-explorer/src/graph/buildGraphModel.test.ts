@@ -55,6 +55,14 @@ describe("buildGraphModel", () => {
     expect(graph.size).toBe(0);
   });
 
+  it("accepts a self-referencing edge (from === to) without throwing", () => {
+    const selfLoop: RecordEdge = { id: "PRB-0005::related::0::PRB-0005", from: "PRB-0005", to: "PRB-0005", field: "related", ordinal: 0, required: false };
+    const graph = buildGraphModel(RECORDS, [selfLoop]);
+    expect(graph.hasEdge("PRB-0005::related::0::PRB-0005")).toBe(true);
+    expect(graph.source("PRB-0005::related::0::PRB-0005")).toBe("PRB-0005");
+    expect(graph.target("PRB-0005::related::0::PRB-0005")).toBe("PRB-0005");
+  });
+
   it("represents an unknown future record type as an ordinary node, no special-casing required", () => {
     const withFuture: RecordSummary[] = [
       ...RECORDS,
