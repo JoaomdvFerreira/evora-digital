@@ -20,6 +20,7 @@ possible_root_causes:
   - "D2-C Round A (WU-D2-05) strengthens current affordability/student-exposure evidence with press-reported figures (rooms around EUR500/month, T2 around EUR1,000/month, roughly 70% of UÉ students displaced into rental accommodation - EVD-000099); these are press-mediated figures, preserved as reported and not verified against a primary dataset, and are treated as current-state evidence, not proof of a digital/process gap. A May 2026 completion of the Residência Universitária Manuel Álvares renovation (EVD-000100) marks a specific recovery point in the 2025/2026 residence-capacity disruption already recorded in EVD-000043, but does not establish that the broader student-housing pressure is resolved."
   - "D2-C Round A explicitly leaves the applicant-facing housing/UÉ-residence information and transaction journey UNPROVEN: it was not established that applicants cannot discover the correct programme, that eligibility is commonly misunderstood, that document submission is materially duplicated, that application/status tracking is materially deficient, that UÉ residence applications are confusing, or that a single digital housing navigator would materially change outcomes. The existence of multiple programmes/information surfaces is not itself evidence of navigation failure; these remain open D3/D5 questions, not a validated subproblem."
   - "D2-C Round A also notes a programme-delivery bureaucracy boundary: reviewed housing material describing bureaucracy around national/European programme delivery is institutional delivery/process context, not applicant-facing transaction friction, unless direct applicant evidence says otherwise."
+  - "D5-OP-004 SASUE institutional response (2026-08-13; EVD-000125–EVD-000127) reports a structured online residence-application journey through SIIUE / Perfil de aluno, direct status consultation, result notification and an IT-supported change path, and assesses the process as fully operational. This materially challenges a strong systemic applicant information/status/process-failure framing on the institutional side. It does not establish affected-student usability, clarity, accessibility, waiting experience or absence of individual friction, and does not alter the dominant physical/economic supply and affordability mechanism. SASUE also confirms that aggregate application/capacity/unsuccessful-applicant/waiting-list/decision-time indicators exist internally, but provides no values, definitions, access conditions or reuse terms; indicator existence must not be treated as evidence of shortage magnitude or outcomes."
 evidence:
   - "EVD-000031"
   - "EVD-000032"
@@ -28,6 +29,9 @@ evidence:
   - "EVD-000043"
   - "EVD-000099"
   - "EVD-000100"
+  - "EVD-000125"
+  - "EVD-000126"
+  - "EVD-000127"
 evidence_status: corroborated
 validation_status: unvalidated
 digital_tractability: not_assessed
