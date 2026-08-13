@@ -172,6 +172,26 @@ describe("ProblemView", () => {
     expect(within(evidenceSection).getByText("não registada.")).toBeTruthy();
     expect(within(evidenceSection).queryByText("CONFIRMS")).toBeNull();
   });
+
+  it("fails closed on a child-detail failure and retries the complete projection", async () => {
+    const provider = fakeProvider();
+    let evidenceAttempts = 0;
+    provider.getRecord = (id: string) => {
+      if (id === "EVD-0001" && evidenceAttempts++ === 0) return Promise.reject(new Error("temporary evidence failure"));
+      const detail = DETAILS[id];
+      return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
+    };
+    const user = userEvent.setup();
+    render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+
+    const alert = await screen.findByRole("alert");
+    expect(within(alert).getByText(/temporary evidence failure/)).toBeTruthy();
+    expect(screen.queryByLabelText("Evidência")).toBeNull();
+    await user.click(within(alert).getByRole("button", { name: "Tentar novamente" }));
+
+    expect(await screen.findByLabelText("Evidência")).toBeTruthy();
+    expect(evidenceAttempts).toBeGreaterThanOrEqual(2);
+  });
 });
 
 const GENERATED_DIR = path.resolve(__dirname, "..", "..", "generated");

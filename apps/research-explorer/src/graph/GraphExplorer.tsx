@@ -146,6 +146,9 @@ export function GraphExplorer({
       <div ref={errorRef} role="alert" tabIndex={-1}>
         <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o grafo"}</h2>
         <p>{state.error.message}</p>
+        <button type="button" onClick={state.retry}>
+          Tentar novamente
+        </button>
       </div>
     );
   }

@@ -94,6 +94,50 @@ function assertManifestShape(data: unknown): asserts data is ReadModelManifest {
   }
 }
 
+function isObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === "string" && value.length > 0;
+}
+
+function isOrdinal(value: unknown): value is number | null {
+  return value === null || (typeof value === "number" && Number.isInteger(value));
+}
+
+function assertIndexShape(data: unknown): asserts data is RecordSummary[] {
+  if (!Array.isArray(data)) throw new DataLoadError("index.json is malformed: expected an array.", "malformed");
+  for (const item of data) {
+    if (!isObject(item) || !isNonEmptyString(item.id) || !isNonEmptyString(item.type) || !isNonEmptyString(item.label) || !isNonEmptyString(item.file) || !isObject(item.summaryFields)) {
+      throw new DataLoadError("index.json is malformed: entries require id, type, label, file, and summaryFields.", "malformed");
+    }
+  }
+}
+
+function assertEdgeRefShape(value: unknown, direction: "incoming" | "outgoing"): void {
+  if (!isObject(value) || !isNonEmptyString(value.field) || !isOrdinal(value.ordinal) || !isNonEmptyString(value[direction === "incoming" ? "from" : "to"])) {
+    throw new DataLoadError(`record detail is malformed: ${direction} edges require field, ordinal, and ${direction === "incoming" ? "from" : "to"}.`, "malformed");
+  }
+}
+
+function assertRecordDetailShape(data: unknown): asserts data is RecordDetail {
+  if (!isObject(data) || !isNonEmptyString(data.id) || !isNonEmptyString(data.type) || !isNonEmptyString(data.file) || !isObject(data.record) || !Array.isArray(data.outgoingEdges) || !Array.isArray(data.incomingEdges)) {
+    throw new DataLoadError("record detail is malformed: expected identity, record object, and relationship arrays.", "malformed");
+  }
+  data.outgoingEdges.forEach((edge) => assertEdgeRefShape(edge, "outgoing"));
+  data.incomingEdges.forEach((edge) => assertEdgeRefShape(edge, "incoming"));
+}
+
+function assertEdgesShape(data: unknown): asserts data is RecordEdge[] {
+  if (!Array.isArray(data)) throw new DataLoadError("edges.json is malformed: expected an array.", "malformed");
+  for (const edge of data) {
+    if (!isObject(edge) || !isNonEmptyString(edge.id) || !isNonEmptyString(edge.from) || !isNonEmptyString(edge.to) || !isNonEmptyString(edge.field) || !isOrdinal(edge.ordinal) || typeof edge.required !== "boolean") {
+      throw new DataLoadError("edges.json is malformed: entries require id, endpoints, field, ordinal, and required.", "malformed");
+    }
+  }
+}
+
 /**
  * Consumes the RE-01 generated read model over HTTP as static JSON assets
  * (served from apps/research-explorer/generated/ via Vite's publicDir — see
@@ -142,10 +186,8 @@ export class StaticDataProvider implements DataProvider {
     if (!this.indexPromise) {
       this.indexPromise = fetchJson<unknown>("index.json", "the Explorer record index")
         .then((data) => {
-          if (!Array.isArray(data)) {
-            throw new DataLoadError("index.json is malformed: expected an array.", "malformed");
-          }
-          return data as RecordSummary[];
+          assertIndexShape(data);
+          return data;
         })
         .catch((error: unknown) => {
           this.indexPromise = null;
@@ -169,7 +211,9 @@ export class StaticDataProvider implements DataProvider {
       throw new DataLoadError(`Record "${id}" was not found in the generated index.`, "not_found");
     }
 
-    return fetchJson<RecordDetail>(`record-detail/${encodeURIComponent(id)}.json`, `record detail for "${id}"`);
+    const detail = await fetchJson<unknown>(`record-detail/${encodeURIComponent(id)}.json`, `record detail for "${id}"`);
+    assertRecordDetailShape(detail);
+    return detail;
   }
 
   /**
@@ -181,10 +225,8 @@ export class StaticDataProvider implements DataProvider {
     if (!this.edgesPromise) {
       this.edgesPromise = fetchJson<unknown>("edges.json", "the Explorer edge set")
         .then((data) => {
-          if (!Array.isArray(data)) {
-            throw new DataLoadError("edges.json is malformed: expected an array.", "malformed");
-          }
-          return data as RecordEdge[];
+          assertEdgesShape(data);
+          return data;
         })
         .catch((error: unknown) => {
           this.edgesPromise = null;

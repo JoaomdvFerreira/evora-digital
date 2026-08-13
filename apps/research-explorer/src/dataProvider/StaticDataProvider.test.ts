@@ -173,6 +173,15 @@ describe("StaticDataProvider.getRecord — record-ID safety", () => {
   });
 });
 
+it("rejects fetchable index and detail entries that lack the fields consumers dereference", async () => {
+  fetchMock.mockResolvedValueOnce(jsonResponse([{ id: "PRB-0005" }]));
+  await expect(new StaticDataProvider().listRecords()).rejects.toMatchObject({ kind: "malformed" });
+
+  fetchMock.mockResolvedValueOnce(jsonResponse(VALID_INDEX));
+  fetchMock.mockResolvedValueOnce(jsonResponse({ id: "PRB-0005", type: "PRB-", file: "research/problems/PRB-0005.yaml", record: {}, outgoingEdges: [], incomingEdges: [{}] }));
+  await expect(new StaticDataProvider().getRecord("PRB-0005")).rejects.toMatchObject({ kind: "malformed" });
+});
+
 const VALID_EDGES = [
   { id: "PRB-0005::evidence::0::EVD-0001", from: "PRB-0005", to: "EVD-0001", field: "evidence", ordinal: 0, required: false },
 ];
@@ -203,6 +212,11 @@ describe("StaticDataProvider.getEdges — RE-04 lazy loading", () => {
     fetchMock.mockResolvedValueOnce(jsonResponse({ not: "an array" }));
     const provider = new StaticDataProvider();
     await expect(provider.getEdges()).rejects.toMatchObject({ kind: "malformed" });
+  });
+
+  it("rejects fetchable edges missing Graph-consumed identity or endpoint fields", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse([{ id: "edge-1", from: "PRB-0005", field: "evidence", ordinal: 0, required: false }]));
+    await expect(new StaticDataProvider().getEdges()).rejects.toMatchObject({ kind: "malformed" });
   });
 
   it("does not cache a failed edges.json load — a subsequent call retries the network", async () => {

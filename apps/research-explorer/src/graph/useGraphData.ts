@@ -20,10 +20,11 @@ function asDataLoadError(error: unknown): DataLoadError {
  * hook is only ever mounted from inside the Graph view (GraphExplorer),
  * never from application startup or any other view (RE-04 requirement).
  */
-export function useGraphData(provider: DataProvider): GraphDataState {
+export function useGraphData(provider: DataProvider): GraphDataState & { retry: () => void } {
   const [indexState, setIndexState] = useState<
     { status: "loading" } | { status: "ready"; records: RecordSummary[] } | { status: "error"; error: DataLoadError }
   >({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
   const [edgesState, setEdgesState] = useState<
     { status: "loading" } | { status: "ready"; edges: RecordEdge[] } | { status: "error"; error: DataLoadError }
   >({ status: "loading" });
@@ -42,7 +43,7 @@ export function useGraphData(provider: DataProvider): GraphDataState {
     return () => {
       cancelled = true;
     };
-  }, [provider]);
+  }, [provider, attempt]);
 
   useEffect(() => {
     let cancelled = false;
@@ -58,9 +59,9 @@ export function useGraphData(provider: DataProvider): GraphDataState {
     return () => {
       cancelled = true;
     };
-  }, [provider]);
+  }, [provider, attempt]);
 
-  return useMemo<GraphDataState>(() => {
+  const state = useMemo<GraphDataState>(() => {
     if (indexState.status === "error") return { status: "error", error: indexState.error };
     if (edgesState.status === "error") return { status: "error", error: edgesState.error };
     if (indexState.status === "loading" || edgesState.status === "loading") return { status: "loading" };
@@ -70,4 +71,6 @@ export function useGraphData(provider: DataProvider): GraphDataState {
       lookup: buildRecordLookup(indexState.records),
     };
   }, [indexState, edgesState]);
+
+  return { ...state, retry: () => setAttempt((value) => value + 1) };
 }

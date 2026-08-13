@@ -82,6 +82,19 @@ beforeEach(() => {
 });
 
 describe("Explorer — Records workflow (fake provider)", () => {
+  it("retries a failed record index load", async () => {
+    let attempts = 0;
+    const provider = fakeProvider({ listRecords: () => (attempts++ === 0 ? Promise.reject(new Error("temporary index failure")) : Promise.resolve(INDEX)) });
+    const user = userEvent.setup();
+    render(<Explorer dataProvider={provider} />);
+
+    const alert = await screen.findByRole("alert");
+    expect(within(alert).getByText(/temporary index failure/)).toBeTruthy();
+    await user.click(within(alert).getByRole("button", { name: "Tentar novamente" }));
+    expect(await screen.findByRole("button", { name: "PRB-0005" })).toBeTruthy();
+    expect(attempts).toBe(2);
+  });
+
   it("shows 'nenhum registo selecionado' before any selection, and does not eagerly load a detail", async () => {
     const getRecord = vi.fn(fakeProvider().getRecord);
     render(<Explorer dataProvider={fakeProvider({ getRecord })} />);
@@ -170,6 +183,20 @@ describe("Explorer — Records workflow (fake provider)", () => {
     // The Records table is still there and still usable.
     expect(recordsHeading()).toBeTruthy();
     expect(screen.getByRole("button", { name: "EVD-000105" })).toBeTruthy();
+  });
+
+  it("retries a failed record detail and restores the selected detail", async () => {
+    const user = userEvent.setup();
+    let attempts = 0;
+    const getRecord = (id: string) => (attempts++ === 0 ? Promise.reject(new Error("temporary detail failure")) : Promise.resolve(DETAILS[id]));
+    render(<Explorer dataProvider={fakeProvider({ getRecord })} />);
+
+    await user.click(await screen.findByRole("button", { name: "PRB-0005" }));
+    const detailPanel = await getDetailPanel();
+    const alert = await within(detailPanel).findByRole("alert");
+    await user.click(within(alert).getByRole("button", { name: "Tentar novamente" }));
+    expect(await within(detailPanel).findByText("Campos")).toBeTruthy();
+    expect(attempts).toBe(2);
   });
 
   it("filters rows as the user types, case- and diacritic-insensitively", async () => {

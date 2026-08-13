@@ -21,6 +21,7 @@ interface AppProps {
 
 export function App({ dataProvider = defaultProvider }: AppProps) {
   const [state, setState] = useState<ExplorerStartupState | { status: "loading" }>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,7 +32,7 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
     return () => {
       cancelled = true;
     };
-  }, [dataProvider]);
+  }, [dataProvider, attempt]);
 
   return (
     <>
@@ -51,6 +52,9 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
           <div role="alert">
             <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o Explorer"}</h2>
             <p>{state.error.message}</p>
+            <button type="button" onClick={() => setAttempt((value) => value + 1)}>
+              Tentar novamente
+            </button>
           </div>
         )}
 

@@ -18,8 +18,9 @@ function asDataLoadError(error: unknown): DataLoadError {
  * throughout the Records view. Never loads edges.json or any record-detail
  * file.
  */
-export function useRecordIndex(provider: DataProvider): RecordIndexState {
+export function useRecordIndex(provider: DataProvider): RecordIndexState & { retry: () => void } {
   const [state, setState] = useState<RecordIndexState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -37,7 +38,7 @@ export function useRecordIndex(provider: DataProvider): RecordIndexState {
     return () => {
       cancelled = true;
     };
-  }, [provider]);
+  }, [provider, attempt]);
 
-  return state;
+  return { ...state, retry: () => setAttempt((value) => value + 1) };
 }

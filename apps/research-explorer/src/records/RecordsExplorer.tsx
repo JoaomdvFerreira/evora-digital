@@ -56,7 +56,10 @@ export function RecordsExplorer({
     return (
       <div role="alert">
         <h2>{ERROR_TITLES[indexState.error.kind] ?? "Não foi possível carregar os registos"}</h2>
-        <p>{indexState.error.message}</p>
+          <p>{indexState.error.message}</p>
+          <button type="button" onClick={indexState.retry}>
+            Tentar novamente
+          </button>
       </div>
     );
   }

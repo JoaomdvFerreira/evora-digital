@@ -154,6 +154,9 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, 
         <div role="alert">
           <h3>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o registo"}</h3>
           <p>{state.error.message}</p>
+          <button type="button" onClick={state.retry}>
+            Tentar novamente
+          </button>
         </div>
       )}
 

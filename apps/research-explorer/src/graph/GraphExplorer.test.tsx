@@ -113,6 +113,24 @@ describe("GraphExplorer", () => {
     expect(await screen.findByRole("alert")).toBeTruthy();
   });
 
+  it("retries failed Graph data without losing its focused-record context", async () => {
+    let edgeAttempts = 0;
+    const provider: DataProvider = {
+      ...fakeProvider(),
+      getEdges: () => (edgeAttempts++ === 0 ? Promise.reject(new Error("temporary edge failure")) : Promise.resolve(EDGES)),
+    };
+    const user = userEvent.setup();
+    render(
+      <GraphExplorer dataProvider={provider} focusId="PRB-0005" depth={1} onFocusChange={vi.fn()} onClearFocus={vi.fn()} onDepthChange={vi.fn()} onOpenGeneric={vi.fn()} onViewAsProblem={vi.fn()} />
+    );
+
+    const alert = await screen.findByRole("alert");
+    expect(within(alert).getByText(/temporary edge failure/)).toBeTruthy();
+    await user.click(within(alert).getByRole("button", { name: "Tentar novamente" }));
+    expect((await screen.findAllByRole("button", { name: /EVD-0001/ })).length).toBeGreaterThan(0);
+    expect(edgeAttempts).toBeGreaterThanOrEqual(2);
+  });
+
   it("shows the 1-hop neighbourhood (nodes and relations) for a focused record, and offers 2-hop expansion", async () => {
     const onDepthChange = vi.fn();
     render(

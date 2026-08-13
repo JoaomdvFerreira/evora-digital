@@ -88,6 +88,9 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
       <div ref={errorRef} role="alert" tabIndex={-1}>
         <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o Problema"}</h2>
         <p>{state.error.message}</p>
+        <button type="button" onClick={state.retry}>
+          Tentar novamente
+        </button>
       </div>
     );
   }
@@ -283,7 +286,10 @@ export function ProblemView({ dataProvider, problemId, onOpenGeneric, onBackToRe
     return (
       <div role="alert">
         <h2>Não foi possível carregar os registos</h2>
-        <p>{indexState.error.message}</p>
+          <p>{indexState.error.message}</p>
+          <button type="button" onClick={indexState.retry}>
+            Tentar novamente
+          </button>
       </div>
     );
   }

@@ -18,8 +18,9 @@ function asDataLoadError(error: unknown): DataLoadError {
  * failure here is fully isolated from the already-loaded Records index: it
  * only ever affects this hook's own state, not useRecordIndex's.
  */
-export function useRecordDetail(provider: DataProvider, selectedId: string | null): RecordDetailState {
+export function useRecordDetail(provider: DataProvider, selectedId: string | null): RecordDetailState & { retry: () => void } {
   const [state, setState] = useState<RecordDetailState>({ status: "idle" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (selectedId === null) {
@@ -39,7 +40,7 @@ export function useRecordDetail(provider: DataProvider, selectedId: string | nul
     return () => {
       cancelled = true;
     };
-  }, [provider, selectedId]);
+  }, [provider, selectedId, attempt]);
 
-  return state;
+  return { ...state, retry: () => setAttempt((value) => value + 1) };
 }

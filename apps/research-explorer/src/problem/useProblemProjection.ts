@@ -22,8 +22,9 @@ function asDataLoadError(error: unknown): DataLoadError {
  * isolated to this hook's own state — it never affects the already-loaded
  * Records index or any other selection.
  */
-export function useProblemProjection(provider: DataProvider, lookup: Map<string, RecordSummary>, problemId: string | null): ProblemProjectionState {
+export function useProblemProjection(provider: DataProvider, lookup: Map<string, RecordSummary>, problemId: string | null): ProblemProjectionState & { retry: () => void } {
   const [state, setState] = useState<ProblemProjectionState>({ status: "idle" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (problemId === null) {
@@ -43,7 +44,7 @@ export function useProblemProjection(provider: DataProvider, lookup: Map<string,
     return () => {
       cancelled = true;
     };
-  }, [provider, lookup, problemId]);
+  }, [provider, lookup, problemId, attempt]);
 
-  return state;
+  return { ...state, retry: () => setAttempt((value) => value + 1) };
 }
