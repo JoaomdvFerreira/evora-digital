@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { DataProvider } from "../dataProvider/types";
 import { describeType, formatTypedId } from "../typeGlossary";
 import { normalizeForSearch } from "../records/normalize";
@@ -79,6 +79,10 @@ export function GraphExplorer({
 }: GraphExplorerProps) {
   const state = useGraphData(dataProvider);
   const canvasRef = useRef<GraphCanvasHandle>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+  const invalidFocusRef = useRef<HTMLDivElement>(null);
+  const focusedEntryRef = useRef(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [excludedTypes, setExcludedTypes] = useState<Set<string>>(new Set());
   const [fullCorpusView, setFullCorpusView] = useState(false);
@@ -118,6 +122,17 @@ export function GraphExplorer({
     return { nodeIds: nv.nodeIds, edgeIds: nv.edgeIds, positions, presentTypes, hopOf };
   }, [state, focusId, depth, excludedTypes, fullCorpusView]);
 
+  const invalidFocus = state.status === "ready" && !fullCorpusView && focusId !== null && !state.graph.hasNode(focusId);
+
+  useEffect(() => {
+    if (focusedEntryRef.current) return;
+    const target = state.status === "error" ? errorRef.current : invalidFocus ? invalidFocusRef.current : state.status === "ready" ? headingRef.current : null;
+    if (target) {
+      target.focus();
+      focusedEntryRef.current = true;
+    }
+  }, [invalidFocus, state.status]);
+
   if (state.status === "loading") {
     return (
       <p role="status" aria-live="polite">
@@ -128,7 +143,7 @@ export function GraphExplorer({
 
   if (state.status === "error") {
     return (
-      <div role="alert">
+      <div ref={errorRef} role="alert" tabIndex={-1}>
         <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o grafo"}</h2>
         <p>{state.error.message}</p>
       </div>
@@ -136,6 +151,21 @@ export function GraphExplorer({
   }
 
   const { graph, lookup } = state;
+  if (invalidFocus) {
+    return (
+      <section aria-labelledby="graph-heading" className="graph-explorer">
+        <h2 id="graph-heading">Grafo</h2>
+        <div ref={invalidFocusRef} role="alert" tabIndex={-1}>
+          <h3>Registo focado não encontrado</h3>
+          <p>O identificador no endereço não corresponde a um registo disponível neste grafo.</p>
+          <button type="button" onClick={onClearFocus}>
+            Limpar seleção e escolher outro registo
+          </button>
+        </div>
+      </section>
+    );
+  }
+
   const focusSummary = focusId ? lookup.get(focusId) : undefined;
   const expandable = !fullCorpusView && focusId !== null && canExpand(view!.hopOf, depth);
   const canCollapse = !fullCorpusView && depth > MIN_DEPTH;
@@ -165,7 +195,9 @@ export function GraphExplorer({
 
   return (
     <section aria-labelledby="graph-heading" className="graph-explorer">
-      <h2 id="graph-heading">Grafo</h2>
+      <h2 ref={headingRef} id="graph-heading" tabIndex={-1}>
+        Grafo
+      </h2>
       <p>
         Modo de exploração por vizinhança: mostra o registo focado e as suas relações diretas — não o corpus completo. O grafo é
         complementar aos Registos e à vista de Problema, nunca a única forma de aceder a um facto.

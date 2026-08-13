@@ -8,6 +8,7 @@ const INDEX: RecordSummary[] = [
   { id: "PRB-0005", type: "PRB-", label: "Parking pressure", file: "research/problems/PRB-0005.yaml", summaryFields: {} },
   { id: "EVD-0001", type: "EVD-", label: "Evidence one", file: "research/evidence/EVD-0001.yaml", summaryFields: {} },
   { id: "SRC-0001", type: "SRC-", label: "Source one", file: "research/sources/SRC-0001.yaml", summaryFields: {} },
+  { id: "EVD-ISOLATED", type: "EVD-", label: "Isolated evidence", file: "research/evidence/EVD-ISOLATED.yaml", summaryFields: {} },
 ];
 
 const EDGES: RecordEdge[] = [
@@ -53,6 +54,63 @@ describe("GraphExplorer", () => {
       />
     );
     await screen.findByText(/Procure e selecione um registo/);
+  });
+
+  it("keeps a valid focused record with zero relationships as a one-node graph", async () => {
+    render(
+      <GraphExplorer
+        dataProvider={fakeProvider()}
+        focusId="EVD-ISOLATED"
+        depth={1}
+        onFocusChange={vi.fn()}
+        onClearFocus={vi.fn()}
+        onDepthChange={vi.fn()}
+        onOpenGeneric={vi.fn()}
+        onViewAsProblem={vi.fn()}
+      />
+    );
+
+    expect(await screen.findByText(/1 nó visível · 0 relações visíveis/)).toBeTruthy();
+  });
+
+  it("shows an actionable invalid-focus error rather than a successful empty graph", async () => {
+    const onClearFocus = vi.fn();
+    render(
+      <GraphExplorer
+        dataProvider={fakeProvider()}
+        focusId="PRB-STALE"
+        depth={1}
+        onFocusChange={vi.fn()}
+        onClearFocus={onClearFocus}
+        onDepthChange={vi.fn()}
+        onOpenGeneric={vi.fn()}
+        onViewAsProblem={vi.fn()}
+      />
+    );
+
+    const alert = await screen.findByRole("alert");
+    expect(within(alert).getByRole("heading", { name: "Registo focado não encontrado" })).toBeTruthy();
+    expect(screen.queryByText(/0 nós visíveis/)).toBeNull();
+    const user = userEvent.setup();
+    await user.click(within(alert).getByRole("button", { name: /Limpar seleção/ }));
+    expect(onClearFocus).toHaveBeenCalledTimes(1);
+  });
+
+  it("treats a malformed focus ID as invalid and recoverable", async () => {
+    render(
+      <GraphExplorer
+        dataProvider={fakeProvider()}
+        focusId="not/a/record"
+        depth={1}
+        onFocusChange={vi.fn()}
+        onClearFocus={vi.fn()}
+        onDepthChange={vi.fn()}
+        onOpenGeneric={vi.fn()}
+        onViewAsProblem={vi.fn()}
+      />
+    );
+
+    expect(await screen.findByRole("alert")).toBeTruthy();
   });
 
   it("shows the 1-hop neighbourhood (nodes and relations) for a focused record, and offers 2-hop expansion", async () => {

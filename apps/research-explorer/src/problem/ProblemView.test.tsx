@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -40,7 +42,13 @@ const DETAILS: Record<string, RecordDetail> = {
     id: "EVD-0001",
     type: "EVD-",
     file: "research/evidence/EVD-0001.yaml",
-    record: { evidence_id: "EVD-0001", type: "institutional" },
+    record: {
+      evidence_id: "EVD-0001",
+      type: "institutional",
+      source: { publisher: "Fixture Publisher", title: "Fixture source" },
+      observation: { summary: "The fixture observation provides concise context." },
+      analysis: { contribution: ["CONFIRMS", "REFINES"] },
+    },
     outgoingEdges: [
       { field: "source.source_id", ordinal: null, to: "SRC-0001" },
       { field: "additional_sources", ordinal: 0, to: "WID-0001" },
@@ -140,10 +148,53 @@ describe("ProblemView", () => {
     expect(onOpenGeneric).toHaveBeenCalledWith("SRC-0001");
   });
 
-  it("does not infer SUPPORTS/CONTRADICTS/CAUSES semantics anywhere in the rendered output", async () => {
+  it("shows only explicit canonical evidence contribution, observation, and provenance context", async () => {
     render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     await screen.findByRole("heading", { name: "Parking pressure" });
-    const body = document.body.textContent ?? "";
-    expect(body).not.toMatch(/SUPPORTS|CONTRADICTS|CAUSES/);
+    const evidenceSection = screen.getByLabelText("Evidência");
+    expect(within(evidenceSection).getByText("CONFIRMS, REFINES.")).toBeTruthy();
+    expect(within(evidenceSection).getByText(/fixture observation provides concise context/i)).toBeTruthy();
+    expect(within(evidenceSection).getByText(/Fixture Publisher — Fixture source/)).toBeTruthy();
+  });
+
+  it("keeps missing evidence contribution explicitly unclassified rather than inferring confirmation", async () => {
+    const provider = fakeProvider();
+    provider.getRecord = (id: string) => {
+      if (id === "EVD-0001") {
+        return Promise.resolve({ ...DETAILS[id], record: { evidence_id: id, type: "institutional" } });
+      }
+      const detail = DETAILS[id];
+      return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
+    };
+    render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+
+    const evidenceSection = await screen.findByLabelText("Evidência");
+    expect(within(evidenceSection).getByText("não registada.")).toBeTruthy();
+    expect(within(evidenceSection).queryByText("CONFIRMS")).toBeNull();
+  });
+});
+
+const GENERATED_DIR = path.resolve(__dirname, "..", "..", "generated");
+const hasRealCorpus = fs.existsSync(path.join(GENERATED_DIR, "index.json"));
+
+describe.skipIf(!hasRealCorpus)("ProblemView — real generated corpus regression", () => {
+  function realCorpusProvider(): DataProvider {
+    const index: RecordSummary[] = JSON.parse(fs.readFileSync(path.join(GENERATED_DIR, "index.json"), "utf8"));
+    return {
+      getManifest: () => Promise.reject(new Error("not used")),
+      listRecords: () => Promise.resolve(index),
+      getRecord: (id: string) => Promise.resolve(JSON.parse(fs.readFileSync(path.join(GENERATED_DIR, "record-detail", `${id}.json`), "utf8"))),
+      getEdges: () => Promise.resolve([]),
+    };
+  }
+
+  it("keeps EVD-000127's explicit CONTRADICTS contribution, observation, and source visible for PRB-0006", async () => {
+    render(<ProblemView dataProvider={realCorpusProvider()} problemId="PRB-0006" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+
+    const evidenceButton = await screen.findByRole("button", { name: /EVD-000127/ });
+    const evidenceItem = evidenceButton.closest("li")!;
+    expect(within(evidenceItem).getByText("CONTRADICTS.")).toBeTruthy();
+    expect(within(evidenceItem).getByText(/current residence-accommodation application process fully operational/i)).toBeTruthy();
+    expect(within(evidenceItem).getByText(/Open Évora/)).toBeTruthy();
   });
 });

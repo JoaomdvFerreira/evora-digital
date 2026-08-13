@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { DataProvider, RecordDetail, RecordSummary } from "../dataProvider/types";
 import { useRecordIndex } from "../records/useRecordIndex";
 import { useProblemProjection } from "./useProblemProjection";
@@ -21,6 +22,22 @@ function fieldValue(record: Record<string, unknown>, key: string): string | null
   return typeof value === "string" || typeof value === "number" ? String(value) : null;
 }
 
+function recordValue(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : null;
+}
+
+function stringValues(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
+function evidenceSourceLabel(record: Record<string, unknown>): string | null {
+  const source = recordValue(record.source);
+  if (!source) return null;
+  const publisher = fieldValue(source, "publisher");
+  const title = fieldValue(source, "title");
+  return [publisher, title].filter((value): value is string => value !== null).join(" — ") || null;
+}
+
 function TypedLinkButton({ detail, onOpenGeneric, suffix }: { detail: RecordDetail; onOpenGeneric: (id: string) => void; suffix?: string }) {
   return (
     <button type="button" onClick={() => onOpenGeneric(detail.id)}>
@@ -41,6 +58,20 @@ interface ProblemContentProps {
 
 function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBackToRecords, onViewInGraph }: ProblemContentProps) {
   const state = useProblemProjection(dataProvider, lookup, problemId);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+  const focusedEntryRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (focusedEntryRef.current === problemId) return;
+    if (state.status === "ready") {
+      headingRef.current?.focus();
+      focusedEntryRef.current = problemId;
+    } else if (state.status === "error") {
+      errorRef.current?.focus();
+      focusedEntryRef.current = problemId;
+    }
+  }, [problemId, state.status]);
 
   if (state.status === "idle") return null;
 
@@ -54,7 +85,7 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
 
   if (state.status === "error") {
     return (
-      <div role="alert">
+      <div ref={errorRef} role="alert" tabIndex={-1}>
         <h2>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o Problema"}</h2>
         <p>{state.error.message}</p>
       </div>
@@ -86,7 +117,9 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
         </button>
       </p>
 
-      <h2 id="problem-heading">{title}</h2>
+      <h2 ref={headingRef} id="problem-heading" tabIndex={-1}>
+        {title}
+      </h2>
       <p>
         <code>{problem.id}</code> · <code>{problem.file}</code>
       </p>
@@ -142,28 +175,47 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
           <p>Nenhuma evidência associada.</p>
         ) : (
           <ul>
-            {evidence.map(({ detail, sources }) => (
-              <li key={detail.id}>
-                <TypedLinkButton
-                  detail={detail}
-                  onOpenGeneric={onOpenGeneric}
-                  suffix={fieldValue(detail.record as Record<string, unknown>, "type") ?? undefined}
-                />
-                {sources.length > 0 && (
-                  <ul>
-                    {sources.map((source) => (
-                      <li key={source.id}>
-                        <TypedLinkButton
-                          detail={source}
-                          onOpenGeneric={onOpenGeneric}
-                          suffix={fieldValue(source.record as Record<string, unknown>, "publisher") ?? undefined}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+            {evidence.map(({ detail, sources }) => {
+              const evidenceRecord = detail.record as Record<string, unknown>;
+              const analysis = recordValue(evidenceRecord.analysis);
+              const contributions = stringValues(analysis?.contribution);
+              const observation = recordValue(evidenceRecord.observation);
+              const observationSummary = observation ? fieldValue(observation, "summary") : null;
+              const provenance = evidenceSourceLabel(evidenceRecord);
+
+              return (
+                <li key={detail.id}>
+                  <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ?? undefined} />
+                  <p>
+                    <strong>Contribuição canónica:</strong>{" "}
+                    {contributions.length > 0 ? contributions.join(", ") : "não registada"}.
+                  </p>
+                  {observationSummary && (
+                    <p>
+                      <strong>Observação:</strong> {observationSummary}
+                    </p>
+                  )}
+                  {(provenance || sources.length > 0) && (
+                    <p>
+                      <strong>Origem:</strong> {provenance ?? "registo de fonte relacionado abaixo"}.
+                    </p>
+                  )}
+                  {sources.length > 0 && (
+                    <ul aria-label={`Registos de fonte relacionados com ${detail.id}`}>
+                      {sources.map((source) => (
+                        <li key={source.id}>
+                          <TypedLinkButton
+                            detail={source}
+                            onOpenGeneric={onOpenGeneric}
+                            suffix={fieldValue(source.record as Record<string, unknown>, "publisher") ?? undefined}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

@@ -32,7 +32,9 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(funct
   const containerRef = useRef<HTMLDivElement>(null);
   const sigmaRef = useRef<Sigma<RenderNodeAttributes, RenderEdgeAttributes> | null>(null);
   const onNodeClickRef = useRef(onNodeClick);
+  const graphRef = useRef(graph);
   onNodeClickRef.current = onNodeClick;
+  graphRef.current = graph;
   const [renderError, setRenderError] = useState<string | null>(null);
 
   // Sigma instance is created exactly once (empty dep array is intentional —
@@ -53,7 +55,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(funct
     import("sigma")
       .then(({ default: SigmaCtor }) => {
         if (cancelled || !containerRef.current) return;
-        sigma = new SigmaCtor<RenderNodeAttributes, RenderEdgeAttributes>(graph, containerRef.current, {
+        sigma = new SigmaCtor<RenderNodeAttributes, RenderEdgeAttributes>(graphRef.current, containerRef.current, {
           allowInvalidContainer: true,
           renderLabels: true,
           labelRenderedSizeThreshold: 0,

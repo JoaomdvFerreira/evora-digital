@@ -296,9 +296,50 @@ describe("Explorer — Problem view (RE-03)", () => {
     const detailPanel = await getDetailPanel();
     await user.click(await within(detailPanel).findByRole("button", { name: "Ver como Problema (contexto completo)" }));
 
-    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    const heading = await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
     expect(window.location.search).toContain("view=problem");
     expect(window.location.search).toContain("id=PRB-0005");
+    expect(document.title).toBe("Problema PRB-0005 — Open Évora Research Explorer");
+    expect(document.activeElement).toBe(heading);
+  });
+
+  it("opens Graph from record detail with a focused heading and record-specific title", async () => {
+    const user = userEvent.setup();
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await user.click(await screen.findByRole("button", { name: "PRB-0005" }));
+    const detailPanel = await getDetailPanel();
+    await user.click(await within(detailPanel).findByRole("button", { name: "Ver no Grafo" }));
+
+    const heading = await screen.findByRole("heading", { name: "Grafo", level: 2 });
+    expect(document.title).toBe("Grafo PRB-0005 — Open Évora Research Explorer");
+    expect(document.activeElement).toBe(heading);
+  });
+
+  it("does not steal focus during an ordinary Graph filter update", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?view=graph&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    const typeFilter = await screen.findByLabelText(/PRB-\s*—/);
+    await user.click(typeFilter);
+    expect(document.activeElement).toBe(typeFilter);
+  });
+
+  it("turns a direct stale Graph URL into a recoverable state and keeps history navigation coherent", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?view=graph&id=PRB-STALE");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    const alert = await screen.findByRole("alert");
+    await user.click(within(alert).getByRole("button", { name: /Limpar seleção/ }));
+    await screen.findByText(/Procure e selecione um registo/);
+    expect(window.location.search).toBe("?view=graph");
+
+    window.history.back();
+    await screen.findByRole("alert");
+    window.history.forward();
+    await screen.findByText(/Procure e selecione um registo/);
   });
 
   it("navigating back to Records from the Problem view preserves search context", async () => {

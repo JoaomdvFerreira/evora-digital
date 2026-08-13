@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import type { DataProvider } from "./dataProvider/types";
 import { useExplorerUrlState } from "./useExplorerUrlState";
 import { Overview } from "./overview/Overview";
@@ -28,6 +28,19 @@ interface ExplorerProps {
  */
 export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
   const url = useExplorerUrlState();
+
+  useEffect(() => {
+    const selected = url.state.selectedId ? ` ${url.state.selectedId}` : "";
+    const viewTitle =
+      url.state.view === "problem"
+        ? `Problema${selected}`
+        : url.state.view === "graph"
+          ? `Grafo${selected}`
+          : url.state.view === "overview"
+            ? "Visão geral"
+            : "Registos";
+    document.title = `${viewTitle} — Open Évora Research Explorer`;
+  }, [url.state.selectedId, url.state.view]);
 
   return (
     <>

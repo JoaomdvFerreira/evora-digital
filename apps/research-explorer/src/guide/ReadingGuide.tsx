@@ -24,6 +24,8 @@ export function ReadingGuide({ schemaPrefixes }: ReadingGuideProps) {
     <details className="reading-guide">
       <summary>Como ler o Explorer</summary>
 
+      <h2>Orientação do Explorer</h2>
+
       <h3>Tipos de registo</h3>
       <dl>
         {prefixes.map((prefix) => {
