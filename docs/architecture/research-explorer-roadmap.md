@@ -18,7 +18,7 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
 | RE-04 — Graph Explorer | **CLOSED** |
 | RE-05 — Scale & Quality Gate | **CLOSED** |
-| RE-06 — Local Explorer v1 | **SCOPED — READY TO IMPLEMENT** |
+| RE-06 — Local Explorer v1 | **RE-06 ENGINEERING COMPLETE** — Design/UX Review pending before Local Explorer v1 closure |
 | RE-07 — Optional Public Explorer | not started |
 
 Implementation facts as of RE-05 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`); as of RE-05, the whole `GraphExplorer` feature (not just Sigma inside `GraphCanvas`) is loaded via `React.lazy`, so Graphology, the Graph domain modules, and `edges.json` are never touched by Overview/Records/Problem. `apps/research-explorer/benchmark/` holds the disposable, gitignored RE-05 synthetic-scale benchmark harness (not part of the production app). No backend, database, or authentication anywhere in the stack.

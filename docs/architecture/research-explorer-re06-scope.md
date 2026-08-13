@@ -1,6 +1,6 @@
 # Research Explorer — RE-06 Local Explorer v1: Reconciled Scope
 
-**Status:** scoped — ready to implement.
+**Status:** RE-06 ENGINEERING COMPLETE. The deferred consolidated Design/UX Review remains required before `LOCAL EXPLORER v1 CLOSED`.
 **Purpose:** final engineering scope for RE-06 only; this document does not start implementation.
 **Canonical inputs:** roadmap, development contract, integral quality review, RE-05 results, current Explorer source/tests, and repository state at scope reconciliation.
 
