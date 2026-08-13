@@ -18,7 +18,7 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
 | RE-04 — Graph Explorer | **CLOSED** |
 | RE-05 — Scale & Quality Gate | **CLOSED** |
-| RE-06 — Local Explorer v1 | **NEXT** |
+| RE-06 — Local Explorer v1 | **SCOPED — READY TO IMPLEMENT** |
 | RE-07 — Optional Public Explorer | not started |
 
 Implementation facts as of RE-05 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`); as of RE-05, the whole `GraphExplorer` feature (not just Sigma inside `GraphCanvas`) is loaded via `React.lazy`, so Graphology, the Graph domain modules, and `edges.json` are never touched by Overview/Records/Problem. `apps/research-explorer/benchmark/` holds the disposable, gitignored RE-05 synthetic-scale benchmark harness (not part of the production app). No backend, database, or authentication anywhere in the stack.
@@ -121,13 +121,13 @@ This directly motivated RE-03's two additions below: a reading guide (addresses 
 
 ## RE-06 — Local Explorer v1
 
-- **Objective:** ship the first complete, locally-run release.
+- **Objective:** close the remaining bounded runtime, contract, and interaction gaps so the already-assembled static Explorer is a credible, validated Local Explorer v1.
 - **Dependencies:** RE-02 through RE-05.
-- **Scope:** Overview, Problems, Records, Graph, Search, Filters, Trace Evidence, Detail/Provenance — assembled from the phases above, not new feature work.
+- **Scope:** the reconciled implementation and acceptance scope in `research-explorer-re06-scope.md`. Overview, Problems, Records, Graph, Search, Filters, Trace Evidence, and Detail/Provenance were assembled by RE-02 through RE-05 and are not reimplemented here.
 - **Non-goals:** anything in the explicit RE-06 boundary list (no YAML editing, admin UI, auth, database, AI-generated relationships, automatic scoring, semantic inference).
-- **Outputs:** a stable `npm run explorer` / `npm run explorer:build` release usable as a daily research tool.
-- **Exit gate:** local usefulness demonstrated in actual use, not just passing tests.
-- **Validation:** full existing test suite; typecheck; production build; sustained local use.
+- **Outputs:** a stable `npm run explorer` / `npm run explorer:build` engineering release, subject to the bounded remediation and engineering-completion gate; Local Explorer v1 closure additionally requires the separately deferred Design/UX Review disposition.
+- **Exit gate:** `RE-06 ENGINEERING COMPLETE` requires the scope document's automated validation, real-browser smoke pass, and representative local-use walkthrough. `LOCAL EXPLORER v1 CLOSED` additionally requires the Design/UX Review, triage, and only its bounded v1-required changes; public deployment remains separate.
+- **Validation:** see `research-explorer-re06-scope.md`; no permanent E2E framework is required by default.
 
 ## RE-07 — Optional Public Explorer
 
