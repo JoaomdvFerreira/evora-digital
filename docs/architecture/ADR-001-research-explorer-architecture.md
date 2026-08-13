@@ -53,7 +53,7 @@ An edge means "record A references record B via schema field F" — nothing more
 
 ### D5 — Generated-data layout
 
-`apps/research-explorer/generated/` — gitignored, rebuilt deterministically by the RE-01 build script from `research/` on every run. Never hand-edited, never treated as canonical, never diffed as a source of truth. Each generated file records its own `generated_at` and the counts from the validator's `totalRecords`, so staleness is self-evident.
+`apps/research-explorer/generated/` — gitignored, rebuilt deterministically by the RE-01 build script from `research/` on every run. Never hand-edited, never treated as canonical, never diffed as a source of truth. `manifest.json` alone records operational metadata (`generatedAt`, `sourceCommit`, `corpusFingerprint`, and validator-derived counts); index, edge, and detail files carry only their documented read-model content. See the read-model specification for the exact v1 shape.
 
 ### D6 — DataProvider boundary
 

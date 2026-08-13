@@ -247,6 +247,23 @@ describe("Explorer — URL-addressable state", () => {
     pushSpy.mockRestore();
   });
 
+  it("does not add history entries for semantically unchanged view, selection, or type filter actions", async () => {
+    const user = userEvent.setup();
+    const pushSpy = vi.spyOn(window.history, "pushState");
+    render(<Explorer dataProvider={fakeProvider()} />);
+    await screen.findByRole("button", { name: "PRB-0005" });
+
+    await user.click(screen.getByRole("button", { name: "Registos" }));
+    await user.selectOptions(screen.getByLabelText("Tipo"), "all");
+    expect(pushSpy).not.toHaveBeenCalled();
+
+    await user.click(screen.getByRole("button", { name: /PRB-0005/ }));
+    expect(pushSpy).toHaveBeenCalledTimes(1);
+    await user.click(screen.getByRole("button", { name: /PRB-0005/ }));
+    expect(pushSpy).toHaveBeenCalledTimes(1);
+    pushSpy.mockRestore();
+  });
+
   it("a URL with view/id/query/type on initial load restores that state (bookmark/reload)", async () => {
     window.history.replaceState(null, "", "/?view=records&id=PRB-0005&q=PRB&type=PRB-");
     render(<Explorer dataProvider={fakeProvider()} />);

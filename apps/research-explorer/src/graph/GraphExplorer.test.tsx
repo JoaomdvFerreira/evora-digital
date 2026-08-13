@@ -283,6 +283,38 @@ describe("GraphExplorer", () => {
     expect(alert.textContent).toMatch(/Registos e a vista de Problema continuam disponíveis/);
   });
 
+  it("announces total Graph-search matches separately from the 12-result display cap", async () => {
+    const searchIndex: RecordSummary[] = Array.from({ length: 13 }, (_, index) => ({
+      id: `EVD-${String(index + 1).padStart(4, "0")}`,
+      type: "EVD-",
+      label: index === 12 ? "Group B" : "Group A",
+      file: `research/evidence/EVD-${String(index + 1).padStart(4, "0")}.yaml`,
+      summaryFields: {},
+    }));
+    const provider: DataProvider = { ...fakeProvider(), listRecords: () => Promise.resolve(searchIndex), getEdges: () => Promise.resolve([]) };
+    const user = userEvent.setup();
+    render(<GraphExplorer dataProvider={provider} focusId={null} depth={1} onFocusChange={vi.fn()} onClearFocus={vi.fn()} onDepthChange={vi.fn()} onOpenGeneric={vi.fn()} onViewAsProblem={vi.fn()} />);
+
+    const search = await screen.findByLabelText("Procurar registo para focar");
+    const searchArea = search.parentElement as HTMLElement;
+    await user.type(search, "missing");
+    expect(searchArea.textContent).toMatch(/0 resultados encontrados/);
+
+    await user.clear(search);
+    await user.type(search, "Group B");
+    expect(searchArea.textContent).toMatch(/1 resultado encontrado/);
+
+    await user.clear(search);
+    await user.type(search, "Group A");
+    expect(searchArea.textContent).toMatch(/12 resultados encontrados/);
+    expect(within(searchArea).getAllByRole("button")).toHaveLength(12);
+
+    await user.clear(search);
+    await user.type(search, "EVD-");
+    expect(searchArea.textContent).toMatch(/13 resultados encontrados.*primeiros 12/);
+    expect(within(searchArea).getAllByRole("button")).toHaveLength(12);
+  });
+
   it("does not infer SUPPORTS/CONTRADICTS/CAUSES semantics anywhere in the rendered output", async () => {
     render(
       <GraphExplorer

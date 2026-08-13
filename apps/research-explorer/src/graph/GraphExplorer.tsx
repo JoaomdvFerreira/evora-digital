@@ -87,14 +87,13 @@ export function GraphExplorer({
   const [excludedTypes, setExcludedTypes] = useState<Set<string>>(new Set());
   const [fullCorpusView, setFullCorpusView] = useState(false);
 
-  const searchResults = useMemo(() => {
+  const searchMatches = useMemo(() => {
     if (state.status !== "ready") return [];
     const q = normalizeForSearch(searchQuery.trim());
     if (q === "") return [];
-    return [...state.lookup.values()]
-      .filter((record) => recordMatchesQuery(recordSearchText(record), q))
-      .slice(0, MAX_SEARCH_RESULTS);
+    return [...state.lookup.values()].filter((record) => recordMatchesQuery(recordSearchText(record), q));
   }, [state, searchQuery]);
+  const searchResults = searchMatches.slice(0, MAX_SEARCH_RESULTS);
 
   const view = useMemo(() => {
     if (state.status !== "ready") return null;
@@ -218,7 +217,8 @@ export function GraphExplorer({
           />
           {searchQuery.trim() !== "" && (
             <p aria-live="polite">
-              {searchResults.length} {searchResults.length === 1 ? "resultado encontrado" : "resultados encontrados"}.
+              {searchMatches.length} {searchMatches.length === 1 ? "resultado encontrado" : "resultados encontrados"}
+              {searchMatches.length > MAX_SEARCH_RESULTS ? `; a mostrar os primeiros ${searchResults.length}` : ""}.
             </p>
           )}
           {searchResults.length > 0 && (

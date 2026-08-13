@@ -28,11 +28,13 @@ export function useExplorerUrlState() {
   }, []);
 
   function push(next: ExplorerUrlState) {
+    if (serializeUrlState(next) === serializeUrlState(state)) return;
     window.history.pushState(null, "", serializeUrlState(next) || window.location.pathname);
     setState(next);
   }
 
   function replace(next: ExplorerUrlState) {
+    if (serializeUrlState(next) === serializeUrlState(state)) return;
     window.history.replaceState(null, "", serializeUrlState(next) || window.location.pathname);
     setState(next);
   }
