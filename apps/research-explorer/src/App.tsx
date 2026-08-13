@@ -36,10 +36,10 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
 
   return (
     <>
-      <a className="skip-link" href="#main-content">
+      <a className="skip-link" href="#main-content" onClick={() => document.getElementById("main-content")?.focus()}>
         Saltar para o conteúdo
       </a>
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <h1>Open Évora Research Explorer</h1>
 
         {state.status === "loading" && (

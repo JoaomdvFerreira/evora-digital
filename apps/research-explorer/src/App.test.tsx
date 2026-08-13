@@ -32,3 +32,24 @@ it("retries a failed startup manifest load", async () => {
   expect(await screen.findByText(/Corpus: 0/)).toBeTruthy();
   expect(attempts).toBe(2);
 });
+
+it("moves focus to the main content when the skip link is activated", async () => {
+  const provider: DataProvider = {
+    getManifest: () => Promise.resolve(manifest),
+    listRecords: () => Promise.resolve([]),
+    getRecord: () => Promise.reject(new Error("not used")),
+    getEdges: () => Promise.resolve([]),
+  };
+  const user = userEvent.setup();
+  render(<App dataProvider={provider} />);
+
+  await user.tab();
+  const skipLink = screen.getByRole("link", { name: "Saltar para o conteúdo" });
+  expect(document.activeElement).toBe(skipLink);
+
+  await user.keyboard("{Enter}");
+  expect(document.activeElement).toBe(document.getElementById("main-content"));
+
+  await user.tab();
+  expect(document.activeElement).toBe(screen.getByRole("button", { name: "Visão geral" }));
+});
