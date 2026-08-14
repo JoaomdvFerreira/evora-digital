@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { describeType, knownTypePrefixes } from "../typeGlossary";
 
 interface ReadingGuideProps {
@@ -19,9 +20,29 @@ interface ReadingGuideProps {
  */
 export function ReadingGuide({ schemaPrefixes }: ReadingGuideProps) {
   const prefixes = schemaPrefixes && schemaPrefixes.length > 0 ? schemaPrefixes : knownTypePrefixes();
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  // A `#reading-guide` link targets this `<details>` element itself, not
+  // content inside it — the browser's native fragment-reveal algorithm only
+  // auto-opens an ancestor `<details>` when the target is hidden *inside*
+  // it, so a plain anchor jump here leaves the disclosure visibly collapsed
+  // even though navigation "succeeded". Point-of-use links (e.g. Problem
+  // View's "Ver a Orientação completa do Explorer") rely on this actually
+  // opening the guide, so it's opened explicitly on mount and on any later
+  // hash change to `#reading-guide`.
+  useEffect(() => {
+    const openIfTargeted = () => {
+      if (window.location.hash === "#reading-guide" && detailsRef.current) {
+        detailsRef.current.open = true;
+      }
+    };
+    openIfTargeted();
+    window.addEventListener("hashchange", openIfTargeted);
+    return () => window.removeEventListener("hashchange", openIfTargeted);
+  }, []);
 
   return (
-    <details className="reading-guide" id="reading-guide">
+    <details className="reading-guide" id="reading-guide" ref={detailsRef}>
       <summary>Como ler o Explorer</summary>
 
       <h2>Orientação do Explorer</h2>

@@ -430,6 +430,21 @@ describe("Explorer — Problem view (RE-03)", () => {
     expect(within(guide).getByRole("heading", { name: "Entradas e Saídas" })).toBeTruthy();
     expect(within(guide).getByText(/não significa, por si só/i)).toBeTruthy();
   });
+
+  it("Problem View's 'Ver a Orientação completa' link actually opens the collapsed reading guide, not just navigates to its anchor", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?view=problem&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+
+    const guide = screen.getByText("Como ler o Explorer").closest("details")!;
+    expect(guide.open).toBe(false);
+
+    await user.click(screen.getByRole("link", { name: /Orientação completa do Explorer/ }));
+
+    expect(window.location.hash).toBe("#reading-guide");
+    expect(guide.open).toBe(true);
+  });
 });
 
 describe("Explorer workflow — never loads edges.json or canonical YAML (real StaticDataProvider)", () => {
