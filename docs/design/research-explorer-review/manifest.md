@@ -18,3 +18,4 @@ Production build, real canonical corpus, Chrome 151.0.7922.110.
 | 12-narrow-record-detail.png | 1440x1000 | /?id=EVD-000127 | Narrow evidence record-detail view. |
 | 13-narrow-problem.png | 1440x1000 | /?view=problem&id=PRB-0006 | Narrow Problem View. |
 | 14-narrow-graph.png | 1440x1000 | /?view=graph&id=PRB-0006 | Narrow Graph controls and HTML alternative. |
+| 15-reading-guide-expanded-prb-0006.png | 1440x1000 | /?view=problem&id=PRB-0006 | Expanded “Como ler o Explorer” guide on PRB-0006. |
