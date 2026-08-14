@@ -15,7 +15,7 @@ main {
 }
 
 .manifest-summary {
-  color: #444;
+  color: #555;
   font-size: 0.9rem;
 }
 
@@ -147,8 +147,78 @@ tr[aria-selected="true"] {
 }
 
 .field-empty {
-  color: #777;
+  color: #555;
   font-style: italic;
+}
+
+/* Meaning zone (REDUX-001): the record's own canonical human-readable
+   content, read before any technical/schema inspection. Serif is reserved
+   for this role only — the rest of the app's chrome stays sans (see
+   docs/design/research-explorer-design-foundations.md §2). */
+.record-meaning-zone {
+  max-width: 45rem;
+}
+
+.record-type-context {
+  color: #555;
+  font-size: 0.85rem;
+  margin: 0 0 0.35rem;
+}
+
+.record-type-context code {
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+}
+
+.record-meaning {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.record-role-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+}
+
+.record-role-chip {
+  background: #f7f6f3;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+}
+
+.record-role-chip code {
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+}
+
+/* Compact provenance (REDUX-003): summary + counts sit immediately after
+   meaning; exact reference paths remain one anchor-link away in Relações. */
+.record-provenance {
+  background: #f7f6f3;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  margin: 0.75rem 0;
+}
+
+/* Technical inspection (REDUX-001): exhaustive canonical fields, always
+   reachable, closed by default so meaning is read first. */
+.technical-disclosure {
+  margin-top: 0.5rem;
+}
+
+.technical-disclosure summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.technical-disclosure dt {
+  color: #555;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+  font-size: 0.85rem;
 }
 
 .reading-guide {
@@ -176,6 +246,7 @@ article[aria-labelledby="problem-heading"] ul ul {
 
 code {
   background: #f2f2f2;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
   padding: 0 0.2rem;
 }
 

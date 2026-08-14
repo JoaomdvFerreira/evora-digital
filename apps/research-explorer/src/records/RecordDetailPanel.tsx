@@ -3,6 +3,7 @@ import type { DataProvider, RecordDetail, RecordEdgeRef, RecordSummary } from ".
 import { useRecordDetail } from "./useRecordDetail";
 import { RecordFieldTree } from "./RecordFieldTree";
 import { describeType, formatTypedId } from "../typeGlossary";
+import { findMeaningField } from "./meaningField";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -53,6 +54,41 @@ function RelationshipList({ title, edges, lookup, direction, onSelect }: Relatio
   );
 }
 
+/**
+ * The only edge field names any current schema declares specifically to
+ * relate a record to the Problem it is about (research/schemas/{evidence,
+ * assessment,hypothesis}.schema.json's own `references` entries — each
+ * declares `targetPrefix: "PRB-"` for exactly this field). Deliberately an
+ * explicit allowlist, not a suffix/regex heuristic: an edge whose field is
+ * *not* one of these never counts, even if it happens to resolve to a PRB-
+ * record for some unrelated reason.
+ */
+const PROBLEM_REFERENCE_FIELDS = ["problem", "analysis.related_problems"];
+
+/**
+ * Finds a related Problem to offer a "Ver como Problema" action for — but
+ * only via one of `PROBLEM_REFERENCE_FIELDS`, never merely because *some*
+ * incoming/outgoing edge happens to resolve to a PRB- record. Generic
+ * graph connectivity is not semantic equivalence: a reference is "record A
+ * points to record B via field F," nothing more (development-contract
+ * invariant 8), so this must not imply a Problem is another representation
+ * of, say, an Evidence record just because an edge connects them. Records
+ * that are themselves PRB- already get their own self action (see
+ * `RecordDetailContent`) so are excluded here to avoid a redundant second
+ * button.
+ */
+function findRelatedProblemId(detail: RecordDetail, lookup: Map<string, RecordSummary>): string | null {
+  if (detail.type === "PRB-") return null;
+  const candidateIds = [
+    ...detail.outgoingEdges.filter((edge) => PROBLEM_REFERENCE_FIELDS.includes(edge.field)).map((edge) => edge.to!),
+    ...detail.incomingEdges.filter((edge) => PROBLEM_REFERENCE_FIELDS.includes(edge.field)).map((edge) => edge.from!),
+  ];
+  for (const id of candidateIds) {
+    if (lookup.get(id)?.type === "PRB-") return id;
+  }
+  return null;
+}
+
 function RecordDetailContent({
   detail,
   lookup,
@@ -66,19 +102,51 @@ function RecordDetailContent({
   onViewAsProblem: (id: string) => void;
   onViewInGraph: (id: string) => void;
 }) {
+  const meaning = findMeaningField(detail.record);
+  const typeInfo = describeType(detail.type);
+  const relatedProblemId = findRelatedProblemId(detail, lookup);
+  // Already-explicit, schema-driven classification/status fields (RE-01's
+  // `buildSummaryFields()` — every enum-constrained field the record's own
+  // schema declares), reused here rather than singling out any one
+  // record-type-specific field (e.g. `analysis.contribution`) for special
+  // presentation.
+  const roleFields = Object.entries(lookup.get(detail.id)?.summaryFields ?? {});
+
   return (
     <>
-      <section aria-label="Identidade">
+      <section aria-label="Significado" className="record-meaning-zone">
+        <p className="record-type-context">
+          <code>{detail.type}</code> {typeInfo.label}
+        </p>
+        {meaning ? (
+          <p className="record-meaning">{meaning.value}</p>
+        ) : (
+          <p className="record-meaning field-empty">{detail.id} — sem campo de significado canónico identificado para este tipo de registo.</p>
+        )}
+        {roleFields.length > 0 && (
+          <p className="record-role-fields">
+            {roleFields.map(([field, value]) => (
+              <span key={field} className="record-role-chip">
+                <code>{field}</code>: {String(value)}
+              </span>
+            ))}
+          </p>
+        )}
+      </section>
+
+      <section aria-label="Proveniência" className="record-provenance">
+        <h3>Proveniência</h3>
         <dl>
           <dt>ID</dt>
           <dd>{detail.id}</dd>
-          <dt>Tipo</dt>
-          <dd>
-            <code>{detail.type}</code> — {describeType(detail.type).label}
-          </dd>
           <dt>Ficheiro</dt>
           <dd>
             <code>{detail.file}</code>
+          </dd>
+          <dt>Relações</dt>
+          <dd>
+            referenciado por {detail.incomingEdges.length} registo(s) · referencia {detail.outgoingEdges.length} registo(s) —{" "}
+            <a href="#relacoes">ver caminhos exatos ↓</a>
           </dd>
         </dl>
         <p>
@@ -86,6 +154,13 @@ function RecordDetailContent({
             <>
               <button type="button" onClick={() => onViewAsProblem(detail.id)}>
                 Ver como Problema (contexto completo)
+              </button>{" "}
+            </>
+          )}
+          {relatedProblemId && (
+            <>
+              <button type="button" onClick={() => onViewAsProblem(relatedProblemId)}>
+                Ver como Problema ({relatedProblemId})
               </button>{" "}
             </>
           )}
@@ -97,10 +172,13 @@ function RecordDetailContent({
 
       <section aria-label="Campos do registo">
         <h3>Campos</h3>
-        <RecordFieldTree data={detail.record} />
+        <details className="technical-disclosure">
+          <summary>Inspeção técnica completa — todos os campos canónicos</summary>
+          <RecordFieldTree data={detail.record} />
+        </details>
       </section>
 
-      <section aria-label="Relações">
+      <section aria-label="Relações" id="relacoes">
         <h3>Relações</h3>
         <RelationshipList title="Entradas" edges={detail.incomingEdges} lookup={lookup} direction="incoming" onSelect={onSelect} />
         <RelationshipList title="Saídas" edges={detail.outgoingEdges} lookup={lookup} direction="outgoing" onSelect={onSelect} />
