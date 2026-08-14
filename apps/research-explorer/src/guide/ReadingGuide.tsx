@@ -21,7 +21,7 @@ export function ReadingGuide({ schemaPrefixes }: ReadingGuideProps) {
   const prefixes = schemaPrefixes && schemaPrefixes.length > 0 ? schemaPrefixes : knownTypePrefixes();
 
   return (
-    <details className="reading-guide">
+    <details className="reading-guide" id="reading-guide">
       <summary>Como ler o Explorer</summary>
 
       <h2>Orientação do Explorer</h2>

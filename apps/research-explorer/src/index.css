@@ -302,3 +302,150 @@ code {
   padding: 0.5rem 0.75rem;
   margin: 0.75rem 0;
 }
+
+/* PRB-scoped context switcher (REDUX-008) — mirrors the existing top-level
+   nav's aria-current styling convention rather than inventing a new one. */
+.prb-context-switcher {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid #ccc;
+  margin: 0.5rem 0 1rem;
+}
+
+.prb-context-switcher button {
+  background: none;
+  border: none;
+  border-right: 1px solid #ccc;
+  font: inherit;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+.prb-context-switcher button:last-child {
+  border-right: none;
+}
+
+.prb-context-switcher button[aria-current="page"] {
+  background: #111;
+  color: #fff;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Point-of-use Problem help (REDUX-007) — collapsed by default, native
+   disclosure; distinguished from the technical-disclosure/reading-guide
+   treatment only by placement (top of Problem View), not by a different
+   interaction model. */
+.problem-help {
+  border: 1px solid #ccc;
+  background: #f7f6f3;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.problem-help summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.problem-help-content {
+  margin-top: 0.5rem;
+}
+
+.problem-help-content p {
+  margin: 0 0 0.5rem;
+}
+
+/* "Estado atual" canonical-value-plus-gloss chips (REDUX-007/008 §8) —
+   identical treatment for every field; the gloss label is a plain-language
+   accompaniment, the canonical value in parentheses/monospace never omitted. */
+.status-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.status-chip {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.status-chip code {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Contribution chips (REDUX-002) — every canonical value, including
+   CONTRADICTS, shares identical border weight/padding/background/font size.
+   Never give any one value structural or colour emphasis over another. */
+.contribution-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #111;
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.8rem;
+  background: #fff;
+  margin-right: 0.3rem;
+}
+
+.contribution-chip code {
+  background: none;
+  padding: 0;
+}
+
+.evidence-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.evidence-item-contributions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* Contribution occurrence summary (REDUX-002) — a tally of already-explicit
+   canonical values, explicitly labelled as occurrences, never a score. */
+.contribution-summary {
+  border: 1px solid #ccc;
+  background: #f7f6f3;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.contribution-summary-caption {
+  font-weight: bold;
+  margin: 0 0 0.2rem;
+}
+
+.contribution-summary-counts {
+  color: #555;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+.contribution-summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contribution-summary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.contribution-count {
+  color: #555;
+  font-size: 0.8rem;
+}

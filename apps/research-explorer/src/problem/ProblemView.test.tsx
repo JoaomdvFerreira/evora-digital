@@ -148,11 +148,14 @@ describe("ProblemView", () => {
     expect(onOpenGeneric).toHaveBeenCalledWith("SRC-0001");
   });
 
-  it("shows only explicit canonical evidence contribution, observation, and provenance context", async () => {
+  it("shows explicit canonical evidence contributions as distinct chips, observation, and provenance context", async () => {
     render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     await screen.findByRole("heading", { name: "Parking pressure" });
     const evidenceSection = screen.getByLabelText("Evidência");
-    expect(within(evidenceSection).getByText("CONFIRMS, REFINES.")).toBeTruthy();
+    const evidenceItems = within(evidenceSection.querySelector("ul")!);
+    // EVD-0001 carries two contributions (CONFIRMS, REFINES) — both must render as separate chips, not merged text.
+    expect(evidenceItems.getByText("CONFIRMS")).toBeTruthy();
+    expect(evidenceItems.getByText("REFINES")).toBeTruthy();
     expect(within(evidenceSection).getByText(/fixture observation provides concise context/i)).toBeTruthy();
     expect(within(evidenceSection).getByText(/Fixture Publisher — Fixture source/)).toBeTruthy();
   });
@@ -169,8 +172,135 @@ describe("ProblemView", () => {
     render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
 
     const evidenceSection = await screen.findByLabelText("Evidência");
-    expect(within(evidenceSection).getByText("não registada.")).toBeTruthy();
+    expect(within(evidenceSection).getByText("contribuição não registada.")).toBeTruthy();
     expect(within(evidenceSection).queryByText("CONFIRMS")).toBeNull();
+  });
+
+  it("renders every current canonical contribution value, including a multi-contribution item, without crashing", async () => {
+    const provider = fakeProvider();
+    provider.getRecord = (id: string) => {
+      if (id === "EVD-0001") {
+        return Promise.resolve({
+          ...DETAILS[id],
+          record: {
+            ...DETAILS[id].record,
+            analysis: {
+              contribution: [
+                "CONFIRMS",
+                "REFINES",
+                "CONTRADICTS",
+                "CURRENT-STATE-UPDATE",
+                "EXISTING-SOLUTION",
+                "PLANNED-SOLUTION",
+                "NEW-CANDIDATE",
+              ],
+            },
+          },
+        });
+      }
+      const detail = DETAILS[id];
+      return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
+    };
+    render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+
+    const evidenceSection = await screen.findByLabelText("Evidência");
+    const evidenceItems = within(evidenceSection.querySelector("ul")!);
+    for (const value of [
+      "CONFIRMS",
+      "REFINES",
+      "CONTRADICTS",
+      "CURRENT-STATE-UPDATE",
+      "EXISTING-SOLUTION",
+      "PLANNED-SOLUTION",
+      "NEW-CANDIDATE",
+    ]) {
+      expect(evidenceItems.getByText(value)).toBeTruthy();
+    }
+    // CONTRADICTS carries no exceptional class distinguishing it structurally from the other six.
+    const contradicts = evidenceItems.getByText("CONTRADICTS").closest(".contribution-chip");
+    const confirms = evidenceItems.getByText("CONFIRMS").closest(".contribution-chip");
+    expect(contradicts?.className).toBe(confirms?.className);
+  });
+
+  it("renders an unrecognised future contribution value without crashing", async () => {
+    const provider = fakeProvider();
+    provider.getRecord = (id: string) => {
+      if (id === "EVD-0001") {
+        return Promise.resolve({ ...DETAILS[id], record: { ...DETAILS[id].record, analysis: { contribution: ["FUTURE-VALUE"] } } });
+      }
+      const detail = DETAILS[id];
+      return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
+    };
+    render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+
+    const evidenceSection = await screen.findByLabelText("Evidência");
+    expect(within(evidenceSection.querySelector("ul")!).getByText("FUTURE-VALUE")).toBeTruthy();
+  });
+
+  it("shows a contribution occurrence summary distinguishing occurrences from evidence-item count", async () => {
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+    const evidenceSection = await screen.findByLabelText("Evidência");
+    // 1 evidence item, 2 contributions (CONFIRMS, REFINES) — occurrenceCount (2) must not be presented as the item count (1).
+    expect(within(evidenceSection).getByText(/1 item de evidência/)).toBeTruthy();
+    expect(within(evidenceSection).getByText(/2 ocorrências de contribuição/)).toBeTruthy();
+    expect(within(evidenceSection).getByText(/não correspondem ao número de itens de evidência/)).toBeTruthy();
+  });
+
+  it("shows the canonical Estado atual values alongside a grounded gloss, without inventing a corroborated-independence claim", async () => {
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+    await screen.findByRole("heading", { name: "Parking pressure" });
+    const stateSection = screen.getByLabelText("Estado atual");
+    expect(within(stateSection).getByText("(OPEN)")).toBeTruthy();
+    expect(within(stateSection).getByText(/Aberto/)).toBeTruthy();
+    expect(screen.queryByText(/fontes independentes/i)).toBeNull();
+    expect(screen.queryByText(/independent sources/i)).toBeNull();
+  });
+
+  it("renders an unmapped/future status value as its raw canonical value, with no crash and no fabricated gloss", async () => {
+    const provider = fakeProvider();
+    provider.getRecord = (id: string) => {
+      if (id === "PRB-0005") {
+        return Promise.resolve({ ...DETAILS[id], record: { ...DETAILS[id].record, status: "FUTURE_STATUS" } });
+      }
+      const detail = DETAILS[id];
+      return detail ? Promise.resolve(detail) : Promise.reject(new Error(`no fixture detail for ${id}`));
+    };
+    render(<ProblemView dataProvider={provider} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+    await screen.findByRole("heading", { name: "Parking pressure" });
+
+    const stateSection = screen.getByLabelText("Estado atual");
+    // The raw canonical value stays visible...
+    expect(within(stateSection).getByText("(FUTURE_STATUS)")).toBeTruthy();
+    // ...and the help disclosure surfaces the same raw value rather than a manufactured label/explanation.
+    const details = screen.getByText("O que é um Problema, e o que significam os estados abaixo?").closest("details")!;
+    expect(within(details).getAllByText(/FUTURE_STATUS/).length).toBeGreaterThan(0);
+  });
+
+  it("exposes a collapsed-by-default point-of-use Problem help disclosure", async () => {
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
+    await screen.findByRole("heading", { name: "Parking pressure" });
+    const details = screen.getByText("O que é um Problema, e o que significam os estados abaixo?").closest("details");
+    expect(details).toBeTruthy();
+    expect(details!.hasAttribute("open")).toBe(false);
+    expect(screen.getByRole("link", { name: /Orientação completa do Explorer/ }).getAttribute("href")).toBe("#reading-guide");
+  });
+
+  it("shows a PRB-scoped Detalhe/Problema/Grafo context switcher with Problema active and correct navigation calls", async () => {
+    const onOpenGeneric = vi.fn();
+    const onViewInGraph = vi.fn();
+    const user = userEvent.setup();
+    render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={onOpenGeneric} onBackToRecords={vi.fn()} onViewInGraph={onViewInGraph} />);
+    await screen.findByRole("heading", { name: "Parking pressure" });
+
+    const switcher = screen.getByRole("navigation", { name: /PRB-0005/ });
+    const problemaButton = within(switcher).getByRole("button", { name: "Problema" });
+    expect(problemaButton.getAttribute("aria-current")).toBe("page");
+
+    await user.click(within(switcher).getByRole("button", { name: "Detalhe" }));
+    expect(onOpenGeneric).toHaveBeenCalledWith("PRB-0005");
+
+    await user.click(within(switcher).getByRole("button", { name: "Grafo" }));
+    expect(onViewInGraph).toHaveBeenCalledWith("PRB-0005");
   });
 
   it("fails closed on a child-detail failure and retries the complete projection", async () => {
@@ -213,7 +343,7 @@ describe.skipIf(!hasRealCorpus)("ProblemView — real generated corpus regressio
 
     const evidenceButton = await screen.findByRole("button", { name: /EVD-000127/ });
     const evidenceItem = evidenceButton.closest("li")!;
-    expect(within(evidenceItem).getByText("CONTRADICTS.")).toBeTruthy();
+    expect(within(evidenceItem).getByText("CONTRADICTS")).toBeTruthy();
     expect(within(evidenceItem).getByText(/current residence-accommodation application process fully operational/i)).toBeTruthy();
     expect(within(evidenceItem).getByText(/Open Évora/)).toBeTruthy();
   });

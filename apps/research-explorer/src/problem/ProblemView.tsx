@@ -2,8 +2,12 @@ import { useEffect, useRef } from "react";
 import type { DataProvider, RecordDetail, RecordSummary } from "../dataProvider/types";
 import { useRecordIndex } from "../records/useRecordIndex";
 import { useProblemProjection } from "./useProblemProjection";
+import type { EvidenceWithSources } from "./problemProjection";
 import { RecordFieldTree } from "../records/RecordFieldTree";
-import { formatTypedId } from "../typeGlossary";
+import { ContributionChip } from "../records/ContributionChip";
+import { summarizeContributions } from "./contributionSummary";
+import { DISCLOSURE_FIELDS, DISCLOSURE_FIELD_LABELS, FIELD_CAPTIONS, glossFor, type FieldGloss } from "./statusGloss";
+import { describeType, formatTypedId } from "../typeGlossary";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -44,6 +48,115 @@ function TypedLinkButton({ detail, onOpenGeneric, suffix }: { detail: RecordDeta
       {formatTypedId(detail.type, detail.id)}
       {suffix ? ` — ${suffix}` : ""}
     </button>
+  );
+}
+
+/**
+ * "Estado atual" status chip — canonical value always visible (in
+ * parentheses, monospace), with a short safe label alongside it where one
+ * exists (docs/design/research-explorer-design-foundations.md §8). When no
+ * safe label exists for a value, the canonical value alone is shown — never
+ * a manufactured explanation.
+ */
+function StatusChip({ field, value }: { field: string; value: string }) {
+  const gloss = glossFor(field, value);
+  const caption = FIELD_CAPTIONS[field] ?? field;
+  return (
+    <span className="status-chip" aria-label={`${caption}: ${gloss ? gloss.label : value} (${value})`}>
+      {gloss ? `${gloss.label} ` : ""}
+      <code>({value})</code>
+    </span>
+  );
+}
+
+/**
+ * PRB-scoped orientation switcher (REDUX-008): "where am I, and how do I
+ * reach the other views of this same record" — for any entry path,
+ * including a direct deep link. Scoped to Problem View only; non-PRB
+ * records keep RecordDetailPanel's existing "Ver como Problema"/"Ver no
+ * Grafo" contextual links (Slice 1), not this switcher.
+ */
+function PrbContextSwitcher({ problemId, onOpenGeneric, onViewInGraph }: { problemId: string; onOpenGeneric: (id: string) => void; onViewInGraph: (id: string) => void }) {
+  return (
+    <nav aria-label={`Navegação de ${problemId}`} className="prb-context-switcher">
+      <button type="button" onClick={() => onOpenGeneric(problemId)}>
+        Detalhe
+      </button>
+      <button type="button" aria-current="page">
+        Problema
+      </button>
+      <button type="button" onClick={() => onViewInGraph(problemId)}>
+        Grafo
+      </button>
+    </nav>
+  );
+}
+
+/**
+ * Point-of-use Problem orientation (REDUX-007): a small, collapsed-by-default
+ * native disclosure explaining what a PRB- record is and, where canonically
+ * grounded, what this Problem's own current status values mean — not a
+ * modal, not a tour, no first-session/localStorage state. Points to the full
+ * Reading Guide for deeper orientation rather than duplicating it.
+ */
+function ProblemHelpDisclosure({ record }: { record: Record<string, unknown> }) {
+  const explainedFields: { field: string; value: string; gloss: FieldGloss | null }[] = [];
+  for (const field of DISCLOSURE_FIELDS) {
+    const value = fieldValue(record, field);
+    if (value !== null) explainedFields.push({ field, value, gloss: glossFor(field, value) });
+  }
+
+  return (
+    <details className="problem-help">
+      <summary>O que é um Problema, e o que significam os estados abaixo?</summary>
+      <div className="problem-help-content">
+        <p>
+          <strong>Problema (PRB-):</strong> {describeType("PRB-").description}
+        </p>
+        {explainedFields.map(({ field, value, gloss }) => (
+          <p key={field}>
+            <strong>{DISCLOSURE_FIELD_LABELS[field]}:</strong> {gloss ? gloss.label : value} (<code>{value}</code>)
+            {gloss?.explanation ? ` — ${gloss.explanation}` : ""}
+          </p>
+        ))}
+        <p>
+          <a href="#reading-guide">Ver a Orientação completa do Explorer →</a>
+        </p>
+      </div>
+    </details>
+  );
+}
+
+/**
+ * Scannable summary of contribution *occurrences* across the evidence list
+ * (REDUX-002's aggregate-legend pattern) — never a ranking, score, or
+ * inferred strength; a tally of already-explicit canonical values. Shown
+ * only when at least one evidence item carries a recorded contribution.
+ */
+function ContributionOccurrenceSummary({ evidence }: { evidence: EvidenceWithSources[] }) {
+  const summary = summarizeContributions(evidence);
+  if (summary.occurrences.length === 0) return null;
+
+  return (
+    <div className="contribution-summary" aria-label="Resumo de ocorrências de contribuição canónica">
+      <p className="contribution-summary-caption">
+        Ocorrências de contribuição canónica nesta lista — nenhuma implica força, confiança ou classificação.
+      </p>
+      <p className="contribution-summary-counts">
+        {summary.itemCount} {summary.itemCount === 1 ? "item de evidência" : "itens de evidência"} · {summary.occurrenceCount}{" "}
+        {summary.occurrenceCount === 1 ? "ocorrência de contribuição" : "ocorrências de contribuição"}
+        {summary.occurrenceCount !== summary.itemCount
+          ? " (uma evidência pode ter mais do que uma contribuição — estas contagens não correspondem ao número de itens de evidência)"
+          : ""}
+      </p>
+      <div className="contribution-summary-chips">
+        {summary.occurrences.map(({ value, count }) => (
+          <span key={value} className="contribution-summary-chip">
+            <ContributionChip value={value} /> <span className="contribution-count">{count} {count === 1 ? "ocorrência" : "ocorrências"}</span>
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -114,11 +227,12 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
       <p>
         <button type="button" onClick={onBackToRecords}>
           ← Voltar aos Registos
-        </button>{" "}
-        <button type="button" onClick={() => onViewInGraph(problem.id)}>
-          Ver no Grafo
         </button>
       </p>
+
+      <PrbContextSwitcher problemId={problem.id} onOpenGeneric={onOpenGeneric} onViewInGraph={onViewInGraph} />
+
+      <ProblemHelpDisclosure record={record} />
 
       <h2 ref={headingRef} id="problem-heading" tabIndex={-1}>
         {title}
@@ -129,17 +243,12 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
 
       <section aria-label="Estado atual">
         <h3>Estado atual</h3>
-        <dl>
+        <div className="status-chip-row">
           {PROBLEM_STATE_FIELDS.map((key) => {
             const value = fieldValue(record, key);
-            return value === null ? null : (
-              <div key={key}>
-                <dt>{key}</dt>
-                <dd>{value}</dd>
-              </div>
-            );
+            return value === null ? null : <StatusChip key={key} field={key} value={value} />;
           })}
-        </dl>
+        </div>
         {fieldValue(record, "problem_statement") && <p>{fieldValue(record, "problem_statement")}</p>}
       </section>
 
@@ -174,6 +283,7 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
 
       <section aria-label="Evidência">
         <h3>Evidência ({evidence.length})</h3>
+        <ContributionOccurrenceSummary evidence={evidence} />
         {evidence.length === 0 ? (
           <p>Nenhuma evidência associada.</p>
         ) : (
@@ -188,11 +298,16 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
 
               return (
                 <li key={detail.id}>
-                  <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ?? undefined} />
-                  <p>
-                    <strong>Contribuição canónica:</strong>{" "}
-                    {contributions.length > 0 ? contributions.join(", ") : "não registada"}.
-                  </p>
+                  <div className="evidence-item-header">
+                    <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ?? undefined} />
+                    <span className="evidence-item-contributions" aria-label="Contribuição canónica">
+                      {contributions.length > 0 ? (
+                        contributions.map((value, index) => <ContributionChip key={`${value}-${index}`} value={value} />)
+                      ) : (
+                        <span className="field-empty">contribuição não registada.</span>
+                      )}
+                    </span>
+                  </div>
                   {observationSummary && (
                     <p>
                       <strong>Observação:</strong> {observationSummary}
