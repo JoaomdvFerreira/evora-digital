@@ -73,6 +73,90 @@ nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
     width: 100%;
     min-width: 0;
   }
+
+  /* REDUX-005: full-width controls at narrow, same capabilities as desktop. */
+  .records-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .records-controls input,
+  .records-controls select {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+  }
+
+  .records-pagination button {
+    min-height: 44px;
+  }
+}
+
+/* Narrow Records row list (REDUX-005) — only rendered below the existing
+   900px breakpoint (RecordsTable's useNarrowViewport), so these rules need
+   no media-query guard of their own. Label is the primary line; the
+   canonical ID is a secondary line, dropped only when it would exactly
+   duplicate the label; the file path never appears here (Detail only). */
+.narrow-records-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ccc;
+}
+
+.narrow-record-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.narrow-record-row[aria-pressed="true"] {
+  background: #f7f6f3;
+  font-weight: bold;
+}
+
+.narrow-record-type {
+  flex-shrink: 0;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+  font-size: 0.75rem;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+}
+
+.narrow-record-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.narrow-record-label {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.narrow-record-id {
+  display: block;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.15rem;
+}
+
+.narrow-record-chevron {
+  flex-shrink: 0;
+  color: #555;
 }
 
 .records-table {
@@ -85,6 +169,12 @@ nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
   min-width: 280px;
   border: 1px solid #ccc;
   padding: 0.75rem 1rem;
+  /* Pre-existing Slice 1 rule; box-sizing added here (Slice 3) because the
+     narrow media query below sets width:100% — without border-box, this
+     panel's own padding/border pushed it past the viewport at ~360px,
+     introducing exactly the horizontal overflow REDUX-005/Slice 3 must not
+     have. No content, structure, or Slice 1 behavior changed. */
+  box-sizing: border-box;
 }
 
 .records-controls {

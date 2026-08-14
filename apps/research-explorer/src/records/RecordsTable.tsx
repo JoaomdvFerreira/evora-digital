@@ -5,6 +5,8 @@ import { recordColumns } from "./columns";
 import { ALL_TYPES, availableRecordTypes, filterRecords } from "./recordIndex";
 import { initialRecordsControllerState, recordsControllerReducer } from "./recordsController";
 import { describeType } from "../typeGlossary";
+import { useNarrowViewport } from "./useNarrowViewport";
+import { NarrowRecordsList } from "./NarrowRecordsList";
 
 interface RecordsTableProps {
   records: RecordSummary[];
@@ -35,6 +37,7 @@ export function RecordsTable({
   onTypeFilterChange,
 }: RecordsTableProps) {
   const [state, dispatch] = useReducer(recordsControllerReducer, initialRecordsControllerState);
+  const isNarrow = useNarrowViewport();
 
   const types = useMemo(() => availableRecordTypes(records), [records]);
   // A type filter value that no longer exists in the loaded data (e.g. a
@@ -106,47 +109,51 @@ export function RecordsTable({
         <p>Nenhum resultado.</p>
       ) : (
         <>
-          <table>
-            <thead>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    const sortState = header.column.getIsSorted();
-                    return (
-                      <th key={header.id} scope="col" aria-sort={sortState === "asc" ? "ascending" : sortState === "desc" ? "descending" : "none"}>
-                        <button type="button" onClick={header.column.getToggleSortingHandler()}>
-                          {flexRender(header.column.columnDef.header, header.getContext())}
-                          {sortState === "asc" ? " ▲" : sortState === "desc" ? " ▼" : ""}
-                        </button>
-                      </th>
-                    );
-                  })}
-                </tr>
-              ))}
-            </thead>
-            <tbody>
-              {table.getRowModel().rows.map((row) => {
-                const isSelected = row.original.id === selectedId;
-                return (
-                  <tr key={row.id} aria-selected={isSelected}>
-                    {row.getVisibleCells().map((cell) => {
-                      if (cell.column.id === "id") {
-                        return (
-                          <td key={cell.id}>
-                            <button type="button" aria-pressed={isSelected} onClick={() => onSelect(row.original.id)}>
-                              {isSelected ? "● " : ""}
-                              {String(cell.getValue())}
-                            </button>
-                          </td>
-                        );
-                      }
-                      return <td key={cell.id}>{String(cell.getValue())}</td>;
+          {isNarrow ? (
+            <NarrowRecordsList records={table.getRowModel().rows.map((row) => row.original)} selectedId={selectedId} onSelect={onSelect} />
+          ) : (
+            <table>
+              <thead>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <tr key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => {
+                      const sortState = header.column.getIsSorted();
+                      return (
+                        <th key={header.id} scope="col" aria-sort={sortState === "asc" ? "ascending" : sortState === "desc" ? "descending" : "none"}>
+                          <button type="button" onClick={header.column.getToggleSortingHandler()}>
+                            {flexRender(header.column.columnDef.header, header.getContext())}
+                            {sortState === "asc" ? " ▲" : sortState === "desc" ? " ▼" : ""}
+                          </button>
+                        </th>
+                      );
                     })}
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                ))}
+              </thead>
+              <tbody>
+                {table.getRowModel().rows.map((row) => {
+                  const isSelected = row.original.id === selectedId;
+                  return (
+                    <tr key={row.id} aria-selected={isSelected}>
+                      {row.getVisibleCells().map((cell) => {
+                        if (cell.column.id === "id") {
+                          return (
+                            <td key={cell.id}>
+                              <button type="button" aria-pressed={isSelected} onClick={() => onSelect(row.original.id)}>
+                                {isSelected ? "● " : ""}
+                                {String(cell.getValue())}
+                              </button>
+                            </td>
+                          );
+                        }
+                        return <td key={cell.id}>{String(cell.getValue())}</td>;
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
 
           <div className="records-pagination">
             <button type="button" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
