@@ -292,6 +292,30 @@ Do not interview people merely because D5 is called stakeholder validation.
 
 D5 success is never defined as *N interviews*. Stop a question when: additional engagement is unlikely to change the relevant gate/status/route; a contradiction requires reframing before more validation is useful; an existing solution is shown to close the gap sufficiently; non-digital dominance makes further digital-gap work decision-irrelevant; the necessary access cannot be obtained proportionately (preserve the unknown rather than forcing access); or new engagements repeat the same material finding without resolving another decision-relevant uncertainty. Do not continue recruitment for symmetry across `PRB-*`.
 
+### 13.4a Institutional/operator non-response timing (canonical rule)
+
+Owner decision, canonicalized 2026-08-15. This resolves §13.4's "reasonable non-response window" into a deterministic rule for institutional/operator outreach specifically (it does not change the general sufficiency/stopping criteria above, which still govern when to stop pursuing a question at all):
+
+- `INITIAL_NON_RESPONSE_WINDOW` = 7 complete calendar days from dispatch.
+- `MAX_PROJECT_INITIATED_FOLLOW_UPS` = 1.
+- `POST_FOLLOW_UP_WINDOW` = 7 complete calendar days from the follow-up.
+
+Sequence:
+
+1. After initial dispatch, wait 7 complete calendar days.
+2. If no substantive response has arrived by then, one project-initiated follow-up is permitted (not required).
+3. After that follow-up is sent, wait another 7 complete calendar days.
+4. If still no substantive response, the route may be classified `EXHAUSTED_NON_RESPONSE`.
+
+Calendar-day calculation is deterministic: the dispatch (or follow-up) day is day 0; eligibility begins once 7 calendar days have elapsed. Example: sent 2026-08-12 → follow-up eligible 2026-08-19; if the follow-up is sent 2026-08-19 → exhaustion eligible 2026-08-26.
+
+Rules of application:
+
+- Non-response is evidence only of engagement attempt/exhaustion — never treated as substantive domain evidence.
+- Any question left unresolved by `EXHAUSTED_NON_RESPONSE` must be explicitly carried forward (e.g. to `WU023`) or closed under the relevant stopping rule (§13.4) — exhaustion alone does not resolve the underlying question.
+- Respondent-initiated routing/referral within the same engagement (e.g. a route being forwarded internally, or a named future continuation from the same respondent) does not itself count as an additional independent outreach route or consume the single-follow-up allowance.
+- Do not create additional institutional contacts merely to maximize response count or corroboration; second-wave outreach remains governed by each route's own documented stopping rule, not by this timing rule alone.
+
 ### 13.5 Engagement grouping
 
 Organise around respondent knowledge, not one campaign per `PRB-*`. A single interaction may address multiple problems only when the respondent genuinely has direct knowledge of each question — e.g. a mobility/transport/parking cluster spanning `PRB-0001`/`PRB-0002`/`PRB-0004`/`PRB-0005` where the same operator or passenger has relevant knowledge of more than one. `PRB-0009` engagement, if run at all, is scoped only to its narrow `D5-P9-*` falsification questions (`docs/milestones/D4-WU02-PRB0009-progress.md`) — its core mechanism stays `WATCH`, and a resident campaign is not created for it merely because D5 exists. `PRB-0010` remains `WATCH-TRIGGER` with no active D5 engagement by default.
