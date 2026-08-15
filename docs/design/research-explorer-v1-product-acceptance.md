@@ -101,8 +101,13 @@ REDUX-004 (full-corpus Graph legibility), REDUX-009 (diagnostic-language polish)
 
 ## 12. Final acceptance recommendation
 
-Based on this integrated acceptance pass — full validation ladder green, all six A–F acceptance areas confirmed, one concrete defect found and fixed with a regression test, no scope expansion — this implementation is **recommended as ready for owner review** against the `LOCAL EXPLORER v1 CLOSED` criteria in `research-explorer-re06-scope.md` §7. Closure itself remains an owner decision, not made by this document.
+Based on this integrated acceptance pass — full validation ladder green, all six A–F acceptance areas confirmed, one concrete defect found and fixed with a regression test, no scope expansion — this implementation was **recommended as ready for owner review** against the `LOCAL EXPLORER v1 CLOSED` criteria in `research-explorer-re06-scope.md` §7.
+
+## 13. Owner acceptance
+
+Owner decision: `LOCAL_EXPLORER_V1_ACCEPTED`. Final accepted production checkpoint: `489c3a8` ("test: validate Research Explorer local v1"). `LOCAL EXPLORER v1` is `CLOSED` — see `research-explorer-roadmap.md` (RE-06) and `research-explorer-re06-scope.md` §7. This closure does not close D5/M005 or WU022/WU023/WU024, does not start RE-07, and does not approve public hosting; RE-07/public hosting remains a separate future decision.
 
 ---
 
 `RESEARCH_EXPLORER_V1_PRODUCT_ACCEPTANCE_READY_FOR_OWNER_REVIEW`
+`LOCAL_EXPLORER_V1_CLOSED`

@@ -18,7 +18,7 @@ This roadmap does not restate ADR-001's rationale, the read-model schema, or ben
 | RE-03 — Problem Explorer & Trace Evidence | **CLOSED** |
 | RE-04 — Graph Explorer | **CLOSED** |
 | RE-05 — Scale & Quality Gate | **CLOSED** |
-| RE-06 — Local Explorer v1 | **RE-06 ENGINEERING COMPLETE** — Design/UX Review pending before Local Explorer v1 closure |
+| RE-06 — Local Explorer v1 | **LOCAL EXPLORER v1 — CLOSED** |
 | RE-07 — Optional Public Explorer | not started |
 
 Implementation facts as of RE-05 closure (for orientation only — not restated per phase): React + TypeScript + Vite 8 (`apps/research-explorer/`), `StaticDataProvider` serving the RE-01 generated read model via Vite's `publicDir` (now including a lazy `getEdges()` method, fetched only by the Graph view), TanStack Table v8 powering the Records view, a four-view `Explorer` shell (Overview/Registos/Problema/Grafo) with native-URL-API state (no React Router), a data-driven reading guide (now also explaining Graph edge direction/colour encoding), root `npm run explorer` / `npm run explorer:build` commands. Graphology + Sigma.js stable power the neighbourhood-first Graph view (`apps/research-explorer/src/graph/*`); as of RE-05, the whole `GraphExplorer` feature (not just Sigma inside `GraphCanvas`) is loaded via `React.lazy`, so Graphology, the Graph domain modules, and `edges.json` are never touched by Overview/Records/Problem. `apps/research-explorer/benchmark/` holds the disposable, gitignored RE-05 synthetic-scale benchmark harness (not part of the production app). No backend, database, or authentication anywhere in the stack.
@@ -119,15 +119,19 @@ This directly motivated RE-03's two additions below: a reading guide (addresses 
 - **Exit gate met:** decision is **preserve the static client-side architecture unchanged into RE-06** — no cliff found at any tested scale (250/2,500/10,000) for the supported (neighbourhood-first) workflows; the one bundling gap found (Graphology not excluded from the initial chunk) was small, directly measured, fixed, and remeasured within this phase, per the development contract's optimisation discipline. Real 223-record/337-edge corpus regression-tested clean after the fix (adapter tests 17/17, app suite 143/143, typecheck, production build, live Playwright walkthrough).
 - **Validation:** the benchmark plan's own measurement list, run and reported in `research-explorer-re05-results.md`; RE-01 (17) + full app suite (143) automated tests; typecheck; production build; canonical `research/` validation; real-corpus (223/337/0-dangling) smoke; live Playwright network verification (dev server + production preview) that `edges.json`/Graphology/Sigma load only on Graph entry, never at Overview/Records/Problem startup.
 
-## RE-06 — Local Explorer v1
+## RE-06 — Local Explorer v1 — CLOSED
 
 - **Objective:** close the remaining bounded runtime, contract, and interaction gaps so the already-assembled static Explorer is a credible, validated Local Explorer v1.
 - **Dependencies:** RE-02 through RE-05.
 - **Scope:** the reconciled implementation and acceptance scope in `research-explorer-re06-scope.md`. Overview, Problems, Records, Graph, Search, Filters, Trace Evidence, and Detail/Provenance were assembled by RE-02 through RE-05 and are not reimplemented here.
 - **Non-goals:** anything in the explicit RE-06 boundary list (no YAML editing, admin UI, auth, database, AI-generated relationships, automatic scoring, semantic inference).
-- **Outputs:** a stable `npm run explorer` / `npm run explorer:build` engineering release, subject to the bounded remediation and engineering-completion gate; Local Explorer v1 closure additionally requires the separately deferred Design/UX Review disposition.
-- **Exit gate:** `RE-06 ENGINEERING COMPLETE` requires the scope document's automated validation, real-browser smoke pass, and representative local-use walkthrough. `LOCAL EXPLORER v1 CLOSED` additionally requires the Design/UX Review, triage, and only its bounded v1-required changes; public deployment remains separate.
-- **Validation:** see `research-explorer-re06-scope.md`; no permanent E2E framework is required by default.
+- **Outputs:** a stable `npm run explorer` / `npm run explorer:build` engineering release.
+- **Closure basis:** RE-01 through RE-06 engineering complete; Design/UX consolidated review complete; Owner Triage complete; representative prototype complete; Owner prototype validation complete; lightweight design foundations complete; production implementation Slices 1–3 complete; integrated Product Acceptance PASS (`docs/design/research-explorer-v1-product-acceptance.md`); owner acceptance granted (`LOCAL_EXPLORER_V1_ACCEPTED`, checkpoint `489c3a8`).
+- **Findings implemented/accepted for v1:** REDUX-001, REDUX-002, REDUX-003, REDUX-005, REDUX-007, REDUX-008.
+- **Deferred / post-v1:** REDUX-004 (full-corpus Graph legibility), REDUX-009 (diagnostic-language polish), REDUX-010 (Graph label convention); the non-blocking semantic/documentation gaps (exact `corroborated` vs `discovered` criterion; authoritative prose definitions for CONFIRMS/REFINES/CURRENT-STATE-UPDATE/NEW-CANDIDATE) remain preserved and unresolved.
+- **Final accepted baseline:** 244 canonical records; 376 explicit relationships; 0 dangling references; 222 tests passed; 1 pre-existing unrelated environment-gated skip; TypeScript clean; production build successful; real-browser acceptance completed at 360px, 900px, 901px, and 1400px.
+- **Exit gate met:** `RE-06 ENGINEERING COMPLETE` (scope document's automated validation, real-browser smoke pass, representative local-use walkthrough) plus the Design/UX Review, triage, integrated Product Acceptance PASS, and owner acceptance. This closure does not close D5/M005, does not close WU022/WU023/WU024, does not start RE-07, and does not approve public hosting — RE-07/public hosting remains a separate future decision.
+- **Validation:** see `research-explorer-re06-scope.md` and `docs/design/research-explorer-v1-product-acceptance.md`.
 
 ## RE-07 — Optional Public Explorer
 

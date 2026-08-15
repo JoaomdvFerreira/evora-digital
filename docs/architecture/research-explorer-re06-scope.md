@@ -1,6 +1,6 @@
 # Research Explorer — RE-06 Local Explorer v1: Reconciled Scope
 
-**Status:** RE-06 ENGINEERING COMPLETE. The deferred consolidated Design/UX Review remains required before `LOCAL EXPLORER v1 CLOSED`.
+**Status:** `LOCAL EXPLORER v1 CLOSED`. Owner acceptance granted (`LOCAL_EXPLORER_V1_ACCEPTED`); final accepted checkpoint `489c3a8`.
 **Purpose:** final engineering scope for RE-06 only; this document does not start implementation.
 **Canonical inputs:** roadmap, development contract, integral quality review, RE-05 results, current Explorer source/tests, and repository state at scope reconciliation.
 
@@ -84,13 +84,13 @@ Finish with a short representative local-use walkthrough of Records, a Problem t
 4. The full proportional engineering validation and all six real-browser smoke scenarios pass.
 5. The representative local-use walkthrough establishes the existing tool is usable for daily local research.
 
-## 7. Local Explorer v1 closure criteria
+## 7. Local Explorer v1 closure criteria — MET
 
-`LOCAL EXPLORER v1 CLOSED` only when `RE-06 ENGINEERING COMPLETE` is true and:
+`LOCAL EXPLORER v1 CLOSED` requires `RE-06 ENGINEERING COMPLETE` to be true and:
 
-1. The deferred consolidated Design/UX Review has occurred and its findings have been triaged.
-2. Only the bounded design changes explicitly accepted as required for v1 have been completed and verified; unaccepted or future enhancements remain outside RE-06.
-3. RE-07/public deployment remains separate and is neither started nor required for Local Explorer v1.
-4. No architecture-expansion, dependency-expansion, canonical-research, schema, or generated-contract change has been smuggled into the work.
+1. The deferred consolidated Design/UX Review has occurred and its findings have been triaged. **Met** — see `research-explorer-consolidated-design-review.md` and the Owner Triage.
+2. Only the bounded design changes explicitly accepted as required for v1 have been completed and verified; unaccepted or future enhancements remain outside RE-06. **Met** — REDUX-001, REDUX-002, REDUX-003, REDUX-005, REDUX-007, REDUX-008 implemented and accepted; REDUX-004, REDUX-009, REDUX-010 explicitly deferred post-v1.
+3. RE-07/public deployment remains separate and is neither started nor required for Local Explorer v1. **Met** — unstarted; remains a separate future decision.
+4. No architecture-expansion, dependency-expansion, canonical-research, schema, or generated-contract change has been smuggled into the work. **Met** — confirmed in `docs/design/research-explorer-v1-product-acceptance.md`.
 
-The implementation-start decision is `GO_RE06` when this scope remains true; otherwise revise this document with new repository evidence before expanding scope.
+Owner decision: `LOCAL_EXPLORER_V1_ACCEPTED`. Final accepted production checkpoint: `489c3a8` ("test: validate Research Explorer local v1"). This closure does not close D5/M005 or WU022/WU023/WU024, does not start RE-07, and does not approve public hosting.
