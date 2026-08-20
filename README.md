@@ -1,114 +1,90 @@
 # Open Évora
 
-**Status:** Discovery Programme — D0–D4 closed, D5 (Stakeholder Validation) active  
-**Baseline:** v0.1  
-**Date:** 2026-08-12
+Open Évora é um projeto cívico independente e aberto, centrado em Évora. Reúne investigação, evidência e ferramentas de transparência para compreender problemas concretos antes de decidir se uma intervenção digital faz sentido.
 
-## Mission
+O objetivo não é criar tecnologia por criar. É ajudar a tornar mais visíveis os problemas, percursos e fontes públicas relevantes para quem vive, trabalha, estuda, presta serviços ou visita Évora — e só avançar quando houver evidência suficiente de valor público, viabilidade e manutenção responsável.
 
-Open Évora identifies concrete problems affecting people who live, work, study, conduct economic activity, provide services, or visit Évora, and creates open digital public goods when there is sufficient evidence that technology can produce a real and measurable improvement.
+> **English summary:** Open Évora is an independent, open civic project for Évora. It researches concrete civic problems and public-data opportunities before selecting any intervention; the repository is the current public record of that work.
 
-## Priorities
+## O que fazemos
 
-1. Value for Évora
-2. Evidence
-3. Sustainability
-4. Open-source and reuse
-5. Engineering quality
-6. AIQT dogfood
+### Inteligência de Problemas Cívicos (Civic Problem Intelligence)
 
-If priorities conflict, the higher priority takes precedence.
+Investigamos problemas, as pessoas afetadas, os percursos atuais, as causas possíveis, o que já existe e as lacunas que permanecem. Este percurso serve para testar se há, de facto, uma oportunidade de melhoria — digital ou não.
 
-## What Open Évora is
+### Fundação de Dados Cívicos Abertos (Open Civic Data Foundation)
 
-Open Évora is a civic-tech discovery and delivery programme with three complementary tracks. AIQT, governance, and provenance are transversal to all three:
+Mapeamos dados e interfaces públicas relevantes para Évora, registando quem é a fonte responsável, a atualidade, as condições de reutilização e o que ainda é incerto. O foco inicial é descobrir e tornar encontráveis as fontes oficiais, não duplicá-las.
 
-### Civic Problem Intelligence
+### Explorador de Investigação (Research Explorer)
 
-Build structured, traceable knowledge about problems, affected populations, current journeys, root causes, existing interventions, and digitally tractable opportunities.
+O Research Explorer é uma interface de leitura para navegar o corpus de investigação canónico do projeto: problemas, evidência, fontes e relações entre registos. É uma superfície de investigação e transparência, de leitura; não é uma intervenção cívica selecionada pelo programa.
 
-### Open Civic Data Foundation
+## Estado atual
 
-Discover, catalogue, normalize, and make useful civic data easier to reuse, while preserving provenance, licensing, authority, and freshness.
+- A fundação de investigação, o mapeamento institucional e de fontes, a descoberta de sinais públicos, o mapa inicial de problemas e a análise de soluções existentes estão concluídos (D0–D4).
+- A validação com stakeholders está ativa no D5: as conclusões são desafiadas com operadores, instituições e pessoas afetadas, de forma seletiva e orientada por incertezas concretas.
+- O Research Explorer está funcional localmente e a sua base de engenharia está madura. Está em curso uma última passagem de experiência pública/stakeholder antes de fechar a v1; **não existe atualmente uma versão pública alojada aprovada**.
+- A primeira revisão de decisão da Open Civic Data Foundation está concluída.
+- **Ainda não foi selecionada qualquer intervenção cívica para implementação** através da via de Inteligência de Problemas Cívicos.
 
-The Open Civic Data track does **not** imply that a centralized API must be built. Catalogue-only, federation, normalization, API, or no infrastructure are all valid outcomes of discovery.
+## Como trabalhamos
 
-### Research Explorer
+Começamos pela evidência, não pela solução. Cada conclusão deve poder ser seguida até às suas fontes e manter claro o que é conhecido, o que é incerto e quão atual é a informação.
 
-Provide a read-only product surface for navigating the canonical research corpus. Its roadmap is separate from Civic Problem Intelligence and the Open Civic Data Foundation.
-
-## Core operating model
+As fontes oficiais mantêm a sua autoridade. Quando existe uma fonte ou interface pública, a postura preferida é:
 
 ```text
-Evidence
-  ↓
-Problem
-  ↓
-Current Journey
-  ↓
-Root Cause
-  ↓
-Existing Solutions
-  ↓
-Gap
-  ↓
-Digital Tractability
-  ↓
-Experiment
-  ↓
-Project
-  ↓
-Outcome Review
+fonte oficial → descobrir → documentar → registar autoridade/atualidade/reutilização
+→ ligar à interface oficial → normalizar ou federar apenas quando houver valor demonstrado
 ```
 
-Software is optional. A valid research outcome may be:
+Uma página visível ao público não é automaticamente reutilizável. A licença, a proveniência, a cobertura e a atualidade são avaliadas separadamente. Do mesmo modo, um dado tecnicamente acessível pode não ser adequado para avaliar resultados.
 
-- no digital intervention recommended;
-- existing solution should be improved instead;
-- problem is primarily operational, physical, political, or economic;
-- insufficient evidence;
-- more research required.
+Os resultados válidos incluem avançar, melhorar uma solução existente, federar sistemas, publicar ou melhorar dados, acompanhar uma situação, recomendar uma resposta não digital ou não recomendar intervenção. Parar também pode ser a decisão mais responsável.
 
-## Current phase
+## Explorar o projeto
+
+O repositório é a superfície pública atual do Open Évora:
+
+- [Roadmap de descoberta](docs/discovery/roadmap.md) — percurso completo e critérios de decisão.
+- [Revisão inicial da Open Civic Data Foundation](docs/discovery/open-data-foundation-decision-review.md) — estado e postura de dados abertos.
+- [Roadmap do Research Explorer](docs/architecture/research-explorer-roadmap.md) — estado do produto e condições para eventual alojamento público.
+- [Aplicação e instruções do Research Explorer](apps/research-explorer/README.md) — como gerar e executar localmente a interface de leitura.
+- [Corpus de investigação](research/) — registos canónicos de fontes, evidência, problemas e avaliações.
+
+Não é indicada aqui uma ligação pública ao Research Explorer porque não existe atualmente uma implementação pública aprovada.
+
+## Roadmap resumido
+
+1. **Concluído:** construir a base de investigação, mapear fontes e sinais públicos, definir o mapa de problemas e rever soluções existentes.
+2. **Em curso:** validar criticamente as conclusões com stakeholders onde isso pode reduzir uma incerteza relevante.
+3. **Depois, se justificado:** avaliar a viabilidade digital e a capacidade de medir resultados; testar mecanismos; só então decidir se existe uma intervenção a selecionar.
+4. **Em paralelo:** melhorar a descoberta, documentação e interoperabilidade de dados cívicos sem presumir um portal ou API próprios.
+
+Os marcos detalhados, incluindo decisões de `STOP`, `WATCH`, `NON_DIGITAL` e `NO_INTERVENTION`, estão no [roadmap canónico](docs/discovery/roadmap.md).
+
+## Independência e limites
+
+Open Évora é um projeto cívico independente e aberto. Não representa as entidades públicas, operadores, associações ou outras organizações referidas ou contactadas no âmbito da investigação. O contacto, participação numa resposta ou referência a uma entidade não significa parceria, aprovação ou endosso do projeto.
+
+O projeto não pressupõe que dados publicamente visíveis possam ser reutilizados, republicados ou expostos por uma nova interface. Procura preservar as fontes autoritativas e evitar substituí-las ou replicá-las sem necessidade demonstrada.
+
+## Informação técnica do repositório
+
+### Estrutura
 
 ```text
-D0  Discovery Foundation                    CLOSED
-D1  Institutional & Data Source Mapping     CLOSED
-D2  Public Signal Discovery                 CLOSED
-D3  Problem Map v1                          CLOSED
-D4  Existing Solutions & Gap Analysis        CLOSED
-D5  Stakeholder Validation                  ACTIVE (M005, WU022 in progress)
-D6  Digital Tractability Assessment
-D7  Candidate Experiments
-D8  Project Selection
-D9  Outcome Review
+docs/       documentação de descoberta, modelos, arquitetura e marcos
+research/   corpus canónico de fontes, evidência, problemas e avaliações
+apps/       aplicações do projeto, incluindo o Research Explorer
+tools/      validação e ferramentas de apoio ao corpus
 ```
 
-See `docs/milestones/D0-closure.md` for the D0 closure record and `docs/milestones/D1-WU07-closure.md` for the D1 closure record. `docs/milestones/D5-stakeholder-challenge-validation.md` is the active D5 milestone (`M005`).
+### Governança, proveniência e AIQT
 
-No civic intervention arising from the Civic Problem Intelligence pathway has been selected for implementation.
+Os modelos de investigação, regras de evidência, ética e proveniência encontram-se em [`docs/`](docs/). AIQT é a ferramenta transversal de execução e governação do trabalho; não é o propósito cívico do projeto. Os marcos e o estado de trabalho documentados no repositório devem ser lidos juntamente com a evidência e as regras de validação correspondentes.
 
-The Évora Open API remains an **infrastructure hypothesis**, not an approved product.
+### Licenças
 
-The first Open Civic Data Foundation Decision Review is recorded in `docs/discovery/open-data-foundation-decision-review.md`; it does not create a Work Unit or authorize outreach.
-
-## Repository structure
-
-```text
-docs/
-  discovery/
-  models/
-  data/
-  milestones/
-  decisions/
-research/
-```
-
-See `docs/discovery/roadmap.md` for the programme roadmap and
-`docs/milestones/D0-discovery-foundation.md` for the closed D0 milestone record.
-
-## Licensing
-
-Open Évora is intended to be public and open-source, with different licences for
-software, original documentation/research, and third-party data. See `LICENSES.md`
-for the full policy and `LICENSE` for the Apache-2.0 text covering original software.
+O software original é licenciado sob [Apache-2.0](LICENSE). A documentação e investigação originais do Open Évora usam CC BY 4.0 quando o projeto detém os respetivos direitos. Materiais, dados e fontes de terceiros mantêm as suas próprias condições; a política completa está em [LICENSES.md](LICENSES.md).
