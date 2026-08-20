@@ -4,6 +4,8 @@
 **As of:** 2026-08-13
 **Basis:** `docs/discovery/open-data-foundation-d5-reconciliation.md`, current structured `SRC-*` records, D5/WU022 progress, and RS-01/RS-02. This plan does not authorize or draft outreach.
 
+> **Supersession note (2026-08-20):** `open-data-foundation-decision-review.md` supersedes this plan's candidate-specific deferral of TPAC and GEOCIMAC after a completed read-only decision review classified both `P1` / `NEEDS_CONTACT`. This plan remains authoritative for its D5/WU022 non-interference rules, including TREVO, DAM, APCE, and parking/operational-mobility boundaries. No outreach is authorized by either document.
+
 ## 1. Purpose and scope
 
 This plan turns the reconciliation's five decision-relevant provider leads into a small D5 queue. It preserves the reconciliation dispositions and the separation between Civic Problem Intelligence and Open Data Foundation: a data-contract answer can inform a future infrastructure decision, but does not itself validate a civic problem or justify an API.

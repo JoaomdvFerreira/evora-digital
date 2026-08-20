@@ -21,17 +21,21 @@ If priorities conflict, the higher priority takes precedence.
 
 ## What Open Évora is
 
-Open Évora is a civic-tech discovery and delivery programme with two complementary tracks:
+Open Évora is a civic-tech discovery and delivery programme with three complementary tracks. AIQT, governance, and provenance are transversal to all three:
 
 ### Civic Problem Intelligence
 
 Build structured, traceable knowledge about problems, affected populations, current journeys, root causes, existing interventions, and digitally tractable opportunities.
 
-### Open Civic Data Infrastructure
+### Open Civic Data Foundation
 
 Discover, catalogue, normalize, and make useful civic data easier to reuse, while preserving provenance, licensing, authority, and freshness.
 
 The Open Civic Data track does **not** imply that a centralized API must be built. Catalogue-only, federation, normalization, API, or no infrastructure are all valid outcomes of discovery.
+
+### Research Explorer
+
+Provide a read-only product surface for navigating the canonical research corpus. Its roadmap is separate from Civic Problem Intelligence and the Open Civic Data Foundation.
 
 ## Core operating model
 
@@ -82,9 +86,11 @@ D9  Outcome Review
 
 See `docs/milestones/D0-closure.md` for the D0 closure record and `docs/milestones/D1-WU07-closure.md` for the D1 closure record. `docs/milestones/D5-stakeholder-challenge-validation.md` is the active D5 milestone (`M005`).
 
-No civic product has been selected for implementation.
+No civic intervention arising from the Civic Problem Intelligence pathway has been selected for implementation.
 
 The Évora Open API remains an **infrastructure hypothesis**, not an approved product.
+
+The first Open Civic Data Foundation Decision Review is recorded in `docs/discovery/open-data-foundation-decision-review.md`; it does not create a Work Unit or authorize outreach.
 
 ## Repository structure
 

@@ -24,6 +24,16 @@ Consequences for every later phase:
 - `WATCH` / `STOP` / `NON_DIGITAL` / `NO_INTERVENTION` outcomes are legitimate, first-class programme results;
 - record count, interview count, and method count are never success metrics.
 
+## Programme tracks
+
+Open Évora maintains three parallel, complementary tracks, with AIQT/governance/provenance transversal to all three:
+
+1. **Civic Problem Intelligence** — the D0–D9 progressive-assurance pathway below.
+2. **Open Civic Data Foundation** — a parallel discovery, documentation, federation and interoperability track; see “Transversal Open Data Foundation Track” and `open-data-foundation-decision-review.md`.
+3. **Research Explorer** — the read-only product surface for navigating the canonical research corpus; its product roadmap remains in `docs/architecture/research-explorer-roadmap.md`.
+
+The Open Civic Data Foundation is not a new civic-problem phase and does not imply a new AIQT work-unit hierarchy.
+
 ## Milestones
 
 ### D0 — Discovery Foundation
