@@ -17,7 +17,7 @@ population:
 domain:
   - "ENV"
 observation:
-  summary: "Waste-service information infrastructure already exists: Gesamb publishes schedules, locations, reception information, service-quality reporting and complaint channels."
+  summary: "Já existe infraestrutura de informação sobre o serviço de resíduos: a Gesamb publica horários, localizações, informação sobre receção de resíduos, informação sobre a qualidade do serviço e canais de reclamação."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

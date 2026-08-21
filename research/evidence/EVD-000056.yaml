@@ -15,7 +15,7 @@ population:
 domain:
   - "TOU"
 observation:
-  summary: "Visitor information and municipal tourism surfaces already exist, covering heritage, routes, accommodation, food, mobility and agenda, via a mature municipal visitor-information section including a tourism office."
+  summary: "Já existem canais municipais de informação para visitantes e de turismo, abrangendo património, roteiros, alojamento, restauração, mobilidade e agenda, através de uma secção municipal de informação ao visitante já estabelecida, que inclui um posto de turismo."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

@@ -18,7 +18,7 @@ domain:
   - "CLI"
   - "PUB"
 observation:
-  summary: "Climate/public-warning infrastructure exists, but public technical interoperability remains unknown: municipal civil-protection alert pages and climate-planning infrastructure exist, but the reviewed public page does not establish a machine-readable local alert feed/API."
+  summary: "Existe infraestrutura para informação climática e avisos públicos, mas a interoperabilidade técnica pública continua desconhecida: existem páginas municipais de alertas de proteção civil e infraestrutura de planeamento climático, mas a página pública analisada não estabelece a existência de um feed ou API local de alertas legível por máquina."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

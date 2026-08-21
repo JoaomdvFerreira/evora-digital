@@ -18,7 +18,7 @@ domain:
   - "ENV"
   - "CLI"
 observation:
-  summary: "Environmental/waste systems already contain potentially reusable public-data infrastructure: PMAAC has a WebSIG, and Gesamb publishes quantitative waste-performance information."
+  summary: "Os sistemas de ambiente e resíduos já incluem infraestrutura de dados públicos potencialmente reutilizável: o PMAAC dispõe de um WebSIG e a Gesamb publica informação quantitativa sobre o desempenho na gestão de resíduos."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

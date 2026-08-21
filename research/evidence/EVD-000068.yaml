@@ -20,7 +20,7 @@ domain:
   - "DIG"
   - "PUB"
 observation:
-  summary: "Municipal digital-service infrastructure is broader/more current than a simple 'digitalisation gap' framing suggests: Balcão Online, dedicated water services, ePaper for urban-planning, a geographic portal, a mobile app, an occurrence platform and other specialised online channels all coexist."
+  summary: "A infraestrutura municipal de serviços digitais é mais ampla e mais atual do que sugere uma simples formulação de «lacuna de digitalização»: coexistem o Balcão Online, serviços dedicados de água, ePaper para urbanismo, um portal geográfico, uma aplicação móvel, uma plataforma de ocorrências e outros canais digitais especializados."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

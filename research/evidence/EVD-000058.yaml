@@ -18,7 +18,7 @@ domain:
   - "CUL"
   - "DIG"
 observation:
-  summary: "The Municipality already has a structured event-information ingestion model. The current event-submission form includes structured fields for category/subcategory, dates/times, target audience, language, location, mobility-reduced accessibility, communication accessibility, registration, price, organiser/contact, and links/social channels."
+  summary: "O Município já dispõe de um modelo estruturado de recolha de informação sobre eventos. O formulário atual de submissão de eventos inclui campos estruturados para categoria/subcategoria, datas/horas, público-alvo, idioma, local, acessibilidade para pessoas com mobilidade reduzida, acessibilidade comunicacional, inscrição, preço, organizador/contacto e ligações/canais sociais."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

@@ -21,7 +21,7 @@ domain:
   - "URB"
   - "DIG"
 observation:
-  summary: "The municipal geographic portal provides thematic territorial information and citizen-facing planning tools. CIMAC separately maintains a normalized regional geographic-information infrastructure and explicitly publishes geographic information through WMS and WFS."
+  summary: "O portal geográfico municipal disponibiliza informação territorial temática e ferramentas de planeamento dirigidas aos cidadãos. A CIMAC mantém separadamente uma infraestrutura regional normalizada de informação geográfica e publica explicitamente informação geográfica através de WMS e WFS."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

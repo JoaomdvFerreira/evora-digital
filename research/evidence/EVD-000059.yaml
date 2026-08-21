@@ -19,7 +19,7 @@ domain:
   - "ACC"
   - "CUL"
 observation:
-  summary: "Accessibility metadata is explicitly collected for municipal agenda submissions, with both reduced-mobility and communication-accessibility fields required in the event-submission workflow."
+  summary: "São explicitamente recolhidos metadados de acessibilidade nas submissões para a agenda municipal, sendo obrigatórios, no fluxo de submissão de eventos, campos relativos a mobilidade reduzida e acessibilidade comunicacional."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

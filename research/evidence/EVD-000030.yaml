@@ -23,7 +23,7 @@ domain:
   - "DIG"
   - "URB"
 observation:
-  summary: "The remaining unresolved institutional/data questions have identifiable owners: DAM for municipal mobility/parking/environment operations; DORU for urban planning/requalification/PUE; E-BUS/TREVO for urban transport operation and passenger-facing operational data; ATAC/CIMAC for intermunicipal transport/TPAC/GTFS; GEOCIMAC/CIMAC for regional GIS and map/data services."
+  summary: "As restantes questões institucionais/de dados não resolvidas têm entidades responsáveis identificáveis: DAM para operações municipais de mobilidade/estacionamento/ambiente; DORU para planeamento urbano/requalificação/PUE; E-BUS/TREVO para a operação de transporte urbano e dados operacionais dirigidos aos passageiros; ATAC/CIMAC para transporte intermunicipal/TPAC/GTFS; GEOCIMAC/CIMAC para SIG regional e serviços de mapas/dados."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

@@ -18,7 +18,7 @@ population:
 domain:
   - "DIG"
 observation:
-  summary: "Fragmentation/interoperability remains a research question, not an established problem: the existence of multiple platforms could create repeated authentication, inconsistent status semantics, duplicated data entry, channel confusion and accessibility differences, but none of those user harms were demonstrated by the institutional evidence reviewed."
+  summary: "A fragmentação/interoperabilidade continua a ser uma questão de investigação, e não um problema estabelecido: a existência de múltiplas plataformas poderia gerar autenticação repetida, semântica de estados inconsistente, introdução duplicada de dados, confusão entre canais e diferenças de acessibilidade, mas nenhum desses prejuízos para os utilizadores foi demonstrado pela evidência institucional analisada."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

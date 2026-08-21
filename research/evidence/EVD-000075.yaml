@@ -16,7 +16,7 @@ domain:
   - "PUB"
   - "DIG"
 observation:
-  summary: "Occurrence reporting is already a mature-enough existing solution to reject duplication: the municipal platform supports web/mobile reporting and online follow-up to conclusion. The unresolved question is not existence but performance (time to first action, time to resolution, backlog, routing/reassignment, closure quality, duplicate reports); no public dataset for these metrics was located."
+  summary: "A comunicação de ocorrências já é uma solução existente suficientemente madura para rejeitar a duplicação: a plataforma municipal permite comunicar ocorrências através da web e de dispositivos móveis e acompanhá-las online até à conclusão. A questão não resolvida não é a existência, mas o desempenho (tempo até à primeira ação, tempo até à resolução, volume de pendências, encaminhamento e reatribuição, qualidade do encerramento e comunicações duplicadas); não foi localizado qualquer conjunto de dados público sobre estas métricas."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

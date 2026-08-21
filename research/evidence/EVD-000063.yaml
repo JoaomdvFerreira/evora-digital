@@ -18,7 +18,7 @@ domain:
   - "CLI"
   - "ENV"
 observation:
-  summary: "Climate risk is current, specific and institutionally operationalised: heat waves, drought/water stress and intense-rain/urban-flood risk are explicitly recognised, and the Municipality has an approved operational adaptation plan (PMAAC), a monitoring model, and a WebSIG spatial synthesis."
+  summary: "O risco climático é atual, específico e está traduzido em instrumentos institucionais operacionais: as ondas de calor, a seca e o stresse hídrico, bem como o risco de precipitação intensa e inundação urbana, são explicitamente reconhecidos, e o Município dispõe de um plano operacional de adaptação aprovado (PMAAC), de um modelo de monitorização e de uma síntese espacial WebSIG."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

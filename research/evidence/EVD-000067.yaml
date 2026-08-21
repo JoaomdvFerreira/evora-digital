@@ -16,7 +16,7 @@ domain:
   - "PUB"
   - "DIG"
 observation:
-  summary: "A digital occurrence-reporting channel already exists: citizens can already report and track public-space problems (e.g. water leaks, fallen signage) digitally, with online follow-up through to conclusion."
+  summary: "Já existe um canal digital de comunicação de ocorrências: os cidadãos podem comunicar e acompanhar digitalmente problemas no espaço público (por exemplo, fugas de água e sinalização caída), com acompanhamento online até à conclusão."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
