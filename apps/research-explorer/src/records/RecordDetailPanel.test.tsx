@@ -200,7 +200,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
     const panel = (await screen.findByText("Detalhes")).closest("section") as HTMLElement;
     const relacoes = within(panel).getByLabelText("Relações");
     const saidas = within(relacoes).getByLabelText("Saídas");
-    expect(saidas.textContent).toContain("referencia via");
+    expect(saidas.textContent).toContain("referencia através de");
     expect(saidas.textContent).toContain("analysis.related_problems");
     expect(saidas.textContent).toContain("[0]");
     expect(saidas.textContent).toContain("PRB-0006");

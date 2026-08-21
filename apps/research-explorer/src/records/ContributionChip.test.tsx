@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { CANONICAL_CONTRIBUTION_ORDER, ContributionChip } from "./ContributionChip";
+import { publicEnumLabel } from "../presentation";
 
 const CANONICAL_VALUES = [
   "CONFIRMS",
@@ -17,9 +18,9 @@ describe("ContributionChip", () => {
     expect(CANONICAL_CONTRIBUTION_ORDER).toEqual(CANONICAL_VALUES);
   });
 
-  it.each(CANONICAL_VALUES)("renders the canonical text label for %s", (value) => {
+  it.each(CANONICAL_VALUES)("renders the public PT-PT label for %s", (value) => {
     render(<ContributionChip value={value} />);
-    expect(screen.getByText(value)).toBeTruthy();
+    expect(screen.getByText(publicEnumLabel("contribution", value))).toBeTruthy();
   });
 
   it("renders an unrecognised future value's text without crashing and without a glyph", () => {

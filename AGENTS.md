@@ -17,3 +17,7 @@ Details: [Data Publication and Agent Safety Policy](docs/governance/data-publica
 11. New evidence does not itself authorize implementation, endorsement, or PRB/ASM/WU/gate/milestone state changes.
 12. A successful build is not a public-deployment approval: complete privacy, permission/reuse, corpus/assets, accessibility, and exposure review first.
 13. Do not autonomously expand scope or advance a milestone, Work Unit, gate, PRB, ASM, or other project state.
+
+## Language
+
+User/public-facing Open Évora content uses Portuguese (Portugal); internal technical semantics remain English. Localize technical enums and schema values only at presentation, never canonically. Official source, entity, and document names remain authoritative and unchanged.

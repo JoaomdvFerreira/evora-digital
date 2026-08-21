@@ -11,6 +11,7 @@
  * depends on recognising the value: an unrecognised future value still
  * renders its own text, with no glyph and no crash.
  */
+import { publicEnumLabel } from "../presentation";
 
 const CONTRIBUTION_GLYPHS: Record<string, string> = {
   CONFIRMS: "✓",
@@ -34,7 +35,7 @@ export function ContributionChip({ value }: { value: string }) {
           {glyph}{" "}
         </span>
       )}
-      <code>{value}</code>
+      {publicEnumLabel("contribution", value)}
     </span>
   );
 }

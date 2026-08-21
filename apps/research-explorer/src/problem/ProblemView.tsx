@@ -8,6 +8,7 @@ import { ContributionChip } from "../records/ContributionChip";
 import { summarizeContributions } from "./contributionSummary";
 import { DISCLOSURE_FIELDS, DISCLOSURE_FIELD_LABELS, FIELD_CAPTIONS, glossFor, type FieldGloss } from "./statusGloss";
 import { describeType, formatTypedId } from "../typeGlossary";
+import { formatPublicCount, publicEnumLabel, publicFieldCaption } from "../presentation";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -52,19 +53,15 @@ function TypedLinkButton({ detail, onOpenGeneric, suffix }: { detail: RecordDeta
 }
 
 /**
- * "Estado atual" status chip — canonical value always visible (in
- * parentheses, monospace), with a short safe label alongside it where one
- * exists (docs/design/research-explorer-design-foundations.md §8). When no
- * safe label exists for a value, the canonical value alone is shown — never
- * a manufactured explanation.
+ * Presentation labels retain canonical values only as a safe fallback when a
+ * future value has no approved PT-PT mapping.
  */
 function StatusChip({ field, value }: { field: string; value: string }) {
   const gloss = glossFor(field, value);
   const caption = FIELD_CAPTIONS[field] ?? field;
   return (
-    <span className="status-chip" aria-label={`${caption}: ${gloss ? gloss.label : value} (${value})`}>
-      {gloss ? `${gloss.label} ` : ""}
-      <code>({value})</code>
+    <span className="status-chip" aria-label={`${caption}: ${gloss ? gloss.label : publicEnumLabel(field, value)}`}>
+      {gloss ? gloss.label : publicEnumLabel(field, value)}
     </span>
   );
 }
@@ -115,7 +112,7 @@ function ProblemHelpDisclosure({ record }: { record: Record<string, unknown> }) 
         </p>
         {explainedFields.map(({ field, value, gloss }) => (
           <p key={field}>
-            <strong>{DISCLOSURE_FIELD_LABELS[field]}:</strong> {gloss ? gloss.label : value} (<code>{value}</code>)
+            <strong>{DISCLOSURE_FIELD_LABELS[field]}:</strong> {gloss ? gloss.label : publicEnumLabel(field, value)}
             {gloss?.explanation ? ` — ${gloss.explanation}` : ""}
           </p>
         ))}
@@ -268,8 +265,8 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
                       const value = fieldValue(asmRecord, key);
                       return value === null ? null : (
                         <div key={key}>
-                          <dt>{key}</dt>
-                          <dd>{value}</dd>
+                          <dt>{publicFieldCaption(key)}</dt>
+                          <dd>{publicEnumLabel(key, value)}</dd>
                         </div>
                       );
                     })}
@@ -282,7 +279,7 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
       </section>
 
       <section aria-label="Evidência">
-        <h3>Evidência ({evidence.length})</h3>
+        <h3>Evidência ({formatPublicCount(evidence.length)})</h3>
         <ContributionOccurrenceSummary evidence={evidence} />
         {evidence.length === 0 ? (
           <p>Nenhuma evidência associada.</p>
@@ -299,7 +296,7 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
               return (
                 <li key={detail.id}>
                   <div className="evidence-item-header">
-                    <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ?? undefined} />
+                    <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ? publicEnumLabel("type", fieldValue(evidenceRecord, "type")!) : undefined} />
                     <span className="evidence-item-contributions" aria-label="Contribuição canónica">
                       {contributions.length > 0 ? (
                         contributions.map((value, index) => <ContributionChip key={`${value}-${index}`} value={value} />)

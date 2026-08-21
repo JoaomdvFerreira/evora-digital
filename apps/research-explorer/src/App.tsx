@@ -3,6 +3,7 @@ import type { DataProvider } from "./dataProvider/types";
 import { StaticDataProvider } from "./dataProvider/StaticDataProvider";
 import { loadExplorerStartupState, type ExplorerStartupState } from "./startup";
 import { Explorer } from "./Explorer";
+import { formatPublicCount, formatPublicDateTime } from "./presentation";
 
 const defaultProvider: DataProvider = new StaticDataProvider();
 
@@ -40,7 +41,7 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
         Saltar para o conteúdo
       </a>
       <main id="main-content" tabIndex={-1}>
-        <h1>Open Évora Research Explorer</h1>
+        <h1>Explorador de Investigação Open Évora</h1>
 
         {state.status === "loading" && (
           <p role="status" aria-live="polite">
@@ -61,8 +62,8 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
         {state.status === "ready" && (
           <>
             <p className="manifest-summary">
-              Corpus: {state.manifest.totalRecords} registos · versão do modelo {state.manifest.readModelVersion} · gerado em{" "}
-              <time dateTime={state.manifest.generatedAt}>{state.manifest.generatedAt}</time>
+              Corpus: {formatPublicCount(state.manifest.totalRecords)} registos · gerado em{" "}
+              <time dateTime={state.manifest.generatedAt}>{formatPublicDateTime(state.manifest.generatedAt)}</time>
             </p>
             <Explorer dataProvider={dataProvider} schemaPrefixes={state.manifest.schemaPrefixes} />
           </>

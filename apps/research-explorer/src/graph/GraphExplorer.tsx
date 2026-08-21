@@ -388,7 +388,7 @@ export function GraphExplorer({
                           </button>
                         </td>
                         <td>
-                          via <code>{row.field}</code>
+                          através de <code>{row.field}</code>
                           {row.ordinal !== null ? `[${row.ordinal}]` : ""}
                         </td>
                       </tr>

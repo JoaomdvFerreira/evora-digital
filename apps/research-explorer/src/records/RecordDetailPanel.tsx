@@ -4,6 +4,7 @@ import { useRecordDetail } from "./useRecordDetail";
 import { RecordFieldTree } from "./RecordFieldTree";
 import { describeType, formatTypedId } from "../typeGlossary";
 import { findMeaningField } from "./meaningField";
+import { publicEnumLabel, publicFieldCaption, formatPublicCount } from "../presentation";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -34,7 +35,7 @@ function RelationshipList({ title, edges, lookup, direction, onSelect }: Relatio
             const relatedId = direction === "outgoing" ? edge.to! : edge.from!;
             const related = lookup.get(relatedId);
             const arrow = direction === "outgoing" ? "→" : "←";
-            const relation = direction === "outgoing" ? "referencia via" : "referenciado via";
+            const relation = direction === "outgoing" ? "referencia através de" : "referenciado através de";
             const ordinalSuffix = edge.ordinal !== null ? `[${edge.ordinal}]` : "";
             return (
               <li key={`${direction}-${edge.field}-${edge.ordinal}-${relatedId}-${index}`}>
@@ -127,7 +128,7 @@ function RecordDetailContent({
           <p className="record-role-fields">
             {roleFields.map(([field, value]) => (
               <span key={field} className="record-role-chip">
-                <code>{field}</code>: {String(value)}
+                {publicFieldCaption(field)}: {publicEnumLabel(field, String(value))}
               </span>
             ))}
           </p>
@@ -145,7 +146,7 @@ function RecordDetailContent({
           </dd>
           <dt>Relações</dt>
           <dd>
-            referenciado por {detail.incomingEdges.length} registo(s) · referencia {detail.outgoingEdges.length} registo(s) —{" "}
+            referenciado por {formatPublicCount(detail.incomingEdges.length)} registo(s) · referencia {formatPublicCount(detail.outgoingEdges.length)} registo(s) —{" "}
             <a href="#relacoes">ver caminhos exatos ↓</a>
           </dd>
         </dl>

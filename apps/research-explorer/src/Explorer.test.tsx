@@ -122,7 +122,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
 
     const detailPanel = (await screen.findByText("Detalhes")).closest("section")!;
     await within(detailPanel).findByText(/EVD-000105 — Via Verde Parking Buddy/);
-    expect(within(detailPanel).getByText(/referencia via/)).toBeTruthy();
+    expect(within(detailPanel).getByText(/referencia através de/)).toBeTruthy();
   });
 
   it("resolves incoming relationships to related summary labels from the index", async () => {
@@ -136,7 +136,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
 
     detailPanel = await getDetailPanel();
     await within(detailPanel).findByText(/PRB-0005 — Pressão de estacionamento/);
-    expect(within(detailPanel).getByText(/referenciado via/)).toBeTruthy();
+    expect(within(detailPanel).getByText(/referenciado através de/)).toBeTruthy();
   });
 
   it("navigates PRB-0005 -> EVD-000105 -> SRC-0092 without losing table context", async () => {
@@ -343,7 +343,7 @@ describe("Explorer — Problem view (RE-03)", () => {
     const heading = await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
     expect(window.location.search).toContain("view=problem");
     expect(window.location.search).toContain("id=PRB-0005");
-    expect(document.title).toBe("Problema PRB-0005 — Open Évora Research Explorer");
+    expect(document.title).toBe("Problema PRB-0005 — Explorador de Investigação Open Évora");
     expect(document.activeElement).toBe(heading);
   });
 
@@ -356,7 +356,7 @@ describe("Explorer — Problem view (RE-03)", () => {
     await user.click(await within(detailPanel).findByRole("button", { name: "Ver no Grafo" }));
 
     const heading = await screen.findByRole("heading", { name: "Grafo", level: 2 });
-    expect(document.title).toBe("Grafo PRB-0005 — Open Évora Research Explorer");
+    expect(document.title).toBe("Grafo PRB-0005 — Explorador de Investigação Open Évora");
     expect(document.activeElement).toBe(heading);
   });
 

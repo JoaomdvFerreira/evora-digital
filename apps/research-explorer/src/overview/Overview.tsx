@@ -1,6 +1,7 @@
 import type { DataProvider } from "../dataProvider/types";
 import { useRecordIndex } from "../records/useRecordIndex";
 import { computeOverviewStats } from "./overviewStats";
+import { formatPublicCount, publicEnumLabel, publicFieldCaption } from "../presentation";
 
 const ERROR_TITLES: Record<string, string> = {
   missing: "Modelo de leitura gerado não encontrado",
@@ -40,7 +41,7 @@ export function Overview({ dataProvider }: { dataProvider: DataProvider }) {
   return (
     <section aria-labelledby="overview-heading">
       <h2 id="overview-heading">Visão geral</h2>
-      <p>{stats.totalRecords} registos no total.</p>
+      <p>{formatPublicCount(stats.totalRecords)} registos no total.</p>
 
       <h3>Registos por tipo</h3>
       <table>
@@ -66,7 +67,7 @@ export function Overview({ dataProvider }: { dataProvider: DataProvider }) {
           {stats.distributions.map((dist) => (
             <div key={`${dist.type}-${dist.field}`}>
               <h4>
-                {dist.type} — <code>{dist.field}</code>
+                {dist.type} — {publicFieldCaption(dist.field)}
               </h4>
               <table>
                 <thead>
@@ -78,8 +79,8 @@ export function Overview({ dataProvider }: { dataProvider: DataProvider }) {
                 <tbody>
                   {dist.values.map((v) => (
                     <tr key={v.value}>
-                      <td>{v.value}</td>
-                      <td>{v.count}</td>
+                      <td>{publicEnumLabel(dist.field, v.value)}</td>
+                      <td>{formatPublicCount(v.count)}</td>
                     </tr>
                   ))}
                 </tbody>
