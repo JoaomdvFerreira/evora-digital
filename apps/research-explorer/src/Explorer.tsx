@@ -44,7 +44,7 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
 
   return (
     <>
-      <nav aria-label="Vistas do Explorador de Investigação">
+      <nav aria-label="Vistas do Explorador de Investigação" className="explorer-navigation">
         <button type="button" aria-current={url.state.view === "overview" ? "page" : undefined} onClick={() => url.setView("overview")}>
           Visão geral
         </button>

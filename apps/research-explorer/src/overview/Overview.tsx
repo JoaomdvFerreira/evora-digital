@@ -1,6 +1,6 @@
 import type { DataProvider } from "../dataProvider/types";
 import { useRecordIndex } from "../records/useRecordIndex";
-import { computePublicOverviewData } from "./overviewStats";
+import { computePublicOverviewData, formatEvidenceCount, formatProblemCount } from "./overviewStats";
 import { formatPublicCount, publicEnumLabel } from "../presentation";
 
 const ERROR_TITLES: Record<string, string> = {
@@ -95,7 +95,7 @@ export function Overview({ dataProvider, onExploreProblem }: { dataProvider: Dat
         </ul>
       </section>
 
-      <p className="overview-corpus-context">{formatPublicCount(overview.problemCount)} problemas em investigação · {formatPublicCount(overview.evidenceCount)} registos de evidência · investigação em atualização contínua</p>
+      <p className="overview-corpus-context">{formatProblemCount(overview.problemCount)} · {formatEvidenceCount(overview.evidenceCount)} · investigação em atualização contínua</p>
     </section>
   );
 }

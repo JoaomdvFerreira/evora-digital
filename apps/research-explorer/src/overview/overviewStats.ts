@@ -30,6 +30,14 @@ export interface PublicOverviewData {
   problems: OverviewProblem[];
 }
 
+export function formatProblemCount(count: number): string {
+  return `${count} ${count === 1 ? "problema" : "problemas"} em investigação`;
+}
+
+export function formatEvidenceCount(count: number): string {
+  return `${count} ${count === 1 ? "registo" : "registos"} de evidência`;
+}
+
 /**
  * The public first-contact projection. It deliberately uses only index
  * summaries: canonical PRB title/identity and schema-derived status fields.

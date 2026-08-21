@@ -35,7 +35,7 @@ main {
   top: 0.5rem;
 }
 
-nav[aria-label="Vistas do Explorer"] {
+.explorer-navigation {
   display: flex;
   gap: 0.5rem;
   margin: 1rem 0;
@@ -43,7 +43,7 @@ nav[aria-label="Vistas do Explorer"] {
   padding-bottom: 0.5rem;
 }
 
-nav[aria-label="Vistas do Explorer"] button {
+.explorer-navigation button {
   background: none;
   border: 1px solid transparent;
   font: inherit;
@@ -51,7 +51,7 @@ nav[aria-label="Vistas do Explorer"] button {
   cursor: pointer;
 }
 
-nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
+.explorer-navigation button[aria-current="page"] {
   border-color: #111;
   font-weight: bold;
 }

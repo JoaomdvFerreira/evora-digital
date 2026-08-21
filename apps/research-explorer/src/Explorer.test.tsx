@@ -223,7 +223,7 @@ describe("Explorer — Overview view", () => {
 
     await screen.findByRole("heading", { name: "Visão geral" });
     expect(screen.getByText("Problemas em investigação (1)")).toBeTruthy();
-    expect(screen.getByText(/1 problemas em investigação · 1 registos de evidência/)).toBeTruthy();
+    expect(screen.getByText(/1 problema em investigação · 1 registo de evidência/)).toBeTruthy();
     expect(screen.getByRole("list")).toBeTruthy();
     expect(screen.getByText("Pressão de estacionamento")).toBeTruthy();
     expect(screen.queryByText("Via Verde Parking Buddy")).toBeNull();

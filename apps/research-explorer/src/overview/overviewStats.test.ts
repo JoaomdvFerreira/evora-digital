@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeOverviewStats, computePublicOverviewData } from "./overviewStats";
+import { computeOverviewStats, computePublicOverviewData, formatEvidenceCount, formatProblemCount } from "./overviewStats";
 import type { RecordSummary } from "../dataProvider/types";
 
 function summary(overrides: Partial<RecordSummary>): RecordSummary {
@@ -104,5 +104,16 @@ describe("computePublicOverviewData", () => {
       { id: "PRB-0002", title: "Earlier problem", validationStatus: "unvalidated", evidenceStatus: "corroborated" },
       { id: "PRB-0010", title: "Later problem", validationStatus: "validated", evidenceStatus: "discovered" },
     ]);
+  });
+});
+
+describe("public Overview count grammar", () => {
+  it("uses PT-PT singular only for one, and plural for zero or more than one", () => {
+    expect(formatProblemCount(0)).toBe("0 problemas em investigação");
+    expect(formatProblemCount(1)).toBe("1 problema em investigação");
+    expect(formatProblemCount(2)).toBe("2 problemas em investigação");
+    expect(formatEvidenceCount(0)).toBe("0 registos de evidência");
+    expect(formatEvidenceCount(1)).toBe("1 registo de evidência");
+    expect(formatEvidenceCount(2)).toBe("2 registos de evidência");
   });
 });
