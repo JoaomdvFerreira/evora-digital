@@ -1,8 +1,9 @@
 # D5 — Stakeholder Challenge & Validation
 
-**Status:** PLANNED
+**Status:** IN PROGRESS
 **Milestone:** `M005`
 **Prepared:** 2026-08-11
+**Execution status updated:** 2026-08-21
 
 ## Objective
 
@@ -20,13 +21,28 @@ D5 may start when:
 - [x] 220 canonical records unchanged (89 `SRC-*`, 111 `EVD-*`, 10 `PRB-*`, 0 `HYP-*`, 10 `ASM-*`); all `PRB-*` remain `validation_status: unvalidated`.
 - [x] `docs/milestones/D4-to-D5-handoff.md` names the D5 needs per problem, including the `D5-P5-*` and `D5-P9-*` falsification questions.
 
-**Entry decision:** READY. `WU022` is not selected/started by this planning pass.
+**Entry decision (planning baseline):** READY. `WU022` was not selected/started by this planning pass.
 
 ## Operating model for D5
 
 Exactly three Work Units, organised by evidence role, not one per `PRB-*`. Work-unit sequencing is linear: `WU-D5-01` (operator/institutional) → `WU-D5-02` (affected-journey, only for questions still unresolved) → `WU-D5-03` (synthesis/validation decisions/closure). `WU-D5-02` may not start before `WU-D5-01` completes; `WU-D5-03` may not start before `WU-D5-02` completes.
 
 **Execution reality:** a WU may remain `in_progress` while the project waits for a real stakeholder/operator response. Do not fabricate completion merely because an outreach message was sent — an engagement question is not answered until a response, artefact, observation, or direct dataset actually exists. Use repository progress documentation/runlog notes for outreach-sent / response-pending / inaccessible-contact / alternate-evidence-route states; only submit a valid terminal AIQT checkpoint when the WU is genuinely complete.
+
+## Execution status - 2026-08-21
+
+**Current position:** `M005` / `WU022` is `in_progress`. D5 remains an evidence/challenge phase; no intervention has been selected.
+
+| Route | Public-safe execution status |
+| --- | --- |
+| `D5-OP-001` TREVO | Follow-up sent; awaiting external response. |
+| `D5-OP-002` CME / DAM | Follow-up sent; awaiting external response. |
+| `D5-OP-003` APCE | Response received; sanitized findings retained in `EVD-000112`, `EVD-000113`, `EVD-000114`, and `EVD-000131`. Remaining publication/reuse permission questions are external and pending. |
+| `D5-OP-004` SASUE | `CLOSED_SUFFICIENT`; sanitized findings retained in `EVD-000125`, `EVD-000126`, and `EVD-000127`. |
+| `D5-OP-005` CME / DEIS | Follow-up sent; awaiting external response. |
+| `D5-OP-006` NERE | Follow-up sent; awaiting external response. |
+
+No second follow-up is currently planned for routes already followed up. Await the current response window before assessing nonresponse exhaustion; apply the canonical nonresponse rule in `docs/discovery/research-methodology.md` §13.4a.
 
 **Contact/recruitment planning:** do not hard-code named individuals unless an approved public role/contact is already selected. Prefer roles — transport operator/planner; municipal mobility/parking operator; accessibility programme actor; housing/student support operator; caregiver-support operator; employer/training operator; affected passenger/cyclist/student/caregiver, etc. Specific contacts are an execution-time decision, made inside `WU022`/`WU023`, not this planning pass.
 
