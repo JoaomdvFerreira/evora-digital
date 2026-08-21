@@ -58,7 +58,7 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
 
       <ReadingGuide schemaPrefixes={schemaPrefixes} />
 
-      {url.state.view === "overview" && <Overview dataProvider={dataProvider} />}
+      {url.state.view === "overview" && <Overview dataProvider={dataProvider} onExploreProblem={(id) => url.setViewAndSelection("problem", id)} />}
 
       {url.state.view === "records" && (
         <RecordsExplorer

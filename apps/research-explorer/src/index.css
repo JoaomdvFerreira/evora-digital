@@ -56,6 +56,108 @@ nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
   font-weight: bold;
 }
 
+/* Public first-contact Overview: reuses the Explorer's restrained surfaces,
+   typography roles, native disclosure, and text-first navigation. */
+.public-overview {
+  max-width: 60rem;
+}
+
+.overview-introduction {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 48rem;
+}
+
+.overview-independence,
+.overview-trust,
+.overview-status-explanation {
+  border: 1px solid #ccc;
+  background: #f7f6f3;
+  padding: 0.75rem 1rem;
+  max-width: 52rem;
+}
+
+.overview-concepts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.overview-concepts h3 {
+  margin-bottom: 0.35rem;
+}
+
+.overview-concepts p {
+  margin-top: 0;
+}
+
+.overview-status-explanation {
+  margin: 1.5rem 0;
+}
+
+.overview-status-explanation summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.overview-problems-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.overview-problems-heading p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.overview-problem-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overview-problem-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.6rem;
+  padding: 0.75rem 1rem;
+}
+
+.overview-problem-list h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0.35rem 0 0;
+}
+
+.overview-problem-action {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.overview-statuses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #555;
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+}
+
+.overview-corpus-context {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
 /* Desktop-first split view; stacks on narrower laptop/tablet widths rather
    than compressing both panes unreadably. */
 .records-explorer {
@@ -88,6 +190,24 @@ nav[aria-label="Vistas do Explorer"] button[aria-current="page"] {
   }
 
   .records-pagination button {
+    min-height: 44px;
+  }
+
+  .overview-concepts {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-problems-heading,
+  .overview-problem-list li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .overview-problem-action {
+    text-align: left;
+  }
+
+  .overview-problem-action button {
     min-height: 44px;
   }
 }

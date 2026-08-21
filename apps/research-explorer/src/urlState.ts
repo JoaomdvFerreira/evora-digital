@@ -16,7 +16,7 @@ import { MIN_DEPTH, clampDepth, type GraphDepth } from "./graph/neighbourhood";
  */
 
 export type ExplorerView = "overview" | "records" | "problem" | "graph";
-export const DEFAULT_VIEW: ExplorerView = "records";
+export const DEFAULT_VIEW: ExplorerView = "overview";
 export const DEFAULT_GRAPH_DEPTH: GraphDepth = MIN_DEPTH;
 
 export interface ExplorerUrlState {

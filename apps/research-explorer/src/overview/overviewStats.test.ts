@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeOverviewStats } from "./overviewStats";
+import { computeOverviewStats, computePublicOverviewData } from "./overviewStats";
 import type { RecordSummary } from "../dataProvider/types";
 
 function summary(overrides: Partial<RecordSummary>): RecordSummary {
@@ -85,5 +85,24 @@ describe("computeOverviewStats", () => {
     expect(stats.totalRecords).toBe(0);
     expect(stats.countsByType).toEqual([]);
     expect(stats.distributions).toEqual([]);
+  });
+});
+
+describe("computePublicOverviewData", () => {
+  it("derives PRB-only ordered public entries and PRB/EVD counts from arbitrary index data", () => {
+    const data = computePublicOverviewData([
+      summary({ id: "EVD-0002", type: "EVD-", label: "Evidence two" }),
+      summary({ id: "PRB-0010", type: "PRB-", label: "Later problem", summaryFields: { validation_status: "validated", evidence_status: "discovered" } }),
+      summary({ id: "SRC-0001", type: "SRC-", label: "Source" }),
+      summary({ id: "PRB-0002", type: "PRB-", label: "Earlier problem", summaryFields: { validation_status: "unvalidated", evidence_status: "corroborated" } }),
+      summary({ id: "EVD-0001", type: "EVD-", label: "Evidence one" }),
+    ]);
+
+    expect(data.problemCount).toBe(2);
+    expect(data.evidenceCount).toBe(2);
+    expect(data.problems).toEqual([
+      { id: "PRB-0002", title: "Earlier problem", validationStatus: "unvalidated", evidenceStatus: "corroborated" },
+      { id: "PRB-0010", title: "Later problem", validationStatus: "validated", evidenceStatus: "discovered" },
+    ]);
   });
 });

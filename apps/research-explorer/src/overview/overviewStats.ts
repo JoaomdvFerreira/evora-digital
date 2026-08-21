@@ -17,6 +17,42 @@ export interface OverviewStats {
   distributions: FieldDistribution[];
 }
 
+export interface OverviewProblem {
+  id: string;
+  title: string;
+  validationStatus: string | null;
+  evidenceStatus: string | null;
+}
+
+export interface PublicOverviewData {
+  problemCount: number;
+  evidenceCount: number;
+  problems: OverviewProblem[];
+}
+
+/**
+ * The public first-contact projection. It deliberately uses only index
+ * summaries: canonical PRB title/identity and schema-derived status fields.
+ * It is not persisted and does not introduce an Overview-specific dataset.
+ */
+export function computePublicOverviewData(records: RecordSummary[]): PublicOverviewData {
+  const problems = records
+    .filter((record) => record.type === "PRB-")
+    .map((record) => ({
+      id: record.id,
+      title: record.label,
+      validationStatus: typeof record.summaryFields.validation_status === "string" ? record.summaryFields.validation_status : null,
+      evidenceStatus: typeof record.summaryFields.evidence_status === "string" ? record.summaryFields.evidence_status : null,
+    }))
+    .sort((a, b) => a.id.localeCompare(b.id));
+
+  return {
+    problemCount: problems.length,
+    evidenceCount: records.filter((record) => record.type === "EVD-").length,
+    problems,
+  };
+}
+
 // Tuned to surface a handful of genuinely informative distributions (e.g. a
 // PRB's validation_status, an EVD's strength) without hardcoding any field
 // name — every schema-conforming record type is treated identically.

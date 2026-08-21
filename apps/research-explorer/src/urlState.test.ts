@@ -18,7 +18,7 @@ describe("parseUrlState", () => {
   });
 
   it("degrades an invalid view to the default rather than crashing", () => {
-    expect(parseUrlState("?view=not-a-real-view").view).toBe("records");
+    expect(parseUrlState("?view=not-a-real-view").view).toBe("overview");
   });
 
   it("recognizes the RE-03 'problem' view", () => {
