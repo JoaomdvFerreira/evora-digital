@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "A controlled real-world experiment (274 in-ground curb sensors feeding real-time availability into the OpenPark system; 11 drivers, 33 routes, 495 mock deliveries; with vs without availability information) found that showing curb availability information reduced cruising-for-parking time by 27.9% and cruising distance by 12.4%."
+  summary: "Uma experiência controlada em contexto real (274 sensores embutidos junto ao passeio a alimentar informação de disponibilidade em tempo real no sistema OpenPark; 11 condutores, 33 percursos, 495 entregas simuladas; com e sem informação de disponibilidade) concluiu que a apresentação de informação sobre disponibilidade junto ao passeio reduziu em 27,9 % o tempo de circulação à procura de estacionamento e em 12,4 % a distância percorrida nessa procura."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

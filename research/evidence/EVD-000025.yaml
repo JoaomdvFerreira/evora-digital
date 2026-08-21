@@ -17,7 +17,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "Urban service regularity was 99.5% in 2025, but IP-5 minute punctuality was 84.4%. The Municipality describes recurring delays caused by slow traffic on principal access routes to the Historic Centre and the Industrial Park circular during peak periods."
+  summary: "A regularidade do serviço urbano foi de 99,5 % em 2025, enquanto o índice de pontualidade IP-5min foi de 84,4 %. O Município descreve atrasos recorrentes causados por tráfego lento nas principais vias de acesso ao Centro Histórico e na circular do Parque Industrial durante os períodos de ponta."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

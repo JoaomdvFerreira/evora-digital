@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "Via Verde Estacionar's Parking Buddy feature provides map-based destination search with a green/yellow/red probability-of-finding-parking indication, updated approximately every 30 minutes, predicted from Via Verde's historical parking data plus external factors such as weather and sporting/cultural events, with forecasts up to 48 hours ahead. Via Verde Estacionar's service pages list Évora among the municipalities where its street-parking payment service is currently available."
+  summary: "A funcionalidade Parking Buddy da Via Verde Estacionar disponibiliza pesquisa de destinos baseada em mapa, com uma indicação verde/amarela/vermelha da probabilidade de encontrar estacionamento, atualizada aproximadamente a cada 30 minutos e calculada a partir dos dados históricos de estacionamento da Via Verde e de fatores externos, como as condições meteorológicas e eventos desportivos ou culturais, com previsões para até 48 horas no futuro. As páginas de serviço da Via Verde Estacionar incluem Évora entre os municípios onde o seu serviço de pagamento de estacionamento na via pública está atualmente disponível."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

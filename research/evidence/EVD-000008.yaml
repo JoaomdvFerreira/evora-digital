@@ -18,7 +18,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "The PUE mobility diagnosis identifies parking pressure in parts of the city, abusive/illegal parking and a lack of coherent parking-policy logic. It specifically argues that the geography of supply, access conditions and tariffs should be immediately understandable to users."
+  summary: "O diagnóstico de mobilidade do PUE identifica pressão de estacionamento em partes da cidade, estacionamento abusivo/ilegal e falta de uma lógica coerente na política de estacionamento. Defende especificamente que a distribuição territorial da oferta, as condições de acesso e as tarifas devem ser imediatamente compreensíveis para os utilizadores."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

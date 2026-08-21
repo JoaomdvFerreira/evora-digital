@@ -17,7 +17,7 @@ domain:
   - "URB"
   - "MOB"
 observation:
-  summary: "A public petition (created 2026-01-28, 1,394 signatures at research time) calls for urgent requalification of roads in the municipality, citing widespread potholes/degraded pavement, safety concerns, vehicle damage, and mobility/quality-of-life effects."
+  summary: "Uma petição pública (criada em 2026-01-28, com 1 394 assinaturas à data da investigação) apela à requalificação urgente das estradas do concelho, citando a existência generalizada de buracos e pavimento degradado, preocupações de segurança, danos em veículos e efeitos na mobilidade e na qualidade de vida."
 evidence_nature: claim
 strength: secondary
 personal_data:

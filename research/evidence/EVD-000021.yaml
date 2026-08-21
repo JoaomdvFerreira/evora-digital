@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "The Municipality currently directs users to the Évora Mobilidade mobile application for payment of tariffed parking and also supports Via Verde Estacionar."
+  summary: "O Município orienta atualmente os utilizadores para a aplicação móvel Évora Mobilidade para o pagamento de estacionamento tarifado e permite também a utilização do Via Verde Estacionar."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

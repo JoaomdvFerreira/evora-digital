@@ -16,7 +16,7 @@ domain:
   - "URB"
   - "MOB"
 observation:
-  summary: "A public social post claimed that a pothole at the entrance to Évora on the N114 had persisted for roughly eight months despite earlier institutional acknowledgement, citing insufficient signalling and repeated evasive manoeuvres by drivers."
+  summary: "Uma publicação pública nas redes sociais alegou que um buraco na entrada de Évora, na N114, persistia há cerca de oito meses apesar de reconhecimento institucional anterior, citando sinalização insuficiente e manobras evasivas repetidas por parte dos condutores."
 evidence_nature: reported-experience
 strength: anecdotal
 personal_data:
