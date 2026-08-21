@@ -20,7 +20,7 @@ domain:
   - "MOB"
   - "HEA"
 observation:
-  summary: "Heat and water stress have direct everyday consequences: municipal climate work connects projected heat to difficulty walking/cycling and decreasing precipitation to water-management pressure."
+  summary: "O calor e o stresse hídrico têm consequências diretas no quotidiano: o trabalho municipal sobre o clima relaciona o calor projetado com dificuldades nas deslocações a pé e de bicicleta e a diminuição da precipitação com pressão sobre a gestão da água."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

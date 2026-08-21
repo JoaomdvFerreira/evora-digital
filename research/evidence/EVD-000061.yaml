@@ -19,7 +19,7 @@ domain:
   - "CUL"
   - "DIG"
 observation:
-  summary: "Multiple event-information surfaces currently exist: the Municipal Agenda, the Guia da Semana, and Évora 2027 each maintain distinct programming/information surfaces. Fragmentation as a user-experienced problem is not yet demonstrated by any reviewed evidence."
+  summary: "Atualmente existem vários canais de informação sobre eventos: a Agenda Municipal, o Guia da Semana e Évora 2027 mantêm, cada um, canais distintos de programação e informação. A fragmentação enquanto problema experienciado pelos utilizadores ainda não está demonstrada pela evidência analisada."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

@@ -23,7 +23,7 @@ domain:
   - "DIG"
   - "URB"
 observation:
-  summary: "The Municipality currently publishes interactive geographic services using the geo.cimac.pt ecosystem, while CIMAC's 2026 GEOCIMAC activity explicitly includes ArcGIS Enterprise/Portal, map services, WebGIS applications and continued creation/maintenance/update of intermunicipal geographic information. CIMAC also frames accessibility and reuse of territorial information by citizens, academia and businesses as a project objective."
+  summary: "O Município disponibiliza atualmente serviços geográficos interativos através do ecossistema geo.cimac.pt, enquanto a atividade GEOCIMAC da CIMAC para 2026 inclui explicitamente ArcGIS Enterprise/Portal, serviços de mapas, aplicações WebGIS e a criação, manutenção e atualização contínuas de informação geográfica intermunicipal. A CIMAC também enquadra a acessibilidade e a reutilização de informação territorial por cidadãos, academia e empresas como objetivo do projeto."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
