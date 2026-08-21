@@ -16,7 +16,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "The 2026 municipal report states that the network covers practically all urban Évora during daytime but reduces its response at night, weekends and holidays. Several low-demand locations removed from fixed routes in 2023 (Chainha Berlim, Santo Antónico, Barraca de Pau, Garraia) are served through taxi-based flexible public transport."
+  summary: "O relatório municipal de 2026 afirma que a rede cobre praticamente toda a zona urbana de Évora durante o dia, mas reduz a oferta de serviço à noite, aos fins de semana e nos feriados. Várias localidades de baixa procura que deixaram de ser servidas por linhas fixas em 2023 (Chainha Berlim, Santo Antónico, Barraca de Pau, Garraia) são servidas através de transporte público flexível baseado em táxi."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

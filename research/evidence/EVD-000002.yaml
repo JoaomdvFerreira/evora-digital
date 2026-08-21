@@ -16,7 +16,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "The 2026 municipal transport-authority report states that the urban network covers practically all urban Évora during daytime but reduces service at night, weekends and holidays. Since 2023, several low-demand locations have been moved from fixed-route service into taxi-based flexible public transport. The urban network comprises 11 regular urban lines plus two Linha Azul routes."
+  summary: "O relatório de 2026 da autoridade municipal de transportes afirma que a rede urbana cobre praticamente toda a zona urbana de Évora durante o dia, mas reduz a oferta de serviço à noite, aos fins de semana e nos feriados. Desde 2023, várias localidades de baixa procura passaram do serviço de linhas fixas para transporte público flexível baseado em táxi. A rede urbana é composta por 11 linhas urbanas regulares e duas linhas da Linha Azul."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

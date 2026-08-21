@@ -17,7 +17,7 @@ domain:
   - "MOB"
   - "EDU"
 observation:
-  summary: "Of 844,173 ATAC passengers in 2025, 63.29% were recorded in the student/youth segment."
+  summary: "Dos 844 173 passageiros da ATAC em 2025, 63,29% foram registados no segmento de estudantes/jovens."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

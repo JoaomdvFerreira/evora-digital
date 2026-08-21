@@ -17,7 +17,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "CIMAC reports that TPAC network data was converted to GTFS and made available through Google Maps in 2025. The same report states that static information at stops remains incomplete in some locations and identifies public information as a significant operational nonconformity affecting autonomous system use."
+  summary: "A CIMAC refere que os dados da rede TPAC foram convertidos para GTFS e disponibilizados através do Google Maps em 2025. O mesmo relatório afirma que a informação estática nas paragens continua incompleta em alguns locais e identifica a informação pública como uma não conformidade operacional significativa que afeta a utilização autónoma do sistema."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

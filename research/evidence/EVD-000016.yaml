@@ -17,7 +17,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "TREVO's current public web application advertises network/schedule information, notifications and real-time route updates. A bounded search of the operator's public material did not locate a documented public GTFS, GTFS-Realtime or developer API endpoint."
+  summary: "A aplicação web pública atual da TREVO anuncia informação sobre a rede e os horários, notificações e atualizações de percursos em tempo real. Uma pesquisa delimitada dos materiais públicos do operador não localizou um ponto de acesso público documentado para GTFS, GTFS-Realtime ou uma API para programadores."
 evidence_nature: fact
 strength: primary-non-authoritative
 personal_data:

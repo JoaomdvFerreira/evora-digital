@@ -19,7 +19,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "CIMAC confirms that the TPAC network was transformed into GTFS files and made available through Google Maps in 2025. In a bounded review of official/public TPAC and CIMAC material, no direct public GTFS download endpoint or explicit GTFS reuse licence was located."
+  summary: "A CIMAC confirma que a rede TPAC foi convertida em ficheiros GTFS e disponibilizada através do Google Maps em 2025. Numa análise delimitada de materiais oficiais/públicos da TPAC e da CIMAC, não foi localizado nenhum ponto de acesso público direto para descarregamento de GTFS nem uma licença explícita de reutilização de GTFS."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

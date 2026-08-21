@@ -16,7 +16,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "Around 30 University of Évora students protested at Colégio Pedro da Fonseca, demanding additional transport schedules; reporting cited a petition with more than 250 signatures and student accounts of limited usable transport, full buses and long practical journey times. One student described using TVDE because public transport did not provide a usable journey that morning."
+  summary: "Cerca de 30 estudantes da Universidade de Évora manifestaram-se no Colégio Pedro da Fonseca, reivindicando horários adicionais de transporte; a reportagem referiu uma petição com mais de 250 assinaturas e relatos de estudantes sobre uma disponibilidade limitada de opções de transporte utilizáveis na prática, autocarros cheios e tempos efetivos de deslocação longos. Um estudante descreveu ter recorrido a um serviço TVDE porque, nessa manhã, os transportes públicos não ofereciam uma opção de deslocação que lhe fosse utilizável."
 evidence_nature: reported-experience
 strength: secondary
 personal_data:

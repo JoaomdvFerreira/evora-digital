@@ -17,7 +17,7 @@ domain:
   - "DIG"
   - "ACC"
 observation:
-  summary: "The 2026 ATAC contract-evaluation report identifies significant public-information nonconformities during 2025, including absent or outdated maps, schedules and line identification at multiple stops/terminals, and reports that digital information had incomplete/outdated content. The report also finds the waiting/information experience weaker than the in-vehicle experience."
+  summary: "O relatório de avaliação contratual da ATAC de 2026 identifica não conformidades significativas na informação pública durante 2025, incluindo mapas, horários e identificação de linhas ausentes ou desatualizados em várias paragens e terminais, e refere que a informação digital apresentava conteúdo incompleto ou desatualizado. O relatório conclui também que a experiência de espera e de acesso à informação é menos positiva do que a experiência a bordo."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

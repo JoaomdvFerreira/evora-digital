@@ -18,7 +18,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "PMUSE's action plan explicitly lists passenger-information improvements as proposed interventions: improving comfort/accessibility/information conditions at stops, implementing real-time information systems at principal public-transport stops, and creating an app and website for disseminating multimodal transport-mode information — each listed with an associated indicative measure/cost in the plan's action table."
+  summary: "O plano de ação do PMUSE enumera explicitamente melhorias na informação ao passageiro como intervenções propostas: melhorar as condições de conforto, acessibilidade e informação nas paragens; implementar sistemas de informação em tempo real nas principais paragens de transportes públicos; e criar uma aplicação e um sítio web para divulgar informação multimodal sobre os diferentes modos de transporte — estando cada intervenção associada, na tabela de ações do plano, a uma medida/custo indicativo."
 evidence_nature: recommendation
 strength: primary-authoritative
 personal_data:
