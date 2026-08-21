@@ -15,7 +15,7 @@ domain:
   - "ACC"
   - "URB"
 observation:
-  summary: "APCE reports that its in-loco accessibility assessments identified accessibility problems in accesses (entrances/access routes), due to factors including inclination and location, and that some of the identified problems required and received correction. APCE did not provide a location-level inventory of which specific accesses were assessed, which remain uncorrected, or a date for when corrections were completed."
+  summary: "A APCE refere que as suas avaliações de acessibilidade in loco identificaram problemas de acessibilidade nos acessos (entradas/percursos de acesso), devido a fatores que incluem a inclinação e a localização, e que alguns dos problemas identificados exigiram correção e foram alvo dessa correção. A APCE não forneceu um inventário por localização que identifique os acessos específicos avaliados, os que permanecem por corrigir, nem uma data para a conclusão das correções."
 evidence_nature: claim
 strength: primary-non-authoritative
 personal_data:

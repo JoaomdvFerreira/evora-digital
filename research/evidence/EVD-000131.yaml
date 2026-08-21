@@ -12,7 +12,7 @@ geography:
 population: ["people with reduced mobility", "people with disabilities"]
 domain: ["ACC", "URB", "ECO"]
 observation:
-  summary: "In a direct APCE follow-up, APCE describes Acesso Universal 1.0–1.3; reports that some barriers identified in 1.0/1.1 were later intervened on, without a diagnosis-to-intervention mapping; reports approximately 30 commercial establishments assessed under 1.2; and reports further shop participation under 1.3. Supporting shop lists/forms and reuse permission remain pending."
+  summary: "Num seguimento direto com a APCE, esta descreve o Acesso Universal 1.0–1.3; refere que algumas barreiras identificadas nas versões 1.0/1.1 foram posteriormente alvo de intervenção, sem um mapeamento entre diagnóstico e intervenção; refere que cerca de 30 estabelecimentos comerciais foram avaliados no âmbito da versão 1.2; e refere participação adicional de estabelecimentos comerciais na versão 1.3. As listas/formulários de estabelecimentos que constituem documentação de suporte, bem como a autorização de reutilização, continuam pendentes."
 evidence_nature: claim
 strength: primary-non-authoritative
 personal_data:

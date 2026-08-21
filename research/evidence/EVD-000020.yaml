@@ -20,7 +20,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "The Municipality approved new Rossio requalification phases in February and May 2026, including pedestrian and vehicle access, safer accessibility, parking/multiuse functions and continuation of the Station/Rossio soft-mobility interface, with further road reprofiling described as a later phase."
+  summary: "O Município aprovou novas fases de requalificação do Rossio em fevereiro e maio de 2026, incluindo acessos pedonais e viários, medidas para uma acessibilidade mais segura, funções de estacionamento e multiusos e a continuação da interface de mobilidade suave Estação/Rossio, sendo descrita uma nova redefinição do perfil viário como fase posterior."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
