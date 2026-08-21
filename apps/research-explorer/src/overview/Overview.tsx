@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import type { DataProvider } from "../dataProvider/types";
 import { useRecordIndex } from "../records/useRecordIndex";
+import { findMeaningField } from "../records/meaningField";
 import { computePublicOverviewData, formatEvidenceCount, formatProblemCount } from "./overviewStats";
 import { formatPublicCount, publicEnumLabel } from "../presentation";
 
@@ -18,6 +20,33 @@ const ERROR_TITLES: Record<string, string> = {
  */
 export function Overview({ dataProvider, onExploreProblem }: { dataProvider: DataProvider; onExploreProblem: (id: string) => void }) {
   const indexState = useRecordIndex(dataProvider);
+  const [fullTitles, setFullTitles] = useState<Map<string, string> | null>(null);
+  const overview = indexState.status === "ready" ? computePublicOverviewData(indexState.records) : null;
+  const problemIds = overview?.problems.map((problem) => problem.id).join("|") ?? "";
+
+  useEffect(() => {
+    if (overview === null) {
+      setFullTitles(null);
+      return;
+    }
+    let cancelled = false;
+    setFullTitles(null);
+    Promise.all(
+      overview.problems.map(async (problem) => {
+        try {
+          const detail = await dataProvider.getRecord(problem.id);
+          return [problem.id, findMeaningField(detail.record)?.value ?? problem.title] as const;
+        } catch {
+          return [problem.id, problem.title] as const;
+        }
+      })
+    ).then((titles) => {
+      if (!cancelled) setFullTitles(new Map(titles));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [dataProvider, problemIds]);
 
   if (indexState.status === "loading") {
     return (
@@ -36,7 +65,8 @@ export function Overview({ dataProvider, onExploreProblem }: { dataProvider: Dat
     );
   }
 
-  const overview = computePublicOverviewData(indexState.records);
+  if (overview === null) return null;
+
   const unvalidatedLabel = publicEnumLabel("validation_status", "unvalidated");
   const corroboratedLabel = publicEnumLabel("evidence_status", "corroborated");
 
@@ -76,23 +106,27 @@ export function Overview({ dataProvider, onExploreProblem }: { dataProvider: Dat
           <h3 id="overview-problemas-heading">Problemas em investigação ({formatPublicCount(overview.problemCount)})</h3>
           <p>ordenados por identificador, não por relevância</p>
         </div>
-        <ul className="overview-problem-list">
-          {overview.problems.map((problem) => (
-            <li key={problem.id}>
-              <div>
-                <code>{problem.id}</code>
-                <h4>{problem.title}</h4>
-              </div>
-              <div className="overview-problem-action">
-                <p className="overview-statuses">
-                  {problem.validationStatus !== null && <span>Estado de validação: {publicEnumLabel("validation_status", problem.validationStatus)}</span>}
-                  {problem.evidenceStatus !== null && <span>Estado da evidência: {publicEnumLabel("evidence_status", problem.evidenceStatus)}</span>}
-                </p>
-                <button type="button" onClick={() => onExploreProblem(problem.id)}>Explorar</button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {fullTitles === null ? (
+          <p role="status" aria-live="polite">A carregar títulos dos problemas…</p>
+        ) : (
+          <ul className="overview-problem-list">
+            {overview.problems.map((problem) => (
+              <li key={problem.id}>
+                <div className="overview-problem-identity">
+                  <code>{problem.id}</code>
+                  <h4 className="overview-problem-title">{fullTitles.get(problem.id) ?? problem.title}</h4>
+                </div>
+                <div className="overview-problem-action">
+                  <p className="overview-statuses">
+                    {problem.validationStatus !== null && <span>Estado de validação: {publicEnumLabel("validation_status", problem.validationStatus)}</span>}
+                    {problem.evidenceStatus !== null && <span>Estado da evidência: {publicEnumLabel("evidence_status", problem.evidenceStatus)}</span>}
+                  </p>
+                  <button type="button" onClick={() => onExploreProblem(problem.id)}>Explorar</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       <p className="overview-corpus-context">{formatProblemCount(overview.problemCount)} · {formatEvidenceCount(overview.evidenceCount)} · investigação em atualização contínua</p>

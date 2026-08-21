@@ -6,7 +6,7 @@ import { StaticDataProvider } from "./dataProvider/StaticDataProvider";
 import type { DataProvider, RecordDetail, RecordSummary } from "./dataProvider/types";
 
 const INDEX: RecordSummary[] = [
-  { id: "PRB-0005", type: "PRB-", label: "Pressão de estacionamento", file: "research/problems/PRB-0005.yaml", summaryFields: { status: "OPEN" } },
+  { id: "PRB-0005", type: "PRB-", label: "Pressão de estacionamento com uma descrição…", file: "research/problems/PRB-0005.yaml", summaryFields: { status: "OPEN" } },
   { id: "EVD-000105", type: "EVD-", label: "Via Verde Parking Buddy", file: "research/evidence/EVD-000105.yaml", summaryFields: { strength: "primary-authoritative" } },
   { id: "SRC-0092", type: "SRC-", label: "Via Verde Estacionar", file: "research/sources/SRC-0092.yaml", summaryFields: {} },
   {
@@ -23,7 +23,7 @@ const DETAILS: Record<string, RecordDetail> = {
     id: "PRB-0005",
     type: "PRB-",
     file: "research/problems/PRB-0005.yaml",
-    record: { title: "Pressão de estacionamento", domain: ["mobility"] },
+    record: { title: "Pressão de estacionamento com uma descrição canónica completa que não pode ser truncada", domain: ["mobility"] },
     outgoingEdges: [{ field: "evidence", ordinal: 0, to: "EVD-000105" }],
     incomingEdges: [],
   },
@@ -224,8 +224,9 @@ describe("Explorer — Overview view", () => {
     await screen.findByRole("heading", { name: "Visão geral" });
     expect(screen.getByText("Problemas em investigação (1)")).toBeTruthy();
     expect(screen.getByText(/1 problema em investigação · 1 registo de evidência/)).toBeTruthy();
+    expect(await screen.findByText("Pressão de estacionamento com uma descrição canónica completa que não pode ser truncada")).toBeTruthy();
     expect(screen.getByRole("list")).toBeTruthy();
-    expect(screen.getByText("Pressão de estacionamento")).toBeTruthy();
+    expect(screen.queryByText("Pressão de estacionamento com uma descrição…")).toBeNull();
     expect(screen.queryByText("Via Verde Parking Buddy")).toBeNull();
     expect(screen.getByText(/Não representa a Câmara Municipal de Évora/)).toBeTruthy();
     expect(screen.getByText("ordenados por identificador, não por relevância")).toBeTruthy();

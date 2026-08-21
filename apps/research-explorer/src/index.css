@@ -138,6 +138,20 @@ main {
   margin: 0.35rem 0 0;
 }
 
+.overview-problem-identity {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* PRB titles are the canonical human-readable identity: never clamp or
+   elide them. They wrap within the existing card instead of widening it. */
+.overview-problem-title {
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
+}
+
 .overview-problem-action {
   flex: 0 0 auto;
   text-align: right;
