@@ -20,7 +20,7 @@ domain:
   - "ECO"
   - "EMP"
 observation:
-  summary: "Business-support fragmentation remains plausible but unproven: multiple providers (Município, NERE, PACT, IEFP, UÉ) offer programmes and channels for business/economic support, but multiplicity of providers alone is not evidence that businesses experience navigation friction."
+  summary: "A fragmentação do apoio às empresas continua a ser plausível, mas não comprovada: vários prestadores (Município, NERE, PACT, IEFP, UÉ) disponibilizam programas e canais de apoio empresarial e económico, mas a multiplicidade de prestadores, por si só, não constitui evidência de que as empresas enfrentem dificuldades de orientação."
 evidence_nature: opinion
 strength: secondary
 personal_data:

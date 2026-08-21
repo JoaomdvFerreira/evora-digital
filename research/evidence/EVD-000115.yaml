@@ -17,7 +17,7 @@ domain:
   - "EMP"
   - "ECO"
 observation:
-  summary: "EURES' Portugal labour-market information page names recruitment-need/shortage occupations for the Alentejo region: agronomists, software programmers, agricultural-machinery repairers/operators, seasonal agricultural workers (fruit harvesting), electromechanical/electrical maintenance technicians, chefs, meat cutters and construction workers, attributed to agriculture, tourism, renewable energy and processing-industry activity across the region."
+  summary: "A página de informação sobre o mercado de trabalho em Portugal da EURES identifica, para a região do Alentejo, profissões associadas a necessidades de recrutamento ou situações de escassez: agrónomos, programadores de software, reparadores e operadores de maquinaria agrícola, trabalhadores agrícolas sazonais (colheita de fruta), técnicos de manutenção eletromecânica e elétrica, cozinheiros, trabalhadores de corte de carne e trabalhadores da construção. Essas necessidades de recrutamento ou situações de escassez são atribuídas à atividade nos setores da agricultura, turismo, energias renováveis e indústria transformadora em toda a região."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

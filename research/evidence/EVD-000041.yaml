@@ -19,7 +19,7 @@ domain:
   - "ECO"
   - "EMP"
 observation:
-  summary: "The Municipality reports significant growth in installed companies since 2013, with a strategy emphasizing investment attraction, industrial/technology parks, incubation and sector-specialised enterprise-support infrastructure, including aerospace."
+  summary: "O Município refere um crescimento significativo das empresas instaladas desde 2013, com uma estratégia que privilegia a atração de investimento, parques industriais e tecnológicos, incubação e infraestruturas de apoio empresarial especializadas por setor, incluindo o aeroespacial."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

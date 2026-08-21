@@ -24,7 +24,7 @@ domain:
   - "EDU"
   - "ECO"
 observation:
-  summary: "Existing employment-matching infrastructure is substantial: UÉ employment fairs (third edition scheduled October 2026), university career/employability initiatives (Magma Talks and related activity), a dedicated UÉ Employment Portal (emprego.uevora.pt) where students/alumni publish CVs, receive matching notifications and apply while employers publish vacancies and search profiles, IEFP job listings, and NERE/IEFP training mechanisms are all currently active."
+  summary: "A infraestrutura existente de ligação entre candidatos e oportunidades de emprego é substancial: feiras de emprego da UÉ (com a terceira edição prevista para outubro de 2026), iniciativas universitárias de carreira e empregabilidade (Magma Talks e atividades associadas), um Portal de Emprego da UÉ dedicado (emprego.uevora.pt), no qual estudantes e antigos alunos publicam CV, recebem notificações quando existem correspondências e apresentam candidaturas, enquanto os empregadores publicam vagas e pesquisam perfis, bem como ofertas de emprego do IEFP e mecanismos de formação NERE/IEFP. Todos estes mecanismos estão atualmente ativos."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

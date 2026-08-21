@@ -18,7 +18,7 @@ domain:
   - "HOU"
   - "ECO"
 observation:
-  summary: "The PDS explicitly describes the challenge as moving from attraction of young people to their fixation (retention) in the municipality."
+  summary: "O PDS descreve explicitamente o desafio como a passagem da atração de jovens à sua fixação (retenção) no concelho."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

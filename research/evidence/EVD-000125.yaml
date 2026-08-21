@@ -16,7 +16,7 @@ domain:
   - "EDU"
   - "DIG"
 observation:
-  summary: "SASUE reports that enrolled students apply for residence accommodation online through SIIUE / Perfil de aluno; after analysis they are notified of the result, accommodated students receive entry procedures, and applicants can directly consult application status and associated information. SASUE also points students to its public accommodation-information page."
+  summary: "Os SASUE referem que os estudantes matriculados se candidatam online a alojamento em residência através do SIIUE / Perfil de aluno; após análise, são notificados do resultado, os estudantes colocados recebem os procedimentos para entrada e os candidatos podem consultar diretamente o estado da candidatura e a informação associada. Os SASUE encaminham também os estudantes para a sua página pública de informação sobre alojamento."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

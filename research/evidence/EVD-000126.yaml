@@ -15,7 +15,7 @@ domain:
   - "HOU"
   - "EDU"
 observation:
-  summary: "SASUE reports that it holds aggregate operational information for residence accommodation applications, available places, unsuccessful applicants, waiting-list information and decision-time information. The response did not provide indicator values, definitions, historical coverage, access conditions or reuse terms."
+  summary: "Os SASUE referem dispor de informação operacional agregada sobre candidaturas a alojamento em residência, vagas disponíveis, candidatos não colocados, informação sobre listas de espera e informação sobre tempos de decisão. A resposta não forneceu valores de indicadores, definições, cobertura histórica, condições de acesso nem condições de reutilização."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

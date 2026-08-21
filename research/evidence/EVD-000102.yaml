@@ -18,7 +18,7 @@ domain:
   - "EMP"
   - "EDU"
 observation:
-  summary: "PlaQuaR is a mechanism explicitly designed to align training supply with actual regional employer/institution needs by mapping available training, maintaining current information, and strengthening cooperation networks between education/training providers and employers."
+  summary: "O PlaQuaR é um mecanismo explicitamente concebido para alinhar a oferta de formação com as necessidades efetivas dos empregadores e instituições da região, através do mapeamento da formação disponível, da manutenção de informação atualizada e do reforço das redes de cooperação entre prestadores de educação/formação e empregadores."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
