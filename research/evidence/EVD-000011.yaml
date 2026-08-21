@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "ACC"
 observation:
-  summary: "The 2023-2025 communication dataset records 92 communications concerning schedules, 52 vehicle conditions, 24 delays, 8 stops, and smaller numbers for passes, ticketing, overcrowding and route changes. The report states that 43% of communications were schedule-related and that many concerned requests to create or synchronize schedules rather than service non-compliance. Its 2025 satisfaction assessment concludes that the in-vehicle experience is stronger than the experience of waiting and accessing information."
+  summary: "O conjunto de dados de comunicações de 2023-2025 regista 92 comunicações relativas a horários, 52 relativas às condições dos veículos, 24 a atrasos, 8 a paragens e números inferiores relativos a passes, bilhética, sobrelotação e alterações de linhas. O relatório afirma que 43% das comunicações estavam relacionadas com horários e que muitas diziam respeito a pedidos para criar ou sincronizar horários, e não a incumprimentos do serviço. A sua avaliação de satisfação de 2025 conclui que a experiência a bordo é mais positiva do que a experiência de espera e de acesso à informação."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

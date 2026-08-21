@@ -18,7 +18,7 @@ domain:
   - "DIG"
   - "ACC"
 observation:
-  summary: "PMUSE Volume I documents heterogeneous physical bus-stop information: unsheltered stops carry only a single blue/white plate identifying the operator and line, while sheltered stops carry a panel showing lines/stops/timetables — but the plan itself states this panel lacks accessibility elements (e.g. braille, audio announcements) needed for universal accessibility."
+  summary: "O Volume I do PMUSE documenta informação física heterogénea nas paragens de autocarro: as paragens sem abrigo têm apenas uma placa azul/branca que identifica o operador e a linha, enquanto as paragens com abrigo têm um painel que apresenta linhas/paragens/horários — mas o próprio plano afirma que este painel não dispõe dos elementos de acessibilidade (por exemplo, braille, avisos sonoros) necessários para a acessibilidade universal."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

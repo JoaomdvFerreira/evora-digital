@@ -18,7 +18,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "The 2022 and 2023 municipal transport-authority annual reports both state, in identical wording to the current 2026 report (EVD-000002/EVD-000024), that the urban network covers practically all urban Évora during daytime but reduces its response at night, on weekends and on holidays. This establishes the temporal service-gap pattern as a multi-year documented feature of the network (at least 2022-2026), not a newly observed or transient condition."
+  summary: "Os relatórios anuais de 2022 e 2023 da autoridade municipal de transportes afirmam ambos, com formulação idêntica à do relatório atual de 2026 (EVD-000002/EVD-000024), que a rede urbana cobre praticamente toda a zona urbana de Évora durante o dia, mas reduz a oferta de serviço à noite, aos fins de semana e nos feriados. Isto estabelece esse padrão temporal de redução do serviço como uma característica documentada da rede ao longo de vários anos (pelo menos de 2022 a 2026), e não como uma condição observada apenas recentemente ou transitória."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "For the reporting period, service regularity was 99.5% while the IP-5min punctuality index was 84.4%. The municipal report attributes recurring delays to slow traffic on principal arteries, especially access to the Historic Centre and the circular route serving the Industrial Park during morning and evening peaks."
+  summary: "No período em análise, a regularidade do serviço foi de 99,5%, enquanto o índice de pontualidade IP-5min foi de 84,4%. O relatório municipal atribui os atrasos recorrentes ao tráfego lento nas principais artérias, especialmente nos acessos ao Centro Histórico e na circular que serve o Parque Industrial durante as horas de ponta da manhã e da tarde."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

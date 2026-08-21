@@ -15,7 +15,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "ATAC reports that TPAC/TPF services cover 94% of Évora municipality's population in both school and non-school periods. The calculation explicitly excludes Évora's separate urban transport service."
+  summary: "A ATAC refere que os serviços TPAC/TPF cobrem 94% da população do município de Évora, tanto em períodos escolares como não escolares. O cálculo exclui explicitamente o serviço distinto de transportes urbanos de Évora."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

@@ -15,7 +15,7 @@ population:
 domain:
   - "MOB"
 observation:
-  summary: "The municipal urban transport network carried 876,148 passengers in 2025, an increase of 90,522 over 2024, while remaining 1.9% below pre-pandemic ridership."
+  summary: "A rede municipal de transportes urbanos transportou 876 148 passageiros em 2025, um aumento de 90 522 face a 2024, mantendo-se 1,9% abaixo do nível de utilização anterior à pandemia."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

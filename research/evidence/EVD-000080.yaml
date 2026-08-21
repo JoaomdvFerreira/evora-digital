@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "Current TREVO complaint listing shows repeated operational/service-reliability incidents: an October 2025 Linha Azul Norte complaint at Escola Gabriel Pereira mentioning an already-delayed bus; an August 2025 complaint about a driver stopping service for a personal matter; and a February 2025 report that a Linha Azul bus did not stop after being signalled."
+  summary: "A listagem atual de reclamações sobre a TREVO mostra incidentes recorrentes relacionados com a operação e a fiabilidade do serviço: uma reclamação de outubro de 2025 relativa à Linha Azul Norte, na Escola Gabriel Pereira, que menciona um autocarro já atrasado; uma reclamação de agosto de 2025 sobre um motorista que interrompeu o serviço por motivo pessoal; e um relato de fevereiro de 2025 de que um autocarro da Linha Azul não parou depois de lhe ter sido feito sinal."
 evidence_nature: reported-experience
 strength: anecdotal
 personal_data:
