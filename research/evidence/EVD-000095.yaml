@@ -18,7 +18,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "In May 2026, the Municipality reported four collection vehicles entering service as part of a waste-collection normalisation step, following the vehicle procurement announced during the February 2026 disruption (SRC-0061) and ahead of the further fleet reinforcement to 19 vehicles reported in July (SRC-0055)."
+  summary: "Em maio de 2026, o Município referiu a entrada em serviço de quatro veículos de recolha como parte de uma etapa de normalização da recolha de resíduos, após a aquisição de veículos anunciada durante a interrupção de fevereiro de 2026 (SRC-0061) e antes do posterior reforço da frota para 19 veículos referido em julho (SRC-0055)."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

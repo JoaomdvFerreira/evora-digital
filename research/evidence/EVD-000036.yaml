@@ -16,7 +16,7 @@ population:
 domain:
   - "SOC"
 observation:
-  summary: "The CLASE network includes a large number of organisations (roughly 120 participating institutions listed by the Municipality) and thematic coordination structures."
+  summary: "A rede CLASE inclui um grande número de organizações (cerca de 120 instituições participantes listadas pelo Município) e estruturas de coordenação temáticas."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

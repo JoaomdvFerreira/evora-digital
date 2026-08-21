@@ -18,7 +18,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "In August 2026 the Município opened an enforcement action (contraordenação) against improper green/garden-waste dumping near a school, reported by two outlets covering the same underlying event."
+  summary: "Em agosto de 2026, o Município instaurou um processo de contraordenação por deposição inadequada de resíduos verdes/de jardim junto de uma escola, noticiado por dois órgãos de comunicação social que cobriram o mesmo acontecimento subjacente."
 evidence_nature: claim
 strength: secondary
 personal_data:

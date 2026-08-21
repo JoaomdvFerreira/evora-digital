@@ -16,7 +16,7 @@ domain:
   - "SOC"
   - "HEA"
 observation:
-  summary: "Caregiver focus-group material in the plan explicitly identifies bureaucracy and difficulty knowing/understanding caregiver rights as a distinct source of burden, separate from general caregiving strain."
+  summary: "O material dos grupos focais de cuidadores incluído no plano identifica explicitamente a burocracia e a dificuldade em conhecer/compreender os direitos dos cuidadores como uma fonte distinta de sobrecarga, separada da sobrecarga geral associada à prestação de cuidados."
 evidence_nature: reported-experience
 strength: primary-authoritative
 personal_data:

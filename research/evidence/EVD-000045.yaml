@@ -19,7 +19,7 @@ domain:
   - "SOC"
   - "HEA"
 observation:
-  summary: "Existing caregiver support already operates: ULSAC and local partners run caregiver/community/dementia-oriented initiatives (Unidade de Cuidados na Comunidade, Cantinho do Cuidador, VIVAMENTE). The remaining problem is therefore not 'no service exists' for caregivers; it should focus on navigation, awareness, eligibility, coordination and handoffs, and completeness of information, not on duplicating a service that already exists."
+  summary: "O apoio aos cuidadores já está em funcionamento: a ULSAC e parceiros locais desenvolvem iniciativas orientadas para cuidadores, comunidade e demência (Unidade de Cuidados na Comunidade, Cantinho do Cuidador, VIVAMENTE). Assim, o problema remanescente não é a «inexistência de serviços» para cuidadores; deverá incidir na orientação, no conhecimento dos apoios existentes, na elegibilidade, na coordenação e nos encaminhamentos entre serviços, bem como na completude da informação, e não na duplicação de um serviço já existente."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

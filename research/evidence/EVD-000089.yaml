@@ -16,7 +16,7 @@ domain:
   - "SOC"
   - "HEA"
 observation:
-  summary: "The Plano Concelhio de Cuidadores Informais reports a dedicated questionnaire administered to 133 informal caregivers residing in Évora during plan preparation (through 2025), recruited through organisations/projects supporting caregivers with anonymous/confidential participation; the sample was geographically concentrated in particular urban areas rather than municipality-wide."
+  summary: "O Plano Concelhio de Cuidadores Informais refere um questionário específico aplicado a 133 cuidadores informais residentes em Évora durante a preparação do plano (até 2025), recrutados através de organizações/projetos de apoio a cuidadores, com participação anónima/confidencial; a amostra concentrou-se geograficamente em determinadas zonas urbanas, em vez de abranger todo o município."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

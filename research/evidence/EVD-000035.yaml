@@ -17,7 +17,7 @@ domain:
   - "HEA"
   - "SOC"
 observation:
-  summary: "Local actors identify insufficient mental-health response capacity and insufficient primary-care capacity, with the document linking mental-health pressure to informal-caregiver burden and social isolation."
+  summary: "Os intervenientes locais identificam insuficiência da capacidade de resposta em saúde mental e nos cuidados de saúde primários, e o documento relaciona a pressão sobre a saúde mental com a sobrecarga dos cuidadores informais e o isolamento social."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

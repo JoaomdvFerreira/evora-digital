@@ -19,7 +19,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "Urban-hygiene/service reliability survives the Current-State Challenge strongly: February 2026 provides direct operational evidence of service disruption (severe vehicle unavailability, collection delays); July/August 2026 shows a structural municipal response focused on fleet, staffing, logistics, collection models and monitoring."
+  summary: "O problema de higiene urbana e fiabilidade do serviço mantém-se fortemente sustentado após o Desafio do Estado Atual: em fevereiro de 2026 há evidência operacional direta de interrupção do serviço (indisponibilidade grave de veículos e atrasos na recolha); em julho/agosto de 2026 é documentada uma resposta municipal estrutural centrada na frota, pessoal, logística, modelos de recolha e monitorização."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:
