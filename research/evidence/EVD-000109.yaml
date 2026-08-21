@@ -17,7 +17,7 @@ domain:
   - "PUB"
   - "DIG"
 observation:
-  summary: "Oxford City Council states that resident missed-bin reports are checked against a live reporting system fitted in collection vehicles, distinguishing a genuine missed collection from an issue already recorded by the crew, or another reason for non-collection — resident-facing reporting is integrated with operational collection data rather than forming a separate unverified complaint queue."
+  summary: "O Oxford City Council afirma que as comunicações dos residentes sobre contentores não recolhidos são verificadas com base num sistema de registo em tempo real instalado nos veículos de recolha, distinguindo uma recolha efetivamente falhada de uma ocorrência já registada pela equipa ou de outro motivo para a não recolha — o mecanismo de comunicação de ocorrências pelos residentes está integrado com dados operacionais de recolha, em vez de constituir uma fila separada de reclamações não verificadas."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

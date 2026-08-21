@@ -16,7 +16,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "Lisbon publishes an annual urban-waste service quality report containing service indicators such as physical accessibility, collection-service continuity, and service information, demonstrating that municipal waste-service performance can be published as structured public accountability information in the Portuguese institutional context."
+  summary: "Lisboa publica um relatório anual sobre a qualidade do serviço de resíduos urbanos que contém indicadores como acessibilidade física, continuidade do serviço de recolha e informação sobre o serviço, demonstrando que, no contexto institucional português, o desempenho municipal dos serviços de resíduos pode ser publicado como informação estruturada de prestação de contas ao público."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

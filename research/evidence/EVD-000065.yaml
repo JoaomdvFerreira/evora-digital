@@ -18,7 +18,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "Urban hygiene is a high-confidence current civic problem: in July 2026 the Municipality itself describes urban hygiene as a major management challenge and urgent problem while undertaking substantial restructuring of staff, collection models, fleet, responsibilities and monitoring."
+  summary: "A higiene urbana constitui um problema cívico atual com elevado grau de confiança: em julho de 2026, o próprio Município descreve a higiene urbana como um grande desafio de gestão e um problema urgente, enquanto procede a uma reestruturação substancial de pessoal, modelos de recolha, frota, responsabilidades e monitorização."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

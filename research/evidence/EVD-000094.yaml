@@ -16,7 +16,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "A public Facebook group post reports waste accumulation specifically in the Canaviais area of Évora, describing a geographically located instance of uncollected/accumulated waste."
+  summary: "Uma publicação num grupo público de Facebook relata acumulação de resíduos especificamente na zona dos Canaviais, em Évora, descrevendo uma ocorrência geograficamente localizada de resíduos por recolher e acumulados."
 evidence_nature: reported-experience
 strength: anecdotal
 personal_data:

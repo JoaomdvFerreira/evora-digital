@@ -17,7 +17,7 @@ domain:
   - "PUB"
   - "DIG"
 observation:
-  summary: "North Norfolk District Council publishes a list of locations not collected on a given round, so residents in an already-known affected area are not required to submit an individual report — one instance of a broader pattern of proactive delayed/missed-collection status communication also seen at other UK councils (e.g. West Lancashire, West Lothian), selected as the single canonicalized example of this mechanism."
+  summary: "O North Norfolk District Council publica uma lista dos locais onde a recolha não foi efetuada num determinado circuito, pelo que os residentes de uma zona já identificada como afetada não têm de apresentar uma comunicação individual — um exemplo de um padrão mais amplo de comunicação proativa do estado de recolhas atrasadas ou falhadas, também observado noutros municípios do Reino Unido (por exemplo, West Lancashire, West Lothian), selecionado como o único exemplo canónico deste mecanismo."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

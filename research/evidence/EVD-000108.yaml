@@ -17,7 +17,7 @@ domain:
   - "PUB"
   - "DIG"
 observation:
-  summary: "Havant Borough Council's customer portal exposes collection status such as 'not started', 'closed-complete', rescheduled collection dates, and crew-logged problems, so a resident can report a missed bin only when the collection state makes that report valid — reducing ambiguity between 'the round has not reached me yet', 'the collection was completed but my bin was missed', 'the crew recorded a reason', and 'the collection was rescheduled'."
+  summary: "O portal do munícipe do Havant Borough Council apresenta estados de recolha como “not started”, “closed-complete”, datas de recolha reagendada e problemas registados pela equipa, permitindo que um residente comunique um contentor não recolhido apenas quando o estado da recolha torna essa comunicação válida — reduzindo a ambiguidade entre “the round has not reached me yet”, “the collection was completed but my bin was missed”, “the crew recorded a reason” e “the collection was rescheduled”."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

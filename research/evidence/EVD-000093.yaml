@@ -16,7 +16,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "A public Facebook group post reports multi-day non-collection of household waste at a residential location in Évora, describing accumulated waste over several days without collection."
+  summary: "Uma publicação num grupo público de Facebook relata a não recolha de resíduos domésticos durante vários dias num local residencial em Évora, descrevendo resíduos acumulados ao longo de vários dias sem recolha."
 evidence_nature: reported-experience
 strength: anecdotal
 personal_data:

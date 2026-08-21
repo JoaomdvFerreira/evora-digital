@@ -16,7 +16,7 @@ domain:
   - "SOC"
   - "HEA"
 observation:
-  summary: "Within the 133-caregiver questionnaire, reported needs prioritised support in care (approx. 40.8%), respite (approx. 40.0%), financial support (approx. 36.8%) and psychological support (approx. 31.2%) above several navigation-adjacent needs; when asked about the single most important need, respite and care support were most prominent."
+  summary: "No questionário a 133 cuidadores, as necessidades referidas deram prioridade ao apoio na prestação de cuidados (aprox. 40,8 %), ao descanso do cuidador (aprox. 40,0 %), ao apoio financeiro (aprox. 36,8 %) e ao apoio psicológico (aprox. 31,2 %), com valores superiores aos de várias necessidades relacionadas com orientação; quando lhes foi pedido que indicassem uma única necessidade mais importante, o descanso do cuidador e o apoio na prestação de cuidados foram os mais destacados."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

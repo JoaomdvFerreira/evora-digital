@@ -19,7 +19,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "Root cause is substantially operational, not digital: the strongest documented causal evidence is an ageing/broken collection fleet, insufficient reserve capacity, staffing/operational capacity, route/service organisation, and logistics/collection arrangements."
+  summary: "A causa de raiz é predominantemente operacional, não digital: a evidência causal documentada mais forte aponta para uma frota de recolha envelhecida e com avarias, capacidade de reserva insuficiente, dotação de pessoal e capacidade operacional, organização dos circuitos e do serviço, e disposições logísticas e de recolha."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

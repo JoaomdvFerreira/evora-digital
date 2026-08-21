@@ -16,7 +16,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "A dedicated bulky/green-waste (monstros domésticos) service journey already exists: residents can self-deliver to the Ecocentre or request home collection if eligible, via a municipal online service page."
+  summary: "Já existe um percurso de serviço específico para resíduos volumosos/verdes (monstros domésticos): os residentes podem entregar os resíduos no Ecocentro ou solicitar recolha ao domicílio, caso sejam elegíveis, através de uma página municipal de serviços em linha."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

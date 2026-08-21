@@ -18,7 +18,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "The dominant urban-hygiene causes appear operational/capacity-related: workforce, vehicles, collection schedules/models, logistical facilities, organisational responsibility and service monitoring."
+  summary: "As causas dominantes do problema de higiene urbana parecem estar relacionadas com aspetos operacionais e de capacidade: força de trabalho, veículos, horários e modelos de recolha, instalações logísticas, responsabilidade organizacional e monitorização do serviço."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

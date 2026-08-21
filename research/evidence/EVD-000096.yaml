@@ -19,7 +19,7 @@ domain:
   - "ENV"
   - "PUB"
 observation:
-  summary: "Following the July-August 2026 decentralisation of hygiene responsibilities to urban parish councils (SRC-0053), press reporting shows parish councils publicly clarifying their urban-cleaning competencies and boundaries relative to the Município."
+  summary: "Após a descentralização, entre julho e agosto de 2026, das responsabilidades de higiene para as juntas de freguesia urbanas (SRC-0053), notícias de imprensa mostram as juntas de freguesia a esclarecerem publicamente as suas competências e limites em matéria de limpeza urbana relativamente ao Município."
 evidence_nature: claim
 strength: secondary
 personal_data:
