@@ -1,5 +1,5 @@
 problem_id: PRB-0003
-title: "Pedestrian and accessibility barriers reduce independent movement through parts of Évora"
+title: "As barreiras pedonais e de acessibilidade reduzem a deslocação autónoma em partes de Évora"
 domain:
   - "ACC"
   - "MOB"
@@ -10,7 +10,7 @@ geography:
 affected_populations:
   - "people with reduced mobility"
   - "other vulnerable pedestrian groups"
-problem_statement: "Évora has documented pedestrian/accessibility barriers and an established accessibility-planning programme, while current physical works and 2026 experimental-route testing mean that exact residual barriers must be validated against contemporary lived conditions."
+problem_statement: "Em Évora, estão documentadas barreiras pedonais e de acessibilidade e existe um programa estabelecido de planeamento da acessibilidade, mas as intervenções físicas em curso e os testes de percursos experimentais de 2026 exigem validar, face às condições vividas atuais, quais são exatamente as barreiras que ainda persistem."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

@@ -1,5 +1,5 @@
 problem_id: PRB-0008
-title: "Workforce skills and employer needs are not fully aligned"
+title: "As competências da força de trabalho e as necessidades dos empregadores não estão plenamente alinhadas"
 domain:
   - "EMP"
   - "EDU"
@@ -11,7 +11,7 @@ affected_populations:
   - "workers and job seekers"
   - "employers"
   - "training/education providers"
-problem_statement: "Local institutional planning identifies a mismatch between workforce qualifications and employer needs and treats competence mapping, training adaptation and stronger education-employer articulation as a current, active workstream rather than a resolved concern, despite substantial existing economic/business-support infrastructure and education-to-employment initiatives."
+problem_statement: "O planeamento institucional local identifica um desfasamento entre as qualificações da força de trabalho e as necessidades dos empregadores e trata o mapeamento de competências, a adaptação da formação e uma articulação mais forte entre educação e empregadores como uma linha de trabalho atual e ativa, e não como uma preocupação resolvida, apesar da considerável infraestrutura existente de apoio económico/empresarial e das iniciativas de transição da educação para o emprego."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

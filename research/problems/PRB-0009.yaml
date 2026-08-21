@@ -1,5 +1,5 @@
 problem_id: PRB-0009
-title: "Urban hygiene / waste-collection service reliability and quality"
+title: "Fiabilidade e qualidade dos serviços de higiene urbana e de recolha de resíduos"
 domain:
   - "ENV"
   - "PUB"
@@ -9,7 +9,7 @@ geography:
 affected_populations:
   - "residents"
   - "urban parish councils"
-problem_statement: "Urban solid-waste collection and urban-hygiene service reliability is a current, institutionally acknowledged civic problem: the Municipality documented a February 2026 collection-service disruption caused by ageing-fleet breakdowns, and in July-August 2026 the Mayor and Municipality publicly identified urban hygiene as one of the most urgent municipal-management challenges, undertaking substantial structural restructuring of fleet, staffing, collection models, responsibility allocation and monitoring, while explicitly acknowledging that difficulties remain in some areas."
+problem_statement: "A fiabilidade dos serviços de recolha de resíduos sólidos urbanos e de higiene urbana constitui um problema cívico atual reconhecido institucionalmente: o Município documentou uma interrupção do serviço de recolha em fevereiro de 2026, causada por avarias numa frota envelhecida, e, em julho-agosto de 2026, o Presidente da Câmara e o Município identificaram publicamente a higiene urbana como um dos desafios mais urgentes da gestão municipal, avançando com uma reestruturação substancial da frota, dos recursos humanos, dos modelos de recolha, da distribuição de responsabilidades e da monitorização, ao mesmo tempo que reconheceram explicitamente que persistem dificuldades em algumas zonas."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

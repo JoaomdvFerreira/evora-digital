@@ -1,5 +1,5 @@
 problem_id: PRB-0010
-title: "Road-surface degradation and maintenance reliability affect safety and mobility across Évora"
+title: "A degradação do pavimento rodoviário e a fiabilidade da manutenção afetam a segurança e a mobilidade em Évora"
 domain:
   - "URB"
   - "MOB"
@@ -9,7 +9,7 @@ geography:
 affected_populations:
   - "residents"
   - "drivers"
-problem_statement: "Road-surface degradation and road-maintenance reliability are a current municipality-level civic problem. A January 2026 petition reported widespread potholes/degraded pavement and safety/vehicle-damage impacts; the Municipality subsequently acknowledged a material maintenance/requalification need and a roughly €1.5M repair response; a later location-specific public signal alleged continued persistence at the N114 entrance to Évora. The later social signal is unverified and the available evidence must not be read as a municipality-wide prevalence estimate."
+problem_statement: "A degradação do pavimento rodoviário e a fiabilidade da manutenção das vias constituem um problema cívico atual ao nível do município. Uma petição de janeiro de 2026 relatou a existência generalizada de buracos e pavimento degradado, bem como impactos na segurança e danos nos veículos; posteriormente, o Município reconheceu uma necessidade significativa de manutenção/requalificação e uma resposta de reparação na ordem dos 1,5 milhões de euros; um sinal público posterior, relativo a uma localização específica, alegou que o problema persistia na entrada da N114 em Évora. Esse sinal posterior, de natureza social/comunitária, não está verificado, e a evidência disponível não deve ser interpretada como uma estimativa da prevalência em todo o município."
 current_journey: null
 reported_consequences: []
 possible_root_causes:
