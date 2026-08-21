@@ -97,8 +97,8 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(funct
   if (renderError) {
     return (
       <p role="alert">
-        Não foi possível desenhar a representação visual do grafo neste ambiente ({renderError}). Os Registos e a vista de Problema
-        continuam disponíveis como alternativas completas, sem grafo.
+        Não foi possível desenhar a representação visual do grafo neste ambiente. Os Registos e a vista de Problema continuam disponíveis
+        como alternativas completas.
       </p>
     );
   }

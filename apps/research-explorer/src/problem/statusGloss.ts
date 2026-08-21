@@ -46,7 +46,7 @@ const STATUS_GLOSS: FieldGlossMap = {
 
 const VALIDATION_STATUS_GLOSS: FieldGlossMap = {
   unvalidated: {
-    label: "Não validado",
+    label: "Por validar",
     explanation:
       "nenhum desafio D5 deliberado foi concluído, ou a evidência direta ainda é insuficiente para sustentar o enquadramento atual; não significa que o problema seja falso.",
   },
@@ -62,7 +62,7 @@ const VALIDATION_STATUS_GLOSS: FieldGlossMap = {
 };
 
 const EVIDENCE_STATUS_GLOSS: FieldGlossMap = {
-  discovered: { label: "Evidência descoberta" },
+  discovered: { label: "Evidência identificada" },
   corroborated: {
     label: "Evidência corroborada",
     explanation:
@@ -93,7 +93,7 @@ const FIELD_GLOSSARIES: Record<string, FieldGlossMap> = {
 /** PT captions for every "Estado atual" field — used as the accessible field context for a status chip (screen readers otherwise lose the field-name context a `<dt>/<dd>` pair used to give). */
 export const FIELD_CAPTIONS: Record<string, string> = {
   status: "Estado",
-  validation_status: "Validação",
+  validation_status: "Estado de validação",
   evidence_status: "Estado da evidência",
   digital_tractability: "Tratabilidade digital",
   existing_solutions: "Soluções existentes",
@@ -102,7 +102,7 @@ export const FIELD_CAPTIONS: Record<string, string> = {
 /** PT captions for the four fields explained in the point-of-use Problem help disclosure. */
 export const DISCLOSURE_FIELD_LABELS: Record<string, string> = {
   status: "Estado",
-  validation_status: "Validação",
+  validation_status: "Estado de validação",
   evidence_status: "Estado da evidência",
   digital_tractability: "Tratabilidade digital",
 };

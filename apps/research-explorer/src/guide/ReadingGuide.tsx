@@ -70,7 +70,7 @@ export function ReadingGuide({ schemaPrefixes }: ReadingGuideProps) {
 
       <h3>Caminhos de referência canónica</h3>
       <p>
-        O texto após <em>"via"</em> (ex.: <code>analysis.related_problems[0]</code>) indica o campo exato do registo canónico de onde a
+        O texto após <em>"através de"</em> (ex.: <code>analysis.related_problems[0]</code>) indica o campo exato do registo canónico de onde a
         referência provém, e a posição na lista quando aplicável (<code>[0]</code>, <code>[1]</code>, …). É o caminho real no ficheiro YAML
         de origem.
       </p>

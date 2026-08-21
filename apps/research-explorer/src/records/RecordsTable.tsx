@@ -7,6 +7,7 @@ import { initialRecordsControllerState, recordsControllerReducer } from "./recor
 import { describeType } from "../typeGlossary";
 import { useNarrowViewport } from "./useNarrowViewport";
 import { NarrowRecordsList } from "./NarrowRecordsList";
+import { formatPublicCount } from "../presentation";
 
 interface RecordsTableProps {
   records: RecordSummary[];
@@ -102,7 +103,7 @@ export function RecordsTable({
       </div>
 
       <p aria-live="polite">
-        {filtered.length} {filtered.length === 1 ? "registo" : "registos"} encontrados.
+        {formatPublicCount(filtered.length)} {filtered.length === 1 ? "registo" : "registos"} encontrados.
       </p>
 
       {filtered.length === 0 ? (

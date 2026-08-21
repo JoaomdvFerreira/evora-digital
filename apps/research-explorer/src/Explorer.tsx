@@ -39,12 +39,12 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
           : url.state.view === "overview"
             ? "Visão geral"
             : "Registos";
-    document.title = `${viewTitle} — Open Évora Research Explorer`;
+    document.title = `${viewTitle} — Explorador de Investigação Open Évora`;
   }, [url.state.selectedId, url.state.view]);
 
   return (
     <>
-      <nav aria-label="Vistas do Explorer">
+      <nav aria-label="Vistas do Explorador de Investigação">
         <button type="button" aria-current={url.state.view === "overview" ? "page" : undefined} onClick={() => url.setView("overview")}>
           Visão geral
         </button>

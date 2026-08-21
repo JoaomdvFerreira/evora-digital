@@ -110,7 +110,7 @@ describe("ProblemView", () => {
 
     const assessmentSection = screen.getByLabelText("Avaliação");
     expect(within(assessmentSection).getByText(/ASM-0005/)).toBeTruthy();
-    expect(within(assessmentSection).getByText("DEEPEN")).toBeTruthy();
+    expect(within(assessmentSection).getByText("Aprofundar")).toBeTruthy();
 
     const evidenceSection = screen.getByLabelText("Evidência");
     expect(within(evidenceSection).getByText(/EVD-0001/)).toBeTruthy();
@@ -154,8 +154,8 @@ describe("ProblemView", () => {
     const evidenceSection = screen.getByLabelText("Evidência");
     const evidenceItems = within(evidenceSection.querySelector("ul")!);
     // EVD-0001 carries two contributions (CONFIRMS, REFINES) — both must render as separate chips, not merged text.
-    expect(evidenceItems.getByText("CONFIRMS")).toBeTruthy();
-    expect(evidenceItems.getByText("REFINES")).toBeTruthy();
+    expect(evidenceItems.getByText("Confirma")).toBeTruthy();
+    expect(evidenceItems.getByText("Refina")).toBeTruthy();
     expect(within(evidenceSection).getByText(/fixture observation provides concise context/i)).toBeTruthy();
     expect(within(evidenceSection).getByText(/Fixture Publisher — Fixture source/)).toBeTruthy();
   });
@@ -173,7 +173,7 @@ describe("ProblemView", () => {
 
     const evidenceSection = await screen.findByLabelText("Evidência");
     expect(within(evidenceSection).getByText("contribuição não registada.")).toBeTruthy();
-    expect(within(evidenceSection).queryByText("CONFIRMS")).toBeNull();
+    expect(within(evidenceSection).queryByText("Confirma")).toBeNull();
   });
 
   it("renders every current canonical contribution value, including a multi-contribution item, without crashing", async () => {
@@ -206,19 +206,19 @@ describe("ProblemView", () => {
     const evidenceSection = await screen.findByLabelText("Evidência");
     const evidenceItems = within(evidenceSection.querySelector("ul")!);
     for (const value of [
-      "CONFIRMS",
-      "REFINES",
-      "CONTRADICTS",
-      "CURRENT-STATE-UPDATE",
-      "EXISTING-SOLUTION",
-      "PLANNED-SOLUTION",
-      "NEW-CANDIDATE",
+      "Confirma",
+      "Refina",
+      "Contradiz",
+      "Atualização do estado atual",
+      "Solução existente",
+      "Solução planeada",
+      "Novo candidato",
     ]) {
       expect(evidenceItems.getByText(value)).toBeTruthy();
     }
     // CONTRADICTS carries no exceptional class distinguishing it structurally from the other six.
-    const contradicts = evidenceItems.getByText("CONTRADICTS").closest(".contribution-chip");
-    const confirms = evidenceItems.getByText("CONFIRMS").closest(".contribution-chip");
+    const contradicts = evidenceItems.getByText("Contradiz").closest(".contribution-chip");
+    const confirms = evidenceItems.getByText("Confirma").closest(".contribution-chip");
     expect(contradicts?.className).toBe(confirms?.className);
   });
 
@@ -246,11 +246,11 @@ describe("ProblemView", () => {
     expect(within(evidenceSection).getByText(/não correspondem ao número de itens de evidência/)).toBeTruthy();
   });
 
-  it("shows the canonical Estado atual values alongside a grounded gloss, without inventing a corroborated-independence claim", async () => {
+  it("shows localized Estado atual values without inventing a corroborated-independence claim", async () => {
     render(<ProblemView dataProvider={fakeProvider()} problemId="PRB-0005" onOpenGeneric={vi.fn()} onBackToRecords={vi.fn()} onViewInGraph={vi.fn()} />);
     await screen.findByRole("heading", { name: "Parking pressure" });
     const stateSection = screen.getByLabelText("Estado atual");
-    expect(within(stateSection).getByText("(OPEN)")).toBeTruthy();
+    expect(within(stateSection).queryByText("OPEN")).toBeNull();
     expect(within(stateSection).getByText(/Aberto/)).toBeTruthy();
     expect(screen.queryByText(/fontes independentes/i)).toBeNull();
     expect(screen.queryByText(/independent sources/i)).toBeNull();
@@ -269,8 +269,8 @@ describe("ProblemView", () => {
     await screen.findByRole("heading", { name: "Parking pressure" });
 
     const stateSection = screen.getByLabelText("Estado atual");
-    // The raw canonical value stays visible...
-    expect(within(stateSection).getByText("(FUTURE_STATUS)")).toBeTruthy();
+    // An unknown future value remains visible as the safe fallback.
+    expect(within(stateSection).getByText("FUTURE_STATUS")).toBeTruthy();
     // ...and the help disclosure surfaces the same raw value rather than a manufactured label/explanation.
     const details = screen.getByText("O que é um Problema, e o que significam os estados abaixo?").closest("details")!;
     expect(within(details).getAllByText(/FUTURE_STATUS/).length).toBeGreaterThan(0);
@@ -343,7 +343,7 @@ describe.skipIf(!hasRealCorpus)("ProblemView — real generated corpus regressio
 
     const evidenceButton = await screen.findByRole("button", { name: /EVD-000127/ });
     const evidenceItem = evidenceButton.closest("li")!;
-    expect(within(evidenceItem).getByText("CONTRADICTS")).toBeTruthy();
+    expect(within(evidenceItem).getByText("Contradiz")).toBeTruthy();
     expect(within(evidenceItem).getByText(/current residence-accommodation application process fully operational/i)).toBeTruthy();
     expect(within(evidenceItem).getByText(/Open Évora/)).toBeTruthy();
   });

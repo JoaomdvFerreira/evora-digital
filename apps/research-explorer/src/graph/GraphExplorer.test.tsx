@@ -192,7 +192,7 @@ describe("GraphExplorer", () => {
 
     const edgesHeading = await screen.findByRole("heading", { name: "Relações visíveis" });
     const edgesSection = edgesHeading.parentElement as HTMLElement;
-    await within(edgesSection).findByText((_, node) => node?.textContent === "via source.source_id");
+    await within(edgesSection).findByText((_, node) => node?.textContent === "através de source.source_id");
   });
 
   it("filtering out a type hides its nodes from the visible list", async () => {
@@ -280,7 +280,9 @@ describe("GraphExplorer", () => {
       />
     );
     const alert = await screen.findByRole("alert");
-    expect(alert.textContent).toMatch(/Registos e a vista de Problema continuam disponíveis/);
+    expect(alert.textContent).toBe(
+      "Não foi possível desenhar a representação visual do grafo neste ambiente. Os Registos e a vista de Problema continuam disponíveis como alternativas completas."
+    );
   });
 
   it("announces total Graph-search matches separately from the 12-result display cap", async () => {

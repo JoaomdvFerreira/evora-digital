@@ -9,6 +9,7 @@ describe("glossFor", () => {
   });
 
   it("returns a grounded gloss for validation_status's three D5-contract values", () => {
+    expect(glossFor("validation_status", "unvalidated")?.label).toBe("Por validar");
     expect(glossFor("validation_status", "unvalidated")?.explanation).toBeTruthy();
     expect(glossFor("validation_status", "partially_validated")?.explanation).toBeTruthy();
     expect(glossFor("validation_status", "validated")?.explanation).toBeTruthy();
