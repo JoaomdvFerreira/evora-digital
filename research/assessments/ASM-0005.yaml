@@ -45,26 +45,26 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "Do drivers in the relevant Évora locations/times materially cruise, queue, abandon destinations, double-park or choose unsuitable locations because they do not know where parking is available, or is the dominant cause known full occupancy/scarcity rather than uncertainty? (D5-P5-01)"
+    question: "Nos locais e horários relevantes de Évora, os condutores passam tempo significativo a circular à procura de estacionamento, formam filas, desistem de determinados destinos, estacionam em segunda fila ou escolhem locais inadequados por não saberem onde existe estacionamento disponível, ou a causa dominante é a ocupação plena ou a escassez conhecida, e não a incerteza? (D5-P5-01)"
     decision_impact: HIGH
     target_phase: D5
     best_next_evidence:
-      - "bounded location/journey observation"
-      - "stakeholder/operator interview"
+      - "observação delimitada por localização/percurso"
+      - "entrevista a interveniente/operador"
   U2:
-    question: "Does Parking Buddy (EVD-000105) or another current service provide useful, adopted, trusted availability/probability information for the actual Évora parking zones in question, and are the 75 parking sensors / 10 counters currently operating, maintained, spatially representative, accurate and historically retained? (D5-P5-02, D5-P5-03)"
+    question: "O Parking Buddy (EVD-000105), ou outro serviço atual, disponibiliza para as zonas de estacionamento de Évora efetivamente em causa informação sobre disponibilidade/probabilidade que seja útil, efetivamente utilizada e considerada credível; e os 75 sensores de estacionamento / 10 contadores estão atualmente operacionais e são mantidos, espacialmente representativos e rigorosos, sendo os respetivos dados conservados ao longo do tempo? (D5-P5-02, D5-P5-03)"
     decision_impact: HIGH
     target_phase: D5
     best_next_evidence:
-      - "current sensor/occupancy/data-interface verification"
-      - "operator confirmation of Parking Buddy Évora coverage/accuracy"
+      - "verificação atual dos sensores/ocupação/interface de dados"
+      - "confirmação pelo operador da cobertura/rigor do Parking Buddy em Évora"
   U3:
-    question: "Would better occupancy information actually change where/whether drivers park, cruising/search time, illegal parking or pedestrian-space conflict — and does the municipality/parking operator itself lack sufficient occupancy/performance information to manage tariffs, allocate spaces, enforce or evaluate policy? (D5-P5-04, D5-P5-05)"
+    question: "Uma melhor informação sobre a ocupação alteraria efetivamente o local onde os condutores estacionam ou a decisão de estacionar, o tempo de circulação/procura, o estacionamento ilegal ou o conflito com o espaço pedonal — e o próprio Município/operador de estacionamento carece de informação suficiente sobre ocupação/desempenho para gerir tarifas, atribuir lugares, fiscalizar ou avaliar a política? (D5-P5-04, D5-P5-05)"
     decision_impact: MEDIUM
     target_phase: D5
     best_next_evidence:
-      - "operator need assessment"
-      - "decision-usefulness interview"
+      - "avaliação das necessidades do operador"
+      - "entrevista sobre a utilidade para a decisão"
 
 triage: DEEPEN
 

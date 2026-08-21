@@ -33,7 +33,7 @@ const DETAILS: Record<string, RecordDetail> = {
       triage: "DEEPEN",
       assessment_status: "CURRENT",
       remaining_gap: "PARTIAL",
-      critical_unknowns: { U1: { question: "Is search friction material?", decision_impact: "HIGH", target_phase: "D5" } },
+      critical_unknowns: { U1: { question: "Existe uma fricção significativa na procura?", decision_impact: "HIGH", target_phase: "D5", best_next_evidence: ["observação delimitada do percurso"] }, U2: { question: "A informação atual é suficiente?", decision_impact: "MEDIUM", target_phase: "D3", best_next_evidence: ["validação com utilizadores"] } },
     },
     outgoingEdges: [{ field: "problem", ordinal: null, to: "PRB-0005" }],
     incomingEdges: [],
@@ -117,9 +117,20 @@ describe("ProblemView", () => {
     expect(within(evidenceSection).getByText(/SRC-0001/)).toBeTruthy();
 
     const unknownsSection = screen.getByLabelText("Incertezas e lacunas");
-    expect(within(unknownsSection).getByText("remaining_gap")).toBeTruthy();
-    expect(within(unknownsSection).getByText("critical_unknowns")).toBeTruthy();
-    expect(within(unknownsSection).getByText(/Is search friction material/)).toBeTruthy();
+    expect(within(unknownsSection).getByText("Lacuna remanescente:")).toBeTruthy();
+    expect(within(unknownsSection).getByText("Incertezas")).toBeTruthy();
+    expect(within(unknownsSection).getAllByText("Questão em aberto:").length).toBe(2);
+    expect(within(unknownsSection).getAllByText("Próxima evidência:").length).toBe(2);
+    expect(within(unknownsSection).getByText("Parcial")).toBeTruthy();
+    expect(within(unknownsSection).getByText("Elevado")).toBeTruthy();
+    expect(within(unknownsSection).getByText("Médio")).toBeTruthy();
+    expect(within(unknownsSection).getByText("D3")).toBeTruthy();
+    expect(within(unknownsSection).getByText("D5")).toBeTruthy();
+    expect(within(unknownsSection).getByText("Existe uma fricção significativa na procura?")).toBeTruthy();
+    expect(within(unknownsSection).getByText("observação delimitada do percurso")).toBeTruthy();
+    for (const raw of ["remaining_gap", "critical_unknowns", "PARTIAL", "HIGH", "MEDIUM", "decision_impact", "target_phase"]) {
+      expect(within(unknownsSection).queryByText(raw)).toBeNull();
+    }
 
     const hypothesesSection = screen.getByLabelText("Hipóteses");
     expect(within(hypothesesSection).getByText("Nenhuma hipótese associada.")).toBeTruthy();

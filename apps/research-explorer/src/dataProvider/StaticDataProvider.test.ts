@@ -71,10 +71,10 @@ describe("StaticDataProvider.getManifest", () => {
     expect(manifest.readModelVersion).toBe("1.4.2");
   });
 
-  it("produces an actionable error when generated data is missing (404)", async () => {
+  it("produces a localized error when generated data is missing (404)", async () => {
     fetchMock.mockResolvedValueOnce(notFoundResponse());
     const provider = new StaticDataProvider();
-    await expect(provider.getManifest()).rejects.toThrow(/build-data\.js/);
+    await expect(provider.getManifest()).rejects.toThrow("Não foi possível encontrar o manifesto do Explorer.");
     fetchMock.mockResolvedValueOnce(notFoundResponse());
     await expect(new StaticDataProvider().getManifest()).rejects.toMatchObject({ kind: "missing" });
   });
@@ -102,7 +102,9 @@ describe("StaticDataProvider.getManifest", () => {
   it("reports a network error when fetch() itself rejects (e.g. offline), not just a bad response", async () => {
     fetchMock.mockRejectedValueOnce(new TypeError("Failed to fetch"));
     const provider = new StaticDataProvider();
-    await expect(provider.getManifest()).rejects.toMatchObject({ kind: "network" });
+    await expect(provider.getManifest()).rejects.toMatchObject({ kind: "network", message: "Não foi possível carregar o manifesto do Explorer." });
+    fetchMock.mockRejectedValueOnce(new TypeError("Failed to fetch"));
+    await expect(new StaticDataProvider().getManifest()).rejects.not.toThrow(/Failed to fetch/);
   });
 
   it("does not cache a failed load — a subsequent call retries the network", async () => {
@@ -130,7 +132,7 @@ describe("StaticDataProvider startup scope", () => {
 describe("StaticDataProvider.getRecord — record-ID safety", () => {
   it("rejects a syntactically unsafe ID before issuing any fetch", async () => {
     const provider = new StaticDataProvider();
-    await expect(provider.getRecord("../../etc/passwd")).rejects.toMatchObject({ kind: "invalid_id" });
+    await expect(provider.getRecord("../../etc/passwd")).rejects.toMatchObject({ kind: "invalid_id", message: '"../../etc/passwd" não é um identificador de registo válido.' });
     await expect(provider.getRecord("PRB-0005/../secret")).rejects.toMatchObject({ kind: "invalid_id" });
     expect(fetchMock).not.toHaveBeenCalled();
   });
