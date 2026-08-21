@@ -1,5 +1,5 @@
 problem_id: PRB-0002
-title: "Public-transport passenger information is not consistently complete, reliable and usable across the journey"
+title: "A informação aos passageiros dos transportes públicos não é consistentemente completa, fiável e utilizável ao longo de toda a deslocação"
 domain:
   - "MOB"
   - "DIG"
@@ -8,7 +8,7 @@ geography:
   area: "Alentejo Central; urban Évora to be investigated separately"
 affected_populations:
   - "public-transport users"
-problem_statement: "Public-transport passengers can face incomplete, inconsistent or unreliable information across the journey — at stops, in digital channels, and at the point of a service failure — even though current passenger-facing information surfaces (TREVO, TPAC) exist."
+problem_statement: "Os passageiros dos transportes públicos podem deparar-se com informação incompleta, inconsistente ou pouco fiável ao longo de toda a deslocação — nas paragens, nos canais digitais e no momento de uma falha do serviço — apesar de existirem atualmente canais de informação destinados aos passageiros (TREVO, TPAC)."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

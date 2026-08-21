@@ -1,5 +1,5 @@
 problem_id: PRB-0007
-title: "Informal caregivers face fragmented information and support navigation needs"
+title: "Os cuidadores informais deparam-se com informação fragmentada e com necessidades de orientação para aceder a apoios"
 domain:
   - "SOC"
   - "HEA"
@@ -9,7 +9,7 @@ geography:
 affected_populations:
   - "informal caregivers"
   - "cared-for people"
-problem_statement: "Informal caregivers in Évora have documented information needs spanning health, mobility, support structures and financial/social support, and a substantial share of cared-for people receive no formal support service, despite Évora having a dense interinstitutional social-support network (CLASE / Rede Social)."
+problem_statement: "Os cuidadores informais em Évora têm necessidades documentadas de informação que abrangem saúde, mobilidade, estruturas de apoio e apoio financeiro/social, e uma proporção substancial das pessoas cuidadas não recebe qualquer serviço formal de apoio, apesar de Évora dispor de uma densa rede interinstitucional de apoio social (CLASE / Rede Social)."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

@@ -1,5 +1,5 @@
 problem_id: PRB-0006
-title: "Adequate and affordable housing is difficult to access for some population groups"
+title: "O acesso a habitação adequada e a preços comportáveis é difícil para alguns grupos populacionais"
 domain:
   - "HOU"
   - "SOC"
@@ -10,7 +10,7 @@ geography:
 affected_populations:
   - "residents seeking adequate/affordable housing"
   - "students"
-problem_statement: "Institutional planning documents identify high purchase/rental values, insufficient affordable/social/controlled-cost housing supply, housing degradation, and a distinct student-accommodation shortage, while acknowledging that housing rehabilitation, controlled-cost construction, supported-rental rehabilitation and student-housing actions are already underway."
+problem_statement: "Os documentos de planeamento institucional identificam preços elevados de compra e arrendamento, uma oferta insuficiente de habitação a preços comportáveis, social e a custos controlados, degradação habitacional e uma escassez específica de alojamento estudantil, reconhecendo simultaneamente que já estão em curso ações de reabilitação habitacional, construção a custos controlados, reabilitação destinada ao arrendamento apoiado e medidas de alojamento estudantil."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

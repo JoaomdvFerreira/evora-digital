@@ -1,5 +1,5 @@
 problem_id: PRB-0001
-title: "Public transport does not provide equally practical mobility across times and territories"
+title: "Os transportes públicos não asseguram uma mobilidade igualmente prática consoante os horários e os territórios"
 domain:
   - "MOB"
 geography:
@@ -7,7 +7,7 @@ geography:
   area: "Município de Évora"
 affected_populations:
   - "residents who depend on public transport"
-problem_statement: "Public transport coverage in Évora is broad in aggregate, but institutional evidence indicates that practical service varies by time period, journey type and low-demand location, with schedule/frequency alignment remaining a documented concern."
+problem_statement: "A cobertura dos transportes públicos em Évora é, em termos globais, ampla, mas a evidência institucional indica que a utilidade prática do serviço varia consoante o período horário, o tipo de deslocação e os locais de baixa procura, continuando a articulação entre horários e frequências a ser uma preocupação documentada."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

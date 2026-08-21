@@ -1,5 +1,5 @@
 problem_id: PRB-0005
-title: "Motor traffic and parking pressure conflict with pedestrian quality, safety and legibility in key urban areas"
+title: "O tráfego automóvel e a pressão de estacionamento entram em conflito com a qualidade, a segurança e a legibilidade do espaço pedonal em zonas urbanas-chave"
 domain:
   - "MOB"
   - "URB"
@@ -11,7 +11,7 @@ affected_populations:
   - "residents"
   - "drivers"
   - "pedestrians"
-problem_statement: "In key parts of Évora, traffic volume, vehicle speed, parking pressure and illegal parking create congestion, safety conflicts and reduced pedestrian-space quality, while the parking system itself has been described as insufficiently legible."
+problem_statement: "Em zonas-chave de Évora, o volume de tráfego, a velocidade dos veículos, a pressão de estacionamento e o estacionamento ilegal geram congestionamento, conflitos de segurança e uma redução da qualidade do espaço pedonal, enquanto o próprio sistema de estacionamento tem sido descrito como pouco legível."
 current_journey: null
 reported_consequences: []
 possible_root_causes:

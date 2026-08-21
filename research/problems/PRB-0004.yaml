@@ -1,5 +1,5 @@
 problem_id: PRB-0004
-title: "The cycling network does not yet form a coherent practical network for everyday journeys"
+title: "A rede ciclável ainda não constitui uma rede coerente e prática para as deslocações quotidianas"
 domain:
   - "MOB"
   - "URB"
@@ -8,7 +8,7 @@ geography:
   area: "Évora city"
 affected_populations:
   - "current and potential cyclists"
-problem_statement: "Cycling routes are described as limited, discontinuous and insufficiently connected to important destinations, reducing their usefulness for routine journeys."
+problem_statement: "Os percursos cicláveis são descritos como limitados, descontínuos e insuficientemente ligados a destinos importantes, o que reduz a sua utilidade para deslocações habituais."
 current_journey: null
 reported_consequences: []
 possible_root_causes:
