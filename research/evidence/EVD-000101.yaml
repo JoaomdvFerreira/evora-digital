@@ -17,7 +17,7 @@ domain:
   - "EMP"
   - "ECO"
 observation:
-  summary: "A snapshot of Indeed listings for aeronautical/aerospace-sector roles in Évora shows specialised, often senior-level requirements spanning aeronautical engineering, EWIS, configuration management, airworthiness/quality, composites/materials manufacturing, and avionics/aircraft design."
+  summary: "Um retrato pontual das ofertas do Indeed para funções no setor aeronáutico e aeroespacial em Évora mostra requisitos especializados, frequentemente de nível sénior, abrangendo engenharia aeronáutica, EWIS, gestão de configuração, aeronavegabilidade e qualidade, fabrico de compósitos e materiais, e aviónica e conceção de aeronaves."
 evidence_nature: measurement
 strength: primary-non-authoritative
 personal_data:

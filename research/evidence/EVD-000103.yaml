@@ -18,7 +18,7 @@ domain:
   - "EMP"
   - "EDU"
 observation:
-  summary: "The University of Évora and TE Connectivity describe an annual action plan based on company-identified needs, including technical-skills and employability actions — a concrete bilateral employer-training feedback loop."
+  summary: "A Universidade de Évora e a TE Connectivity descrevem um plano de ação anual assente em necessidades identificadas pela empresa, incluindo ações relacionadas com competências técnicas e empregabilidade — um mecanismo bilateral concreto de retorno de informação entre empregador e formação."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

@@ -19,7 +19,7 @@ domain:
   - "HOU"
   - "EDU"
 observation:
-  summary: "Student accommodation shortage appears repeatedly across social/housing planning, and the PUE housing report identifies public residence capacity as insufficient relative to displaced and international student demand, alongside more than 200 local-accommodation units concentrated in the Historic Centre."
+  summary: "A escassez de alojamento estudantil surge repetidamente no planeamento social e habitacional, e o relatório de habitação do PUE identifica a capacidade das residências públicas como insuficiente face à procura de estudantes deslocados e internacionais, coexistindo com mais de 200 unidades de alojamento local concentradas no Centro Histórico."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

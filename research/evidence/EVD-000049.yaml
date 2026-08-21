@@ -17,7 +17,7 @@ domain:
   - "EMP"
   - "ECO"
 observation:
-  summary: "Public job listings cannot identify the actual skills shortage by themselves: the IEFP Évora snapshot contains 102 listings across multiple occupations and repeated role types, but no duration-to-fill, unsuccessful-recruitment, wage-constraint or employer-reported-shortage data."
+  summary: "As ofertas públicas de emprego não permitem, por si só, identificar a escassez efetiva de competências: o retrato pontual do IEFP Évora contém 102 ofertas em várias profissões, incluindo tipos de funções repetidos, mas não inclui dados sobre o tempo necessário para preencher as vagas, recrutamentos sem sucesso, restrições salariais ou situações de escassez comunicadas por empregadores."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

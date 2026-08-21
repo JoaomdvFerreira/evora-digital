@@ -344,7 +344,7 @@ describe.skipIf(!hasRealCorpus)("ProblemView — real generated corpus regressio
     const evidenceButton = await screen.findByRole("button", { name: /EVD-000127/ });
     const evidenceItem = evidenceButton.closest("li")!;
     expect(within(evidenceItem).getByText("Contradiz")).toBeTruthy();
-    expect(within(evidenceItem).getByText(/current residence-accommodation application process fully operational/i)).toBeTruthy();
+    expect(within(evidenceItem).getByText("Os SASUE consideram plenamente operacional o atual processo de candidatura a alojamento em residência. Referem que as necessidades de esclarecimento ou de alteração do processo que envolvam estudantes ou pessoal institucional são encaminhadas para os serviços de informática da Universidade, para que seja prestado o apoio ou efetuada a alteração adequada.")).toBeTruthy();
     expect(within(evidenceItem).getByText(/Open Évora/)).toBeTruthy();
   });
 });

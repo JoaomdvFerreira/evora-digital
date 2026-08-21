@@ -16,7 +16,7 @@ domain:
   - "HOU"
   - "EDU"
 observation:
-  summary: "Student accommodation capacity is improving (525 nominal capacity across seven residences, plus 105 PRR-funded beds expected, reaching approximately 630) but remains constrained: three residences were closed for renovation during 2025/2026 (temporary capacity disruption), and UÉ explicitly redirects students toward private/alternative accommodation due to limited places. Student housing remains a supported subproblem within the housing cluster; exact unmet demand in 2026 is not quantified by the reviewed public sources."
+  summary: "A capacidade de alojamento estudantil está a melhorar: a capacidade nominal é de 525 lugares em sete residências, prevendo-se mais 105 camas financiadas pelo PRR, para um total aproximado de 630. Ainda assim, a capacidade mantém-se limitada: três residências estiveram encerradas para obras durante 2025/2026, provocando uma perturbação temporária da capacidade, e a UÉ encaminha explicitamente os estudantes para alojamento privado ou alternativo devido à limitação de vagas. O alojamento estudantil continua a ser um subproblema sustentado pela evidência no âmbito do conjunto de problemas habitacionais; a dimensão exata da procura não satisfeita em 2026 não é quantificada pelas fontes públicas analisadas."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

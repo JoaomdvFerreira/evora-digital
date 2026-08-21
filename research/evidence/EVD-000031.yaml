@@ -18,7 +18,7 @@ domain:
   - "HOU"
   - "SOC"
 observation:
-  summary: "Local planning documents identify high purchase/rental values, insufficient affordable/social/controlled-cost supply, housing degradation and student accommodation shortage as barriers to population fixation and access to adequate housing."
+  summary: "Documentos locais de planeamento identificam preços elevados de compra e arrendamento, oferta insuficiente de habitação a preços comportáveis, de habitação social e de habitação a custos controlados, degradação habitacional e escassez de alojamento estudantil como obstáculos à fixação da população e ao acesso a habitação adequada."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

@@ -18,7 +18,7 @@ domain:
   - "EMP"
   - "EDU"
 observation:
-  summary: "Graduate/talent retention remains a strategic concern without strong current measurement: no sufficiently direct public 2025/2026 metric was found showing what share of UÉ graduates remain employed or living in Évora after study."
+  summary: "A retenção de diplomados e de talento continua a ser uma preocupação estratégica sem uma medição atual robusta: não foi encontrada nenhuma métrica pública de 2025/2026 suficientemente direta que indique que proporção dos diplomados da UÉ permanece empregada ou a residir em Évora após os estudos."
 evidence_nature: claim
 strength: secondary
 personal_data:
