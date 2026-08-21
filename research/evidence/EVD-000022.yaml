@@ -18,7 +18,7 @@ domain:
   - "URB"
   - "DIG"
 observation:
-  summary: "The municipal LVpDE programme reported installation of 75 parking sensors and 10 vehicle-count sensors, together with a digital support platform for monitoring and managing the resulting mobility/parking information."
+  summary: "O programa municipal LVpDE comunicou a instalação de 75 sensores de estacionamento e 10 sensores de contagem de veículos, juntamente com uma plataforma digital de apoio à monitorização e gestão da informação de mobilidade e estacionamento daí resultante."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

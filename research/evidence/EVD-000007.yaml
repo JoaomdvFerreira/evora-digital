@@ -19,7 +19,7 @@ domain:
   - "URB"
   - "ACC"
 observation:
-  summary: "The PUE mobility diagnosis records congestion on the road system around the walls and southern circular, excessive vehicle speeds on corridors with strong pedestrian presence, a significant accident problem including in the Historic Centre, and noise associated with motorized circulation."
+  summary: "O diagnóstico de mobilidade do PUE regista congestionamento no sistema viário em torno das muralhas e da circular sul, velocidades excessivas de veículos em corredores com forte presença pedonal, um problema significativo de sinistralidade, incluindo no Centro Histórico, e ruído associado à circulação motorizada."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

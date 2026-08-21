@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "DIG"
 observation:
-  summary: "SFMTA's official SFpark pilot evaluation reported search time down 43% in pilot areas versus 13% in control areas, blocks 'too full' 16% less often in pilot areas (versus +51% in controls), and parking-search vehicle-miles/greenhouse-gas emissions down 30% in pilot areas versus 6% in controls."
+  summary: "A avaliação oficial do piloto SFpark da SFMTA indicou uma redução de 43 % no tempo de procura de estacionamento nas zonas-piloto, face a 13 % nas zonas de controlo; os quarteirões foram classificados como «too full» com uma frequência 16 % inferior nas zonas-piloto, enquanto nas zonas de controlo essa frequência aumentou 51 %; e as milhas percorridas por veículos à procura de estacionamento e as emissões de gases com efeito de estufa associadas a essa procura diminuíram 30 % nas zonas-piloto, face a 6 % nas zonas de controlo."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

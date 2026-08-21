@@ -17,7 +17,7 @@ domain:
   - "GEO"
   - "URB"
 observation:
-  summary: "The 2026 PUE preventive-participation report records formal submissions concerning dedicated public transport, Metrobus feasibility/phasing, cycling-network programming, intermodal spaces, railway integration, low-emission zones, and local circulation/parking around a school."
+  summary: "O relatório de participação preventiva do PUE de 2026 regista participações formais relativas a transporte público dedicado, à viabilidade e ao faseamento do Metrobus, à programação da rede ciclável, a espaços intermodais, à integração ferroviária, a zonas de baixas emissões e à circulação e ao estacionamento na envolvente de uma escola."
 evidence_nature: claim
 strength: primary-non-authoritative
 personal_data:

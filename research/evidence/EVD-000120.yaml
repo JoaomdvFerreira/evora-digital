@@ -16,7 +16,7 @@ domain:
   - "GEO"
   - "URB"
 observation:
-  summary: "The Municipality's digital-cartography transfer regulation states that information is supplied in the formats: dwg, shp, ecw and pdf. This confirms structured-geospatial (SHP) supply capability exists, through a formal case-by-case request (cedência) process, not as an open/self-service dataset or public API."
+  summary: "O Regulamento Municipal de Cedência e Utilização de Cartografia Digital declara que a informação é fornecida nos formatos dwg, shp, ecw e pdf. Isto confirma a existência de capacidade para fornecer informação geoespacial estruturada (SHP), através de um processo formal de cedência mediante pedido e analisado caso a caso, e não através de um conjunto de dados disponibilizado abertamente ou em regime de autosserviço, nem de uma API pública."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

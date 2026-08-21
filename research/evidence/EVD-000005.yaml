@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "The PUE mobility report records cycling at approximately 0.5% of resident trips in its underlying diagnosis and describes the cycle network as limited in extent, spatially discontinuous and not connected to many important facilities, services and residential areas. Reported cyclist concerns include lack of dedicated infrastructure, vehicle speed, pavement condition and driver behaviour."
+  summary: "O relatório de mobilidade do PUE regista que a bicicleta representa aproximadamente 0,5 % das deslocações dos residentes no diagnóstico subjacente e descreve a rede ciclável como limitada em extensão, espacialmente descontínua e sem ligação a muitos equipamentos, serviços e zonas residenciais importantes. Entre as preocupações referidas pelos ciclistas contam-se a falta de infraestrutura dedicada, a velocidade dos veículos, o estado do pavimento e o comportamento dos condutores."
 evidence_nature: measurement
 strength: primary-authoritative
 personal_data:

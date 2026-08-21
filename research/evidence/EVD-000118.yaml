@@ -17,7 +17,7 @@ domain:
   - "URB"
   - "GEO"
 observation:
-  summary: "PMUSE Volume I contains official municipal cartography of the existing cycling network (Figura 73), distinguishing exclusively-cycling infrastructure (~8.5km across four segments, Figura 74) from shared pedestrian-cycling paths (~120km, mostly the recreational Percursos de Monfurado and Ecopista do Ramal de Mora), and a network-typology map (Figura 78). The accompanying text reiterates that the current network is reduced in extent and spatially discontinuous, not connecting to most relevant facilities/services/residential areas. All three figures are captioned 'Fonte: Câmara Municipal de Évora, 2020' despite the report's 2025-09 publication date."
+  summary: "O Volume I do PMUSE contém cartografia municipal oficial da rede ciclável existente (Figura 73), distinguindo infraestrutura exclusivamente ciclável (~8,5 km distribuídos por quatro segmentos, Figura 74) de percursos partilhados por peões e ciclistas (~120 km, na sua maioria os recreativos Percursos de Monfurado e Ecopista do Ramal de Mora), bem como um mapa da tipologia da rede (Figura 78). O texto que acompanha as figuras reitera que a rede atual tem extensão reduzida e é espacialmente descontínua, não assegurando ligação à maioria dos equipamentos, serviços e zonas residenciais relevantes. As três figuras têm a legenda «Fonte: Câmara Municipal de Évora, 2020», apesar da data de publicação do relatório, 2025-09."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

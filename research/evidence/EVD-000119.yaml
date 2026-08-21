@@ -16,7 +16,7 @@ domain:
   - "MOB"
   - "URB"
 observation:
-  summary: "PMUSE Volume I maps (Figura 85) a proposed cycling-network expansion, based on a 2017 municipal proposal, of approximately 18km of new exclusively-cycling axes plus 33km of 'Grande Rota do Montado' shared pedestrian-cycling route. The plan's own text flags that the eastern side of the city (including the connection to Escola 2,3 André de Resende) remains outside the proposal and would need further study."
+  summary: "O Volume I do PMUSE representa cartograficamente (Figura 85) uma expansão proposta da rede ciclável, baseada numa proposta municipal de 2017, de aproximadamente 18 km de novos eixos exclusivamente cicláveis, acrescidos de 33 km do percurso partilhado por peões e ciclistas «Grande Rota do Montado». O próprio texto do plano assinala que a zona nascente da cidade, incluindo a ligação à Escola 2,3 André de Resende, permanece fora da proposta e exigiria estudo adicional."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:
