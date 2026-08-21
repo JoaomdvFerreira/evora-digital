@@ -19,7 +19,7 @@ domain:
   - "ACC"
   - "TOU"
 observation:
-  summary: "Current public accessible-tourism surfaces (Visit Portugal; Tur4all) describe accessibility barriers such as steps, uneven/access-limited monuments, scarce tactile paving and limited fully adapted transport, without a visible last-verified date for either surface."
+  summary: "As atuais plataformas públicas de turismo acessível (Visit Portugal; Tur4all) descrevem barreiras de acessibilidade, como degraus, monumentos com desníveis ou acesso limitado, escassez de pavimento tátil e oferta limitada de transporte totalmente adaptado, sem uma data visível de última verificação em nenhuma das plataformas."
 evidence_nature: claim
 strength: secondary
 personal_data:

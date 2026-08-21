@@ -16,7 +16,7 @@ domain:
   - "ACC"
   - "URB"
 observation:
-  summary: "APCE describes Acesso Universal 1.3 as a continuation of previous editions intended to promote the active participation of people with disabilities in improving accessibility in Évora's Historic Centre — affected people are explicitly part of identifying and improving barriers, not only subjects of an institutional accessibility statement."
+  summary: "A APCE descreve o Acesso Universal 1.3 como uma continuação de edições anteriores destinada a promover a participação ativa das pessoas com deficiência na melhoria da acessibilidade no Centro Histórico de Évora — as pessoas afetadas fazem explicitamente parte da identificação e melhoria das barreiras, não sendo apenas objeto de uma declaração institucional sobre acessibilidade."
 evidence_nature: fact
 strength: primary-non-authoritative
 personal_data:

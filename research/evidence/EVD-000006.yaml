@@ -19,7 +19,7 @@ domain:
   - "MOB"
   - "ACC"
 observation:
-  summary: "The PUE mobility diagnosis reports that Évora's bus terminal has constraints for people with reduced mobility, weak/degraded pedestrian connections and poor integration with cycling, while the railway station is described as having better reduced-mobility access."
+  summary: "O diagnóstico de mobilidade do PUE refere que o terminal rodoviário de Évora apresenta constrangimentos para pessoas com mobilidade reduzida, ligações pedonais deficientes/degradadas e fraca integração com a mobilidade ciclável, enquanto a estação ferroviária é descrita como tendo melhores condições de acesso para pessoas com mobilidade reduzida."
 evidence_nature: claim
 strength: primary-authoritative
 personal_data:

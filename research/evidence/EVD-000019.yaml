@@ -21,7 +21,7 @@ domain:
   - "ACC"
   - "URB"
 observation:
-  summary: "In February 2025 the Municipality reported active PMUSE works at the Rossio interface and Variante/PITE expected to add about 6 km of pedestrian/cycling routes in the southern city. In 2026 the Rossio area entered further multi-phase requalification, explicitly continuing the earlier Station/Rossio soft-mobility interface."
+  summary: "Em fevereiro de 2025, o Município comunicou que estavam em curso obras do PMUSE na interface do Rossio e na Variante/PITE, prevendo-se que acrescentassem cerca de 6 km de percursos pedonais/cicláveis na zona sul da cidade. Em 2026, a área do Rossio entrou numa requalificação adicional, em várias fases, dando explicitamente continuidade à anterior interface de mobilidade suave Estação/Rossio."
 evidence_nature: fact
 strength: primary-authoritative
 personal_data:

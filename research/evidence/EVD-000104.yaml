@@ -16,7 +16,7 @@ domain:
   - "ACC"
   - "CUL"
 observation:
-  summary: "APCE and Câmara Municipal de Évora report that, following verification of cultural facilities managed by the municipality, they jointly produced a survey identifying accessibility present, accessibility missing, and possible improvement solutions for the assessed facility set. The public text does not enumerate the specific facilities or barriers in machine-readable or detailed textual form, and does not establish that every identified deficit was still present in August 2026."
+  summary: "A APCE e a Câmara Municipal de Évora comunicam que, na sequência da verificação de equipamentos culturais geridos pelo município, produziram conjuntamente um levantamento que identifica condições de acessibilidade existentes, condições de acessibilidade em falta e possíveis soluções de melhoria para o conjunto de equipamentos avaliado. O texto público não enumera os equipamentos específicos nem as barreiras específicas em formato legível por máquina ou em forma textual detalhada, nem estabelece que cada défice identificado ainda estivesse presente em agosto de 2026."
 evidence_nature: claim
 strength: primary-non-authoritative
 personal_data:
