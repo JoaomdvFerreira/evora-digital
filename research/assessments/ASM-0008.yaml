@@ -45,19 +45,19 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "RS-02A (2026-08-12) established a named Alentejo-region shortage-occupation list (agronomists, software programmers, agricultural-machinery repairers/operators, seasonal agricultural workers, electromechanical/electrical maintenance technicians, chefs, meat cutters, construction workers), materially stronger than the prior IEFP/Indeed vacancy-listing snapshots — but this is regional, not Évora-municipality-specific, and IEFP's own Évora employment-centre statistics (CTEF Évora) cover a fourteen-municipality catchment, not Évora alone. Which of these (or other) occupations/skills are genuinely hard to fill specifically within Évora, for how long, and why?"
+    question: "A RS-02A (2026-08-12) apurou uma lista identificada de profissões em situação de escassez na região do Alentejo (agrónomos, programadores de software, reparadores e operadores de maquinaria agrícola, trabalhadores agrícolas sazonais, técnicos de manutenção eletromecânica e elétrica, cozinheiros, trabalhadores de corte de carne e trabalhadores da construção), substancialmente mais robusta do que os retratos anteriores de ofertas IEFP/Indeed — mas trata-se de informação regional, não específica do município de Évora, e as próprias estatísticas do centro de emprego de Évora do IEFP (CTEF Évora) cobrem uma área de influência de catorze municípios, e não apenas Évora. Quais destas (ou outras) profissões/competências são efetivamente difíceis de preencher especificamente em Évora, durante quanto tempo e porquê?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "NERE institutional confirmation (WU022 D5-OP-006, open) of which named occupations apply to Évora specifically"
-      - "targeted employer/IEFP/NERE recruitment-outcome data"
+      - "confirmação institucional do NERE (WU022 D5-OP-006, em aberto) sobre quais das profissões indicadas se aplicam especificamente a Évora"
+      - "dados direcionados sobre resultados de recrutamento junto de empregadores/IEFP/NERE"
   U2:
-    question: "How broad/effective are PlaQuaR and other employer-training feedback mechanisms, especially for SMEs?"
+    question: "Qual é a abrangência/eficácia do PlaQuaR e de outros mecanismos de retorno de informação entre empregadores e formação, em especial para PME?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "programme coverage/outcome data"
-      - "targeted operator/employer validation"
+      - "dados sobre cobertura/resultados do programa"
+      - "validação direcionada com operador/empregador"
 
 triage: DEEPEN
 

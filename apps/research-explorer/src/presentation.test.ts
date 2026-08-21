@@ -39,4 +39,12 @@ describe("PT-PT public presentation terminology", () => {
   it("uses the canonical value as the safe fallback for unknown future values", () => {
     expect(publicEnumLabel("status", "FUTURE_STATUS")).toBe("FUTURE_STATUS");
   });
+
+  it("uses field-aware labels for assessment unknowns", () => {
+    expect(publicFieldCaption("remaining_gap")).toBe("Lacuna remanescente");
+    expect(publicEnumLabel("remaining_gap", "PARTIAL")).toBe("Parcial");
+    expect(publicFieldCaption("decision_impact")).toBe("Impacto na decisão");
+    expect(publicEnumLabel("decision_impact", "HIGH")).toBe("Elevado");
+    expect(publicEnumLabel("decision_impact", "MEDIUM")).toBe("Médio");
+  });
 });

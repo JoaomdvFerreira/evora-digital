@@ -45,26 +45,26 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "When a caregiver in Évora needs support for the first time, where do they begin, which entities/services do they navigate, where does friction occur, and where does the journey break down?"
+    question: "Quando um cuidador em Évora necessita de apoio pela primeira vez, por onde começa, por que entidades/serviços passa, onde surgem dificuldades e em que ponto o percurso falha?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "formative caregiver journey interviews"
-      - "Cantinho do Cuidador intake-process review"
+      - "entrevistas formativas sobre o percurso dos cuidadores"
+      - "revisão do processo de acolhimento do Cantinho do Cuidador"
   U2:
-    question: "Has the 2026-2027 systematisation/manual/digital-publication plan been delivered, and does it measurably reduce the bureaucracy/rights-navigation friction caregivers report?"
+    question: "O plano de sistematização/manual/publicação digital para 2026-2027 foi concretizado e reduz de forma mensurável as dificuldades relacionadas com a burocracia e com a orientação sobre direitos relatadas pelos cuidadores?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "municipal plan implementation-status check"
-      - "caregiver follow-up validation (D5)"
+      - "verificação municipal do estado de concretização do plano"
+      - "validação de seguimento com cuidadores (D5)"
   U3:
-    question: "Which needs (care/respite/financial/psychological vs navigation) actually dominate for caregivers outside the geographically-concentrated 133-person sample?"
+    question: "Que necessidades (cuidados/descanso/financeiras/psicológicas, por oposição a necessidades de orientação) predominam efetivamente entre cuidadores fora da amostra geograficamente concentrada de 133 pessoas?"
     decision_impact: MEDIUM
     target_phase: D5
     best_next_evidence:
-      - "broader/stratified caregiver sampling"
-      - "CLASE-network partner interviews"
+      - "amostragem de cuidadores mais ampla/estratificada"
+      - "entrevistas a parceiros da rede CLASE"
 
 triage: DEEPEN
 

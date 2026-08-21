@@ -45,12 +45,12 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "Which high-value pedestrian/accessibility barriers remain after current works and accessibility programmes, and what do affected users experience today?"
+    question: "Que barreiras pedonais/de acessibilidade de maior relevância permanecem após as obras e os programas de acessibilidade atuais, e o que experienciam hoje os utilizadores afetados?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "location-level accessibility audit with affected-user participation"
-      - "reuse current institutional assessment outputs where available"
+      - "auditoria de acessibilidade ao nível da localização, com participação de utilizadores afetados"
+      - "reutilização dos resultados atuais de avaliações institucionais, quando disponíveis"
 
 triage: DEEPEN
 

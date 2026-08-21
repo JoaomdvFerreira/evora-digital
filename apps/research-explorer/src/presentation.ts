@@ -20,6 +20,7 @@ const LABELS: Record<string, Record<string, string>> = {
   structure_action: { KEEP: "Manter", SPLIT_CANDIDATE: "Candidata a divisão", MERGE_CANDIDATE: "Candidata a fusão" },
   contradiction_status: { HIGH: "Elevado", MEDIUM: "Médio", LOW: "Baixo", UNKNOWN: "Desconhecido", NOT_ASSESSED: "Não avaliado" },
   triage: { STOP: "Não prosseguir", WATCH: "Acompanhar", DEEPEN: "Aprofundar", PROCEED: "Prosseguir" },
+  decision_impact: { HIGH: "Elevado", MEDIUM: "Médio", LOW: "Baixo", UNKNOWN: "Desconhecido", NOT_ASSESSED: "Não avaliado" },
   decision_gate: { PASS: "Cumpre", PARTIAL: "Cumpre parcialmente", FAIL: "Não cumpre", UNKNOWN: "Desconhecido", NOT_ASSESSED: "Não avaliado" },
   geography: { city: "Cidade", parish: "Freguesia", municipality: "Município", intermunicipal: "Intermunicipal", regional: "Regional" },
   source_type: { api: "API", dataset: "Conjunto de dados", gis: "Sistema de Informação Geográfica", web: "Página web", document: "Documento", database: "Base de dados", feed: "Fluxo de dados", unknown: "Desconhecido" },
@@ -30,7 +31,7 @@ const LABELS: Record<string, Record<string, string>> = {
 };
 
 const FIELD_CAPTIONS: Record<string, string> = {
-  status: "Estado", validation_status: "Estado de validação", evidence_status: "Estado da evidência", digital_tractability: "Tratabilidade digital", digital_leverage: "Alavancagem digital", existing_solutions: "Soluções existentes", strength: "Força da evidência", type: "Tipo", evidence_nature: "Natureza da evidência", friction_types: "Tipos de fricção", verification: "Verificação", contribution: "Contribuição", public_signal_class: "Classe de sinal público", representativeness: "Representatividade", temporal_relevance: "Relevância temporal", assessment_status: "Estado da avaliação", contradiction_status: "Grau de contradição", stakeholder_validation: "Validação por intervenientes", structure_action: "Ação estrutural", triage: "Triagem", decision_gate: "Critério de decisão", geography: "Âmbito geográfico", source_type: "Tipo de fonte", authority: "Autoridade", freshness: "Atualidade", licensing: "Licenciamento",
+  status: "Estado", validation_status: "Estado de validação", evidence_status: "Estado da evidência", digital_tractability: "Tratabilidade digital", digital_leverage: "Alavancagem digital", existing_solutions: "Soluções existentes", strength: "Força da evidência", type: "Tipo", evidence_nature: "Natureza da evidência", friction_types: "Tipos de fricção", verification: "Verificação", contribution: "Contribuição", public_signal_class: "Classe de sinal público", representativeness: "Representatividade", temporal_relevance: "Relevância temporal", assessment_status: "Estado da avaliação", contradiction_status: "Grau de contradição", stakeholder_validation: "Validação por intervenientes", structure_action: "Ação estrutural", triage: "Triagem", remaining_gap: "Lacuna remanescente", decision_impact: "Impacto na decisão", target_phase: "Fase prevista", decision_gate: "Critério de decisão", geography: "Âmbito geográfico", source_type: "Tipo de fonte", authority: "Autoridade", freshness: "Atualidade", licensing: "Licenciamento",
 };
 
 const PS_LABELS: Record<string, string> = {

@@ -45,12 +45,12 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "Does material road-surface degradation persist broadly after the current repair programme, and is there a repeatable maintenance-service reliability failure pattern or an independently material resident/operator journey gap in reporting, prioritization, status or maintenance transparency?"
+    question: "A degradação significativa do pavimento rodoviário persiste de forma ampla após o atual programa de reparação, e existe um padrão repetível de falha na fiabilidade do serviço de manutenção ou, de forma independente, uma lacuna significativa no percurso do munícipe/operador quanto à comunicação de problemas, priorização, estado ou transparência da manutenção?"
     decision_impact: MEDIUM
     target_phase: D3
     best_next_evidence:
-      - "post-programme condition monitoring / municipal maintenance-response data"
-      - "resident/operator reporting-journey check if a transparency gap is independently suspected"
+      - "acompanhamento das condições após o programa / dados municipais de resposta da manutenção"
+      - "verificação do percurso de comunicação do munícipe/operador, caso se suspeite independentemente de uma lacuna de transparência"
 
 triage: WATCH
 

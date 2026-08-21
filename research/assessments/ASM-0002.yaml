@@ -45,19 +45,19 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "What exact passenger journey failures remain despite current TREVO information, and how frequent/severe are they for real trips?"
+    question: "Que falhas concretas nas deslocações dos passageiros persistem apesar da informação atual da TREVO, e qual é a sua frequência/gravidade em deslocações reais?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "current passenger journey mapping/observation"
-      - "TREVO/TPAC operator interview"
+      - "mapeamento/observação atual das deslocações dos passageiros"
+      - "entrevista ao operador TREVO/TPAC"
   U3:
-    question: "RS-02B1 (2026-08-12) established that stop-level information is heterogeneous in kind (unsheltered stops: operator/line plate only; sheltered stops: line/stop/timetable panel lacking accessibility elements) and that real-time-at-stops/multimodal-app improvements are planned but not confirmed delivered — which specific stops/lines this affects, and how material it is to typical journeys, remains open."
+    question: "A RS-02B1 (2026-08-12) apurou que a informação ao nível das paragens é heterogénea quanto ao tipo (paragens sem abrigo: apenas placa do operador/linha; paragens com abrigo: painel de linha/paragem/horário sem elementos de acessibilidade) e que estão planeadas melhorias de informação em tempo real nas paragens/na aplicação multimodal, mas a sua concretização não está confirmada — permanece em aberto saber que paragens/linhas específicas são afetadas e qual a relevância para deslocações típicas."
     decision_impact: MEDIUM
     target_phase: D3
     best_next_evidence:
-      - "stop-level information audit"
-      - "TREVO institutional confirmation (WU022 D5-OP-001, open) of delivery status for planned real-time/app improvements"
+      - "auditoria da informação ao nível das paragens"
+      - "confirmação institucional da TREVO (WU022 D5-OP-001, em aberto) sobre o estado de concretização das melhorias planeadas de informação em tempo real/aplicação"
 
 triage: DEEPEN
 

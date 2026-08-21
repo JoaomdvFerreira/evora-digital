@@ -45,26 +45,26 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "What is post-July/August missed/delayed-collection performance by area? (D5-P9-05, D5-P9-06)"
+    question: "Qual é, por zona, o desempenho das recolhas falhadas ou atrasadas após julho/agosto? (D5-P9-05, D5-P9-06)"
     decision_impact: HIGH
     target_phase: D5
     best_next_evidence:
-      - "operational performance data request to Município/Gesamb"
-      - "resident/operator journey validation"
+      - "pedido de dados de desempenho operacional ao Município/Gesamb"
+      - "validação do percurso do munícipe/operador"
   U2:
-    question: "Can a resident currently report the relevant waste/urban-hygiene issues through the municipal occurrence platform, with what categorization/routing/status/closure semantics, and does the occurrence/case system receive collection-operation information from crews/route management/vehicle systems/supervisors? (D5-P9-01, D5-P9-02)"
+    question: "Um munícipe pode atualmente comunicar as ocorrências relevantes de resíduos/higiene urbana através da plataforma municipal de ocorrências, com que semântica de categorização/encaminhamento/estado/fecho, e o sistema de ocorrências/casos recebe informação sobre a operação de recolha proveniente das equipas, gestão de rotas, sistemas dos veículos ou supervisores? (D5-P9-01, D5-P9-02)"
     decision_impact: HIGH
     target_phase: D5
     best_next_evidence:
-      - "occurrence-platform data/process review"
-      - "operator confirmation of occurrence-to-operations integration"
+      - "revisão dos dados/processo da plataforma de ocorrências"
+      - "confirmação pelo operador da integração entre ocorrências e operações"
   U3:
-    question: "When a route/street/area is known to be delayed or missed, is that communicated proactively with a revised expectation, or are residents still expected to submit individual reports; and for bulky/green-waste requests, how is the request recorded, acknowledged, tracked and closed? (D5-P9-03, D5-P9-04)"
+    question: "Quando se sabe que a recolha numa rota/rua/zona está atrasada ou falhou, essa situação é comunicada proativamente com uma nova previsão, ou continua a esperar-se que os munícipes submetam comunicações individuais; e, para pedidos de resíduos volumosos/verdes, como é o pedido registado, como é confirmado o seu recebimento, como é acompanhado e como é encerrado? (D5-P9-03, D5-P9-04)"
     decision_impact: MEDIUM
     target_phase: D5
     best_next_evidence:
-      - "municipal operator interview on known-disruption communication practice"
-      - "bulky/green-waste request-lifecycle walkthrough"
+      - "entrevista ao operador municipal sobre a prática de comunicação de perturbações conhecidas"
+      - "análise do ciclo de vida dos pedidos de resíduos volumosos/verdes"
 
 triage: WATCH
 

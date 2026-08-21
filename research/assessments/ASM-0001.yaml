@@ -45,20 +45,20 @@ decision_gates:
 
 critical_unknowns:
   U1:
-    question: "Now that the general daytime-vs-reduced-night/weekend/holiday pattern is confirmed as a persistent, multi-year institutional fact (RS-02A), which specific lines/corridors/time periods experience the strongest reduction, and by how much compared with weekday/daytime service? Which current origin/destination/time combinations are impractical despite nominal coverage?"
+    question: "Agora que o padrão geral de serviço diurno versus serviço reduzido à noite/aos fins de semana/nos feriados está confirmado como um facto institucional persistente e plurianual (RS-02A), que linhas/corredores/períodos horários específicos sofrem a redução mais acentuada e em que medida, por comparação com o serviço em dias úteis/durante o dia? Que combinações atuais de origem/destino/horário são impraticáveis apesar da cobertura nominal?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "line/corridor-level current timetable analysis (RS-02B candidate, not yet performed)"
-      - "TREVO institutional confirmation (WU022 D5-OP-001, open)"
-      - "affected-user/operator validation"
+      - "análise atual de horários ao nível das linhas/corredores (candidata RS-02B, ainda não realizada)"
+      - "confirmação institucional da TREVO (WU022 D5-OP-001, em aberto)"
+      - "validação com utilizadores afetados/operador"
   U2:
-    question: "In the material failing journeys, what proportion is schedule design/frequency/capacity versus operational unreliability?"
+    question: "Nas deslocações com falhas significativas, que proporção dessas falhas resulta do desenho dos horários, da frequência ou da capacidade, por oposição à falta de fiabilidade operacional?"
     decision_impact: HIGH
     target_phase: D3
     best_next_evidence:
-      - "targeted operator/service-performance data"
-      - "journey comparison"
+      - "dados direcionados sobre o desempenho do operador/serviço"
+      - "comparação de deslocações"
 
 triage: DEEPEN
 
