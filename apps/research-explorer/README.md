@@ -49,3 +49,25 @@ From the repository root:
 Both root commands are plain `npm --prefix` delegation — no npm workspaces, no monorepo tooling.
 
 Generated read-model data is served as static assets via Vite's `publicDir` (`vite.config.ts`), in both `npm run dev` and `npm run build` — never copied into a second, manually-maintained tree. The app never reads canonical `research/**/*.yaml`, and it targets a configurable `base` path (`VITE_BASE_PATH`, defaulting to `/`) so a future sub-path deployment needs no code change.
+
+## Vercel deployment (Preview readiness)
+
+This is deployment-*readiness*, not a public-deployment approval — see the roadmap's RE-07 gate (`docs/architecture/research-explorer-roadmap.md`) and the [Data Publication and Agent Safety Policy](../../docs/governance/data-publication-and-agent-safety.md): a passing build is not a privacy/licence/accessibility/content review.
+
+The repository root's `vercel.json` pins the settings a Vercel project needs; an operator creating the project should still confirm they match what's shown in the dashboard:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | repository root (`/`) — required so the build can read canonical `research/` and `tools/` outside `apps/research-explorer/` |
+| Install Command | `npm install --prefix apps/research-explorer` |
+| Build Command | `npm run explorer:build` |
+| Output Directory | `apps/research-explorer/dist` |
+| Node.js Version | project reads `engines.node` (`^20.19.0 \|\| >=22.12.0`, required by Vite 8) from the root `package.json`; no separate Vercel setting needed |
+
+No rewrites/redirects are configured because Explorer navigation is query-string state on a single `/` route (`useExplorerUrlState.ts`) — every view (`?view=records`, `?view=records&id=...`, `?view=problem&id=...`, etc.) resolves to the same static `index.html`/entry and needs no server-side rewrite.
+
+**Environment variables:** none are required for a root-hosted deployment. `VITE_BASE_PATH` only needs to be set for a future sub-path deployment (e.g. under a path prefix); leave it unset for root hosting, where it defaults to `/`.
+
+**Fonts:** `@fontsource/*` packages self-host Inter, Source Serif 4, and IBM Plex Mono as build assets — there is no runtime Google Fonts dependency.
+
+**Workflow:** deploy to a Vercel **Preview** environment first (e.g. by opening a PR against this branch/repo) to review the public research corpus rendering before any Production promotion. This document does not claim a public Production URL exists.
