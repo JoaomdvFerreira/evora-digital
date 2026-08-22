@@ -65,3 +65,17 @@ Reference: A
 Reference: B, with shared C/D responsive patterns
 
 Each V1/V2/V3 phase requires targeted human desktop + ~360px visual approval before it is considered closed. This is a verification gate, not a requirement for new screenshot infrastructure. Implementation details remain decisions for the live code in each phase.
+
+## Playwright / visual-review usage
+
+**Playwright is a verification gate, not a development loop.**
+
+- Do not run browser/Playwright visual checks after every UI edit.
+- Refresh committed screenshots only at an explicit visual checkpoint, before PR/closure, or when a change materially affects rendering.
+- Refresh only affected surfaces/viewports where possible.
+- Run a full visual-review sweep only for global visual changes or milestone/V1/V2/V3 closure.
+- Batch required captures into one browser/dev-server session.
+- After remediation, recapture only screenshots affected by the finding.
+- Changes with no rendered impact do not require screenshot refresh.
+- Implementation agents should not repeatedly redesign → render → inspect by trial and error; implement the bounded change first, then verify.
+- Stable filenames are overwritten rather than accumulating additional captures.

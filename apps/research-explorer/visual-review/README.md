@@ -18,6 +18,10 @@ Canonical precedence (highest first):
 - Capture widths are currently 1280, 360, 767, and 768px.
 - These images support review; they do not replace rendered browser/Playwright inspection when verifying a visual change.
 
+## Playwright usage
+
+Playwright is a verification gate, not a development loop: don't run it after every edit; refresh screenshots only at explicit checkpoints, before PR/closure, or when rendering is materially affected, and only for the affected surfaces. See [visual-implementation-contract.md](../../../docs/design/research-explorer/visual-implementation-contract.md#playwright--visual-review-usage) for the full policy.
+
 ## Surfaces
 
 - `overview/` — captured
