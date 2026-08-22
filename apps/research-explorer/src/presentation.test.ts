@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { formatPublicCount, formatPublicDateTime, publicEnumLabel, publicFieldCaption } from "./presentation";
+import { formatPublicCount, formatPublicDateTime, publicCompactEnumLabel, publicEnumLabel, publicFieldCaption } from "./presentation";
 
 describe("PT-PT public presentation terminology", () => {
   it("uses field-aware PRB validation labels", () => {
     expect(publicEnumLabel("validation_status", "unvalidated")).toBe("Por validar");
     expect(publicEnumLabel("existing_solutions", "not_assessed")).toBe("Não avaliadas");
+  });
+
+  it("uses a shorter field-aware label in compact problem status presentation", () => {
+    expect(publicCompactEnumLabel("evidence_status", "corroborated")).toBe("Corroborado");
   });
 
   it("distinguishes evidential authority from publication permission", () => {

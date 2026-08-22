@@ -2,6 +2,8 @@
 
 ## Status
 
+Design System v1: **APPROVED** — see [design-system.md](design-system.md) for canonical tokens, typography recipes, and component contracts.
+
 Prototypes A–D: **APPROVED DESIGN REFERENCES**
 
 Functional implementation: **MATURE**
@@ -15,6 +17,7 @@ Across A–D, production should preserve:
 - strong editorial/human-meaning hierarchy;
 - clear separation between editorial/human content, UI/navigation, and technical identity/metadata;
 - distinct visual/typographic roles for editorial/human meaning, UI/navigation, and technical identity/metadata;
+- owner-approved production typography: Inter for UI/navigation/interface, Source Serif 4 for editorial and human research content, and IBM Plex Mono for technical IDs and metadata;
 - controlled content/read widths;
 - deliberate negative space and density;
 - compact global chrome/navigation;
@@ -34,7 +37,7 @@ The following are not production requirements by themselves: exact prototype fon
 
 1. Current canonical data and publication-safety contracts.
 2. Current PT-PT localization and public-presentation mappings.
-3. Approved A–D visual/information-design intent.
+3. [design-system.md](design-system.md) canonical tokens/recipes and approved A–D visual/information-design intent.
 4. Current production architecture and functional behavior.
 5. Illustrative prototype implementation details.
 
@@ -62,3 +65,17 @@ Reference: A
 Reference: B, with shared C/D responsive patterns
 
 Each V1/V2/V3 phase requires targeted human desktop + ~360px visual approval before it is considered closed. This is a verification gate, not a requirement for new screenshot infrastructure. Implementation details remain decisions for the live code in each phase.
+
+## Playwright / visual-review usage
+
+**Playwright is a verification gate, not a development loop.**
+
+- Do not run browser/Playwright visual checks after every UI edit.
+- Refresh committed screenshots only at an explicit visual checkpoint, before PR/closure, or when a change materially affects rendering.
+- Refresh only affected surfaces/viewports where possible.
+- Run a full visual-review sweep only for global visual changes or milestone/V1/V2/V3 closure.
+- Batch required captures into one browser/dev-server session.
+- After remediation, recapture only screenshots affected by the finding.
+- Changes with no rendered impact do not require screenshot refresh.
+- Implementation agents should not repeatedly redesign → render → inspect by trial and error; implement the bounded change first, then verify.
+- Stable filenames are overwritten rather than accumulating additional captures.

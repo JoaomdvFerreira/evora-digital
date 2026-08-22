@@ -19,6 +19,31 @@ interface RecordsTableProps {
   onTypeFilterChange: (typeFilter: string) => void;
 }
 
+function DesktopRecordsList({ records, selectedId, onSelect }: { records: RecordSummary[]; selectedId: string | null; onSelect: (id: string) => void }) {
+  return (
+    <ul className="desktop-records-list" aria-label="Registos">
+      {records.map((record) => {
+        const isSelected = record.id === selectedId;
+        const hasDistinctLabel = record.label !== record.id;
+        return (
+          <li key={record.id}>
+            <button type="button" className="desktop-record-row" aria-pressed={isSelected} onClick={() => onSelect(record.id)}>
+              <span className="desktop-record-type">{record.type}</span>
+              <span className="desktop-record-text">
+                <span className="desktop-record-label">{record.label}</span>
+                {hasDistinctLabel && <span className="desktop-record-id">{record.id}</span>}
+              </span>
+              <span className="desktop-record-chevron" aria-hidden="true">
+                ›
+              </span>
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 /**
  * The generic Records table: universal ID/Type/Label/Ficheiro columns only —
  * no SRC-/EVD-/PRB-/ASM-/HYP- specific columns (see columns.ts) — search,
@@ -100,11 +125,10 @@ export function RecordsTable({
             ))}
           </select>
         </div>
+        <p className="records-result-count" aria-live="polite">
+          {formatPublicCount(filtered.length)} {filtered.length === 1 ? "registo" : "registos"} encontrados.
+        </p>
       </div>
-
-      <p aria-live="polite">
-        {formatPublicCount(filtered.length)} {filtered.length === 1 ? "registo" : "registos"} encontrados.
-      </p>
 
       {filtered.length === 0 ? (
         <p>Nenhum resultado.</p>
@@ -113,47 +137,23 @@ export function RecordsTable({
           {isNarrow ? (
             <NarrowRecordsList records={table.getRowModel().rows.map((row) => row.original)} selectedId={selectedId} onSelect={onSelect} />
           ) : (
-            <table>
-              <thead>
-                {table.getHeaderGroups().map((headerGroup) => (
-                  <tr key={headerGroup.id}>
-                    {headerGroup.headers.map((header) => {
-                      const sortState = header.column.getIsSorted();
-                      return (
-                        <th key={header.id} scope="col" aria-sort={sortState === "asc" ? "ascending" : sortState === "desc" ? "descending" : "none"}>
-                          <button type="button" onClick={header.column.getToggleSortingHandler()}>
-                            {flexRender(header.column.columnDef.header, header.getContext())}
-                            {sortState === "asc" ? " ▲" : sortState === "desc" ? " ▼" : ""}
-                          </button>
-                        </th>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </thead>
-              <tbody>
-                {table.getRowModel().rows.map((row) => {
-                  const isSelected = row.original.id === selectedId;
-                  return (
-                    <tr key={row.id} aria-selected={isSelected}>
-                      {row.getVisibleCells().map((cell) => {
-                        if (cell.column.id === "id") {
-                          return (
-                            <td key={cell.id}>
-                              <button type="button" aria-pressed={isSelected} onClick={() => onSelect(row.original.id)}>
-                                {isSelected ? "● " : ""}
-                                {String(cell.getValue())}
-                              </button>
-                            </td>
-                          );
-                        }
-                        return <td key={cell.id}>{String(cell.getValue())}</td>;
-                      })}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            <>
+              <div className="records-sort-controls" aria-label="Ordenar registos">
+                <span>Ordenar por</span>
+                {table.getHeaderGroups().flatMap((headerGroup) =>
+                  headerGroup.headers.map((header) => {
+                    const sortState = header.column.getIsSorted();
+                    return (
+                      <button key={header.id} type="button" aria-pressed={sortState !== false} onClick={header.column.getToggleSortingHandler()}>
+                        {flexRender(header.column.columnDef.header, header.getContext())}
+                        {sortState === "asc" ? " ▲" : sortState === "desc" ? " ▼" : ""}
+                      </button>
+                    );
+                  })
+                )}
+              </div>
+              <DesktopRecordsList records={table.getRowModel().rows.map((row) => row.original)} selectedId={selectedId} onSelect={onSelect} />
+            </>
           )}
 
           <div className="records-pagination">

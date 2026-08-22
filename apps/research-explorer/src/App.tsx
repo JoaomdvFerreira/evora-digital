@@ -40,9 +40,7 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
       <a className="skip-link" href="#main-content" onClick={() => document.getElementById("main-content")?.focus()}>
         Saltar para o conteúdo
       </a>
-      <main id="main-content" tabIndex={-1}>
-        <h1>Explorador de Investigação Open Évora</h1>
-
+      <main id="main-content" className="explorer-shell" tabIndex={-1}>
         {state.status === "loading" && (
           <p role="status" aria-live="polite">
             A carregar modelo de leitura gerado…
@@ -61,11 +59,11 @@ export function App({ dataProvider = defaultProvider }: AppProps) {
 
         {state.status === "ready" && (
           <>
+            <Explorer dataProvider={dataProvider} schemaPrefixes={state.manifest.schemaPrefixes} />
             <p className="manifest-summary">
               Corpus: {formatPublicCount(state.manifest.totalRecords)} registos · gerado em{" "}
               <time dateTime={state.manifest.generatedAt}>{formatPublicDateTime(state.manifest.generatedAt)}</time>
             </p>
-            <Explorer dataProvider={dataProvider} schemaPrefixes={state.manifest.schemaPrefixes} />
           </>
         )}
       </main>

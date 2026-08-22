@@ -180,7 +180,7 @@ main {
   align-items: flex-start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .records-explorer {
     flex-direction: column;
   }
@@ -227,7 +227,7 @@ main {
 }
 
 /* Narrow Records row list (REDUX-005) — only rendered below the existing
-   900px breakpoint (RecordsTable's useNarrowViewport), so these rules need
+   767px breakpoint (RecordsTable's useNarrowViewport), so these rules need
    no media-query guard of their own. Label is the primary line; the
    canonical ID is a secondary line, dropped only when it would exactly
    duplicate the label; the file path never appears here (Detail only). */
@@ -672,4 +672,1025 @@ code {
 .contribution-count {
   color: #555;
   font-size: 0.8rem;
+}
+
+/* V1 visual foundation ----------------------------------------------------
+   The Explorer remains a text-first research surface: warm paper, restrained
+   borders, a readable editorial measure, and deliberately quieter technical
+   identifiers. Page-specific Detail/Problem composition stays outside V1.
+   Values are canonical per docs/design/research-explorer/design-system.md
+   §1 (Foundations) — token names are this app's established naming, mapped
+   to that document's semantic names in its §6. */
+:root {
+  --canvas: #faf8f3;
+  --surface: #ffffff;
+  --surface-muted: #f5f3ec;
+  --surface-chip: #f1efe8;
+  --ink: #1f1d1a;
+  --ink-soft: #3a372e;
+  --ink-faint: #6b675f;
+  --ink-faintest: #8a8578;
+  --ink-disclaimer: #a6a192;
+  --icon-muted: #b7b2a4;
+  --line: #ddd8cc;
+  --line-subtle: #eeeae0;
+  --line-control: #c7c2b4;
+  --line-emphasis: #1f1d1a;
+  --accent: #1d4341;
+  --accent-dark: #2b5d5a;
+  --editorial: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --technical: "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 90px;
+  --control-height: 40px;
+  --tap-min: 44px;
+  --detail-gap: 44px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 5px;
+
+  /* Semantic typography recipes — design-system.md §2. Primitives only;
+     no component selectors consume these yet (V1/V2/V3 reconciliation). */
+  --recipe-wordmark-family: var(--ui);
+  --recipe-wordmark-size: 15px;
+  --recipe-wordmark-weight: 700;
+  --recipe-wordmark-line-height: 1.2;
+
+  --recipe-shell-subtitle-family: var(--ui);
+  --recipe-shell-subtitle-size: 14px;
+  --recipe-shell-subtitle-weight: 400;
+  --recipe-shell-subtitle-line-height: 1.3;
+
+  --recipe-global-nav-family: var(--ui);
+  --recipe-global-nav-size: 14px;
+  --recipe-global-nav-weight: 400;
+  --recipe-global-nav-weight-active: 600;
+  --recipe-global-nav-line-height: 1.3;
+
+  --recipe-section-label-family: var(--ui);
+  --recipe-section-label-size: 12px;
+  --recipe-section-label-weight: 600;
+  --recipe-section-label-line-height: 1.4;
+  --recipe-section-label-letter-spacing: 0.5px;
+  --recipe-section-label-transform: uppercase;
+
+  --recipe-interface-body-family: var(--ui);
+  --recipe-interface-body-size: 14px;
+  --recipe-interface-body-weight: 400;
+  --recipe-interface-body-line-height: 1.55;
+
+  --recipe-interface-meta-family: var(--ui);
+  --recipe-interface-meta-size: 12px;
+  --recipe-interface-meta-weight: 400;
+  --recipe-interface-meta-line-height: 1.4;
+
+  --recipe-problem-card-title-family: var(--editorial);
+  --recipe-problem-card-title-size: 15px;
+  --recipe-problem-card-title-size-compact: 14px;
+  --recipe-problem-card-title-weight: 400;
+  --recipe-problem-card-title-line-height: 1.45;
+
+  --recipe-record-label-family: var(--ui);
+  --recipe-record-label-size: 14px;
+  --recipe-record-label-weight: 600;
+  --recipe-record-label-line-height: 1.35;
+
+  --recipe-editorial-intro-family: var(--editorial);
+  --recipe-editorial-intro-size: 22px;
+  --recipe-editorial-intro-size-compact: 17px;
+  --recipe-editorial-intro-weight: 400;
+  --recipe-editorial-intro-line-height: 1.55;
+
+  --recipe-editorial-body-family: var(--editorial);
+  --recipe-editorial-body-size: 17px;
+  --recipe-editorial-body-weight: 400;
+  --recipe-editorial-body-line-height: 1.6;
+
+  --recipe-editorial-h1-family: var(--editorial);
+  --recipe-editorial-h1-size: 25px;
+  --recipe-editorial-h1-size-compact: 17px;
+  --recipe-editorial-h1-weight: 600;
+  --recipe-editorial-h1-line-height: 1.4;
+
+  --recipe-evidence-hero-family: var(--editorial);
+  --recipe-evidence-hero-size: 17px;
+  --recipe-evidence-hero-weight: 400;
+  --recipe-evidence-hero-line-height: 1.5;
+
+  --recipe-technical-id-family: var(--technical);
+  --recipe-technical-id-size: 11px;
+  --recipe-technical-id-weight: 400;
+  --recipe-technical-id-line-height: 1.3;
+
+  --recipe-technical-field-family: var(--technical);
+  --recipe-technical-field-size: 13px;
+  --recipe-technical-field-weight: 400;
+  --recipe-technical-field-line-height: 1.4;
+
+  --recipe-technical-meta-family: var(--technical);
+  --recipe-technical-meta-size: 10px;
+  --recipe-technical-meta-weight: 400;
+  --recipe-technical-meta-line-height: 1.3;
+
+  --recipe-status-family: var(--ui);
+  --recipe-status-size: 11px;
+  --recipe-status-size-standard: 13px;
+  --recipe-status-weight: 400;
+  --recipe-status-line-height: 1.2;
+
+  --recipe-control-family: var(--ui);
+  --recipe-control-size: 14px;
+  --recipe-control-weight: 400;
+  --recipe-control-line-height: 1.2;
+
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: var(--ui);
+  line-height: 1.55;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background: var(--canvas);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select,
+input {
+  accent-color: var(--accent);
+}
+
+a {
+  color: var(--accent-dark);
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+main.explorer-shell {
+  box-sizing: border-box;
+  max-width: none;
+  margin: 0;
+  padding: 0 2rem 3rem;
+}
+
+.explorer-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 48px;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.explorer-chrome > h1 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.42rem;
+  margin: 0;
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+.explorer-brand {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.explorer-subtitle {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.manifest-summary {
+  max-width: 58rem;
+  margin: 1.5rem auto 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line-subtle);
+  color: var(--ink-faint);
+  font-family: var(--technical);
+  font-size: 0.72rem;
+}
+
+.explorer-navigation {
+  gap: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.explorer-navigation button {
+  position: relative;
+  min-height: 42px;
+  padding: 0.55rem 1rem;
+  color: var(--ink-soft);
+  border: 0;
+  border-radius: 0;
+  font-size: 0.88rem;
+}
+
+.explorer-navigation button:hover {
+  color: var(--ink);
+  background: var(--surface-muted);
+}
+
+.explorer-navigation button[aria-current="page"] {
+  color: var(--ink);
+  border-color: transparent;
+  font-weight: 650;
+}
+
+.explorer-navigation button[aria-current="page"]::after {
+  position: absolute;
+  right: 1rem;
+  bottom: -1px;
+  left: 1rem;
+  height: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+.skip-link {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.reading-guide {
+  max-width: 68rem;
+  margin: -0.85rem auto 1.5rem;
+  border: 1px solid var(--line-subtle);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.4rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+.reading-guide summary,
+.overview-status-explanation summary {
+  color: var(--ink-soft);
+  font-weight: 650;
+}
+
+.public-overview {
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 2.75rem 0 2rem;
+}
+
+.public-overview > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.overview-introduction {
+  max-width: 43rem;
+  margin: 0 0 0.8rem;
+  color: var(--ink);
+  font-family: var(--editorial);
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.overview-introduction + p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+}
+
+.overview-mobile-copy {
+  display: none;
+}
+
+.overview-independence,
+.overview-trust,
+.overview-status-explanation {
+  box-sizing: border-box;
+  max-width: none;
+  border-color: var(--line);
+  border-radius: 0.3rem;
+  background: var(--surface-muted);
+}
+
+.overview-independence {
+  margin: 0;
+  padding: 0.48rem 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.overview-independence strong {
+  color: var(--ink);
+}
+
+.overview-primary-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin: 1.35rem 0 2.2rem;
+}
+
+.overview-primary-actions > p {
+  margin: 0;
+}
+
+.overview-primary-actions > p:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.overview-primary-actions > p:last-child {
+  flex: 0 0 auto;
+}
+
+.overview-primary-actions a {
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.overview-concepts {
+  gap: 1.5rem;
+  margin: 0 0 1.25rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line-subtle);
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.overview-concepts h3 {
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  font-family: var(--editorial);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.overview-concepts p {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.overview-trust {
+  margin: 1rem 0 1.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.overview-trust strong {
+  color: var(--ink);
+}
+
+.overview-status-explanation {
+  margin: 0 0 2rem;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.84rem;
+}
+
+.overview-status-explanation p {
+  color: var(--ink-soft);
+}
+
+.overview-problems-heading {
+  margin-bottom: 0.65rem;
+}
+
+.overview-problems-heading h3 {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.overview-problems-heading p {
+  margin: 0;
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+}
+
+.overview-problem-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.overview-problem-list li {
+  align-items: center;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-color: var(--line);
+  border-radius: 0.3rem;
+  background: transparent;
+}
+
+.overview-problem-list li:hover {
+  border-color: #bbb3a3;
+  background: var(--surface);
+}
+
+.overview-problem-list code,
+.technical-id {
+  padding: 0;
+  color: var(--ink-faint);
+  background: none;
+  font-family: var(--technical);
+  font-size: 0.68rem;
+}
+
+.overview-problem-list h4 {
+  margin: 0.22rem 0 0;
+  color: var(--ink);
+  font-family: var(--editorial);
+  font-size: 1rem;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.42;
+}
+
+.overview-statuses {
+  display: inline-flex;
+  gap: 0;
+  margin: 0;
+  padding: 0.16rem 0.42rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 0.18rem;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.overview-problem-action {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  text-align: right;
+}
+
+.overview-problem-action button {
+  min-height: auto;
+  padding: 0.25rem 0;
+  color: var(--accent-dark);
+  border: 0;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.overview-problem-action button:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.overview-closing-actions {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.overview-closing-actions button {
+  padding: 0;
+  color: var(--ink);
+  border: 0;
+  background: transparent;
+  font-size: 0.86rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.overview-closing-actions button:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.overview-corpus-context {
+  margin: 1.4rem 0 0;
+  color: var(--ink-faint);
+  font-family: var(--technical);
+  font-size: 0.68rem;
+}
+
+/* Records keeps its current search/select/detail workflow while giving the
+   scanning surface a lighter, intentional treatment. */
+.records-explorer {
+  max-width: 72rem;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.records-table > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.records-controls {
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.3rem;
+  background: var(--surface-muted);
+}
+
+.records-controls label {
+  margin-bottom: 0.28rem;
+  color: var(--ink-soft);
+  font-size: 0.73rem;
+  font-weight: 650;
+}
+
+.records-controls input,
+.records-controls select {
+  box-sizing: border-box;
+  min-height: 38px;
+  padding: 0.4rem 0.55rem;
+  color: var(--ink);
+  border: 1px solid #beb7aa;
+  border-radius: 0.22rem;
+  background: var(--surface);
+}
+
+.records-controls input {
+  min-width: min(22rem, calc(100vw - 6rem));
+}
+
+.records-controls input:focus,
+.records-controls select:focus {
+  border-color: var(--accent);
+}
+
+.records-result-count {
+  flex: 1 0 100%;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.records-sort-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0 0.45rem;
+  color: var(--ink-faint);
+  font-size: 0.72rem;
+}
+
+.records-sort-controls > span {
+  margin-right: 0.2rem;
+}
+
+.records-sort-controls button {
+  min-height: 28px;
+  padding: 0.18rem 0.42rem;
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.records-sort-controls button:hover,
+.records-sort-controls button[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: var(--line);
+  background: var(--surface-muted);
+}
+
+.desktop-records-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.desktop-record-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  min-height: 54px;
+  padding: 0.62rem 0.55rem;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid var(--line-subtle);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.desktop-record-row:hover {
+  background: var(--surface);
+}
+
+.desktop-record-row[aria-pressed="true"] {
+  background: #f0f5f3;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.desktop-record-type {
+  flex: 0 0 3.6rem;
+  color: var(--ink-soft);
+  font-family: var(--technical);
+  font-size: 0.68rem;
+}
+
+.desktop-record-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.desktop-record-label {
+  display: block;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.desktop-record-id {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--ink-faint);
+  font-family: var(--technical);
+  font-size: 0.68rem;
+}
+
+.desktop-record-chevron {
+  flex: 0 0 auto;
+  color: var(--ink-faint);
+  font-size: 1.2rem;
+}
+
+.records-table table {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.records-table th,
+.records-table td {
+  padding: 0.6rem 0.7rem;
+  border: 0;
+  border-bottom: 1px solid var(--line-subtle);
+  vertical-align: top;
+}
+
+.records-table th {
+  color: var(--ink-soft);
+  background: var(--surface-muted);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.records-table th button,
+.records-table td button {
+  color: inherit;
+}
+
+.records-table tbody td:nth-child(1),
+.records-table tbody td:nth-child(2),
+.records-table tbody td:nth-child(4) {
+  color: var(--ink-faint);
+  font-family: var(--technical);
+  font-size: 0.72rem;
+}
+
+.records-table tbody td:nth-child(3) {
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+.records-table tbody tr:hover {
+  background: var(--surface);
+}
+
+.records-table tr[aria-selected="true"] {
+  outline-color: var(--accent);
+  background: #f0f5f3;
+}
+
+.records-pagination {
+  justify-content: flex-start;
+  margin-top: 0.85rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.records-pagination button {
+  min-height: 36px;
+  padding: 0.35rem 0.7rem;
+  color: var(--ink);
+  border: 1px solid #beb7aa;
+  border-radius: 0.22rem;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.records-pagination button:disabled {
+  color: var(--ink-faint);
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.record-detail-panel {
+  border-color: var(--line);
+  border-radius: 0.3rem;
+  background: var(--surface);
+}
+
+.narrow-records-list {
+  border-top-color: var(--line);
+}
+
+.narrow-record-row {
+  gap: 0.625rem;
+  min-height: 44px;
+  padding: 0.8rem 0;
+  border-bottom-color: var(--line-subtle);
+}
+
+.narrow-record-row:hover {
+  background: var(--surface);
+}
+
+.narrow-record-row[aria-pressed="true"] {
+  background: #f0f5f3;
+  font-weight: normal;
+}
+
+.narrow-record-type {
+  padding: 0.125rem 0.32rem;
+  color: var(--ink-soft);
+  border-color: var(--line);
+  background: var(--surface-muted);
+  font-size: 0.625rem;
+}
+
+.narrow-record-label {
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.narrow-record-id {
+  color: var(--ink-faint);
+  font-size: 0.6875rem;
+  margin-top: 0.1875rem;
+}
+
+.narrow-record-chevron {
+  color: var(--ink-faint);
+  font-size: 1.2rem;
+}
+
+:focus-visible {
+  outline-color: var(--accent);
+}
+
+@media (max-width: 767px) {
+  main.explorer-shell {
+    padding: 0 1rem 2rem;
+  }
+
+  .explorer-chrome {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 -1rem;
+    padding: 0;
+  }
+
+  .explorer-chrome > h1 {
+    min-height: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8125rem;
+  }
+
+  .explorer-subtitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .explorer-navigation {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .explorer-navigation button {
+    flex: 1 1 0;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .explorer-navigation button[aria-current="page"]::after {
+    right: 0.35rem;
+    left: 0.35rem;
+  }
+
+  .reading-guide {
+    margin-top: -0.5rem;
+    font-size: 0.76rem;
+  }
+
+  .public-overview {
+    padding-top: 0.8rem;
+  }
+
+  .public-overview > h2 {
+    font-size: 1.65rem;
+  }
+
+  .overview-introduction {
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .overview-supporting-copy,
+  .overview-desktop-copy {
+    display: none;
+  }
+
+  .overview-mobile-copy {
+    display: inline;
+  }
+
+  .overview-independence {
+    display: block;
+    font-size: 0.74rem;
+  }
+
+  .overview-primary-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin: 1rem 0;
+  }
+
+  .overview-concepts {
+    display: none;
+  }
+
+  .overview-trust {
+    display: none;
+  }
+
+  .overview-status-explanation {
+    margin-bottom: 1.25rem;
+  }
+
+  .overview-status-explanation summary {
+    font-size: 0.72rem;
+  }
+
+  .overview-status-explanation p.overview-mobile-copy {
+    display: block;
+    margin: 0.55rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .overview-problems-heading {
+    gap: 0.45rem;
+  }
+
+  .overview-problems-heading p {
+    font-size: 0.69rem;
+  }
+
+  .overview-problem-list {
+    gap: 0.45rem;
+  }
+
+  .overview-problem-list li {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .overview-problem-list h4 {
+    font-size: 0.94rem;
+  }
+
+  .overview-problem-action {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .overview-statuses {
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .overview-problem-action button {
+    min-height: 36px;
+  }
+
+  .records-explorer {
+    gap: 1rem;
+  }
+
+  .records-controls {
+    gap: 0.625rem;
+    padding: 0.875rem 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .records-controls input {
+    min-width: 0;
+  }
+
+  .records-controls input,
+  .records-controls select,
+  .records-pagination button {
+    min-height: 42px;
+  }
+
+  .records-result-count {
+    padding-top: 0.125rem;
+    font-size: 0.75rem;
+  }
+
+  .records-sort-controls {
+    margin-bottom: 0.3rem;
+  }
+
+  .records-pagination {
+    justify-content: space-between;
+    gap: 0.4rem;
+  }
+
+  .records-pagination span {
+    text-align: center;
+  }
 }
