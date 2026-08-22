@@ -455,14 +455,6 @@ tr[aria-selected="true"] {
   margin-bottom: 0.5rem;
 }
 
-article[aria-labelledby="problem-heading"] section {
-  margin-bottom: 1.25rem;
-}
-
-article[aria-labelledby="problem-heading"] ul ul {
-  margin-top: 0.25rem;
-}
-
 code {
   background: #f2f2f2;
   font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, monospace;
@@ -522,94 +514,21 @@ code {
   margin: 0.75rem 0;
 }
 
-/* PRB-scoped context switcher (REDUX-008) — mirrors the existing top-level
-   nav's aria-current styling convention rather than inventing a new one. */
-.prb-context-switcher {
-  display: inline-flex;
-  gap: 0;
-  border: 1px solid #ccc;
-  margin: 0.5rem 0 1rem;
-}
-
-.prb-context-switcher button {
-  background: none;
-  border: none;
-  border-right: 1px solid #ccc;
-  font: inherit;
-  padding: 0.35rem 0.75rem;
-  cursor: pointer;
-}
-
-.prb-context-switcher button:last-child {
-  border-right: none;
-}
-
-.prb-context-switcher button[aria-current="page"] {
-  background: #111;
-  color: #fff;
-  font-weight: bold;
-  cursor: default;
-}
-
-/* Point-of-use Problem help (REDUX-007) — collapsed by default, native
-   disclosure; distinguished from the technical-disclosure/reading-guide
-   treatment only by placement (top of Problem View), not by a different
-   interaction model. */
-.problem-help {
-  border: 1px solid #ccc;
-  background: #f7f6f3;
-  padding: 0.5rem 0.75rem;
-  margin: 0 0 1rem;
-}
-
-.problem-help summary {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.problem-help-content {
-  margin-top: 0.5rem;
-}
-
-.problem-help-content p {
-  margin: 0 0 0.5rem;
-}
-
-/* "Estado atual" canonical-value-plus-gloss chips (REDUX-007/008 §8) —
-   identical treatment for every field; the gloss label is a plain-language
-   accompaniment, the canonical value in parentheses/monospace never omitted. */
-.status-chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0 0 0.75rem;
-}
-
-.status-chip {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.3rem 0.55rem;
-  font-size: 0.9rem;
-  background: #fff;
-}
-
-.status-chip code {
-  font-size: 0.8rem;
-  color: #555;
-}
-
 /* Contribution chips (REDUX-002) — every canonical value, including
    CONTRADICTS, shares identical border weight/padding/background/font size.
-   Never give any one value structural or colour emphasis over another. */
+   Never give any one value structural or colour emphasis over another.
+   V3: restated on V1 tokens/IBM Plex Mono per Prototype B's chip anatomy. */
 .contribution-chip {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #111;
-  border-radius: 3px;
-  padding: 0.15rem 0.4rem;
-  font-size: 0.8rem;
-  background: #fff;
-  margin-right: 0.3rem;
+  border: 1px solid var(--line-emphasis);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  color: var(--ink);
+  background: var(--surface);
+  font-family: var(--recipe-technical-id-family);
+  font-size: 11px;
+  margin-right: var(--space-2);
 }
 
 .contribution-chip code {
@@ -622,51 +541,54 @@ code {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.4rem;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 .evidence-item-contributions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: var(--space-1);
 }
 
 /* Contribution occurrence summary (REDUX-002) — a tally of already-explicit
    canonical values, explicitly labelled as occurrences, never a score. */
 .contribution-summary {
-  border: 1px solid #ccc;
-  background: #f7f6f3;
-  padding: 0.5rem 0.75rem;
-  margin: 0 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+  padding: var(--space-3) var(--space-4);
+  margin: 0 0 var(--space-4);
 }
 
 .contribution-summary-caption {
-  font-weight: bold;
-  margin: 0 0 0.2rem;
+  color: var(--ink-faint);
+  font-weight: 600;
+  font-size: 11px;
+  margin: 0 0 2px;
 }
 
 .contribution-summary-counts {
-  color: #555;
-  font-size: 0.85rem;
-  margin: 0 0 0.5rem;
+  color: var(--ink-faintest);
+  font-size: 11px;
+  margin: 0 0 var(--space-2);
 }
 
 .contribution-summary-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .contribution-summary-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: var(--space-1);
 }
 
 .contribution-count {
-  color: #555;
-  font-size: 0.8rem;
+  color: var(--ink-faintest);
+  font-size: 11px;
 }
 
 /* V1 visual foundation ----------------------------------------------------
@@ -1970,6 +1892,293 @@ main.explorer-shell {
   }
 
   .detail-provenance-grid dt {
+    margin-top: var(--space-2);
+  }
+}
+
+/* V3: Problem View (design-system.md §1/§2/§3, Prototype B) — a single-
+   column editorial reading composition, 800px content width, sharing the
+   Breadcrumb pattern with Record Detail and the ContextTabs pattern
+   (Detalhe/Problema/Grafo) unique to this Problem-scoped surface. Desktop
+   sizing lives here; compact overrides are in the 767px media query below.
+   No shadows — separation comes from 1px borders and surface steps only. */
+.problem-view {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: var(--space-9);
+}
+
+.context-tabs {
+  display: inline-flex;
+  gap: 0;
+  margin: var(--space-3) 0 var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.context-tabs button {
+  padding: 7px 14px;
+  color: var(--ink-faint);
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: none;
+  font-family: var(--ui);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.context-tabs button:last-child {
+  border-right: 0;
+}
+
+.context-tabs button:hover {
+  color: var(--ink);
+  background: var(--surface-muted);
+}
+
+.context-tabs button[aria-current="page"] {
+  color: var(--canvas);
+  background: var(--ink);
+  font-weight: 600;
+  cursor: default;
+}
+
+/* Point-of-use Problem help (REDUX-007) — collapsed by default, native
+   disclosure; distinguished from the technical-disclosure/reading-guide
+   treatment only by placement (top of Problem View), not by a different
+   interaction model. */
+.problem-help {
+  margin: 0 0 var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+  padding: var(--space-3) var(--space-4);
+}
+
+.problem-help summary {
+  color: var(--ink-soft);
+  font-family: var(--ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.problem-help-content {
+  margin-top: var(--space-3);
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.problem-help-content p {
+  margin: 0 0 var(--space-2);
+}
+
+.problem-identity {
+  border: 1px solid var(--line-emphasis);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin: 0 0 var(--space-6);
+}
+
+.problem-identity-id {
+  margin-bottom: var(--space-2);
+  color: var(--ink-faintest);
+  font-family: var(--recipe-technical-id-family);
+  font-size: var(--recipe-technical-id-size);
+}
+
+.problem-identity-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--recipe-editorial-h1-family);
+  font-size: var(--recipe-editorial-h1-size);
+  font-weight: var(--recipe-editorial-h1-weight);
+  line-height: var(--recipe-editorial-h1-line-height);
+}
+
+.problem-file-path {
+  margin: 0 0 var(--space-8);
+  color: var(--ink-faintest);
+  font-family: var(--recipe-technical-meta-family);
+  font-size: 11px;
+}
+
+.problem-file-path code {
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.problem-section {
+  margin-bottom: var(--space-8);
+}
+
+.problem-section .detail-panel-label {
+  margin-bottom: var(--space-3);
+}
+
+.problem-statement {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--recipe-editorial-body-family);
+  font-size: var(--recipe-editorial-body-size);
+  font-weight: var(--recipe-editorial-body-weight);
+  line-height: var(--recipe-editorial-body-line-height);
+}
+
+.assessment-list,
+.evidence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.assessment-card,
+.evidence-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.assessment-card > button {
+  padding: 0;
+  color: var(--ink-faintest);
+  border: 0;
+  background: none;
+  font-family: var(--recipe-technical-id-family);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.assessment-card > button:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.assessment-fields {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+  font-size: 13px;
+}
+
+.assessment-fields dt {
+  color: var(--ink-faintest);
+  font-family: var(--recipe-technical-field-family);
+}
+
+.assessment-fields dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+.evidence-item-header > a,
+.evidence-item-header > button {
+  font-family: var(--recipe-technical-id-family);
+  font-size: 12px;
+}
+
+.evidence-observation,
+.evidence-provenance {
+  margin: 0 0 var(--space-2);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.evidence-provenance {
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
+.evidence-sources {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-5);
+  font-size: 13px;
+}
+
+.unknowns-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.unknowns-card:last-child {
+  margin-bottom: 0;
+}
+
+.unknowns-card h4 {
+  margin: 0 0 var(--space-2);
+  color: var(--ink-faint);
+  font-family: var(--recipe-technical-id-family);
+  font-size: var(--recipe-technical-id-size);
+}
+
+/* "Estado atual" canonical-value-plus-gloss chips (REDUX-007/008 §8) —
+   identical treatment for every field; the gloss label is a plain-language
+   accompaniment, the canonical value in parentheses/monospace never omitted. */
+.status-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+}
+
+.status-chip {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 6px 11px;
+  color: var(--ink);
+  background: var(--surface);
+  font-family: var(--ui);
+  font-size: 13px;
+}
+
+.status-chip code {
+  color: var(--ink-faintest);
+  font-family: var(--recipe-technical-id-family);
+  font-size: 11px;
+}
+
+@media (max-width: 767px) {
+  .problem-view {
+    max-width: 100%;
+  }
+
+  .context-tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .context-tabs button {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .problem-identity {
+    padding: var(--space-4);
+  }
+
+  .problem-identity-title {
+    font-size: var(--recipe-editorial-h1-size-compact);
+  }
+
+  .assessment-fields {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-1);
+  }
+
+  .assessment-fields dt {
     margin-top: var(--space-2);
   }
 }

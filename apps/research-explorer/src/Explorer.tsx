@@ -92,7 +92,7 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
           dataProvider={dataProvider}
           problemId={url.state.selectedId}
           onOpenGeneric={(id) => url.setViewAndSelection("records", id)}
-          onBackToRecords={() => url.setView("records")}
+          onBackToRecords={() => url.clearSelectionAndSetView("records")}
           onViewInGraph={(id) => url.setViewAndSelection("graph", id)}
         />
       )}
