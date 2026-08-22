@@ -4,6 +4,7 @@ import { useRecordDetail } from "./useRecordDetail";
 import { RecordFieldTree } from "./RecordFieldTree";
 import { describeType, formatTypedId } from "../typeGlossary";
 import { findMeaningField } from "./meaningField";
+import { ContributionChip } from "./ContributionChip";
 import { publicEnumLabel, publicFieldCaption, formatPublicCount } from "../presentation";
 
 const ERROR_TITLES: Record<string, string> = {
@@ -90,101 +91,191 @@ function findRelatedProblemId(detail: RecordDetail, lookup: Map<string, RecordSu
   return null;
 }
 
+/**
+ * The record's own `analysis.contribution` value(s), if this record type
+ * carries them (currently EVD- only) — rendered as the same uniform
+ * ContributionChip used in Problem View (no exceptional emphasis for any
+ * value, including CONTRADICTS), plus its related-Problem link, matching
+ * Prototype A's meaning-zone contribution row.
+ */
+function contributionValues(record: Record<string, unknown>): string[] {
+  const analysis = record.analysis;
+  if (analysis === null || typeof analysis !== "object" || Array.isArray(analysis)) return [];
+  const contribution = (analysis as Record<string, unknown>).contribution;
+  if (typeof contribution === "string") return [contribution];
+  if (Array.isArray(contribution)) return contribution.filter((value): value is string => typeof value === "string");
+  return [];
+}
+
+/**
+ * Approved Prototype A only pairs a relationship sentence with CONTRADICTS
+ * ("desafia a leitura de [Problema] PRB-0006" — its own inline title attribute
+ * spells out this is specifically a contradiction/contest of the Problem's
+ * current reading). No neutral wording for any other canonical contribution
+ * value appears in the approved reference or the prototype rationale, so
+ * none is invented here: every other value renders its ContributionChip with
+ * no accompanying sentence, per the semantic-constraint rule (do not invent
+ * missing canonical prose; the chip + relations elsewhere already surface
+ * the relationship neutrally).
+ */
+function contributionTargetSentence(value: string, relatedProblemId: string): string | null {
+  return value === "CONTRADICTS" ? `desafia a leitura de ${formatTypedId("PRB-", relatedProblemId)}` : null;
+}
+
+function Breadcrumb({ detail, onBackToRecords }: { detail: RecordDetail; onBackToRecords: () => void }) {
+  return (
+    <nav aria-label="Localização" className="detail-breadcrumb">
+      <button type="button" onClick={onBackToRecords}>
+        Registos
+      </button>
+      <span aria-hidden="true" className="detail-breadcrumb-separator">
+        ›
+      </span>
+      <span className="detail-breadcrumb-current">{detail.id}</span>
+    </nav>
+  );
+}
+
+/** TechnicalID / TypeBadge row above the meaning sentence. */
+function TypeBadge({ detail }: { detail: RecordDetail }) {
+  const typeInfo = describeType(detail.type);
+  const kind = typeof detail.record.type === "string" ? detail.record.type : null;
+  return (
+    <div className="detail-type-row">
+      <span className="detail-type-badge">
+        <code>{detail.type}</code> {typeInfo.label}
+      </span>
+      {kind && <span className="detail-type-kind">{kind}</span>}
+    </div>
+  );
+}
+
+function ProvenancePanel({ detail }: { detail: RecordDetail }) {
+  return (
+    <section aria-label="Proveniência" className="record-provenance">
+      <h3 className="detail-panel-label">Proveniência</h3>
+      <dl className="detail-provenance-grid">
+        <dt>ID</dt>
+        <dd className="detail-technical-field">{detail.id}</dd>
+        <dt>Ficheiro</dt>
+        <dd className="detail-technical-field">{detail.file}</dd>
+        <dt>Relações</dt>
+        <dd>
+          referenciado por {formatPublicCount(detail.incomingEdges.length)} registo(s) · referencia {formatPublicCount(detail.outgoingEdges.length)} registo(s) —{" "}
+          <a href="#relacoes">ver caminhos exatos ↓</a>
+        </dd>
+      </dl>
+    </section>
+  );
+}
+
+/** Grouped technical disclosure (Identificação/Campos), closed by default — the exhaustive canonical field tree stays a single generic renderer, only the summary/label changes to match Prototype A's wording. */
+function TechnicalDisclosure({ detail }: { detail: RecordDetail }) {
+  return (
+    <details className="technical-disclosure">
+      <summary>Inspeção técnica completa — todos os campos canónicos</summary>
+      <RecordFieldTree data={detail.record} />
+    </details>
+  );
+}
+
 function RecordDetailContent({
   detail,
   lookup,
   onSelect,
+  onBackToRecords,
   onViewAsProblem,
   onViewInGraph,
 }: {
   detail: RecordDetail;
   lookup: Map<string, RecordSummary>;
   onSelect: (id: string) => void;
+  onBackToRecords: () => void;
   onViewAsProblem: (id: string) => void;
   onViewInGraph: (id: string) => void;
 }) {
   const meaning = findMeaningField(detail.record);
   const typeInfo = describeType(detail.type);
   const relatedProblemId = findRelatedProblemId(detail, lookup);
+  const contributions = contributionValues(detail.record);
   // Already-explicit, schema-driven classification/status fields (RE-01's
   // `buildSummaryFields()` — every enum-constrained field the record's own
   // schema declares), reused here rather than singling out any one
-  // record-type-specific field (e.g. `analysis.contribution`) for special
-  // presentation.
-  const roleFields = Object.entries(lookup.get(detail.id)?.summaryFields ?? {});
+  // record-type-specific field for special presentation. `analysis.contribution`
+  // is excluded: it already has its own authoritative rendering via
+  // ContributionChip above, so including it here would render it twice.
+  const roleFields = Object.entries(lookup.get(detail.id)?.summaryFields ?? {}).filter(([field]) => field !== "analysis.contribution");
 
   return (
-    <>
-      <section aria-label="Significado" className="record-meaning-zone">
-        <p className="record-type-context">
-          <code>{detail.type}</code> {typeInfo.label}
-        </p>
-        {meaning ? (
-          <p className="record-meaning">{meaning.value}</p>
-        ) : (
-          <p className="record-meaning field-empty">{detail.id} — sem campo de significado canónico identificado para este tipo de registo.</p>
-        )}
-        {roleFields.length > 0 && (
-          <p className="record-role-fields">
-            {roleFields.map(([field, value]) => (
-              <span key={field} className="record-role-chip">
-                {publicFieldCaption(field)}: {publicEnumLabel(field, String(value))}
-              </span>
-            ))}
-          </p>
-        )}
-      </section>
+    <div className="record-detail-layout">
+      <Breadcrumb detail={detail} onBackToRecords={onBackToRecords} />
 
-      <section aria-label="Proveniência" className="record-provenance">
-        <h3>Proveniência</h3>
-        <dl>
-          <dt>ID</dt>
-          <dd>{detail.id}</dd>
-          <dt>Ficheiro</dt>
-          <dd>
-            <code>{detail.file}</code>
-          </dd>
-          <dt>Relações</dt>
-          <dd>
-            referenciado por {formatPublicCount(detail.incomingEdges.length)} registo(s) · referencia {formatPublicCount(detail.outgoingEdges.length)} registo(s) —{" "}
-            <a href="#relacoes">ver caminhos exatos ↓</a>
-          </dd>
-        </dl>
-        <p>
-          {detail.type === "PRB-" && (
-            <>
+      <div className="record-detail-columns">
+        <div className="record-detail-main">
+          <section aria-label="Significado" className="record-meaning-zone">
+            <TypeBadge detail={detail} />
+            {meaning ? (
+              <p className="record-meaning">{meaning.value}</p>
+            ) : (
+              <p className="record-meaning field-empty">{detail.id} — sem campo de significado canónico identificado para este tipo de registo.</p>
+            )}
+            {(contributions.length > 0 || roleFields.length > 0) && (
+              <div className="record-role-fields">
+                {contributions.map((value, index) => {
+                  const sentence = relatedProblemId ? contributionTargetSentence(value, relatedProblemId) : null;
+                  return (
+                    <span key={`${value}-${index}`}>
+                      <ContributionChip value={value} />
+                      {sentence && <span className="detail-contribution-target"> {sentence}</span>}
+                    </span>
+                  );
+                })}
+                {roleFields.map(([field, value]) => (
+                  <span key={field} className="record-role-chip">
+                    {publicFieldCaption(field)}: {publicEnumLabel(field, String(value))}
+                  </span>
+                ))}
+              </div>
+            )}
+          </section>
+
+          <ProvenancePanel detail={detail} />
+
+          <section aria-label="Campos do registo" className="record-detail-technical">
+            <TechnicalDisclosure detail={detail} />
+          </section>
+
+          <section aria-label="Relações" id="relacoes" className="record-detail-relations">
+            <h3 className="detail-panel-label">Relações — caminho de referência exato</h3>
+            <RelationshipList title="Entradas" edges={detail.incomingEdges} lookup={lookup} direction="incoming" onSelect={onSelect} />
+            <RelationshipList title="Saídas" edges={detail.outgoingEdges} lookup={lookup} direction="outgoing" onSelect={onSelect} />
+          </section>
+        </div>
+
+        <aside className="record-detail-rail" aria-label="Mais ações">
+          <div className="detail-rail-type-note">
+            <code>{detail.type}</code>
+            <p>{typeInfo.description}</p>
+          </div>
+          <div className="detail-rail-actions">
+            {detail.type === "PRB-" && (
               <button type="button" onClick={() => onViewAsProblem(detail.id)}>
                 Ver como Problema (contexto completo)
-              </button>{" "}
-            </>
-          )}
-          {relatedProblemId && (
-            <>
+              </button>
+            )}
+            {relatedProblemId && (
               <button type="button" onClick={() => onViewAsProblem(relatedProblemId)}>
                 Ver como Problema ({relatedProblemId})
-              </button>{" "}
-            </>
-          )}
-          <button type="button" onClick={() => onViewInGraph(detail.id)}>
-            Ver no Grafo
-          </button>
-        </p>
-      </section>
-
-      <section aria-label="Campos do registo">
-        <h3>Campos</h3>
-        <details className="technical-disclosure">
-          <summary>Inspeção técnica completa — todos os campos canónicos</summary>
-          <RecordFieldTree data={detail.record} />
-        </details>
-      </section>
-
-      <section aria-label="Relações" id="relacoes">
-        <h3>Relações</h3>
-        <RelationshipList title="Entradas" edges={detail.incomingEdges} lookup={lookup} direction="incoming" onSelect={onSelect} />
-        <RelationshipList title="Saídas" edges={detail.outgoingEdges} lookup={lookup} direction="outgoing" onSelect={onSelect} />
-      </section>
-    </>
+              </button>
+            )}
+            <button type="button" onClick={() => onViewInGraph(detail.id)}>
+              Ver no Grafo
+            </button>
+            <span className="detail-rail-file">{detail.file}</span>
+          </div>
+        </aside>
+      </div>
+    </div>
   );
 }
 
@@ -193,6 +284,7 @@ interface RecordDetailPanelProps {
   lookup: Map<string, RecordSummary>;
   selectedId: string | null;
   onSelect: (id: string) => void;
+  onBackToRecords: () => void;
   onViewAsProblem: (id: string) => void;
   onViewInGraph: (id: string) => void;
 }
@@ -201,7 +293,7 @@ interface RecordDetailPanelProps {
  * A failure loading one record's detail is isolated here (useRecordDetail's
  * own state) and never affects the already-loaded Records table/index.
  */
-export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, onViewAsProblem, onViewInGraph }: RecordDetailPanelProps) {
+export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, onBackToRecords, onViewAsProblem, onViewInGraph }: RecordDetailPanelProps) {
   const state = useRecordDetail(dataProvider, selectedId);
   const contentRef = useRef<HTMLDivElement>(null);
   const readyId = state.status === "ready" ? state.detail.id : null;
@@ -219,7 +311,9 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, 
 
   return (
     <section aria-labelledby="detail-heading" className="record-detail-panel">
-      <h2 id="detail-heading">Detalhes</h2>
+      <h2 id="detail-heading" className="record-detail-heading">
+        Detalhes
+      </h2>
 
       {selectedId === null && <p>Nenhum registo selecionado.</p>}
 
@@ -230,13 +324,20 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, 
       )}
 
       {state.status === "error" && (
-        <div role="alert">
-          <h3>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o registo"}</h3>
-          <p>{state.error.message}</p>
-          <button type="button" onClick={state.retry}>
-            Tentar novamente
-          </button>
-        </div>
+        <>
+          <nav aria-label="Localização" className="detail-breadcrumb">
+            <button type="button" onClick={onBackToRecords}>
+              Registos
+            </button>
+          </nav>
+          <div role="alert">
+            <h3>{ERROR_TITLES[state.error.kind] ?? "Não foi possível carregar o registo"}</h3>
+            <p>{state.error.message}</p>
+            <button type="button" onClick={state.retry}>
+              Tentar novamente
+            </button>
+          </div>
+        </>
       )}
 
       {state.status === "ready" && (
@@ -245,6 +346,7 @@ export function RecordDetailPanel({ dataProvider, lookup, selectedId, onSelect, 
             detail={state.detail}
             lookup={lookup}
             onSelect={onSelect}
+            onBackToRecords={onBackToRecords}
             onViewAsProblem={onViewAsProblem}
             onViewInGraph={onViewInGraph}
           />

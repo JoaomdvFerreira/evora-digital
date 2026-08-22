@@ -1,5 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { RecordDetailPanel } from "./RecordDetailPanel";
 import type { DataProvider, RecordDetail, RecordSummary } from "../dataProvider/types";
 
@@ -16,7 +17,11 @@ const EVD_127_SUMMARY: RecordSummary = {
   type: "EVD-",
   label: "SASUE considera o processo atual de candidatura a alojamento em residência totalmente op...",
   file: "research/evidence/EVD-000127.yaml",
-  summaryFields: { strength: "primary-authoritative", verification: "REPORTED" },
+  // "analysis.contribution" is included here, matching real read-model.js
+  // output (buildSummaryFields() includes every schema-declared enum field,
+  // and analysis.contribution is one) — this is what exposed the duplicate
+  // contribution rendering the tests below guard against.
+  summaryFields: { strength: "primary-authoritative", verification: "REPORTED", "analysis.contribution": "CONTRADICTS" },
 };
 
 const EVD_127_DETAIL: RecordDetail = {
@@ -28,6 +33,30 @@ const EVD_127_DETAIL: RecordDetail = {
     type: "stakeholder",
     observation: { summary: "SASUE considera o processo atual de candidatura a alojamento em residência totalmente operacional." },
     analysis: { contribution: "CONTRADICTS", related_problems: ["PRB-0006"] },
+    personal_data: { present: false },
+  },
+  outgoingEdges: [{ field: "analysis.related_problems", ordinal: 0, to: "PRB-0006" }],
+  incomingEdges: [],
+};
+
+const EVD_128_SUMMARY: RecordSummary = {
+  id: "EVD-000128",
+  type: "EVD-",
+  label: "Serviço municipal confirma o horário de atendimento presencial.",
+  file: "research/evidence/EVD-000128.yaml",
+  summaryFields: { "analysis.contribution": "CONFIRMS" },
+};
+
+/** A non-contradictory contribution (CONFIRMS) with the same related-Problem shape as EVD-000127, to prove no contradiction-specific sentence leaks onto other canonical values. */
+const EVD_128_DETAIL: RecordDetail = {
+  id: "EVD-000128",
+  type: "EVD-",
+  file: "research/evidence/EVD-000128.yaml",
+  record: {
+    evidence_id: "EVD-000128",
+    type: "institutional",
+    observation: { summary: "Serviço municipal confirma o horário de atendimento presencial." },
+    analysis: { contribution: "CONFIRMS", related_problems: ["PRB-0006"] },
     personal_data: { present: false },
   },
   outgoingEdges: [{ field: "analysis.related_problems", ordinal: 0, to: "PRB-0006" }],
@@ -102,6 +131,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -135,6 +165,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -153,6 +184,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -175,6 +207,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -192,6 +225,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -213,6 +247,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -229,6 +264,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -247,6 +283,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(WID_0001_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="WID-0001"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -271,6 +308,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(WID_0001_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="WID-0001"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -291,6 +329,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(ASM_0001_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="ASM-0001"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -307,6 +346,7 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
         lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
         selectedId="EVD-000127"
         onSelect={noop}
+        onBackToRecords={noop}
         onViewAsProblem={noop}
         onViewInGraph={noop}
       />
@@ -314,5 +354,109 @@ describe("RecordDetailPanel — meaning-first hierarchy (REDUX-001/003)", () => 
 
     const content = await screen.findByLabelText("Detalhe de EVD-000127");
     expect(document.activeElement).toBe(content);
+  });
+
+  it("renders a breadcrumb back to Registos and invokes onBackToRecords when it is activated", async () => {
+    const user = userEvent.setup();
+    const onBackToRecords = vi.fn();
+    render(
+      <RecordDetailPanel
+        dataProvider={fakeProvider({ "EVD-000127": EVD_127_DETAIL })}
+        lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
+        selectedId="EVD-000127"
+        onSelect={noop}
+        onBackToRecords={onBackToRecords}
+        onViewAsProblem={noop}
+        onViewInGraph={noop}
+      />
+    );
+
+    const breadcrumb = await screen.findByLabelText("Localização");
+    await within(breadcrumb).findByText("EVD-000127");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
+    expect(onBackToRecords).toHaveBeenCalledTimes(1);
+  });
+
+  it("pairs CONTRADICTS with its contradiction-specific relationship sentence (approved Prototype A wording)", async () => {
+    render(
+      <RecordDetailPanel
+        dataProvider={fakeProvider({ "EVD-000127": EVD_127_DETAIL })}
+        lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
+        selectedId="EVD-000127"
+        onSelect={noop}
+        onBackToRecords={noop}
+        onViewAsProblem={noop}
+        onViewInGraph={noop}
+      />
+    );
+
+    const panel = (await screen.findByText("Detalhes")).closest("section") as HTMLElement;
+    const meaningZone = await within(panel).findByLabelText("Significado");
+    expect(within(meaningZone).getByText(/desafia a leitura de/)).toBeTruthy();
+  });
+
+  it("does not attach the contradiction-specific sentence to a non-contradictory contribution value (CONFIRMS)", async () => {
+    render(
+      <RecordDetailPanel
+        dataProvider={fakeProvider({ "EVD-000128": EVD_128_DETAIL })}
+        lookup={buildLookup(EVD_128_SUMMARY, PRB_0006_SUMMARY)}
+        selectedId="EVD-000128"
+        onSelect={noop}
+        onBackToRecords={noop}
+        onViewAsProblem={noop}
+        onViewInGraph={noop}
+      />
+    );
+
+    const panel = (await screen.findByText("Detalhes")).closest("section") as HTMLElement;
+    const meaningZone = await within(panel).findByLabelText("Significado");
+    // The canonical chip/label still renders — only the invented
+    // contradiction-specific narrative is withheld.
+    expect(within(meaningZone).getByText("Confirma")).toBeTruthy();
+    expect(within(meaningZone).queryByText(/desafia a leitura de/)).toBeNull();
+  });
+
+  it("renders CONTRADICTS as exactly one contribution representation (chip only, not also via the generic summary fields), and keeps the target sentence", async () => {
+    render(
+      <RecordDetailPanel
+        dataProvider={fakeProvider({ "EVD-000127": EVD_127_DETAIL })}
+        lookup={buildLookup(EVD_127_SUMMARY, PRB_0006_SUMMARY)}
+        selectedId="EVD-000127"
+        onSelect={noop}
+        onBackToRecords={noop}
+        onViewAsProblem={noop}
+        onViewInGraph={noop}
+      />
+    );
+
+    const panel = (await screen.findByText("Detalhes")).closest("section") as HTMLElement;
+    const meaningZone = await within(panel).findByLabelText("Significado");
+    // Exactly one "Contradiz" text node in the meaning zone — the dedicated
+    // ContributionChip — not a second one from the generic summaryFields
+    // (analysis.contribution) rendering.
+    expect(within(meaningZone).getAllByText("Contradiz")).toHaveLength(1);
+    expect(within(meaningZone).getByText(/desafia a leitura de/)).toBeTruthy();
+    // The other schema-driven summary fields (strength, verification) are
+    // untouched by the analysis.contribution exclusion.
+    expect(within(meaningZone).getByText(/Força da evidência/)).toBeTruthy();
+  });
+
+  it("renders CONFIRMS as exactly one contribution representation and no contradiction-specific sentence", async () => {
+    render(
+      <RecordDetailPanel
+        dataProvider={fakeProvider({ "EVD-000128": EVD_128_DETAIL })}
+        lookup={buildLookup(EVD_128_SUMMARY, PRB_0006_SUMMARY)}
+        selectedId="EVD-000128"
+        onSelect={noop}
+        onBackToRecords={noop}
+        onViewAsProblem={noop}
+        onViewInGraph={noop}
+      />
+    );
+
+    const panel = (await screen.findByText("Detalhes")).closest("section") as HTMLElement;
+    const meaningZone = await within(panel).findByLabelText("Significado");
+    expect(within(meaningZone).getAllByText("Confirma")).toHaveLength(1);
+    expect(within(meaningZone).queryByText(/desafia a leitura de/)).toBeNull();
   });
 });

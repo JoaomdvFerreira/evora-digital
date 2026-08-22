@@ -26,6 +26,6 @@ Playwright is a verification gate, not a development loop: don't run it after ev
 
 - `overview/` — captured
 - `records/` — captured
-- `record-detail/` — not yet captured
+- `record-detail/` — captured
 - `problem-view/` — not yet captured
 - `graph/` — not yet captured
