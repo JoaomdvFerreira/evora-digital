@@ -1435,7 +1435,8 @@ main.explorer-shell {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  margin: 0 0 var(--space-6);
+  max-width: 980px;
+  margin: 0 auto var(--space-6);
   font-family: var(--recipe-technical-field-family);
   font-size: 13px;
   color: var(--ink-faint);
@@ -1469,6 +1470,7 @@ main.explorer-shell {
   align-items: flex-start;
   gap: var(--detail-gap);
   max-width: 980px;
+  margin: 0 auto;
 }
 
 .record-detail-main {
