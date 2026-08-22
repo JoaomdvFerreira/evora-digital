@@ -102,6 +102,27 @@ function StatusChip({ field, value }: { field: string; value: string }) {
 }
 
 /**
+ * Problem-scoped breadcrumb ("Localização"): mirrors Record Detail's
+ * Breadcrumb (RecordDetailPanel.tsx) so both record-scoped surfaces share
+ * one navigational pattern (design-system.md §3) — "Registos › PRB-0006".
+ * Replaces the earlier plain "← Voltar aos Registos" button with the same
+ * onBackToRecords action.
+ */
+function ProblemBreadcrumb({ problemId, onBackToRecords }: { problemId: string; onBackToRecords: () => void }) {
+  return (
+    <nav aria-label="Localização" className="detail-breadcrumb">
+      <button type="button" onClick={onBackToRecords}>
+        Registos
+      </button>
+      <span aria-hidden="true" className="detail-breadcrumb-separator">
+        ›
+      </span>
+      <span className="detail-breadcrumb-current">{problemId}</span>
+    </nav>
+  );
+}
+
+/**
  * PRB-scoped orientation switcher (REDUX-008): "where am I, and how do I
  * reach the other views of this same record" — for any entry path,
  * including a direct deep link. Scoped to Problem View only; non-PRB
@@ -110,7 +131,7 @@ function StatusChip({ field, value }: { field: string; value: string }) {
  */
 function PrbContextSwitcher({ problemId, onOpenGeneric, onViewInGraph }: { problemId: string; onOpenGeneric: (id: string) => void; onViewInGraph: (id: string) => void }) {
   return (
-    <nav aria-label={`Navegação de ${problemId}`} className="prb-context-switcher">
+    <nav aria-label={`Navegação de ${problemId}`} className="context-tabs">
       <button type="button" onClick={() => onOpenGeneric(problemId)}>
         Detalhe
       </button>
@@ -255,47 +276,46 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
     .filter((x): x is { assessment: RecordDetail; picked: Record<string, unknown> } => x !== null);
 
   return (
-    <article aria-labelledby="problem-heading">
-      <p>
-        <button type="button" onClick={onBackToRecords}>
-          ← Voltar aos Registos
-        </button>
-      </p>
+    <article aria-labelledby="problem-heading" className="problem-view">
+      <ProblemBreadcrumb problemId={problem.id} onBackToRecords={onBackToRecords} />
 
       <PrbContextSwitcher problemId={problem.id} onOpenGeneric={onOpenGeneric} onViewInGraph={onViewInGraph} />
 
       <ProblemHelpDisclosure record={record} />
 
-      <h2 ref={headingRef} id="problem-heading" tabIndex={-1}>
-        {title}
-      </h2>
-      <p>
-        <code>{problem.id}</code> · <code>{problem.file}</code>
+      <div className="problem-identity">
+        <div className="problem-identity-id">{problem.id}</div>
+        <h2 ref={headingRef} id="problem-heading" tabIndex={-1} className="problem-identity-title">
+          {title}
+        </h2>
+      </div>
+      <p className="problem-file-path">
+        <code>{problem.file}</code>
       </p>
 
-      <section aria-label="Estado atual">
-        <h3>Estado atual</h3>
+      <section aria-label="Estado atual" className="problem-section">
+        <h3 className="detail-panel-label">Estado atual</h3>
         <div className="status-chip-row">
           {PROBLEM_STATE_FIELDS.map((key) => {
             const value = fieldValue(record, key);
             return value === null ? null : <StatusChip key={key} field={key} value={value} />;
           })}
         </div>
-        {fieldValue(record, "problem_statement") && <p>{fieldValue(record, "problem_statement")}</p>}
+        {fieldValue(record, "problem_statement") && <p className="problem-statement">{fieldValue(record, "problem_statement")}</p>}
       </section>
 
-      <section aria-label="Avaliação">
-        <h3>Avaliação</h3>
+      <section aria-label="Avaliação" className="problem-section">
+        <h3 className="detail-panel-label">Avaliação</h3>
         {assessments.length === 0 ? (
           <p>Nenhuma avaliação associada.</p>
         ) : (
-          <ul>
+          <ul className="assessment-list">
             {assessments.map((assessment) => {
               const asmRecord = assessment.record as Record<string, unknown>;
               return (
-                <li key={assessment.id}>
+                <li key={assessment.id} className="assessment-card">
                   <TypedLinkButton detail={assessment} onOpenGeneric={onOpenGeneric} />
-                  <dl>
+                  <dl className="assessment-fields">
                     {ASSESSMENT_SUMMARY_FIELDS.map((key) => {
                       const value = fieldValue(asmRecord, key);
                       return value === null ? null : (
@@ -313,13 +333,13 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
         )}
       </section>
 
-      <section aria-label="Evidência">
-        <h3>Evidência ({formatPublicCount(evidence.length)})</h3>
+      <section aria-label="Evidência" className="problem-section">
+        <h3 className="detail-panel-label">Evidência ({formatPublicCount(evidence.length)})</h3>
         <ContributionOccurrenceSummary evidence={evidence} />
         {evidence.length === 0 ? (
           <p>Nenhuma evidência associada.</p>
         ) : (
-          <ul>
+          <ul className="evidence-list">
             {evidence.map(({ detail, sources }) => {
               const evidenceRecord = detail.record as Record<string, unknown>;
               const analysis = recordValue(evidenceRecord.analysis);
@@ -329,7 +349,7 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
               const provenance = evidenceSourceLabel(evidenceRecord);
 
               return (
-                <li key={detail.id}>
+                <li key={detail.id} className="evidence-card">
                   <div className="evidence-item-header">
                     <TypedLinkButton detail={detail} onOpenGeneric={onOpenGeneric} suffix={fieldValue(evidenceRecord, "type") ? publicEnumLabel("type", fieldValue(evidenceRecord, "type")!) : undefined} />
                     <span className="evidence-item-contributions" aria-label="Contribuição canónica">
@@ -341,17 +361,17 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
                     </span>
                   </div>
                   {observationSummary && (
-                    <p>
+                    <p className="evidence-observation">
                       <strong>Observação:</strong> {observationSummary}
                     </p>
                   )}
                   {(provenance || sources.length > 0) && (
-                    <p>
+                    <p className="evidence-provenance">
                       <strong>Origem:</strong> {provenance ?? "registo de fonte relacionado abaixo"}.
                     </p>
                   )}
                   {sources.length > 0 && (
-                    <ul aria-label={`Registos de fonte relacionados com ${detail.id}`}>
+                    <ul aria-label={`Registos de fonte relacionados com ${detail.id}`} className="evidence-sources">
                       {sources.map((source) => (
                         <li key={source.id}>
                           <TypedLinkButton
@@ -370,13 +390,13 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
         )}
       </section>
 
-      <section aria-label="Incertezas e lacunas">
-        <h3>Incertezas e lacunas conhecidas</h3>
+      <section aria-label="Incertezas e lacunas" className="problem-section">
+        <h3 className="detail-panel-label">Incertezas e lacunas conhecidas</h3>
         {unknownsSections.length === 0 ? (
           <p>Nenhuma registada nas avaliações associadas.</p>
         ) : (
           unknownsSections.map(({ assessment, picked }) => (
-            <div key={assessment.id}>
+            <div key={assessment.id} className="unknowns-card">
               <h4>{formatTypedId(assessment.type, assessment.id)}</h4>
               <AssessmentUnknowns record={picked} />
             </div>
@@ -384,8 +404,8 @@ function ProblemContent({ dataProvider, lookup, problemId, onOpenGeneric, onBack
         )}
       </section>
 
-      <section aria-label="Hipóteses">
-        <h3>Hipóteses</h3>
+      <section aria-label="Hipóteses" className="problem-section">
+        <h3 className="detail-panel-label">Hipóteses</h3>
         {hypotheses.length === 0 ? (
           <p>Nenhuma hipótese associada.</p>
         ) : (

@@ -54,5 +54,12 @@ export function useExplorerUrlState() {
     // EVD-/SRC- generically from the Problem view) — avoids two separate
     // back-stack entries for what the user experiences as one navigation.
     setViewAndSelection: (view: ExplorerView, selectedId: string) => push({ ...state, view, selectedId }),
+    // One combined history entry for "return to the Records list" (Problem
+    // View's Registos breadcrumb) — distinct from RecordsExplorer's own
+    // breadcrumb, which clears selectedId via setSelectedId while already on
+    // view=records. Problem View is never on view=records, so it must clear
+    // the selection and change the view together, or it would land on
+    // Record Detail (a still-selected PRB id) instead of the Records list.
+    clearSelectionAndSetView: (view: ExplorerView) => push({ ...state, view, selectedId: null }),
   };
 }

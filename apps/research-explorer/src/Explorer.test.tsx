@@ -455,23 +455,40 @@ describe("Explorer — Problem view (RE-03)", () => {
     await screen.findByText(/Procure e selecione um registo/);
   });
 
-  it("navigating back to Records from the Problem view preserves search context", async () => {
+  it("Problem View's Registos breadcrumb clears the selected id and returns straight to the Records list, preserving search context", async () => {
     const user = userEvent.setup();
     window.history.replaceState(null, "", "/?q=PRB-0005&view=problem&id=PRB-0005");
     render(<Explorer dataProvider={fakeProvider()} />);
 
-    await user.click(await screen.findByRole("button", { name: "← Voltar aos Registos" }));
-    // V2: navigating to Records with a still-selected id=PRB-0005 opens the
-    // Record Detail composition, not the table — the query is preserved in
-    // the URL (restored to the search input once the breadcrumb clears the
-    // selection and the table itself renders again).
-    expect(window.location.search).toContain("q=PRB-0005");
-    const detailPanel = await getDetailPanel();
-    const breadcrumb = within(detailPanel).getByLabelText("Localização");
-    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
+    // V3: Problem View exposes the same "Localização" breadcrumb pattern as
+    // Record Detail (Registos › PRB-0005), but — unlike a still-selected
+    // Records breadcrumb — Registos here must clear the selection outright:
+    // Problem View is never itself the Records table, so preserving the id
+    // would silently redirect into Record Detail instead of the list.
+    const problemBreadcrumb = await screen.findByLabelText("Localização");
+    await user.click(within(problemBreadcrumb).getByRole("button", { name: "Registos" }));
+
     await screen.findByRole("heading", { name: "Registos" });
+    expect(window.location.search).toContain("view=records");
+    expect(window.location.search).not.toContain("id=PRB-0005");
+    expect(window.location.search).toContain("q=PRB-0005");
     expect((screen.getByLabelText("Pesquisar") as HTMLInputElement).value).toBe("PRB-0005");
     expect(screen.getByRole("button", { name: /PRB-0005/ })).toBeTruthy();
+  });
+
+  it("Problem View's Detalhe ContextTab preserves the current PRB id and opens its Record Detail, not the Records list", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/?view=problem&id=PRB-0005");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    const switcher = await screen.findByRole("navigation", { name: /PRB-0005/ });
+    await user.click(within(switcher).getByRole("button", { name: "Detalhe" }));
+
+    const detailPanel = await getDetailPanel();
+    const breadcrumb = within(detailPanel).getByLabelText("Localização");
+    await within(breadcrumb).findByText("PRB-0005");
+    expect(window.location.search).toContain("view=records");
+    expect(window.location.search).toContain("id=PRB-0005");
   });
 
   it("a Problem-view URL survives reload (bookmark/share)", async () => {
