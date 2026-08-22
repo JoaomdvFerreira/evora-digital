@@ -83,6 +83,7 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
           onTypeFilterChange={url.setTypeFilter}
           onViewAsProblem={(id) => url.setViewAndSelection("problem", id)}
           onViewInGraph={(id) => url.setViewAndSelection("graph", id)}
+          onBackToRecords={() => url.setSelectedId(null)}
         />
       )}
 

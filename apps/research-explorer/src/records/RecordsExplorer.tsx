@@ -22,13 +22,19 @@ interface RecordsExplorerProps {
   onViewAsProblem: (id: string) => void;
   /** RE-04: switches to the Graph view, focused on the same record. */
   onViewInGraph: (id: string) => void;
+  /** V2: breadcrumb "Registos" link — clears the selection, returning to the table. */
+  onBackToRecords: () => void;
 }
 
 /**
  * The RE-02B/RE-02C primary workflow: Registos (search/select, URL-synced)
  * -> lazy-loaded generic detail -> relationships -> navigation to a related
- * record — all through the DataProvider boundary, split-view (table +
- * persistent detail panel), no modal. Selection/query/type-filter are
+ * record — all through the DataProvider boundary. V2 (Research Explorer
+ * Record Detail): selecting a record is a full-page reading composition
+ * (approved Prototype A), not a persistent table+panel split — the table
+ * and the detail are mutually exclusive for a given `selectedId`, and the
+ * breadcrumb's "Registos" link is the way back, matching Prototype A's
+ * "Registos › EVD-000127" breadcrumb. Selection/query/type-filter are
  * controlled by the caller (useExplorerUrlState) so they are bookmarkable.
  */
 export function RecordsExplorer({
@@ -41,6 +47,7 @@ export function RecordsExplorer({
   onTypeFilterChange,
   onViewAsProblem,
   onViewInGraph,
+  onBackToRecords,
 }: RecordsExplorerProps) {
   const indexState = useRecordIndex(dataProvider);
 
@@ -64,6 +71,20 @@ export function RecordsExplorer({
     );
   }
 
+  if (selectedId !== null) {
+    return (
+      <RecordDetailPanel
+        dataProvider={dataProvider}
+        lookup={indexState.lookup}
+        selectedId={selectedId}
+        onSelect={onSelect}
+        onBackToRecords={onBackToRecords}
+        onViewAsProblem={onViewAsProblem}
+        onViewInGraph={onViewInGraph}
+      />
+    );
+  }
+
   return (
     <div className="records-explorer">
       <RecordsTable
@@ -74,14 +95,6 @@ export function RecordsExplorer({
         onQueryChange={onQueryChange}
         typeFilter={typeFilter}
         onTypeFilterChange={onTypeFilterChange}
-      />
-      <RecordDetailPanel
-        dataProvider={dataProvider}
-        lookup={indexState.lookup}
-        selectedId={selectedId}
-        onSelect={onSelect}
-        onViewAsProblem={onViewAsProblem}
-        onViewInGraph={onViewInGraph}
       />
     </div>
   );

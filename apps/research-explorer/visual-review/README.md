@@ -17,6 +17,7 @@ Canonical precedence (highest first):
 - Ad-hoc screenshots must not be added to the repository root.
 - Capture widths are currently 1280, 360, 767, and 768px.
 - These images support review; they do not replace rendered browser/Playwright inspection when verifying a visual change.
+- Persistent page snapshots must start at `scrollY = 0` unless the filename/documentation explicitly identifies them as sectional/scrolled captures.
 
 ## Playwright usage
 
@@ -26,6 +27,6 @@ Playwright is a verification gate, not a development loop: don't run it after ev
 
 - `overview/` — captured
 - `records/` — captured
-- `record-detail/` — not yet captured
+- `record-detail/` — captured
 - `problem-view/` — not yet captured
 - `graph/` — not yet captured

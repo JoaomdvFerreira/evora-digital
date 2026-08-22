@@ -97,10 +97,11 @@ describe("Explorer — Records workflow (fake provider)", () => {
     expect(attempts).toBe(2);
   });
 
-  it("shows 'nenhum registo selecionado' before any selection, and does not eagerly load a detail", async () => {
+  it("shows the Records table before any selection, and does not eagerly load a detail", async () => {
     const getRecord = vi.fn(fakeProvider().getRecord);
     render(<Explorer dataProvider={fakeProvider({ getRecord })} />);
-    await screen.findByText("Nenhum registo selecionado.");
+    await screen.findByRole("button", { name: /PRB-0005/ });
+    expect(recordsHeading()).toBeTruthy();
     expect(getRecord).not.toHaveBeenCalled();
   });
 
@@ -112,7 +113,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
     const button = await screen.findByRole("button", { name: /PRB-0005/ });
     await user.click(button);
 
-    await screen.findByText("Campos");
+    await screen.findByText("Inspeção técnica completa — todos os campos canónicos");
     expect(getRecord).toHaveBeenCalledTimes(1);
     expect(getRecord).toHaveBeenCalledWith("PRB-0005");
   });
@@ -141,12 +142,12 @@ describe("Explorer — Records workflow (fake provider)", () => {
     expect(within(detailPanel).getByText(/referenciado através de/)).toBeTruthy();
   });
 
-  it("navigates PRB-0005 -> EVD-000105 -> SRC-0092 without losing table context", async () => {
+  it("navigates PRB-0005 -> EVD-000105 -> SRC-0092, each step reachable back to Registos via the breadcrumb", async () => {
     const user = userEvent.setup();
     render(<Explorer dataProvider={fakeProvider()} />);
 
     await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
-    await screen.findByText("Campos");
+    await screen.findByText("Inspeção técnica completa — todos os campos canónicos");
 
     let detailPanel = await getDetailPanel();
     await user.click(await within(detailPanel).findByRole("button", { name: /EVD-000105/ }));
@@ -156,10 +157,15 @@ describe("Explorer — Records workflow (fake provider)", () => {
     await user.click(await within(detailPanel).findByRole("button", { name: /SRC-0092/ }));
 
     detailPanel = await getDetailPanel();
-    expect(within(detailPanel).getByText("SRC-0092")).toBeTruthy();
-    // Table context (the Records heading + other rows) survived navigation.
+    expect(within(detailPanel).getAllByText("SRC-0092").length).toBeGreaterThan(0);
+    // V2: Record Detail is a full-page composition, not a persistent
+    // split-view — the table itself is gone while a record is selected;
+    // "Registos" is reachable again only via the breadcrumb.
+    expect(screen.queryByRole("heading", { name: "Registos" })).toBeNull();
+    const breadcrumb = within(detailPanel).getByLabelText("Localização");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
     expect(recordsHeading()).toBeTruthy();
-    expect(screen.getByRole("button", { name: /PRB-0005/ })).toBeTruthy();
+    expect(await screen.findByRole("button", { name: /PRB-0005/ })).toBeTruthy();
   });
 
   it("renders a future generic record type (WID-) through the same generic detail renderer, including nested objects/arrays", async () => {
@@ -174,7 +180,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
     expect(within(detailPanel).getByText("—")).toBeTruthy(); // null rendered as an em dash placeholder
   });
 
-  it("a malformed/failed detail load produces a local actionable error without destroying the Records table", async () => {
+  it("a malformed/failed detail load produces a local actionable error, still reachable back to Records via the breadcrumb", async () => {
     const user = userEvent.setup();
     const getRecord = () => Promise.reject(new Error("boom: malformed JSON"));
     render(<Explorer dataProvider={fakeProvider({ getRecord })} />);
@@ -182,9 +188,12 @@ describe("Explorer — Records workflow (fake provider)", () => {
     await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
     await screen.findByRole("alert");
     expect(screen.getByText(/boom: malformed JSON/)).toBeTruthy();
-    // The Records table is still there and still usable.
+    // V2: the error still renders inside the Record Detail composition, so
+    // the breadcrumb (not a persistent table) is the way back to Records.
+    const breadcrumb = screen.getByLabelText("Localização");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
     expect(recordsHeading()).toBeTruthy();
-    expect(screen.getByRole("button", { name: /EVD-000105/ })).toBeTruthy();
+    expect(await screen.findByRole("button", { name: /EVD-000105/ })).toBeTruthy();
   });
 
   it("retries a failed record detail and restores the selected detail", async () => {
@@ -197,7 +206,7 @@ describe("Explorer — Records workflow (fake provider)", () => {
     const detailPanel = await getDetailPanel();
     const alert = await within(detailPanel).findByRole("alert");
     await user.click(within(alert).getByRole("button", { name: "Tentar novamente" }));
-    expect(await within(detailPanel).findByText("Campos")).toBeTruthy();
+    expect(await within(detailPanel).findByText("Inspeção técnica completa — todos os campos canónicos")).toBeTruthy();
     expect(attempts).toBe(2);
   });
 
@@ -280,7 +289,7 @@ describe("Explorer — URL-addressable state", () => {
     pushSpy.mockRestore();
   });
 
-  it("does not add history entries for semantically unchanged view, selection, or type filter actions", async () => {
+  it("does not add history entries for semantically unchanged view or type filter actions", async () => {
     const user = userEvent.setup();
     const pushSpy = vi.spyOn(window.history, "pushState");
     render(<Explorer dataProvider={fakeProvider()} />);
@@ -292,17 +301,40 @@ describe("Explorer — URL-addressable state", () => {
 
     await user.click(screen.getByRole("button", { name: /PRB-0005/ }));
     expect(pushSpy).toHaveBeenCalledTimes(1);
-    await user.click(screen.getByRole("button", { name: /PRB-0005/ }));
-    expect(pushSpy).toHaveBeenCalledTimes(1);
+    pushSpy.mockRestore();
+  });
+
+  it("selecting the same already-selected record again (via breadcrumb back, then reselect) adds exactly one further history entry", async () => {
+    const user = userEvent.setup();
+    render(<Explorer dataProvider={fakeProvider()} />);
+    await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
+    const detailPanel = await getDetailPanel();
+    const breadcrumb = within(detailPanel).getByLabelText("Localização");
+
+    const pushSpy = vi.spyOn(window.history, "pushState");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
+    await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
+    expect(pushSpy).toHaveBeenCalledTimes(2);
     pushSpy.mockRestore();
   });
 
   it("a URL with view/id/query/type on initial load restores that state (bookmark/reload)", async () => {
+    const user = userEvent.setup();
     window.history.replaceState(null, "", "/?view=records&id=PRB-0005&q=PRB&type=PRB-");
     render(<Explorer dataProvider={fakeProvider()} />);
 
-    await screen.findByText("Campos");
-    expect((screen.getByLabelText("Pesquisar") as HTMLInputElement).value).toBe("PRB");
+    // The Record Detail composition for id=PRB-0005 renders immediately —
+    // query/type are preserved in the URL and surface in the Records
+    // controls once the breadcrumb clears the selection.
+    await screen.findByText("Inspeção técnica completa — todos os campos canónicos");
+    expect(window.location.search).toContain("q=PRB");
+    expect(window.location.search).toContain("type=PRB-");
+
+    const detailPanel = await getDetailPanel();
+    const breadcrumb = within(detailPanel).getByLabelText("Localização");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
+
+    expect((await screen.findByLabelText("Pesquisar") as HTMLInputElement).value).toBe("PRB");
     expect((screen.getByLabelText("Tipo") as HTMLSelectElement).value).toBe("PRB-");
   });
 
@@ -311,7 +343,7 @@ describe("Explorer — URL-addressable state", () => {
     render(<Explorer dataProvider={fakeProvider()} />);
 
     await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
-    await screen.findByText("Campos");
+    await screen.findByText("Inspeção técnica completa — todos os campos canónicos");
     let detailPanel = await getDetailPanel();
     await user.click(await within(detailPanel).findByRole("button", { name: /EVD-000105/ }));
     detailPanel = await getDetailPanel();
@@ -322,8 +354,9 @@ describe("Explorer — URL-addressable state", () => {
     // jsdom dispatches popstate asynchronously on back(); the URL updates
     // first, then the detail panel re-selects and re-fetches PRB-0005.
     await waitFor(() => expect(window.location.search).toContain("id=PRB-0005"));
-    await waitFor(() => {
-      expect(screen.getByRole("button", { name: /PRB-0005/ }).getAttribute("aria-pressed")).toBe("true");
+    await waitFor(async () => {
+      detailPanel = await getDetailPanel();
+      expect(within(detailPanel).getByLabelText("Localização").textContent).toContain("PRB-0005");
     });
   });
 
@@ -335,13 +368,16 @@ describe("Explorer — URL-addressable state", () => {
     // same getRecord() path as any other selection, degrading to a local
     // error rather than crashing or bypassing the provider.
     window.history.replaceState(null, "", "/?view=records&id=PRB-9999-does-not-exist");
+    const user = userEvent.setup();
     render(<Explorer dataProvider={fakeProvider()} />);
 
     const alert = await screen.findByRole("alert");
     expect(within(alert).getByRole("heading")).toBeTruthy();
-    // Records table is still usable.
+    // V2: Records is reachable again via the breadcrumb, not a persistent table.
+    const breadcrumb = screen.getByLabelText("Localização");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
     expect(recordsHeading()).toBeTruthy();
-    expect(screen.getByRole("button", { name: /EVD-000105/ })).toBeTruthy();
+    expect(await screen.findByRole("button", { name: /EVD-000105/ })).toBeTruthy();
   });
 
   it("a stale/unknown type filter in the URL degrades to 'all' rather than breaking the table", async () => {
@@ -425,6 +461,14 @@ describe("Explorer — Problem view (RE-03)", () => {
     render(<Explorer dataProvider={fakeProvider()} />);
 
     await user.click(await screen.findByRole("button", { name: "← Voltar aos Registos" }));
+    // V2: navigating to Records with a still-selected id=PRB-0005 opens the
+    // Record Detail composition, not the table — the query is preserved in
+    // the URL (restored to the search input once the breadcrumb clears the
+    // selection and the table itself renders again).
+    expect(window.location.search).toContain("q=PRB-0005");
+    const detailPanel = await getDetailPanel();
+    const breadcrumb = within(detailPanel).getByLabelText("Localização");
+    await user.click(within(breadcrumb).getByRole("button", { name: "Registos" }));
     await screen.findByRole("heading", { name: "Registos" });
     expect((screen.getByLabelText("Pesquisar") as HTMLInputElement).value).toBe("PRB-0005");
     expect(screen.getByRole("button", { name: /PRB-0005/ })).toBeTruthy();
@@ -449,7 +493,10 @@ describe("Explorer — Problem view (RE-03)", () => {
     const evidenceSection = screen.getByLabelText("Evidência");
     await user.click(within(evidenceSection).getByRole("button", { name: /EVD-000105/ }));
 
-    await screen.findByRole("heading", { name: "Registos" });
+    // V2: opens the Record Detail composition for EVD-000105 (Records view,
+    // not Problem view) — not the Records table, since a record is selected.
+    const detailPanel = await getDetailPanel();
+    await within(detailPanel).findByText(/Via Verde/);
     expect(window.location.search).toContain("id=EVD-000105");
     expect(window.location.search).not.toContain("view=problem");
   });
@@ -512,7 +559,7 @@ describe("Explorer workflow — never loads edges.json or canonical YAML (real S
     render(<Explorer dataProvider={provider} />);
 
     await user.click(await screen.findByRole("button", { name: /PRB-0005/ }));
-    await screen.findByText("Campos");
+    await screen.findByText("Inspeção técnica completa — todos os campos canónicos");
     let detailPanel = await getDetailPanel();
     await user.click(await within(detailPanel).findByRole("button", { name: /EVD-000105/ }));
     detailPanel = await getDetailPanel();
