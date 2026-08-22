@@ -6,7 +6,7 @@ import { StaticDataProvider } from "./dataProvider/StaticDataProvider";
 import type { DataProvider, RecordDetail, RecordSummary } from "./dataProvider/types";
 
 const INDEX: RecordSummary[] = [
-  { id: "PRB-0005", type: "PRB-", label: "Pressão de estacionamento", file: "research/problems/PRB-0005.yaml", summaryFields: { status: "OPEN" } },
+  { id: "PRB-0005", type: "PRB-", label: "Pressão de estacionamento com uma descrição…", file: "research/problems/PRB-0005.yaml", summaryFields: { status: "OPEN" } },
   { id: "EVD-000105", type: "EVD-", label: "Via Verde Parking Buddy", file: "research/evidence/EVD-000105.yaml", summaryFields: { strength: "primary-authoritative" } },
   { id: "SRC-0092", type: "SRC-", label: "Via Verde Estacionar", file: "research/sources/SRC-0092.yaml", summaryFields: {} },
   {
@@ -23,7 +23,7 @@ const DETAILS: Record<string, RecordDetail> = {
     id: "PRB-0005",
     type: "PRB-",
     file: "research/problems/PRB-0005.yaml",
-    record: { title: "Pressão de estacionamento", domain: ["mobility"] },
+    record: { title: "Pressão de estacionamento com uma descrição canónica completa que não pode ser truncada", domain: ["mobility"] },
     outgoingEdges: [{ field: "evidence", ordinal: 0, to: "EVD-000105" }],
     incomingEdges: [],
   },
@@ -78,7 +78,9 @@ function fakeProvider(overrides: Partial<DataProvider> = {}): DataProvider {
 }
 
 beforeEach(() => {
-  window.history.replaceState(null, "", "/");
+  // Most workflow tests exercise the existing Records flow explicitly; root
+  // routing itself is covered in the Overview suite below.
+  window.history.replaceState(null, "", "/?view=records");
 });
 
 describe("Explorer — Records workflow (fake provider)", () => {
@@ -215,13 +217,41 @@ describe("Explorer — Records workflow (fake provider)", () => {
 });
 
 describe("Explorer — Overview view", () => {
-  it("switches to Overview and shows corpus-derived counts", async () => {
-    const user = userEvent.setup();
+  it("uses Overview at the root and projects only current PRBs with dynamic counts and mapped statuses", async () => {
+    window.history.replaceState(null, "", "/");
     render(<Explorer dataProvider={fakeProvider()} />);
-    await user.click(await screen.findByRole("button", { name: "Visão geral" }));
 
     await screen.findByRole("heading", { name: "Visão geral" });
-    expect(screen.getByText("4 registos no total.")).toBeTruthy();
+    expect(screen.getByText("Problemas em investigação (1)")).toBeTruthy();
+    expect(screen.getByText(/1 problema em investigação · 1 registo de evidência/)).toBeTruthy();
+    expect(await screen.findByText("Pressão de estacionamento com uma descrição canónica completa que não pode ser truncada")).toBeTruthy();
+    expect(screen.getByRole("list")).toBeTruthy();
+    expect(screen.queryByText("Pressão de estacionamento com uma descrição…")).toBeNull();
+    expect(screen.queryByText("Via Verde Parking Buddy")).toBeNull();
+    expect(screen.getByText(/Não representa a Câmara Municipal de Évora/)).toBeTruthy();
+    expect(screen.getByText("ordenados por identificador, não por relevância")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Visão geral" }).getAttribute("aria-current")).toBe("page");
+  });
+
+  it("opens the exact PRB in Problem View when Explore is selected", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await user.click(await screen.findByRole("button", { name: "Explorar" }));
+    await screen.findByRole("heading", { name: /Pressão de estacionamento/ });
+    expect(window.location.search).toContain("view=problem");
+    expect(window.location.search).toContain("id=PRB-0005");
+  });
+
+  it("keeps explicit Records navigation available from the root Overview", async () => {
+    const user = userEvent.setup();
+    window.history.replaceState(null, "", "/");
+    render(<Explorer dataProvider={fakeProvider()} />);
+
+    await user.click(await screen.findByRole("button", { name: "Registos" }));
+    expect(await screen.findByRole("heading", { name: "Registos" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Registos" }).getAttribute("aria-current")).toBe("page");
   });
 });
 
@@ -301,7 +331,7 @@ describe("Explorer — URL-addressable state", () => {
     // proves is that an arbitrary URL-sourced ID flows through the exact
     // same getRecord() path as any other selection, degrading to a local
     // error rather than crashing or bypassing the provider.
-    window.history.replaceState(null, "", "/?id=PRB-9999-does-not-exist");
+    window.history.replaceState(null, "", "/?view=records&id=PRB-9999-does-not-exist");
     render(<Explorer dataProvider={fakeProvider()} />);
 
     const alert = await screen.findByRole("alert");
@@ -312,7 +342,7 @@ describe("Explorer — URL-addressable state", () => {
   });
 
   it("a stale/unknown type filter in the URL degrades to 'all' rather than breaking the table", async () => {
-    window.history.replaceState(null, "", "/?type=NOPE-");
+    window.history.replaceState(null, "", "/?view=records&type=NOPE-");
     render(<Explorer dataProvider={fakeProvider()} />);
 
     await screen.findByRole("button", { name: "PRB-0005" });
