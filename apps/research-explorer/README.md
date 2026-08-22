@@ -59,7 +59,7 @@ The repository root's `vercel.json` pins the settings a Vercel project needs; an
 | Setting | Value |
 | --- | --- |
 | Root Directory | repository root (`/`) — required so the build can read canonical `research/` and `tools/` outside `apps/research-explorer/` |
-| Install Command | `npm install --prefix apps/research-explorer` |
+| Install Command | `npm ci --prefix apps/research-explorer` |
 | Build Command | `npm run explorer:build` |
 | Output Directory | `apps/research-explorer/dist` |
 | Node.js Version | project reads `engines.node` (`^20.19.0 \|\| >=22.12.0`, required by Vite 8) from the root `package.json`; no separate Vercel setting needed |
