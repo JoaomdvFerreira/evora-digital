@@ -21,3 +21,7 @@ Details: [Data Publication and Agent Safety Policy](docs/governance/data-publica
 ## Language
 
 User/public-facing Open Évora content uses Portuguese (Portugal); internal technical semantics remain English. Localize technical enums and schema values only at presentation, never canonically. Official source, entity, and document names remain authoritative and unchanged.
+
+## Research Explorer UI work
+
+Before any Research Explorer visual/UI change, read: [design-system.md](docs/design/research-explorer/design-system.md) (canonical tokens/typography/component contracts), [visual-implementation-contract.md](docs/design/research-explorer/visual-implementation-contract.md) (precedence and phased rollout), and the relevant approved prototype/reference for the surface being touched. Do not redesign or reinterpret independently of these.

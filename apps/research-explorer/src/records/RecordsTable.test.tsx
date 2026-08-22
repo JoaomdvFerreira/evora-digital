@@ -42,18 +42,20 @@ function renderTable(overrides: Partial<Parameters<typeof RecordsTable>[0]> = {}
   return { ...render(<RecordsTable {...props} />), props };
 }
 
-describe("RecordsTable — desktop (default jsdom width, above the 900px breakpoint)", () => {
-  it("renders the existing table presentation, not the narrow list", () => {
+describe("RecordsTable — desktop (default jsdom width, above the 767px breakpoint)", () => {
+  it("renders a meaning-first list, not the narrow list or technical table", () => {
     renderTable();
-    expect(screen.getByRole("table")).toBeTruthy();
-    expect(screen.queryByRole("list", { name: "Registos" })).toBeNull();
+    expect(screen.queryByRole("table")).toBeNull();
+    expect(screen.getByRole("list", { name: "Registos" })).toBeTruthy();
+    expect(screen.getByText("Fixture evidence label 1")).toBeTruthy();
+    expect(screen.queryByText(/research\/evidence\/EVD-000001\.yaml/)).toBeNull();
   });
 
   it("selecting a row's ID button invokes onSelect with that ID", async () => {
     const onSelect = vi.fn();
     const user = userEvent.setup();
     renderTable({ onSelect });
-    await user.click(screen.getByRole("button", { name: "EVD-000001" }));
+    await user.click(screen.getByRole("button", { name: /EVD-000001/ }));
     expect(onSelect).toHaveBeenCalledWith("EVD-000001");
   });
 });

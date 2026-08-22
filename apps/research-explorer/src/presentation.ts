@@ -30,6 +30,10 @@ const LABELS: Record<string, Record<string, string>> = {
   type: { institutional: "Institucional", statistical: "Estatística", "formal-public": "Fonte pública formal", social: "Social", press: "Imprensa", stakeholder: "Interveniente", observation: "Observação" },
 };
 
+const COMPACT_LABELS: Record<string, Record<string, string>> = {
+  evidence_status: { discovered: "Identificada", corroborated: "Corroborado" },
+};
+
 const FIELD_CAPTIONS: Record<string, string> = {
   status: "Estado", validation_status: "Estado de validação", evidence_status: "Estado da evidência", digital_tractability: "Tratabilidade digital", digital_leverage: "Alavancagem digital", existing_solutions: "Soluções existentes", strength: "Força da evidência", type: "Tipo", evidence_nature: "Natureza da evidência", friction_types: "Tipos de fricção", verification: "Verificação", contribution: "Contribuição", public_signal_class: "Classe de sinal público", representativeness: "Representatividade", temporal_relevance: "Relevância temporal", assessment_status: "Estado da avaliação", contradiction_status: "Grau de contradição", stakeholder_validation: "Validação por intervenientes", structure_action: "Ação estrutural", triage: "Triagem", remaining_gap: "Lacuna remanescente", decision_impact: "Impacto na decisão", target_phase: "Fase prevista", decision_gate: "Critério de decisão", geography: "Âmbito geográfico", source_type: "Tipo de fonte", authority: "Autoridade", freshness: "Atualidade", licensing: "Licenciamento",
 };
@@ -57,6 +61,12 @@ export function publicEnumLabel(field: string, value: string): string {
                 : terminalField;
   const signalLabel = field === "analysis.public_signal_class" ? PS_LABELS[value] : undefined;
   return LABELS[labelField]?.[value] ?? (signalLabel ? `${value} — ${signalLabel}` : value);
+}
+
+/** Compact, field-aware labels for dense presentation surfaces. */
+export function publicCompactEnumLabel(field: string, value: string): string {
+  const terminalField = field.split(".").at(-1) ?? field;
+  return COMPACT_LABELS[terminalField]?.[value] ?? publicEnumLabel(field, value);
 }
 
 export function publicFieldCaption(field: string): string {

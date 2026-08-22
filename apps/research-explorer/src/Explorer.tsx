@@ -44,21 +44,33 @@ export function Explorer({ dataProvider, schemaPrefixes }: ExplorerProps) {
 
   return (
     <>
-      <nav aria-label="Vistas do Explorador de Investigação" className="explorer-navigation">
-        <button type="button" aria-current={url.state.view === "overview" ? "page" : undefined} onClick={() => url.setView("overview")}>
-          Visão geral
-        </button>
-        <button type="button" aria-current={url.state.view === "records" ? "page" : undefined} onClick={() => url.setView("records")}>
-          Registos
-        </button>
-        <button type="button" aria-current={url.state.view === "graph" ? "page" : undefined} onClick={() => url.setView("graph")}>
-          Grafo
-        </button>
-      </nav>
+      <header className="explorer-chrome">
+        <h1>
+          <span className="explorer-brand">Open Évora</span>
+          <span className="explorer-subtitle">Explorador de Investigação</span>
+        </h1>
+        <nav aria-label="Vistas do Explorador de Investigação" className="explorer-navigation">
+          <button type="button" aria-current={url.state.view === "overview" ? "page" : undefined} onClick={() => url.setView("overview")}>
+            Visão geral
+          </button>
+          <button type="button" aria-current={url.state.view === "records" ? "page" : undefined} onClick={() => url.setView("records")}>
+            Registos
+          </button>
+          <button type="button" aria-current={url.state.view === "graph" ? "page" : undefined} onClick={() => url.setView("graph")}>
+            Grafo
+          </button>
+        </nav>
+      </header>
 
-      <ReadingGuide schemaPrefixes={schemaPrefixes} />
+      {url.state.view !== "overview" && <ReadingGuide schemaPrefixes={schemaPrefixes} />}
 
-      {url.state.view === "overview" && <Overview dataProvider={dataProvider} onExploreProblem={(id) => url.setViewAndSelection("problem", id)} />}
+      {url.state.view === "overview" && (
+        <Overview
+          dataProvider={dataProvider}
+          onExploreProblem={(id) => url.setViewAndSelection("problem", id)}
+          onViewRecords={() => url.setView("records")}
+        />
+      )}
 
       {url.state.view === "records" && (
         <RecordsExplorer

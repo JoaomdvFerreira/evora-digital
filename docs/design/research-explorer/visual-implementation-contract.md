@@ -2,6 +2,8 @@
 
 ## Status
 
+Design System v1: **APPROVED** — see [design-system.md](design-system.md) for canonical tokens, typography recipes, and component contracts.
+
 Prototypes A–D: **APPROVED DESIGN REFERENCES**
 
 Functional implementation: **MATURE**
@@ -15,6 +17,7 @@ Across A–D, production should preserve:
 - strong editorial/human-meaning hierarchy;
 - clear separation between editorial/human content, UI/navigation, and technical identity/metadata;
 - distinct visual/typographic roles for editorial/human meaning, UI/navigation, and technical identity/metadata;
+- owner-approved production typography: Inter for UI/navigation/interface, Source Serif 4 for editorial and human research content, and IBM Plex Mono for technical IDs and metadata;
 - controlled content/read widths;
 - deliberate negative space and density;
 - compact global chrome/navigation;
@@ -34,7 +37,7 @@ The following are not production requirements by themselves: exact prototype fon
 
 1. Current canonical data and publication-safety contracts.
 2. Current PT-PT localization and public-presentation mappings.
-3. Approved A–D visual/information-design intent.
+3. [design-system.md](design-system.md) canonical tokens/recipes and approved A–D visual/information-design intent.
 4. Current production architecture and functional behavior.
 5. Illustrative prototype implementation details.
 
